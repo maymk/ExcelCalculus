@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:25-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Second Derivative and Concavity</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-4-4-DIfferentiationComputerAlgebra.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-4-SymbolicDIfferentiation.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap-5-DIfferentiationApplications.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-4-4-DIfferentiationComputerAlgebra.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-4-SymbolicDIfferentiation.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap-5-DIfferentiationApplications.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity" class="active">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-4-5-SecondDerivativeConcavity"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">The Second Derivative and Concavity</span>
+</h2>
+<a href="sec-4-5-SecondDerivativeConcavity.html" class="permalink">¶</a><p id="p-1786">For an intuitive definition of the derivative, we talked about zooming in on the graph until it looks like a straight line and taking the slope.  For concavity, we want to zoom out a bit, so the graph curves up or down from a line.</p>
+<p id="p-1787">We say that a graph is concave up if the line between two points is above the graph, or alternatively if the first derivative is increasing.  (In finance, such a curve is said to be convex.)  Similarly, we say that a graph is concave down if the line between two points is below the graph, or alternatively if the first derivative is decreasing.  (In finance, such a curve is said to be concave.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-5-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-5-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1788">In determining is a curve is concave up or concave down, we want to take the second derivative of a function, or the derivative of the derivative.</p>
+<article class="definition-like" id="definition-5"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">4.5.1</span>.</h6>
+<p id="p-1789">For a function \(f(x)\text{,}\) the <dfn class="terminology">second derivative</dfn> of \(f(x)\) or the derivative of \(f'(x)\text{,}\) denoted as \(f''(x)\text{,}\)   is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+f''(x)=\frac{d}{dx}\left(\frac{d}{dx}\left( f(x)\right)\right) 
+\end{equation*}
+</div></article><p id="p-1790">We also want to recall some alternate notations we may use.</p>
+<aside class="aside-like" id="aside-2"><p id="p-1791"><dfn class="terminology">Notation</dfn>:  Let \(y=f(x)\text{.}\)</p>
+<p id="p-1792">The second derivative of \(f(x)\)  is denoted as \(f''(x)\) or  \(\frac{d^2}{dx^2}f(x)\) or \(\frac{d^2y}{dx^2}\text{.}\)</p>
+<p id="p-1793">The second derivative at \(x=x_0\) is denoted as \(f''(x_0 )\) or \(\left.\frac{d^2y}{dx^2}\right|_{x=x_0}\text{.}\)</p></aside><p id="p-1794">As we have noted before, when there are several forms, we use the one that makes the most sense in the case on which we are working.</p>
+<article class="example-like" id="example-67"><a data-knowl="" class="id-ref" data-refid="hk-example-67"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.5.2</span>. <span class="title">Finding second derivatives.</span>
+</h6></a></article><div id="hk-example-67" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1795">Find the second derivative for each of the following functions:</p>
+<ol class="lower-alpha">
+<li id="li-520">\(f(x)=3x^5+4x^2\)</li>
+<li id="li-521">\(g(x)=5 x^6+3x+9\)</li>
+<li id="li-522">\(h(x)=x e^{2x}\)</li>
+<li id="li-523">\(j(x)=6 \sqrt{x}+\frac{3}{x}\)</li>
+<li id="li-524">\(k(x)=\frac{\ln(x)}{x^3} \)</li>
+</ol>
+<p id="p-1796">Solution: Using our rule:</p>
+<ol class="lower-alpha">
+<li id="li-525">\(f''(x)=\frac{d}{dx}(\frac{d}{dx}( 3x^5+4x^2 ))\frac{d}{dx} (15x^4+8x)=60x^3+8.\)</li>
+<li id="li-526">\(g''(x)=\frac{d}{dx} (\frac{d}{dx}  (5 x^6+3x+9))=\frac{d}{dx} (30x^5+3)=150x^4.\)</li>
+<li id="li-527">\(\begin{aligned}  h'' (x)\amp =\frac{d}{dx} (\frac{d}{dx}  (x e^{2x} ))
+=\frac{d}{dx} (e^{2x}+2xe^{2x} )\\ 
+\amp =2e{^2}x+2e^{2x}+4xe^{2x}=4e^{2x}+4xe^2x.\end{aligned}\)</li>
+<li id="li-528">\(\begin{aligned}  j'' (x) \amp = \frac{d}{dx} (\frac{d}{dx}  (6 \sqrt{x}+3/x))=\frac{d}{dx} (\frac{d}{dx} (6x^{1/2}+3x^{-1} ))\\ 
+\amp = \frac{d}{dx} (3x^{-1/2}-3x^{-2} )=-3/2 x^{-3/2}+6x^{-3}.\end{aligned}\)</li>
+<li id="li-529">\(\begin{aligned}   k'' (x) \amp = \frac{d}{dx} (\frac{d}{dx}  (\frac{\ln(x)}{x^3} ))=\frac{d}{dx} (\frac{(\frac{1}{x} x^3-3(x^2 )  ln(x))}{x^6 }\\
+\amp = \frac{d}{dx} (\frac{(1-3 \ln(x))}{x^4 } 
+= \frac{(-\frac{3}{x} x^4-(1-3 \ln(x) )4x^3)}{x^8} \\
+\amp =\frac{-3-(1-3 \ln(x) )4}{x^5} = \frac{-7+12\ln(x)}{x^5}.\end{aligned} \)</li>
+</ol></article></div>
+<p id="p-1797">As the last problem shows, it is often useful to simplify between taking the first and second derivatives.</p>
+<p id="p-1798">If our function is the position of \(x\text{,}\) then the first derivative is the rate of change or the <dfn class="terminology">velocity</dfn> of \(f(x)\text{.}\)  The second derivative is <dfn class="terminology">acceleration</dfn> or how fast velocity changes.</p>
+<p id="p-1799">Graphically, the first derivative gives the slope of the graph at a point.  The second derivative tells whether the curve is concave up or concave down at that point.  If the second derivative is positive at a point, the graph is bending upwards at that point.  Similarly if the second derivative is negative, the graph is concave down.  This is of particular interest at a critical point where the tangent line is flat and concavity tells us if we have a relative minimum or maximum.</p>
+<p id="p-1800"><dfn class="terminology">Second derivative test of extrema</dfn>: Let \(f(x)\) be a function with \(f'(x_0)=0\text{.}\)  Then if \(f''(x_0) \gt 0\text{,}\) the function has a local minimum at \(x=x_0\text{.}\)  If \(f''(x_0) \lt 0\text{,}\) the function has a local maximum at \(x=x_0\text{.}\)  If \(f''(x_0)=0\text{,}\) the second derivative test fails.</p>
+<article class="example-like" id="example-68"><a data-knowl="" class="id-ref" data-refid="hk-example-68"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.5.3</span>. <span class="title">Second derivative tests.</span>
+</h6></a></article><div id="hk-example-68" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1801">For the designated function and point, determine if the graph has a local minimum, local maximum, or non-extreme point, or if the second derivative test fails.</p>
+<ol class="lower-alpha">
+<li id="li-530">\(f(x)=x^3-12 x,\qquad\qquad x_0=2\)</li>
+<li id="li-531">\(f(x)=x^3-12 x,\qquad\qquad x_0=-2\)</li>
+<li id="li-532">\(f(x)=x^3-12 x,\qquad\qquad x_0=4\)</li>
+<li id="li-533">\(g(x)=x^4,\qquad\qquad x_0=0\)</li>
+<li id="li-534">\(h(x)=x^5,\qquad\qquad x_0=0\)</li>
+</ol>
+<p id="p-1802"><dfn class="terminology">Solution</dfn>: Using our rule:</p>
+<ol class="lower-alpha">
+<li id="li-535">
+<p id="p-1803">\(f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6\)x.</p>
+<p id="p-1804">At \(x_0=2\text{,}\) we have \(f'(x_0)=0\) and \(f''(x_0)=12\text{.}\)  We are at a critical point, and the curve is concave up, so we have a local minimum.</p>
+</li>
+<li id="li-536">
+<p id="p-1805">\(f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6x\text{.}\)</p>
+<p id="p-1806">At \(x_0=-2\text{,}\) we have \(f'(x_0)=0\) and \(f'' (x_0 )=-12\text{.}\)  We are at a critical point and the curve is concave down, so we have a local maximum.</p>
+</li>
+<li id="li-537">
+<p id="p-1807">\(f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6x\text{.}\)</p>
+<p id="p-1808">At \(x_0=4\text{,}\) we have \(f'(x_0)=36\text{.}\)  The second derivative is positive, so the curve is concave up, but since the derivative is not zero, this is not an extreme point.</p>
+</li>
+<li id="li-538">
+<p id="p-1809">\(g(x)=x^4,\qquad\qquad g'(x)=4x^3,\qquad\qquad g''(x)=12x^2\text{.}\)</p>
+<p id="p-1810">At \(x_0=0\text{,}\) we have \(g'(x_0)=0\) and \(g''(x_0)=0\text{,}\) so the second derivative test fails at this point.  (However if we look a the graph, we can see the curve is concave up everywhere, and that this point is a local minimum.)</p>
+</li>
+<li id="li-539">
+<p id="p-1811">\(h(x)=x^5,\qquad\qquad h'(x)=5x^4,\qquad\qquad h''(x)=20x^3\text{.}\)</p>
+<p id="p-1812">At \(x_0=0\text{,}\) we have \(h'(x_0)=0\) and \(h''(x_0)=0\text{,}\) so the second derivative test fails at this point.  (However if we look a the graph, we can see this point is neither a local minimum or a local maximum.  It is a place where the graph switches from being concave up to being concave down.  This is called an <dfn class="terminology">inflection point</dfn>.)</p>
+</li>
+</ol></article></div>
+<p id="p-1813">We will use the second derivative test for finding maximums and minimums in the next chapter.</p>
+<p id="p-1814"><dfn class="terminology">Second derivative with CAS</dfn></p>
+<p id="p-1815">We can find second derivatives with our favorite CAS programs.</p>
+<p id="p-1816">With Symbolab</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-5-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1817">With WolframAlpha</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-5-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1818">Second derivative in finance</p>
+<p id="p-1819">The mathematical first and second derivatives are used in pricing various financial products and options that are also called derivatives.  The first derivative is used to give a value to whether the underlying product has a price that goes up or down.  It looks at the slope of the pricing curve.  The second derivative is used to give a value to the volatility of the underlying product.  It looks at how much the pricing curve bends.  We will return to these uses when we look at integrals.</p>
+<section class="exercises" id="exercises-set-sec-4-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: The Second Derivative and Concavity Problems</span>
+</h3>
+<a href="sec-4-5-SecondDerivativeConcavity.html#exercises-set-sec-4-5" class="permalink">¶</a><div class="exercisegroup" id="exercisegroup-21">
+<div class="introduction" id="introduction-26">
+<p id="p-1820">For 1-9:</p>
+<ol class="lower-alpha">
+<li id="li-540"><p id="p-1821">Find the first and second derivatives of the given function.</p></li>
+<li id="li-541"><p id="p-1822">Determine where the function is concave up and where it is concave down.</p></li>
+<li id="li-542"><p id="p-1823">Find the critical points of the function.  Classify each as a local minimum, a local maximum, neither, or not a local extremum.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-314"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-1824">\(f(x)=(x-3)^2-4\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-157" id="solution-157"><span class="type">Solution</span></a><div id="hk-solution-157" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-543">
+<div class="displaymath">
+\begin{equation*}
+f'(x)=2(x-3)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f''(x)=2
+\end{equation*}
+</div>
+</li>
+<li id="li-544"><p id="p-1825">The second derivative is always positive, so the function is always concave up</p></li>
+<li id="li-545"><p id="p-1826">There is one critical point at \(x=3\text{.}\)  It is a local minimum.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-315"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-1827">\(g(t)=(x-3)(x-1)(x+4)\)</p></article><article class="exercise-like" id="exercise-316"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-1828">\(h(t)=t^2 e^{-t}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-158" id="solution-158"><span class="type">Solution</span></a><div id="hk-solution-158" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-546">
+<div class="displaymath">
+\begin{equation*}
+h' (t)=2te^{-t}-t^2 e^{-t}=(2-t)te^{-t}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+h'' (t)=(2-2t)e^{-t}-(2t-t^2)e^{-t}=(2-4t+t^2 ) e^{-t}
+\end{equation*}
+</div>
+</li>
+<li id="li-547"><p id="p-1829">The function is concave down, where the second derivative is negative, that is for \(2-\sqrt{2} \lt t \lt 2+\sqrt{2}\text{.}\)  It is concave up outside this region.</p></li>
+<li id="li-548"><p id="p-1830">There are critical points when the derivative is undefined or 0. The only critical point is when \(t=2\text{.}\) When \(t=2\text{,}\) \(h''(t)\lt 0\text{,}\) so we have a local maximum.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-317"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-1831">\(k(x)=(x^2-9)^3\)</p></article><article class="exercise-like" id="exercise-318"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-1832">\(m(x)=\frac{x^2-4}{x^2-9}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-159" id="solution-159"><span class="type">Solution</span></a><div id="hk-solution-159" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-549">
+<div class="displaymath">
+\begin{equation*}
+m' (x)=\frac{-10}{(x^2-9)^3}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+m'' (x)=\frac{30x^2+90}{(x^2-9)^3}
+\end{equation*}
+</div>
+</li>
+<li id="li-550"><p id="p-1833">The function is concave down, where the second derivative is negative, which for our function is when the denominator is negative.  the function \(m(x)\) is concave down when \(-3 \lt x \lt 3\text{.}\)  It is concave up outside this region.</p></li>
+<li id="li-551"><p id="p-1834">There are critical points when \(t\) is 0 or 2.  When \(t=0\text{,}\) \(h''(t)\gt 0\text{,}\) so we have a local minimum.  When \(t=2\text{,}\) the second derivative is negative and we have a local maximum</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-319"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-1835">\(ConsumerSurplus= 10*(0.95)^
+{\frac{quantity}{100}}- 2*(1.07)^{\frac{quantity}{100}}\)</p></article><article class="exercise-like" id="exercise-320"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-1836">\(price= 10-\frac{quantity}{100}- \frac{quantity^2}{10000}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-160" id="solution-160"><span class="type">Solution</span></a><div id="hk-solution-160" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-552">
+<div class="displaymath">
+\begin{equation*}
+price'=\frac{-1}{100}-\frac{quantity}{5000}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+price''=\frac{-1}{5000}
+\end{equation*}
+</div>
+</li>
+<li id="li-553"><p id="p-1837">The second derivative is always negative, to the function is always concave down.</p></li>
+<li id="li-554"><p id="p-1838">There is one critical point at \(quantity=-50\text{.}\)  It is a local maximum.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-321"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-1839">\(revenue=quantity*\left(20*.9^
+{\left(\frac{quantity}{200}\right)}\right)\)</p></article><article class="exercise-like" id="exercise-322"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-1840">\(SupplyPrice= 10*1.04^{\left(\frac{quantity}{100}\right)}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-161" id="solution-161"><span class="type">Solution</span></a><div id="hk-solution-161" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-555">
+<div class="displaymath">
+\begin{equation*}
+SupplyPrice'=\frac{\ln(104)}{10}*1.04^{(quantity/100)} 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+SupplyPrice''=\frac{\ln(104)^2}{1000}*1.04^{(quantity/100)}
+\end{equation*}
+</div>
+</li>
+<li id="li-556"><p id="p-1841">The second derivative is always positive, to the function is always concave up.</p></li>
+<li id="li-557"><p id="p-1842">The first derivative is always positive.  There are no critical points.</p></li>
+</ol></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-22">
+<div class="introduction" id="introduction-27"><p id="p-1843">For problems 10-13 identify which curve is \(f\text{,}\) \(f'\text{,}\) and \(f''\text{.}\)</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-323"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-1844"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-5-e1.png" style="width: 100%; height: auto;" alt=""></div></div></div></p></article><article class="exercise-like" id="exercise-324"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-1845"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-5-e2.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-162" id="solution-162"><span class="type">Solution</span></a><div id="hk-solution-162" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1846">Note that local maximums of a function must correspond to zeroes of its derivative.  The original function is F (green).   Its derivative is D (Purple).  The second derivative is E (black).</p>
+<div class="displaymath">
+\begin{equation*}
+E(x) = D'(x)=F''(x)
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-325"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-1847"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-5-e3.png" style="width: 100%; height: auto;" alt=""></div></div></div></p></article><article class="exercise-like" id="exercise-326"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-1848"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-5-e4.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-163" id="solution-163"><span class="type">Solution</span></a><div id="hk-solution-163" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1849">Looking at the middle segment of the curves, the green curve is a downward facing parabola, whose derivative is a line with a negative slope like the purples curve, whose derivative is a negative constant like the black line.</p>
+<div class="displaymath">
+\begin{equation*}
+F(x) = D'(x)=E''(x)
+\end{equation*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-23">
+<div class="introduction" id="introduction-28">
+<p id="p-1850">For problems 14-17 you need to know the formula for the price of a zero coupon bond given the face value, the interest rate, and the time to maturity.  For such instruments we use the formula</p>
+<div class="displaymath">
+\begin{equation*}
+Cost=\frac{FaceValue}{(1+rate)^{years}}
+\end{equation*}
+</div>
+<p id="p-1851">(Be aware that a rate of 4% is a rate of 0.04.) For each problem give:</p>
+<ol class="lower-alpha">
+<li id="li-558"><p id="p-1852">The cost of the bond as described.</p></li>
+<li id="li-559"><p id="p-1853">The first derivative of cost as a function of rate. (This measures risk of interest rate change.)</p></li>
+<li id="li-560"><p id="p-1854">The second derivative of cost as a function of rate.  (This measures the value of an option on the bond.)</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-327"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-1855">The face value of the bond is $1000.  The interest rate is currently 4%.  The bond matures in 10 years.</p></article><article class="exercise-like" id="exercise-328"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<p id="p-1856">The face value of the bond is $1000.  The interest rate is currently 4%.  The bond matures in 30 years.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-164" id="solution-164"><span class="type">Solution</span></a><div id="hk-solution-164" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-561"><div class="displaymath">
+\begin{equation*}
+Cost=\frac{1000}{(1.04)^30} =308.32
+\end{equation*}
+</div></li>
+<li id="li-562">
+<div class="displaymath">
+\begin{equation*}
+Cost(rate)=FaceValue(1+rate)^{(-years)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Cost(rate)=-years*FaceValue(1+rate)^{(-years-1)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Cost'(.04)=-30*1000(1.04)^{-31}=-8993
+\end{equation*}
+</div>
+</li>
+<li id="li-563">
+<div class="displaymath">
+\begin{equation*}
+Cost''(rate)=years(1+years)*FaceValue(1+rate)^{(-years-2)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Cost(.04)=30(31)*1000(1.04)^(-32)=265103
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-329"><h6 class="heading"><span class="codenumber">16.</span></h6>
+<p id="p-1857">The face value of the bond is $1000.  The interest rate is currently 6%.  The bond matures in 10 years.</p></article><article class="exercise-like" id="exercise-330"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<p id="p-1858">The face value of the bond is $1000.  The interest rate is currently 3%.  The bond matures in 20 years.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-165" id="solution-165"><span class="type">Solution</span></a><div id="hk-solution-165" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-564"><div class="displaymath">
+\begin{equation*}
+Cost=\frac{1000}{(1.03)^20} =553.68
+\end{equation*}
+</div></li>
+<li id="li-565">
+<div class="displaymath">
+\begin{equation*}
+Cost(rate)=FaceValue(1+rate)^{(-years)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Cost(rate)=-years*FaceValue(1+rate)^{(-years-1)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Cost'(.03)=-20*1000(1.03)^{-21}=-8000
+\end{equation*}
+</div>
+</li>
+<li id="li-566">
+<div class="displaymath">
+\begin{equation*}
+Cost''(rate)=years(1+years)*FaceValue(1+rate)^{(-years-2)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Cost(.03)=20(21)*1000(1.03)^(-22)=219914
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

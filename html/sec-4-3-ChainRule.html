@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-03-20T21:59:28-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Chain Rule</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec-4-2DerivativesCombinationFunctions.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-4-SymbolicDIfferentiation.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-4-4-DIfferentiationComputerAlgebra.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-4-2DerivativesCombinationFunctions.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-4-SymbolicDIfferentiation.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-4-4-DIfferentiationComputerAlgebra.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Frontmatter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="acknowledgement-1.html">Acknowledgements</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="chap-1-FunctionsGraphsExcel.html"><span class="codenumber">1</span><span class="title">Functions Graphs and Excel</span></a></h2>
+<ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+<h2 class="link"><a href="chap-2-BusinessApplications.html"><span class="codenumber">2</span><span class="title">Business Applications</span></a></h2>
+<ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html">Nonlinear Functions</a></li>
+</ul>
+<h2 class="link"><a href="chap-3-RateChangeDerivatives.html"><span class="codenumber">3</span><span class="title">Rate of Change and Derivatives</span></a></h2>
+<ul>
+<li><a href="sec-3-1-MarginalFunctions.html">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html">An Introduction to Solver</a></li>
+</ul>
+<h2 class="link active"><a href="chap-4-SymbolicDIfferentiation.html"><span class="codenumber">4</span><span class="title">Symbolic Differentiation</span></a></h2>
+<ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" class="active">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html">The Second Derivative and Concavity</a></li>
+</ul>
+<h2 class="link"><a href="chap-5-DIfferentiationApplications.html"><span class="codenumber">5</span><span class="title">Differentiation Techniques and Applications</span></a></h2>
+<ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html">RelatedRates</a></li>
+<li><a href="sec-5-3-Elasticity.html">Elasticity</a></li>
+</ul>
+<h2 class="link"><a href="chap-6-FunctionsSeveralVariables.html"><span class="codenumber">6</span><span class="title">Functions of Several Variables</span></a></h2>
+<ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html">Optimization and Best Fitting Curves</a></li>
+</ul>
+<h2 class="link"><a href="chap-7-Intergration.html"><span class="codenumber">7</span><span class="title">Integration</span></a></h2>
+<ul>
+<li><a href="sec-7-1-RiemannSums.html">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html">Economics Applications of the Integral</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2>
+<ul>
+<li><a href="appendix-1.html">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-2.html">Notation</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+<li><a href="colophon-2.html">Colophon</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-4-3-ChainRule"><header title="Section 4.3 The Chain Rule"><h1 class="heading hide-type" alt="Section 4.3 The Chain Rule">
+<span class="type">Section</span><span class="codenumber">4.3</span><span class="title">The Chain Rule</span><a href="sec-4-3-ChainRule.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1124">In the last two sections we learned rules to symbolically differentiate some functions.  To summarize, we have established some elementary formulas and some arithmetic rules. </p>
+<article class="aside-like" id="aside-14"><h5 class="heading"></h5>
+<p id="p-1125"><em class="terminology">Elementary Formulas</em>:</p>
+<p id="p-1126">If \(f(x)=a\), then \(f'(x)=0\).</p>
+<p id="p-1127">If \(f(x)=ax\), then \(f'(x)=a\).</p>
+<p id="p-1128">If \(f(x)=a*x^n\), then \(f(x)=a*n*x^{n-1}\), for any nonzero number n.</p>
+<p id="p-1129">If \(f(x)=e^x\), then \(f'(x)=e^x\).</p>
+<p id="p-1130">If \(f(x)=a^x\), then \(f'(x)=a^x \ln(a)\).</p>
+<p id="p-1131">If \(f(x)=\ln(x)\), then \(f'(x)=1/x\)</p>
+<p id="p-1132"><em class="terminology">Arithmetic derivative rules</em>:</p>
+<p id="p-1133"><em class="terminology">Scalar multiple rule</em>:	The derivative of \(c*f(x)\) is \(c*f'(x)\).</p>
+<p id="p-1134"><em class="terminology">Sum and difference rule</em>: The derivative of \(f(x)\pm g(x)\) is \(f'(x)\pm g'(x)\).</p>
+<p id="p-1135"><em class="terminology">Product Rule</em>:	 The derivative of \(f(x)g(x)\) is \(f' (x) g(x)+f(x)g'(x)\).</p>
+<p id="p-1136"><em class="terminology">Quotient Rule</em>:  The derivative of \(f(x)/g(x)\) is 
+\(\frac{f'(x)g(x)-f(x)g'(x)}{(g(x))^2} \).</p></article><p id="p-1137">The other way we traditionally build functions from simpler functions is by use of composition.  We want to be able to take derivatives of functions like \((2x+3)^{52}\), \(\sqrt{(x^2 )+5x+7}\), and \(1.06^{.2x}\).</p>
+<article class="theorem-like" id="claim-9"><h5 class="heading">
+<span class="type">Claim</span><span class="codenumber">4.3.1</span><span class="title">Chain rule</span>
+</h5>
+<p id="p-1138">  The derivative of 
+\(f(g(x))\) is \(f'(g(x))g'(x)\)   In other words,
+\begin{equation*}\left[f(g(x))\right]'=f'(g(x))*g'(x)\end{equation*}.</p></article><article class="example-like" id="example-47"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">4.3.2</span><span class="title">Simple chaine rule</span>
+</h5>
+<p id="p-1139">Find the derivative of the following functions:</p>
+<ol id="ol-56" style="list-style-type: lower-alpha;">
+<li id="li-253">\( f(p)=(p^3+2 p+5)^7.\)</li>
+<li id="li-254">\( g(q)=\sqrt{q^2+6}.\)</li>
+<li id="li-255">\( h(x)=e^{2 x+5}.\)</li>
+</ol>
+<p id="p-1140"><em class="terminology">Solution</em></p>
+<ol id="ol-57" style="list-style-type: lower-alpha;">
+<li id="li-256">
+<p id="p-1141"> We could do this problem by expanding it to a polynomial and using rules from the previous section, but that is much too hard.  We can write \(f(p)\) as \(g(h(p))\) where \(h(p)=p^3+2 p+5\) and \(g(p)=p^7\).  We use the rules from the previous section to compute \(h'(p)=3 p^2+2\) and \(g'(p)=7p^6\).  Composing we get 
+\(g'(h(p))=7(p^3+2 p+5)^6\).  Thus</p>\begin{equation*}f'(p)=g'(h(p))h'(p)=7(p^3+2 p+5)^6(3 p^2+2 ).\end{equation*}</li>
+<li id="li-257">
+<p id="p-1142"> We can write \(g(q)\) as \(f(h(q))\) where \(h(q)=q^2+6\) and \(f(q)=\sqrt{q}\).  We use the rules from the previous section to compute \(h'(q)=2 q\) and \(f'(q)= 1/(2\sqrt{q})\). Composing we get \(f'(h(q))= 1/(2\sqrt{(q^2+6 )})\).  Thus</p>\begin{equation*}g'(q)=f'(h(q)) h'(q)=(2 q)/(2\sqrt{(q^2+6 )}).\end{equation*}</li>
+<li id="li-258">
+<p id="p-1143"> We can write \(h(t)\) as \(f(g(t))\) where \(g(x)=2 t+5\) and \(f(x)=e^t\)  We use the rules from the previous section to compute \(g'(t)=2\)  and \(f'(t)=e^t\).  Composing we get \(f' (h(t))=   e^(2 t+5)\).  Thus</p>\begin{equation*}g'(t)=f'(h(t)) h' (t)= 2 e^{2 t+5}.\end{equation*}</li>
+</ol></article><p id="p-1144"><em class="terminology">Theory and justification</em></p>
+<p id="p-1145">As in the previous section, we will use local linearity to justify our derivative rule. </p>
+<p id="p-1146">To simplify notation, we will let \(g(x)=u=b x+d\). We will be substituting \(g(x)\) into \(f(x)\) and so we will be using the functions 
+\(f(u)=a u+c \), with  \(a=f' (u)=f' (g(x_0 ))\)
+and \(g(x)=b x+d\), with \(b=g'(x_0 )\).</p>
+<p id="p-1147">The composition of \(f\) and \(g\) can then be written as  </p>\begin{equation*}f(g(x))=a (b x+d)+c=(a b) x+(a d+c).\end{equation*}<p id="p-1148">The coefficient of the linear term is the product of the coefficients of the two linear terms we began with.  Hence we find that \([f(g(x_0 ))]'=a b=f'(g(x_0 ))*g'(x_0)\).</p>
+<p id="p-1149"><em class="terminology">The Chain rule in other notation</em></p>
+<p id="p-1150">For the problems above, we used the prime notation, \(f'(x)\), \(f'(q)\), \(f'(t)\), etc, for derivatives.  There is also a fractional notation for derivatives, \(\frac{df}{dx}\), \(\frac{df}{dq}\), \(\frac{df}{dt}\) or \(\frac{dy}{dx}\), \(\frac{dp}{dq}\), \(\frac{dq}{dt}\), etc. that is commonly used.  Intuitively, when we have zoomed in far enough for the graph of \(f(x)\) to look like a straight line, then the derivative is the small unit of rise over the small unit of run.  With that notation the chain rule has a nice formulation where it reduces to the usual rules for multiplying fractions.</p>
+<article class="aside-like" id="aside-15"><h5 class="heading"></h5>
+<p id="p-1151"><em class="terminology">Chain Rule (fractional notation version)</em>: If \(z=g(x)\) and \(y=f(z)\) so \(y=f(g(x)\), then  </p>
+<p id="p-1152">\(\frac{dy}{dx}=\frac{dy}{dz} \frac{dz}{dx}\)  or  
+\(\frac{df}{dx}=\frac{df}{dg}  \frac{dg}{dx} \).</p></article><article class="example-like" id="example-48"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">4.3.3</span><span class="title">Successive processes</span>
+</h5>
+<p id="p-1153">We have two processes that need to be run in succession to produce gizmos.  The yields of the two processes are given by:</p>\begin{equation*}intermediate(raw)=-25+7.3 raw+.2 raw^2\end{equation*}\begin{equation*}gizmos(intermediate)=-5+12 intermediate\end{equation*}<p id="p-1154">Find the rate of production in terms of the amount of raw material.</p>
+<p id="p-1155"><em class="terminology">Solution</em>:  We want to find the derivatives of the individual processes and then use the chain rule.</p>\begin{equation*}\frac{d\ intermediate}{d\ raw}=7.3 +.4 raw\end{equation*}\begin{equation*}\frac{d\  gizmos}{d\ intermediate}=12 \end{equation*}<p id="p-1156">Thus</p>\begin{equation*}\frac{d\ gizmos}{d\ raw}=\frac{d\  gizmos}{d\ intermediate}
+  \frac{d\ intermediate}{d\ raw}=12*(7.3 +.4 raw)\end{equation*}\begin{equation*}=87.6+4.8 raw\end{equation*}<p id="p-1157">The rate of production is a linear function of the amount of raw material used.</p></article><article class="example-like" id="example-49"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">4.3.4</span><span class="title">Chain rule with separate functions</span>
+</h5>
+<p id="p-1158">Example 3: Find \(h'(x)\) for \(h(x)=f(g(x))\) for the given \(f(z)\) and \(g(x)\).</p>
+<ol id="ol-58" style="list-style-type: lower-alpha;">
+<li id="li-259"><p id="p-1159">\(f(z)=2z+7\) and \(g(x)=z=3 x+5\).</p></li>
+<li id="li-260"><p id="p-1160">\(f(z)=z^3\) and \(g(x)=x^2+7\).</p></li>
+<li id="li-261"><p id="p-1161">\(f(z)=e^z\) and \(g(x)=x^2+3\).</p></li>
+</ol>
+<p id="p-1162"><em class="terminology">Solution</em>:</p>
+<ol id="ol-59" style="list-style-type: lower-alpha;">
+<li id="li-262">\(\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}=2*3=6.\)</li>
+<li id="li-263">
+<p id="p-1163">\(\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}
+=3z^2*2x=3(x^2+7)^2*2x.\)</p>
+<p id="p-1164">(Notice that the two derivatives are in terms of different variables.  We need to convert to a single variable.)</p>
+</li>
+<li id="li-264">\(\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}
+=e^z*2x=e^(x^2+3)*2x.\)</li>
+</ol></article><p id="p-1165"><em class="terminology">Warning for this method</em>:  We tend to use x as the variable for almost all functions.  When we use the chain rule we need to remember that the input for the second function is the output from the first function.  It is safest to use separate variable for the two functions,</p>
+<p id="p-1166"><em class="terminology">Special cases</em>:</p>
+<p id="p-1167">Two special cases of the chain rule come up so often, it is worth explicitly noting them.</p>
+<p id="p-1168"><em class="terminology">The general power rule</em>: \([(f(x))^n ]'=n (f(x))^{n-1} f'(x)\).  This is simply the chain rule when the second function is a power.</p>
+<p id="p-1169"><em class="terminology">The chain rule with a linear function</em>:  \([(f(a x+b))]'=(f'(a x+b))*a\)
+</p>
+<section class="exercises" id="exercises-set-sec-3-3"><header title="Exercises 4.3.1 Exercises: The Chain Rule"><h1 class="heading hide-type" alt="Exercises 4.3.1 Exercises: The Chain Rule">
+<span class="type">Subsection</span><span class="codenumber">4.3.1</span><span class="title">Exercises: The Chain Rule</span><a href="sec-4-3-ChainRule.html#exercises-set-sec-3-3" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1170">Find the derivatives of the following functions.</p>
+<article class="exercise-like" id="exercise-268"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-1171">  \(f(x)=(x^3+5 x+7)^4\).
+</p></article><article class="exercise-like" id="exercise-269"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-1172">  \(g(x)=(x^2-6x+8)^{123}\).
+</p></article><article class="exercise-like" id="exercise-270"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-1173">  \(h(x)=\sqrt{(5x^7+3x-2)}\).
+</p></article><article class="exercise-like" id="exercise-271"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-1174">  \(k(x)=\ln(e^x+5)\).
+</p></article><article class="exercise-like" id="exercise-272"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-1175">  \(m(x)=\ln(\ln(\ln(x^2+3)))\).
+</p></article><article class="exercise-like" id="exercise-273"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-1176">  \(n(x)=(((x^2+2)^2+3)^2+4)^2+5\).
+</p></article><article class="exercise-like" id="exercise-274"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-1177">  \(f(x)=e^{2x+3}\).
+</p></article><article class="exercise-like" id="exercise-275"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-1178">  \(g(x)=(\ln(10x-15))^2\).
+</p></article><article class="exercise-like" id="exercise-276"><h5 class="heading"><span class="codenumber">9</span></h5>
+<p id="p-1179">  \(h(x)=\ln((10x-15)^2)\).
+</p></article><article class="exercise-like" id="exercise-277"><h5 class="heading"><span class="codenumber">10</span></h5>
+<p id="p-1180">  \(k(x)=((\ln(x))(e^x))^3\).
+</p></article><article class="exercise-like" id="exercise-278"><h5 class="heading"><span class="codenumber">11</span></h5>
+<p id="p-1181">  \(m(x)=\ln(e^(x^2+x)+x)\).
+</p></article><article class="exercise-like" id="exercise-279"><h5 class="heading"><span class="codenumber">12</span></h5>
+<p id="p-1182">  \begin{equation*}n(x)=\left(\frac{x^2-5x+3}{e^x }\right)^5\end{equation*}.
+</p></article><article class="exercise-like" id="exercise-280"><h5 class="heading"><span class="codenumber">13</span></h5>
+<p id="p-1183">  \begin{equation*}f(x)=\left(\frac{\ln(x)}{(2x+7)}\right)^4\end{equation*}.
+</p></article><article class="exercise-like" id="exercise-281"><h5 class="heading"><span class="codenumber">14</span></h5>
+<p id="p-1184">  \begin{equation*}g(x)=\ln\left(\frac{x^3+2x+9}{1.07^x} \right)\end{equation*}.
+</p></article><p id="p-1185">For problems 15-18, use the following data to find the indicated derivative.
+</p>
+<figure class="figure-like" id="table-50"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">1</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">3</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">5</td>
+<td class="c m b1 r0 l0 t3 lines">6</td>
+<td class="c m b1 r0 l0 t3 lines">7</td>
+<td class="c m b1 r0 l0 t3 lines">8</td>
+<td class="c m b1 r0 l0 t3 lines">9</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">f(x)</td>
+<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">7</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">9</td>
+<td class="c m b1 r0 l0 t0 lines">8</td>
+<td class="c m b1 r0 l0 t0 lines">4</td>
+<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">f'(x)</td>
+<td class="c m b1 r0 l0 t0 lines">7</td>
+<td class="c m b1 r0 l0 t0 lines">6</td>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">4</td>
+<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">9</td>
+<td class="c m b1 r0 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">g(x)</td>
+<td class="c m b1 r0 l0 t0 lines">8</td>
+<td class="c m b1 r0 l0 t0 lines">4</td>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">6</td>
+<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines">9</td>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">7</td>
+<td class="c m b1 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">g'(x)</td>
+<td class="c m b1 r0 l0 t0 lines">6</td>
+<td class="c m b1 r0 l0 t0 lines">8</td>
+<td class="c m b1 r0 l0 t0 lines">4</td>
+<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">7</td>
+<td class="c m b1 r0 l0 t0 lines">9</td>
+<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+</tr>
+</table></figure><article class="exercise-like" id="exercise-282"><h5 class="heading"><span class="codenumber">15</span></h5>
+<p id="p-1186">  \(h'(2)\), where \(h(x)=f(g(x))\).
+</p></article><article class="exercise-like" id="exercise-283"><h5 class="heading"><span class="codenumber">16</span></h5>
+<p id="p-1187">  \(h'(5)\), where \(h(x)=f(f(x))\).
+</p></article><article class="exercise-like" id="exercise-284"><h5 class="heading"><span class="codenumber">17</span></h5>
+<p id="p-1188">  \(h'(7)\), where \(h(x)=g(g(x))\).
+</p></article><article class="exercise-like" id="exercise-285"><h5 class="heading"><span class="codenumber">18</span></h5>
+<p id="p-1189">  \(h'(4)\), where \(h(x)=g(f(x))\).
+</p></article><article class="exercise-like" id="exercise-286"><h5 class="heading"><span class="codenumber">19</span></h5>
+<p id="p-1190"> The pretax profit function is \(profit(q)=-q^2+300q-2500\) at the widget factory. The tax function is \(tax(profit)=0.4(profit-1000)\).  Find the equation of the line tangent to the graph of after tax profits when \(q=100\).
+</p></article><article class="exercise-like" id="exercise-287"><h5 class="heading"><span class="codenumber">20</span></h5>
+<p id="p-1191"> The revenue function for gizmos is \(revenue(q)=.2q^2+500q\).  The commission cost to the sales force is \(commissions(rev)=0.1rev+rev^2/3,000,000\).  Find the equation of the tangent line to commissions as a  function of quantity, when  \(q=1000\).  </p></article></section></section></div></main>
+</div>
+</body>
+</html>

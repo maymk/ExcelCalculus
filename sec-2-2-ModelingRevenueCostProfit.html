@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:23-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Modeling Revenue, Costs, and Profit</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-2-1-MarketEquilibriumProblems.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-2-BusinessApplications.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-2-3-NonlinearFunctions.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-2-1-MarketEquilibriumProblems.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-2-BusinessApplications.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-2-3-NonlinearFunctions.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit" class="active">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-2-2-ModelingRevenueCostProfit"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Modeling Revenue, Costs, and Profit</span>
+</h2>
+<a href="sec-2-2-ModelingRevenueCostProfit.html" class="permalink">¶</a><p id="p-632"><a class="external" href="./Examples/Section-2-2-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-633">In the last section we looked at the economic model for supply and demand.  We were particularly interested in the point of market equilibrium.  In this section we will look at the model for revenue, cost and profit.  As with the previous section we will begin with assumptions that make as many things as possible linear.</p>
+<p id="p-634"><dfn class="terminology">Revenue and a review of demand price</dfn>:</p>
+<p id="p-635">The simple model for revenue is</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=quantity*price.
+\end{equation*}
+</div>
+<p id="p-636">However, in the previous section we worked with two price functions, the supply price and the demand price.  Since we can only make a sale if the consumer is willing to buy, we typically use the demand price in computing revenue.  Our model is now</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=quantity*demand\ price(quantity).
+\end{equation*}
+</div>
+<p id="p-637">If the demand price is a linear function, then revenue is a quadratic function.</p>
+<p id="p-638">We previously noted that a linear demand price function has a negative slope. We should note the two limiting cases. If the slope of the demand curve is 0, the consumers have a fixed price they will pay for however much of the product is available.  In this case the demand curve is a constant, so the revenue curve will be linear.  This is referred to as a perfectly elastic market.  The other limiting case is where the demand is for a fixed amount no matter what the price.  In this case the demand curve is a vertical line and is not a function, so the revenue curve also fails to be a function of quantity.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-639">Obviously, we don’t expect to find the limiting cases in the real world.  In real world cases the revenue function has a negative coefficient for the quadratic term and is a downward facing parabola.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<article class="example-like" id="example-11"><a data-knowl="" class="id-ref" data-refid="hk-example-11"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.1</span>. <span class="title">Finding Revenue Form Linear Demand Price.</span>
+</h6></a></article><div id="hk-example-11" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-640">We have determined that the demand price function for widgets is</p>
+<div class="displaymath">
+\begin{equation*}
+demand\ price(q)=10-q/1000
+\end{equation*}
+</div>
+<p id="p-641">if the quantity is between 2000 and 8000.  Find the revenue function and graph it over the region where it is defined.</p>
+<p id="p-642"><dfn class="terminology">Solution</dfn>: We set up a chart in Excel with revenue defined as \(supply\ price * quantity\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-643">When we graph we note that the scales are quite different for price and revenue.  Thus we want to use secondary axes to capture the scale of both price and revenue.  We can also put different labels on the two vertical axes.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-4.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-644"><dfn class="terminology">Cost</dfn>:</p>
+<p id="p-645">Once again we will start with a simplified model for cost.</p>
+<article class="assemblage-like" id="assemblage-16"><ul id="p-646" class="disc">
+<li id="li-185"><p id="p-647">For our (simplified) model we will break costs into <dfn class="terminology">fixed costs</dfn> and <dfn class="terminology">variable costs</dfn>.</p></li>
+<li id="li-186"><p id="p-648">Fixed costs include the costs of being in business.  They might include license fees, rent for a store or plant, and the cost of furnishings and equipment.</p></li>
+<li id="li-187"><p id="p-649">Variable costs are tied to the amount you produce or sell.  They might include raw material for a manufacturer or the cost of goods for someone in sales.</p></li>
+<li id="li-188"><p id="p-650">For our simplified model we assume that variable costs are proportional to quantity.  This makes our cost function linear.</p></li>
+<li id="li-189"><p id="p-651">For our simplified model <dfn class="terminology">variable costs= unit costs*quantity</dfn>.</p></li>
+<li id="li-190"><p id="p-652">Thus <dfn class="terminology">costs= fixed costs + unit costs*quantity</dfn>.</p></li>
+</ul></article><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<article class="example-like" id="example-12"><a data-knowl="" class="id-ref" data-refid="hk-example-12"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.2</span>. <span class="title">Finding Linear Cost.</span>
+</h6></a></article><div id="hk-example-12" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-653">We can set up a small gizmo manufacturing shop for $6,000. The raw materials for producing gizmos cost $14 per unit.  Find the cost function for gizmo production.  Find the cost of producing 2500 gizmos.</p>
+<p id="p-654"><dfn class="terminology">Solution</dfn>: The fixed costs are the \(y\) value of the \(y\)-intercept of the cost function.  The per unit material cost is the slope of the function.  We have</p>
+<div class="displaymath">
+\begin{equation*}
+cost=6000+14*quantity.
+\end{equation*}
+</div>
+<p id="p-655">If we substitute 2500 for the quantity, our costs are</p>
+<div class="displaymath">
+\begin{equation*}
+cost(2500)=6000+14*2500=41000.
+\end{equation*}
+</div></article></div>
+<p id="p-656"><dfn class="terminology">Profit</dfn>:</p>
+<p id="p-657">For the third piece of the model, we look at profit.  We have the simple formula</p>
+<article class="assemblage-like" id="assemblage-17"><div class="displaymath" id="p-658">
+\begin{equation*}
+profit=revenue-cost.
+\end{equation*}
+</div></article><p id="p-659">For our simple examples where cost is linear and revenue is quadratic, we expect the profit function to also be quadratic, and facing down.  We will obviously be interested in the spots where the profit function either crosses the axis or reaches a maximum.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<article class="example-like" id="example-13"><a data-knowl="" class="id-ref" data-refid="hk-example-13"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.3</span>. <span class="title">Finding Profit.</span>
+</h6></a></article><div id="hk-example-13" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-660">We are interested in selling widgets.  The demand price function is</p>
+<div class="displaymath">
+\begin{equation*}
+demand price=15-\frac{q}{1000}.
+\end{equation*}
+</div>
+<p id="p-661">It will cost $10,000 to keep our shop open before we consider the price of inventory.  Our variable cost is the cost of buying the widgets from our wholesaler who will sell them to us for $8 a unit.  Find a function for profit as a function of how many units we sell.  Graph that function for quantities from 1000 to 10000.</p>
+<p id="p-662"><dfn class="terminology">Solution</dfn>: Using the methods from the previous examples, we write down the functions for revenues and costs.</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=quantity*price
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=q*(15-\frac{q}{1000}).
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+costs=fixed\ costs+variable\ costs*quantity
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=10000+8*q.
+\end{equation*}
+</div>
+<p id="p-663">Now we find profit as the difference of revenue and cost.</p>
+<div class="displaymath">
+\begin{equation*}
+profit= q*(15-\frac{q}{1000})-(10000+8q)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+profit= \frac{-q^2}{1000}+7q-10000.
+\end{equation*}
+</div>
+<p id="p-664">We then use Excel to make a chart of values and a graph.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-7.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-665"><dfn class="terminology">Break-Even Point</dfn>:</p>
+<p id="p-666">The last example illustrates a reality of manufacturing and retail.  If a business has a fixed cost or startup expense, it will have a loss if it does not sell enough.</p>
+<article class="assemblage-like" id="assemblage-18"><p id="p-667">The point at which revenues equal expenses (cost) is called the <dfn class="terminology">break-even point</dfn>.</p></article><p id="p-668">This is important in preparing a business proposal, because the bank will want to know if the break even point is a reasonable amount before it lends any money.</p>
+<article class="example-like" id="example-14"><a data-knowl="" class="id-ref" data-refid="hk-example-14"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.4</span>. <span class="title">Find Break-Even Points.</span>
+</h6></a></article><div id="hk-example-14" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-669">Find break-even points for previous example.  Explain what those points mean in practical terms.</p>
+<p id="p-670"><dfn class="terminology">Solution</dfn>: We look at the chart from the previous example.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-671">We can find break-even points by using Goal Seek and setting profit to 0 while changing quantity.  In this case, we see that we have break-even points when the quantity is 2000 or 5000, since those numbers were already on our chart.</p>
+<p id="p-672">The first break even point tells us that we need to lower our price to no more than $13.00 to attract enough customers to be able to turn a profit.  The second break even point says that is we bring our price down below $10, we will not be able to bring in enough customers to make a profit.</p></article></div>
+<article class="example-like" id="example-15"><a data-knowl="" class="id-ref" data-refid="hk-example-15"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.2.5</span>. <span class="title">Repeat, Starting With Data.</span>
+</h6></a></article><div id="hk-example-15" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-673">We have the following data from the gizmo market.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">8.03</td>
+<td class="c m b1 r0 l0 t3 lines">9.92</td>
+<td class="c m b1 r0 l0 t3 lines">12.21</td>
+<td class="c m b1 r0 l0 t3 lines">14.05</td>
+<td class="c m b1 r0 l0 t3 lines">15.85</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand Price</td>
+<td class="c m b2 r0 l0 t0 lines">$9.12</td>
+<td class="c m b2 r0 l0 t0 lines">$7.95</td>
+<td class="c m b2 r0 l0 t0 lines">$6.92</td>
+<td class="c m b2 r0 l0 t0 lines">$6.08</td>
+<td class="c m b2 r0 l0 t0 lines">$5.14</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Cost</td>
+<td class="c m b2 r0 l0 t0 lines">$60.47</td>
+<td class="c m b2 r0 l0 t0 lines">$71.23</td>
+<td class="c m b2 r0 l0 t0 lines">$78.45</td>
+<td class="c m b2 r0 l0 t0 lines">$89.60</td>
+<td class="c m b2 r0 l0 t0 lines">$101.03</td>
+</tr>
+</table></div></div></div>
+<p id="p-674">Assuming that price and cost are well modeled by linear equations, find the break-even points and explain what they mean with units included in the explanation.</p>
+<p id="p-675">To find the break-even point when we are given data instead of an equation, we usually follow this procedure: Find the best fitting equations for price and cost. From those equations, produce formulas for revenue and profit. Use the formulas to find the break-even points using either algebra or Excel.</p>
+<p id="p-676"><dfn class="terminology">Solution</dfn>: We put the data into Excel and ask for best fitting lines.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-677">This produces the desired cost and price functions.</p>
+<div class="displaymath">
+\begin{equation*}
+demand\ price=-0.497 q+13.011
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+cost=5.0079 q+20.002.
+\end{equation*}
+</div>
+<p id="p-678">We enter these functions in new columns in the spreadsheet and then compute projective revenues and profit.  We then use Goal Seek to find places where the projected profit is 0.  The first break-even point tells us that we expect to break even if we sell 3.09 million units.  We can do that by setting the price at $11.47.  The second break-even point is at 13.01 million units.  We reach that sales volume by lowering the price to $6.55.  While we will have gained market share, we will no longer be making a profit.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-10.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<section class="exercises" id="exercises-set-sec-2-2"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Modeling Revenue, Costs, and Profit</span>
+</h3>
+<a href="sec-2-2-ModelingRevenueCostProfit.html#exercises-set-sec-2-2" class="permalink">¶</a><div class="exercisegroup" id="exercisegroup-7">
+<div class="introduction" id="introduction-7">
+<p id="p-679">For problems 1-8, given the equations of the cost and demand price function:</p>
+<ol class="lower-alpha">
+<li id="li-191"><p id="p-680">Identify the fixed and variable costs.</p></li>
+<li id="li-192"><p id="p-681">Find the revenue and profit functions.</p></li>
+<li id="li-193"><p id="p-682">Evaluate cost, demand price, revenue, and profit at \(q_0\text{.}\)</p></li>
+<li id="li-194"><p id="p-683">Find all break-even points.</p></li>
+<li id="li-195"><p id="p-684">Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-104"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-685">Given \(demand\ price=-2 quantity+20\) and \(cost=3 quantity+10\text{,}\) with \(q_0=6\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span></a><div id="hk-solution-50" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-196">
+<p id="p-686">Identify the fixed and variable costs.</p>
+<p id="p-687">The fixed cost is $10 (the constant/fixed part of the cost function), and the variable cost is $3 per item.</p>
+</li>
+<li id="li-197">
+<p id="p-688">Find the revenue and profit functions.</p>
+<div class="displaymath">
+\begin{align*}
+Revenue\amp=demand\ price*quantity\\
+\amp=(-2 q+20)*q=-2 q^2  +20 q
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+Profit=revenue-cost \amp=-2 q^2  +20q-(3q+10)\\
+\amp=-2 q^2+17q-10
+\end{align*}
+</div>
+</li>
+<li id="li-198">
+<p id="p-689">Evaluate cost, demand price, revenue, and profit at \(q_0\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+cost(6)=3 (6)+10=28
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+demand price(6)=-2 (6)+20=8
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Revenue(6)=-2 6^2  +20 (6)=-72+120=48
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Profit=revenue-cost =48-28=20
+\end{equation*}
+</div>
+</li>
+<li id="li-199">
+<p id="p-690">Find all break-even points.</p>
+<p id="p-691">Solve \(Profit=-2 q^2+17q-10=0\text{.}\) We can do this with Excel or with Wolfram. The break even points are \(q = 0.6\) and \(q = 7.9\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-200">
+<p id="p-692">Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p>
+<p id="p-693">If we had done the whole problem in Excel it would look like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.75%;margin-right:3.75%;">
+<div class="sbspanel" style="width:54.0540540540541%;justify-content:center;"><img src="images/sec2-2-sol1b.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:37.8378378378378%;justify-content:flex-start;"><p id="p-694">Entries in the cells before quick fill</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:65%;justify-content:center;"><img src="images/sec2-2-sol1c.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35%;justify-content:flex-start;"><p id="p-695">The table with \(q\) between 0 and 8</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:65%;justify-content:center;"><img src="images/sec2-2-sol1d.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35%;justify-content:flex-start;"><p id="p-696">Goal Seek gives break even points at \(q = 0.64\) and \(q = 7.86\)</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol1e.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-697">The graph produced in Excel. To create the labels: double click on one of the break-even points, go to “Chart Layout”, go to “Data Labels”. In this example we chose the “x-value”.  Both break-even points were labeled to show where they are and what the values are in this problem.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-105"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-698">Given \(demand\ price=- quantity/10+50\) and \(cost=10 quantity+1000\text{,}\) with \(q_0=300\text{.}\)</p></article><article class="exercise-like" id="exercise-106"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-699">Given \(demand\ price=-2.35 quantity+250\) and \(cost=54.6 quantity+1234\text{,}\) with \(q_0=59\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span></a><div id="hk-solution-51" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-201">
+<p id="p-700">Identify the fixed and variable costs.</p>
+<p id="p-701">\(Fixed\ cost = $1234\text{,}\) and the \(variable cost =$54.60\) (per unit)</p>
+</li>
+<li id="li-202">
+<p id="p-702">Find the revenue and profit functions.</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue=q(-2.35 q+250)= -2.35 q^2+250 q
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{align*}
+Profit=revenue-cost \amp=-2.35 q^2+250 q-(54.6q+1234)\\
+\amp=-2.35 q^2+195.4 q-1234
+\end{align*}
+</div>
+</li>
+<li id="li-203">
+<p id="p-703">Evaluate cost, demand price, revenue, and profit at \(q_0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.75%;margin-right:3.75%;">
+<div class="sbspanel" style="width:54.0540540540541%;justify-content:center;"><img src="images/sec2-2-sol3a.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:37.8378378378378%;justify-content:flex-start;"><p id="p-704">Entries in the cells before quick fill</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:65%;justify-content:center;"><img src="images/sec2-2-sol3b.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35%;justify-content:flex-start;"><p id="p-705">Table plus extra column for the value \(q = 59\)</p></div>
+</div></div>
+<p id="p-706">At \(q =59\text{,}\) \(cost = $4455.40\text{,}\) \(demand\  price = $111.35\text{,}\) \(revenue = $6569.65\text{,}\) and \(profit = 2114.25\)</p>
+</li>
+<li id="li-204">
+<p id="p-707">Find all break-even points.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:65%;justify-content:center;"><img src="images/sec2-2-sol3c.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35%;justify-content:flex-start;"><p id="p-708">Table plus extra column for the value \(q = 59\)</p></div>
+</div></div>
+<p id="p-709">The break-even points are \(q = 6.9\) and \(q = 76.3\)</p>
+</li>
+<li id="li-205">
+<p id="p-710">Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p>
+<p id="p-711"></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol3d.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-712">The graph produced in Excel. To create the labels: double click on one of the break-even points, go to “Chart Layout”, go to “Data Labels”. In this example we chose the “x-value”.  Both break-even points were labeled to show where they are and what the values are in this problem.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-107"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-713">Given \(demand\ price=-0.0023 quantity+9\) and \(cost=1.39 quantity+1398.7\text{,}\) with \(q_0=687\text{.}\)</p></article><article class="exercise-like" id="exercise-108"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-714">Given demand price and cost are the linear functions that best fit the data below and that \(q_0=75\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">50</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines">10</td>
+<td class="c m b2 r0 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Cost</td>
+<td class="c m b2 r0 l0 t0 lines">300</td>
+<td class="c m b2 r0 l0 t0 lines">450</td>
+</tr>
+</table></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-52" id="solution-52"><span class="type">Solution</span></a><div id="hk-solution-52" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-206">
+<p id="p-715">If the table only has 2 data points, Excel can get confused wether the data is in rows or columns.  We duplicated one column to get the data plotted correctly. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div> Identify the fixed and variable costs.</p>
+<p id="p-716">\(Fixed\ cost = $150\text{,}\) and the \(variable cost =$3\) (per unit)</p>
+</li>
+<li id="li-207">
+<p id="p-717">Find the revenue and profit functions.</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue=q(-0.04q+12)= -0.04 q^2+12x
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{align*}
+Profit=revenue-cost \amp=-0.04 q^2+12q-(3q+150)\\
+\amp=-0.04 q^2+9q-150
+\end{align*}
+</div>
+</li>
+<li id="li-208">
+<p id="p-718">Evaluate cost, demand price, revenue, and profit at \(q_0\text{.}\)</p>
+<p id="p-719">At \(q =75\text{,}\) \(cost = $375\text{,}\) \(demand\  price = $9\text{,}\) \(revenue = $675\text{,}\) and \(profit = 300\)</p>
+</li>
+<li id="li-209">
+<p id="p-720">Find all break-even points.</p>
+<p id="p-721">The break-even points are \(q = 6.9\) and \(q = 76.3\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol3d.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-210">
+<p id="p-722">Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p>
+<p id="p-723"></p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.75%;margin-right:3.75%;">
+<div class="sbspanel" style="width:54.0540540540541%;justify-content:center;"><img src="images/sec2-2-sol3a.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:37.8378378378378%;justify-content:flex-start;"><p id="p-724">Entries in the cells before quick fill</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:65%;justify-content:center;"><img src="images/sec2-2-sol3b.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35%;justify-content:flex-start;"><p id="p-725">Table plus extra column for the value \(q = 59\)</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:65%;justify-content:center;"><img src="images/sec2-2-sol3c.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35%;justify-content:flex-start;"><p id="p-726">Table plus extra column for the value \(q = 59\)</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol1e.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-727">The graph produced in Excel. To create the labels: double click on one of the break-even points, go to “Chart Layout”, go to “Data Labels”. In this example we chose the “x-value”.  Both break-even points were labeled to show where they are and what the values are in this problem.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-109"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-728">Given demand price and cost are the linear functions that best fit the data below and that \(q_0=110\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">60</td>
+<td class="c m b1 r0 l0 t3 lines">70</td>
+<td class="c m b1 r0 l0 t3 lines">90</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand Price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">19</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">16</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Cost</td>
+<td class="c m b2 r0 l0 t0 lines">460</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">540</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div></article><article class="exercise-like" id="exercise-110"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-729">Given demand price and cost are the linear functions that best fit the data below and that \(q_0=75\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">4356</td>
+<td class="c m b1 r0 l0 t3 lines">4792</td>
+<td class="c m b1 r0 l0 t3 lines">6503</td>
+<td class="c m b1 r0 l0 t3 lines">7038</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">$1.10</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">$.98</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Cost</td>
+<td class="c m b2 r0 l0 t0 lines">$1190</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">$1860</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-53" id="solution-53"><span class="type">Solution</span></a><div id="hk-solution-53" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-730">We plot the data, and find the linear models for demand and cost.</p>
+<div class="displaymath">
+\begin{equation*}
+Cost=0.3121 x-169.35
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Demand\ Price= 5*(10)^{-5}  x+1.356
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-731">Given the demand price and the cost we create a table using the formulas and we also include a row for the \(revenue =( demand\ price * quantity)\) and \(profit =(revenue – cost)\)</p>
+<ol class="lower-alpha">
+<li id="li-211">
+<p id="p-732">Identify the fixed and variable costs.</p>
+<p id="p-733">The fixed cost is - $169.35, and the variable cost is $0.3121 per unit of quantity.  (That the fixed costs are negative should make us suspicious that we are outside the useful domain of our cost function.)</p>
+</li>
+<li id="li-212">
+<p id="p-734">Find the revenue and profit functions.</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue= 5*(10)^{-5}  x^2+1.356x 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{align*}
+profit\amp= 5*(10)^{-5}  x^2+1.356x- 0.3121 x+169.35\\
+\amp= 5*(10)^{-5}  x^2+1.0439x+169.35 
+\end{align*}
+</div>
+</li>
+<li id="li-213">
+<p id="p-735">Evaluate cost, demand price, revenue, and profit at \(q_0\text{.}\)</p>
+<p id="p-736">At \(q = 75\) we have that cost = - $146, demand price = $1.35, revenue = $101.42, and profit = $247</p>
+</li>
+<li id="li-214">
+<p id="p-737">Find all break-even points.</p>
+<p id="p-738">Re-compute profit for a different range of quantities and we get</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol7b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-739">Goal Seek using the quantity of 20000 as the basis gives a break-even point at \(q= 21,039\text{.}\) The other place where the profit is 0 occurs for \(q = -161\text{.}\)</p>
+</li>
+<li id="li-215">
+<p id="p-740">Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol7c.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-741">The profit function shows the break-even points close to 0 (-161) and near 20,000 (21,039)</p>
+</li>
+</ol>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-111"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-742">Given demand price and cost are the linear functions that best fit the data below and that \(q_0=7500\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">5378</td>
+<td class="c m b1 r0 l0 t3 lines">7984</td>
+<td class="c m b1 r0 l0 t3 lines">8352</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines">$12.00</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">$10.00</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">$31,100</td>
+<td class="c m b2 r0 l0 t0 lines">$45,100</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div></article>
+</div>
+</div>
+<article class="exercise-like" id="exercise-112"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-743">Mary has been put in charge of a school function.  She estimates that there is a fixed cost of $1000 for the site plus a cost of $5 per person that attends.  If she charges $15 a ticket she can sell 250 tickets, but if she lowers the price to $10 she can sell 500 tickets.  Assuming the demand price is linear, what price should she charge to break even while maximizing attendance?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-54" id="solution-54"><span class="type">Solution</span></a><div id="hk-solution-54" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-744">The description of the cost function states that the fixed cost is $1000, and the variable cost is $5, so the cost function is \(cost=5 q+1000\)</p>
+<p id="p-745">Two points are given for the price function: \((q_1  ,p_1 )=(250,15)\) and \((q_2  ,p_2 )=(500,10)\text{.}\) Hence the slope is \(m=  (15-10)/(250-500)= -5/250= -1/50=-0.02\)</p>
+<p id="p-746">Then the demand price function is \((p-p_0 )= m (q-q_0)\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+(p-15)= -0.02 (q-250)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+p=15 -0.02 (q-250)
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.75%;margin-right:3.75%;">
+<div class="sbspanel" style="width:54.0540540540541%;justify-content:center;"><img src="images/sec2-2-sol9a.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:37.8378378378378%;justify-content:flex-start;"><p id="p-747">Entries in the cells before quick fill</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:65%;justify-content:center;"><img src="images/sec2-2-sol9b.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35%;justify-content:flex-start;"><p id="p-748">Values after quick fill</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:65%;justify-content:center;"><img src="images/sec2-2-sol9c.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35%;justify-content:flex-start;"><p id="p-749">Identified the break-even points using Goal Seek</p></div>
+</div></div>
+<p id="p-750">The optimal demand price is $6.48, which allows them to sell 676 tickets and break even.</p>
+</div></div>
+</div></article><div class="exercisegroup" id="exercisegroup-8">
+<div class="introduction" id="introduction-8">
+<p id="p-751">For problems 10-12, given the cost and demand data:</p>
+<ol class="lower-alpha">
+<li id="li-216"><p id="p-752">Find best fitting equations of the cost and demand curves, assuming they are both linear.</p></li>
+<li id="li-217"><p id="p-753">Find the revenue and profit functions and evaluate them at the extra given value.</p></li>
+<li id="li-218"><p id="p-754">Find the break-even points.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-113"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-755">Given</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+<td class="c m b1 r0 l0 t3 lines">120</td>
+<td class="c m b1 r0 l0 t3 lines">140</td>
+<td class="c m b1 r0 l0 t3 lines">160</td>
+<td class="c m b1 r0 l0 t3 lines">180</td>
+<td class="c m b1 r0 l0 t3 lines">155</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Cost</td>
+<td class="c m b2 r0 l0 t0 lines">1015</td>
+<td class="c m b2 r0 l0 t0 lines">1152</td>
+<td class="c m b2 r0 l0 t0 lines">1327</td>
+<td class="c m b2 r0 l0 t0 lines">1467</td>
+<td class="c m b2 r0 l0 t0 lines">1651</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines">21.3</td>
+<td class="c m b2 r0 l0 t0 lines">18.1</td>
+<td class="c m b2 r0 l0 t0 lines">14.7</td>
+<td class="c m b2 r0 l0 t0 lines">12.3</td>
+<td class="c m b2 r0 l0 t0 lines">8.6</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div></article><article class="exercise-like" id="exercise-114"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-756">Given</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">5021</td>
+<td class="c m b1 r0 l0 t3 lines">6051</td>
+<td class="c m b1 r0 l0 t3 lines">6968</td>
+<td class="c m b1 r0 l0 t3 lines">7901</td>
+<td class="c m b1 r0 l0 t3 lines">9023</td>
+<td class="c m b1 r0 l0 t3 lines">9917</td>
+<td class="c m b1 r0 l0 t3 lines">7500</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Cost</td>
+<td class="c m b2 r0 l0 t0 lines">80376</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">103874</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">128513</td>
+<td class="c m b2 r0 l0 t0 lines">140258</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">19.69</td>
+<td class="c m b2 r0 l0 t0 lines">18.78</td>
+<td class="c m b2 r0 l0 t0 lines">18.05</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">17.61</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-55" id="solution-55"><span class="type">Solution</span></a><div id="hk-solution-55" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-219">
+<p id="p-757">Find best fitting equations of the cost and demand curves, assuming they are both linear.</p>
+<p id="p-758">Using trendlines we get</p>
+<div class="displaymath">
+\begin{equation*}
+Cost  = 12.175x + 19117
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Demand  = - 0.0005x + 22.506
+\end{equation*}
+</div>
+</li>
+<li id="li-220">
+<p id="p-759">Find the revenue and profit functions and evaluate them at the extra given value.</p>
+<p id="p-760">Creating a table with the cost and demand functions we get</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-761">We see that when quantity is 7500 the revenue is $140,670, and the profit is $30, 240.50.</p>
+</li>
+<li id="li-221">
+<p id="p-762">Find the break-even points.</p>
+<p id="p-763">Note that these values are not usefull for finding the break-even points. To find those we will start quantity \(q\) at 0 and go up to 20,000</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-2-sol11b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-764">So the two break-even points are \(q = 2054.8\) and \(q = 18,607.2\text{.}\)</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-115"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-765">Given</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">3160</td>
+<td class="c m b1 r0 l0 t3 lines">3615</td>
+<td class="c m b1 r0 l0 t3 lines">4092</td>
+<td class="c m b1 r0 l0 t3 lines">4462</td>
+<td class="c m b1 r0 l0 t3 lines">4837</td>
+<td class="c m b1 r0 l0 t3 lines">5261</td>
+<td class="c m b1 r0 l0 t3 lines">5579</td>
+<td class="c m b1 r0 l0 t3 lines">6000</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Cost (Thousands)</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">90.1</td>
+<td class="c m b2 r0 l0 t0 lines">126.70</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">197.2</td>
+<td class="c m b2 r0 l0 t0 lines">234.9</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines">25.31</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">20.91</td>
+<td class="c m b2 r0 l0 t0 lines">17.04</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">14.37</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div></article>
+</div>
+</div></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

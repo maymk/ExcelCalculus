@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-03-20T21:59:28-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>An Introduction to Solver</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec-3-4-Optimization.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chap-4-SymbolicDIfferentiation.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-3-4-Optimization.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chap-4-SymbolicDIfferentiation.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Frontmatter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="acknowledgement-1.html">Acknowledgements</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="chap-1-FunctionsGraphsExcel.html"><span class="codenumber">1</span><span class="title">Functions Graphs and Excel</span></a></h2>
+<ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+<h2 class="link"><a href="chap-2-BusinessApplications.html"><span class="codenumber">2</span><span class="title">Business Applications</span></a></h2>
+<ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html">Nonlinear Functions</a></li>
+</ul>
+<h2 class="link active"><a href="chap-3-RateChangeDerivatives.html"><span class="codenumber">3</span><span class="title">Rate of Change and Derivatives</span></a></h2>
+<ul>
+<li><a href="sec-3-1-MarginalFunctions.html">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" class="active">An Introduction to Solver</a></li>
+</ul>
+<h2 class="link"><a href="chap-4-SymbolicDIfferentiation.html"><span class="codenumber">4</span><span class="title">Symbolic Differentiation</span></a></h2>
+<ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html">The Second Derivative and Concavity</a></li>
+</ul>
+<h2 class="link"><a href="chap-5-DIfferentiationApplications.html"><span class="codenumber">5</span><span class="title">Differentiation Techniques and Applications</span></a></h2>
+<ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html">RelatedRates</a></li>
+<li><a href="sec-5-3-Elasticity.html">Elasticity</a></li>
+</ul>
+<h2 class="link"><a href="chap-6-FunctionsSeveralVariables.html"><span class="codenumber">6</span><span class="title">Functions of Several Variables</span></a></h2>
+<ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html">Optimization and Best Fitting Curves</a></li>
+</ul>
+<h2 class="link"><a href="chap-7-Intergration.html"><span class="codenumber">7</span><span class="title">Integration</span></a></h2>
+<ul>
+<li><a href="sec-7-1-RiemannSums.html">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html">Economics Applications of the Integral</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2>
+<ul>
+<li><a href="appendix-1.html">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-2.html">Notation</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+<li><a href="colophon-2.html">Colophon</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-3-5-IntroductionSolver"><header title="Section 3.5 An Introduction to Solver"><h1 class="heading hide-type" alt="Section 3.5 An Introduction to Solver">
+<span class="type">Section</span><span class="codenumber">3.5</span><span class="title">An Introduction to Solver</span><a href="sec-3-5-IntroductionSolver.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-907">	We should expect, whenever we look at an operation that is used a lot in the business world, that Excel will have a fairly simple command to achieve the result.  In section 1.5 we introduced Goal Seek, a tool that is part of Excel, and that can be used to solve an equation for a root from a given starting point.  In the last section, we noted that one can find candidates for a local maximum or minimum of a function by finding the derivative and using Goal Seek to find where the derivative is 0.  In this section we introduce Solver, an Add-In to Excel.  It is easiest to think of solver as a more powerful version of Goal Seek.  It will be easiest to walk through the use of Solver while working an example.</p>
+<article class="example-like" id="example-26"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.5.1</span><span class="title">Use Solver to gather information about the graph</span>
+</h5>
+<p id="p-908">Let \(f(x)=9 x-x^2+7\).</p>
+<p id="p-909"><em class="terminology">Solution</em>:  As always, we start by using simpler tools.  In this case it is useful to have Excel sketch a graph and to use information we gathered in prior course.  From the form of the function we know the graph is a parabola that points downwards.</p>
+<figure class="figure-like" id="figure-151"><img width="70%" src="images/sec3-5-1.png" alt=""></figure><p id="p-910">Looking at the chart and the picture we see that the vertex is close to \(x=4.5\).  We also see that the x-intercepts are close to \(x=-0.5\) and \(x=9.5\). </p>
+<p id="p-911">Next, we want to make sure that Solver is installed.  It should be on the Analysis section of the Data tab.</p>
+<figure class="figure-like" id="figure-152"><img width="30%" src="images/sec3-5-2.png" alt=""></figure><p id="p-912">If you don’t find it there, you should go to the online help for Excel, and look for help on Solver.  Under the topic “Define and solve a problem by using Solver”, select first “Define and solve a problem”, then “If you don’t see Solver under Analysis on the Data tab”.  </p>
+<p id="p-913">We first want to use Solver to find a root.  Using the same approach we used with Goal seek, we would like cell B5 to be set equal to 0 by changing the value of Call A5.  (As we have set up the problem, we could use solver starting with any of the cells that give a value for f(x).  I chose the one that has f(x) closest to the desired result.)</p>
+<figure class="figure-like" id="figure-153"><img width="70%" src="images/sec3-5-3.png" alt=""></figure><p id="p-914">Solver finds a solution with \(x=-0.72015\).  We are given a dialog box that asks if we want to keep the solver solution or restore our original value.</p>
+<figure class="figure-like" id="figure-154"><img width="70%" src="images/sec3-5-4.png" alt=""></figure><p id="p-915">As with Goal Seek, if we use Solver again, starting with x closer to 9, we will find a solution \(x=9.72015\).</p>
+<p id="p-916">However, the reason we introduce Solver, is that it can do things would be more difficult with Goal Seek.  From the graph, and our knowledge or parabolas, we know the graph has a single maximum.  To find the maximum with Goal Seek, we need to realize that the maximum occurs when the derivative is 0, define the numerical derivative, then set the derivative equal to 0.  With Solver, we simply ask it to find the maximum.  It finds the vertex at \(x=4.5\).</p>
+<figure class="figure-like" id="figure-155"><img width="70%" src="images/sec3-5-5.png" alt=""></figure><p id="p-917">We also would like to be able to find a minimum.  From the picture, we know that a downward pointing parabola has no absolute minimum.  However, in business, we are typically concerned with functions defined on a finite domain.  For this problem, consider only the interval \(0\le x\le 15\).  We want the minimum to appear in cell B7, so we want to constrain cell A7.  If we start Solver, then hit the add button, we get a dialog box to enter the first constraint, that A7\(\ge \)0.</p>
+<figure class="figure-like" id="figure-156"><img width="40%" src="images/sec3-5-6.png" alt=""></figure><p id="p-918">In a similar manner, we add the constraint that A7 15 and ask solver for a minimum.</p>
+<figure class="figure-like" id="figure-157"><img width="70%" src="images/sec3-5-7.png" alt=""></figure><p id="p-919">Since we started the search for the minimum at x=0.5, Solver finds the minimum at x=0.  This is a “local minimum”.  Any x value in the interval that is close by gives a higher value for the function.</p>
+<p id="p-920">We would also like to find the minimum at the other end of the interval.  To do that it is useful to know a bit of the mathematics behind what solver is doing.  Solver uses derivatives from the starting point to decide on the direction it should look and how far it should go to find the next guess for its answer.  This is a modification of a technique called Newton’s method.  In terms of our picture, depending on whether we tell it to find a maximum, minimum, or specified value, Solver tries to slide up or down the graph until it finds a good candidate, which it gives us as a solution.  It is actually looking for the first local maximum or minimum it gets to.  It does not look for other candidates.  So if we started at x=0.5 it will slide to the left to find an answer.  To find the minimum at the other end of the interval we need a starting point where the graph is already sloping down to the right. Starting at x=8 should work.  We set up solver.</p>
+<figure class="figure-like" id="figure-158"><img width="70%" src="images/sec3-5-8.png" alt=""></figure><p id="p-921">Solver finds that the curve had a minimum at x=15 with f(x)=-83.</p></article><p id="p-922">To recap, using Solver on the interval \(0\le x\le 15\), we found has a root at \(x=9.72015\), a maximum at \(x=4.5\), and local minimums at \(x=0\) and \(x=15\).  We also found the values of \(f(x)\) at all of those points.  However, this example was chosen because we could get the same results with work by simply using the properties of parabolas.  Thus, we now want to ask the same questions about a problem we cannot solve algebraically.</p>
+<article class="example-like" id="example-27"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.5.2</span><span class="title"> A deceptive graph</span>
+</h5>
+<p id="p-923">  Use solver to gather information, on the interval \(0\le x\le 15\), on the graph of \(f(x)=(x^3-4x^2+4x+3) e^(-x/2)\).</p>
+<p id="p-924"><em class="terminology">Solution</em>:  As always, start by looking at a graph.</p>
+<figure class="figure-like" id="figure-159"><img width="70%" src="images/sec3-5-9.png" alt=""></figure><p id="p-925">From the graph I expect the function has no roots on the interval.  It has local minimums near 0, 2.5, and 10.  It has local maximums near 0.5, and 8.  I will need to add constraints to find the local minimums at the boundaries.  To make my worksheet easy to read I add two extra columns for the x and y values of interesting point, and fill in guesses.</p>
+<figure class="figure-like" id="figure-160"><img width="100%" src="images/sec3-5-10.png" alt=""></figure><p id="p-926">After I use Solver, I find the local minimums occur at 0, 2.326, and 10, and the local maximums occur at 0.29115 and 7.3827.  The maximum value for the function in the interval is 5.409 and the minimum is 1.0149.  We verify that the endpoints, \(x=0\) and \(x=10\), are both local minimums.</p>
+<figure class="figure-like" id="figure-161"><img width="100%" src="images/sec3-5-11.png" alt=""></figure><p id="p-927">This function can be used to illustrate a limitation of our method.  If we had graphed the functions at intervals at intervals of size 1 rather than 0.5, we get a different picture.</p>
+<figure class="figure-like" id="figure-162"><img width="100%" src="images/sec3-5-1.png" alt=""></figure><p id="p-928">In that case, we miss the local maximum at 0.29 and confuse the left endpoint as a local maximum.  Since Solver does not use the picture, it will not be misled by it.  This example points out that while the graph is useful for guidance, we need to verify that we have not been misled by not graphing with enough resolution. </p></article><p id="p-929"><em class="terminology">Warning</em>: In example 2 we saw that relying on the graph could deceive us.  The flip side is an example where relying on Solver can deceive us. We mentioned earlier that Solver uses a variant of Newton’s method to find values.  In rough terms, it repeatedly finds the linear approximation and slides up or down that line to the desired answer.  If we start close to the answer, this is a very effective method of finding a numerical solution.  However it is easy to construct problems where this leads to a blind alley or to the wrong answer.  In particular, the method has great difficulty with problems where the function is not differentiable or where it has several bends.  Consider the following example.
+</p>
+<article class="example-like" id="example-28"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.5.3</span><span class="title">Deceiving Solver</span>
+</h5>
+<p id="p-930"> Use solver to gather information, on the interval \(-2\le x\le 2\), on the graph of </p>\begin{equation*}f(x)=\begin{cases}
+-5x-3&amp; x\lt 0\\
+4(x-1)^2 &amp;x \gt 0\\
+\end{cases}\end{equation*}<p id="p-931"><em class="terminology">Solution</em>:  As always, start by looking at a graph.  We use the IF function to produce cases.</p>
+<figure class="figure-like" id="figure-163"><img width="70%" src="images/sec3-5-13.png" alt=""></figure><p id="p-932">It is pretty easy to see that the function reaches a maximum of 7 at \(x=-2\), and has a root at \(x=-0.6\).  On this interval the function does not have a minimum, but it gets close to -3 when \(x\) approaches o form the negative side.  If we start at \(x=0.5\) and try sliding up or down the curve, we are going in the wrong direction to find the root or minimum.  To find the maximum we also need to go down before we can go up to the maximum.</p>
+<p id="p-933">When we look at solver, we get the wrong but expected results.  The function not only fails to be differentiable at \(x=0\), it has a jump there.  Solver finds the nearest local maximum and minimum.  For the root, it tells us it can’t find a feasible solution.</p>
+<figure class="figure-like" id="figure-164"><img width="70%" src="images/sec3-5-14.png" alt=""></figure></article><p id="p-934">The lesson to learn is that solver will help us find our candidate points, but we still need to understand the functions behavior well enough to give a good starting point.</p>
+<p id="p-935"><em class="terminology">A preview of things to come – Extrema of functions of two variables:</em></p>
+<p id="p-936">There is another feature of Solver that we will come back to later in the course.  Goal Seek asked which cell should be changed to reach our desired goal.  Solver allows us to specify a number of cells that we can change.  This means it will work with functions of several variables.  This will allow us to shed some light on one of the “black boxes” we used earlier in this course, the ability of Excel to find a trendline, or best fitting curve to a set of data.</p>
+<article class="example-like" id="example-29"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.5.4</span><span class="title">Use solver to find a best fitting line to a data set.</span>
+</h5>
+<p id="p-937">Find a best fitting line to the following data</p>
+<figure class="figure-like" id="table-46"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">1</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">3</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">5</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">35</td>
+<td class="c m b1 r0 l0 t0 lines">46</td>
+<td class="c m b1 r0 l0 t0 lines">78</td>
+<td class="c m b1 r0 l0 t0 lines">84</td>
+<td class="c m b1 r0 l0 t0 lines">114</td>
+</tr>
+</table></figure><p id="p-938"><em class="terminology">Solution</em>:  As we mentioned in section 1.4, when we are asked to find a best fitting line, we are asked to create a predicting function \(prediction(x)=A x+B\), with \(A\) and \(B\) chosen to minimize the sum of the squares of the error between the actual values and the predicted values.  We build a worksheet that finds the sum of squared errors.  We start with our variables, A and B, set at 5.</p>
+<figure class="figure-like" id="figure-165"><img width="70%" src="images/sec3-5-15.png" alt=""></figure><p id="p-939">We ask Solver to minimize D11 by changing B2 and B3.  For comparison we ask for the best fitting Trendline using the scatterplot.</p>
+<figure class="figure-like" id="figure-166"><img width="80%" src="images/sec3-5-15.png" alt=""></figure><p id="p-940">We see that we get the same answers, subject to rounding rules.</p></article><p id="p-941">The Trendline tool has the advantage of being easier to use in many cases.  Finding the best fitting curve with solver has the advantage of showing what we mean by best fitting.  It will also work with models that may not have been programmed into the Trendline tool.
+
+</p>
+<section class="exercises" id="exercises-set-sec-3-5"><header title="Exercises 3.5.1 Exercises 3.5 An Introduction to Solver"><h1 class="heading hide-type" alt="Exercises 3.5.1 Exercises 3.5 An Introduction to Solver">
+<span class="type">Subsection</span><span class="codenumber">3.5.1</span><span class="title">Exercises 3.5 An Introduction to Solver</span><a href="sec-3-5-IntroductionSolver.html#exercises-set-sec-3-5" class="permalink">¶ permalink</a>
+</h1></header><p id="p-942">
+In exercises 1-7 you are given a function and an interval it is defined over:</p>
+<ul id="ul-21" style="list-style-type: disc;">
+<li id="li-200"><p id="p-943">Make a chart of values and plot a graph of the function.</p></li>
+<li id="li-201"><p id="p-944">Find any roots for the function.</p></li>
+<li id="li-202"><p id="p-945">Find relative maxima and minima for the function.  (Remember to include the endpoints.).</p></li>
+<li id="li-203"><p id="p-946">Find the absolute maximum and minimum of the function on the interval.</p></li>
+</ul>
+<article class="exercise-like" id="exercise-210"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-947">\(f(x)=x^2-10x+9\), on the interval \(0\le x\le 10\).
+</p></article><article class="exercise-like" id="exercise-211"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-948"> 
+	\(g(x)=10x*(4/5)^x-1\), on the interval \(0\le x\le 10\).
+</p></article><article class="exercise-like" id="exercise-212"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-949"> 
+	\(h(x)=(3000+200x) (0.97)^x\), on the interval \(0\le x\le 100\).
+</p></article><article class="exercise-like" id="exercise-213"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-950"> 
+	The revenue function, \(revenue(q)=(500-3q)(q)\), on the interval \(0\le q\le 200\).
+</p></article><article class="exercise-like" id="exercise-214"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-951"> 
+	The profit function, \(profit(q)=(500-3q)(q)-(12q+600)\), on the interval 
+\(0\le q\le 200\).
+</p></article><article class="exercise-like" id="exercise-215"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-952"> 
+	The profit function obtained as the best fitting quadratic curve for the following data</p>
+<figure class="figure-like" id="table-47"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">157</td>
+<td class="c m b1 r0 l0 t3 lines">513</td>
+<td class="c m b1 r0 l0 t3 lines">702</td>
+<td class="c m b1 r0 l0 t3 lines">842</td>
+<td class="c m b1 r0 l0 t3 lines">995</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Profit</td>
+<td class="c m b1 r0 l0 t0 lines">143,814</td>
+<td class="c m b1 r0 l0 t0 lines">314,801</td>
+<td class="c m b1 r0 l0 t0 lines">322,223</td>
+<td class="c m b1 r0 l0 t0 lines">279,988</td>
+<td class="c m b1 r0 l0 t0 lines">189,263</td>
+</tr>
+</table></figure><p id="p-953">on the interval \(0\le quantity\le 1200\).
+</p></article><article class="exercise-like" id="exercise-216"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-954"> 
+	The cost function obtained as the best fitting cubic curve for the following data, </p>
+<figure class="figure-like" id="table-48"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">6</td>
+<td class="c m b1 r0 l0 t3 lines">9</td>
+<td class="c m b1 r0 l0 t3 lines">12</td>
+<td class="c m b1 r0 l0 t3 lines">15</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Cost</td>
+<td class="c m b1 r0 l0 t0 lines">487</td>
+<td class="c m b1 r0 l0 t0 lines">539</td>
+<td class="c m b1 r0 l0 t0 lines">532</td>
+<td class="c m b1 r0 l0 t0 lines">541</td>
+<td class="c m b1 r0 l0 t0 lines">626</td>
+</tr>
+</table></figure><p id="p-955">on the interval \(0\le quantity\le 16\).
+</p></article><p id="p-956"> 
+In exercises 8-10 you are given a function that and an interval it is defined over.</p>
+<ol id="ol-41" style="list-style-type: lower-alpha;">
+<li id="li-204"><p id="p-957">Make a chart of values and plot a graph of the function.</p></li>
+<li id="li-205"><p id="p-958">Visually identify approximate local maxima and minima.  </p></li>
+<li id="li-206"><p id="p-959">Find a reasonable range of starting points from which Solver will find each local maximum or minimum.</p></li>
+</ol>
+<article class="exercise-like" id="exercise-217"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-960"> 
+\(f(x)=-0.25x^4+5.3x^3-36x^2+90x-15\), on the interval \(0\le x\le 15\).
+</p></article><article class="exercise-like" id="exercise-218"><h5 class="heading"><span class="codenumber">9</span></h5>
+<p id="p-961"> 
+	\begin{equation*}g(x)=\begin{cases}
+4x-10&amp; x\lt 5\\
+2(x-7)^2&amp;x \gt 5\\
+\end{cases}\end{equation*}
+on the interval \(0\le x\le 10\).
+</p></article><article class="exercise-like" id="exercise-219"><h5 class="heading"><span class="codenumber">10</span></h5>
+<p id="p-962"> 
+	\begin{equation*}h(x)=\begin{cases}
+-4*(x-2)^2&amp; x \lt 6\\
+2(x-7)^2-10&amp;x \gt 6\\
+\end{cases}\end{equation*}
+on the interval \(0\le x\le 10\).
+</p></article></section></section></div></main>
+</div>
+</body>
+</html>

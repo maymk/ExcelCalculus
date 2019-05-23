@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:27-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Approximating Definite Integrals as Sums</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap-7-Intergration.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-7-2-FundamentalTheoremCalculius.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap-7-Intergration.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-7-2-FundamentalTheoremCalculius.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums" class="active">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-7-1-RiemannSums"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.1</span> <span class="title">Approximating Definite Integrals as Sums</span>
+</h2>
+<a href="sec-7-1-RiemannSums.html" class="permalink">¶</a><p id="p-2543"><a class="external" href="./Examples/Section-7-1-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-2544">The standard approach to accumulation is to reduce the problem to an area problem.  If we let f(t) be a velocity function, then the area under the y=f(t) curve between a starting value of t=a and a stopping value of t=b is the distance traveled in that time period.  In the easiest case, the velocity is constant and we use the simple formula</p>
+<div class="displaymath">
+\begin{equation*}
+distance = velocity * time 
+\end{equation*}
+</div>
+<article class="example-like" id="example-101"><a data-knowl="" class="id-ref" data-refid="hk-example-101"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.1.1</span>. <span class="title">Distance with Constant Speed.</span>
+</h6></a></article><div id="hk-example-101" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2545">Find the distance traveled if I go 60 mph from 12:30 until 3:00.</p>
+<p id="p-2546">This problem is easy to do without any calculus.  If we graph the velocity function</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2547">we find the area of the rectangle by taking base times height and noting \(60*(3-0.5)=150\text{.}\)  Note that we do the same computation if I ask how much I earn over a period of 2.5 years if I make $60K a year, or how much oil is produced in 2 and a half hours form an oil well that produces 60 barrels of oil an hour.</p></article></div>
+<p id="p-2548">In a similar manner, if the function I am accumulating is linear, I can find area by using the area formula of a triangle, one half base time height.  The question becomes more difficult when I want to find the area under a curve that is not linear.  Suppose for example that we want to find the area under the curve</p>
+<div class="displaymath">
+\begin{equation*}
+y = x * (4-x)
+\end{equation*}
+</div>
+<p id="p-2549">between x=0 and x=4.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2550">We no longer have a nice formula from geometry for the area.  Thus we start making approximations.  The easiest approximation is to note that the area has to be less than the area of the 4 by 4 rectangle we can draw around the region.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2551">We can improve our estimate by dividing the interval [0, 4] into 4 equal subintervals and then taking the combined area of the 4 rectangles we need to contain the region.  This reduces our upper estimate from 16 to 14.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2552">Similarly we could get a better estimate by looking at 8 subintervals and seeing that the area under the parabola is no more than 12.5</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2553">If we continue the process with 100 subintervals, our estimate is down to 10.83.  From the picture, it looks like a fairly good estimate.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2554">While this process would be very long and tedious by hand, the process of finding the area of each of 100 rectangles and adding the areas is rather easy in Excel.  Before going to Excel, we want to make a small adjustment in our method.  The method we used always gives an overestimate.  It also requires that we know where the function reaches a maximum on each subinterval.  It will be easier if we estimate area by always taking the height of the rectangle at the right end of the subinterval.  With 4 subintervals this gives an estimate of 10 for our area.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2555">When we increase the number of subintervals to 100, we once again get a fairly good estimate of the area.  From the picture, it is hard to see difference between the area defined by the curve and the area defined by the rectangles.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<article class="example-like" id="area-parabola-down"><a data-knowl="" class="id-ref" data-refid="hk-area-parabola-down"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.1.2</span>. <span class="title">Approximating an Area with a Riemann Sum.</span>
+</h6></a></article><div id="hk-area-parabola-down" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2556">Find the area under the curve \(y=x*(4-x)\) with \(x\) between 0 and 4 with Excel</p>
+<p id="p-2557">We will approximate the area with 100 rectangles.  We set up a worksheet to find the area of the first rectangle.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2558">Following our standard practice, we set up the question and answer in labeled areas at the top of the worksheet.  The width of a subinterval is the width of the whole interval divided by the number of subintervals.  The column \(x_n\) is for the x value at the right side of the n-th subinterval.   The value of \(x_n\) is the starting point plus n times the width of a subinterval.  We then evaluate the function at \(x_n\text{.}\)  The area of the n-th rectangle is the height, or \(f(x_n)\text{,}\) times the width of the subinterval.  The last column is the total area for the first n rectangles.  The area for 100 rectangles is our area estimate.</p>
+<p id="p-2559">To find the area we quick fill our worksheet.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2560">For a more accurate estimate we divide into smaller rectangles.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-11.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-2561">While 100 subintervals will be close enough for most of the problems we are interested is, the "area", or definite integral will be defined as the limit of this sum as the number of subintervals goes to infinity.  Thus</p>
+<article class="assemblage-like" id="assemblage-48"><div class="displaymath" id="p-2562">
+\begin{equation*}
+\int_a^bf(x)  dx=\lim_{n\to \infty} \Sigma_i^nf (x_i)\Delta x 
+\end{equation*}
+</div>
+<p id="p-2563">with \(\Delta x=\frac{b-a}{n}\)  and  \(x_i=a*i*\Delta x\text{.}\)</p></article><p id="p-2564">The sums of the form, \(\Sigma_{i=1}^n  f(x_i)\Delta x\) with \(\Delta x=\frac{b-a}{n}\) and \(x_i=a+i*\Delta x\text{,}\) are called <dfn class="terminology">Riemann sums</dfn>.  The limit, written \(\int_a^bf(x)  dx\text{,}\) is called a <dfn class="terminology">definite integral</dfn>.</p>
+<p id="p-2565">As a memory aid, it is worth noting that the symbol used for the sum is an upper case sigma, or S for sum in the Greek alphabet.  When we take the limit we use an integral sign, which is a stylized S in the Latin alphabet.</p>
+<p id="p-2566">It is worth noting that in this definition we are finding “signed area under a curve.”  If the function \(f(x)\) is negative over the interval, the integral will also be negative, in the same we would have a negative change in our bank statement if we were steadily removing money.  Similarly we can get a negative integral when the ends of the interval are reversed.  If I am steadily adding money to an account, the net change is negative if I measure from 5 years in the future back to today.</p>
+<p id="p-2567">We should note that, for functions nice enough to be considered in this class, we get to the same limit by using rectangles with the function evaluated on the right side of the rectangle or the left side of the rectangle, or any point in the rectangle we choose.  Choosing the right hand side for evaluation makes our formulas a little simpler.</p>
+<article class="example-like" id="example-103"><a data-knowl="" class="id-ref" data-refid="hk-example-103"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.1.3</span>. <span class="title">Present Value of a Revenue Stream.</span>
+</h6></a></article><div id="hk-example-103" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2568">The estimated current value of the revenue stream, in billions of dollars, of a company being bought out is \(f(x)=\exp(-0.06*x)*0.235\text{.}\) The present value of that revenue stream is the area of the region under the curve \(y=f(x)\) from \(x=0\) to \(x=15\text{.}\)  Use 500 intervals to estimate the present value.</p>
+<p id="p-2569">Although the data in the question for this example is quite different from the previous example, the setup for the worksheet to evaluate the Riemann sum is the same.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-12.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2570">With 500 intervals we estimate the present value of the revenue stream to be worth $2.3222 Billion.  If we had only used 100 intervals, the estimate would have been for $2.318 Billion, while 1000 intervals gives an estimate of $2.3232 Billion.</p></article></div>
+<section class="exercises" id="exercises-set-sec-7-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Approximating Definite Integrals as Sums Problems</span>
+</h3>
+<a href="sec-7-1-RiemannSums.html#exercises-set-sec-7-1" class="permalink">¶</a><article class="exercise-like" id="exercise-423"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-2571">Let \(f(x) = 4 x + 5\text{.}\)  Estimate the area under \(f(x)\) on the interval \(0 \le  x \lt 7\) using 100 rectangles and a right hand rule.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-214" id="solution-214"><span class="type">Solution</span></a><div id="hk-solution-214" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2572">The Excel commands are:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2573">The answer is given as follows. Note that in this screen grab the center part of the sidebyside was hidden so that the image is a reasonable size</p>
+<p id="p-2574">The area is approximately 133.98</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol1b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-424"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-2575">Let \(f(x) = 5 – 3 x\text{.}\)  Estimate the area under \(f(x)\) on the interval \(2 \le  x \lt 10\) using 200 rectangles and a right hand rule.</p></article><article class="exercise-like" id="exercise-425"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-2576">Let \(f(x) = x^2  + 3 x + 1\text{.}\)  Estimate the area on the interval \(-10\le  x \lt -2\) under \(f(x)\) using 200 rectangles and a right hand rule.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-215" id="solution-215"><span class="type">Solution</span></a><div id="hk-solution-215" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2577">The set-up is very similar to the one in problem 1.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2578">The area underneath the curve is approximately 193.228 according to the Excel computation.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol3b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-426"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-2579">Let \(f(x) = -x^2  + 7 x - 10\text{.}\)  Estimate the area below the curve \(y =  f(x)\) and above the x-axis using 100 rectangles and a right hand rule.</p></article><article class="exercise-like" id="exercise-427"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-2580">Let \(f(x) = 3 \ln(x)\text{.}\)  Estimate the area under \(f(x)\) on the interval \(1 \le  x \lt 10\) using 50 rectangles and a right hand rule.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-216" id="solution-216"><span class="type">Solution</span></a><div id="hk-solution-216" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2581">A set-up similar to the one in problems 1 and 3 gives us an approximation for the area of  42.69.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-428"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-2582">Let \(f(x) = x \exp(-0.7 x)\text{.}\)  Estimate the area on the interval \(1 \le  x \lt 5\) under \(f(x)\) using 100 rectangles and a right hand rule.</p></article><article class="exercise-like" id="exercise-429"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-2583">Let \(f(x) = (5 x + 3) \exp(-0.7 x)\text{.}\)  Estimate the area under \(f(x)\) on the interval \(0 \le  x \lt 5\) using 100 rectangles and a right hand rule.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-217" id="solution-217"><span class="type">Solution</span></a><div id="hk-solution-217" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2584">The area underneath the curve is approximately 12.92</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-430"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-2585">Consider the area under the line \(y = 5 x + 7\) on the interval \(1 \le  x \le  5\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-687"><p id="p-2586">Using only what you know about areas of rectangles and triangles, find the exact area.</p></li>
+<li id="li-688"><p id="p-2587">Find the approximations to the area using Riemann sums with 50, 100, and 200 intervals.</p></li>
+<li id="li-689"><p id="p-2588">Find the error for each of the three approximations you made.</p></li>
+<li id="li-690"><p id="p-2589">For this case, make an estimate of the error in terms of the number of intervals used.</p></li>
+</ol></article><article class="exercise-like" id="exercise-431"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-2590">Consider the area under the line \(y = x^2\) on the interval \(0 \le  x \le  3\text{.}\)  In later sections we will show that the exact area is 9.</p>
+<ol class="lower-alpha">
+<li id="li-691"><p id="p-2591">Find the approximations to the area using Riemann sums with 1, 10, 100, and 1000 intervals.</p></li>
+<li id="li-692"><p id="p-2592">Find the error for each of the four approximations you made.</p></li>
+<li id="li-693"><p id="p-2593">For this case, make an estimate of the error in terms of the number of intervals used.</p></li>
+<li id="li-694"><p id="p-2594">How many intervals would we need for an error of less that \(10^{-6}\text{?}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-218" id="solution-218"><span class="type">Solution</span></a><div id="hk-solution-218" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-695"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">N</td>
+<td class="c m b1 r0 l0 t3 lines">Riemann Sum</td>
+<td class="c m b1 r0 l0 t3 lines">Error</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">27</td>
+<td class="c m b1 r0 l0 t0 lines">18</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+<td class="c m b1 r0 l0 t0 lines">10.395</td>
+<td class="c m b1 r0 l0 t0 lines">1.395</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">100</td>
+<td class="c m b1 r0 l0 t0 lines">9.135</td>
+<td class="c m b1 r0 l0 t0 lines">0.135</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">1000</td>
+<td class="c m b1 r0 l0 t0 lines">9.0135</td>
+<td class="c m b1 r0 l0 t0 lines">0.0135</td>
+</tr>
+</table></div></div></div></li>
+<li id="li-696"><p id="p-2595">The errors are included in the sidebyside above. Subtract 9 from the approximation found in Excel.  Note that there is a bit of a pattern.</p></li>
+<li id="li-697"><p id="p-2596">The larger values of N seem to have an error of about \(\frac{13.5}{N}\)</p></li>
+<li id="li-698"><p id="p-2597">If  error \(\lt 10^{-6}\text{.}\) Then \(\frac{13.5}{N}\lt 10^{-6}\text{.}\) Then \(\frac{N}{13.5}\gt 1,000,000\text{,}\) and hence \(N\gt 13,500,000\text{.}\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-432"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-2598">You have a natural gas well.  You have been told that as gas is extracted and the pressure in the well lessens, the rate of extraction also decreases. The weekly production is \(10000 \exp(-0.01 t)\) cubic feet per week.</p>
+<ol class="lower-alpha">
+<li id="li-699"><p id="p-2599">Estimate the production in the first year.</p></li>
+<li id="li-700"><p id="p-2600">Estimate the production in the third year.</p></li>
+</ol></article><article class="exercise-like" id="exercise-433"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-2601">Sales of your new gadget are estimated at \(500*2^{.08 t}\) units per week.</p>
+<ol class="lower-alpha">
+<li id="li-701"><p id="p-2602">Estimate the total sales in the first year.</p></li>
+<li id="li-702"><p id="p-2603">Estimate the total sales in the fourth year.</p></li>
+<li id="li-703"><p id="p-2604">Estimate the total sales over the first 5 years.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-219" id="solution-219"><span class="type">Solution</span></a><div id="hk-solution-219" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-704">
+<p id="p-2605">Estimate the total sales in the first year.</p>
+<p id="p-2606">The total sales would be the sum of the sales each month. This is the same as a right hand sum of the function \(Sales(t)= 500*2^{.08 t}\) on the interval [0,12] with 12 subdivisions. The Excel commands are as follows (quick fill down to complete the sidebyside)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2607">Results:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol11b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2608">So the total sales is $8,762.22</p>
+</li>
+<li id="li-705">
+<p id="p-2609">Estimate the total sales in the fourth year.</p>
+<p id="p-2610">We need to adjust the computation so that the sales added correspond to the sales of the fourth year only. This would be from month 36 to 48. We can just adjust the values in the sidebyside above!</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol11c.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2611">So the total sales in the fourth year are $64,503.12</p>
+</li>
+<li id="li-706">
+<p id="p-2612">Estimate the total sales over the first 5 years.</p>
+<p id="p-2613">This will be a much larger range. We will add the sales for the first 5 years. In other words: the first 60 months. Note that this means we want to change \(N\) to 60 (we want to do the computation for each month) The rows from 13 to 65 have been hidden from views to create a smaller size image for this solution manual:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-1-sol11d.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2614">The total sales for the first 5 years is $248,947.41</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-434"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-2615">You run a low cost, high volume widget manufacturing plant.  For reports, you write your reports in terms of millions of units.  When measured in units of one million widgets and one million dollars, the marginal profit function is \(p(x) = -1 + 10 x – x^2\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-707"><p id="p-2616">Find the profit from making 12 million widgets.</p></li>
+<li id="li-708"><p id="p-2617">What quantities have 0 marginal profit?</p></li>
+<li id="li-709"><p id="p-2618">What is the maximum profit to be made manufacturing widgets?</p></li>
+</ol></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

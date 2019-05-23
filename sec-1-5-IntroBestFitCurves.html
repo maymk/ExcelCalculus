@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:22-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Using Excel to find best-fit curves</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-1-4-GraphingFunctionsExcel.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-1-FunctionsGraphsExcel.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-1-6-GoalSeek.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-1-4-GraphingFunctionsExcel.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-1-FunctionsGraphsExcel.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-1-6-GoalSeek.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves" class="active">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-1-5-IntroBestFitCurves"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Using Excel to find best-fit curves</span>
+</h2>
+<a href="sec-1-5-IntroBestFitCurves.html" class="permalink">¶</a><p id="p-360"><a class="external" href="./Examples/Section-1-5-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-361"><dfn class="terminology">Overview</dfn></p>
+<p id="p-362">In the sections 1.1 and 1.2 we looked at useful mathematical models and formulas that we anticipate seeing repeatedly in the business environment.  If we are given equations that model the processes we are interested in, then this approach works. What happens though if we are not given equations? Many important functions in business are quite often defined by data.  Examples include past sales, material costs, and consumer demand.</p>
+<p id="p-363">If we are given a data set, we can find a best fitting curve.  A straightforward approach is to assume that the data represents the output of a nice formula. In real life applications we will often see that so-called noise can complicate the situation.  (For example, if I am looking at sales at a fast food restaurant, our model will have noise from traffic jams and bad weather outside.) For the purpose of this course we will assume that the data will be reasonably nice, although some noise may be evident. The problem of producing a best fitting curve to data can be broken into two pieces:</p>
+<ol class="decimal">
+<li id="li-98"><p id="p-364">We need to decide what kind of curve, or what model we want to use.</p></li>
+<li id="li-99"><p id="p-365">We want to be able to set the parameters (the constants) in the model to give the best fit.</p></li>
+</ol>
+<p id="p-366">Coming up with a theoretical reason why we want to use a particular model in a given case forms the content of a large number of your business courses, both courses you have already taken and courses you are yet to take.  The models that come up repeatedly in the theoretical courses are given names and used without redoing the theoretical foundation for the model.  (This is why we introduced the normal distribution and the logistic growth function, neither of which looks like a simple equation.)  In this course, we will be happy with simple heuristic arguments on which model to choose.</p>
+<p id="p-367">The second half of the problem is deciding how to choose the parameters to give the curve that does the best job of fitting the data.  A moment of reflection shows deciding on the correct definition of “best fitting” is a nontrivial task beyond the scope of this course.  For the time being we will accept the standard definition</p>
+<article class="assemblage-like" id="assemblage-10"><p id="p-368">The <dfn class="terminology">best fitting curve</dfn> minimizes the sum of the squares of the differences between the measured and predicted values.</p></article><p id="p-369">We will come back to that definition later in the course, when we know more calculus, but for now we simply note that it is the standard definition, and is used by Excel.  Instead, we will focus on using Excel to produce a best fitting curve of the appropriate model. Excel has a preprogrammed feature that will find the best fitting equation for a data set for a select number of functions:</p>
+<ul class="disc">
+<li id="li-100"><p id="p-370">Linear model</p></li>
+<li id="li-101"><p id="p-371">Exponential model</p></li>
+<li id="li-102"><p id="p-372">Polynomial model</p></li>
+<li id="li-103"><p id="p-373">Logarithmic model</p></li>
+<li id="li-104"><p id="p-374">Power model</p></li>
+</ul>
+<p id="p-375">We will show how to find an equation for a data set, assuming we know what model would be the best one to represent the data.</p>
+<p id="p-376"><dfn class="terminology">Best fitting linear curves</dfn></p>
+<p id="p-377">For a first example, we are running a widget factory and have the following data on employee performance: <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-1.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-378">(A parenthetical note:  In economics, widget is a placeholder name for a generic manufactured device.  It is only in recent times that it has also become a small computer GUI unit.)</p>
+<p id="p-379">We would like a formula for widgets produced as a function of hours worked.  Since we can see two entries each, for 36, 43, and 44 hours worked, there cannot be a function that hits all our data exactly.  While we expect a linear function, we are not surprised if there is random noise, as a worker may take a break, or be particularly focused on a given day.  We start by creating a scatterplot for my data. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-2.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-380">We right click (control-click on a mac) on one of the data points and we get a contextual menu.  We select <dfn class="terminology">Add Trendline</dfn>. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-3.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-381">When adding a trend line, we need to select from a number of options.  The first option concerns the mathematical model we want to choose.  Given that we suspect the number of widget produced will be roughly proportional to the hours worked, we want to use a linear model, so we make that choice.  Under options, we want to display the equation on the chart. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-4.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-382">We have added a linear trend line to the graph and can also see the equation for the line.  We could use that equation to plan how many hours we want our workers on the job based on the number of widgets we expect to sell. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-5.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-383">Having found a best fitting line, I want to copy the equation back into my spreadsheet and to be able to compare the values in my data with the projections from my equation.  You should notice that the equation Excel produces in the chart is written in standard mathematical notation, while the corresponding equation in cell B3 is in Excel notation.  (In Excel notation we need a symbol for multiplication rather than simply putting a number and variable together.  In Excel notation, we also use a cell reference, B1, rather than a variable, x.) <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-6.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-384"><dfn class="terminology">Checking and improving our equations</dfn></p>
+<p id="p-385">When finding the best fitting curve to data we have gathered, we need to pay attention to the model we have chosen and to the range to which we want to apply it.  In our example, the linear fit looks pretty good.  However we should be careful about using it on too wide a domain.  According to our model, a worker who works no hours produces 12.52 widgets a week, which is obviously silly.  In the other direction it predicts that a worker who worked 168 (= 7 x 24) hours a week would produce almost 970 widgets, instead of predicting a collapse from exhaustion.</p>
+<p id="p-386">The other issue is the choice of a model.  We chose a linear model.  An argument could easily be made for a proportional model.  (A worker who works no hours produces no widgets.)  We can switch to the proportional model by setting the y-intercept to 0 in options for the trend line.  Then the equation is</p>
+<div class="displaymath">
+\begin{equation*}
+(Widgets Produced) = 6.00026*(Hour Worked)
+\end{equation*}
+</div>
+<p>instead of our original equation of</p>
+<div class="displaymath">
+\begin{equation*}
+(Widgets Produced) = 5.6975*(Hours Worked)+12.54.
+\end{equation*}
+</div>
+<p id="p-387">We should also be careful about trying to get a better fit by using an inappropriate model.  In our case, we can get a better fit by allowing the curve to be a 6th degree polynomial.  However the resulting equation does not make sense.  It predicts that a worker will produce about quarter million widgets with a 1-hour work week, and -1500 widgets with a 55-hour work week. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-8.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-388"><dfn class="terminology">Fitting the Consumer Price Index (CPI) to a best fitting curve;</dfn> an extended example</p>
+<p id="p-389">For our second example, we will look at the consumer price index and try and fit it to a model.  This example will illustrate several issues we need to keep in mind when building models.  We obtained data for the consumer price index from <a class="external" href="http://inflationdata.com/inflation/Consumer_Price_Index/HistoricalCPI.aspx" target="_blank">http://inflationdata.com/inflation/Consumer_Price_Index/HistoricalCPI.aspx</a>.</p>
+<p id="p-390">The data from 1960 to 2011 is in the worksheet Section1-5-Examples.xlsx. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-9.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-391">Since we expect prices to rise as a percentage of the current prices, we expect the CPI to be modeled by an exponential curve.  We start by selecting the data, producing a scatterplot, and adding a best fitting curve using an exponential model.  We will always select the option to show the equation on the chart. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-10.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-392">This first attempt gives an exponential formula, but it is unsatisfactory for a number of reasons.</p>
+<ul class="disc">
+<li id="li-105"><p id="p-393">That constant only shows one significant digit, which is not enough to make meaningful predictions.</p></li>
+<li id="li-106"><p id="p-394">The font size is too small to easily read off the resulting equations.</p></li>
+<li id="li-107"><p id="p-395">The constant coefficient is ridiculously small because it gives the projected value of the index in the year 0. Another way of thinking about this is that the values we are evaluating this exponential function at run in the thousands!.</p></li>
+<li id="li-108"><p id="p-396">The graph does not look like a very good fit.  The plot of the numbers actually looks as though it represents three different graphs.</p></li>
+</ul>
+<p id="p-397">We will work through the problems one at a time.</p>
+<p id="p-398">The first problem is that the equation Excel has given us does not have enough significant digits to make useful predictions.  We want to right click on the equation, select “Format Trendline Label”.  We are given a dialog box that lets us make formatting options.  Since the lead coefficient is so small, we want the numbers formatted in Scientific notation.  We choose 4 digits beyond the decimal point in that notation. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-11.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-399">This gives us a better equation.  It should be noted that our pictures in this book use the font option in the formatting to use a larger sized font. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-12.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-400">The next issue to deal with is adjusting the year.  Looking at the raw data, the CPI was 100 sometime in 1983.  Thus we simply add an extra column to our spreadsheet where the adjusted year is the current year minus 1983.  In our graph, we also adjust the labels so a reader can still understand our chart. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-13.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-401">Now we want to look at the more serious question, the one that says the model does not fit very well.  Looking at our data, the inflation rate seems to fall into roughly 3 blocks, the years before 1973, the years from 1973-1983, and the years after 1983.  We would want to go back to our economics classes and find an argument that says this division of years is reasonable.  Using the same menu that lets us add a trend line, we can edit the source data.  We want to restrict to the years after 1983.  In our case, that means restricting to rows 1 to 30. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-14.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-402">This breaks the data into two pieces.  The first piece is the period from 1983 till 2011.  As we see, the exponential model fits quite well in that case. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-15.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-403">The second piece is the period from 1973 till 1982.  Once again, the exponential model fits quite well over that period.  Notice that the exponent is quite different in the two periods.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-16.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-404">The obvious question that arises is to figure out what happened in 1983 that caused the economic model to shift.  That question is beyond the scope of this course.</p>
+<section class="exercises" id="exercises-set-sec-1-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Using Excel to find best fit curves</span>
+</h3>
+<a href="sec-1-5-IntroBestFitCurves.html#exercises-set-sec-1-5" class="permalink">¶</a><article class="exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-405">We have the following data on widget production:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Month</td>
+<td class="c m b1 r0 l0 t3 lines">Jan</td>
+<td class="c m b1 r0 l0 t3 lines">Feb</td>
+<td class="c m b1 r0 l0 t3 lines">Mar</td>
+<td class="c m b1 r0 l0 t3 lines">Apr</td>
+<td class="c m b1 r0 l0 t3 lines">May</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Production</td>
+<td class="c m b2 r0 l0 t0 lines">16,597</td>
+<td class="c m b2 r0 l0 t0 lines">30,687</td>
+<td class="c m b2 r0 l0 t0 lines">48,441</td>
+<td class="c m b2 r0 l0 t0 lines">55,751</td>
+<td class="c m b2 r0 l0 t0 lines">79,606</td>
+</tr>
+</table></div></div></div>
+<ol class="lower-alpha">
+<li id="li-109"><p id="p-406">Find the best fitting linear function for the data.</p></li>
+<li id="li-110"><p id="p-407">Give the production value that function predicts for May.</p></li>
+<li id="li-111"><p id="p-408">Give the production value that function predicts for July.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span></a><div id="hk-solution-32" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-112">
+<p id="p-409">Create a scatter plot for the data. Then use the menu to go to Chart – Chart layout – Trendlines. Find the linear approximation and under options choose to display the function. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div> Excel automatically changes the months into numerical values.</p>
+<p id="p-410">The best linear function for the data is y = 15108x + 891.8</p>
+</li>
+<li id="li-113">
+<p id="p-411">Create a new table using the function to determine the predicted production levels. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol1b.png" style="width: 100%; height: auto;" alt=""></div></div></div> Excel needs x to be a number, so we need to insert a row and provide the appropriate numerical values: 1 for Jan, 2 for Feb, etc.</p>
+<p id="p-412">The predicted production for May is 76,432</p>
+</li>
+<li id="li-114">
+<p id="p-413">To find the production level for July we enter <code class="code-inline tex2jax_ignore">x = 7</code> in the table and compute the output.</p>
+<p id="p-414">The linear model predicts a production of 106, 648 for the month of July.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-415">We have the following data on gizmo sales:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Month</td>
+<td class="c m b1 r0 l0 t3 lines">Jan</td>
+<td class="c m b1 r0 l0 t3 lines">Mar</td>
+<td class="c m b1 r0 l0 t3 lines">Apr</td>
+<td class="c m b1 r0 l0 t3 lines">July</td>
+<td class="c m b1 r0 l0 t3 lines">Aug</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Units sold</td>
+<td class="c m b2 r0 l0 t0 lines">1.505</td>
+<td class="c m b2 r0 l0 t0 lines">9,042</td>
+<td class="c m b2 r0 l0 t0 lines">13,018</td>
+<td class="c m b2 r0 l0 t0 lines">21,873</td>
+<td class="c m b2 r0 l0 t0 lines">22,636</td>
+</tr>
+</table></div></div></div>
+<ol class="lower-alpha">
+<li id="li-115"><p id="p-416">Find the best fitting linear function for the data.</p></li>
+<li id="li-116"><p id="p-417">Extend the chart to give the projected sales for each month from January through September.  (You need to add a row for predicted sales, and also add a number of columns for missing months.)</p></li>
+</ol></article><article class="exercise-like" id="exercise-67"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-418">We have the following data on gadget revenue:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Units sold</td>
+<td class="c m b1 r0 l0 t3 lines">3,000</td>
+<td class="c m b1 r0 l0 t3 lines">5,000</td>
+<td class="c m b1 r0 l0 t3 lines">7,000</td>
+<td class="c m b1 r0 l0 t3 lines">9,000</td>
+<td class="c m b1 r0 l0 t3 lines">11,000</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Revenue</td>
+<td class="c m b2 r0 l0 t0 lines">16,161</td>
+<td class="c m b2 r0 l0 t0 lines">24,783</td>
+<td class="c m b2 r0 l0 t0 lines">34,484</td>
+<td class="c m b2 r0 l0 t0 lines">38,014</td>
+<td class="c m b2 r0 l0 t0 lines">33,030</td>
+</tr>
+</table></div></div></div>
+<ol class="lower-alpha">
+<li id="li-117"><p id="p-419">Find the best fitting linear function for the data.</p></li>
+<li id="li-118"><p id="p-420">Find the best fitting quadratic function for the data.</p></li>
+<li id="li-119"><p id="p-421">The data fits a quadratic function better than a linear function.  With a quadratic model we do not maximize revenue by selling as many units as possible.  Explain why this is reasonable in the real world.</p></li>
+<li id="li-120"><p id="p-422">Project the revenue for selling 15,000 units with both linear and quadratic models.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span></a><div id="hk-solution-33" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-121"><p id="p-423">We can do scatterplots and use the linear trendline find the models we need. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div> The linear model is \(y = 2.3485x + 12855\)</p></li>
+<li id="li-122">
+<p id="p-424">We can do scatterplots and use the polynomial trendline of degree 2 to find the model we need.  (See the second image in part (a).)</p>
+<p id="p-425">The quadratic (polynomial of degree 2) model is \(y = -0.0006x^2 + 10.694x – 11586\)</p>
+<p id="p-426">The graphs show that the quadratic equation is the better model and follows the data more closely.</p>
+</li>
+<li id="li-123"><p id="p-427">The revenue function is given by price * quantity. If we offer more units the price will eventually go down. If the price goes down faster than the number of new items sold, the revenue will at some point go back down.</p></li>
+<li id="li-124">
+<p id="p-428">Plug \(x = 15000\) into \(y = 2.3485x + 12855\) and we get $48,082.50 for the linear model.</p>
+<p id="p-429">Plug \(x = 15000\) into \(y =-0.0006x^2 + 10.694x – 11586\text{,}\) and we get $13, 824 for the quadratic model.</p>
+<p id="p-430">[You can use Excel, a calculator or Wolfram Alpha to do these last computations.]</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-431">In building water tanks, design considerations indicate the weight of the dry tank should be roughly a power function of the capacity.  I am interested in building a larger tank than I have before. I have the following data between capacity and weight:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Gallons</td>
+<td class="c m b1 r0 l0 t3 lines">1,000</td>
+<td class="c m b1 r0 l0 t3 lines">5,000</td>
+<td class="c m b1 r0 l0 t3 lines">7,000</td>
+<td class="c m b1 r0 l0 t3 lines">9,000</td>
+<td class="c m b1 r0 l0 t3 lines">17,000</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Weight</td>
+<td class="c m b2 r0 l0 t0 lines">103</td>
+<td class="c m b2 r0 l0 t0 lines">878</td>
+<td class="c m b2 r0 l0 t0 lines">1,339</td>
+<td class="c m b2 r0 l0 t0 lines">1,927</td>
+<td class="c m b2 r0 l0 t0 lines">4,496</td>
+</tr>
+</table></div></div></div>
+<ol class="lower-alpha">
+<li id="li-125"><p id="p-432">Find the best fitting power function for the data.</p></li>
+<li id="li-126"><p id="p-433">Use your power function to estimate the weight of a tank that holds 40,000 gallons.</p></li>
+<li id="li-127"><p id="p-434">Find the best fitting linear function for the data.</p></li>
+<li id="li-128"><p id="p-435">Use your linear function to estimate the weight of a tank that holds 40,000 gallons.</p></li>
+<li id="li-129"><p id="p-436">Visually, both curves seem to fit the data quite well, yet they make noticeable different predictions for the weight of a larger tank.  Which prediction would you use.  Justify your answer.</p></li>
+</ol></article><article class="exercise-like" id="exercise-69"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-437">I am looking at sales figures for a new product, the gizmo.  The sales figures seem to be growing at an exponential rate.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Month</td>
+<td class="c m b1 r0 l0 t3 lines">Jan</td>
+<td class="c m b1 r0 l0 t3 lines">Apr</td>
+<td class="c m b1 r0 l0 t3 lines">July</td>
+<td class="c m b1 r0 l0 t3 lines">Oct</td>
+<td class="c m b1 r0 l0 t3 lines">Jan</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Units sold</td>
+<td class="c m b2 r0 l0 t0 lines">1082</td>
+<td class="c m b2 r0 l0 t0 lines">1680</td>
+<td class="c m b2 r0 l0 t0 lines">2662</td>
+<td class="c m b2 r0 l0 t0 lines">3783</td>
+<td class="c m b2 r0 l0 t0 lines">6430</td>
+</tr>
+</table></div></div></div>
+<ol class="lower-alpha">
+<li id="li-130"><p id="p-438">Find the best fitting exponential function for the data.</p></li>
+<li id="li-131"><p id="p-439">Using your function, predict sales for the July after the data was collected.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span></a><div id="hk-solution-34" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-132"><p id="p-440">Using the scatterplot and the trendline from the Chart menu, we choose Exponential Trendline and display the function. Note that we do need to change the months to the appropriate numerical value. Excel would just replace them by consecutive numbers. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div> The best fitting exponential curve given by Trendlines is \(y = 934.78e^{0.1459x}\)</p></li>
+<li id="li-133"><p id="p-441">To find the predicted units sold for July we would need \(x = 19\) <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol5b.png" style="width: 100%; height: auto;" alt=""></div></div></div> Using Excel we see that the predicted number of units sold is 14,949.</p></li>
+</ol></div></div>
+</div></article><p id="p-442">Excel has a limited set of models that can be used for trend lines to automatically fit curves to data.  In later sections we will look at how to we can use calculus to find best fitting curves for other models.  Until we develop those techniques, we can make a guess at parameters that will make curves fit.</p>
+<article class="exercise-like" id="exercise-70"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-443">The unit sales of widgets can be expected to follow a logistic model, with rapid growth of sales, but with eventual saturation of the market so that there is a cap on the market.  In such a case the sales should be modeled by a logistic equation, of the form \(sales(time)=MarketCap/(1+adjustment*exp(-rate*time)).\) We have the following data on sales:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">time(years)</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">6</td>
+<td class="c m b1 r0 l0 t3 lines">8</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">sales</td>
+<td class="c m b2 r0 l0 t0 lines">1000</td>
+<td class="c m b2 r0 l0 t0 lines">5610</td>
+<td class="c m b2 r0 l0 t0 lines">14,845</td>
+<td class="c m b2 r0 l0 t0 lines">19,095</td>
+<td class="c m b2 r0 l0 t0 lines">19,870</td>
+</tr>
+</table></div></div></div>
+<p id="p-444">Find values of the parameters MarketCap, adjustment, and rate to reasonably fit the data.</p></article><article class="exercise-like" id="exercise-71"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-445">The unit sales of an article of clothes for adults can be expected to follow the model of a normal distribution.  In such a case the sales should be modeled by a normal equation, of the form</p>
+<div class="displaymath">
+\begin{equation*}
+sales(size)=MaxPerSize*exp\left(-\left(\left(\frac{size-Mean}{StandardDeviation}\right)^2\right)\right).\text{.}
+\end{equation*}
+</div>
+<p>(Note we need an extra set of parenthesis to keep the order of operations correct.)  We have the following data on sales:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">size</td>
+<td class="c m b1 r0 l0 t3 lines">7</td>
+<td class="c m b1 r0 l0 t3 lines">8</td>
+<td class="c m b1 r0 l0 t3 lines">9</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+<td class="c m b1 r0 l0 t3 lines">11</td>
+<td class="c m b1 r0 l0 t3 lines">12</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Weight</td>
+<td class="c m b2 r0 l0 t0 lines">360</td>
+<td class="c m b2 r0 l0 t0 lines">3,390</td>
+<td class="c m b2 r0 l0 t0 lines">12,820</td>
+<td class="c m b2 r0 l0 t0 lines">20,000</td>
+<td class="c m b2 r0 l0 t0 lines">12,826</td>
+<td class="c m b2 r0 l0 t0 lines">3,375</td>
+</tr>
+</table></div></div></div>
+<p id="p-446">Find values of the parameters MaxPerSize, Mean, and StandardDeviation to reasonably fit the data.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span></a><div id="hk-solution-35" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-447">The initial plot shows that the distribution is normal: <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div> The maximum is at \(x = 10\text{.}\) This suggests that \(Mean = 10\text{.}\)</p>
+<p id="p-448">If we use \(Sales (x)= MaxPerSize*e^{-\left(\left(\frac{x-10}{STDev}\right)^2 \right)}\text{,}\) then if \(x = 10\) we have \(Sales (10)= MaxPerSize\text{,}\) and so \(MaxPerSize = 20,000\text{,}\) hence we have that</p>
+<div class="displaymath">
+\begin{equation*}
+Sales (x)= 20,000*e^{-\left(\left(\frac{x-10}{STDev}\right)^2 \right)}
+\end{equation*}
+</div>
+<p id="p-449">Let \(x = 11\text{,}\) then \(12825= 20,000*e^{\left(\left(\frac{-1}{STDev}\right)^2 \right)}\text{.}\)</p>
+<p id="p-450">Hence \(e^{\frac{-1}{STDev^2}}=frac{12825}{2000}.  Then\) \(\frac{-}{STDev^2}=\ln\left(frac{12825}{20000}\right)\)</p>
+<p id="p-451">So \(STDev= \sqrt{(-1/\ln(12825/20000  ) )}=1.5002\) so \(STDev= 1.5002\)</p>
+<p id="p-452">Comment: We will develop some methods to solve problems such as this using Excel in a section called Best Fit Curves (Chapter 6)</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-453">The populations of the states can be found online for both the 2000 and 2010 censuses.  (A good site is <a class="external" href="http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population" target="_blank">http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population</a> .)</p>
+<ol class="lower-alpha">
+<li id="li-134"><p id="p-454">Explain why one would guess the 2010 population of a state is roughly a linear function of the 2000 population of the state.</p></li>
+<li id="li-135"><p id="p-455">Download the 2000 and 2010 populations of the 50 states.  Produce a scatterplot that has the 2010 population as a function of the 2000 population.  Find the equation of a best fitting curve for the data.</p></li>
+<li id="li-136"><p id="p-456">Explain what the y-intercept means in terms of people moving to or away from states with large populations.</p></li>
+</ol></article><article class="exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-457">The tax revenues of the states can be found online.  (A good site is the census bureau at <a class="external" href="http://www.census.gov/govs/state/" target="_blank">http://www.census.gov/govs/state/</a> .)</p>
+<ol class="lower-alpha">
+<li id="li-137"><p id="p-458">Explain why one would guess the 2010 tax revenue of a state is roughly a linear function of the 2010 population of the state.</p></li>
+<li id="li-138"><p id="p-459">For 10 states, produce a scatterplot that has the 2010 tax revenue as a function of the 2010 population.  Find the equation of a best fitting curve for the data.</p></li>
+<li id="li-139"><p id="p-460">Explain what the y-intercept means in terms of the relationship of the size of the state and the tax burden per person.</p></li>
+</ol></article><p id="p-461"><dfn class="terminology">Projects:</dfn></p>
+<article class="exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-462">Find the data for the consumer price index and the Dow Jones Industrial average at the start of the year for the past 50 years.  Over that time, what is the best linear relationship between the two indices?  To make your equation easier to understand, scale the indices so they both start at 100 on the same day.</p></article><article class="exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-463">Pick your two favorite stocks and chart their prices on the opening days for a period of 30 years.  How well are their prices modeled as a linear model of each other?  See if you can find two stocks that seem to be inversely proportional to each other.</p></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

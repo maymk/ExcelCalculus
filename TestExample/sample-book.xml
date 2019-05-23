@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+    <book xml:id="sample-book">
+        <title>Minimal Book</title>
+        <subtitle>MATHBOOK XML SAMPLE ONLY</subtitle>
+<introduction>
+
+<p> Hi fred</p>
+           <table >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell><m>f(x)</m></cell><cell><m>\int f(x)\ dx</m></cell></row>
+<row bottom="medium">
+<cell>
+  <figure >
+                <image width="100%" source="images/sec2-2-9.png">
+                </image>
+            </figure> 
+</cell>
+<cell><m>\displaystyle \frac{x^{n+1}}{n+1}+C</m></cell>
+</row>
+<row bottom="medium">
+<cell><m>\displaystyle \frac{1}{x}</m></cell>
+<cell>some text, a long bit of text,</cell></row>
+                </tabular>
+            </table>
+
+                <sidebyside widths="60% 30%" valigns="middle top">
+                    <image source="images/sec2-2-9.png"/>
+                    <p>here is some text here is some text here is some text here is some text here is some text here is  <m>x^2</m></p>
+                </sidebyside>
+
+                <sidebyside widths="65% 30%" valigns="middle top">
+                    <image source="images/sec2-2-9.png"/>
+                    <p>here is some text here is some text here is some text here is some text here is some text here is  <m>x^2</m></p>
+                </sidebyside>
+<assemblage>
+<p><m>\int x^2 dx=\frac{x^3}{3}+C
+</m></p>
+<p> Hi fred</p></assemblage>
+</introduction>
+        <xi:include href="./minchapter1.xml" />   
+<!--
+        <xi:include href="./minchapter2.xml" />   
+        <xi:include href="./minchapter3.xml" />   
+ -->
+    </book>
+</mathbook>
+

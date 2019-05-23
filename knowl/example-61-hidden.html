@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:37-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>We have two processes that need to be run in succession to produce gizmos.  The yields of the two processes are given by:</p>
+<div class="displaymath">
+\begin{equation*}
+intermediate(raw)=-25+7.3 raw+.2 raw^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+gizmos(intermediate)=-5+12 intermediate
+\end{equation*}
+</div>
+<p>Find the rate of production in terms of the amount of raw material.</p>
+<p><dfn class="terminology">Solution</dfn>:  We want to find the derivatives of the individual processes and then use the chain rule.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ intermediate}{d\ raw}=7.3 +.4 raw
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\  gizmos}{d\ intermediate}=12 
+\end{equation*}
+</div>
+<p>Thus</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ gizmos}{d\ raw}=\frac{d\  gizmos}{d\ intermediate}
+\frac{d\ intermediate}{d\ raw}=12*(7.3 +.4 raw)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=87.6+4.8 raw
+\end{equation*}
+</div>
+<p>The rate of production is a linear function of the amount of raw material used.</p></article></body>
+</html>

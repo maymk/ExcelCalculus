@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:32-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>We have the following table of data for demand price and costs for our product.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+<td class="c m b1 r0 l0 t3 lines">300</td>
+<td class="c m b1 r0 l0 t3 lines">500</td>
+<td class="c m b1 r0 l0 t3 lines">1000</td>
+<td class="c m b1 r0 l0 t3 lines">1500</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand Price</td>
+<td class="c m b2 r0 l0 t0 lines">$35.35</td>
+<td class="c m b2 r0 l0 t0 lines">$21.63</td>
+<td class="c m b2 r0 l0 t0 lines">$17.25</td>
+<td class="c m b2 r0 l0 t0 lines">$12.70</td>
+<td class="c m b2 r0 l0 t0 lines">$10.26</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Costs</td>
+<td class="c m b2 r0 l0 t0 lines">$2347.67</td>
+<td class="c m b2 r0 l0 t0 lines">$5040.00</td>
+<td class="c m b2 r0 l0 t0 lines">$7481.67</td>
+<td class="c m b2 r0 l0 t0 lines">$12469.67</td>
+<td class="c m b2 r0 l0 t0 lines">$16196.00</td>
+</tr>
+</table></div></div></div>
+<p>We have reason to believe that my demand price is a power function of some kind.  Our cost function is close to linear, but we can get volume discounts and reduce the per-unit cost with larger quantities. Thus we expect my cost function is actually quadratic, with the quadratic term much smaller than the linear term.  Find best fitting curves for cost and price.  Derive functions for revenue and profit.  Find break-even points between 10 and 1500.</p>
+<p><dfn class="terminology">Solution</dfn>:  I start by finding best-fit curves of for cost and price.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-3-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Thus we have:</p>
+<div class="displaymath">
+\begin{equation*}
+cost(q)=-0.0028q^2+14.353q+968.13
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+price(q)=286.02 q^{-0.453}
+\end{equation*}
+</div>
+<p>Next, we follow our models to get equations for revenue and profit.</p>
+<div class="displaymath">
+\begin{equation*}
+revenue(q)=q*price(q)=q 286.02 q^{-0.453}=286.02 q^{0.547}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+profit(q)=revenue(q)-cost(q)=286.02 q^{0.547}+0.0028q^2-14.353q-968.13
+\end{equation*}
+</div>
+<p>Finally, we load these equations back into Excel and use Goal Seek to find the break-even points.  Looking at projected profit on the chart we see a sign change near 1000, so we suspect a break-even point there.  We also note that profit seems to be going up until q is about 300, so I test for a break-even point for small values of q.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-3-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>We see we have break-even points when q is 12.74 and 996.28.</p></article></body>
+</html>

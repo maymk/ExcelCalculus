@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:30-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Economics Applications of the Integral</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-7-7-InvestmentDepreciation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7-7-InvestmentDepreciation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral" class="active">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-7-8-BusinessApplicationsIntegral"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.8</span> <span class="title">Economics Applications of the Integral</span>
+</h2>
+<a href="sec-7-8-BusinessApplicationsIntegral.html" class="permalink">¶</a><p id="p-3069"><a class="external" href="./Examples/Section-7-8-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-3070">We have looked at the definite integral as the signed area under a curve.  This lets us compute total profit, or revenue, or cost, from the related marginal functions.  We have looked at a number of applications where this was interpreted as an accumulation over time, including total production of an oil well and present value of a revenue stream.  For some applications we want to look at the area between two curves. For example, considering profit as the area between the cost and revenue curves.</p>
+<p id="p-3071">In this section we will look at more applications from finance and economics where the concepts can easily be described in terms as of the area between curves.</p>
+<p id="p-3072"><dfn class="terminology">Consumer and Producer Surplus</dfn></p>
+<p id="p-3073">When we looked at supply and demand curves we found an equilibrium point where the amount being offered for sale was equal to the amount people wanted to buy.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3074">However, in that model, there were people who were willing to sell for less than the equilibrium price and people who were willing to buy for more than the equilibrium price.  These people got an exceptionally good deal in the transaction.  We would like to measure that benefit, since we can think of it as the extra profit the suppliers and buyers make on the transaction.  We note that each side will have an incentive to maximize that benefit.</p>
+<p id="p-3075">Focus first on the consumer side.  The area under the demand function, from 0 to the quantity sold, measures the consumers’ willingness to spend.  The area in the rectangle with that same base and height equal to the sale price measures the actual consumer expenditure.  The difference between the two is a quantity we will call <dfn class="terminology">consumer surplus</dfn>.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3076">In calculus terms:</p>
+<article class="assemblage-like" id="assemblage-65"><div class="displaymath" id="p-3077">
+\begin{equation*}
+Willingness\ To\ Spend= \int_0^{q_s} demand\ function(q) dq
+\end{equation*}
+</div>
+<div class="displaymath" id="p-3078">
+\begin{equation*}
+consumer\ expendature= \int_0^{q_s} p_s  dq
+\end{equation*}
+</div>
+<div class="displaymath" id="p-3079">
+\begin{equation*}
+consumer surplus= \int_0^{q_s} (demand\ function(q)- p_s )  dq
+\end{equation*}
+</div></article><p id="p-3080">As long as the price stays on the demand function curve, a lower price means a greater quantity sold, and a greater consumer surplus.</p>
+<p id="p-3081">In a similar manner, we can focus on the producer side. The area under the supply function, from 0 to the quantity sold, measures the producers’ need for revenue.  The area in the rectangle with that same base and height equal to the sale price measures the actual producer revenue.  The difference between the two is a quantity we will call <dfn class="terminology">producer surplus</dfn>.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3082">In calculus terms:</p>
+<article class="assemblage-like" id="assemblage-66"><div class="displaymath" id="p-3083">
+\begin{equation*}
+Needed\ revenue= \int_0^{q_s} supply function(q) dq
+\end{equation*}
+</div>
+<div class="displaymath" id="p-3084">
+\begin{equation*}
+producer\ revenue= \int_0^{q_s} p_s  dq
+\end{equation*}
+</div>
+<div class="displaymath" id="p-3085">
+\begin{equation*}
+producer\ surplus= \int_0^{q_s} ( p_s-supply function(q))  dq
+\end{equation*}
+</div></article><p id="p-3086">As long as the price stays on the supply function curve, a higher price means a greater quantity sold, and a greater producer surplus.    Consider first an example where the supply and demand functions are simple enough that the computations can all be done by hand.</p>
+<article class="example-like" id="example-144"><a data-knowl="" class="id-ref" data-refid="hk-example-144"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.8.1</span>. <span class="title">Producer surplus with linear functions.</span>
+</h6></a></article><div id="hk-example-144" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-3087">I am trying to sell widgets and have determined the supply and demand functions to be:</p>
+<div class="displaymath">
+\begin{equation*}
+supply price(quantity)=4+quantity
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+demand price(quantity)=106- 2*quantity
+\end{equation*}
+</div>
+<p id="p-3088">Find the equilibrium price and quantity.  Find the producer and consumer surpluses when the shirts are sold at the equilibrium price.  If the producers form a cartel, find the price that maximizes producer surplus.</p>
+<p id="p-3089"><dfn class="terminology">Solution</dfn>: By setting supply price and demand price equal to each other we find an equilibrium quantity of 34 and an equilibrium price of 38.  The formulas for the consumer and producer surpluses become:</p>
+<div class="displaymath">
+\begin{equation*}
+consumer surplus= \int_0^{34} ((106-2q)-38)  dq
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+producer surplus= \int_0^{34} ( 38-(4+q))  dq
+\end{equation*}
+</div>
+<p id="p-3090">To evaluate the integrals we can notice that each is a triangle of base 34.  One has height of 34 and the other has a height of 68.  Using geometry, the consumer surplus is $1,156 and the producer surplus is $578.</p>
+<p id="p-3091">To find the maximum producer surplus, we need to turn the endpoint into a variable.  If the producers act as a cartel</p>
+<div class="displaymath">
+\begin{equation*}
+producer\ surplus= \int_0^x ( (106-2x)-(4+q))  dq=\int_0^x ( 102-2x-q)  dq
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\left.\left((102-2x)q-\frac{q^2}{2}\right) \right|_0^x=((102-2x)x-\frac{x^2}{2}=102x-\frac{5x^2}{2}
+\end{equation*}
+</div>
+<p id="p-3092">We can find the maximum of this by taking its derivative and setting it equal to 0.  The maximum occurs when \(x=\frac{102}{5}=20.4\text{.}\)  At that point the producer surplus is $1,040.40</p></article></div>
+<p id="p-3093">We now try an example where we need other techniques to evaluate the integrals.</p>
+<article class="example-like" id="example-145"><a data-knowl="" class="id-ref" data-refid="hk-example-145"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.8.2</span>. <span class="title">Producer surplus with numeric integration.</span>
+</h6></a></article><div id="hk-example-145" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-3094">A store trying to sell t-shirts on campus has determined the supply and demand functions to be:</p>
+<div class="displaymath">
+\begin{equation*}
+supply price(quantity)=5+\ln (quantity+10)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+demand price(quantity)=10+100/(quantity+2)
+\end{equation*}
+</div>
+<p id="p-3095">Find the equilibrium price and quantity.  Find the producer and consumer surpluses when the shirts are sold at the equilibrium price.</p>
+<p id="p-3096"><dfn class="terminology">Solution</dfn>: We load the supply and demand price functions into excel and use Goal Seek to find an equilibrium price.  Rounding to the nearest unit for quantity and cent for price, we have an equilibrium price of $10.45 for a quantity of 222 shirts.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3097">We then substitute these values into the equations for consumer and producer surplus.</p>
+<div class="displaymath">
+\begin{equation*}
+consumer\ surplus= \int_0^{q_s} (demand\ function(q)- p_s )  dq
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+consumer\ surplus= \int_0^{222} ((10+100/(quantity+2))- 10.45)  dq
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+producer\ surplus=\int_0^{q_s} ( p_s-supply\ function(q))  dq
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+producer\ surplus=\int_0^{222} ( 10.45-(5+\ln (quantity+10)))  dq
+\end{equation*}
+</div>
+<p id="p-3098">To evaluate these integrals we either use a Riemann sum approximation, like the one found on the example worksheet, or use Wolfram Alpha.  In either case, rounded to the nearest dollar, we have a consumer surplus of $372 and a producer surplus of $191.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-7.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-3099">The sum of the consumer surplus and the producer surplus is referred to as the <dfn class="terminology">total social gain</dfn>.   As we looked at consumers' surplus, we assumed that the sales were determined by supply and the price-quantity point was on the supply curve.  Similarly, when looking at producers' surplus we assume price is set by demand and the price-quantity point was on the demand curve.  If both sides are made up of many individuals acting independently, the price-quantity point is the equilibrium point, which is on both curves.  Selling at that point also maximizes the total social gain.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3100">If however, either the producers or consumers can organize and act as a unit, they can form a cartel and limit the amount sold.  If the producers form a cartel, they can lower production and raise the price.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3101">As we can see from the picture, this always lowers the total social gain.  However for some reduction of quantity the producers’ surplus is increased.  In the equation for producer surplus the price \(p_s\) is \(demand\ function (q_s)\) rather than \(supply\ function (q_s)\text{.}\)  If the quantity goes down too far the producer surplus will also go down.</p>
+<article class="example-like" id="example-146"><a data-knowl="" class="id-ref" data-refid="hk-example-146"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.8.3</span>. <span class="title">Computing loss of social gain.</span>
+</h6></a></article><div id="hk-example-146" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-3102">A store trying to sell t-shirts on campus has determined the supply and demand functions to be:</p>
+<div class="displaymath">
+\begin{equation*}
+supply\ price(quantity)=5+\ln (quantity+10)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+demand\ price(quantity)=10+100/(quantity+2)
+\end{equation*}
+</div>
+<p id="p-3103">The store owner has a monopoly on campus and decides to limit the quantity sold to 200 shirts and charge what the market will bear.  Find the price, the producer surplus, and consumer surpluses.  Find these numbers if the owner decides to limit sales to 50.   How many shirts should the owner sell at what price to maximize producer surplus?  If producer surplus is maximized, how much is the total social gain reduced?</p>
+<p id="p-3104"><dfn class="terminology">Solution</dfn>: The formulas involved for supply and demand are the same ones we used in example 2.  With a slight modification if the worksheet from that example we can set it to compute the Riemann sums approximating the surpluses.  In particular, we use the demand function for finding the height of producer surplus.  (See cell D7.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3105">If we only want to sell 200 shirts, we can raise the price to from $10.45 to $10.50.  The producer surplus rises from $191 to $199.  However the consumer surplus falls from $372 to $362.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-11.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3106">If we only want to sell 50 shirts, we can raise the price from$10.45 to $11.92.  The producer surplus falls from $191 to $174.  The consumer surplus falls from $372 to $230.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-12.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3107">We can use solver to maximize the Producer surplus by varying the quantity.  A quantity of 140 maximizes the producer surplus at $210, but is doing that the total social gain is down to $537 from $563.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-13.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-3108">Similarly, if the consumers form a cartel, they can artificially reduce the demand.  Since they will then pay the supply price the total social gain will be decreased, but the consumers’ surplus may be increased.  In this case the consumer surplus is the integral of the difference between the demand function and the supply price of the quantity that will be sold.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-14.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3109">In the example we just looked at, both the supply and demand curves have a small slope, so the market is quite elastic from both the producers and consumers point of view.  Is such a case there is less incentive to form a cartel.  In other markets, like gas and oil, where the market is more inelastic, there is more incentive to engage in monopolistic practices.</p>
+<p id="p-3110"><dfn class="terminology">Lorenz Curves and the Gini Index</dfn></p>
+<p id="p-3111">A question that arises in economics looks at the equity of income or wealth distribution in a country.  In standard economic theories either too much or too little equity indicates a lack of opportunity and is a hindrance to growth.  However, before being able to address the advantages or disadvantages of a level of inequity we need to be able to quantify the level of equity or inequity.  The standard method is to use the <dfn class="terminology">Lorenz curve</dfn> and the <dfn class="terminology">Gini index</dfn>.</p>
+<p id="p-3112">The Lorenz curve is defined by a function \(L(x)\text{,}\) with \(0\le x\le 1\text{,}\) that measures the proportion of something is held by the bottom \(x\) proportion of the population.  Thus, if \(L(0.2)=.1\text{,}\) for the Lorenz function for income in a country, then the bottom 20% of the population earns 10% of the income in the country.  Since, under usual definitions, a person cannot have negative income, the Lorenz functions are nonnegative and increasing.  Since the Lorenz functions are measured from the bottom, we also have \(L(x)\le x\) for all \(x\text{.}\)</p>
+<p id="p-3113">We can make a few more observations.  The population as a whole has the entire income of the population.  An empty set of the population has none of the population's income.  Any bottom segment will have nonnegative income.  In formulas these observations become \(L(1)=1\text{,}\) \(L(0)=0\text{,}\) and \(L(x)\ge 0\text{,}\) for all \(x\text{,}\) respectively.</p>
+<p id="p-3114">If we had perfect equity, our Lorenz function would be \(L(x)=x\text{.}\)  Any Lorenz curve we find for a real population will be below this curve.  The Gini index (or Gini coefficient) measures the percentage that a real Lorenz curve is below the ideal curve.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-15.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3115">Computationally,</p>
+<div class="displaymath">
+\begin{equation*}
+G=\frac{\int_0^1 (x-L(x))dx}{\int_0^1 x  dx}=2\int_0^1 (x-L(x))dx.
+\end{equation*}
+</div>
+<p id="p-3116">In practice this number is often multiply by 100, reporting the percentage (0 to 100) rather than proportion (0 to 1) of the area under the ideal function and above the measured function.</p>
+<article class="example-like" id="example-147"><a data-knowl="" class="id-ref" data-refid="hk-example-147"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.8.4</span>. <span class="title">Gini index with a formula for income distribution.</span>
+</h6></a></article><div id="hk-example-147" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-3117">The Lorenz curve for income in a certain country is given by \(L(x)=.8x^3+.2x\text{.}\)  What proportion of the income is earned by the bottom half of the population?  Find the Gini index.</p>
+<p id="p-3118"><dfn class="terminology">Solution</dfn>: To find the proportion earned by the bottom half of the population we substitute 0.5 in the equation.</p>
+<div class="displaymath">
+\begin{equation*}
+L(0.5)=(0.8) (0.5)^3+(0.2)(0.5)=0.1+0.1=0.2.
+\end{equation*}
+</div>
+<p id="p-3119">Thus the bottom 50% of the population earns 20.% of the total income. To compute the Gini index, we compute:</p>
+<div class="displaymath">
+\begin{equation*}
+G=2\int_0^1 (x-0.8x^3-0.2x)dx=(2)(0.4x^2-0.2x^4 ) |_0^1=.4
+\end{equation*}
+</div>
+<p id="p-3120">So the Gini index in this hypothetical country is 40.  To put this number in context, the reported Gini index for the United States in 2009 was 46.8.</p></article></div>
+<p id="p-3121">In practice, the Gini index is an application where a numeric approximation of an integral is the method most likely to be used.  We are unlikely to get a formula for income distribution.  Instead we are likely to find data points.  Since there is no good model for how the income will be distributed, we can simply connect the points with line segments and find the area using the area formula for a trapezoid.</p>
+<article class="example-like" id="example-148"><a data-knowl="" class="id-ref" data-refid="hk-example-148"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.8.5</span>. <span class="title">Gini index with a chart for income distribution.</span>
+</h6></a></article><div id="hk-example-148" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-3122">We have the following data from the census bureau on income distribution in the US in 2008.  Compute the Gini index.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Population %tile</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines">60</td>
+<td class="c m b1 r0 l0 t3 lines">80</td>
+<td class="c m b1 r0 l0 t3 lines">90</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Income %tile</td>
+<td class="c m b2 r0 l0 t0 lines">0</td>
+<td class="c m b2 r0 l0 t0 lines">3.4</td>
+<td class="c m b2 r0 l0 t0 lines">12.0</td>
+<td class="c m b2 r0 l0 t0 lines">26.7</td>
+<td class="c m b2 r0 l0 t0 lines">50.0</td>
+<td class="c m b2 r0 l0 t0 lines">78.5</td>
+<td class="c m b2 r0 l0 t0 lines">100</td>
+</tr>
+</table></div></div></div>
+<p id="p-3123"><dfn class="terminology">Solution</dfn>:  We recall that the area of a trapezoid is (width)(average height).  We put the data into a spreadsheet.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-16.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3124">Then we evaluate the formulas.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-17.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3125">In percentages, the Gini index is approximated at 45.</p></article></div>
+<section class="exercises" id="exercises-set-sec-7-8"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Business Applications of the Integral Problems</span>
+</h3>
+<a href="sec-7-8-BusinessApplicationsIntegral.html#exercises-set-sec-7-8" class="permalink">¶</a><p id="p-3126">For exercises 1-6, assume we have a free market and that goods are sold at market equilibrium.  Find the consumer surplus, producer surplus, and total social gain.</p>
+<article class="exercise-like" id="exercise-538"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-3127">\(SupplyPrice(q)= 50+q/2\) and \(DemandPrice(q)= 150-q/5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-272" id="solution-272"><span class="type">Solution</span></a><div id="hk-solution-272" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-3128">The two curve intersect at the point of market equilibrium, \(\left({\frac{1000}{7},\frac{850}{7}}\right)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+ProducerSurplus=
+\int_0^{1000/7}
+\left({\frac{850}{7}}\right)-
+\left({50+\frac{x}{2}}\right)\ dx=5102.04
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+ConsumerSurplus=
+\int_0^{1000/7}
+\left({150-\frac{x}{5}}\right)-\left({\frac{850}{7}}\right)\ dx=2040.82.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+TotalSocialGaine=ProducerSurplus+ConsumerSurplus=7142.86
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-539"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-3129">\(SupplyPrice(q)=\ln (q+10)\) and \(DemandPrice(q)= 100-q\text{.}\)</p></article><article class="exercise-like" id="exercise-540"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-3130">\(SupplyPrice(q)= 50(1-(0.99)^q)\) and \(DemandPrice(q)= 100(0.99)^q\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-273" id="solution-273"><span class="type">Solution</span></a><div id="hk-solution-273" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-3131">The two curve intersect at the point of market equilibrium, \((109.31, 33.33)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+ProducerSurplus=
+\int_0^{109.31}
+(33.33)-
+\left({50(1-(0.99)^q)}\right)\ dx=1494.79
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+ConsumerSurplus=
+\int_0^{109.31}
+\left({100(0.99)^q}\right)-33.33)\ dx=2989.58.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+TotalSocialGaine=ProducerSurplus+ConsumerSurplus=4484.37
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-541"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-3132">\(SupplyPrice(q)= 50(1-(0.95)^{q/10}\) and \(DemandPrice(q)= 150(0.95)^{q/10}\text{.}\)</p></article><article class="exercise-like" id="exercise-542"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+SupplyPrice(q)=\begin{cases}
+5&amp;q\le 10\\
+q^2/20&amp;q&gt;10\\
+\end{cases}
+\end{equation*}
+</div>
+<p id="p-3133">and</p>
+<div class="displaymath">
+\begin{equation*}
+DemandPrice(q)=\begin{cases}
+100&amp;q\le 10\\
+110-q&amp;q&gt;10\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-274" id="solution-274"><span class="type">Solution</span></a><div id="hk-solution-274" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-3134">The two curve intersect at the point of market equilibrium, \((37.958, 72.042)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+ProdSurplus=
+\int_0^{37.958}
+(72.042)-
+(SupplyPrice(q))\ dx=1789.732.
+\end{equation*}
+</div>
+<p id="p-3135">The integral needs to be done in two parts with the break at 10.</p>
+<div class="displaymath">
+\begin{equation*}
+ConsSurplus=
+\int_0^{37.958}
+DemandPrice(q)-72.042\ dx=670.405.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+TotalSocialGain=ProdSurplus+ConsSurplus=2460.137.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-543"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-3136">\(SupplyPrice(q)= q/2\) and</p>
+<div class="displaymath">
+\begin{equation*}
+DemandPrice(q)=\begin{cases}
+200&amp;q\le 10\\
+250*.8^{q/10}&amp;q&gt;10\\
+\end{cases}
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-544"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-3137">Assume SupplyPrice(q)= 30+q and DemandPrice(q)= 170-q.</p>
+<ol class="lower-alpha">
+<li id="li-799"><p id="p-3138">Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+<li id="li-800"><p id="p-3139">If the producers can form a cartel and restrict the available quantity to 50, selling at the supply price for 50, what are the consumer surplus, producer surplus, and total social gain?</p></li>
+<li id="li-801"><p id="p-3140">Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-275" id="solution-275"><span class="type">Solution</span></a><div id="hk-solution-275" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-802">
+<p id="p-3141">The two curve intersect at the point of market equilibrium, \((70, 100)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+ProdSurplus=
+\int_0^{70}
+(100)-
+(30+q)\ dx=2450.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+ConsSurplus=
+\int_0^{70}
+(170-q)-100\ dx=2450.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+TotalSocialGain=ProdSurplus+ConsSurplus=4900.
+\end{equation*}
+</div>
+</li>
+<li id="li-803">
+<div class="displaymath">
+\begin{equation*}
+DemandPrice(50)=120.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+ProdSurplus=
+\int_0^{50}
+(120)-
+(30+q)\ dx=3250.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+ConsSurplus=
+\int_0^{50}
+(170-q)-120\ dx=1250.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+TotalSocialGain=ProdSurplus+ConsSurplus=4500.
+\end{equation*}
+</div>
+</li>
+<li id="li-804">
+<p id="p-3142">The formula for the producer surplus at x is</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^x DemandPrice(t)-SupplyPrice(x)\ dx
+\end{equation*}
+</div>
+<p id="p-3143">In our case we get</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^x (170-t)-(30+x) \ dt=\int_0^x(140-t-x) \ dt
+\end{equation*}
+</div>
+<p id="p-3144">We note that x is a constant for our integration.  Thus, thus we get</p>
+<div class="displaymath">
+\begin{equation*}
+\left.\left({140t-\frac{t^2}{2}-xt}\right)\right|_0^x=140x-\frac{3x^2}{2}
+\end{equation*}
+</div>
+<p id="p-3145">The Maximum Producer surplus is 3266.67, achieved when q is 46.67</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-545"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-3146">Assume SupplyPrice(q)= 10+q/2 and DemandPrice(q)= 110-q/3.</p>
+<ol class="lower-alpha">
+<li id="li-805"><p id="p-3147">Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+<li id="li-806"><p id="p-3148">If the producers can form a cartel and restrict the available quantity to 400, selling at the supply price for 400, what are the consumer surplus, producer surplus, and total social gain?</p></li>
+<li id="li-807"><p id="p-3149">Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+</ol></article><article class="exercise-like" id="exercise-546"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-3150">Assume \(SupplyPrice(q)= 10+q^2\) and \(DemandPrice(q)= 210-q^2\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-808"><p id="p-3151">Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+<li id="li-809"><p id="p-3152">If the producers can form a cartel and restrict the available quantity to 5, selling at the demand price for 5 (for a price of 185), what are the consumer surplus, producer surplus, and total social gain?</p></li>
+<li id="li-810"><p id="p-3153">Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-276" id="solution-276"><span class="type">Solution</span></a><div id="hk-solution-276" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-811">
+<p id="p-3154">The two curve intersect at the point of market equilibrium, \((10, 110)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+ProdSurplus=
+\int_0^{10}
+(110)-
+(10+q^2)\ dx=\frac{2000}{3}.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+ConsSurplus=
+\int_0^{10}
+(210-q^2)-110\ dx=\frac{2000}{3}.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+TotalSocialGain=ProdSurplus+ConsSurplus=\frac{4000}{3}.
+\end{equation*}
+</div>
+</li>
+<li id="li-812">
+<div class="displaymath">
+\begin{equation*}
+DemandPrice(5)=185.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+ProdSurplus=
+\int_0^{5}
+(185)-
+(10+q^2)\ dx=\frac{2500}{3}.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+ConsSurplus=
+\int_0^{5}
+(210-q^2)\ dx=\frac{250}{3}.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+TotalSocialGain=ProdSurplus+ConsSurplus=\frac{2750}{3}.
+\end{equation*}
+</div>
+</li>
+<li id="li-813">
+<p id="p-3155">The formula for the producer surplus at \(x\)e is</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^x DemandPrice(t)-SupplyPrice(x)\ dx
+\end{equation*}
+</div>
+<p id="p-3156">In our case we get</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^x (210-t^2)-(10+x^2) \ dt=\int_0^x(200-t^2-x^2) \ dt
+\end{equation*}
+</div>
+<p id="p-3157">We not that x is a constant for our integration.  Thus, thus we get</p>
+<div class="displaymath">
+\begin{equation*}
+\left.\left({200t-\frac{t^3}{3}-x^2t}\right)\right|_0^x=200x-\frac{4x^3}{3}
+\end{equation*}
+</div>
+<p id="p-3158">To find the maximum producer surplus, we take the derivative of the function above and see it is zero at \(\sqrt{50}\text{.}\)  The maximum producer surplus is 942.81, achieved when q is \(\sqrt{50}\)</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-547"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-3159">Consider the Lorenz curve \(L(x)=0.2x+0.8x^2\text{.}\)  Find the Gini index.</p></article><article class="exercise-like" id="exercise-548"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-3160">Consider the Lorenz curve \(L(x)=.03x+0.7x^4\text{.}\)  Find the Gini index.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-277" id="solution-277"><span class="type">Solution</span></a><div id="hk-solution-277" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+G=\frac{100 \int_0^1(x-(0.3x+0.7x^4))dx}{.5}
+=200 \int_0^1(-0.7x+0.7x^4)dx=42
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-549"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-3161">You research a country and find the following information on income share:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Population %tile</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines">60</td>
+<td class="c m b1 r0 l0 t3 lines">80</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Income %tile</td>
+<td class="c m b2 r0 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines">15</td>
+<td class="c m b2 r0 l0 t0 lines">30</td>
+<td class="c m b2 r0 l0 t0 lines">50</td>
+</tr>
+</table></div></div></div>
+<p id="p-3162">Compute an approximation of the Gini index.</p></article><article class="exercise-like" id="exercise-550"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-3163">You research a country and find the following information on income share:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Population %tile</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines">60</td>
+<td class="c m b1 r0 l0 t3 lines">80</td>
+<td class="c m b1 r0 l0 t3 lines">90</td>
+<td class="c m b1 r0 l0 t3 lines">95</td>
+<td class="c m b1 r0 l0 t3 lines">99</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Income %tile</td>
+<td class="c m b2 r0 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines">15</td>
+<td class="c m b2 r0 l0 t0 lines">30</td>
+<td class="c m b2 r0 l0 t0 lines">50</td>
+<td class="c m b2 r0 l0 t0 lines">65</td>
+<td class="c m b2 r0 l0 t0 lines">75</td>
+<td class="c m b2 r0 l0 t0 lines">90</td>
+</tr>
+</table></div></div></div>
+<p id="p-3164">Compute an approximation of the Gini index.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-278" id="solution-278"><span class="type">Solution</span></a><div id="hk-solution-278" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-3165">We approximate the area by using straight lines between the given point and using trapezoids for the area of section.  We then need to multiply by 2, since we want the percentage below the diagonal line, and multiply by 100 to go from percentile to percents.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-8-sol13a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3166">The Gini index is approximately 57.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-551"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-3167">Find data online on the income distribution in the United States.  Good sources are the Census Bureau, at <a class="external" href="http://www.census.gov/hhes/www/income/data/historical/inequality/index.html" target="_blank">http://www.census.gov/hhes/www/income/data/historical/inequality/index.html</a>, and <a class="external" href="http://www.wealthandwant.com/issues/income/income_distribution.html" target="_blank">http://www.wealthandwant.com/issues/income/income_distribution.html</a> . Compute an approximation of the Gini index from your data.</p></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

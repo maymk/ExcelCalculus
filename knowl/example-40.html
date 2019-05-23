@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:35-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.5.2</span>. <span class="title">A deceptive graph.</span>
+</h6>
+<p>Use solver to gather information, on the interval \(0\le x\le 15\text{,}\) on the graph of \(f(x)=(x^3-4x^2+4x+3) e^{(-x/2)}\text{.}\)</p>
+<p><dfn class="terminology">Solution</dfn>:  As always, start by looking at a graph.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>From the graph I expect the function has no roots on the interval.  It has local minimums near 0, 2.5, and 10.  It has local maximums near 0.5, and 8.  I will need to add constraints to find the local minimums at the boundaries.  To make my worksheet easy to read I add two extra columns for the x and y values of interesting point, and fill in guesses.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>After I use Solver, I find the local minimums occur at 0, 2.326, and 10, and the local maximums occur at 0.29115 and 7.3827.  The maximum value for the function in the interval is 5.409 and the minimum is 1.0149.  We verify that the endpoints, \(x=0\) and \(x=10\text{,}\) are both local minimums.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-11.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>This function can be used to illustrate a limitation of our method.  If we had graphed the functions at intervals at intervals of size 1 rather than 0.5, we get a different picture.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-12.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>In that case, we miss the local maximum at 0.29 and confuse the left endpoint as a local maximum.  Since Solver does not use the picture, it will not be misled by it.  This example points out that while the graph is useful for guidance, we need to verify that we have not been misled by not graphing with enough resolution.</p></article><span class="incontext"><a href="sec-3-5-IntroductionSolver.html#example-40">in-context</a></span>
+</body>
+</html>

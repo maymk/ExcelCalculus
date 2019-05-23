@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-28T13:35:58-06:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">5.2.24</span>
+</h5>
+<p id="p-477">Let \(A\) and \(B\) be \(2 \times 2\) matrices with entries in the real numbers. We can define an equivalence relation on the set of \(2 \times 2\) matrices, by saying \(A \sim B\) if there exists an invertible matrix \(P\) such that \(PAP^{-1} = B\).  For example, if 
+                    \begin{equation*}A =
+                    \begin{pmatrix}
+                    1 &amp; 2 \\
+                    -1 &amp; 1
+                    \end{pmatrix}
+                    \quad \text{and} \quad
+                    B =
+                    \begin{pmatrix}
+                    -18 &amp; 33 \\
+                    -11 &amp; 20
+                    \end{pmatrix},\end{equation*}
+                then \(A \sim B\) since \(PAP^{-1} = B\) for
+                    \begin{equation*}P =
+                    \begin{pmatrix}
+                    2 &amp; 5 \\
+                    1 &amp; 3
+                    \end{pmatrix}.\end{equation*}
+                    Let \(I\) be the \(2 \times 2\) identity matrix; that is,
+                    \begin{equation*}I =
+                    \begin{pmatrix}
+                    1 &amp; 0 \\
+                    0 &amp; 1
+                    \end{pmatrix}.\end{equation*}
+                Then \(IAI^{-1} = IAI = A\); therefore, the relation is reflexive.  To show symmetry, suppose that \(A \sim B\).  Then there exists an invertible matrix \(P\) such that \(PAP^{-1} = B\).  So 
+                    \begin{equation*}A = P^{-1} B P = P^{-1} B (P^{-1})^{-1}.\end{equation*}
+                Finally, suppose that \(A \sim B\) and \(B \sim C\).  Then there exist invertible matrices \(P\) and \(Q\) such that \(PAP^{-1} = B\) and  \(QBQ^{-1} = C\).  Since 
+                    \begin{equation*}C = QBQ^{-1} = QPAP^{-1} Q^{-1} = (QP)A(QP)^{-1},\end{equation*}
+                the relation is transitive.  Two matrices that are equivalent in this manner are said to be <em class="terminology">similar</em>.</p></article><span class="incontext"><a href="section-sets-and-equivalence-relations.html#example-sets-equivalent-matrices">in-context</a></span>
+</body>
+</html>

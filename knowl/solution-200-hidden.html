@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:41-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution"><ol class="lower-alpha">
+<li>
+<p>Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+f(3,y)=9(3+2^y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(x,-1)=(x^2 )(x+2^{-1} )= x^3+\frac{1}{2} x^2
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Find the partial derivatives of the original function.</p>
+<div class="displaymath">
+\begin{equation*}
+f_x  (x,y)=(2x)(x+2^y )+(x^2 )(1+0 )  \text{ (product rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= 2x^2+2x 2^y+x^2=3x^2+(2x)2^y
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y  (x,y)=\frac{\partial}{\partial y} (x^2 )(x+2^y ) \quad (\text{ Take partial derivative wrt }y.)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{\partial}{\partial y}(x^3+x^2 2^y ) \qquad\text{ (Simplify the expression.)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= x^2 2^y  \ln(2)  \qquad
+(x \text{ is treated as a constant so the }x^3\text{ term drops out.)}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f_x  (3,-1)=27+(6) 2^{-1}=27+3=30
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y  (3,-1))= 9*\frac{1}{2}  \ln(2)=\frac{9}{2} \ln(2)
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Give the equation of the tangent plane through \(P_1\text{.}\)</p>
+<p>We need \(f(3,-1)=9*\frac{7}{2}=\frac{63}{2}\) for the equation of the tangent plane</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0 )+f(x_0,y_0 ).
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(x ,y)=30 (x-3)+\frac{9}{2}  \ln(2) (y+1)+\frac{63}{2}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>The approximation at \(P_2\) obtained from the tangent plane.</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(3,0)=30* (0)+\frac{9}{2} \ln(2) *(1)+\frac{63}{2}=\frac{9}{2}  \ln(2)+\frac{63}{2}
+\end{equation*}
+</div>
+</li>
+</ol></div></body>
+</html>

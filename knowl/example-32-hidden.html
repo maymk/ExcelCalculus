@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:34-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>For approximating interest with continual compounding it is useful to have a linear approximation of \(f(r)=exp(r)\) when \(r\) is close to 0.  Use information about \(f(r)=exp(r)\) near \(r_0=0\) to estimate the exponential function for numbers near 0.  Check the accuracy of your approximations and give a domain where the approximation is good enough to use.</p>
+<p><dfn class="terminology">Solution</dfn>:  Once again, we use Excel to find the value of the function and its derivative at 0.  For the derivative we use the calculator approximation.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-3-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Thus the linear approximation is</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} linear\ f(x) \amp = 
+f(0)+f'(0)(r-0)\\
+\amp = 1+(1)(r). \end{aligned}
+\end{equation*}
+</div>
+<p>This is much easier to compute than the exponential function.  However when we check accuracy we find that it is not very accurate for other integer values.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-3-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>That brings us back to the last part of the question, which asks for a domain where the approximation is good enough to use.  The phrase “good enough to use” will depend on the setting, but we will be happy with an estimate that is within 1%.  Since we are going to use this for interest rates, we are interested in positive rates.</p>
+<p>We modify the worksheet to allow a step size, \(del\ x\text{,}\) to be used.  Then we experiment with step sized till we get a domain where the error is under 1%.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-3-11.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>We see that \(\exp(r)\approx 1+r\) for \(0\le r\lt 0.15\text{.}\) This gives us an approximation we can use for rates of up to 15%.</p></article></body>
+</html>

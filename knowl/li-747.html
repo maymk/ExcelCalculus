@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:45-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span> <span class="codenumber">7.2.9.b</span>.</h6>
+<p>Based on the curve we would say that the anti-derivative should be an exponential function. The derivative of \(e^{2x}\) is \(2e^{2x}\text{,}\) so it seems reasonable to start with the anti-derivative being \(F(x)=A e^{2x}+B\text{.}\)</p>
+<p>Then the derivative has to  be \(f(x)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+F' (x)=A e^2x  (2)+0=2A e^2x+0=e^2x
+\end{equation*}
+</div>
+<p>Hence A=0.5 and we may choose B to be any constant we want. Then</p>
+<div class="displaymath">
+\begin{equation*}
+F(x)=1/2  e^2x+B  
+\end{equation*}
+</div>
+<p>That shows us where the problem is in our estimate.  Excel’s best fitting routine does not allow for constants in exponential functions.  Since \(F(0)=.5+B\text{,}\) and \(Area(0)=0\text{,}\) we need to add .5 to the area to get a good best fit curve.  Then the best fit line works.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-sol9b.png" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="sec-7-2-FundamentalTheoremCalculius.html#li-747">in-context</a></span>
+</body>
+</html>

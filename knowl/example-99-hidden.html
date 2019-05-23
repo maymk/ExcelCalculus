@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:43-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>We are given the following data on the value of a portfolio over time:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Year</td>
+<td class="c m b1 r0 l0 t3 lines">Amount</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">$10,000</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines">$10,920</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">$12,490</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">8</td>
+<td class="c m b1 r0 l0 t0 lines">$14,300</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">9</td>
+<td class="c m b1 r0 l0 t0 lines">$14,960</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">12</td>
+<td class="c m b1 r0 l0 t0 lines">$17,169</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">14</td>
+<td class="c m b1 r0 l0 t0 lines">$18,820</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">17</td>
+<td class="c m b1 r0 l0 t0 lines">$21,630</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">19</td>
+<td class="c m b1 r0 l0 t0 lines">$23,740</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">20</td>
+<td class="c m b1 r0 l0 t0 lines">$24,880</td>
+</tr>
+</table></div></div></div>
+<p>We think the investor put some money in a secure account that does not give interest (a coffee can) and the rest of the money in an account that bore interest (an investment account).  Find the amount deposited in each account and the interest rate of the investment account.</p>
+<p>Solution:  We set this up much like we did for the linear model, except of model equation is now</p>
+<div class="displaymath">
+\begin{equation*}
+TotalValue(time)=CashAmount+DepositAmount*rate^{time}.
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-4-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>We then use Solver to minimize cell E26, by changing cells B20:B22.  Our solution indicates that CashAmount=$997.76, DepositAmount=$9,005.51, and rate=1.05.</p></article></body>
+</html>

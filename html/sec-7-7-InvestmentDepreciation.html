@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-03-20T21:59:30-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applications of the integral: Investment and depreciation</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec-7-6-NormalDistribution.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-7-8-BusinessApplicationsIntegral.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7-6-NormalDistribution.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-7-8-BusinessApplicationsIntegral.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Frontmatter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="acknowledgement-1.html">Acknowledgements</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="chap-1-FunctionsGraphsExcel.html"><span class="codenumber">1</span><span class="title">Functions Graphs and Excel</span></a></h2>
+<ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+<h2 class="link"><a href="chap-2-BusinessApplications.html"><span class="codenumber">2</span><span class="title">Business Applications</span></a></h2>
+<ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html">Nonlinear Functions</a></li>
+</ul>
+<h2 class="link"><a href="chap-3-RateChangeDerivatives.html"><span class="codenumber">3</span><span class="title">Rate of Change and Derivatives</span></a></h2>
+<ul>
+<li><a href="sec-3-1-MarginalFunctions.html">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html">An Introduction to Solver</a></li>
+</ul>
+<h2 class="link"><a href="chap-4-SymbolicDIfferentiation.html"><span class="codenumber">4</span><span class="title">Symbolic Differentiation</span></a></h2>
+<ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html">The Second Derivative and Concavity</a></li>
+</ul>
+<h2 class="link"><a href="chap-5-DIfferentiationApplications.html"><span class="codenumber">5</span><span class="title">Differentiation Techniques and Applications</span></a></h2>
+<ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html">RelatedRates</a></li>
+<li><a href="sec-5-3-Elasticity.html">Elasticity</a></li>
+</ul>
+<h2 class="link"><a href="chap-6-FunctionsSeveralVariables.html"><span class="codenumber">6</span><span class="title">Functions of Several Variables</span></a></h2>
+<ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html">Optimization and Best Fitting Curves</a></li>
+</ul>
+<h2 class="link active"><a href="chap-7-Intergration.html"><span class="codenumber">7</span><span class="title">Integration</span></a></h2>
+<ul>
+<li><a href="sec-7-1-RiemannSums.html">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" class="active">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html">Economics Applications of the Integral</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2>
+<ul>
+<li><a href="appendix-1.html">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-2.html">Notation</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+<li><a href="colophon-2.html">Colophon</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-7-7-InvestmentDepreciation"><header title="Section 7.7 Applications of the integral: Investment and depreciation"><h1 class="heading hide-type" alt="Section 7.7 Applications of the integral: Investment and depreciation">
+<span class="type">Section</span><span class="codenumber">7.7</span><span class="title">Applications of the integral: Investment and depreciation</span><a href="sec-7-7-InvestmentDepreciation.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-2162">
+Having looked at several ways to evaluate definite integrals, we return to practical problems that we can solve be evaluating an integral.  We will break our applications in this section into two groups.  Problems in the first group reduce to accumulation over time, and are analogous to finding the area under a curve, or finding a definite integral.  Problems in the second group ask you to find a specific anti-derivative of a function.  They are called boundary value problems.</p>
+<p id="p-2163">
+Basic Accumulation– The most straightforward problem for integration is one where I have a function for some value, like an income stream, or materials produced, or a cost, and I am interested if calculating how much accumulates in a specified interval.  We work through a series of examples where the accumulation function gets progressively more complicated.</p>
+<p id="p-2164">
+Example 1: Accumulating a constant function over time- Mary runs a small shop that is temporarily disconnected from the power network.  A generator that provides power uses 2 gallons of fuel per hour.  How much fuel does she need to keep the shop running from 8 in the morning until 6 in the afternoon.</p>
+<p id="p-2165">
+Solution: We started with a problem that is easy to do without calculus to give us confidence in our method.  We solve it with algebra first.  Mary wants to run the generator for 10 hours and it consumes 2 gallons of fuel per hour.  She needs (10 hours)(2 gallons/hour) = 20 gallons of fuel.</p>
+<p id="p-2166">
+To set the problem up for calculus, we use a 24-hour clock to put time on a number line.  We are accumulating \(FuelConsumption(t)=2\) from \(t=8\) to \(t=18\).  We need</p>\begin{equation*}\int_8^{1}8 2 dt=|2t|_8^{18}=(2*18)-(2*8)=20\end{equation*}<p id="p-2167">
+gallons of fuel.</p>
+<figure class="figure-like" id="figure-286"><img width="70%" src="images/sec7-7-1.png" alt=""></figure><p id="p-2168">
+Example 2: Accumulating marginal cost- John finds the marginal cost of producing widgets to be </p>\begin{equation*}
+Marginal Cost(quantity)=50+quantity/1000\end{equation*}<p id="p-2169">
+Find the increase in cost as production goes from 50,000 to 80,000.</p>
+<p id="p-2170">
+Solution: Since the change in cost looks like a Riemann sum with 30,000 intervals, we will approximate the change in cost with the integral of the marginal cost.  With this function we can easily find an antiderivative and evaluate. The change in cost is </p>\begin{equation*}\int_{50000}^{80000} 50+\frac{q}{1000} dq=
+\left.\left( 
+50q+\frac{q^2}{2000}
+\right)\right|_{50000}^{80000}\end{equation*}\begin{equation*}=(7,200,000)-(3,750,000)=3,450,000.\end{equation*}<p id="p-2171">
+The change in cost of production is $3,450,000.</p>
+<figure class="figure-like" id="figure-287"><img width="50%" src="images/sec7-7-2.png" alt=""></figure><p id="p-2172">
+Example 3: Oil production- An oil well in Texas initially produces oil at a rate of 2 million barrels of oil per year.  The production rate will typically fall 15% per year.  How much oil is produced over a 5-year period?</p>
+<p id="p-2173">
+Solution: We want to integrate our production rate of \(2(0.85)^t\) as \(t\) goes from 0 to 5.  We can use our antidifferentiation formulas for this problem.</p>\begin{equation*}\int_0^5 2(0.85)^t   dt= \left.\left(\frac{2(0.85)^t}{\ln (0.85)}\right)\right|_0^5=\frac{2}{\ln (0.85)}  (0.85^5-1)=6.846.\end{equation*}<p id="p-2174">
+Over 5 years, the well will produce 6.846 million barrels of oil.</p>
+<figure class="figure-like" id="figure-288"><img width="40%" src="images/sec7-7-3.png" alt=""></figure><p id="p-2175">
+Example 4: Discounted revenue stream – Your company is interested in acquiring a revenue stream that is currently producing are a rate of 
+50+5 t  thousand dollars per year, where t is measured in years.  To obtain current value, you are discounting at a rate of 6%/year compounded continuously.  What is the current value of the first 10 years of income from the stream?</p>
+<p id="p-2176">
+Solution: To find the total income we would want to integrate \((50+5t)\) as \(t\) goes from 0 to 10.  To find the current value we must discount the income based in when we receive it.  Thus we want to integrate \((50+5t) e^{-0.06t}\) as \(t\) goes from 0 to 10.  We set up the integral \(\int_0^10 (50+5t) e^{-0.06t}  dt\).  Since we do not know how to find the anti-derivative for this function, we find the area either with Excel and Riemann sums, or with Wolfram Alpha.  </p>
+<figure class="figure-like" id="figure-289"><img width="80%" src="images/sec7-7-4.png" alt=""></figure><p id="p-2177">
+With either method, we find that the present value of the revenue stream to be $545,298.</p>
+<figure class="figure-like" id="figure-290"><img width="50%" src="images/sec7-7-5.png" alt=""></figure><p id="p-2178">
+<em class="terminology">Boundary value problems</em>: The accumulation problems asked you to find the area under a curve between two specific points.  For those problems, we are not interested in a formulation of a general area function.  A second set of applications starts with a derivative and is interested in finding the particular anti-derivative that meets certain initial conditions.  (We use the conditions to find the correct value of "+C" in the general anti-derivative.)  These problems are often solved once to find the general anti-derivative for a particular kind of problem, and the general solution is then used as a formula to find the constant C.</p>
+<p id="p-2179">
+Example 5: Proportional growth and continuous reinvestment.  I put $20,000 in a retirement account that earns 7% interest compounded continuously.  I reinvest all my earnings from the account back into the retirement account.   I would like a simple formula for the principal at sometime in the future.  </p>
+<p id="p-2180">
+Solution: We already have the formula for continuous growth, but it is worthwhile to derive it again.  We are told </p>\begin{equation*}Principal' (time)=.05*Principal(time)\end{equation*}<p id="p-2181">
+or</p>\begin{equation*}\frac{Principal' (time)}{Principal(time)}=.05\end{equation*}<p id="p-2182">
+Integrating both sides with respect to time, we get</p>\begin{equation*}\ln (Principal(time))=.05*time+C\end{equation*}<p id="p-2183">
+Exponentiating both sides gives</p>\begin{equation*}Principal(time)=\exp(0.05*time)*\exp(C)=e^C e^{.05*time}.\end{equation*}<p id="p-2184">
+Since we know that the Principal is $20,000 at time 0, we see that \(e^C=20000\) and our equation simplifies to </p>\begin{equation*}Principal(time)=20000e^{.05*time}.\end{equation*}<p id="p-2185">
+This is the formula we took on faith in the last chapter.</p>
+<p id="p-2186">
+<em class="terminology">Depreciation</em>
+When computing costs of a business, we need to evaluate the depreciation cost of capital equipment.  There are a number of reasonable ways of computing depreciation. </p>
+<ul id="ul-31" style="list-style-type: disc;">
+<li id="li-423">
+<p id="p-2187">
+	Straight-line depreciation, which assumes that a piece of equipment loses the same amount of value each year until it is worthless. </p>
+<article class="assemblage-like" id="assemblage-47"><h5 class="heading"></h5>
+<p id="p-2188">\begin{equation*}Annual\ Depreciation\ Expense=  \frac{Cost\ of\ fixed\ Asset-Residual\ Value}{Useful\ life\ of\ Asset\ (in\ years)}\end{equation*}</p></article>
+</li>
+<li id="li-424">
+<p id="p-2189">
+	The sum of digits method of depreciation.  It assumes the rate of depreciation is proportional to the expected remaining useful life of the piece of equipment. For example with a sum of years method and defining V(t) as the value, EL is the expected lifetime, k is a constant, and t is time, we would have:</p>
+<article class="assemblage-like" id="assemblage-48"><h5 class="heading"></h5>
+<p id="p-2190">\begin{equation*}V' (t)= -k (EL-t)\end{equation*}</p></article>
+</li>
+<li id="li-425">
+<p id="p-2191">
+	The declining balance depreciation.  This method assumes the rate of depreciation is proportional to the current value, with the initial rate of depreciation twice the straight-line rate, with depreciation stopping when the value is the scrap value. We let N be the estimated life of the asset and we let the rate of depreciation be:</p>
+<article class="assemblage-like" id="assemblage-49"><h5 class="heading"></h5>
+<p id="p-2192">\begin{equation*}
+Depreciation\ rate=1- \sqrt[N]{
+\frac{residual\ value}{cost\ of\ fixed\ asset}}\end{equation*}</p></article>
+</li>
+</ul>
+<p id="p-2193">
+Example 6A: Straight Line Depreciation
+You buy a car for $18,000 and you want to depreciate it to $0 over 5 years. Find a formula for the value of the car.
+We assume the value decreases a constant rate, so we use straight-line depreciation.  Give a simple formula to find the book value of the equipment after 3.5 years.</p>
+<p id="p-2194">
+<em class="terminology">Solution</em>: The easiest way to do this problem is not to use calculus, but to realize we want the equation of a line and we have two points. </p>\begin{equation*}Value(0)=100000 \hbox{ and } Value(5)=0.\end{equation*}<p id="p-2195">
+Taking slope as rise over run, the slope is -20,000 and the intercept is 100,000.  Thus our equation is </p>\begin{equation*}Value(time)=100000-20000*time.\end{equation*}\begin{equation*}Value(3.5)=30000.\end{equation*}<p id="p-2196">
+Using calculus on the same problem we have </p>\begin{equation*}Value' (time)=-k\hbox{ for some constant }k, \end{equation*}\begin{equation*}Value(0)=100000\hbox{ and } Value(5)=0.\end{equation*}
+.
+<p id="p-2197">
+Integrating the first equation gives</p>\begin{equation*}Value(time)=-k*time+C.\end{equation*}<p id="p-2198">
+Thus, straight-line depreciation gives a value function, which is a straight line.  We now plug in known values to find the constants.  We plug in for \(time = 0\) to see \(C = 100,000\).  We plug in for \(time = 5\) to see \(k = 20,000\).  This gives us the same equation using calculus as we obtained using algebra.  The book value of the equipment at 3.5 years is $30,000 with this method of depreciation.</p>
+<figure class="figure-like" id="figure-291"><img width="60%" src="images/sec7-7-6.png" alt=""></figure><p id="p-2199">
+Example 6B:  Sum of years method 
+After buying the same car, we assume that the depreciation is proportional to the amount of useful life that the equipment has left.  (A car looses more value in its first year than in its last year of life.)   Produce an equation for the book value of the same $18,000 car with this method.</p>
+<p id="p-2200"><em class="terminology">
+Solution</em>: We start with the observation that we are given that \(V' (t)=-k(EL-t)\) for some constant \(k\), and we know that \(V(0)=18,000\) and \(V(5)=0\).</p>
+<p id="p-2201">
+With an expected lifetime of 5, integrating the first equation gives</p>\begin{equation*}Value(time)=-k*5*t+k*t^2/2+C.\end{equation*}<p id="p-2202">
+Thus the sum of years method gives a value function which is quadratic.  Once again, we plug in known points to find the constants.  We plug in for time = 0 to see C = 18,000.  We plug in for time = 5 and get</p>\begin{equation*}0=-k*25+k*25/2+18,000.\end{equation*}<p id="p-2203">
+Solving this we get \(k = 1,440\).  Our book value formula is then</p>\begin{equation*}Value(time)=-7,200 t+720 t^2+18000.\end{equation*}<p id="p-2204">
+At 3.5 years the value will be 	</p>\begin{equation*}Value(3.5)=-7,200*3.5+720*12.25+18000=1620.\end{equation*}<p id="p-2205">
+The book value at 3.5 years is $1,620 with this method of depreciation.</p>
+<figure class="figure-like" id="figure-292"><img width="50%" src="images/sec7-7-7.png" alt=""></figure><p id="p-2206">
+Example 6C: Declining Balance depreciation– This method of depreciation says an item looses value in proportion to its current value.  The standard method uses a rate that is twice the rate of straight-line depreciation until we reach scrap value, when depreciation stops.  Use this method to find the book value of our $100,000 piece of equipment at 3.5 years if the scrap value is $10,000.</p>
+<p id="p-2207">
+<em class="terminology">Solution</em>: In example 5 we saw that proportional growth or decay give an exponential function.  The basic value function is </p>\begin{equation*}Value(time)=100000(1-2*.20)^{time}=100000(0.6)^{time}.\end{equation*}<p id="p-2208">
+However we need to find when the piece of equipment stops depreciating.  Solving</p>\begin{equation*}10000=100000(0.6)^{time}.\end{equation*}<p id="p-2209">
+we get </p>\begin{equation*}.1=(0.6)^{time}.\end{equation*}<p id="p-2210">
+or</p>\begin{equation*}time=\ln (0.1)/\ln (0.6) =4.508.\end{equation*}<p id="p-2211">
+Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book value is \(100,000*(0.6)^{3.}5 = 16,731\).</p>
+<figure class="figure-like" id="figure-293"><img width="60%" src="images/sec7-7-8.png" alt=""></figure><section class="exercises" id="exercises-set-sec-7-7"><header title="Exercises 7.7.1 Exercises: Applications of the integral: Investment and depreciation Problems"><h1 class="heading hide-type" alt="Exercises 7.7.1 Exercises: Applications of the integral: Investment and depreciation Problems">
+<span class="type">Subsection</span><span class="codenumber">7.7.1</span><span class="title">Exercises: Applications of the integral: Investment and depreciation Problems</span><a href="sec-7-7-InvestmentDepreciation.html#exercises-set-sec-7-7" class="permalink">¶ permalink</a>
+</h1></header><article class="exercise-like" id="exercise-528"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-2212">  The marginal costs for producing widgets is </p>\begin{equation*}Marginal\ cost(q+1)=20-\frac{q}{10000}\end{equation*}<p id="p-2213">Find the increase in cost in going from producing 60,000 units to producing 80,000 units.</p></article><article class="exercise-like" id="exercise-529"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-2214">  The marginal profit for producing gizmos is </p>\begin{equation*}Marginal\ profit(q+1)=200-\frac{q}{1000}-\frac{q^2}{100,000,000}\end{equation*}<p id="p-2215">Find the change in profit in going from producing 70,000 units to producing 90,000 units.</p></article><article class="exercise-like" id="exercise-530"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-2216">  The daily sales projections for a fad item are: </p>\begin{equation*}Daily\ Sales(t)=100 t^2 e^{-t/5}\end{equation*}<p id="p-2217">Find the estimated total sales over the first 100 days.</p></article><article class="exercise-like" id="exercise-531"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-2218">  The daily sales projections for a new item are: </p>\begin{equation*}Daily\ Sales(t)=100+10t-\frac{t^2}{100}\end{equation*}<p id="p-2219">Find the estimated total sales over the first 200 days.</p></article><article class="exercise-like" id="exercise-532"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-2220">  The production from an oil well starts at a rate of 10,000 barrels per year and declines exponentially at a rate of 10% per year.  How much is produced in 6 years?</p></article><article class="exercise-like" id="exercise-533"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-2221">  An oil well is producing 15,000 barrels per year.  The rate of production is continuously declining at a rate of 10% per year.  The well will be capped as unproductive when it produces 3,000 barrels per year.  How much will it produce before being capped?</p></article><article class="exercise-like" id="exercise-534"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-2222">  A stream of revenue produces at a rate of $40,000 per year.  We assume that the risk free investment rate is 3% per year.  What is the current value of the revenue stream over 20 years?</p></article><article class="exercise-like" id="exercise-535"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-2223">  A stream of revenue produces at a rate of 
+\(40,000+2,000t\) dollars per year with \(t\) measured in years.  We assume that the risk free investment rate is 3% per year.  What is the current value of the revenue stream over 20 years?</p></article></section></section></div></main>
+</div>
+</body>
+</html>

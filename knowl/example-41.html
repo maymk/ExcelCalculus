@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:35-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.5.3</span>. <span class="title">Deceiving Solver.</span>
+</h6>
+<p>Use solver to gather information, on the interval \(-2\le x\le 2\text{,}\) on the graph of</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\begin{cases}
+-5x-3&amp; x\lt 0\\
+4(x-1)^2 &amp;x \gt 0\\
+\end{cases}
+\end{equation*}
+</div>
+<p><dfn class="terminology">Solution</dfn>:  As always, start by looking at a graph.  We use the IF function to produce cases.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-13.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>It is pretty easy to see that the function reaches a maximum of 7 at \(x=-2\text{,}\) and has a root at \(x=-0.6\text{.}\)  On this interval the function does not have a minimum, but it gets close to -3 when \(x\) approaches o form the negative side.  If we start at \(x=0.5\) and try sliding up or down the curve, we are going in the wrong direction to find the root or minimum.  To find the maximum we also need to go down before we can go up to the maximum.</p>
+<p>When we look at solver, we get the wrong but expected results.  The function not only fails to be differentiable at \(x=0\text{,}\) it has a jump there.  Solver finds the nearest local maximum and minimum.  For the root, it tells us it can’t find a feasible solution.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-14.png" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="sec-3-5-IntroductionSolver.html#example-41">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:25-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Implicit Differentiation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap-5-DIfferentiationApplications.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-5-DIfferentiationApplications.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-5-2-RelatedRates.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap-5-DIfferentiationApplications.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-5-DIfferentiationApplications.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-5-2-RelatedRates.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation" class="active">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-5-1-ImplicitDifferentiation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Implicit Differentiation</span>
+</h2>
+<a href="sec-5-1-ImplicitDifferentiation.html" class="permalink">¶</a><p id="p-1860">We often run into situations where y is expressed not as a function of x, but as being in a relation with x.  The most familiar example is the equation for a circle of radius 5,</p>
+<div class="displaymath">
+\begin{equation*}
+x^2+y^2=25.
+\end{equation*}
+</div>
+<p id="p-1861">We recall that a circle is not actually the graph of a function.  It is however the combined graph of the two functions representing the top and bottom halves of the circle.</p>
+<p id="p-1862">We have two approaches if we want to find the slope of the line tangent to the circle at \((4,3)\text{.}\)  We could first use algebra to express \(y\) as a function of \(x\text{,}\) and then use our rules to find the derivative.  That approach works in this problem but will fail with more complicated relations.  The alternative method is to say that \(y\) is implicitly a function of \(x\text{.}\)  We can then use the chain rule to take the derivative of the relation with the derivative of \(y\) being designated as \(y'\text{.}\)  We can then solve for \(y'\) in terms of \(x\) and \(y\text{.}\)  This second method is called implicit differentiation.</p>
+<p id="p-1863">We start by trying both approaches on the equation of a circle.</p>
+<article class="example-like" id="example-69"><a data-knowl="" class="id-ref" data-refid="hk-example-69"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.1.1</span>. <span class="title">Tangent to a circle.</span>
+</h6></a></article><div id="hk-example-69" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1864">Find the equation of the line tangent to \(x^2+y^2=25\) at \((4,3)\text{.}\)</p>
+<p id="p-1865"><dfn class="terminology">Solution a</dfn>: To find the equation of a line we need a point and a slope.  We already have the point at \((4,3)\text{.}\)  To find the slope, we can express the circle as the graph of 2 functions.   We first solve for \(y^2\text{.}\)  We then take the square root to produce 2 functions.</p>
+<div class="displaymath">
+\begin{equation*}
+y^2=25-x^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_1 (x)=\sqrt{25-x^2 }.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_2 (x)=-\sqrt{25-x^2 }.
+\end{equation*}
+</div>
+<p id="p-1866">The point is on the first function, which is the top half of the circle, so we take its derivative and evaluate at \(x=4\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f_1' (x)=1/2 (25-x^2 )^{-1/2} (-2x).
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_1' (4)=1/2 (25-4^2 )^{-1/2} (-4)=-4/3.
+\end{equation*}
+</div>
+<p id="p-1867">Thus the tangent line, in point-slope form, is:</p>
+<div class="displaymath">
+\begin{equation*}
+y=3-\frac{4}{3} (x-4).
+\end{equation*}
+</div>
+<p id="p-1868"><dfn class="terminology">Solution b</dfn>: To find the equation of a line we need a point and a slope.  We already have the point at \((4,3)\text{.}\)  To find the slope we take the derivative of our equation.  Since we do not have y as a function of \(x\text{,}\) we simply note that its derivative is the placeholder \(y'\text{.}\)  Recall that \(\frac{d}{dx} x\text{,}\) the derivative of \(x\) with respect to \(x\text{,}\) is simply 1.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dx}(x^2+y^2=25).
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dx}(x^2)+\frac{d}{dx}(y^2)=\frac{d}{dx}(25).
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+2x \frac{d}{dx}(x)+2y \frac{d}{dx}(y)=0.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+2x+2y y'=0.
+\end{equation*}
+</div>
+<p id="p-1869">We then solve for \(y'\) and substitute our point \((4,3)\) in for \((x,y)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+y'=-\frac{2}{2y}=-\frac{x}{y}.
+\end{equation*}
+</div>
+<p id="p-1870">When we substitute our point \((4,3)\) in for \((x,y)\) we get the same value, \(y'=-\frac{4}{3}\text{.}\)  Thus the tangent line, in point-slope form, is:</p>
+<div class="displaymath">
+\begin{equation*}
+y=3-\frac{4}{3} (x-4).
+\end{equation*}
+</div></article></div>
+<p id="p-1871">For the equation of a circle, either method works.  We may encounter relations where solving for an explicit function is hard or impossible.</p>
+<article class="example-like" id="example-70"><a data-knowl="" class="id-ref" data-refid="hk-example-70"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.1.2</span>. <span class="title">Differentiation of a price-quantity relationship.</span>
+</h6></a></article><div id="hk-example-70" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1872">The quantity (q) and demand price (p) for widgets satisfy the relation</p>
+<div class="displaymath">
+\begin{equation*}
+10p+2pq+q^2=1000,
+\end{equation*}
+</div>
+<p id="p-1873">with \(10\lt q\lt 90\text{,}\) where quantity is in thousands of units.  If I am currently selling 20,000 widgets, what is the relationship between change in quantity and change in price?</p>
+<p id="p-1874"><dfn class="terminology">Solution</dfn>: Instead of solving for quantity as an explicit function of price, we will implicitly differentiate.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{d\ q}(10p+2pq+q^2=1000)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+10 \frac{d\ p}{d\ q}+2*\frac{d\ p}{d\ q}*q+2p+2q=0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ p}{d\ q} (10+2q)=-2*(p+q)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ p}{d\ q}=\frac{-2*(p+q)}{(10+2q) }
+\end{equation*}
+</div>
+<p id="p-1875">Since quantity is in thousands of unity, if we are selling 20,000 widgets, \(quantity:q=20\) and \(price:p=14.64\text{.}\)  Substituting those values into the formula for the derivative of price with respect to quantity, we see</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ price}{d\ quantity}=\frac{-2(14.64+20)}{(10+2*20) }=-1.386.
+\end{equation*}
+</div>
+<p id="p-1876">We increase sales by 1000 by dropping price by $1.386.</p></article></div>
+<p id="p-1877">For the first two examples, the relation was quadratic, so it was straightforward to find the derivative by either solving for an explicit function or by differentiating implicitly.  However, if the relation more complicated we will find implicit differentiation easier than solving for the function.</p>
+<article class="example-like" id="example-71"><a data-knowl="" class="id-ref" data-refid="hk-example-71"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.1.3</span>. <span class="title">Another price-quantity relationship.</span>
+</h6></a></article><div id="hk-example-71" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1878">The quantity (q) and demand price (p) for gizmos satisfy the relation</p>
+<div class="displaymath">
+\begin{equation*}
+5p+3*(pq)^{1.5}+2q=2000,
+\end{equation*}
+</div>
+<p id="p-1879">with \(10\lt q\lt 100\text{,}\) where quantity is in thousands of units.  If I am currently selling 25,000 widgets, what is the relationship between change in quantity and change in price?</p>
+<p id="p-1880"><dfn class="terminology">Solution</dfn>: There is no easy method to solve this relation for either price or quantity as an explicit function of the other.  Instead, we will implicitly differentiate.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ }{d\ q}(5*p+3*(p*q)^1.5+2*q=2000)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+5 \frac{d\ p}{d\ q}+3*(1.5*p^.5*(d p)/(d q)*q^{1.5}+p^{1.5}*1.5*q^{.5} )+2=0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ p}{d\ q}*(5+4.5*p^{.5}*q^{1.5} )=-(2+4.5*p^{1.5}*q^{.5})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ p}{d\ q}=-\frac{(2+4.5*p^{1.5}*q^{.5})}{(5+4.5*p^{.5}*q^{1.5} ) }
+\end{equation*}
+</div>
+<p id="p-1881">Since quantity is in thousands of unity, if we are selling 25,000 widgets, quantity=25 and price=2.986.  Substituting those values into the formula for the derivative of price with respect to quantity, we see</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ price}{d\ quantity}=\frac{-118.104}{997.025}=-0.12088.
+\end{equation*}
+</div>
+<p id="p-1882">We increase sales by 1000 by dropping price by $0.121.</p></article></div>
+<article class="assemblage-like" id="assemblage-34"><p id="p-1883">A standard result from economics is the <dfn class="terminology">Cobb-Douglas equation</dfn> that claims</p>
+<div class="displaymath" id="p-1884">
+\begin{equation*}
+Y=AL^\alpha K^\beta,
+\end{equation*}
+</div>
+<p id="p-1885">where Y, L, and K represent total production, labor, and capital, respectively.  In the classical model \(\alpha+\beta=1\text{.}\)</p></article><p id="p-1886">This can be understood as a relation involving capital and labor.  An interesting question is to ask for the rate of change of capital with respect to labor, or how increasing or reducing capital investment will raise or lower labor costs.</p>
+<article class="example-like" id="example-72"><a data-knowl="" class="id-ref" data-refid="hk-example-72"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.1.4</span>. <span class="title">Differentiation of Cobb-Douglas.</span>
+</h6></a></article><div id="hk-example-72" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1887">Example 4:  A widget manufacturer has a production function given by</p>
+<div class="displaymath">
+\begin{equation*}
+Y=50L^.75 K^.25.
+\end{equation*}
+</div>
+<p id="p-1888">The manufacturer currently uses 81 units of labor and 16 units of capital.  Find the derivative of labor with respect to capital and interpret your result.</p>
+<p id="p-1889"><dfn class="terminology">Solution</dfn>: We implicitly differentiate our equation with respect to capital.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ }{d\ K}(Y=50L^{.75} K^{.25})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=50*(0.75*L^{-0.25}*\frac{d\ L}{d\ K}*K^{.25}+L^{.75}*.25*K^{-0.75} )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ L}{d\ K}*(0.75*L^{-0.25}*K^{.25} )=-(L^{.75}*.25*K^{-0.75})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ L}{d\ K}*=-(L^{.75}*.25*K^{-0.75})/((0.75*L^{-0.25}*K^{.25} ) )=-L/3K
+\end{equation*}
+</div>
+<p id="p-1890">Substituting in our values for \(L\) and K we see that \(Y=50*81^{.75} 16^{.25}=2700\) and \((d L)/(d K)=-81/48\approx-1.6875\text{.}\)  This means, if we want to keep level production, changing capital investment by 1 unit allows us to change labor by -1.6875 units.</p></article></div>
+<p id="p-1891"><dfn class="terminology">Implicit differentiation using CAS</dfn></p>
+<p id="p-1892">As with regular differentiation, we can use online computer algebra systems to do implicit differentiation.  The easiest way to do this is with a web search for implicit differentiation calculator.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec5-1-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1893">The first option we are given is a widget interface for WolframAlpha.  It easily lets us do the first example in this section.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec5-1-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1894">The second option from the search takes us to a calculator from Symbolab.  It will easily do the second example from this section.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:45%;margin-right:45%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec5-1-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1895">You should notice that the Symbolab calculator lets you use other variables and has an easy option for showing step by step solutions.</p>
+<p id="p-1896"><dfn class="terminology">Summary</dfn></p>
+<p id="p-1897">Implicit differentiation is an application of the chain rule.  To use this technique we need an equation between two variables that we can think of as implicitly defining one variable as a function of the other.  If assume one variable is implicitly a function of the other, differentiating the equation gives us an equation in the two variables and the derivative.  We can then use algebra to solve the new equation for the derivative.</p>
+<section class="exercises" id="exercises-set-sec-5-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Implicit Differentiation Problems</span>
+</h3>
+<a href="sec-5-1-ImplicitDifferentiation.html#exercises-set-sec-5-1" class="permalink">¶</a><p id="p-1898">For the following equations find the specified derivative.</p>
+<article class="exercise-like" id="exercise-331"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-1899">\(2x+3y=23\text{.}\)	Find \(\frac{dy}{dx}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-166" id="solution-166"><span class="type">Solution</span></a><div id="hk-solution-166" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1900">The best method is to notice this is a line with slope \(\frac{-2}{3}\text{.}\)  Plunging ahead without noticing that:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dx}  (2x+3y )= \frac{d}{dx}  23
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\text{Implies that }2+  \frac{dy}{dx} =0
+\end{equation*}
+</div>
+<p id="p-1901">Solve for \(\frac{dy}{dx}\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dy}{dx}  =\frac{-2}{3}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-332"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-1902">\(7x+9y=23\text{.}\)	Find \(\frac{dy}{dx}\text{.}\)  (You can use two different methods.)</p></article><article class="exercise-like" id="exercise-333"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-1903">\(x^2+3xy+5y^2=23\text{.}\)	Find \(\frac{dy}{dx}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-167" id="solution-167"><span class="type">Solution</span></a><div id="hk-solution-167" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dx}  (x^2+3xy+5y^2 )= \frac{d}{dx}  23
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\text{Implies that }2x+3  \frac{d}{dx} (xy)+5  \frac{d}{dx}  y^2=0
+\end{equation*}
+</div>
+<p id="p-1904">For the  \(\frac{d}{dx} (xy)\) term we need to use the product rule and for  \(\frac{d}{dx}  y^2\) we need the chain rule. We then get</p>
+<div class="displaymath">
+\begin{equation*}
+2x+3[(1)y+x\frac{dy}{dx}]+5 (2y)\frac{dy}{dx}  =0
+\end{equation*}
+</div>
+<p id="p-1905">Solve for \(\frac{dy}{dx}\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+2x+3y+3x \frac{dy}{dx}+10y \frac{dy}{dx}  =0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\text{Hence }(3x+10y)  \frac{dy}{dx}  =-(2x+3y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\text{And  }\frac{dy}{dx}  =-((2x+3y))/((3x+10y) )
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-334"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-1906">\((x^3+x^2+1)(y^3+2y+3)=5\text{.}\)	Find \(\frac{dy}{dx}\text{.}\)</p></article><article class="exercise-like" id="exercise-335"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-1907">\(75*price+(quantity^2)/100=2000\text{.}\)	Find \(\left(\frac{d\ price}{d\ quantity}\right)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-168" id="solution-168"><span class="type">Solution</span></a><div id="hk-solution-168" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1908">Some may find this easier with shorter variable labels: \(75P+Q^2/100=2000\text{.}\)   Find \(\frac{dP}{dQ}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dQ}  [75P+\frac{Q^2}{100}]=\frac{d}{dQ}  2000
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+75  \frac{dP}{dQ}+\frac{Q}{50}=0
+\end{equation*}
+</div>
+<p id="p-1909">Hence    \(\frac{dP}{dQ}=-  \frac{Q}{50*75}= \frac{-Q}{3750}\)</p>
+<p id="p-1910">So we have that \(\frac{dPrice}{dQuantity}/= \frac{-Quantity}{3750}\text{.}\)</p>
+<p id="p-1911">So if we were to increase the Quantity by 1 (\(d\ Quantity = 1\)), then there would be a decrease in price (\(= d Price\)) equal to the Quantity divided by 3750. So a small increase in quantity would result in a (small) decrease in price.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-336"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-1912">\(50*price+5*price*quantity+(quantity^2)/10=5000\text{.}\)	Find \(\frac{d\ price}{d\ quantity}\text{.}\)</p></article><article class="exercise-like" id="exercise-337"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-1913">\(40*price+7*price*quantity+\sqrt{quantity}=2000\text{.}\)	Find \(\frac{d\ price}{d\ quantity}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-169" id="solution-169"><span class="type">Solution</span></a><div id="hk-solution-169" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1914">Rewrite as:   \(40p+7pq+\sqrt{q}=2000\text{.}\)  Find \(\frac{d\ p}{d\ q}\text{.}\)</p>
+<p id="p-1915">We take the derivative with respect to q of both sides. In other words we apply \(\frac{d}{d\ q}\) to both sides.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{d\ q}  [40p+7pq+q^{0.5} ]=\frac{d}{d\ q} 2000
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+40 \frac{d\ p}{d\ q}+7[dp/dq  q+p]+0.5 q^{-0.5}=0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(40+7q)\frac{d\ p}{d\ q}+7p+0.5 q^{-0.5}=0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ p}{d\ q}=  \frac{-7p-0.5 q^{-0.5}}{40+7q}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-338"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-1916">\(50*price^2+5*price*quantity=3000\text{.}\)			Find \(\frac{d\ price}{d\ quantity}\text{.}\)</p></article><article class="exercise-like" id="exercise-339"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-1917">\(1000=5L^{0.6} K^{0.4}\text{.}\)	Find \(\frac{dK}{dL}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-170" id="solution-170"><span class="type">Solution</span></a><div id="hk-solution-170" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1918">Take the derivative with respect to \(L\) to both sides:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dL} 1000=5 \frac{d}{dL} [L^{0.6} K^{0.4} ]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=5[\frac{d}{dL}(L)^{0.6})K^{0.4}+L^{0.6}  \frac{d}{dL}(K^{0.4})]  \qquad \text{(product rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=5[0.6 L^{-0.4}  K^{0.4}+L^{0.6}  0.4K^{-0.6}  \frac{dK}{dL}]   
+\end{equation*}
+</div>
+<p id="p-1919">Divide both sides by 5 and solve for \(\frac{dK}{dL}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dK}{dL}=-  \frac{0.6 L^{-0.4}  K^{0.4}}{L^{0.6}  0.4K^{-0.6}}=
+\frac{-3K}{2L}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-340"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-1920">\(2000=7L^.3 K^.7.\)	Find \(\frac{dK}{dL}\text{.}\)</p></article><article class="exercise-like" id="exercise-341"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-1921">\(3000=2L^.25 K^.75\text{.}\)	Find \(\frac{dL}{dK}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-171" id="solution-171"><span class="type">Solution</span></a><div id="hk-solution-171" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dK} 3000=2 \frac{d}{dK} [L^{0.25} K^{0.75} ]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=2[\frac{d}{dK}( L^{0.25}) K^{0.75}+L^{0.25} \frac{d}{dK}( K^{0.75} )]   \qquad\text{(product rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=2[0.25L^{-0.75}\frac{dL}{dK} K^{0.75}+L^{0.25} 0.75K^{-0.25} ]   
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dL}{dK}=-\frac{L^{0.25} 0.75K^{-0.25}}{0.25L^{-0.75} K^{0.75}}
+=-3 \frac{L}{K}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-342"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-1922">7\(000=11L^.8 K^.2\text{.}\)	Find \(\frac{dL}{dK}\text{.}\)</p></article><article class="exercise-like" id="exercise-343"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-1923">The production function for a widget factory is \(1000=15L^{0.7} K^{0.3}\text{.}\)  Find \(\frac{dK}{dL}\) and \(\frac{dL}{dK}\text{.}\)  Interpret what they mean.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-172" id="solution-172"><span class="type">Solution</span></a><div id="hk-solution-172" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1924">Part 1 Find \(\frac{dK}{dL}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dL} 1000=15\frac{d}{dL}[L^{0.7} K^{0.3}]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=15[\frac{d}{dL}  (L^{0.7} )K^{0.3}+L^{0.7}  \frac{d}{dL} (K^{0.3})]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=[0.7 L^{-0.3} K^{0.3}+L^{0.7} 0.3K^{-0.7}  \frac{dK}{dL}]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dK}{dL}L=\frac{-0.7 L^{-0.3} K^{0.3}}{L^{0.7} 0.3K^{-0.7}} = -\frac{7K}{3L}.
+\end{equation*}
+</div>
+<p id="p-1925">Part 2 Find \(\frac{dL}{dK}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dK} 1000=15\frac{d}{dK}[L^{0.7} K^{0.3}]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=15[\frac{d}{dK}  (L^{0.7}) K^{0.3}+L^{0.7} \frac{d}{dK} (K^{0.3})]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=[0.7 L^{-0.3}  \frac{dL}{dK} K^{0.3}+L^{0.7} 0.3K^{-0.7}]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dL}{dK}=
+\frac{- 0.3 L^{0.7} K^{-0.7}}{0.7  L^{-0.3} K^{0.3}} = \frac{-3L}{7K}.
+\end{equation*}
+</div>
+<p id="p-1926">Part 3 Interpret</p>
+<p id="p-1927">\(\frac{dK}{dL}\) and \(\frac{dL}{dK}\) are reciprocals of one another. In other words: \(\frac{dK}{dL}=\frac{1}{\frac{dL}{dK}}\text{.}\)</p>
+<p id="p-1928">If we increase \(L\text{,}\) the \(K\) will decrease and vice versa.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-344"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-1929">Let \(30*price+3*price*quantity+(quantity^2)/100=2000\) be an equation relating supply and price for gizmos.   Find \(\frac{d\ price}{d\ quantity}\) and \(\frac{d\ quantity}{d\ price}\text{.}\)  Explain what each derivative means.</p></article><article class="exercise-like" id="exercise-345"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<p id="p-1930">\(e^{xy}+2x+3y=17\text{.}\)	Find \(\frac{dy}{dx}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-173" id="solution-173"><span class="type">Solution</span></a><div id="hk-solution-173" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dx}  (e^{xy}+2x+3y)= \frac{d}{dx}  17
+\end{equation*}
+</div>
+<p id="p-1931">Evaluating the derivatives:</p>
+<div class="displaymath">
+\begin{equation*}
+e^{xy}   \frac{d}{dx}  (xy)+2+3 \frac{dy}{dx}=0
+\end{equation*}
+</div>
+<p id="p-1932">Which gives:</p>
+<div class="displaymath">
+\begin{equation*}
+e^{xy} [y+x \frac{dy}{dx}]+2+3 \frac{dy}{dx}=0
+\end{equation*}
+</div>
+<p id="p-1933">Next we solve for \(\frac{dy}{dx}\)</p>
+<div class="displaymath">
+\begin{equation*}
+e^{xy} y+xe^{xy}  \frac{dy}{dx}+2+3 \frac{dy}{dx}=0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(xe^{xy}+3)\frac{dy}{dx}=-(e^{xy} y+2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dy}{dx}=-\frac{(y e^{xy}+2)}{(x e^{xy}+3)}
+\end{equation*}
+</div>
+</div></div>
+</div></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

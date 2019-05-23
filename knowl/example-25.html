@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:33-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.2</span>. <span class="title">A simple derivative at a point.</span>
+</h6>
+<p>Let \(f(x)=x^2\text{.}\)  We would like to find \(f'(1)\text{.}\)</p>
+<p><dfn class="terminology">Solution A</dfn>: We start with our intuitive notion.  We want to look at the graph of \(f(x)\text{,}\) zoomed in far enough that the graph looks like a straight line.  I set up a worksheet to look at the graph of \((x)=x^2\) near \(x_0=1\text{.}\)  Since I want to be able to zoom in. I set up the graph so that it plots points that are multiples of \(del\ x\) from \(x=x_0\text{.}\)  I also want to plot the line connecting the points \((x_0,f(x_0))\) and \((x_0,f(x_0+del\ x))\) and notice that the slope of the secant line between them is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{f(x_0+del\ x)-f(x_0 )}{del\ x}.
+\end{equation*}
+</div>
+<p>For this example \(x_0=1\text{.}\) If \(del\ x=1\text{,}\) we can see that the function and the secant line are clearly distinct.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The worksheet is designed to make it easy to change the value of \(del\ x\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>As we can see, if we let \(del\ x=1\text{,}\) the slope is 3, but we have not zoomed in far enough for the graph of f(x) to look like a straight line.  Letting \(del\ x=0.01\text{,}\) the slope is 2.01, and the graphs of the function and secant line seem to be the same.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>With some experimentation, taking both positive and negative values of \(del\ x\text{,}\) we get the following table of values:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">\(del\ x\)</td>
+<td class="c m b1 r0 l0 t3 lines">slope</td>
+<td class="c m b1 r0 l0 t3 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t3 lines">\(del\ x\)</td>
+<td class="c m b1 r0 l0 t3 lines">slope</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t0 lines">-1</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0.1</td>
+<td class="c m b1 r0 l0 t0 lines">2.1</td>
+<td class="c m b1 r0 l0 t0 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t0 lines">-0.1</td>
+<td class="c m b1 r0 l0 t0 lines">1.9</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0.01</td>
+<td class="c m b1 r0 l0 t0 lines">2.01</td>
+<td class="c m b1 r0 l0 t0 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t0 lines">-0.01</td>
+<td class="c m b1 r0 l0 t0 lines">1.99</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0.001</td>
+<td class="c m b1 r0 l0 t0 lines">2.001</td>
+<td class="c m b1 r0 l0 t0 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t0 lines">-0.001</td>
+<td class="c m b1 r0 l0 t0 lines">1.999</td>
+</tr>
+</table></div></div></div>
+<p>It is clear that as \(del\ x\) gets very small, the slope of the tangent line gets closer and closer to 2.  Thus \(f'(1)=2\text{.}\)</p>
+<p><dfn class="terminology">Solution B</dfn>: The method of the first solution takes too much work and requires us to reset a worksheet and keep track of the slope as we try a number of values for \(del\ x\text{.}\)  We would like to create a worksheet that simply shows the values of the slope of the secant line for values of \(del\ x\) and takes the value that this approaches.  We can set up a worksheet where each line takes \(del\ x\) from the previous line and divides by 10.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>We get the same value whether we start \(del\ x\) at 1 or -1.  Once again, we find \(f'(1)=2\text{.}\)</p>
+<p><dfn class="terminology">Solution C</dfn>: This method of finding the derivative still has a number of difficulties.  In the example above, the exact answer we want (in this case 2) did not show up in any of our computations.  We also find that if we make \(del\ x\) too small, we run into a problem called round off error.  If the next chapter we will look at methods that compute derivatives symbolically, but for this chapter we want an easy method of approximation.  We will use the approximation technique that is used by most graphing calculators when they compute the derivative.  They use a “balanced difference quotient” where we find the slope of the secant line between points \(del\ x\) before and after the point we are interested in. As the picture below shows, compared to either the right secant or the left secant, for most functions the balanced secant is closer to being parallel to the tangent line.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>We will use the default on calculators, that is we will use \(del\ x = 0.001\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>For our example this gives our familiar result that \(f'(1)=2\text{.}\)</p></article><span class="incontext"><a href="sec-3-2-NumericDerivativesLimits.html#example-25">in-context</a></span>
+</body>
+</html>

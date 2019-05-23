@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:37-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>Find the derivative of the following functions:</p>
+<ol class="lower-alpha">
+<li>\(f(p)=(p^3+2 p+5)^7.\)</li>
+<li>\(g(q)=\sqrt{q^2+6}.\)</li>
+<li>\(h(x)=e^{2 x+5}.\)</li>
+</ol>
+<p><dfn class="terminology">Solution</dfn></p>
+<ol class="lower-alpha">
+<li>
+<p>We could do this problem by expanding it to a polynomial and using rules from the previous section, but that is much too hard.  We can write \(f(p)\) as \(g(h(p))\) where \(h(p)=p^3+2 p+5\) and \(g(p)=p^7\text{.}\)  We use the rules from the previous section to compute \(h'(p)=3 p^2+2\) and \(g'(p)=7p^6\text{.}\)  Composing we get \(g'(h(p))=7(p^3+2 p+5)^6\text{.}\)  Thus</p>
+<div class="displaymath">
+\begin{equation*}
+f'(p)=g'(h(p))h'(p)=7(p^3+2 p+5)^6(3 p^2+2 ).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>We can write \(g(q)\) as \(f(h(q))\) where \(h(q)=q^2+6\) and \(f(q)=\sqrt{q}\text{.}\)  We use the rules from the previous section to compute \(h'(q)=2 q\) and \(f'(q)= 1/(2\sqrt{q})\text{.}\) Composing we get \(f'(h(q))= 1/(2\sqrt{(q^2+6 )})\text{.}\)  Thus</p>
+<div class="displaymath">
+\begin{equation*}
+g'(q)=f'(h(q)) h'(q)=(2 q)/(2\sqrt{(q^2+6 )}).
+\end{equation*}
+</div>
+</li>
+<li>
+<p>We can write \(h(t)\) as \(f(g(t))\) where \(g(x)=2 t+5\) and \(f(x)=e^t\)  We use the rules from the previous section to compute \(g'(t)=2\)  and \(f'(t)=e^t\text{.}\)  Composing we get \(f' (h(t))=   e^(2 t+5)\text{.}\)  Thus</p>
+<div class="displaymath">
+\begin{equation*}
+g'(t)=f'(h(t)) h' (t)= 2 e^{2 t+5}.
+\end{equation*}
+</div>
+</li>
+</ol></article></body>
+</html>

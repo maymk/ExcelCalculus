@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:36-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.1.10</span>. <span class="title">Justification of first exponential rule.</span>
+</h6>
+<p>From the formal definition of derivative show that if \(f(x)=e^x\text{,}\) then \(f'(x)=e^x\text{.}\)</p>
+<p><dfn class="terminology">Solution</dfn>: Using our definition:</p>
+<div class="displaymath">
+\begin{gather*}
+f'(x)=lim_{h\to0}\frac{f(x+h)-f(x)}{h}
+=lim_{h\to0}\frac{e^{(x+h)}-e^x}{h}\\
+=lim_{h\to0}\frac{e^x(e^h-1)}{h}
+=e^x\left(lim_{h\to0}\frac{e^h-1}{h}\right)
+\end{gather*}
+</div>. <p>It suffices to show that \(\left(lim_{h\to0}\frac{e^h-1}{h}\right) =1\text{.}\)  This can be done by starting with a formal definition of \(e\text{.}\)  For this class it can also be done by using Excel to evaluate the expression for smaller and smaller values of h.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-1-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>It seems clear that \(\left(lim_{h\to0}\frac{e^h-1}{h}\right) =1\text{.}\)</p></article><span class="incontext"><a href="sec-4-1-ElementaryDerivatives.html#example-48">in-context</a></span>
+</body>
+</html>

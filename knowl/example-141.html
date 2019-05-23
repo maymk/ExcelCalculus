@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:48-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.7.6</span>. <span class="title">Straight Line Depreciation.</span>
+</h6>
+<p>You buy a car for $18,000 and you want to depreciate it to $0 over 5 years. Find a formula for the value of the car. We assume the value decreases a constant rate, so we use straight-line depreciation.  Give a simple formula to find the book value of the equipment after 3.5 years.</p>
+<p><dfn class="terminology">Solution</dfn>: The easiest way to do this problem is not to use calculus, but to realize we want the equation of a line and we have two points.</p>
+<div class="displaymath">
+\begin{equation*}
+Value(0)=18000 \hbox{ and } Value(5)=0.
+\end{equation*}
+</div>
+<p>Taking slope as rise over run, the slope is -3,600 and the intercept is 18,000.  Thus our equation is</p>
+<div class="displaymath">
+\begin{equation*}
+Value(time)=18000-3600*time.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Value(3.5)=5,400.
+\end{equation*}
+</div>
+<p>Using calculus on the same problem we have</p>
+<div class="displaymath">
+\begin{equation*}
+Value' (time)=-k\hbox{ for some constant }k, 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Value(0)=18000\hbox{ and } Value(5)=0.
+\end{equation*}
+</div>. <p>Integrating the first equation gives</p>
+<div class="displaymath">
+\begin{equation*}
+Value(time)=-k*time+C.
+\end{equation*}
+</div>
+<p>Thus, straight-line depreciation gives a value function, which is a straight line.  We now plug in known values to find the constants.  We plug in for \(time = 0\) to see \(C = 18,000\text{.}\)  We plug in for \(time = 5\) to see \(k = 3.600\text{.}\)  This gives us the same equation using calculus as we obtained using algebra.  The book value of the equipment at 3.5 years is $5,400 with this method of depreciation.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-7-6.png" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="sec-7-7-InvestmentDepreciation.html#example-141">in-context</a></span>
+</body>
+</html>

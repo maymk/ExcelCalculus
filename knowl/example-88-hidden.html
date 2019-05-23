@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:41-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>The general Cobb-Douglas production function determines the Production (P), in terms of the variables Labor (L) and Capital (C):</p>
+<div class="displaymath">
+\begin{equation*}
+Production(Labor,Capital)=c Labor^{\alpha}  Capital^{\beta},
+\end{equation*}
+</div>
+<p>or using short-hand notation:</p>
+<div class="displaymath">
+\begin{equation*}
+P(L,C)=c L^{\alpha}  C^\beta,
+\end{equation*}
+</div>
+<p>where \(c\text{,}\) \(\alpha\text{,}\) and \(\beta\) are constants.  For our widget factory, this becomes</p>
+<div class="displaymath">
+\begin{equation*}
+Production(Labor,Capital)=10 L^{0.75}  C^{0.25}
+\end{equation*}
+</div>
+<p>with labor production and capital in the appropriate units.  Find \(Production(81,16)\text{.}\)  Use a linear approximation to estimate \(Production(85,14)\text{.}\)</p>
+<p>Solution:  We answer the first question by substituting the values into the equation.</p>
+<div class="displaymath">
+\begin{equation*}
+Production(81,16)=10*81^{0.75}*16^{0.25}=10*27*2=540.
+\end{equation*}
+</div>
+<p>To produce the tangent plane we take the partial derivatives and evaluate them at our base point.</p>
+<div class="displaymath">
+\begin{equation*}
+Production_{Labor} (Labor,Capital)=10*.75 Labor^{-0.25}  Capital^{0.25}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production_{Labor} (81,16)=10*.75 (1/3) *2=5
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production_{Capital} (Labor,Capital)=10*{0.25} Labor^{0.75 }  Capital^{-0.75}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production_{Capital} (81,16)=10*.25 *27 (1/8)=8.4375
+\end{equation*}
+</div>
+<p>This gives us our tangent plane.</p>
+<div class="displaymath">
+\begin{equation*}
+Production(Labor,Capital)\approx5(Labor-81)+8.4375(Capital-16)+540.
+\end{equation*}
+</div>
+<p>Substituting in values gives our estimate.</p>
+<div class="displaymath">
+\begin{equation*}
+Production(85,14)\approx 5(85-81)+8.4375(14-16)+540=543.125.
+\end{equation*}
+</div></article></body>
+</html>

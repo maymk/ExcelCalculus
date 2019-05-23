@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:37-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.4.4</span>. <span class="title">Exploring a business example.</span>
+</h6>
+<p>The cost and demand price functions of widgets are given by:</p>
+<div class="displaymath">
+\begin{equation*}
+cost=2000+10*quantity+.001*quantity^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+revenue=\frac{100*quantity}{1+.01*quantity}
+\end{equation*}
+</div>
+<p>Find the quantity that maximizes profit.</p>
+<p><dfn class="terminology">Solution</dfn>: We simplify variable names to q, c, p, and r for quantity, cost, profit and revenue, respectively.  Our formula for profit is:</p>
+<div class="displaymath">
+\begin{equation*}
+p=r-c=100q/(1+.01q)-(2000+10q+.001q^2 )
+\end{equation*}
+</div>
+<p>When looking for a maximum, we always start by looking at a graph of the function in question.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-4-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>From the graph, it is clear that we have a single maximum for the profit function and it occurs near q=200.  To find this point, we want to take the derivative and set it equal to zero, or we want to use the solve command on the derivative.  We enter the command</p>
+<p>solve(derivative 100q/(1+.01q)-(2000+10q+.001q^2 ) with respect to q)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-4-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>We need to do a bit of interpretation since Wolfram|Alpha is using numerical methods with complex numbers.  In particular, the answers have a zero imaginary part.  We are also looking for a positive number.  Thus, we conclude profit is maximized at 209.8 widgets.</p></article><span class="incontext"><a href="sec-4-4-DIfferentiationComputerAlgebra.html#example-66">in-context</a></span>
+</body>
+</html>

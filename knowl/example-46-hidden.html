@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:36-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>From the formal definition of derivative, if \(f(x)=a x^n\text{,}\) then show \(f'(x)=n a x^{(n-1)}\text{.}\)</p>
+<p><dfn class="terminology">Solution</dfn>: Using our definition:</p>
+<div class="displaymath">
+\begin{gather*}
+f'(x)=lim_{h\to0}\frac{f(x+h)-f(x)}{h}
+=lim_{h\to0}\frac{(a (x+h)^n)-(a x^n)}{h}\\
+=lim_{h\to0}\frac{(a (x^n+n x^{n-1}h +terms\ involving \  h^2)-(a x^n)}{h}\\
+=lim_{h\to0}\frac{(a (n x^{n-1}h +terms\ involving \  h^2)}{h}\\
+=lim_{h\to0}(a (n x^{n-1} +terms\ involving \  h)=anx^{n-1}.
+\end{gather*}
+</div>
+<p>The last step is justified by noting that as h gets very small the value of h times a polynomial in h also gets very small.</p></article></body>
+</html>

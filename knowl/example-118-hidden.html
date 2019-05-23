@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:45-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>From experience, I know that the output of an oil well follows a model of exponential decay.  I have the following data for the production, in barrels, for the first 5 months.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Month</td>
+<td class="c m b1 r0 l0 t3 lines">Jan</td>
+<td class="c m b1 r0 l0 t3 lines">Feb</td>
+<td class="c m b1 r0 l0 t3 lines">Mar</td>
+<td class="c m b1 r0 l0 t3 lines">Apr</td>
+<td class="c m b1 r0 l0 t3 lines">May</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Production</td>
+<td class="c m b2 r0 l0 t0 lines">1000</td>
+<td class="c m b2 r0 l0 t0 lines">971</td>
+<td class="c m b2 r0 l0 t0 lines">925</td>
+<td class="c m b2 r0 l0 t0 lines">887</td>
+<td class="c m b2 r0 l0 t0 lines">859</td>
+</tr>
+</table></div></div></div>
+<p>Find the production over the first 5 years.</p>
+<p>Solution</p>
+<p>The total production for 5 years will be the definite integral of the production function for the first 60 months.  We first use Excel to find a best fitting exponential function.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-3-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The production function (P) in terms of the number of months (x) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+P(x)=1043 e^{-0.03945 x}
+\end{equation*}
+</div>
+<p>We would like to take an anti-derivative, but we don’t have a formula for this anti-derivative yet.  However, we note</p>
+<div class="displaymath">
+\begin{equation*}
+e^{-0.03945 x}=  (e^{-0.03945} )^x=0.9613^x
+\end{equation*}
+</div>
+<p>and we know that \(\ln (0.9613)=-0.03945\text{.}\) We can now use our exponential rule, and</p>
+<div class="displaymath">
+\begin{equation*}
+AntiderivP(x)=\frac{(1043*0.9613^x)}{(-0.03945)}+C
+\end{equation*}
+</div>
+<p>Since we can use any anti-derivative, we simplify by setting \(C = 0\text{.}\) We can do this without creating any problems because we are using the equation where two values of the anti-derivative will be subtracted from one another, and hence the C values would cancel anyways. We now evaluate our integral.</p>
+<div class="displaymath">
+\begin{equation*}
+TotalP(60)= ArtiderivP(60)– AntiderivP(0)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= (-2467) – (-26438) = 23962
+\end{equation*}
+</div>
+<p>Thus over 5 years the well will produce 23,962 barrels.</p></article></body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:22-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Graphing functions with Excel</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-1-3-IntroExcelSpreadsheets.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-1-FunctionsGraphsExcel.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-1-5-IntroBestFitCurves.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-1-3-IntroExcelSpreadsheets.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-1-FunctionsGraphsExcel.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-1-5-IntroBestFitCurves.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel" class="active">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-1-4-GraphingFunctionsExcel"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Graphing functions with Excel</span>
+</h2>
+<a href="sec-1-4-GraphingFunctionsExcel.html" class="permalink">¶</a><p id="p-313"><a class="external" href="./Examples/Section-1-4-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-314">One area where Excel is different from a graphing calculator is in producing the graph of a function that has been defined by a formula.  It is not difficult, but it is not as straight forward as with a calculator. It is a skill worth developing however.  When we are given a formula as part of a problem, we will want to easily see a graph of the function.</p>
+<p id="p-315">We will walk through the process for producing graphs for three examples of increasing complexity.  For the first example we have a specific function and specific range in mind, say \(y=x^2-6 x\) over \(-10 \le x \le 10\text{.}\)  For the second example, we would like to use parameters in the formula, for example, \(y = a x^2 + b x + c\text{,}\) with specified values of a, b, and c, and have the ability to easily change the values of the parameters and see the graph.  For the third example we would also like to have the ability to change the domain, graphing over \(xLow \le x \le xHigh\text{,}\) where \(xLow\) and \(xHigh\) can easily be changed.</p>
+<article class="example-like" id="example-5"><a data-knowl="" class="id-ref" data-refid="hk-example-5"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.4.1</span>. <span class="title">A basic graph.</span>
+</h6></a></article><div id="hk-example-5" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-316">graphing \(y=x^2-6 x\) over \(-10 \le x \le 10\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-317">We start by producing a column for x and one for f(x).  In the column for x we start with values -10 and -9, so that we can complete the column with a quick fill.  Similarly, we start the f(x) columns in the first cell with the "x" replaced by the appropriate cell reference.  In this case the formula for f(x) is in cell B15 and x is in cell A15.</p>
+<p id="p-318">We then use quick fill and quick copy to fill out the table.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-319">With the values of the cells filled in we highlight the cells we want to graph (A14 through B35) and add a scatter plot for the highlighted values.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-320">(The location of the scatterplot will be a bit different with Macs.  The scatterplot is in the Charts ribbon, under other, on Macs.)  This gives the desired graph.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-4.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<article class="example-like" id="example-6"><a data-knowl="" class="id-ref" data-refid="hk-example-6"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.4.2</span>. <span class="title">A graph with parameters.</span>
+</h6></a></article><div id="hk-example-6" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-321">– graphing \(y=x^2-6 x\) as an example of \(y = a x^2 + b x + c\) over the domain \(-10 \le x \le 10\text{.}\)</p>
+<p id="p-322">For the second example, we want the same graph, but we want the ability to easily convert the graph of our first quadratic into a different quadratic function.  The solution is to consider a, b, and c to be parameters that we can change.</p>
+<p id="p-323">Toward the top of the worksheet, we put the labels \(a\text{,}\) \(b\text{,}\) and \(c\text{,}\) and give values for those parameters.  In this case the values of \(a\text{,}\) \(b\text{,}\) and \(c\) are in cells B9, B10, and B11 respectively.</p>
+<p id="p-324">Now we set up the problem in the same way we did above except that we are using absolute references for \(a\text{,}\) \(b\text{,}\) and \(c\text{,}\) and relative references for \(x\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-325">Now, we once again do a quick fill to complete the table, and then add a scatterplot.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-326">The difference with this second example is that if I now want to look at the graph of \(y = -x^2 + 3 x + 10\text{,}\) I simply change the values of the parameters \(a\text{,}\) \(b\text{,}\) and \(c\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-7.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<article class="example-like" id="example-7"><a data-knowl="" class="id-ref" data-refid="hk-example-7"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.4.3</span>. <span class="title">Controlling the viewing window.</span>
+</h6></a></article><div id="hk-example-7" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-327">graphing \(y=x^2 - 6 x\) as an example of \(y = a x^2 + b x + c\) over the domain \(-10 \le x \le 10\text{,}\) but with the ability to easily chance the domain of the graph.</p>
+<p id="p-328">Often, when we graph, we will want to change the domain of the graph.  Most easily, I may want to zoom in on a particular region to get a better view of some interesting feature.  I may want to look closely at several different regions.</p>
+<p id="p-329">To do this we will again plot 21 points, but we want to have control of the starting point and the change in x between the first and second points.  First we add labels and values for x-start and x-step.  Then we need a bit of care in defining the values of x.  The first value of x (cell A18) is the value of x-start.  Every other value of x is defined as the previous value of x plus the value of x-step.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-330">In this case I want a better look at the vertex of the parabola.  I decide I want to see the graph for \(0 \le x \le 5\text{.}\)  My value for x-start is 0.  My value for x-step is one twentieth of the distance from 0 to 5, or \((5-0)/20 = 0.25\text{.}\)  I plug those values in and see the graph.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-9.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-331"><dfn class="terminology">Graphing more than one function</dfn></p>
+<p id="p-332">We would also like to put two or more graphs together.  For our examples, we will want to use the functions \(f(x) = x – 3\text{,}\) \(g(x) = (x^2 – x)/10\text{,}\) and \(h(x) = x^3 – x\text{.}\)  We start by using the procedure given above to make a chart of values for the three functions.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-333">We then simply select the cells for \(x\) and the functions we want graphed together and produce a scatterplot as before.  (To graph \(g(x)\) and \(h(x)\) together, we want to select the columns for \(x\text{,}\) \(g(x)\text{,}\) and \(h(x)\text{.}\))</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-11.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-334">One problem with the graph of \(g(x)\) and \(h(x)\) together is that the functions have different orders of magnitude, so we do not see that \(y = g(x)\) is a parabola.  One remedy is to use a secondary axis for the graph of \(h(x)\text{.}\)  (Simply double click on one of the points for \(h(x)\text{,}\) and select secondary axis from the axes tab.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-12.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-335"><dfn class="terminology">Formatting a chart</dfn></p>
+<p id="p-336">Excel has a lot of ways to add formatting to a graph or chart, many more than we want to be concerned with at this point.  We simply point out a few and leave it to the reader to explore how this should be used for a good visual presentation.  If you click once on the chart to select it, the Chart tab in the home ribbon, adds sub-tabs for layout and format.  With Chart Title, you can add a title to the chart, then edit it.  The Axes icon allows you to add titles for the axes.  If you select a data point form \(g(x)\text{,}\) you can then use the Data Labels icon to add values next to the points.  The chart with these annotations is given below.  The rule of thumb to follow is to add enough annotations for a reader to be able to easily understand what is happening in the chart.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-13.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-337">It is also worthwhile to note that you can manually set the y-range of a graph by double clicking on the axis and setting the values.  This is particularly useful of the function has a vertical asymptote.</p>
+<p id="p-338"><dfn class="terminology">Online graphing tools: Wolfram Alpha</dfn></p>
+<p id="p-339">Throughout this book, we are limiting ourselves to mathematical tools that the student can reasonably expect to find in a generic work environment.  That is one of the reasons for focusing on using spreadsheets and Excel.  A second reason is that we will spend a significant amount of time on functions defined by data points, where we then try to construct a formula.  However when we are starting with a formula, there are easier ways to produce a graph.  The simplest is to use the free website, Wolfram Alpha.  For example to obtain a graph of the functions \(f(x) = x^2 – 3 x\text{,}\) as \(x\) ranges from \(-5\) to \(5\text{,}\) we simply type “plot x^2 – 3 x for x from -5 to 5” and obtain:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-14.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-340">We will return to Wolfram Alpha from time to time, when we have nice formulas to manipulate.</p>
+<section class="exercises" id="exercises-set-sec-1-4"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises 1.4 Graphing functions with Excel</span>
+</h3>
+<a href="sec-1-4-GraphingFunctionsExcel.html#exercises-set-sec-1-4" class="permalink">¶</a><article class="exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-341">Produce a worksheet that with a graph of the function \(f(x) = x^2 - 5 x\text{,}\) with \(x\) going from -10 to 10 by 1.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span></a><div id="hk-solution-27" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-342">The entry in cell B2 is <code class="code-inline tex2jax_ignore">=A2^2-5*A2</code>; remember to use quickfill to complete the table</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-343">Produce a worksheet that with a graph of the function \(g(x) = (x^2 - 5 x)/(x^2 + 7 x + 10)\text{,}\) with \(x\) going from -10 to 10 by 1.  Explain why the graph is inaccurate.  (Pay attention to places where there should be asymptotes.)</p>
+<p id="p-344">2* - Extra credit) – Fix the graph from problem 2 by adjusting the set of x-values used.</p></article><article class="exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-345">Produce a worksheet with a graph of \(h(x) = x^3 + a x^2 + b x + c\) for \(x\) from -10 to 10, where the values of \(a\text{,}\) \(b\text{,}\) and \(c\) can be changed and the graph will update automatically.  For initial values, use \(a = -2\text{,}\) \(b = 1\text{,}\) and \(c = -11\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span></a><div id="hk-solution-28" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-346">The entry in B5 should be <code class="code-inline tex2jax_ignore">=A5^3+$B$1*A5^2+$B$2*A5+$B$3</code>. Note that the references to \(a\text{,}\) \(b\) and \(c\) are absolute references.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-57"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-347">Produce a worksheet with a graph of \(k(x) = (x^2 + a x + b)/( x + c)\) for x from -10 to 10, where the values of \(a\text{,}\) \(b\text{,}\) and \(c\) can be changed and the graph will update automatically.  For initial values, use \(a = -5\text{,}\) \(b = 2\text{,}\) and \(c = -11\text{.}\)</p></article><article class="exercise-like" id="exercise-58"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-348">Produce a worksheet with a graph of \(h(x) = x^3 -2 x^2 +  x -11\) for \(x\) going from a to b, where the values of \(a\) and \(b\) can be changed and the graph will update automatically.  For initial values, use \(a = -5\) and \(b = 5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span></a><div id="hk-solution-29" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-349">The entries are \(a\) and \(b\text{,}\) and the step size. We assume here that we are using 10 points to create a graph.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-350">The data and the graph looks as follows, and changing \(a\) and \(b\) allows us to quickly find several different graphs of the same function.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-sol5b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-59"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-351">Produce a worksheet with a graph of \(k(x) = (x^2 -5 x + 2)/( x -11)\) for \(x\) going from \(a\) to \(b\text{,}\) where the values of a and b can be changed and the graph will update automatically.  For initial values, use \(a = -5\) and \(b = 5\text{.}\)</p></article><article class="exercise-like" id="exercise-60"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-352">(Writing assignment) Write a report of 2 pages or less on the graph of the function \(f(x) = (x^2 + 7 x + 10)/(x^2 - 3 x +2)\text{.}\)  The report should be in Word (or other word processor) format with at least 2 graphs that illustrate different features by looking at different viewing windows.</p></article><article class="exercise-like" id="exercise-61"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-353">Produce a worksheet with graphs of \(f(x) = 2 x + 5\) and \(g(x) = x^3 – 9 x\text{,}\) for x going from -10 to 10.  Use secondary axes so that both graphs use the full plotting window.</p></article><article class="exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-354">Produce a worksheet with graphs of \(h(x) = (x^3 – 9 x)/(x^2 + 3 x + 35/16)\) and \(k(x) = 2 x^2 + 5\text{,}\) for x going from -10 to 10.  Use secondary axes so that both graphs use the full plotting window.  Adjust the range of \(y\) values used to make the graph reasonable.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span></a><div id="hk-solution-30" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-355">The entries should look like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-356">Using secondary axes we are able to show the important feature of each of the graphs.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-sol9b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-63"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-357">Produce a worksheet with graphs of \(f(x) = 2 x + 3\) and \(g(x) = -2 x +5\text{,}\) for \(x\) going from -10 to 10.  Add a title to the chart.  Do something interesting with the fonts or other options and explain what you did.</p></article><article class="exercise-like" id="exercise-64"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-358">Use Wolfram Alpha to produce a graph of \(f(x) = x^3 - 16 x\text{,}\) for \(x\) going from -5 to 5.  Use your favorite screen capture software and paste the result into an Excel worksheet.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span></a><div id="hk-solution-31" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-359">Using Wolfram, the command and the resulting graph look like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-4-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

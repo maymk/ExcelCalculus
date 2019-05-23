@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:29-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Integration using Computer Algebra</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-7-4-ChangeVariables.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-7-6-NormalDistribution.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7-4-ChangeVariables.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-7-6-NormalDistribution.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra" class="active">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-7-5-IntroductionComputerAlgebra"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.5</span> <span class="title">Integration using Computer Algebra</span>
+</h2>
+<a href="sec-7-5-IntroductionComputerAlgebra.html" class="permalink">¶</a><p id="p-2881">Recall that the fundamental theorem of calculus states that if \(F(x)\) is a function with its derivative equal to \(f(x)\) on the region \(a \le  x \le  b\text{,}\) then  \(\int_a^b f(x)dx=F(b)-F(a)\text{.}\)  We say \(\int_a^b f(x)dx\)  is the definite integral of \(f(x)\) from \(a\) to \(b\text{.}\)  If \(f(x)\) is a derivative of \(F(x)\text{,}\) then \(F(x)\) is an anti-derivative of \(f(x)\text{,}\) and any anti-derivative of \(f(x)\) has the form \(F(x) + c\text{,}\) for some constant \(c\text{.}\)  We use the symbol  \(\int f(x)dx\text{,}\) without limits of integration, for the indefinite integral.</p>
+<p id="p-2882">In section 7.1 we looked at approximating definite integrals with a Riemann sum that added up the area of a bunch of rectangles.  In section 7.2 we saw that the fundamental theorem of calculus lets us use an antiderivative or indefinite integral to evaluate a definite integral.  In sections 7.3 and 7.4 we saw how to compute indefinite integrals by hand for a limited number of functions.  In this section we will look at how to use computer software at a web site to find antiderivatives.</p>
+<p id="p-2883">We start with Wolfram|Alpha, available at (http://www.wolframalpha.com&gt;.  We can give Wolfram|Alpha the question we want solved in plain English.  In our case we would like to find the antiderivative of \(x^n\) with respect to \(x\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2884">The Alpha provides an answer.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2885">Note that the response tells us the question the Wolfram|Alpha is answering.  That helps us check that we have been properly understood.  We may find it useful to give a formula without the extra words.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2886">The interface is fairly robust.  It understands the convention that the variable for math problems is typically \(x\text{,}\) so it will generally guess that x is our variable if we don't specify the variable with respect to which we are integrating.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2887">It is worth noting that Wolfram|Alpha is connected with Mathematica, so it will understand questions in Mathematica syntax.  On the right side to the screen there is a link for related links.  In particular, there will be a link for the related command in Mathematica.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2888">Following that link gives more information on the syntax of the Mathematica command.  We generally don't need to know the syntax, but it is useful if we want to use specific options.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2889">We should note that Wolfram|Alpha will easily find antiderivatives that we would find very hard to do or beyond the scope of this class.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2890">The output also has a link for showing steps on complicated problems.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2891">The show steps link only works on the paid version of Alpha.  However we can find other tools by searching for integral calculator.  Such a search reveals symbolab, ( https://www.symbolab.com/solver/definite-integral-calculator&gt;, which we also used in chapter 4.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2892">In chapter 4, we found a derivative calculator.  Similarly we can find an integral calculator (http://www.integral-calculator.com/&gt;  that will show steps. For problems of at the level of difficulty we have been doing, Wolfram|Alpha also produces plots of the integral.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2893"><dfn class="terminology">Definite integrals</dfn> - One of the reasons we wanted to find antiderivatives was to be able to use them to evaluate definite integrals.  We can ask Wolfram|Alpha for the definite integral directly.  In that case, Wolfram|Alpha will give the numeric answer and will also produce the relevant graph.  (Symbolab will also do definite integrals.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-11.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2894">This is particularly useful when finding the antiderivative is beyond the scope of this course.  Consider for example if we want to find the area under a portion of a curve that has the shape of a normal curve.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-12.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2895">Another example when we can easily set up integrals we cannot solve by hand occurs when we are trying to find the current value of a revenue stream.  A value, \(V\text{,}\) that we get \(t\) years in the future, has a present value of \(V exp(-r t)\) where \(r\) is an investment return rate.  Thus the current value of a revenue stream, \(V(t)\text{,}\) from time \(a\) to time \(b\text{,}\) is \(\int_a^b V(t)*e^{(-r*t)} dt\text{.}\)  However we only have a rule for finding the antiderivative when \(V(t)\) is either a constant or exponential function.  With a CAS program it is straightforward to compute such integrals for a broad range of value stream functions.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-13.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2896">If you are going to use Wolfram|Alpha in doing work, you should realize that the terms of use of the site require you to appropriately cite Wolfram|Alpha.  (This is standard academic procedure.)  Your citation should include that date that you got your answer from the site.  The results above were obtained on Feb 29, 2012.</p>
+<p id="p-2897">In business situations, we are rarely asked to simply find an integral.  Instead, finding an integral is generally part of a larger problem.  Thus we often use CAS for part of a problem.</p>
+<p id="p-2898"><dfn class="terminology">Initial value problems</dfn> - We often want to choose a particular antiderivative of a function.  We typically do this when we have the value of the antiderivative for some value.  We simply plug that value into the general antiderivative and solve for \(C\text{.}\)</p>
+<article class="example-like" id="example-129"><a data-knowl="" class="id-ref" data-refid="hk-example-129"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.5.1</span>. <span class="title">Finding the antiderivative, then the constant.</span>
+</h6></a></article><div id="hk-example-129" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2899">The rate of change profit with respect to quantity is given by \(P' (q)=-q^2+5q+50\) and the break-even point occurs when \(q=5\text{.}\)  Find the formula for profit as a function of \(q\text{.}\)  Find the maximum profit.</p>
+<p id="p-2900">We can do this by putting together things we have already done.  First we use Wolfram|Alpha to find an antiderivative.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-14.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2901">Thus we know \(P(q)=\frac{1q^3}{3}+\frac{5q^2}{2}+50q+C\) for some constant \(C\text{.}\)  We also know \(P(5)=0\text{.}\)  We now plug the function, without the \(C\text{,}\) into Excel and evaluate at \(q=5\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-15.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2902">We make C the negative of our answer and modify our function accordingly.  We now use solver to maximize the function.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-16.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2903">Thus the maximum profit is $145.83, and it occurs when \(q=10\text{.}\)</p></article></div>
+<article class="example-like" id="example-130"><a data-knowl="" class="id-ref" data-refid="hk-example-130"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.5.2</span>. <span class="title">The previous example in one step.</span>
+</h6></a></article><div id="hk-example-130" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2904">The rate of change profit with respect to quantity is given by \(P' (q)=-q^2+5q+50\) and the break-even point occurs when \(q=5\text{.}\)  Find the formula for profit as a function of \(q\text{.}\)  Find the maximum profit.</p>
+<p id="p-2905">We can also do this with Wolfram|Alpha setting up the boundary value problem.  We give the alpha bot the derivative we want integrated and the fixed value of the original function.  (Notice that the answer does not include a +C, since we have computed a particular constant.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-17.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-18.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2906">We then ask Alpha to maximize the function.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-19.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2907">This gives the same answer of $145.83.</p></article></div>
+<p id="p-2908">This first example could easily have been done by hand.  We can repeat the process with an example that could not be easily been by hand.</p>
+<article class="example-like" id="example-131"><a data-knowl="" class="id-ref" data-refid="hk-example-131"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.5.3</span>. <span class="title">A more complicated initial value problem.</span>
+</h6></a></article><div id="hk-example-131" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2909">The rate of change of profit with respect to quantity is given by \(P' (q)=q^2  \exp(-q/10)-q/10\) and a break-even point occurs when \(q = 5\text{.}\)  Find the formula for profit as a function of \(q\text{.}\)  Find the maximum profit.</p>
+<p id="p-2910">In structure, this example is very similar to the first example.  However, where in the first example, the function would have been easy to do by hand, in this case, the problem is very hard to do by hand.  We use Wolfram/Alpha to find the antiderivative.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-20.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="displaymath">
+\begin{equation*}
+P(q) = exp(-q/10)*(-10*q^2-200*q-2000)-q^2/20+C.
+\end{equation*}
+</div>
+<p id="p-2911">We then use Excel to find \(C\text{,}\) noting that if we use \(P(q)\) without the \(C\text{,}\) then \(C\) is the value of \(–P(5) = 1972.474\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-21.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2912">We plug in 5 and note \(P(5) = 0 = C-1972.474\text{,}\) thus \(C = 1972.474\text{.}\)  We use solver to maximize and find the maximum profit of $1675.17 occurs at \(q=64.72775\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-22.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-2913">Riemann sums - We can also use Alpha to do Riemann sums.  We need to give a starting and ending point and the number of intervals.</p>
+<article class="example-like" id="example-132"><a data-knowl="" class="id-ref" data-refid="hk-example-132"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.5.4</span>. <span class="title">Riemann sums with Wolfram|Alph.</span>
+</h6></a></article><div id="hk-example-132" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2914">Find the current value of a revenue stream \(V(t)=2000+5t\) for 0 years with an investment rate of \(r=1.03\text{,}\) assuming payments are made daily.</p>
+<p id="p-2915">We approximate the current value with the integral</p>
+<div class="displaymath">
+\begin{equation*}
+CurrentValue=\int_{start}^{stop} r^{-t} V(t)dt= \int_0^{10} 1.03^{-t} (2000+5t)dt.
+\end{equation*}
+</div>
+<p id="p-2916">What we really want is the Riemann sum with one interval per day.  Over 10 years we have 3652 days.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-23.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-5-24.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2917">If we assume payments start at the beginning of the first day we would use the left endpoint method.</p></article></div>
+<section class="exercises" id="exercises-set-sec-7-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Integration using Computer Algebra Problems</span>
+</h3>
+<a href="sec-7-5-IntroductionComputerAlgebra.html#exercises-set-sec-7-5" class="permalink">¶</a><p id="p-2918">For 1-10, find the antiderivative of the given function</p>
+<article class="exercise-like" id="exercise-493"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=x \ln(x)
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-250" id="solution-250"><span class="type">Solution</span></a><div id="hk-solution-250" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int x \ln(x)dx=\frac{1}{4} x^{2}(2\ln(x)-1) +c
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-494"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(t)=e^{.07t} (-t^2+3t+5)
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-495"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(t)=t^2 e^(-0.06t)
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-251" id="solution-251"><span class="type">Solution</span></a><div id="hk-solution-251" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int t^2 e^{-0.06 t} dt= e^{-0.06t} (-9259.26 - 555.556 t - 16.6667 t^2)+c
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-496"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\ln(x)
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-497"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(t)=(t+1) e^{-0.06t}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-252" id="solution-252"><span class="type">Solution</span></a><div id="hk-solution-252" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int (t+1) e^{-0.06t}\ dt =e^(-0.06t) (-294.444 - 16.6667 t)+c
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-498"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\frac{1}{(1+2x)(3+x)(5+6x) }
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-499"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\frac{1}{\sqrt{1+x^2}}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-253" id="solution-253"><span class="type">Solution</span></a><div id="hk-solution-253" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int \frac{1}{\sqrt{1+x^2}}\ dx= \sinh^{-1}(x)+c
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-500"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\frac{1}{(3+2x)^2} 
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-501"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\frac{5}{9+x^2 }
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-254" id="solution-254"><span class="type">Solution</span></a><div id="hk-solution-254" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int \frac{5}{9+x^2 }\ dx = \left(\frac{5}{3}\right)\tan^{-1}\left(\frac{x}{3}\right)+c
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-502"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\frac{1}{(5x+4)^2 (7x+9)}
+\end{equation*}
+</div></article><p id="p-2919">For problems 11-16 evaluate the definite integral.</p>
+<article class="exercise-like" id="exercise-503"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_0^{10} t^2 e^{-0.06t}  dt 
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-255" id="solution-255"><span class="type">Solution</span></a><div id="hk-solution-255" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int_0^{10} t^2 e^{-0.06t}  dt \approx 214.03
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-504"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_1^{10}\frac{dt}{t} 
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-505"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_1^8(x-1)(x-8)  dx
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-256" id="solution-256"><span class="type">Solution</span></a><div id="hk-solution-256" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int_1^8(x-1)(x-8)  dx \approx -57.167
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-506"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_0^{10}t^2 e^{.05(10-t)}  dt 
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-507"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_0^2 e^{-x^2} dx
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-257" id="solution-257"><span class="type">Solution</span></a><div id="hk-solution-257" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int_0^2 e^{-x^2} dx \approx 0.882081
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-508"><h6 class="heading"><span class="codenumber">16.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_9^{16} \frac{1}{\sqrt{2\pi}} e^{-(x-10)^2}  dx 
+\end{equation*}
+</div></article><p id="p-2920">For problems 17-20 do the initial value problem.</p>
+<article class="exercise-like" id="exercise-509"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+P' (q)=-q^2+3q+5\hbox{ and }P(3)=5.\hbox{ Find } P(q)
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-258" id="solution-258"><span class="type">Solution</span></a><div id="hk-solution-258" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+P(q)=\frac{1}{6} (-2q^3+9q^2+30q-87)
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-510"><h6 class="heading"><span class="codenumber">18.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+F' (t)=t^2 e^{-0.1t} \hbox{ and } F(10)=2.  \hbox{ Find } F(t).
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-511"><h6 class="heading"><span class="codenumber">19.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+P' (q)=\sqrt{q^2+5q+7} \hbox{ and } P(0)=7.  \hbox{ Find } P(q).
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-259" id="solution-259"><span class="type">Solution</span></a><div id="hk-solution-259" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="displaymath">
+\begin{equation*}
+P(q) = (56 - 50 \sqrt{157} + (4q+10) \sqrt{7 + 5 q + q^2} 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+- 3 \sinh^{-1}\left(\frac{25}{\sqrt{3}}\right)+ 3 \sinh^{-1}\left(\frac{5 + 2 q}{\sqrt{3}}\right))/8
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-512"><h6 class="heading"><span class="codenumber">20.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+P' (q)=-(q^2+2q+3)^2 \hbox{ and } P(10)=-7.  \hbox{ Find } P(q).
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-513"><h6 class="heading"><span class="codenumber">21.</span></h6>
+<p id="p-2921">I have an investment that produces income at a rate of \(P(t)=5000+100t\text{.}\)  I assume the present value of an asset decreases continuously at a rate of 2% per year for the length of time I have to wait for the asset.  What is the present value of the first 7 years of return from my investment?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-260" id="solution-260"><span class="type">Solution</span></a><div id="hk-solution-260" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int_0^7(5000+100t) (.98)^t dt\approx 34868.6
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-514"><h6 class="heading"><span class="codenumber">22.</span></h6>
+<p id="p-2922">My oil well is producing revenue at a rate of \(P(t)=5000(0.09^t)\text{.}\)  I assume the present value of an asset decreases continuously at a rate of 3% per year for the length of time I have to wait for the asset.  What is the present value of the first 10 years of return from my investment?</p></article><article class="exercise-like" id="exercise-515"><h6 class="heading"><span class="codenumber">23.</span></h6>
+<p id="p-2923">The rate of marginal profit is \(MP(q)=100-12\ln(q)\) and a break-even point occurs at \(q=100\text{.}\) Find the quantity that produces the most profit and the amount of profit generated at that point.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-261" id="solution-261"><span class="type">Solution</span></a><div id="hk-solution-261" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2924">We have maximal profit when \(MP(q)=0\text{,}\) or when \(q=e^8=2981\text{.}\)</p>
+<p id="p-2925">Using WolframAlpha to solve the initial value problem we get</p>
+<div class="displaymath">
+\begin{equation*}
+P(q)=16(7q-700+75ln(100))-12q ln(q)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P(2981)= 16(7*2981-700+75ln(100))-12*2981 ln(2981)=42021.7
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-516"><h6 class="heading"><span class="codenumber">24.</span></h6>
+<p id="p-2926">Our marginal cost function is \(MC(q)=10q \ln(q)\) and the startup costs are $23,000.  Produce a cost function.</p></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

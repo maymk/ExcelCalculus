@@ -1,0 +1,6 @@
+CAS-MCS-2HVMMU:ExcelCalculus maymk$ xsltproc -xinclude ../../xsl/mathbook-html.xsl sample-book.xml
+CAS-MCS-2HVMMU:ExcelCalculus maymk$ xsltproc ../../xsl/mathbook-html.xsl excelcalculus.xml
+CAS-MCS-2HVMMU:ExcelCalculus maymk$ xsltproc ../../xsl/mathbook-latex.xsl excelcalculus.xml
+
+
+(<url href="http://mathbook.pugetsound.edu">http://mathbook.pugetsound.edu</url>)

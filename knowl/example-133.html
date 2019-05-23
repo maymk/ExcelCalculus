@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:47-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.6.1</span>. <span class="title">Tall men in an area.</span>
+</h6>
+<p>In the United States, the height of men follows a normal distribution with a mean of 70 inches (5' 10") and a standard deviation of 3 inches.  I want to set up a specialty shop for men who are at least 6’ tall, but no more than 7' tall.  In an area with 100,000 adult men, how big is my potential market?</p>
+<p><dfn class="terminology">Solution set up</dfn>.  My distribution function is \(\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^3}\right)\text{.}\) Since I have a population of 100,000 and am interested in the men who are between 72 and 84 inches tall, my potential market is</p>
+<div class="displaymath">
+\begin{equation*}
+100000\int_{72}^{84} \frac{1}{3\sqrt{2\pi}} \exp\left(\frac{-(x-70)^2}{2*3^2} \right)dx.
+\end{equation*}
+</div>
+<p>As an alternative, I can convert the problem so it is expressed in terms of standard deviations.  Then I use the standardized normal distribution and my limits of integration are</p>
+<div class="displaymath">
+\begin{equation*}
+low\ bound\ in\ SD = (low\ bound-mean)/(SD) = (72-70)/3 = 2/3
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+upper\ bound\ in\ SD = (upper\ bound-mean)/(SD) = (84-70)/3 = 14/3.
+\end{equation*}
+</div>
+<p>Then my potential market is</p>
+<div class="displaymath">
+\begin{equation*}
+100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx.
+\end{equation*}
+</div>
+<p><dfn class="terminology">Solution 1, using Excel and Riemann Sums</dfn>:  I want to set up a spreadsheet to find the area under the curve.  Since I think I may do this for several problems, I want to set up the worksheet as a template that I can simply fill in.  It will make my life easier if I recast the problem in terms of standard deviations.   My potential market is \(100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx\text{.}\)   I am ready to set up a Riemann sum worksheet as we did in section 7.1</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>In cells F3 through F5 we convert the lower bound, upper bound, and del x to standard deviations.  We recall that we get better accuracy by evaluating the rectangles with a midpoint.  The midpoint of the nth rectangle is (n-0.5)*del x above the lower bound.  As we did in previous sections, we use the offset command to bring our answer into the top region.  When we look at the numbers we see that the potential market is 25,249.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p><dfn class="terminology">Solution 1a, using Excel Statistics Commands</dfn>:  By this point in the course you should expect that if we claim a computation is important and done by business many times, that there is an Excel command to do the computation.</p>
+<p>The function we are interested in is</p>
+<div class="displaymath">
+\begin{equation*}
+\hbox{NORM.DIST(x, mean, standard deviation, cumulative).}
+\end{equation*}
+</div>
+<p>Where \(x\text{,}\) mean, and standard deviation have the obvious meanings.  The cumulative parameter is either true or false.  If it is true we get the cumulative distribution function.  If it is false we get the probability density function.  If we are working with the standardized normal distribution, where the mean is 0 and the standard deviation is 1, the command is</p>
+<div class="displaymath">
+\begin{equation*}
+\hbox{NORM.S.DIST(x, cumulative).}
+\end{equation*}
+</div>
+<p>(If you are using older versions of Excel, the syntax of the command is a little different.  Check the appropriate help page if you are using an older version of Excel.)  With these commands, our spreadsheet is noticeably simpler.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>When we look at the values, we get a target population of 25,249.  This agrees with our estimate to 5 significant figures.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p><dfn class="terminology">Solution 1b, using Wolfram alpha</dfn>:  Once I have reduced the problem to evaluating a definite integral, I can find a numeric solution with a CAS package like Wolfram|Alpha.</p>
+<div class="displaymath">
+\begin{equation*}
+100000\int_{72}^{84} \frac{1}{3\sqrt{2\pi}} \exp\left(\frac{-(x-70)^2}{2*3^2 }\right)dx
+\end{equation*}
+</div>
+<p>becomes</p>
+<div class="displaymath">
+\begin{equation*}
+\text{100000*integrate(exp(-(x-70)^2/(2*3^2))/(3*sqrt(2*pi))) from 72 to 84.}
+\end{equation*}
+</div>
+<p>We get our familiar answer of 25,249.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>When we compute a target population, we sometimes want to include the tail of the distribution.  We might, for example be concerned with all women who are 5 feet tall or less.  This sets up an integral over an infinite interval, which we can’t do as a Riemann sum.  The first workaround notes that the tails are very small.  If all humans who have ever lived are normally distributed, less than 1 is more than 7 standard deviations from the mean.  Taking the integral down to -7 will practically be the same as integrating down to \(-\infty\text{.}\)  The second workaround uses the symmetry of the normal distribution.</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{-\infty}^a SND(x)dx=\int_{-\infty}^0 SND(x)dx+\int_0^a SND(x)dx=.5+\int_0^a SND(x)dx.
+\end{equation*}
+</div></article><span class="incontext"><a href="sec-7-6-NormalDistribution.html#example-133">in-context</a></span>
+</body>
+</html>

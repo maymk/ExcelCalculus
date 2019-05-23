@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:41-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">6.2.9.1</span>.</h6>
+<ol class="lower-alpha">
+<li>
+<p>Give the 3 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,3,-1)=\frac{x+9+2}{x^2+9+1}=\frac{x+11}{x^2+10}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(2,y,-1)=\frac{2+3y+2}{4+y^2+1}=\frac{3y+4}{y^2+5}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(2,3,z)=\frac{2+9-2z}{4+9+z^2 }=\frac{11-2z}{13+z^2 }
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Find the partial derivatives of the original function.</p>
+<div class="displaymath">
+\begin{equation*}
+f_x  (x,y,z) =\frac{(1)(x^2+y^2+z^2 )-(x+3y-2z)(2x)}{(x^2+y^2+z^2 )^2} 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{(x^2+y^2+z^2 )-(2x^2+6xy-4xz)}{(x^2+y^2+z^2 )^2 }  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{(-x^2+y^2+z^2-6xy+4xz)}{(x^2+y^2+z^2 )^2} 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y  (x,y,z)=\frac{(3)(x^2+y^2+z^2 )-(x+3y-2z)(2y)}{(x^2+y^2+z^2 )^2 } 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{(3x^2+3y^2+3z^2 )-(2xy+6y^2-4yz)}{(x^2+y^2+z^2 )^2}  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{3x^2-3y^2+3z^2-2xy+4yz}{(x^2+y^2+z^2 )^2}  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_z  (x,y,z)=\frac{(-2)(x^2+y^2+z^2 )-(x+3y-2z)(2z)}{(x^2+y^2+z^2 )^2}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{(-2x^2-2y^2-2z^2 )-(2xz+6yz-4z^2 )}{(x^2+y^2+z^2 )^2}  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{-2x^2-2y^2+2z^2-2xz-6yz}{(x^2+y^2+z^2 )^2}  
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f_x (2,3,-1)=\frac{(-4+9+1-36-8)}{(4+9+1)^2} = -\frac{38}{196}= -\frac{19}{98}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y (2,3,-1) =\frac{12-27+3-12-12}{196} =-\frac{-36}{196} =-\frac{-9}{49}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_z (2,3,-1)=\frac{-8-18+2+4+18}{196}= -\frac{2}{196}=-\frac{1}{98}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Give the equation of the linear approximating function through \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Linear f(x,y,z) 
+= f(2,3,-1)+f_x  (2,3,-1)  (x-2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++f_y  (2,3,-1)(y-3)+f_z  (2,3,-1)(z+1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  \frac{13}{14}-\frac{19}{98}  (x-2)-\frac{9}{49} (y-3)-\frac{1}{98}(z+1)
+\end{equation*}
+</div>
+</li>
+<li>
+<p>The approximation at \(P_2\) obtained from the function in d.</p>
+<div class="displaymath">
+\begin{equation*}
+Linear f(3,2.5,0)=  \frac{13}{14}-\frac{19}{98}  (1)-\frac{9}{49} \left(-\frac{1}{2}\right)-\frac{1}{98} (1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{13*7}{14*7}+\frac{-19+9-1}{98}=
+\frac{91-11}{98}=\frac{80}{98}=\frac{40}{49}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-6-2-PartialDerivatives.html#solution-203">in-context</a></span>
+</body>
+</html>

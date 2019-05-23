@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:23-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Marginal Functions and Difference Quotients</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap-3-RateChangeDerivatives.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-3-2-NumericDerivativesLimits.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap-3-RateChangeDerivatives.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-3-2-NumericDerivativesLimits.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions" class="active">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-3-1-MarginalFunctions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Marginal Functions and Difference Quotients</span>
+</h2>
+<a href="sec-3-1-MarginalFunctions.html" class="permalink">¶</a><p id="p-898"><a class="external" href="./Examples/Section-3-1-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-899">There are a number of industries where it is common for people to pay significantly different prices for the same product from the same vender.  (Airline tickets, symphony seats, and doughnuts at different times of the day come to mind.)  The reason is generally not favoritism or an irrational vender, but an analysis that looks at the change in costs and profits for making an additional sale.  Flying a plane with 51 passengers does not cost much more than flying the same plane with 50 passengers.  The same is true when playing a symphony.  Selling an extra doughnut at half price, just before closing when you would have to throw the doughnut out adds to the profit.  In all of these cases, we are less concerned with total revenues and profits and more concerned with how things change with one more sale.</p>
+<p id="p-900">In finance and economics this issue is dealt with using marginal functions.</p>
+<article class="definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.1.1</span>. <span class="title">Marginal value.</span>
+</h6>
+<p id="p-901">If \(f(x)\) is a function (i.e., cost, revenue, or profit), we define the <dfn class="terminology">marginal value</dfn> of \(f(x)\) to be the change in \(f(x)\) as \(x\) increases by 1.  Thus</p>
+<article class="assemblage-like" id="assemblage-20"><div class="displaymath" id="p-902">
+\begin{equation*}
+Marginal\ f(x+1)=f(x+1)-f(x).
+\end{equation*}
+</div></article></article><p id="p-903">It is worthwhile to point out a detail that may cause a bit of confusion.  Note that we are defining marginal functions of x+1 rather than the marginal functions of x.  This is the standard convention in finance where the question is phrased in terms of change associated with producing one more.  I am more concerned about deciding about what I should do rather than looking at what I have already done. The usual functions with related marginal functions are Cost, Revenue, and Profit.</p>
+<ul class="disc">
+<li id="li-276">
+<p id="p-904">Marginal Cost at x, or Marginal Cost(x+1) is the change from Cost(x) to Cost(x+1) :</p>
+<div class="displaymath">
+\begin{equation*}
+Marginal\ Cost(x+1)=Cost(x+1)-Cost(x)
+\end{equation*}
+</div>
+</li>
+<li id="li-277">
+<p id="p-905">Marginal Revenue(x+1) is the change from Revenue(x) to Revenue(x+1)</p>
+<div class="displaymath">
+\begin{equation*}
+Marginal\ Revenue(x+1)=Revenue(x+1)-Revenue(x)
+\end{equation*}
+</div>
+</li>
+<li id="li-278">
+<p id="p-906">Marginal Profit(x+1) is the change from Profit(x) to Profit(x+1).</p>
+<div class="displaymath">
+\begin{equation*}
+Marginal\ Profit(x+1)=Profit(x+1)-Profit(x)
+\end{equation*}
+</div>
+</li>
+</ul>
+<p id="p-907">It is noteworthy that the three examples mentioned are all cases where the cost of producing the goods has already been set, the goods cannot be saved and sold later, and any change in revenue adds to the profit.</p>
+<article class="example-like" id="example-21"><a data-knowl="" class="id-ref" data-refid="hk-example-21"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.1.2</span>. <span class="title">Marginal functions for widgets.</span>
+</h6></a></article><div id="hk-example-21" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-908">For my widget company I have determined that the cost and demand price functions are:</p>
+<div class="displaymath">
+\begin{equation*}
+Cost(q)=40+3q+q^2/10.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+DemandPrice(q)=30-q/2.
+\end{equation*}
+</div>
+<p id="p-909">I want to compute the marginal cost, revenue, and profit to produce the 11th and 26th widget.  I also want to understand the marginal cost of producing the 1st widget.</p>
+<p id="p-910">To set up the problem I recall that we assume we are selling at the demand price, the highest price consumers will pay and still have us sell all we produce.  Thus the formulas for revenue and profit are:</p>
+<article class="assemblage-like" id="assemblage-21"><div class="displaymath" id="p-911">
+\begin{equation*}
+Revenue(q)=(Demand Price(q))*q.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Profit(q)=Revenue(q)-Cost(q).
+\end{equation*}
+</div></article><p id="p-912">I set up my worksheet to compute these values.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-913">I then create additional columns for the marginal functions.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-914">Now we simply go back to values and see the values.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="displaymath">
+\begin{equation*}
+Marginal Cost(11)=Cost(11)-Cost(10)=85.1-80=5.1.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Marginal Revenue(11)=Revenue(11)-Revenue(10)=269.5-250=19.5.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Marginal Profit(11)=Profit(11)-Profit(10)=184.4-170=14.4.
+\end{equation*}
+</div>
+<p id="p-915">\(\ \)</p>
+<div class="displaymath">
+\begin{equation*}
+Marginal Cost(26)=Cost(26)-Cost(25)=185.6-177.5=8.1.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Marginal Revenue(26)=Revenue(26)-Revenue(25)=442-437.5=4.5.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Marginal Profit(26)=Profit(26)-Profit(25)=256.4-260=-3.6.
+\end{equation*}
+</div></article></div>
+<p id="p-916">The last equation illustrates the use of marginal functions.  While producing and selling the 26th widget did increase total revenue, the marginal profit was negative, so I would have been better off if I had made fewer widgets. Notice that the marginal value of producing the 1st widget is not on the spreadsheet and needs to be dealt with as a special case.  Given our functions we have two reasonable ways to understand the value \(Cost(0)\text{.}\)  Either we can assume that there is no cost to not being in a business, so \(Cost(0)=0\text{,}\) and our cost function was only valid for positive numbers, or that the \(Cost(0)\) is understood an the fixed costs, which we have already undertaken, like a tax or license fee, so \(Cost(0)=40\) for this problem.  Both are reasonable interpretations.  We will need to look at the context of our problem to decide on the correct interpretation.</p>
+<p id="p-917">Many questions in business can be translated into making some function as big or small as possible, depending on whether we think the value is good or bad.  It is thus often useful to see a graph of both the function of interest and the related marginal function on the same graph.</p>
+<article class="example-like" id="example-22"><a data-knowl="" class="id-ref" data-refid="hk-example-22"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.1.3</span>. <span class="title">Profit and Marginal Profit Together.</span>
+</h6></a></article><div id="hk-example-22" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-918">The function \(Profit(q)=-q^2/20+100q-1000 \) expresses the profit at my gadget factory.  Plot both profit and marginal profit together to estimate both the maximum profit at the factory as well as the quantity I should produce to get that profit.</p>
+<p id="p-919">In setting up the spreadsheet, there are some details to notice.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-920">Since Excel does negation before powers, I need parentheses so \(–(q^2)\) is evaluated correctly.  Since I suspect I will have to look at a large range of numbers to find the maximum, I put Profit(q) and Profit(q+1) as separate columns.  This keeps my marginal operation in a single row and allows computation of Marginal Profit without evaluating for every value of q.  We now look at the graph with both Profit and Marginal Profit.  To make the graph easier to read, a secondary axis is used for profit.  This allows us to see where Marginal Profit crosses the axis.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-921">We see that profit reaches a maximum where marginal profit is zero.  This occurs approximately when q is approximately 1000.  In that case the profit is about $50,000.  Looking back at the numbers in the spreadsheet, we see that the maximum profit is closer to $49,000.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-6.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-922">The more realistic situation for us to face is one where we are given a collection of data points.  In that situation we need to first find a best fitting curve and use it to make predicted values.  Then we can find the marginal function of interest and do our comparison.</p>
+<article class="example-like" id="example-23"><a data-knowl="" class="id-ref" data-refid="hk-example-23"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.1.4</span>. <span class="title">Marginal Profit from Data.</span>
+</h6></a></article><div id="hk-example-23" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-923">I have the following data on profit and production level for widgets.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Widgets produced</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines">50</td>
+<td class="c m b1 r0 l0 t3 lines">78</td>
+<td class="c m b1 r0 l0 t3 lines">87</td>
+<td class="c m b1 r0 l0 t3 lines">95</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Profit</td>
+<td class="c m b1 r0 l0 t0 lines">$7,486.40</td>
+<td class="c m b1 r0 l0 t0 lines">$14,505.60</td>
+<td class="c m b1 r0 l0 t0 lines">$23,431.60</td>
+<td class="c m b1 r0 l0 t0 lines">$23,014.30</td>
+<td class="c m b1 r0 l0 t0 lines">$21,258.50</td>
+</tr>
+</table></div></div></div>
+<p id="p-924">Use Marginal Profit to find the level of production that maximizes profit.</p>
+<p id="p-925">I put the data into a spreadsheet and find a best fitting curve to produce a formula.  Looking at the data, I will assume that profit is a quadratic function of the amount produced.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-926">With the formula from the trendline I can add a column for Predicted Profit(x).  The obvious adjustment produces Predicted Profit(x+1).  It is then easy to compute the value of Marginal Profit(x+1).</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-927">Looking at the graph, the maximum is close to \(x=80\text{.}\)  I simply add some rows with appropriate values of x to get the desired answer.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-928">When \(x = 80\text{,}\) the Marginal Profit turns negative.  The maximum profit is $23,492.96, obtained by producing 80 widgets.</p></article></div>
+<p id="p-929"><dfn class="terminology">Difference Quotients and Average Rate of Change</dfn></p>
+<p id="p-930">The marginal value, \(Mf(x+1)\text{,}\) of a function \(f(x)\text{,}\) measures the amount of change from \(f(x)\) to \(f(x+1)\text{.}\)  It can also be understood as a special case the average rate of change of \(f(x)\text{.}\)</p>
+<article class="assemblage-like" id="assemblage-22"><p id="p-931">It is easy to see that the average rate of change of \(f(x)\)  as \(x\) goes from a to b is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{f(b)-f(a)}{b-a}
+\end{equation*}
+</div></article><p id="p-932">There are a number of situations where we want to look at average rate of change for a period of some other change in the variable.  We may have production in thousands or millions of units.  If we are looking at monthly or quarterly financial records, we may want to look at the average rate of change over a year to take into account the seasonal variation of production.</p>
+<article class="example-like" id="example-24"><a data-knowl="" class="id-ref" data-refid="hk-example-24"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.1.5</span>. <span class="title">Rate of Change when denominator is not 1.</span>
+</h6></a></article><div id="hk-example-24" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-933"><dfn class="terminology">Example 4</dfn>:  We have the following monthly sales data on gizmos.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-934">We want to find the rate of change of monthly sales. If we look at a graph of the sales data</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-11.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-935">I can see that sales are trending upwards, but there is a seasonal variation added in.  Excel will not do a good job of modeling this function with a trendline.  Thus, I want to find a rate of change over a period of 12 months to eliminate the seasonal variation.  To find the most recent trend I use the most recent data with a time period of 12 months.</p>
+<div class="displaymath" id="p-936">
+\begin{equation*}
+\begin{aligned} Monthly\ Rate\ of\ Change \amp = \frac{Sales(25)-Sales(13)}{25-13} \\ 
+\amp = \frac{1298-1176}{25-13}=\frac{122}{12}\approx 10 \end{aligned}
+\end{equation*}
+</div></article></div>
+<p id="p-937">It is worth noting that the need to adjust for the right time period for comparisons is probably the reason that company revenue reports typically show the previous quarter as well as the quarter from a year earlier.</p>
+<p id="p-938"><dfn class="terminology">An Excel Trick for Difference Quotients</dfn></p>
+<p id="p-939">When creating marginal functions or other difference quotients, we often want the computations kept in one row, particularly if we want to graph the function and the marginal function together.  A careful arrangement of the columns and the use of quick fill will make our life easier.</p>
+<p id="p-940">Suppose my revenue function is \(rev(q)=-0.2q^2+20q-5\) and I want to compute marginal revenue.  Then \(rev(q+1)=-0.2(q+1)^2+20(q+1)-5\text{.}\)  Experience shows that students will often make a typing mistake in the second formula, often forgetting parentheses somewhere of forgetting to change one of the copies of \(q\) to \(q+1\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-12.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-941">One solution is to add an extra column for \(q+1\) next to the column for \(q\text{.}\)  Then the formula for \(rev(q+1)\) is obtained by quick filling form the formula for \(rev(q)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-13.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-942">This trick will be even more useful in the next section when we want to compute the values of \(rev(q)\text{,}\) \(rev(q+0.00)\text{,}\) and \(rev(q-0.001)\text{.}\)</p>
+<section class="exercises" id="exercises-set-sec-3-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Marginal Functions and Difference Quotients Problems</span>
+</h3>
+<a href="sec-3-1-MarginalFunctions.html#exercises-set-sec-3-1" class="permalink">¶</a><article class="exercise-like" id="exercise-140"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-943">If \(revenue(q)=5q\text{,}\) what is the marginal revenue from selling the 10th item?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-68" id="solution-68"><span class="type">Solution</span></a><div id="hk-solution-68" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-944">The marginal revenue would be given by</p>
+<div class="displaymath">
+\begin{equation*}
+marginal\ revenue(10)=revenue(10)-revenue(9)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=50-45=5
+\end{equation*}
+</div>
+<p id="p-945">The marginal revenue from selling the 10th item is $5.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-141"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-946">If \(profit(q)=-100+5q-0.01q^2\text{,}\) what is the marginal profit from selling the 20th item?</p></article><article class="exercise-like" id="exercise-142"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-947">If \(cost(q)=100+7q\text{,}\) what is the marginal cost from selling the 30th item?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-69" id="solution-69"><span class="type">Solution</span></a><div id="hk-solution-69" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-948">The marginal cost would be given by</p>
+<div class="displaymath">
+\begin{equation*}
+marginal\ cost(30)=cost(30)-cost(29)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=2200-2193=7
+\end{equation*}
+</div>
+<p id="p-949">The marginal cost from selling the 30th item is $7.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-143"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-950">If \(revenue(q)=-500+7q-0.01\sqrt{q^3}\text{,}\) what is the marginal revenue from selling the 100th item?</p></article><article class="exercise-like" id="exercise-144"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-951">If \(cost(q)\) is a constant function what can you say about the marginal cost function?  (Use algebra to find a formula for the marginal function.)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-70" id="solution-70"><span class="type">Solution</span></a><div id="hk-solution-70" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-952">Hint: \(marginal\ cost(q+1)=cost(q+1)-cost(q)\)</p>
+<p id="p-953">But the cost function is equal to some constant, so \(cost(q+1)=cost(q)\)</p>
+<p id="p-954">This implies that the Marginal Cost function must be 0.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-145"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-955">If \(revenue(q)\) is a linear function with slope \(m\text{,}\) what can you say about the marginal revenue function?  (Use algebra to find a formula for the marginal function.)</p></article><div class="exercisegroup" id="exercisegroup-13">
+<div class="introduction" id="introduction-14">
+<p id="p-956">For problems 7-12:</p>
+<ol class="lower-alpha">
+<li id="li-279"><p id="p-957">Make a chart of the function and the marginal function as q goes from 0 to 30.</p></li>
+<li id="li-280"><p id="p-958">Plot the function and the marginal function on the same graph.</p></li>
+<li id="li-281"><p id="p-959">From the shape of the graph of the marginal function, decide what kind of graph it appears to be.</p></li>
+<li id="li-282"><p id="p-960">Find the formula for a best fitting curve for the marginal function.</p></li>
+<li id="li-283"><p id="p-961">List the regions where the original function is increasing and the regions where it is decreasing.</p></li>
+<li id="li-284"><p id="p-962">List the regions where the marginal function is positive and where the marginal function is negative.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-146"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-963">Let \(cost(q)=5000+23 q\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-71" id="solution-71"><span class="type">Solution</span></a><div id="hk-solution-71" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-285">
+<p id="p-964">Recall that \(Marginal\ Cost(q+1)=Cost(q+1)-Cost(q)\)</p>
+<p id="p-965">The entries in the cells should be</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-966">(See part b for some of the values)</p>
+</li>
+<li id="li-286">
+<p id="p-967">Partial table and the graphs:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol7b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-287"><p id="p-968">The table and the graph indicate that the marginal function is a constant (23 to be precise)</p></li>
+<li id="li-288"><div class="displaymath">
+\begin{equation*}
+MCost (q)= 23
+\end{equation*}
+</div></li>
+<li id="li-289"><p id="p-969">The cost function is always increasing.</p></li>
+<li id="li-290"><p id="p-970">The marginal function is always positive.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-147"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-971">Let \(revenue(q)=16 q\text{.}\)</p></article><article class="exercise-like" id="exercise-148"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-972">Let \(revenue(q)=-0.3q^2+10q-15\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-72" id="solution-72"><span class="type">Solution</span></a><div id="hk-solution-72" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-291">
+<p id="p-973">Recall that \(Marginal\ Revenue(q+1)=Revenue(q+1)-Revenue(q)\)</p>
+<p id="p-974">The entries in the cells should be</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-975">(See part b for some of the values)</p>
+</li>
+<li id="li-292">
+<p id="p-976">Partial table and the graphs:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol9b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-293"><p id="p-977">The table and the graph indicate that the marginal function is a line.</p></li>
+<li id="li-294"><div class="displaymath">
+\begin{equation*}
+MRevenue (q+1)= -0.6q+9.7
+\end{equation*}
+</div></li>
+<li id="li-295"><p id="p-978">The Revenue function is increasing until \(q\) is about 17.</p></li>
+<li id="li-296"><p id="p-979">The marginal function is positive until \(q\) is about 17.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-149"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-980">Let \(profit(q)=-2q^2+100q-500\text{.}\)</p></article><article class="exercise-like" id="exercise-150"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-981">Let \(cost(q)=q^3-4.5q^2+60q+100\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-73" id="solution-73"><span class="type">Solution</span></a><div id="hk-solution-73" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-297">
+<p id="p-982">Recall that \(Marginal\ Cost(q+1)=Cost(q+1)-Cost(q)\)</p>
+<p id="p-983">The entries in the cells should be</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-984">(See part b for some of the values)</p>
+</li>
+<li id="li-298">
+<p id="p-985">Partial table and the graphs:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol11b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-299"><p id="p-986">The table and the graph indicate that the marginal function is a quadratic function.</p></li>
+<li id="li-300"><div class="displaymath">
+\begin{equation*}
+MCost (q)= 3q^2-6q+56.5
+\end{equation*}
+</div></li>
+<li id="li-301"><p id="p-987">The Cost function is always increasing.</p></li>
+<li id="li-302"><p id="p-988">The marginal function is always positive.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-151"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-989">Let \(value(q)=100(0.9)^q\text{.}\)</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-14">
+<div class="introduction" id="introduction-15">
+<p id="p-990">For problems 13-16 you are given data for a function.</p>
+<ol class="lower-alpha">
+<li id="li-303"><p id="p-991">Assuming the function is of the kind specified; find a best fitting curve for the function and a formula.</p></li>
+<li id="li-304"><p id="p-992">Plot the function and the marginal function on the same graph.</p></li>
+<li id="li-305"><p id="p-993">From the shape of the graph of the marginal function, decide what kind of graph it appears to be.</p></li>
+<li id="li-306"><p id="p-994">In a textbox, describe your conclusions about the sign of the marginal function and the rising or falling of the original function.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-152"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-995">Assume profit(q) is a polynomial function of degree 2 and that you have the following data:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantiy</td>
+<td class="c m b1 r0 l0 t3 lines">30</td>
+<td class="c m b1 r0 l0 t3 lines">48</td>
+<td class="c m b1 r0 l0 t3 lines">73</td>
+<td class="c m b1 r0 l0 t3 lines">149</td>
+<td class="c m b1 r0 l0 t3 lines">177</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Profit</td>
+<td class="c m b1 r0 l0 t0 lines">447</td>
+<td class="c m b1 r0 l0 t0 lines">561</td>
+<td class="c m b1 r0 l0 t0 lines">669</td>
+<td class="c m b1 r0 l0 t0 lines">801</td>
+<td class="c m b1 r0 l0 t0 lines">759</td>
+</tr>
+</table></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-74" id="solution-74"><span class="type">Solution</span></a><div id="hk-solution-74" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-307"><p id="p-996">The best fitting curve is:   \(y = -0.0297x2 + 8.26x + 227.96\)</p></li>
+<li id="li-308">
+<p id="p-997">If  \(Marginal\ Profit(x+1)=Profit(x+1)-Profit(x)\text{,}\) then can set this up in Excel by finding: \(q, Profit (q), Profit(q-1)\) and \(Marginal\ Profit (q)\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol13a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-998">The chart was created and the marginal profit was plotted using the secondary axis.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol13b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-309"><p id="p-999">The Marginal Profit function seems to be a straight line with negative slope.</p></li>
+<li id="li-310"><p id="p-1000">In a textbox, describe your conclusions about the sign of the marginal function and the rising or falling of the original function.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-153"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-1001">Assume profit(q) is a polynomial function of degree 2 and that you have the following data:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantiy</td>
+<td class="c m b1 r0 l0 t3 lines">105</td>
+<td class="c m b1 r0 l0 t3 lines">203</td>
+<td class="c m b1 r0 l0 t3 lines">349</td>
+<td class="c m b1 r0 l0 t3 lines">535</td>
+<td class="c m b1 r0 l0 t3 lines">644</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Profit</td>
+<td class="c m b1 r0 l0 t0 lines">339</td>
+<td class="c m b1 r0 l0 t0 lines">1535</td>
+<td class="c m b1 r0 l0 t0 lines">2429</td>
+<td class="c m b1 r0 l0 t0 lines">2035</td>
+<td class="c m b1 r0 l0 t0 lines">1029</td>
+</tr>
+</table></div></div></div></article><article class="exercise-like" id="exercise-154"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<p id="p-1002">Assume ResaleValue(q) is an exponential function and that you have the following data:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Year</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">6</td>
+<td class="c m b1 r0 l0 t3 lines">8</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Resale Value</td>
+<td class="c m b1 r0 l0 t0 lines">$8,607</td>
+<td class="c m b1 r0 l0 t0 lines">$7,593</td>
+<td class="c m b1 r0 l0 t0 lines">$6,423</td>
+<td class="c m b1 r0 l0 t0 lines">$5,684</td>
+<td class="c m b1 r0 l0 t0 lines">$5,051</td>
+</tr>
+</table></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-75" id="solution-75"><span class="type">Solution</span></a><div id="hk-solution-75" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-311">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol15a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="displaymath">
+\begin{equation*}
+Resale\ Value(x)=9836e^{-0.068x}
+\end{equation*}
+</div>
+</li>
+<li id="li-312">
+<p id="p-1003">Using the following Excel commands</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol15b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol15c.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-313"><p id="p-1004">Marginal Resale Value seems to be an exponential function</p></li>
+<li id="li-314"><p id="p-1005">It appears that Marginal Resale Value is always negative and Resale value is always decreasing.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-155"><h6 class="heading"><span class="codenumber">16.</span></h6>
+<p id="p-1006">Assume retirementBalance(q) is an exponential function and that you have the following data:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Year</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">30</td>
+<td class="c m b1 r0 l0 t3 lines">35</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Amount</td>
+<td class="c m b1 r0 l0 t0 lines">$54,713</td>
+<td class="c m b1 r0 l0 t0 lines">$143,909</td>
+<td class="c m b1 r0 l0 t0 lines">$289,476</td>
+<td class="c m b1 r0 l0 t0 lines">$395,709</td>
+<td class="c m b1 r0 l0 t0 lines">$533,071</td>
+</tr>
+</table></div></div></div></article>
+</div>
+</div>
+<article class="exercise-like" id="exercise-156"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<p id="p-1007">The monthly revenue, in thousands of dollars for your company is found to follow:</p>
+<div class="displaymath">
+\begin{equation*}
+revenue(t)=300+5t+30 \sin(t/6*pi()).
+\end{equation*}
+</div>
+<p id="p-1008">Plot the revenue and marginal revenue.  Explain why marginal revenue is not a good indicator of growth.  Plot average rate of change over a 12-month span and explain why it is a better measure of growth.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-76" id="solution-76"><span class="type">Solution</span></a><div id="hk-solution-76" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-1-sol17a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1009">Marginal Revenue is the change in revenue each month. This gives us some idea of what is happening each month, but does not give a very clear picture of overall trends.</p>
+<p id="p-1010">The average rate of change over a 12-month time span would be</p>
+<div class="displaymath">
+\begin{equation*}
+Average\ rate\ of\ change=  \frac{Revenue(13)-Revenue(1)}{13-1}=\frac{360-300}{12}=5
+\end{equation*}
+</div>
+<p>The overall growth over an entire year gives a better indication of trends. And the comparison over a year indicates a slight growth on average by $5/month.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-157"><h6 class="heading"><span class="codenumber">18.</span></h6>
+<p id="p-1011">Historical data for quarterly revenue reports for Microsoft can be found online.  (A good source is <a class="external" href="http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.aspx" target="_blank">http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.asp</a>.) Plot 5 years of data.</p>
+<ol class="lower-alpha">
+<li id="li-315"><p id="p-1012">Explain why looking at marginal change of revenue from one quarter to the next is misleading.</p></li>
+<li id="li-316"><p id="p-1013">Explain how to adjust for this problem.</p></li>
+</ol></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

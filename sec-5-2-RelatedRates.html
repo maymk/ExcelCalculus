@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:26-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Related Rates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-5-1-ImplicitDifferentiation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-5-DIfferentiationApplications.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-5-3-Elasticity.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-5-1-ImplicitDifferentiation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-5-DIfferentiationApplications.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-5-3-Elasticity.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates" class="active">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-5-2-RelatedRates"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Related Rates</span>
+</h2>
+<a href="sec-5-2-RelatedRates.html" class="permalink">¶</a><p id="p-1934">As we have seen, \(\frac{dy}{dx}\) is the instantaneous rate of change of \(y\) with respect to \(x\text{.}\)  In chapter 4 we learned techniques for finding \(\frac{dy}{dx}\) when \(y\) is defined as a function of \(x\text{.}\)  In the last section we learned how to use implicit differentiation to find \(\frac{dy}{dx}\) when we were given an equation in \(x\) and \(y\text{.}\)  In this section we want find \(\frac{dy}{dx}\) when \(x\) and \(y\) are both described in terms of another variable.  As with the section on related rates, we will start with an example where we can solve the problem by eliminating the extra variable before differentiating, and then look at how to solve with related rates.</p>
+<article class="example-like" id="example-73"><a data-knowl="" class="id-ref" data-refid="hk-example-73"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.2.1</span>. <span class="title">Change in revenue with respect to expense, doable two ways.</span>
+</h6></a></article><div id="hk-example-73" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1935">We can buy widgets for $10.  The demand price of widgets is $20 minus 0.1 times the quantity to be sold.  Find the derivative of revenue with respect to expense.</p>
+<p id="p-1936"><dfn class="terminology">Solution</dfn> a: The revenue and cost functions for widgets depend on the quantity (q). The formulas for revenue and cost are:</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=q(20-0.1q)=20q-0.1q^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+cost=10q.
+\end{equation*}
+</div>
+<p id="p-1937">We can solve the second equation for quantity and substitute back into the first equation. This now gives us the revenue function in terms of cost (c).</p>
+<div class="displaymath">
+\begin{equation*}
+quantity =.1*c.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+revenue=2c-0.001 c^2.
+\end{equation*}
+</div>
+<p id="p-1938">It is straightforward to take the derivative.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ revenue}{d\ cost}=2-0.002*cost.
+\end{equation*}
+</div>
+<p id="p-1939">Note that the derivative is positive for cost between $0 and $1000. This implies that the revenue is rising until the cost is $1000. After we hit a cost of $1000, the derivative becomes negative. This indicates that the revenue will actually decrease.</p>
+<p id="p-1940">The alternative method is to differentiate the equations for revenue (\(r\)) and cost (\(c\)) with respect to quantity (\(q\)), and find the two derivatives \(\frac{d\ r}{d\ q}\) and \(\frac{d\ c}{d\ q}\text{,}\) then treat them as fractions.  The derivative we want is the quotient of these fractions.</p>
+<p id="p-1941"><dfn class="terminology">Solution b</dfn>: The revenue and cost functions for widgets are the same as above.</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=20q-0.1 q^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+cost=10q.
+\end{equation*}
+</div>
+<p id="p-1942">We now differentiate</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ r}{d\ q}  =20-0.2 q.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ c}{d\ q}=10.
+\end{equation*}
+</div>
+<p id="p-1943">We divide these derivatives to get the desired derivative.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{change\ in\ revenue}{change\ in\ cost}: \frac{d\ r}{d\ c}=\frac{d\ r}{d\ q}/\frac{d\ c}{d\ q}=(20-0.2 q)/10
+\end{equation*}
+</div>
+<p id="p-1944">Substituting q =.1 c gives the same solution we had from the first method.</p></article></div>
+<p id="p-1945">When using the method of related rates, we act as if the derivatives are fractions that we can multiply or divide to obtain the appropriate fraction.  We want to use a bit of caution with that approach, because it does not work with higher order derivatives, or with derivatives of functions of several variables.  However, for derivatives of one variable the intuition works.  Once again, if we zoom in far enough, the curve will look like a straight line and the derivative is the quotient of rise over run.</p>
+<p id="p-1946">For the first example we could use both methods.  We either use algebra to eliminate the extra variable or find two rates of change and combine them to find the rate we are interested in.  For some problems we will only have one choice, either because the algebra is too hard, or because we have been given partial information and the algebraic method is impossible.</p>
+<article class="example-like" id="example-74"><a data-knowl="" class="id-ref" data-refid="hk-example-74"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.2.2</span>. <span class="title">Change in revenue with respect to expense, q elimination hard.</span>
+</h6></a></article><div id="hk-example-74" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1947">The cost (\(c(q)\)) and revenue (\(r(q)\)) equations for gizmos are both given in terms of quantity (q)</p>
+<div class="displaymath">
+\begin{equation*}
+r(q)=30q-0.1 q^2-0.001 q^3.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+c(q)=500+10q-0.01 q^2.
+\end{equation*}
+</div>
+<p id="p-1948">Find the derivative of revenue with respect to cost (i.e. \(\frac{dr}{dc}\) when \(q=50\text{.}\)</p>
+<p id="p-1949"><dfn class="terminology">Solution</dfn>:  Since the cost is quadratic in quantity, solving for revenue as a function of cost involves more work than we need for this problem.  The appropriate derivatives are:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ r}{d\ q}  =30-0.2 q-0.003 q^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ c}{d\ q}=10-0.02 q.
+\end{equation*}
+</div>
+<p id="p-1950">When q =50, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ r}{d\ q}  =30-0.2*50-0.003*50^2=12.5.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ c}{d\ q}=10-0.02*50=9.
+\end{equation*}
+</div>
+<p id="p-1951">We divide these derivatives to get the desired derivative.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ r}{d\ c}  =\frac{d\ r}{d\ q}/\frac{d\ c}{d\ q}
+=\frac{12.5}{9}\approx 1.389
+\end{equation*}
+</div>
+<p id="p-1952">This means that when \(quantity=50\text{,}\) there is an increase of $1.39 for every dollar increase in cost of investment.</p></article></div>
+<article class="example-like" id="example-75"><a data-knowl="" class="id-ref" data-refid="hk-example-75"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.2.3</span>. <span class="title">Change in revenue with respect to expense, long variable names.</span>
+</h6></a></article><div id="hk-example-75" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1953">We have the following cost and revenue information for whatchamacallits:</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=50*quantity-0.01*quantity^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ cost}{d\ quantity}=15.
+\end{equation*}
+</div>
+<p id="p-1954">Find the derivative of revenue with respect to cost when quantity=100.</p>
+<p id="p-1955"><dfn class="terminology">Solution</dfn>:  In this example we do not have a formula that lets us solve for revenue as a function of cost, so we must use the method of related rates.  The other derivatives is:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ revenue}{d\ quantity}  =50-0.02*quantity.
+\end{equation*}
+</div>
+<p id="p-1956">When \(quantity=100\text{,}\) we have \(\frac{d\ revenue}{d\ quantity}  =50-0.02*100=48\text{.}\)  Thus</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ revenue}{d\ cost} 
+=\frac{d\ revenue}{d\ quantity}/\frac{d\ cost}{d\ quantity}
+=\frac{48}{15}=3.2.
+\end{equation*}
+</div></article></div>
+<p id="p-1957">Related rates are also useful when we are looking at a two-step process and we are interested in the rate of the combined process.</p>
+<article class="example-like" id="example-76"><a data-knowl="" class="id-ref" data-refid="hk-example-76"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.2.4</span>. <span class="title">Composition of functions.</span>
+</h6></a></article><div id="hk-example-76" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1958">We are producing widgets (w).  The manufacturing process turns goop (g) into sludge (s) and sludge into widgets.  The yield equations in the appropriate units are:</p>
+<div class="displaymath">
+\begin{equation*}
+widgets(sludge)=4*sludge-0.1*sludge^2, 
+\end{equation*}
+</div>
+<p id="p-1959">or in shorthand notation: \(w(s)=4 s-0.1 s^2\)</p>
+<div class="displaymath">
+\begin{equation*}
+sludge(goop)=3*goop+.1*goop^2.
+\end{equation*}
+</div>
+<p id="p-1960">or in shorthand notation: \(s(g)=3 g+.1 g^2\)</p>
+<p id="p-1961">Find the derivative of widgets with respect to goop when \(goop=10\text{.}\)</p>
+<p id="p-1962"><dfn class="terminology">Solution</dfn>: We note that when \(g=10\text{,}\) we have \(s=3*10+.1*10^2=40\text{.}\)  In this example we will take the derivatives of our equation.  We will then multiply them to get the derivative we want.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ widgets}{d\ sludge}=\frac{dw}{ds}=4-0.02*s.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ sludge}{d\ goop}=\frac{ds}{dg}=3+.2*g.
+\end{equation*}
+</div>
+<p id="p-1963">When \(goop=10\text{,}\) \(\frac{d\ w}{d\ s}  =(4-0.02*40)=3.2\text{,}\) and \(\frac{d\ s}{d\ g}\text{.}\)  We need to multiply the derivatives to cancel the \(d\ s\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dw}{dg}  =\frac{dw}{ds}*\frac{ds}{dg}=(3.2)(5)=16.
+\end{equation*}
+</div>
+<p id="p-1964">Thus the rate of widget production is increasing by 16 units per increase in on unit of goop at that point.</p></article></div>
+<p id="p-1965">We often run into situations where several quantities are related by some constraint or equation.  In such situations we will want to know the rate at which quantities are changing with time.  The technique of related rates gives us a way to move from one rate with respect to time to another. Recall the Cobb-Douglas equation from the last section.</p>
+<div class="displaymath">
+\begin{equation*}
+Y=AL^\alpha K^\beta,
+\end{equation*}
+</div>
+<p id="p-1966">where \(Y\text{,}\) \(L\text{,}\) and \(K\) represent total production, labor, and capital, respectively.  If we know the rate of investment in capital equipment, we will be interested in the rate of change of labor with respect to time.  An interesting question is to ask for the rate of change of capital with respect to labor, or how increasing or reducing capital investment will raise or lower labor costs.</p>
+<article class="example-like" id="example-77"><a data-knowl="" class="id-ref" data-refid="hk-example-77"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.2.5</span>. <span class="title">Cobb-Douglas.</span>
+</h6></a></article><div id="hk-example-77" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1967">A gizmo manufacturer has a production function given by</p>
+<div class="displaymath">
+\begin{equation*}
+Y=50L^.75 K^.25.
+\end{equation*}
+</div>
+<p id="p-1968">The manufacturer currently uses 16 units of labor and 81 units of capital.  The total production is constant but the manufacturer is investing in automation.  The derivative of capital with respect to time is 5.  How fast is the amount of labor needed changing?</p>
+<p id="p-1969"><dfn class="terminology">Solution</dfn>: We are gong to assume that both labor and capital are functions of time and the Y is a constant.  We start by implicitly differentiating our equation with respect to time.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dt}(Y=50L^.75 K^.25)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=50*(0.75*L^{-0.25}*\frac{dL}{dt}*K^{.25}+L^{.75}*.25*K^{-0.75}*\frac{dK}{dt})
+\end{equation*}
+</div>
+<p id="p-1970">We now substitute in for the values of \(K\text{,}\) \(L\text{,}\) and \(\frac{dK}{dt}\text{,}\) which were given.</p>
+<div class="displaymath">
+\begin{equation*}
+0=50*(0.75*16^{-0.25}*\frac{d\ L}{(d\ t}*81^{.25}+16^{.75}*.25*81^{-0.75}*2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=3/4*1/2*\frac{dL}{dt}*3+8*1/4*1/27*2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dL}{dt}=-32/243\approx -0.1317
+\end{equation*}
+</div>
+<p id="p-1971">If capital is increasing at a rate of 2 per unit of time, then labor is decreasing at a rate of -0.1317 per unit of time.</p></article></div>
+<p id="p-1972"><dfn class="terminology">Summary</dfn></p>
+<p id="p-1973">The related rates technique is an application of the chain rule.  We use this technique when we have either three variables.  We may want the rate of change of one variable with respect to a second and those variables may be connected through equations using a third variable.  We may also want to relate the rate of change of two variables with respect to time.  We take advantage of the fact that we can think of a derivative as a fraction of two small values.  We either want to multiply or divide theses fractions to obtain the desired derivative.</p>
+<section class="exercises" id="exercises-set-sec-5-2"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Related Rates Problems</span>
+</h3>
+<a href="sec-5-2-RelatedRates.html#exercises-set-sec-5-2" class="permalink">¶</a><article class="exercise-like" id="exercise-346"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-1974">Let \(y=3x+5\) and \(z=4y+7\text{.}\) Find \(\frac{dz}{dx}\) when \(x=2\) by solving for \(z\) as a function of \(x\) and taking the derivative, and also by finding \(\frac{dz}{dy}\) and \(\frac{dy}{dx}\) and using related rates to apply the chain rule.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-174" id="solution-174"><span class="type">Solution</span></a><div id="hk-solution-174" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<li id="li-567">
+<div class="displaymath">
+\begin{equation*}
+z=4y+7= 4(3x+5)+7=12x+27
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dz}{dx}=12
+\end{equation*}
+</div>
+</li>
+<li id="li-568">
+<div class="displaymath">
+\begin{equation*}
+z=4y+7,\qquad y=3x+5
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dz}{dy}=4  \qquad \frac{dy}{dx}=3
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dz}{dx}=\frac{dz}{dy}  \frac{dy}{dx}=4*3=12
+\end{equation*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise-like" id="exercise-347"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-1975">Let \(y=x^2-3x+5\) and \(z=y^2-y+6\text{.}\) Find dz/dx when x=1 by solving for \(z\) as a function of \(x\) and taking the derivative, and also by finding \(\frac{dz}{dy}\) and \(\frac{dy}{dx}\) and using related rates to apply the chain rule.</p></article><article class="exercise-like" id="exercise-348"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-1976">Let \(y=1000*1.06^x\) and \(z=200y+3\text{.}\) Find \(\frac{dz}{dx}\) when \(x=5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-175" id="solution-175"><span class="type">Solution</span></a><div id="hk-solution-175" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1977">First find the derivative</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dz}{dx}=\frac{dz}{dy}  \frac{dy}{dx}=(200)  (1000*1.06^x  \ln(1.06) )= 200,000 \ln(1.06)  1.06^x
+\end{equation*}
+</div>
+<p id="p-1978">Next plug in our value of \(x\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\text{When }x=5,\quad    \frac{dz}{dx}= 200,000 \ln(1.06)  1.06^5
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-349"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-1979">Let \(y=200*1.08^x+500x\) and \(z=y^2+y\text{.}\) Find \(\frac{dz}{dx}\) when \(x= 3\text{.}\)</p></article><article class="exercise-like" id="exercise-350"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-1980">Let \(y=3x+5\) and \(z=4x+7\text{.}\) Find \(\frac{dz}{dy}\) when \(x=2\) by solving for \(z\) as a function of \(y\) and taking the derivative, and also by finding \(\frac{dz}{dx}\) and\(\frac{dy}{dx}\) and using related rates to apply the chain rule.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-176" id="solution-176"><span class="type">Solution</span></a><div id="hk-solution-176" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<li id="li-569"><p id="p-1981">If \(y=3x+5\) then \(x=
+\frac{y-5}{3}\text{.}\) Hence \(z=4x+7=\frac{4}{3}  (y-5)+7=\frac{4}{3} y+\frac{1}{3}\text{.}\) So \(\frac{dz}{dy}=\frac{4}{3}\text{.}\)</p></li>
+<li id="li-570"><div class="displaymath">
+\begin{equation*}
+\frac{dz}{dx}=4, \quad \frac{dy}{dx}=3,\quad
+\frac{dz}{dy}=  \frac{dz/dx}{dy/dx}=\frac{4}{3}
+\end{equation*}
+</div></li>
+</ul></div></div>
+</div></article><article class="exercise-like" id="exercise-351"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-1982">Let \(y=x^2-3x+5\) and \(z=x^2+4x+5\text{.}\) Find \(\frac{dz}{dy}\) when \(x=3\text{.}\)</p></article><article class="exercise-like" id="exercise-352"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-1983">Let \(y=1000*1.05^x\) and \(z=100*(1+.5x)\text{.}\) Find \(\frac{dz}{dy}\) when \(x=10\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-177" id="solution-177"><span class="type">Solution</span></a><div id="hk-solution-177" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1984">First find the derivative</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dz}{dy}=  \frac{dz/dx}{dy/dx}=\frac{50}{1000*1.05^x*\ln(1.05)}
+\end{equation*}
+</div>
+<p id="p-1985">Next plug in our value of \(x\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\text{When }x=10,   \frac{dz}{dy}=\frac{50}{1000*1.05^{10}*\ln(1.05)}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-353"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-1986">Let \(y=100*1.08^x\) and \(z=100*1.02^x\text{.}\) Find \(\frac{dz}{dy}\) when x=10.</p></article><article class="exercise-like" id="exercise-354"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-1987">Let \(y=x^2-3x+5\) and \(\frac{dz}{dy} =3\text{.}\) Find \(\frac{dz}{dx}\) when \(x=7\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-178" id="solution-178"><span class="type">Solution</span></a><div id="hk-solution-178" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1988">We want to find \(\frac{dz}{dx}\text{.}\) We know \(\frac{dz}{dy}\) and we can compute \(\frac{dy}{dx}\text{,}\) hence we compute:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dy}{dx}=2x-3,\text{ hence at }x=7\text{ we have }\frac{dy}{dx}=11
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dz}{dx}=\frac{dz}{dy}\frac{dy}{dx}=(3)(11)=33
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-355"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-1989">Let \(y=500*.96^x\) and \(\frac{dz}{dy}=5\text{.}\) Find \(\frac{dz}{dx}\) when x=4.</p></article><article class="exercise-like" id="exercise-356"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-1990">Let \(y=x^2-5x+7\) and \(\frac{dz}{dx}  =8\text{.}\) Find \(\frac{dz}{dy}\) when x=7.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-179" id="solution-179"><span class="type">Solution</span></a><div id="hk-solution-179" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1991">We want to find \(\frac{dz}{dy}\text{.}\) We know \(\frac{dz}{dx}\) and we can compute \(\frac{dy}{dx}\text{,}\) hence we compute:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dy}{dx}=2x-5,\text{ hence at }x=7\text{ we have }\frac{dy}{dx}=9
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dz}{dy}=\frac{dz/dx}{dy/dx}=\frac{8}{9}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-357"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-1992">Let \(z=x^2-3x+5\) and \(\frac{dy}{dx}  =3\text{.}\) Find dy/dz when x=7.</p></article><article class="exercise-like" id="exercise-358"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-1993">The revenue and expense equations for gizmos are</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=30*quantity-0.1*quantity^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+expense=500+10*quantity.
+\end{equation*}
+</div>
+<p id="p-1994">Find the derivative of revenue with respect to expense when \(quantity=100\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-180" id="solution-180"><span class="type">Solution</span></a><div id="hk-solution-180" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1995">If \(R= revenue=30q-0.1q^2\text{,}\) then \(\frac{dR}{dq}=30-0.2q\text{.}\)</p>
+<p id="p-1996">If \(E= expense=500+10q\text{,}\) then  \(\frac{dE}{dq}=10\text{.}\)</p>
+<p id="p-1997">Combining the two rates we get</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dR}{dE}=\frac{dR/dq}{dE/dq}=\frac{30-0.2q}{10}
+\end{equation*}
+</div>
+<p id="p-1998">Hence at \(q =100\) we have that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dR}{dE}={30-0.2(100)}{10}=\frac{10}{10}=1
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-359"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-1999">The revenue and expense equations for widgets are</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=200*quantity-0.1*quantity^2+.005*quantity^3.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+expense=1000+20*quantity.
+\end{equation*}
+</div>
+<p id="p-2000">Find the derivative of revenue with respect to expense when quantity=50.</p></article><article class="exercise-like" id="exercise-360"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<p id="p-2001">The production of gadgets is a two step process</p>
+<div class="displaymath">
+\begin{equation*}
+productA=50*RawMaterial+.01*RawMaterial^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+gadgets=4*productA-0.0001*productA^2.
+\end{equation*}
+</div>
+<p id="p-2002">Find the derivative of gadgets with respect to RawMaterial when productA =20.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-181" id="solution-181"><span class="type">Solution</span></a><div id="hk-solution-181" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2003">Let’s simplify the notation and write the two equations as</p>
+<div class="displaymath">
+\begin{equation*}
+p=50r+0.01 r^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+g=4 p-0.0001 p^2.
+\end{equation*}
+</div>
+<p id="p-2004">We want to find \(\frac{dg}{dr}\) when \(p = 20\text{.}\)</p>
+<p id="p-2005">What do we have?</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dp}{dr}=50+0.02 r.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dg}{dp}=4 -0.0002 p.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\text{Then }\frac{dp}{dr}r=\frac{dg}{dp}  \frac{dp}{dr}r=(4 -0.0002 p)  (50+0.02 r)
+\end{equation*}
+</div>
+<p id="p-2006">We know \(p = 20\) (given), but we need \(r\) to plug into the second part of the equation:</p>
+<p id="p-2007">The only function that tells us anything about \(r\) is \(p=50r+0.01 r^2\text{.}\)</p>
+<p id="p-2008">If \(p = 20\) this means \(20=50r+0.01 r^2\text{.}\)  So \(0.01 r^2+50r-20=0\text{.}\)</p>
+<p id="p-2009">By the quadratic equation we have \(r=  \frac{-50\pm \sqrt{2500-4(0.01)(-20)}}{0.02}\text{.}\)</p>
+<p id="p-2010">Using Wolfram Alpha we have that \(r = 0.4\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dg}{dr}=(4 -0.004 )  (50+0.008 )\approx 199.83 
+\frac{gadgets}{raw\ material}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-361"><h6 class="heading"><span class="codenumber">16.</span></h6>
+<p id="p-2011">The production of whatchamacallits is a three step process</p>
+<div class="displaymath">
+\begin{equation*}
+productA=10*RawMaterial-7.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+productB=15*productA-20.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+whatchamacallits=6*productB-5.
+\end{equation*}
+</div>
+<p id="p-2012">Find the derivative of \(whatchamacallits\) with respect to \(RawMaterial\) when \(productA =15\text{.}\)</p></article><p id="p-2013">Find the indicated derivative for the production function.</p>
+<article class="exercise-like" id="exercise-362"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<p id="p-2014">Our production function is \(960=5L^{0.25} K^{0.75}\text{.}\)  Find \(\frac{dL}{dt}\) if \(L=81\text{,}\) \(K=256\text{,}\)  \(\frac{dK}{dt}=5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-182" id="solution-182"><span class="type">Solution</span></a><div id="hk-solution-182" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2015">Take the derivative with respect to \(t\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dt} 960=5 \frac{d}{dt}[L^{0.25} K^{0.75}]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=5[\frac{d}{dt} (L{0.25}) K^{0.75}+L^{0.25} \frac{d}{dt} (K^{0.75}) ]  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0=[0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}+L^{0.25} 0.75K^(-0.25) \frac{dK}{dt}]
+\end{equation*}
+</div>
+<p id="p-2016">Solve for  \(\frac{dL}{dt}\)</p>
+<div class="displaymath">
+\begin{equation*}
+0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}=-L^{0.25} 0.75K^(-0.25)  \frac{dK}{dt}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{dL}{dt}=\frac{-L^{0.25} 0.75K^(-0.25)}{ 0.25 L^{-0.75} K^{0.75}}   \frac{dK}{dt}            =-3  \frac{L}{K}  \frac{dK}{dt}
+\end{equation*}
+</div>
+<p id="p-2017">If \(L=81\text{,}\) \(K=256\text{,}\)  \(\frac{dK}{dt}=5\text{,}\) then we have \(\frac{dL}{dt}=-3  \frac{81}{256}5 \approx -4.75\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-363"><h6 class="heading"><span class="codenumber">18.</span></h6>
+<p id="p-2018">Our production function is \(4000=4L^.25 K^.75\text{.}\) Find \(\frac{dK}{dt}\) if \(L=1000\text{,}\) \(K=1000\text{,}\)  \(\frac{dL}{dt}=10\text{.}\)</p></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

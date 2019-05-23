@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:31-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>Suppose \(q\) denotes quantity, and the supply price for widgets is given by</p>
+<div class="displaymath">
+\begin{equation*}
+price=$6+\frac{q}{100}
+\end{equation*}
+</div>
+<p>We are also told the demand price is given by</p>
+<div class="displaymath">
+\begin{equation*}
+price=$18-\frac{2q}{100}.
+\end{equation*}
+</div>
+<p>Find the equilibrium price and quantity.</p>
+<p><dfn class="terminology">Solution a</dfn>: We have started with an example that we can do by basic algebra without any technology.  Subtracting the two equations, we see that</p>
+<div class="displaymath">
+\begin{equation*}
+0=$12-\frac{3q}{100}.
+\end{equation*}
+</div>
+<p>Some straightforward algebra shows that the equilibrium quantity is 400.  Substituting back into either equation gives an equilibrium price of $10.</p>
+<p><dfn class="terminology">Solution b</dfn>: While we can do this example by hand, we also want to use it to set up a solution with Excel, since we may want help on problems where the numbers are not as nice.  Our plan is to use Goal Seek to find the intersection.  We need a cell where we can solve the problem by forcing the cell to have a value of zero. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-1-2.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p>When cell D2 is zero, the supply price will be the same as the demand price.  We now invoke Goal Seek. <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-1-3.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p>As expected, it finds equilibrium when \(q=400\text{.}\)</p></article></body>
+</html>

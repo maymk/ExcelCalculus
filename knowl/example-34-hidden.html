@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:34-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>We have determined that the profit function for selling cumquat oil is</p>
+<div class="displaymath">
+\begin{equation*}
+profit(quantity)=(10quantity-20)*exp(-quantity/50)-10.
+\end{equation*}
+</div>
+<p>We understand that the function is valid on the interval \(0\le quantity\le 400\text{,}\) where the quantity is measured in thousands of pints and profit is measured in thousands of dollars.  Find the minimum and maximum profit in the given interval.</p>
+<p><dfn class="terminology">Solution</dfn>:  The spreadsheet is set up like it was in the first example, but with the function changed.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Looking at the graph and the chart we expect to find local minima at the endpoints, and the maximum when q is close to 50.  We use goal seek to find where the derivative is zero.  As we see below, Goal Seek does not find a point where the derivative is zero.  Instead it finds a point where the derivative is “close enough” to zero.  By default, “close enough” is understood by Excel as being within 0.001.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>If the default definition of “close enough” is good enough for our purposes, then the maximum profit of $166,727 occurs when we sell 51,998 pints of oil.  (In fact, selling 2 more pints of oil will yield an extra 0.01 cents.)  The minimum profit occurs when we sell no product, in which case we have a loss of $30,000.</p></article></body>
+</html>

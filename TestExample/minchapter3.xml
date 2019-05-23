@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="MinChapter3">
+            <title>Minimal Chapter 3</title>        
+        <section >
+            <title>First section</title>
+            <p>Some text</p>
+        </section>
+        <section >
+            <title>Second Section</title>
+            <p>more text</p> 
+        </section>
+</chapter>

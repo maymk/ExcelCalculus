@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:26-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Wire Frames, Partial Derivatives, and Tangent Planes</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-6-FunctionsSeveralVariables.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-6-3-CriticalPointsExtrema.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-6-FunctionsSeveralVariables.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-6-3-CriticalPointsExtrema.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives" class="active">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-6-2-PartialDerivatives"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Wire Frames, Partial Derivatives, and Tangent Planes</span>
+</h2>
+<a href="sec-6-2-PartialDerivatives.html" class="permalink">¶</a><p id="p-2203"><a class="external" href="./Examples/Section-6-2-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-2204">A standard technique in mathematics courses is to try to break a complicated problem into smaller and easier problems.  For functions of several variables this can be done by looking at the variables one at a time, and treating the other variables as constants.  Then we are back to considering functions of a single variable.  We start by returning to Example 5 from the previous section, and seeing what information can be obtained by looking at one variable at a time.</p>
+<article class="example-like" id="example-86"><a data-knowl="" class="id-ref" data-refid="hk-example-86"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.2.1</span>. <span class="title">Optimizing Revenue with Two Products.</span>
+</h6></a></article><div id="hk-example-86" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2205">I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
+<div class="displaymath">
+\begin{equation*}
+PriceGizmos=10-\frac{QuantityGizmos}{50}=10-\frac{QG}{50}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+PriceWidgets=20-\frac{QuantityWidgets}{40}=20-\frac{QW}{40}
+\end{equation*}
+</div>
+<p id="p-2206">This gives me the following revenue function:</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue(QG,QW)=10QG-\frac{QG^2}{50}+20QW-\frac{QW^2}{40}.
+\end{equation*}
+</div>
+<p id="p-2207">Look at the functions of one variable obtained by treating either QG or QW as a constant.  Use this information to find where we maximize revenue.</p>
+<p id="p-2208">Solution:  In terms of the last example, we want to start with a table and a wire frame chart.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-2-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-2-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2209">The wires are obtained by intersecting the graph of the function with a plane where QW or QG is held constant.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-2-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2210">Thus, when we treat either QW or QG as a constant we effectively are looking at one of the wires of the wire frame.  To illustrate this, we will look at the wires corresponding to \(QW=400\) and \(QG=300\text{.}\) When \(QG=300\text{,}\) our revenue function simplifies to</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}  Revenue(300,QW)
+\amp =3000-1800+20QW-\frac{QW^2}{40}\\ 
+\amp =1200+20QW-\frac{QW^2}{40}.\end{aligned}
+\end{equation*}
+</div>
+<p id="p-2211">Thus, the wire corresponding to \(QG=300\) is a parabola that bends down.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-2-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2212">To find the vertex of the parabola, we take the derivative of our function of QW and set it equal to zero.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{d\ QW} Revenue(300,QW)=20-\frac{QW}{20}.
+\end{equation*}
+</div>
+<p id="p-2213">This derivative is zero when \(QW=400\text{.}\)  That is the only possible place on this wire where we can have a maximum.</p>
+<p id="p-2214">Similarly, when \(QW=400\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue(QG,400)=10QG-\frac{QG^2}{50}+4000,
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{d\ QG} Revenue(QG,400)=10-\frac{QG}{25}.
+\end{equation*}
+</div>
+<p id="p-2215">This derivative is zero when \(QG=250\text{.}\)  That is the only possible place on this wire where we can have a maximum.</p>
+<p id="p-2216">Putting the information together, the maximum must occur at (250,400).  Putting these values back in the original equation gives a maximum of $5250 for the revenue function.</p></article></div>
+<p id="p-2217"><dfn class="terminology">Partial Derivatives</dfn></p>
+<p id="p-2218">The procedure we used in the first example of replacing one variable with a constant and then taking the derivative of the resulting single variable function is a bit cumbersome.  We can simplify the process by taking the derivative of the original function with respect to one variable while treating the other variables as constants.  This is referred to as taking a partial derivative.  There is also a change in notation.  The familiar derivative of \(f\) with respect to \(x\) uses the symbol \(\frac{d}{dx} f\)  while the partial derivative with respect to \(x\) uses the symbol \(\frac{\partial }{\partial x} f\text{,}\) or \(f_x\text{.}\)  Similarly, the partial derivative with respect to \(y\) uses the symbol\(\frac{\partial }{\partial y} f\text{,}\) or \(f_y\text{.}\)</p>
+<article class="example-like" id="example-87"><a data-knowl="" class="id-ref" data-refid="hk-example-87"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.2.2</span>. <span class="title">Finding and Interpreting Partial Derivatives.</span>
+</h6></a></article><div id="hk-example-87" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2219">Find the partial derivatives of \(f(x,y)=x^2+ 2xy+3y^2-4x-3y\) at  \((x,y)=(3.5,-0.5)\text{.}\)  Explain what the partial derivatives mean in terms of the graph.</p>
+<p id="p-2220">Solution:  It is useful to look at a picture with the graph, the two curves obtained by keeping \(x=3.5\) and \(y=1.5\text{,}\) and the tangent lines to those curves.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-2-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2221">We also want to look at the slices corresponding keeping \(x=-3.5\) and \(y=.5\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-2-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-2-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2222">The yellow curve is obtained by fixing \(y\) and letting \(x\) vary.  The blue curve is obtained by fixing \(y\) and letting \(x\) vary.  We now take the partial derivatives with respect to both variables.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial }{\partial x} f(x,y)=2x+ 2y+0-4-0=2x+2y-4.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial }{\partial x} f(3.5,-0.5)=7- 1-4=2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial }{\partial y} f(x,y)=0+2x+6y+0-3=2x+6y-3.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial }{\partial y} f(3.5,-0.5)=7-3-3=1.
+\end{equation*}
+</div>
+<p id="p-2223">The partial derivatives give the slopes of the purple and red lines above.  At the point \((3.5,-0.5)\text{,}\) the (yellow) curves obtained by treating y as a constant and letting \(x\) vary has a (magenta) tangent line with a slope of \(2\text{,}\) the value \(\frac{\partial }{\partial x} f(3.5,-0.5)\text{.}\)   At the point \((3.5,-0.5)\text{,}\) the (blue) curves obtained by treating \(x\) as a constant and letting \(y\) vary has a (red) tangent line with a slope of 1, the value \(\frac{\partial }{\partial y} f(3.5,-0.5)\text{.}\)</p></article></div>
+<p id="p-2224"><dfn class="terminology">Tangent Planes and Linear Approximation</dfn></p>
+<p id="p-2225">For functions of one variable, we had two main uses of the derivative.  One was to identify candidate points for maxima and minima.  We will look at critical points and extrema in the next section.  The other use of the derivative was to produce a linear approximation or tangent line.  We can generalize the tangent line for one variable to a tangent plane for two variables.  For a function \(f(x)\text{,}\) we used the value of the point, \((x_0,f(x_0))\) and the slope \(f(x_0)\) to get the equation of the tangent line approximation near \(x_0\text{.}\)</p>
+<article class="assemblage-like" id="assemblage-42"><p id="p-2226"><dfn class="terminology">Tangent line</dfn>:</p>
+<div class="displaymath" id="p-2227">
+\begin{equation*}
+Linear f(x)=f' (x_0 )(x-x_0 )+f(x_0 ).
+\end{equation*}
+</div></article><p id="p-2228">For a function, \(f(x,y)\text{,}\) of two variables, we simply use partials for the slopes.</p>
+<article class="assemblage-like" id="assemblage-43"><p id="p-2229"><dfn class="terminology">Tangent Plane</dfn>:</p>
+<div class="displaymath" id="p-2230">
+\begin{equation*}
+Linear f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0)+f(x_0,y_0 ).
+\end{equation*}
+</div></article><article class="example-like" id="example-88"><a data-knowl="" class="id-ref" data-refid="hk-example-88"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.2.3</span>. <span class="title">Approximating with a Tangent Plane.</span>
+</h6></a></article><div id="hk-example-88" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2231">The general Cobb-Douglas production function determines the Production (P), in terms of the variables Labor (L) and Capital (C):</p>
+<div class="displaymath">
+\begin{equation*}
+Production(Labor,Capital)=c Labor^{\alpha}  Capital^{\beta},
+\end{equation*}
+</div>
+<p id="p-2232">or using short-hand notation:</p>
+<div class="displaymath">
+\begin{equation*}
+P(L,C)=c L^{\alpha}  C^\beta,
+\end{equation*}
+</div>
+<p id="p-2233">where \(c\text{,}\) \(\alpha\text{,}\) and \(\beta\) are constants.  For our widget factory, this becomes</p>
+<div class="displaymath">
+\begin{equation*}
+Production(Labor,Capital)=10 L^{0.75}  C^{0.25}
+\end{equation*}
+</div>
+<p id="p-2234">with labor production and capital in the appropriate units.  Find \(Production(81,16)\text{.}\)  Use a linear approximation to estimate \(Production(85,14)\text{.}\)</p>
+<p id="p-2235">Solution:  We answer the first question by substituting the values into the equation.</p>
+<div class="displaymath">
+\begin{equation*}
+Production(81,16)=10*81^{0.75}*16^{0.25}=10*27*2=540.
+\end{equation*}
+</div>
+<p id="p-2236">To produce the tangent plane we take the partial derivatives and evaluate them at our base point.</p>
+<div class="displaymath">
+\begin{equation*}
+Production_{Labor} (Labor,Capital)=10*.75 Labor^{-0.25}  Capital^{0.25}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production_{Labor} (81,16)=10*.75 (1/3) *2=5
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production_{Capital} (Labor,Capital)=10*{0.25} Labor^{0.75 }  Capital^{-0.75}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production_{Capital} (81,16)=10*.25 *27 (1/8)=8.4375
+\end{equation*}
+</div>
+<p id="p-2237">This gives us our tangent plane.</p>
+<div class="displaymath">
+\begin{equation*}
+Production(Labor,Capital)\approx5(Labor-81)+8.4375(Capital-16)+540.
+\end{equation*}
+</div>
+<p id="p-2238">Substituting in values gives our estimate.</p>
+<div class="displaymath">
+\begin{equation*}
+Production(85,14)\approx 5(85-81)+8.4375(14-16)+540=543.125.
+\end{equation*}
+</div></article></div>
+<p id="p-2239">In the case of the last example, evaluating the linear approximation was nicer than evaluating the function directly because the 4th roots of 16 and 81 are whole numbers, while the 4th roots of 85 and 14 are harder to compute.  For real world functions, evaluating functions may involve a substantial investment of time and money, depending on the nature of the function.</p>
+<p id="p-2240"><dfn class="terminology">Linear Approximations of Functions of More than Two Variables</dfn></p>
+<p id="p-2241">In this section we have focused on functions of 2 variables since their graphs are surfaces in 3 dimensions, which is a familiar concept.  For real world functions, we are often concerned with functions of many variables.  The concept of partial derivative easily extends, with one variable and multiple parameters.  Finding the linear approximation also extends without difficulty.  We simply have a linear term for each variable.</p>
+<section class="exercises" id="exercises-set-sec-6-2"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</span>
+</h3>
+<a href="sec-6-2-PartialDerivatives.html#exercises-set-sec-6-2" class="permalink">¶</a><div class="exercisegroup" id="exercisegroup-27">
+<div class="introduction" id="introduction-34">
+<p id="p-2242">For exercises 1-7, for the given functions and points \(P_1\) and \(P_2\text{:}\)</p>
+<ol class="lower-alpha">
+<li id="li-612"><p id="p-2243">Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p></li>
+<li id="li-613"><p id="p-2244">Find the partial derivatives of the original function.</p></li>
+<li id="li-614"><p id="p-2245">Evaluate the partial derivatives at \(P_1\text{.}\)</p></li>
+<li id="li-615"><p id="p-2246">Give the equation of the tangent plane through \(P_1\text{.}\)</p></li>
+<li id="li-616"><p id="p-2247">The approximation at \(P_2\) obtained from the tangent plane.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-395"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-2248">The function is \(f(x,y)=x^2+3xy+4y^2\text{,}\) \(P_1=(4,2)\text{,}\) and \(P_2=(3,2.5)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-199" id="solution-199"><span class="type">Solution</span></a><div id="hk-solution-199" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-617">
+<p id="p-2249">Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+f(4,y)=16+12y+4y^2
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(x,2)=x^2+6x+16
+\end{equation*}
+</div>
+</li>
+<li id="li-618">
+<p id="p-2250">Find the partial derivatives of the original function.</p>
+<div class="displaymath">
+\begin{equation*}
+f_x  (x,y)=2x+3y
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y  (x,y)=3x+8y
+\end{equation*}
+</div>
+</li>
+<li id="li-619">
+<p id="p-2251">Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f_x  (4,2)=8+6=14
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y  (4,2)=12+16=28
+\end{equation*}
+</div>
+</li>
+<li id="li-620">
+<p id="p-2252">Give the equation of the tangent plane through \(P_1\text{.}\)</p>
+<p id="p-2253">We need \(f(4,2)=16+24+16=56\) for the equation of the tangent plane.</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0 )+f(x_0,y_0 ).
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(x,y)=14(x-4)+28(y-2)+56
+\end{equation*}
+</div>
+</li>
+<li id="li-621">
+<p id="p-2254">The approximation at \(P_2\) obtained from the tangent plane.</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(3,2.5)=14(3-4)+28(2.5-2)+56
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= -14+14+56=56
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-396"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-2255">The function is \(f(x,y)=(x+3y)/(x^2+y^2 )\text{,}\) \(P_1=(2,3)\text{,}\) and \(P_2=(3,2.5)\text{.}\)</p></article><article class="exercise-like" id="exercise-397"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-2256">The function is \(f(x,y)=(x^2)(x+2^y)\text{,}\) \(P_1=(3,-1)\text{,}\) and \(P_2=(3,0)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-200" id="solution-200"><span class="type">Solution</span></a><div id="hk-solution-200" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-622">
+<p id="p-2257">Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+f(3,y)=9(3+2^y)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(x,-1)=(x^2 )(x+2^{-1} )= x^3+\frac{1}{2} x^2
+\end{equation*}
+</div>
+</li>
+<li id="li-623">
+<p id="p-2258">Find the partial derivatives of the original function.</p>
+<div class="displaymath">
+\begin{equation*}
+f_x  (x,y)=(2x)(x+2^y )+(x^2 )(1+0 )  \text{ (product rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= 2x^2+2x 2^y+x^2=3x^2+(2x)2^y
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y  (x,y)=\frac{\partial}{\partial y} (x^2 )(x+2^y ) \quad (\text{ Take partial derivative wrt }y.)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{\partial}{\partial y}(x^3+x^2 2^y ) \qquad\text{ (Simplify the expression.)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= x^2 2^y  \ln(2)  \qquad
+(x \text{ is treated as a constant so the }x^3\text{ term drops out.)}
+\end{equation*}
+</div>
+</li>
+<li id="li-624">
+<p id="p-2259">Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f_x  (3,-1)=27+(6) 2^{-1}=27+3=30
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y  (3,-1))= 9*\frac{1}{2}  \ln(2)=\frac{9}{2} \ln(2)
+\end{equation*}
+</div>
+</li>
+<li id="li-625">
+<p id="p-2260">Give the equation of the tangent plane through \(P_1\text{.}\)</p>
+<p id="p-2261">We need \(f(3,-1)=9*\frac{7}{2}=\frac{63}{2}\) for the equation of the tangent plane</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0 )+f(x_0,y_0 ).
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(x ,y)=30 (x-3)+\frac{9}{2}  \ln(2) (y+1)+\frac{63}{2}
+\end{equation*}
+</div>
+</li>
+<li id="li-626">
+<p id="p-2262">The approximation at \(P_2\) obtained from the tangent plane.</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ f(3,0)=30* (0)+\frac{9}{2} \ln(2) *(1)+\frac{63}{2}=\frac{9}{2}  \ln(2)+\frac{63}{2}
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-398"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-2263">The function is the revenue function for selling widgets and gizmos with demand price functions</p>
+<div class="displaymath">
+\begin{equation*}
+PriceGizmos=30-\frac{QuantityGizmos}{50}-\frac{QuantityWidgets}{300}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+PriceWidgets=20-\frac{QuantityWidgets}{40}-\frac{QuantityGizmos}{500}
+\end{equation*}
+</div>
+<p id="p-2264">and, \(P_1=(QuanityGizmos,QuantityWidgets)=(1000,500)\text{,}\) and \(P_2=(1050,575)\text{.}\)</p></article><article class="exercise-like" id="exercise-399"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-2265">The function is the revenue function for selling widgets and gizmos with demand price functions</p>
+<div class="displaymath">
+\begin{equation*}
+PriceGizmos=30(0.95)^{(QuantityGizmos/100)}-\frac{QuantityWidgets}{300}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+PriceWidgets=20(0.9)^{(QuantityWidgets/150)}-\frac{QuantityGizmos}{250}
+\end{equation*}
+</div>
+<p id="p-2266">and, \(P_1=(QuanityGizmos,QuantityWidgets)=(800,400)\text{,}\) and \(P_2=(750,425)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-201" id="solution-201"><span class="type">Solution</span></a><div id="hk-solution-201" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2267">For the sake of notation we will use the following abbreviations:</p>
+<div class="displaymath">
+\begin{equation*}
+PG=30(0.95)^{\left(\frac{QG}{100}\right)}-\frac{QW}{300}.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+PW=20(0.9)^{\left(\frac{QW}{150}\right)} -\frac{QG}{250}
+\end{equation*}
+</div>
+<p id="p-2268">and, \(P_1=(QG,QW)=(800,400)\text{,}\) and \(P_2=(750,425)\text{.}\)</p>
+<p id="p-2269">We need to find the Revenue function to solve the problem:</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue (QG,QW)=QG*PG+QW*PW
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=QG\left[30(0.95)^{\left(\frac{QG}{100}\right)}-\frac{QW}{300}\right]
++QW\left[20(0.9)^{\left(\frac{QW}{150}\right)}-\frac{QG}{250}\right]
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Revenue(QG,QW)=
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+30 QG (0.95)^{\left(\frac{QG}{100}\right)}-\frac{QG *QW}{5×6×10}+20 QW (0.9)^{\left(\frac{QW}{150}\right)}-\frac{QG *QW}{5×5×10}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= 30 QG (0.95)^{\left(\frac{QG}{100}\right)}+20 QW (0.9)^{\left(\frac{QW}{150}\right)}-\frac{11 QG*QW}{1500}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-627">
+<p id="p-2270">Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue(800,QW)= 24,000 (0.95)^8+20 QW (0.9)^{\left(\frac{QW}{150}\right)}-\frac{88 QW}{15}
+\end{equation*}
+</div>
+<p id="p-2271">This function gives us information about the revenue in terns of Widgets near a production level of 400 widgets and 800 gizmos. We can use Wolfram Alpha to graph this. Assuming there are 800 gizmos the widget influence on the revenue looks like this</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-2-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2272">The slope is about \(m = 4\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue(QG,400)= 30 QG (0.95)^{\left(\frac{QG}{100}\right)}
++8,000 (0.9)^{\left(\frac{40}{15} \right)}-\frac{44 QG }{15}
+\end{equation*}
+</div>
+<p id="p-2273">The revenue generated by the gizmos assuming the number of widgets = 400 and the number of gizmos is near 800 gives the following picture</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-2-sol5b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2274">The slope is about \(m=8\text{.}\)</p>
+</li>
+<li id="li-628">
+<p id="p-2275">Find the partial derivatives of the original function.</p>
+<p id="p-2276">In part a we saw that the revenue function seems to be growing faster for the gizmo variable, then for the widget variable. To get more information we can compute the partial derivatives (b) and then evaluate them at \(P_1\) (c).</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue_{QG}  (QG,QW)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  \frac{\partial}{\partial QG} 30 QG (0.95)^{\left(\frac{QG}{100}\right)}
++\frac{\partial}{\partial QG} 20 QW (0.9)^{\left(\frac{QW}{150} \right)}
+-\frac{\partial}{\partial QG}  \frac{11*QG*QW}{1500}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \left[
+30 (0.95)^{\left(\frac{QG}{100}\right)}
++30 QG (0.95)^{\left(\frac{QG}{100}\right)} 
+\frac{\ln(0.95)}{150}\right]
++0
+-  \frac{11*QW}{1500}
+\end{equation*}
+</div>
+<p id="p-2277">Note that the first part requires a product rule and then a chain rule to deal with the exponential part of the formula.</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue_{QW}  (QG,QW)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  \frac{\partial}{\partial QW} 30 QG (0.95)^{\left(\frac{QG}{100}\right)}
++\frac{\partial}{\partial QW} 20 QW (0.9)^{\left(\frac{QW}{150} \right)}
+-\frac{\partial}{\partial QW}  \frac{11*QG*QW}{1500}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= 0+\left[20 (0.9)^{\left(\frac{QW}{150}\right)}
++20 QW (0.9)^{\left(\frac{QW}{150}\right)} 
+\frac{\ln(0.9)}{150}\right]
+-  \frac{11*QG}{1500}
+\end{equation*}
+</div>
+</li>
+<li id="li-629">
+<p id="p-2278">Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue_{QG}  (800, 400)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \left[
+30 (0.95)^{\left(\frac{800}{100}\right)}
++24000 (0.95)^{\left(\frac{800}{100}\right)} 
+\frac{\ln(0.95)}{150}\right]
+-  \frac{8800}{1500}\approx 8.80231
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Revenue_{QW}  (800, 400)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \left[20 (0.9)^{\left(\frac{400}{150}\right)}
++20 QW (0.9)^{\left(\frac{400}{150}\right)} 
+\frac{\ln(0.9)}{150}\right]
+-  \frac{4400}{1500}\approx 4.99164
+\end{equation*}
+</div>
+<p id="p-2279">The estimates we observed in part a were fairly close to the actual rates of change.</p>
+</li>
+<li id="li-630">
+<p id="p-2280">Give the equation of the tangent plane through \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ Rev(QG,QW)=
+Rev_{QG} (QG_0,QW_0 )(QG-QG_0 )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++Rev_{QW} (QG_0,QW_0 )(QW-QW_0 )
++Rev(QG_0,QW_0 ).
+\end{equation*}
+</div>
+<p id="p-2281">We need to find \(Rev(800,400)\text{.}\) Using Wolfram Alpha (or calculator) we get</p>
+<div class="displaymath">
+\begin{equation*}
+Rev(800,400)=19,615.88
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Linear\ Rev(QG,QW)=8.80(QG-800)+4.99(QW-400)+19,615.88.
+\end{equation*}
+</div>
+</li>
+<li id="li-631">
+<p id="p-2282">The approximation at \(P_2\) obtained from the tangent plane.</p>
+<p id="p-2283">The estimated revenue when \(P_2=(750,425)\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ Rev(750,425)=8.80(-50)+4.99(25)+19,615.88=19,300.63
+\end{equation*}
+</div>
+<p id="p-2284">In this case the change in production would result in a loss in revenue. This is mainly due to the impact of the lower production in gizmos.</p>
+</li>
+</ol>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-400"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-2285">The function is the Cobb-Douglas production function in a widget factory,</p>
+<div class="displaymath">
+\begin{equation*}
+Production(Labor,Capital)=10 Labor^{0.8}  Capital^{0.2}
+\end{equation*}
+</div>
+<p id="p-2286">where labor is in workers, capital equipment is in units of $20,000, and production is in units of 200 widgets produced per month.  In the \((Labor,Capital)\) plane, let \(P_1=(100,30)\text{,}\) and \(P_2=(110,25)\text{.}\)</p></article><article class="exercise-like" id="exercise-401"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-2287">The function is the Cobb-Douglas production function in a country,</p>
+<div class="displaymath">
+\begin{equation*}
+Production(Labor,Capital)=10 Labor^{0.74}Capital^{0.26}
+\end{equation*}
+</div>
+<p id="p-2288">where labor is in millions of workers, capital equipment is in units of billions of dollars, and production is in units of billions of dollars per year.  In the \((Labor,Capital)\) plane, let \(P_1=(300,30)\text{,}\) and \(P_2=(310,32)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-202" id="solution-202"><span class="type">Solution</span></a><div id="hk-solution-202" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-632">
+<p id="p-2289">Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+Production(300,C)=10 300^{0.74}  C^{0.26}=680.879 C^{0.26}  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production(L,30)=10 L^{0.74}  30^{0.26}=24.2132 L^{0.74} 
+\end{equation*}
+</div>
+<p id="p-2290">Hence both cross sections are exponential function.</p>
+</li>
+<li id="li-633">
+<p id="p-2291">Find the partial derivatives of the original function.</p>
+<div class="displaymath">
+\begin{equation*}
+Production_L  (L,C)=\frac{\partial}{\partial L} 10 L^{0.74}  C^{0.26}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\text{(Take the partial derivative wrt }L\text{; Treat }C\text{ as a constant.)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=10 (0.74) L^{-0.26}  C^{0.26}
+\end{equation*}
+</div>
+<p id="p-2292">Then we  have</p>
+<div class="displaymath">
+\begin{equation*}
+Production_L  (L,C)=\frac{7.4 C^{0.26}}{L^{0.26}}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production_C  (L,C)=\frac{\partial}{\partial C} 10 L^{0.74}  C^{0.26}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\text{(Take the partial derivative wrt }C\text{; Treat }L\text{ as a constant.)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=10 L^{0.74} (0.26) C^{-0.74}
+\end{equation*}
+</div>
+<p id="p-2293">Then we  have that</p>
+<div class="displaymath">
+\begin{equation*}
+Production_C  (L,C)=(2.6 \frac{L^{0.74}}{C^{0.74}}
+\end{equation*}
+</div>
+</li>
+<li id="li-634">
+<p id="p-2294">Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Production_L  (300, 30)=\frac{7.4 30^{0.26}}{300^{0.26}}
+\approx 4.07
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Production_C  (300, 30)=(2.6 \frac{300^{0.74}}{30^{0.74}}
+\approx 14.29
+\end{equation*}
+</div>
+</li>
+<li id="li-635">
+<p id="p-2295">Give the equation of the tangent plane through \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Production(300,30)=10*30^{0.74}  30^{0.26}\approx 1648.62
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Lin\ Prod(L,C)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=Prod_L (L_0,C_0 )(L-L_0 )+Prod_C (L_0,C_0 )(C-C_0 )+Prod(L_0,C_0 )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=4.07(L-300)+14.29(C-30)+1648.62.
+\end{equation*}
+</div>
+</li>
+<li id="li-636">
+<p id="p-2296">The approximation at \(P_2\) obtained from the tangent plane.</p>
+<div class="displaymath">
+\begin{equation*}
+Lin Prod(310, 32)   =4.07(310-300)+14.29(32-30)+1648.62=1717.9.
+\end{equation*}
+</div>
+<p id="p-2297">So as both \(L\) and \(C\) increase, so does the production. Specifically increasing \(L\) by 10 million workers and \(C\) by 2 billion dollars would give an estimated increase in production of 1717.9-1648.62=69.28 billions of dollars worth of units.</p>
+</li>
+</ol></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-28">
+<div class="introduction" id="introduction-35">
+<p id="p-2298">For exercises 8-11, for the given functions and points \(P_1\) and \(P_2\text{:}\)</p>
+<ol class="lower-alpha">
+<li id="li-637"><p id="p-2299">Give the 3 functions of one variable through \(P_1\) obtained by holding each variable constant.</p></li>
+<li id="li-638"><p id="p-2300">Find the partial derivatives of the original function.</p></li>
+<li id="li-639"><p id="p-2301">Evaluate the partial derivatives at \(P_1\text{.}\)</p></li>
+<li id="li-640"><p id="p-2302">Give the equation of the linear approximating function through \(P_1\text{.}\)</p></li>
+<li id="li-641"><p id="p-2303">The approximation at \(P_2\) obtained from the function in d.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-402"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-2304">The function is \(f(x,y,z)=x^2+3xy+4y^2+2z^2+5xz\text{,}\) \(P_1=(4,2,1)\text{,}\) and \(P_2=(3,2.5,2)\text{.}\)</p></article><article class="exercise-like" id="exercise-403"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-2305">The function is \(f(x,y,z)=(x+3y-2z)/(x^2+y^2+z^2 )\text{,}\) \(P_1=(2,3,-1)\text{,}\) and \(P_2=(3,2.5,0)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-203" id="solution-203"><span class="type">Solution</span></a><div id="hk-solution-203" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-642">
+<p id="p-2306">Give the 3 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+f(x,3,-1)=\frac{x+9+2}{x^2+9+1}=\frac{x+11}{x^2+10}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(2,y,-1)=\frac{2+3y+2}{4+y^2+1}=\frac{3y+4}{y^2+5}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(2,3,z)=\frac{2+9-2z}{4+9+z^2 }=\frac{11-2z}{13+z^2 }
+\end{equation*}
+</div>
+</li>
+<li id="li-643">
+<p id="p-2307">Find the partial derivatives of the original function.</p>
+<div class="displaymath">
+\begin{equation*}
+f_x  (x,y,z) =\frac{(1)(x^2+y^2+z^2 )-(x+3y-2z)(2x)}{(x^2+y^2+z^2 )^2} 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{(x^2+y^2+z^2 )-(2x^2+6xy-4xz)}{(x^2+y^2+z^2 )^2 }  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{(-x^2+y^2+z^2-6xy+4xz)}{(x^2+y^2+z^2 )^2} 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y  (x,y,z)=\frac{(3)(x^2+y^2+z^2 )-(x+3y-2z)(2y)}{(x^2+y^2+z^2 )^2 } 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{(3x^2+3y^2+3z^2 )-(2xy+6y^2-4yz)}{(x^2+y^2+z^2 )^2}  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{3x^2-3y^2+3z^2-2xy+4yz}{(x^2+y^2+z^2 )^2}  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_z  (x,y,z)=\frac{(-2)(x^2+y^2+z^2 )-(x+3y-2z)(2z)}{(x^2+y^2+z^2 )^2}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{(-2x^2-2y^2-2z^2 )-(2xz+6yz-4z^2 )}{(x^2+y^2+z^2 )^2}  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{-2x^2-2y^2+2z^2-2xz-6yz}{(x^2+y^2+z^2 )^2}  
+\end{equation*}
+</div>
+</li>
+<li id="li-644">
+<p id="p-2308">Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f_x (2,3,-1)=\frac{(-4+9+1-36-8)}{(4+9+1)^2} = -\frac{38}{196}= -\frac{19}{98}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_y (2,3,-1) =\frac{12-27+3-12-12}{196} =-\frac{-36}{196} =-\frac{-9}{49}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f_z (2,3,-1)=\frac{-8-18+2+4+18}{196}= -\frac{2}{196}=-\frac{1}{98}
+\end{equation*}
+</div>
+</li>
+<li id="li-645">
+<p id="p-2309">Give the equation of the linear approximating function through \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+Linear f(x,y,z) 
+= f(2,3,-1)+f_x  (2,3,-1)  (x-2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++f_y  (2,3,-1)(y-3)+f_z  (2,3,-1)(z+1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  \frac{13}{14}-\frac{19}{98}  (x-2)-\frac{9}{49} (y-3)-\frac{1}{98}(z+1)
+\end{equation*}
+</div>
+</li>
+<li id="li-646">
+<p id="p-2310">The approximation at \(P_2\) obtained from the function in d.</p>
+<div class="displaymath">
+\begin{equation*}
+Linear f(3,2.5,0)=  \frac{13}{14}-\frac{19}{98}  (1)-\frac{9}{49} \left(-\frac{1}{2}\right)-\frac{1}{98} (1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{13*7}{14*7}+\frac{-19+9-1}{98}=
+\frac{91-11}{98}=\frac{80}{98}=\frac{40}{49}
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-404"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-2311">The function is \(f(x,y,z)=(x^2 z)(x+2^y+z^3)\) \(P_1=(3,-1,1)\text{,}\) and \(P_2=(2,0,1)\text{.}\)</p></article><article class="exercise-like" id="exercise-405"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-2312">The function is the revenue function for selling widgets, gizmos, and gadgets with demand price functions</p>
+<div class="displaymath">
+\begin{equation*}
+PriceGizmos=30-\frac{QuantityGizmos}{50}-\frac{QuantityWidgets}{300}-\frac{QuantityGadgets}{500}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+PriceWidgets=20-\frac{QuantityWidgets}{40}-\frac{QuantityGizmos}{500}-\frac{QuantityGadgets}{400}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+PriceGagets=40-\frac{QuantityWidgets}{45}-\frac{QuantityGizmos}{600}-\frac{QuantityGadgets}{300}
+\end{equation*}
+</div>
+<p>and in \((QuanityGizmos,QuantityWidgets,QuantityGadgets)\) space, \(P_1=(1000,500,700)\text{,}\) and \(P_2=(1050,575,625)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-204" id="solution-204"><span class="type">Solution</span></a><div id="hk-solution-204" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2313">We can do the entire problem in terms of gadgets, gizmos and widgets, but for notation sake we will replace them (alphabetically) as follows:</p>
+<div class="displaymath">
+\begin{equation*}
+x=gadgets,\quad y=gizmos,\quad z=widgets.
+\end{equation*}
+</div>
+<p id="p-2314">We need the revenue function and we have the price functions, so we have that</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue=R(x,y,z)= x Price_x+y Price_y+z Price_z
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=x \left(40-\frac{z}{45}-\frac{y}{600}-\frac{x}{300}\right)
++y\left(30-\frac{y}{50}-\frac{z}{300}-\frac{x}{500}\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++z\left(20-\frac{z}{40}-\frac{y}{500}-\frac{x}{400}\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  -\frac{x^2}{300}-\frac{11 x y}{3000}-\frac{89 x z}{3600}+40 x-\frac{y^2}{50}-\frac{2 y z}{375}+30 y-\frac{z^2}{40}+20 z
+\end{equation*}
+</div>
+<p id="p-2315">(Note: the last step /simplification was done in Wolfram Alpha)</p>
+<ol class="lower-alpha">
+<li id="li-647">
+<p id="p-2316">Give the 3 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+R(x,500,700)= \frac{1}{900}  (-3 x^2+18775 x+8895000)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R(1000,y,700)= \frac{1}{450}  (-9 y^2+10170 y+9500000)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R(1000,500,z)= \frac{1}{360}  (-9 z^2-2660 z+16140000)
+\end{equation*}
+</div>
+<p id="p-2317">So the cross sectional function are all quadratic (parabolas) that open downwards.</p>
+</li>
+<li id="li-648">
+<p id="p-2318">Find the partial derivatives of the original function.</p>
+<p id="p-2319">Finding the partial derivatives when dealing with three variables is very similar to the procedure we use when we have two variables. We treat the other variables as constants.</p>
+<div class="displaymath">
+\begin{equation*}
+R_x  (x,y,z)=  -\frac{x}{150}-\frac{11  y}{3000}-\frac{89  z}{3600}+40 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R_y  (x,y,z)=  -\frac{11 x }{3000}-\frac{y}{25}-\frac{2  z}{375}+30 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R_z  (x,y,z)=  -\frac{89 x }{3600}-\frac{2 y}{375}-\frac{z}{20}+20 
+\end{equation*}
+</div>
+</li>
+<li id="li-649">
+<p id="p-2320">Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+R_x  (1000,500,700)=  -\frac{1000}{150}-\frac{5500}{3000}-\frac{89  (700)}{3600}+40=\frac{511}{36}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R_y  (1000,500,700)=  -\frac{11000 }{3000}-\frac{500}{25}-\frac{1400}{375}+30=\frac{13}{5}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R_z  (1000,500,700)=  -\frac{89000 }{3600}-\frac{1000 }{375}-\frac{700}{20}+20=-\frac{76}{18}
+\end{equation*}
+</div>
+</li>
+<li id="li-650">
+<p id="p-2321">Give the equation of the linear approximating function through \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+R(1000,500,700)=\frac{246700}{9}
+\end{equation*}
+</div>
+<p id="p-2322">Then the linear approximation is given by</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ Revenue(x,y,z)= R(1000,500,700)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++R_x  (1000,500,700)  (x-1000)
++  R_y  (1000,500,700)(y-500)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++  R_x  (1000,500,700)(z-700) 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  \frac{246700}{9}+\frac{511}{36} (x-1000)+\frac{13}{5} (y-500)-\frac{763}{18}(z-700)
+\end{equation*}
+</div>
+</li>
+<li id="li-651">
+<p id="p-2323">The approximation at \(P_2\) obtained from the function in d.</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ Revenue(1050,575,625)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  \frac{246700}{9}+\frac{511}{36} (50)+\frac{13}{5} (75)-\frac{763}{18} (-75)
+=31,495  
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

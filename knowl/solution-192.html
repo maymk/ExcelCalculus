@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:40-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">6.1.5.1</span>.</h6>
+<p>To get the price equation we can solve the system of equations we get by evaluating the exponential function \(P=P_0  e^{kq}\) at the two given points:</p>
+<div class="displaymath">
+\begin{equation*}
+(0,20)  gives us   20=P_0  e^{(k*0)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(100,18)  gives us   18=P_0  e^{(k*100)}
+\end{equation*}
+</div>
+<p>Then \(P_0=20\) (from the first equation) , and \(18=P_0  e^{(k*100)}\)  implies \(18=20 e^{(k*100)}\)  so that \(e^{(k*100)}=18/20\)</p>
+<p>Hence \(100*k=\ln(18/20)\text{.}\) Solving for \(k\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+k=1/100\ln(18/20)\approx -0.0011
+\end{equation*}
+</div>
+<p>Alternatively we can use Excel. Remember that if we have only two points we need to add one of the pairs twice so that Excel can graph the points correctly in a scatter plot.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-1-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>In Excel we have the Price equation as</p>
+<div class="displaymath">
+\begin{equation*}
+P=20 e^{(-0.001 q)}
+\end{equation*}
+</div>
+<p>The difference between the symbolic and numerical answers is a matter of how many decimals / significant digits we choose to keep.</p>
+<p>The simplest answer would be to treat Price as a function of quantity. But this is a section about multivariable functions. So what if we wanted a more general setting where we were given the following:</p>
+<ul class="disc">
+<li><p>Two points \((0,P_0)\) and \((q_1,P_1)\)</p></li>
+<li><p>A quantity \(Q\)</p></li>
+</ul>
+<p>The Price function would be</p>
+<div class="displaymath">
+\begin{equation*}
+P=P_0  e^{\left(\frac{1}{q_1} \ln\left(\frac{P_1}{P_0}\right) q\right)}
+\end{equation*}
+</div>
+<p>In Excel we could set up a table that would allow us to change \(P_0\text{,}\) \(P_1\text{,}\) \(q_1\)  and \(q\)</p>
+<div class="displaymath">
+\begin{equation*}
+revenue(P_0,P_1,q_1,q)=q*P_0  e^{\left(\frac{1}{q_1} \ln\left(\frac{P_1}{P_0}\right) q\right)}
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:55.5555555555556%;justify-content:center;"><img src="images/sec6-1-sol5b.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:33.3333333333333%;justify-content:flex-start;"><img src="images/sec6-1-sol5c.png" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:55.5555555555556%;justify-content:center;"><p>Excel commands  and general setup</p></div>
+<div class="sbspanel" style="width:33.3333333333333%;justify-content:flex-start;"><p>Excel output</p></div>
+</div></div>
+</div>
+<span class="incontext"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html#solution-192">in-context</a></span>
+</body>
+</html>

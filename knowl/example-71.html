@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:39-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.1.3</span>. <span class="title">Another price-quantity relationship.</span>
+</h6>
+<p>The quantity (q) and demand price (p) for gizmos satisfy the relation</p>
+<div class="displaymath">
+\begin{equation*}
+5p+3*(pq)^{1.5}+2q=2000,
+\end{equation*}
+</div>
+<p>with \(10\lt q\lt 100\text{,}\) where quantity is in thousands of units.  If I am currently selling 25,000 widgets, what is the relationship between change in quantity and change in price?</p>
+<p><dfn class="terminology">Solution</dfn>: There is no easy method to solve this relation for either price or quantity as an explicit function of the other.  Instead, we will implicitly differentiate.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ }{d\ q}(5*p+3*(p*q)^1.5+2*q=2000)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+5 \frac{d\ p}{d\ q}+3*(1.5*p^.5*(d p)/(d q)*q^{1.5}+p^{1.5}*1.5*q^{.5} )+2=0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ p}{d\ q}*(5+4.5*p^{.5}*q^{1.5} )=-(2+4.5*p^{1.5}*q^{.5})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ p}{d\ q}=-\frac{(2+4.5*p^{1.5}*q^{.5})}{(5+4.5*p^{.5}*q^{1.5} ) }
+\end{equation*}
+</div>
+<p>Since quantity is in thousands of unity, if we are selling 25,000 widgets, quantity=25 and price=2.986.  Substituting those values into the formula for the derivative of price with respect to quantity, we see</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ price}{d\ quantity}=\frac{-118.104}{997.025}=-0.12088.
+\end{equation*}
+</div>
+<p>We increase sales by 1000 by dropping price by $0.121.</p></article><span class="incontext"><a href="sec-5-1-ImplicitDifferentiation.html#example-71">in-context</a></span>
+</body>
+</html>

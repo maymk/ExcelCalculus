@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:22-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Functions and models</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap-1-FunctionsGraphsExcel.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-1-FunctionsGraphsExcel.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-1-2-FunctionsBusinessSetting.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap-1-FunctionsGraphsExcel.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-1-FunctionsGraphsExcel.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-1-2-FunctionsBusinessSetting.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels" class="active">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-1-1-LinearFunctionsAndModels"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Linear Functions and models</span>
+</h2>
+<a href="sec-1-1-LinearFunctionsAndModels.html" class="permalink">¶</a><p id="p-28">Linear Functions and models</p>
+<p id="p-29">We will start this chapter with a review of linear functions. In business there are quite a few examples of linear equations. Examples include supply and demand functions. There are some standard concepts related to lines that we will review, including the slope.</p>
+<p id="p-30">Following the conventions of microeconomics, we will often use the variables p and q, for price and quantity, rather than x and y.  We will also follow the conventions of economics in treating quantity as the independent variable.  (The q-axis will be the horizontal axis.  A fast web search for supply demand equilibrium will convince you this standard usage.)</p>
+<p id="p-31"><dfn class="terminology">Equations of a line</dfn></p>
+<p id="p-32">From prior courses such as college algebra you will remember that lines can be written in several different forms. If we are given the slope and the \(y\)-intercept, the slope-intercept will be the equation of choice. If we are given a point and a slope, it might be faster if we use the point-slope form for a line.</p>
+<article class="assemblage-like" id="KindsOfLinearEquations"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:40%;justify-content:flex-start;"><p id="p-33">\(y=m x+b\)</p></div>
+<div class="sbspanel" style="width:60%;justify-content:flex-start;"><p id="p-34">the slope-intercept form of a line</p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:40%;justify-content:flex-start;"><p id="p-35">\(y-y_0=m(x-x_0)\)</p></div>
+<div class="sbspanel" style="width:60%;justify-content:flex-start;"><p id="p-36">the point-slope form of a line</p></div>
+</div></div></article><p id="p-37">In a business setting we are likely to use \(q\) instead of \(x\) and \(p\) instead of \(y\text{.}\)</p>
+<p id="p-38">With this notation these standard equations of a line become:</p>
+<article class="assemblage-like" id="PQLinearEquations"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(p=m q+b\)</td>
+<td class="l m b0 r0 l0 t0 lines">the slope-intercept form of a line</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(p-p_0=m(q-q_0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">the point-slope form of a line</td>
+</tr>
+</table></div></div></div></article><article class="example-like" id="example-1"><a data-knowl="" class="id-ref" data-refid="hk-example-1"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.1.1</span>. <span class="title">Supply and Demand Curves.</span>
+</h6></a></article><div id="hk-example-1" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-39">Supply and demand equations are often modeled by linear equations. The supply function is a line with a positive slope, and the demand function is a line with a negative slope.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-1-SDcurves.png" style="width: 100%; height: auto;" alt="The intersection of a supply and demand curve"></div></div></div>
+<p id="p-40">The vertical axis shows the price, the horizontal axis shows quantity. Both supply (S) and demand (D) are linear functions. In this diagram 'B' denotes a surplus of supply, and 'A' denotes a surplus of demand.</p></article></div>
+<p id="p-41">Recall, that the slope of a line through the points \(P_0=(q_0,p_0)\) and \(P_1=(q_1,p_1)\) is given by</p>
+<article class="assemblage-like" id="SlopeDef"><div class="displaymath" id="p-42">
+\begin{equation*}
+m=\frac{rise}{run}=\frac{(p_1-p_0)}{(q_1-q_0 )}
+\end{equation*}
+</div></article><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-1-slope.png" style="width: 100%; height: auto;" alt="The intersection of a supply and demand curve"></div></div></div>
+<p id="p-43">There are two other forms of a line that are sometimes used. The general form of a line is a standard notation used in mathematics. The 2-point form of a line is very handy in those situations where we are not given a slope, but we are given information about two points that lie on the line.</p>
+<article class="assemblage-like" id="GeneralLinearEquations"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a x+b y+c=0\)</td>
+<td class="l m b0 r0 l0 t0 lines">The general form of a line</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(y-y_0=(y_1-y_0)/(x_1-x_0 )(x-x_0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">The 2-point form of a line</td>
+</tr>
+</table></div></div></div></article><p id="p-44">As above, in the setting of this course we may be using \(p\) (price) and \(q\) (quantity) as our variables. This would result in equations that look as follows:</p>
+<article class="assemblage-like" id="PQGeneralLinearEquations"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a p+b q+c=0\)</td>
+<td class="l m b0 r0 l0 t0 lines">The general form of a line</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(p-p_0=(p_1-p_0)/(q_1-q_0 )(q-q_0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">The 2-point form of a line</td>
+</tr>
+</table></div></div></div></article><article class="example-like" id="example-2"><a data-knowl="" class="id-ref" data-refid="hk-example-2"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.1.2</span>. <span class="title">Finding four versions of a line.</span>
+</h6></a></article><div id="hk-example-2" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-45">We find that we can sell 150 widgets a day if we sell them at $10.  If we raise the price to $15, we can only sell 110 widgets a day.  Assume that there is a linear relationship between price and quantity sold.  Find the equation of the line in all four forms.</p>
+<p id="p-46"><dfn class="terminology">Solution</dfn>:  Writing this using our variables p (price) and q (quantity of widgets) we see that when \(p = 10\text{,}\) \(q = 150\) and when \(p = 15\text{,}\) \(q = 110\text{.}\)  Points are (usually) given as \((q,p)\text{,}\) so this means we have two point (150,10) and (110,15) on the line. We always need to find the slope of the line, and in this case</p>
+<div class="displaymath">
+\begin{equation*}
+m=  \frac{5-10}{110-150}=  \frac{5}{-40}= \frac{-1}{8}
+\end{equation*}
+</div>
+<p>We are given two points, so the 2-point form of the line should be the easiest formula to find:</p>
+<div class="displaymath">
+\begin{equation*}
+p-p_0=\frac{p_1-p_0}{q_1-q_0 }(q-q_0)
+\end{equation*}
+</div>
+<p>We just found the slope and we just need to pick a point \((p_0,q_0)\) to finish the problem. (Recall that \(p\) and \(q\) are the variables, so we want to leave those as they are.) In this case lets pick \((p_0,q_0)= (150,10)\text{.}\) Then we get this simplified version, which is also the point-slope form of this line.</p>
+<div class="displaymath">
+\begin{equation*}
+p-10=\frac{-1}{8}(q-150)
+\end{equation*}
+</div>
+<p>From here we can very easily find the slope intercept form by some straight-forward algebra: \(p-10=\frac{-1}{8}(q-150)\) implies that</p>
+<div class="displaymath">
+\begin{equation*}
+p=\frac{-1}{8} (q-150)+10=  \frac{-1}{8} q+  \frac{150}{8}+10=  \frac{-1}{8} q+\frac{230}{8}
+\end{equation*}
+</div>
+<p id="p-47">And finally the general form will be another exercise in algebra. We clear the fractions and put everything on one side.</p>
+<div class="displaymath">
+\begin{equation*}
+8p+q-230=0.
+\end{equation*}
+</div></article></div>
+<article class="example-like" id="example-3"><a data-knowl="" class="id-ref" data-refid="hk-example-3"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.1.3</span>. <span class="title">Finding a line from two points.</span>
+</h6></a></article><div id="hk-example-3" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-48">Suppose that a linear cost-quantity relationship exists in producing widgets.  There is a fixed cost of $400.  There is also a per-unit cost of $11.</p>
+<ol class="lower-alpha">
+<li id="li-17"><p id="p-49">Find the equation of the line.</p></li>
+<li id="li-18"><p id="p-50">Find the cost of making 200 widgets.</p></li>
+</ol>
+<p id="p-51"><dfn class="terminology">Solution</dfn>:</p>
+<p id="p-52">1) We have one point of the form (quantity, cost) at (0, 400) from the fixed cost.  This point happens to be an intercept.  The slope of the line is \(m=11/1=11\text{.}\)  We will let \(C\) stand for Cost and \(q\) stand for quantity. The general formula for a line with these variables will have the form</p>
+<div class="displaymath">
+\begin{equation*}
+C=m q+b.
+\end{equation*}
+</div>
+<p id="p-53">In this example \(m = 11\) and \(b = 400\text{,}\) hence the equation of the line is</p>
+<div class="displaymath">
+\begin{equation*}
+C=11 q+400
+\end{equation*}
+</div>
+<p id="p-54">b) Using the equation form part a) we see that the cost of producing 200 widgets is</p>
+<div class="displaymath">
+\begin{equation*}
+C=11 (200)+400=$2,600
+\end{equation*}
+</div></article></div>
+<article class="example-like" id="example-4"><a data-knowl="" class="id-ref" data-refid="hk-example-4"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.1.4</span>. <span class="title">A nonlinear function.</span>
+</h6></a></article><div id="hk-example-4" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-55">Example 4:  Sarah is paid $500 for working up to 40 hours per week.  For work beyond 40 hours per week she is paid $18/hour.</p>
+<ol class="lower-alpha">
+<li id="li-19"><p id="p-56">Find the equation of the line.</p></li>
+<li id="li-20"><p id="p-57">How much is she paid if she works 56 hours in a week?</p></li>
+<li id="li-21"><p id="p-58">What is she paid for working 30 hours in a week?</p></li>
+</ol>
+<p id="p-59"><dfn class="terminology">Solution</dfn>:</p>
+<p id="p-60">a) For this example we will use “designer variables”. The output will be Pay, and the input variable – the number of hours worked – will be hrs. We are told that Pay = 500 when hrs = 40. The slope of the line work beyond 40 hours is \(m=18\text{.}\)  Another way to think of this is to say that there is a fixed Pay of $500 and a variable Pay for any hours in excess of 40: i.e. (hrs - 40). Thus, the equation of the line, according to the point-slope form is <article class="assemblage-like" id="PayEquations"><div class="displaymath" id="p-61">
+\begin{equation*}
+Pay=variable\  pay+Fixed\  pay.
+\end{equation*}
+</div></article></p>
+<div class="displaymath">
+\begin{equation*}
+Pay=m(hrs-40)+500=18*(hrs-40)+500.
+\end{equation*}
+</div>
+<p id="p-62">b) The pay for working 56 hours is 18(56-40)+500=$788.</p>
+<p id="p-63">c) The pay for working 30 hours is $500.  This is a trick question part of the problem.  From the text of the problem, the linear model only works for overtime, with a flat rate applying to less than 40 hours per week. Comment: The function should be written as a piecewise defined function.</p>
+<p id="p-64">This question is all about the function \(f\) defined by</p>
+<div class="displaymath">
+\begin{equation*}
+Pay=\begin{cases}
+500&amp;hrs\le 40\\
+18*(hrs-40)+500&amp;hrs&gt;40\\
+\end{cases}
+\end{equation*}
+</div></article></div>
+<p id="p-65">It can be useful when writing reports to have variables that convey some meaning. We could have called \(Pay\) `\(y\)', and \(hrs\) `\(x\)', but using the much more easily interpreted variables named Pay and hrs helps when using the formulas.</p>
+<section class="exercises" id="exercises-set-sec-1-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises 1.1 Linear Functions and models</span>
+</h3>
+<a href="sec-1-1-LinearFunctionsAndModels.html#exercises-set-sec-1-1" class="permalink">¶</a><div class="exercisegroup" id="exercisegroup-1">
+<div class="introduction" id="introduction-1">
+<p id="p-66">For problems 1-6, given two points in the \((q,p)\) plane and a value \(q_0\text{:}\)</p>
+<ol class="lower-alpha">
+<li id="li-22"><p id="p-67">Find the slope of the line determined by the points.</p></li>
+<li id="li-23"><p id="p-68">Give the equation of the line determined by the points.</p></li>
+<li id="li-24"><p id="p-69">Give the value of \(p\) predicted for \(q_0\) by the line.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-70">Points \((2,5)\) and \((6,17)\text{,}\) with \(q_0=4\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span></a><div id="hk-hint-1" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-71">Find the slope and use the point-slope form</p></div></div>
+<a data-knowl="" class="id-ref" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div id="hk-solution-1" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-25"><p id="p-72">First find the slope: \(m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{17-5}{6-2}=\frac{12}{4}=3\)</p></li>
+<li id="li-26">
+<p id="p-73">Next we find the equation of the line. There are several ways to do this and two methods are outlined below.</p>
+<ul class="disc">
+<li id="li-27">
+<p id="p-74">Method 1: use the point-slope equation: \(p-p_0=m (q-q_0)\text{.}\) We can choose either one of the points, so in this case we will find the line using the point \((q_0,p_0 )=(2,5)\text{.}\) This gives the equation \(p-5=3 (q-2)\text{.}\)</p>
+<p id="p-75">Rewrite this as \(p=3q-1\)</p>
+</li>
+<li id="li-28"><p id="p-76">Method 2: use the slope- intercept equation \(p=m q+b\text{.}\) Use \((q,p)=(2,5)\) and \(m = 3\) and solve for \(b\text{:}\) \(5=3 (2)+b\text{.}\) And solving for \(b\) we have that \(b= -1\text{,}\) and hence \(p=3q-1\)</p></li>
+</ul>
+</li>
+<li id="li-29"><p id="p-77">Evaluate at the given point.  \(p(4)=3*4-1=11\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-2"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-78">Points \((5,7)\) and \((10,7)\text{,}\) with \(q_0=20\text{.}\)</p></article><article class="exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-79">Points \((20,10)\) and \((40,5)\text{,}\) with \(q_0=12\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div id="hk-solution-2" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-80">Just as in problem 1 we find the slope and then find the equation of the line.</p>
+<ol class="lower-alpha">
+<li id="li-30"><p id="p-81">First find the slope: \(m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{5-10}{40-20}=-\frac{5}{20}=-\frac{1}{4}\)</p></li>
+<li id="li-31"><p id="p-82">Using \(p=m (q-q_0)+p_0\) with \((q_0,p_0 )=(20, 10)\) and \(m = -\frac{1}{4}\text{,}\) we get \(p=-\frac{1}{4}(q-20)+10\text{.}\)  Solving for \(p\) we get \(p =-\frac{1}{4}q+15\)</p></li>
+<li id="li-32"><p id="p-83">Evaluate at the given point.  \(p(12)=-\frac{1}{4}(12)+15=12\)</p></li>
+</ol>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-84">Points \((5,62)\) and \((115,783)\text{,}\) with \(q_0=415\text{.}\)</p></article><article class="exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-85">Points \((273,578)\) and \((412,6)\text{,}\) with \(q_0=309\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span></a><div id="hk-solution-3" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-86">Just as in problem 1 we find the slope and then find the equation of the line.</p>
+<ol class="lower-alpha">
+<li id="li-33"><p id="p-87">First find the slope: \(m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{578-6}{273-412}=-\frac{5}{20}=-\frac{572}{139}\)</p></li>
+<li id="li-34"><p id="p-88">Using \(p=m (q-q_0)+p_0\) with \((q_0,p_0 )=(412, 6)\) and \(m = -\frac{572}{139}\text{,}\) we get \(p=-\frac{572}{139}(q-412)+6\text{.}\)  (We can combine the constant terms – the \(6\) and the \(-\frac{572}{139}*(-412)\text{,}\) but leaving the equation in this form is acceptable.)</p></li>
+<li id="li-35"><p id="p-89">Evaluate at the given point.  \(p(309)=-\frac{572}{139}(309-412)+6
+=-\frac{572}{139}(-103)+6=429\frac{119}{139}\)</p></li>
+</ol>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-90">Points \((509,17)\) and \((211,132)\text{,}\) with \(q_0=4\text{.}\)</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-2">
+<div class="introduction" id="introduction-2">
+<p id="p-91">For problems 7-12, start with the information given:</p>
+<ol class="lower-alpha">
+<li id="li-36"><p id="p-92">Give the equation of the line determined by that information.</p></li>
+<li id="li-37"><p id="p-93">Using the line, give the predicted value of \(p\) for the given \(q_0\text{.}\)</p></li>
+<li id="li-38"><p id="p-94">Give the value of \(q\) for which the predicted value of \(p\) is \(0\text{.}\)</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-95">A slope of \(3\text{,}\) passing through \((6,3)\text{,}\) with \(q_0=4\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span></a><div id="hk-solution-4" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-39"><p id="p-96">Using \(p=m q+b\text{,}\) we get \(3=3 (6)+b\text{,}\) so \(b= -15\) and the equation of the line is \(p=3 q-15\)</p></li>
+<li id="li-40"><p id="p-97">If \(q_0=4\text{,}\) then \(p=3 q-15=3(4)-15= -3\)</p></li>
+<li id="li-41"><p id="p-98">The predicted value of \(p\) is \(0\text{,}\) when \(0=3 q-15\text{.}\) Solving for \(q\) we get \(q=5\text{.}\) [Comment: in part a) we could have used the point-slope for as well.]</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-8"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-99">A slope of \(-2\text{,}\) passing through \((2,-5)\text{,}\) with \(q_0=3\text{.}\)</p></article><article class="exercise-like" id="exercise-9"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-100">A slope of \(12.7\text{,}\) passing through \((22,183)\text{,}\) with \(q_0=46\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span></a><div id="hk-solution-5" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-42"><p id="p-101">Using \(p=m (q-q_0 )+p_0\)   we get \(p=12.7 (q-22)+183\text{.}\)</p></li>
+<li id="li-43"><p id="p-102">When \(q_0=46\text{,}\) we get that \(p=12.7 (46-22)+183=12.7(24)+183\text{.}\) And hence \(p=487.8\)</p></li>
+<li id="li-44">
+<p id="p-103">The predicted value of \(p\) is \(0\text{,}\) when \(0=183+12.7 (q-22)\text{.}\) Solving for \(q\) we get: \(12.7 (q-22)= -183\) This implies \((q-22)= \frac{-183}{12.7}\)</p>
+<div class="displaymath">
+\begin{equation*}
+q=22 -\frac{183}{12.7}=7.59
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-10"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-104">A slope of \(-0.23\text{,}\) passing through \((7.6,19.7)\text{,}\) with \(q_0=59.6\text{.}\)</p></article><article class="exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-105">A slope of 0, passing through \((12.3,9.8)\text{,}\) with \(q_0=74\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span></a><div id="hk-solution-6" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-45"><p id="p-106">Using \(p=m (q-q_0 )+p_0\)   we get \(p=0 (q-12.3)+9.8\) or \(p=9.8\text{.}\)</p></li>
+<li id="li-46"><p id="p-107">When \(q_0=74\text{,}\) we get that \(p=9.8\text{.}\) (This is a constant function, and the output is going to be \(9.8\) no matter what value of \(q\) we plug in.)</p></li>
+<li id="li-47"><p id="p-108">The predicted value of \(p\) is never  \(0\text{,}\) because the predicted value of p is always 9.8.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-109">A slope that is undefined, passing through \((6,3)\text{,}\) explaining why part b would not make sense.</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-3">
+<div class="introduction" id="introduction-3">
+<p id="p-110">For problems 13-18, start with the equation given:</p>
+<ol class="lower-alpha">
+<li id="li-48"><p id="p-111">Give the slope of the line or say that the slope is undefined.</p></li>
+<li id="li-49"><p id="p-112">Give the intercepts of the line with the axes.</p></li>
+<li id="li-50"><p id="p-113">Give two points that are on the line but not on the axes.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-114">\(3 p+2 q=6\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span></a><div id="hk-solution-7" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-51"><p id="p-115">Solve for \(p\) so we can read off the slope more easily:  \(p= -2/3 q+2\text{.}\) Hence the slope is \(m= -2/3\)</p></li>
+<li id="li-52"><p id="p-116">To get the \(p\)-intercept we set \(q=0\text{,}\) so that \(3 p=6\text{,}\) and we get \(p=2\) To get the \(q\)-intercept we set \(p=0\text{,}\) so that \(2q=6\text{,}\) and we get \(q=3\)</p></li>
+<li id="li-53"><p id="p-117">We can pick any two values for \(q\) (except \(0\) and \(3\) because those are intercepts), so arbitrarily pick some values: say \(q=1\) and \(q=-1\text{.}\) If \(q=1\text{,}\) then \(3 p+2=6\text{,}\) and hence  \(p=4/3\) so the point would be \((q,p)=(1,4/3)\) If \(q=-1\text{,}\) then \(3 p-2=6\text{,}\) and hence  \(p=8/3\) so the point would be \((q,p)=(-1,8/3  )\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-118">\(7 p-4 q+14=0\text{.}\)</p></article><article class="exercise-like" id="exercise-15"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<p id="p-119">\(y=5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span></a><div id="hk-solution-8" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-54"><p id="p-120">The slope is \(0\)</p></li>
+<li id="li-55"><p id="p-121">The y-intercept is \(y = 5\text{.}\) There is no \(x\)-intercept</p></li>
+<li id="li-56"><p id="p-122">No matter what \(x\) we choose the \(y\) value will always be \(5\text{.}\) So we can pick any two values of \(x\) (not \(0\) to avoid the intercept). For instance \((x,y)=(-20,5)\text{,}\) \((x,y)=(-2,5)\text{,}\) \((x,y)=(7,5)\text{,}\) etc are all points on the line.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">16.</span></h6>
+<p id="p-123">\(x=3\text{.}\)</p></article><article class="exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<p id="p-124">\(y=4(x-3)+9\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span></a><div id="hk-solution-9" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-57"><p id="p-125">The slope is \(4\)</p></li>
+<li id="li-58">
+<p id="p-126">To get the \(y\)-intercept we set \(y=0\text{,}\) so that \(y=4(-3)+9=-3\text{,}\)</p>
+<p id="p-127">To get the \(x\)-intercept we set \(y=0\text{,}\) so that \(0=4(x-3)+9\text{.}\)  Solve for \(x\) and we get \(x-3=-\frac{9}{4}\) and \(x=3-\frac{9}{4}=\frac{3}{4}\)</p>
+</li>
+<li id="li-59"><p id="p-128">Avoiding the intercepts we can choose \(x\) to be any number other than \(x = 0\) and \(x=3/4\text{.}\)  We may look for nice values of \(x\) that make the arithmetic come out nice: for example choose \(x=3\) and \(x=4\text{.}\) When \(x=3\text{,}\) \(y=9\text{,}\) and we get the point \((x,y)=(3,9)\text{.}\) When \(x=4\text{,}\) \(y=13\text{,}\) and we get the point \((x,y)=(4,13)\text{.}\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">18.</span></h6>
+<p id="p-129">\(112 p+257 q=4783\text{.}\)</p></article>
+</div>
+</div>
+<article class="exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">19.</span></h6>
+<p id="p-130">Suppose that the relationship between price and quantity of widgets sold is linear.  When the price is $23, we can sell 4783 widgets.  If we raise the price to $27, we can only sell 4295 widgets.  Find the equation of the line.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span></a><div id="hk-solution-10" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-131">The information tells us we have two points: \((q,p)=(4783,23)\)  and \((q,p)=(4295,27)\text{.}\) (Note that in business the quantity \(q\) is usually the input and price \(p\) is usually the output.)</p>
+<p id="p-132">Next we need the slope: \(m=  (27-23)/(4295-4783)=4/(-488)=-1/122\)</p>
+<p id="p-133">Using \(p-p_0=m (q-q_0 )\)   we get \(p-23=-1/122  (q-4783)\text{.}\) We can rewrite the latter as \(p=23-1/122  (q-4783)\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">20.</span></h6>
+<p id="p-134">Suppose that the relationship between price and quantity of gizmo kits we can buy is linear.  When the price is $15, we can buy 6000 gizmo kits.  If we lower the price we will pay to $13, we can only buy 4500 kits.  Find the equation of the line.</p></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

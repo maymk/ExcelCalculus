@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:29-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Normal Distribution: An extended numeric example</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-7-5-IntroductionComputerAlgebra.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-7-7-InvestmentDepreciation.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7-5-IntroductionComputerAlgebra.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-7-7-InvestmentDepreciation.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution" class="active">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-7-6-NormalDistribution"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.6</span> <span class="title">The Normal Distribution: An extended numeric example</span>
+</h2>
+<a href="sec-7-6-NormalDistribution.html" class="permalink">¶</a><p id="p-2927"><a class="external" href="./Examples/Section-7-6-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-2928">We want to look at an extended example where we realistically want to find a definite integral, but need to use numerical methods rather than solving for the antiderivative and using the fundamental theorem of calculus. Most students are familiar with the concept of a course that is graded on a curve.  Formally that means that there is a preset distribution of grades available in the class, with a certain percentage of the students getting an A, a certain percentage getting a B, and so forth.  Most college students are also familiar with the ACT, SAT, or other standardized tests, where the grades typically follow a normal or bell curve.  The result we pull from more advanced mathematics is that many phenomena such as height, weight, and hat size, also follow a bell curve.  In a business setting, we are often concerned whether or not a portion of a market will be big enough to support a specialty store.  We also want to know how much of my production should be allocated to a range of sizes of a product.  This question often boils down to finding the area under a specified portion of the normal curve.</p>
+<p id="p-2929"><dfn class="terminology">Background from probability</dfn></p>
+<p id="p-2930">We want to pull some definitions and results from the theory of probability.  In particular we want a description of the function we are finding the area under and also of the related area function.</p>
+<article class="assemblage-like" id="assemblage-60"><p id="p-2931"><dfn class="terminology">Definition: A Probability Density Function</dfn> is a function that spreads the area 1 over the entire real line, with the obvious understanding that no value can have a negative probability.</p>
+<p id="p-2932">In calculus terms, a <dfn class="terminology">Probability Density Function</dfn> is a function  \(f(x)\) defined for \(-\infty\lt x \lt \infty \)  such that \(f(x)\ge 0\)  and  \(\int_{-\infty}^{\infty}f(x)dx=1\text{.}\)</p></article><p id="p-2933">A probability density function is also called a continuous distribution function.  The probability density function that is of most interest to us is the normal distribution.  The normal density function is given by</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-(x-\mu)^2}{2\sigma^2}\right)
+\end{equation*}
+</div>
+<p id="p-2934">where sigma, \(\sigma\text{,}\) and mu, \(\mu\text{,}\) are respectively the standard deviation and mean of the distribution.  For this course the mean is the center of the distribution and the standard deviation is a measure of how tightly packed the distribution is.  If we set the mean to 0 and the standard deviation to 1 we have the standardized normal distribution, or the familiar bell curve.</p>
+<p id="p-2935">Thus, when I note that the adult men in the United States have a height distribution that is normal with a mean of 70 inches and a standard deviation of 3 inches, the distribution is</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x70)^2}{2*3^2}\right)
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2936">Thus finding the percentage of men less than 5 feet tall, reduces to evaluating the appropriate integral.  Since finding the percentage of the population that fits in our market reduces to finding the area under a specified portion of this curve, we are also interested in the anti-derivative of the distribution.</p>
+<article class="assemblage-like" id="assemblage-61"><p id="p-2937"><dfn class="terminology">Definition</dfn>: Given a probability density function, \(f(x)\) , the related <dfn class="terminology">Cumulative Distribution Function</dfn>,  \(CDFf(x)\text{,}\) is a function that measures how much area is over the interval  \((-\infty,x]\text{.}\)</p>
+<p id="p-2938">In calculus terms,  \(CDFf(x)\text{,}\) the <dfn class="terminology">Cumulative Distribution Function</dfn> of  \(f(x)\text{,}\) is  \(\int_{-\infty}^x f(t)dt\text{.}\)</p></article><p id="p-2939">You will notice the techniques we have for anti-differentiation will not work with the normal distribution.  In fact, the normal distribution has no closed form anti-derivative using the functions we are familiar with.  Thus we need to use numeric methods.</p>
+<article class="example-like" id="example-133"><a data-knowl="" class="id-ref" data-refid="hk-example-133"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.6.1</span>. <span class="title">Tall men in an area.</span>
+</h6></a></article><div id="hk-example-133" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2940">In the United States, the height of men follows a normal distribution with a mean of 70 inches (5' 10") and a standard deviation of 3 inches.  I want to set up a specialty shop for men who are at least 6’ tall, but no more than 7' tall.  In an area with 100,000 adult men, how big is my potential market?</p>
+<p id="p-2941"><dfn class="terminology">Solution set up</dfn>.  My distribution function is \(\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^3}\right)\text{.}\) Since I have a population of 100,000 and am interested in the men who are between 72 and 84 inches tall, my potential market is</p>
+<div class="displaymath">
+\begin{equation*}
+100000\int_{72}^{84} \frac{1}{3\sqrt{2\pi}} \exp\left(\frac{-(x-70)^2}{2*3^2} \right)dx.
+\end{equation*}
+</div>
+<p id="p-2942">As an alternative, I can convert the problem so it is expressed in terms of standard deviations.  Then I use the standardized normal distribution and my limits of integration are</p>
+<div class="displaymath">
+\begin{equation*}
+low\ bound\ in\ SD = (low\ bound-mean)/(SD) = (72-70)/3 = 2/3
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+upper\ bound\ in\ SD = (upper\ bound-mean)/(SD) = (84-70)/3 = 14/3.
+\end{equation*}
+</div>
+<p id="p-2943">Then my potential market is</p>
+<div class="displaymath">
+\begin{equation*}
+100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx.
+\end{equation*}
+</div>
+<p id="p-2944"><dfn class="terminology">Solution 1, using Excel and Riemann Sums</dfn>:  I want to set up a spreadsheet to find the area under the curve.  Since I think I may do this for several problems, I want to set up the worksheet as a template that I can simply fill in.  It will make my life easier if I recast the problem in terms of standard deviations.   My potential market is \(100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx\text{.}\)   I am ready to set up a Riemann sum worksheet as we did in section 7.1</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2945">In cells F3 through F5 we convert the lower bound, upper bound, and del x to standard deviations.  We recall that we get better accuracy by evaluating the rectangles with a midpoint.  The midpoint of the nth rectangle is (n-0.5)*del x above the lower bound.  As we did in previous sections, we use the offset command to bring our answer into the top region.  When we look at the numbers we see that the potential market is 25,249.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2946"><dfn class="terminology">Solution 1a, using Excel Statistics Commands</dfn>:  By this point in the course you should expect that if we claim a computation is important and done by business many times, that there is an Excel command to do the computation.</p>
+<p id="p-2947">The function we are interested in is</p>
+<div class="displaymath">
+\begin{equation*}
+\hbox{NORM.DIST(x, mean, standard deviation, cumulative).}
+\end{equation*}
+</div>
+<p id="p-2948">Where \(x\text{,}\) mean, and standard deviation have the obvious meanings.  The cumulative parameter is either true or false.  If it is true we get the cumulative distribution function.  If it is false we get the probability density function.  If we are working with the standardized normal distribution, where the mean is 0 and the standard deviation is 1, the command is</p>
+<div class="displaymath">
+\begin{equation*}
+\hbox{NORM.S.DIST(x, cumulative).}
+\end{equation*}
+</div>
+<p id="p-2949">(If you are using older versions of Excel, the syntax of the command is a little different.  Check the appropriate help page if you are using an older version of Excel.)  With these commands, our spreadsheet is noticeably simpler.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2950">When we look at the values, we get a target population of 25,249.  This agrees with our estimate to 5 significant figures.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2951"><dfn class="terminology">Solution 1b, using Wolfram alpha</dfn>:  Once I have reduced the problem to evaluating a definite integral, I can find a numeric solution with a CAS package like Wolfram|Alpha.</p>
+<div class="displaymath">
+\begin{equation*}
+100000\int_{72}^{84} \frac{1}{3\sqrt{2\pi}} \exp\left(\frac{-(x-70)^2}{2*3^2 }\right)dx
+\end{equation*}
+</div>
+<p id="p-2952">becomes</p>
+<div class="displaymath">
+\begin{equation*}
+\text{100000*integrate(exp(-(x-70)^2/(2*3^2))/(3*sqrt(2*pi))) from 72 to 84.}
+\end{equation*}
+</div>
+<p id="p-2953">We get our familiar answer of 25,249.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2954">When we compute a target population, we sometimes want to include the tail of the distribution.  We might, for example be concerned with all women who are 5 feet tall or less.  This sets up an integral over an infinite interval, which we can’t do as a Riemann sum.  The first workaround notes that the tails are very small.  If all humans who have ever lived are normally distributed, less than 1 is more than 7 standard deviations from the mean.  Taking the integral down to -7 will practically be the same as integrating down to \(-\infty\text{.}\)  The second workaround uses the symmetry of the normal distribution.</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{-\infty}^a SND(x)dx=\int_{-\infty}^0 SND(x)dx+\int_0^a SND(x)dx=.5+\int_0^a SND(x)dx.
+\end{equation*}
+</div></article></div>
+<article class="example-like" id="example-134"><a data-knowl="" class="id-ref" data-refid="hk-example-134"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.6.2</span>. <span class="title">Finding tall women.</span>
+</h6></a></article><div id="hk-example-134" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2955">In the United States, the height of women follows a normal distribution with a mean of 64 inches (5' 4") and a standard deviation of 2.75 inches.  I want to set up a specialty shop for women who are no more than 5' tall.  In an area with 500,000 adult women, how big is my potential market?</p>
+<p id="p-2956"><dfn class="terminology">Solution</dfn>: Set up.  Using the reasoning as above, I want to estimate my market if it is 50% of the population plus the percentage between 0 and (-4/2.75) standard deviations below the mean.</p>
+<p id="p-2957"><dfn class="terminology">Solution</dfn>: Using Excel and Riemann Sums:  One advantage of having set up the first exercise well, it the Riemann sum problem is now a matter of changing the parameters and subtracting from 0.5 before multiplying by the market size.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2958">We notice that since we are finding the area under the standardized normal distribution from 0 to a negative number, we get a negative area.  Our potential market is composed of 3,645 women.</p>
+<p id="p-2959"><dfn class="terminology">Solution a</dfn>: Using Excel Statistics Commands:  When using the statistics commands, the area function is zero at \(-\infty\text{.}\)  Thus we simply have to evaluate</p> NORM.S.DIST(right hand limit, cumulative). <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2960">Once again, we get a potential market of 3,645 women.</p></article></div>
+<p id="p-2961">While the normal distribution spreads a population over the real numbers, most objects come in discrete sizes.  Depending on the kind of shoes, the sizes are either whole or half numbers.  You can’t buy a shoe of size 8.764.  The normal procedure is to divide the population at the middle between the sizes.</p>
+<article class="example-like" id="example-135"><a data-knowl="" class="id-ref" data-refid="hk-example-135"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.6.3</span>. <span class="title">Women's shoes.</span>
+</h6></a></article><div id="hk-example-135" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2962">In the United States, the shoe sizes of women follows a normal distribution with a mean of 8 and a standard deviation of 1.5.  I want to order 1000 pairs of shoes.  If the shoes are only available in full sizes, how many pairs should I order of size 7?</p>
+<p id="p-2963"><dfn class="terminology">Solution</dfn>:  I want the portion of the population between size 6.5 and 7.5.   I fit it into my worksheet for Riemann sums.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2964">Of the 1000 pairs of shoes, 211 should be size 7.</p></article></div>
+<p id="p-2965">We have looked at three methods for finding a portion of a normally distributed population, which we describe as Excel with Riemann sums, Excel with statistics commands, and CAS.  It is worthwhile to consider the advantages and disadvantages of the methods.  The Riemann sums method takes the most work to set up.  It is also conceptually the most straightforward and the most flexible.  It is the easiest to adapt if we are doing some nonstandard distribution of a population.  It also shows intermediate values if we have a less sharp question and are trying to see what is going on and are still deciding on the business question we want to ask.  The Excel with statistics command approach requires us to learn special commands.  It is also less work.  It would probably be the favored method if we were doing a lot of these computations.  It should be noted that Excel has corresponding commands for the other standard probability distributions. The CAS method does not require special commands, but it takes us out of our Excel environment.  It does not let us leave a worksheet that is well documented and that can be easily modified by someone else asking similar questions.</p>
+<section class="exercises" id="exercises-set-sec-7-6"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Normal Distribution Problems</span>
+</h3>
+<a href="sec-7-6-NormalDistribution.html#exercises-set-sec-7-6" class="permalink">¶</a><article class="exercise-like" id="exercise-517"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-2966">Assume that women’s shoe sizes are normally distributed with a mean of 8 and a standard deviation of 1.5.  A particular style of shoes in available in full and half sizes.  I plan to make 10,000 pairs of this style.</p>
+<ol class="lower-alpha">
+<li id="li-771"><p id="p-2967">Express, as an integral, the number of pairs I should make of size 9.</p></li>
+<li id="li-772"><p id="p-2968">How many pairs of size 9 shoes should I make?</p></li>
+<li id="li-773"><p id="p-2969">How do your answers change if the shoes are only to be made in full sizes?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-262" id="solution-262"><span class="type">Solution</span></a><div id="hk-solution-262" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-774"><div class="displaymath">
+\begin{equation*}
+\hbox{pairs size 9}=10000\int_{8.75}^{9.25}
+\frac{1}{1.5\sqrt{2\pi}}e^{\left({\frac{-(x-9)^2}{2*1.5^2}}\right)}\ dx
+\end{equation*}
+</div></li>
+<li id="li-775"><div class="displaymath">
+\begin{equation*}
+10000\int_{8.75}^{9.25} \frac{1}{1.5\sqrt{2\pi}} e^{\left({\frac{-(x-9)^2}{2*1.5^2}}\right)}\ dx=1062.
+\end{equation*}
+</div></li>
+<li id="li-776"><p id="p-2970">If we only have full sizes the limits of integration go from 8.5 to 9.5.  I then need 2108 pairs of size 9.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-518"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-2971">Men's shoes in Europe are made if full sizes with a different measuring system than we use in the United States.  They are normally distributed with a mean of 43 and a standard deviation of 2/3.  I plan to buy 1,000 pairs of shoes for my store.</p>
+<ol class="lower-alpha">
+<li id="li-777"><p id="p-2972">Express, as an integral, the number of pairs I should order of size 45.</p></li>
+<li id="li-778"><p id="p-2973">Express, as an Excel command, the number of pairs I should order of size 45.</p></li>
+<li id="li-779"><p id="p-2974">How many pairs should I order of size 44?  (Give a number, not an equation.)</p></li>
+</ol></article><article class="exercise-like" id="exercise-519"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-2975">Assume that women’s dress sizes are normally distributed with a mean of 14 and a standard deviation of 3.  For a particular style, 5000 dresses will be made, and they are available in even integer sizes.  (2, 4, …).</p>
+<ol class="lower-alpha">
+<li id="li-780"><p id="p-2976">Express, as an integral, the number of dresses I should make of size 10.</p></li>
+<li id="li-781"><p id="p-2977">How many size 6 dresses should I make?</p></li>
+<li id="li-782"><p id="p-2978">How many size 10 dresses should I make?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-263" id="solution-263"><span class="type">Solution</span></a><div id="hk-solution-263" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-783"><div class="displaymath">
+\begin{equation*}
+\hbox{size 10 dresses}=5000\int_{9}^{11}
+\frac{1}{3\sqrt{2\pi}}e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\ dx
+\end{equation*}
+</div></li>
+<li id="li-784"><div class="displaymath">
+\begin{equation*}
+5000\int_{5}^{7}\frac{1}{3\sqrt{2\pi}} e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\ dx = 43
+\end{equation*}
+</div></li>
+<li id="li-785"><div class="displaymath">
+\begin{equation*}
+5000\int_{9}^{11}\frac{1}{3\sqrt{2\pi}} e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\ dx = 555
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-520"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-2979">Assume that men’s suit coat sizes are normally distributed with a mean of 44 and a standard deviation of 4.  For a particular style, 2000 suit coats will be made, and they are available in even integer sizes.  (2, 4, …).</p>
+<ol class="lower-alpha">
+<li id="li-786"><p id="p-2980">Express, as an integral, the number of suit coats I should make of size 44.</p></li>
+<li id="li-787"><p id="p-2981">How many size 44 suit coats should I make?</p></li>
+</ol></article><article class="exercise-like" id="exercise-521"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-2982">A study of the size of male soldiers found the headband lengths were normally distributed with a mean of 22.1 inches and a standard deviation of 0.85 inches.  Standard sized caps will fit headbands lengths of 20-25 inches.</p>
+<ol class="lower-alpha">
+<li id="li-788"><p id="p-2983">Express, as an integral, the percentage of soldiers for who will fit the standard sized caps.</p></li>
+<li id="li-789"><p id="p-2984">Cap sizes come in quarter sizes with a full size corresponding to a change in headband size of 3 inches, with a size 8 corresponding to 25 inches.  Out of 1,000 soldiers, how many need a size 8 cap?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-264" id="solution-264"><span class="type">Solution</span></a><div id="hk-solution-264" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-790"><div class="displaymath">
+\begin{equation*}
+\hbox{pecentage fit}=100\int_{20}^{25}\frac{1}{0.85\sqrt{2\pi}} e^{\left({\frac{-(x-22.1)^2}{2*0.85^2}}\right)}\ dx =99.29
+\end{equation*}
+</div></li>
+<li id="li-791"><div class="displaymath">
+\begin{equation*}
+\hbox{size 8 caps}=1000\int_{24.625}^{25.375}\frac{1}{0.85\sqrt{2\pi}} e^{\left({\frac{-(x-22.1)^2}{2*0.85^2}}\right)}\ dx =1.42
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-522"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-2985">A study of the size of male soldiers found the hip breadths were normally distributed with a mean of 13.45 inches and a standard deviation of 0.64 inches.  Seats on one airline measure 17 inches between the armrests.  Express, as an integral, the percentage of soldiers who hips are too wide for the seats.</p></article><article class="exercise-like" id="exercise-523"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-2986">Assume that women’s shoe sizes are normally distributed with a mean of 8 and a standard deviation of 1.5.  A particular style of shoes is available in full and half sizes.  I plan to make 1,000 pairs of this style.  Using the Excel statistics commands, make a chart telling me many pairs I should make of each size.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-265" id="solution-265"><span class="type">Solution</span></a><div id="hk-solution-265" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2987">Since the shoes come in half sizes, we want the area under the normal distribution function from 0.25 before the given size to 0.25 after the given size.</p>
+<p id="p-2988">The desired syntax is</p>
+<p id="p-2989">Population size * (NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) - NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) )</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-sol7b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-524"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-2990">Assume that men’s suit coat sizes are normally distributed with a mean of 44 and a standard deviation of 4.  For a particular style, 2,000 suit coats will be made, and they are available in even integer sizes.  (2, 4, …). Using the Excel statistics commands, make a chart telling me many suits I should make of each size.</p></article><article class="exercise-like" id="exercise-525"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-2991">Assume that results on an intelligence test are normally distributed with a mean of 100 and a standard deviation of 15.  Using the Excel statistics commands, make a chart distributing 1,000,000 people between intervals of size 10 (90-100, 100-110, etc.).  What is the highest IQ score I should expect to find in my population of 1 million?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-266" id="solution-266"><span class="type">Solution</span></a><div id="hk-solution-266" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2992">We set the ranges with a high value nd a low value..</p>
+<p id="p-2993">The desired syntax is</p>
+<p id="p-2994">Population size * (NORM.DIST(High value, Mean, Standard Deviation, TRUE) - NORM.DIST(Low value, Mean, Standard Deviation, TRUE) )</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-sol9b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2995">With a million people, the high IQ should be between 170 and 180.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-526"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-2996">I have been informed that the distance from the back of a chair to the front of the knee of a man sitting is normally distributed with a mean of 24 inches and a standard deviation of 1.3 inches.  I want to design airline chairs to fit 99% of the male passengers with 1 inch between the knee and the back of the next chair.  How much distance do I need between the front of on chair seat and the back of the next?</p></article><article class="exercise-like" id="exercise-527"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-2997">I have been informed that the breadth at the shoulders of an adult male is normally distributed with a mean of 17.9 inches and a standard deviation of 1 inch.  The standard coach seat on a plane is 17.2 inches wide.  What percentage of adult males fit in such a seat without overflow?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-267" id="solution-267"><span class="type">Solution</span></a><div id="hk-solution-267" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\hbox{pecentage fit}=100\int_{0}^{17.2}\frac{1}{1\sqrt{2\pi}} e^{\left({\frac{-(x-17.9)^2}{2*1^2}}\right)}\ dx =24.196
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-528"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-2998">The techniques used in this section can easily be adapted to other distributions.  For example, the mean time to failure of a brand of hard drives, measured in units of 10,000 hours, has been found to follow a Weibull distribution with shape variable 3 and scale variable 5.  The probability density function of failure is</p>
+<div class="displaymath">
+\begin{equation*}
+FailureDensity(x)=(3/5) (x/5)^2 \exp(-(x/5)^3 ).
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-792"><p id="p-2999">Our warranty is for 10,000 hours of use.  (This is approximately 1 year.)  What percentage of drives get replaced under warrantee?</p></li>
+<li id="li-793"><p id="p-3000">We offer an extended warrantee that replaces the hard drive if it fails in under 30,000 hours of use.  What percentage of users who buy the extended warranty will have their hard drive fail in the period of time between the expiration of the original warrantee and the end of the extended warranty?</p></li>
+<li id="li-794"><p id="p-3001">Some credit cards double the manufacturer’s warranty.  What percentage of the people who use this plan will have their hard drive replaced by the credit card company?</p></li>
+<li id="li-795"><p id="p-3002">What percentage of customers see their hard drives last for 100,000 hours of use?</p></li>
+</ol></article><article class="exercise-like" id="exercise-529"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-3003">– Project – Pick a product and find evidence on the kind of function that describes its failure rate.  Based on that data, determine how long we expect it to take until 10% , 50% , and 90%  of the products fail.</p></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

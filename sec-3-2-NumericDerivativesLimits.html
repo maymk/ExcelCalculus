@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:23-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Numeric Derivatives and Limits</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-3-1-MarginalFunctions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-3-3-LocalLinearity.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-3-1-MarginalFunctions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-3-3-LocalLinearity.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits" class="active">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-3-2-NumericDerivativesLimits"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Numeric Derivatives and Limits</span>
+</h2>
+<a href="sec-3-2-NumericDerivativesLimits.html" class="permalink">¶</a><p id="p-1014"><a class="external" href="./Examples/Section-3-2-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-1015">In the previous section, we looked at marginal functions, the difference between f(x+1) and f(x).  For functions that are only defined at integer values, this is the obvious way to define a rate of change.  However for functions that are defined on an interval, we would like to use the information at values closer to our value of x.</p>
+<p id="p-1016">Intuitively, we would like to be able to zoom in on the graph of f(x) at a point until the graph looks like a straight line, then pick two points on that line, and find the slope as the rise over the run.  The rate of change is then the slope of the line we have found.  If we could zoom arbitrarily far, this process would give an instantaneous rate of change, or the derivative of the function at that point.</p>
+<article class="definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.2.1</span>. <span class="title">Formal derivative at a point.</span>
+</h6>
+<p id="p-1017">For a function \(f(x)\text{,}\) the instantaneous rate of change of \(f(x)\) at \(x=x_0\text{,}\) or the <dfn class="terminology">derivative of \(f(x)\text{,}\) at \(x=x_0\)</dfn>, denoted as \(f'(x)\text{,}\) is defined as</p>
+<article class="assemblage-like" id="assemblage-23"><div class="displaymath" id="p-1018">
+\begin{equation*}
+f'(x_0 )=\lim_{(del\ x\to 0)}\frac{f(x_0+del\ x)-f(x_0)}{del\ x}.
+\end{equation*}
+</div></article></article><p id="p-1019">Our task in this section is to turn our intuitive notion and definition and into a process that lets us find the value, and to find it efficiently.</p>
+<article class="example-like" id="example-25"><a data-knowl="" class="id-ref" data-refid="hk-example-25"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.2</span>. <span class="title">A simple derivative at a point.</span>
+</h6></a></article><div id="hk-example-25" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1020">Let \(f(x)=x^2\text{.}\)  We would like to find \(f'(1)\text{.}\)</p>
+<p id="p-1021"><dfn class="terminology">Solution A</dfn>: We start with our intuitive notion.  We want to look at the graph of \(f(x)\text{,}\) zoomed in far enough that the graph looks like a straight line.  I set up a worksheet to look at the graph of \((x)=x^2\) near \(x_0=1\text{.}\)  Since I want to be able to zoom in. I set up the graph so that it plots points that are multiples of \(del\ x\) from \(x=x_0\text{.}\)  I also want to plot the line connecting the points \((x_0,f(x_0))\) and \((x_0,f(x_0+del\ x))\) and notice that the slope of the secant line between them is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{f(x_0+del\ x)-f(x_0 )}{del\ x}.
+\end{equation*}
+</div>
+<p id="p-1022">For this example \(x_0=1\text{.}\) If \(del\ x=1\text{,}\) we can see that the function and the secant line are clearly distinct.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1023">The worksheet is designed to make it easy to change the value of \(del\ x\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1024">As we can see, if we let \(del\ x=1\text{,}\) the slope is 3, but we have not zoomed in far enough for the graph of f(x) to look like a straight line.  Letting \(del\ x=0.01\text{,}\) the slope is 2.01, and the graphs of the function and secant line seem to be the same.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1025">With some experimentation, taking both positive and negative values of \(del\ x\text{,}\) we get the following table of values:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">\(del\ x\)</td>
+<td class="c m b1 r0 l0 t3 lines">slope</td>
+<td class="c m b1 r0 l0 t3 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t3 lines">\(del\ x\)</td>
+<td class="c m b1 r0 l0 t3 lines">slope</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t0 lines">-1</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0.1</td>
+<td class="c m b1 r0 l0 t0 lines">2.1</td>
+<td class="c m b1 r0 l0 t0 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t0 lines">-0.1</td>
+<td class="c m b1 r0 l0 t0 lines">1.9</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0.01</td>
+<td class="c m b1 r0 l0 t0 lines">2.01</td>
+<td class="c m b1 r0 l0 t0 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t0 lines">-0.01</td>
+<td class="c m b1 r0 l0 t0 lines">1.99</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0.001</td>
+<td class="c m b1 r0 l0 t0 lines">2.001</td>
+<td class="c m b1 r0 l0 t0 lines">\(\ \ \ \)</td>
+<td class="c m b1 r0 l0 t0 lines">-0.001</td>
+<td class="c m b1 r0 l0 t0 lines">1.999</td>
+</tr>
+</table></div></div></div>
+<p id="p-1026">It is clear that as \(del\ x\) gets very small, the slope of the tangent line gets closer and closer to 2.  Thus \(f'(1)=2\text{.}\)</p>
+<p id="p-1027"><dfn class="terminology">Solution B</dfn>: The method of the first solution takes too much work and requires us to reset a worksheet and keep track of the slope as we try a number of values for \(del\ x\text{.}\)  We would like to create a worksheet that simply shows the values of the slope of the secant line for values of \(del\ x\) and takes the value that this approaches.  We can set up a worksheet where each line takes \(del\ x\) from the previous line and divides by 10.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1028">We get the same value whether we start \(del\ x\) at 1 or -1.  Once again, we find \(f'(1)=2\text{.}\)</p>
+<p id="p-1029"><dfn class="terminology">Solution C</dfn>: This method of finding the derivative still has a number of difficulties.  In the example above, the exact answer we want (in this case 2) did not show up in any of our computations.  We also find that if we make \(del\ x\) too small, we run into a problem called round off error.  If the next chapter we will look at methods that compute derivatives symbolically, but for this chapter we want an easy method of approximation.  We will use the approximation technique that is used by most graphing calculators when they compute the derivative.  They use a “balanced difference quotient” where we find the slope of the secant line between points \(del\ x\) before and after the point we are interested in. As the picture below shows, compared to either the right secant or the left secant, for most functions the balanced secant is closer to being parallel to the tangent line.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1030">We will use the default on calculators, that is we will use \(del\ x = 0.001\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1031">For our example this gives our familiar result that \(f'(1)=2\text{.}\)</p></article></div>
+<p id="p-1032">We formalize this last approach</p>
+<article class="definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">3.2.3</span>. <span class="title">Calculator Approximation of the Derivative.</span>
+</h6>
+<article class="assemblage-like" id="assemblage-24"><div class="displaymath" id="p-1033">
+\begin{equation*}
+f'(x)\approx\frac{f(x+.001)-f(x-0.001)}{.002}.  
+\end{equation*}
+</div></article></article><p id="p-1034">For the rest of this text, when we need to compute a numerical approximation to the derivative we will use the calculator approximation of the derivative.</p>
+<p id="p-1035">We should note that the calculator rule is an approximation technique, rather than a definition.  It will give a misleading answer for functions that do not approximate a straight line in a window that is 0.002 wide.  In this course, the approximation will only cause a problem with functions that have corners or cusps, like the functions \(f(x)=|x|\) and \(f(x)=x^{(2/3)}\) at \(x=0\text{.}\)  The main advantage of the using the calculator rule is that it is straightforward enough to compute to allow us to plot a function and its derivative on a single graph.  This allows us to compare the graph of the function with the graph of the derivative.</p>
+<article class="example-like" id="example-26"><a data-knowl="" class="id-ref" data-refid="hk-example-26"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.4</span>. <span class="title">A Function and its Derivative.</span>
+</h6></a></article><div id="hk-example-26" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1036">Compare the graph of \(f(x)=x^2-2 x+1\) and the graph of its derivative, using separate axes for the two graphs.  What features of the graph of \(f(x)\) can be located by using the graph of \(f'(x)\text{?}\)</p>
+<p id="p-1037"><dfn class="terminology">Solution</dfn>: Since this problem will serve as a template for a question we will look at many times, it is worthwhile to look at it in detail.  We start by setting up a workbook that will have the structure we need to compute a chart of values for \(f(x)\) and \(f'(x)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1038">The picture above gives the minimal amount we need to type in.  The rest will be done with quick filling.  The entry of cell B1 gives the formula for the function.  In cell D5 we evaluate the function using the first value of x from cell A5.  We have two values of x in cells A5 and A6 so that we can quick fill to get a list of x values.  We use absolute references for \(del\ x\text{,}\) so it will not change on quick fills.  We then fill cells E5 and F5 from cell D5, then fill row 6 from row 5, then fill the rest of the chart from rows 5 and 6.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1039">It is then a straightforward task to plot the two curves.  We notice that the graph of the function is a parabola.  If the derivative is negative, the graph of \(f(x)\) is decreasing.  If the derivative is positive, the graph of the function \(f(x)\) is increasing.  The graph of \(f(x)\) reaches its minimum at the vertex, which is also where \(f'(x)=0\text{.}\)  We also notice that the derivative of this parabola seems to be a straight line.</p></article></div>
+<p id="p-1040">Several of our observations from this example work in general.  Looking at a single point, the derivative of a function is the slope of the line tangent to the graph at that point.  The tangent line is a best linear approximation to the graph at a point.  Looking at the derivative at lots of points, the graph of a function is increasing when the derivative is positive, and the graph of a function is decreasing when the derivative is negative.  For the graph to have a point that is locally a maximum or minimum, the derivative cannot be positive or negative, so the derivative must either be zero or undefined for the graph of the function to have a maximum or minimum.  Finding places where functions reach their highest and lowest values is an important activity in mathematics.  We will look at these applications in more depth in upcoming sections.  The reader is warned that we can have places where the derivative is zero but the function is still increasing or decreasing.</p>
+<article class="example-like" id="example-27"><a data-knowl="" class="id-ref" data-refid="hk-example-27"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.5</span>. <span class="title">The derivative of a more complicated function.</span>
+</h6></a></article><div id="hk-example-27" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1041">Compare the graph of \(f(x)=x^3 (x^2-36)\) and the graph of its derivative, using separate axes for the two graphs.  What features of the graph of \(f(x)\) can be located by using the graph of \(f'(x)\text{?}\)</p>
+<p id="p-1042"><dfn class="terminology">Solution</dfn>: The setup for this example is very similar to the last problem.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1043">This time we notice three places where the derivative seems to be zero, when x is near -5, 0, and 5.  We use goal seek on the derivative and find that the derivative is zero when \(x=-4.648\text{,}\) 0, or 4.648.  Looking at the graph of f(x) at those points, we see that \(f(x)\) has a maximum when \(x=-4.648\text{,}\) and a minimum when \(x=-4.648\text{.}\)  When \(x=0\text{,}\) \(f(x)\) is neither a maximum nor a minimum.</p></article></div>
+<p id="p-1044">In the next chapter we will look at ways to find the derivative of a function symbolically.  We can already reason our way to symbolically finding the derivative of simple functions.  If our function \(f(x)\) is constant or linear, then the graph of the function is its own tangent line, so the derivative is simply the slope of the graph.  For quadratic functions we noticed that the graph of the derivative seems to be linear.  If we can guess the form of the derivative, we can use trendlines to produce a formula.</p>
+<article class="example-like" id="example-28"><a data-knowl="" class="id-ref" data-refid="hk-example-28"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.6</span>. <span class="title">Using trendlines to get the formula of a derivative.</span>
+</h6></a></article><div id="hk-example-28" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1045">Use trendlines to find a formula for the derivative of \(f(x)=2x^2+5x-7\text{.}\)</p>
+<p id="p-1046"><dfn class="terminology">Solution</dfn>: The setup for this example is very similar to the last problem.  We simply change the function.  This involves changing the formulas in cells B1 and D5, then using quick copy to change the formulas for the cells in columns D through F.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1047">Once we have points for the derivative we add a trendline using a linear model.  We set the options to show both the formula for the trendline and the value of \(R^2\text{.}\)  The fact that \(R^2=1\text{,}\) indicates the trendline we found exactly fits the data.  In the workbook connected to this section there is a page for Example 6B.  It uses parameters for the coefficients on a quadratic formula, so that you can explore the derivative of a general quadratic function.</p></article></div>
+<p id="p-1048"><dfn class="terminology">A Note on Terminology</dfn>:  It is worthwhile to point out some ambiguity in the terms used in this section and the previous section.  We have been using the term for \(marginal\ f(x+1)\) the change \(f(x+1)-f(x)\text{,}\) where \(f(x)\text{,}\) might be revenue, or cost, or profit.  This is the standard definition of a marginal function from finance or economics.  However, if you do a web search on “calculus marginal revenue” you will find that most calculus books treat the marginal function as simply another name for the derivative.  While they are related, they are not the same thing.  In the next chapter we will find that it is often easier to produce a formula for the derivative of a function rather than the related marginal function, which is why the derivative is used for the marginal function.  However, in this text, we will stick to the correct definition of marginal functions.</p>
+<p id="p-1049"><dfn class="terminology">Summary</dfn></p>
+<p id="p-1050">The notion of derivative is one of the key concepts of calculus.  The concept of the derivative of a function is closely connected to the concept of marginal function.  We gave three ways of understanding the derivative of a function at a point.</p>
+<article class="assemblage-like" id="assemblage-25"><p id="p-1051"><dfn class="terminology">Intuitive understanding</dfn>: The derivative of \(f(x)\text{,}\) at \(x=x_0\) denoted as \(f'(x_0)\text{,}\)   is the slope of the line obtained by zooming in on the graph at \((x_0,f(x_0 ))\) until it looks like a straight line.</p></article><article class="assemblage-like" id="assemblage-26"><p id="p-1052"><dfn class="terminology">Formal definition</dfn>:  The derivative of \(f(x)\text{,}\) denoted as \(f'(x)\text{,}\) is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)=\lim_{del\ x\to 0} \frac{f(x+del\ x)-f(x)}{del\ x}.
+\end{equation*}
+</div></article><article class="assemblage-like" id="assemblage-27"><p id="p-1053"><dfn class="terminology">The calculator approximation</dfn>:  The derivative of \(f(x)\text{,}\) can be approximated using the formula</p>
+<div class="displaymath">
+\begin{equation*}
+f'(x)\approx \frac{f(x+.001)-f(x-0.001)}{.002}.
+\end{equation*}
+</div></article><section class="exercises" id="exercises-set-sec-3-2"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Numeric Derivatives and Limits</span>
+</h3>
+<a href="sec-3-2-NumericDerivativesLimits.html#exercises-set-sec-3-2" class="permalink">¶</a><div class="exercisegroup" id="exercisegroup-15">
+<div class="introduction" id="introduction-16">
+<p id="p-1054">1-10) For each specified function and x-value, do the following:</p>
+<ol class="lower-alpha">
+<li id="li-317"><p id="p-1055">Find a value of \(del\ x\) small enough that graph of the function looks like a straight line on the region from \(5*del\ x\) before the x-value to \(5*del\ x\) after the x-value.  Graph the function in this region and find the slope of the corresponding secant line</p></li>
+<li id="li-318"><p id="p-1056">Estimate the derivative by finding the slope of the secant when \(del\ x\) takes the values 0.1, 0.01, 0.001, 0.0001, -0.1, -0.01, -0.001, and -0.0001.  Give a value of the limit of the slope.</p></li>
+<li id="li-319"><p id="p-1057">Use the calculator estimate to estimate the slope of the tangent.</p></li>
+<li id="li-320"><p id="p-1058">Compare the value of the derivative \(f'(x)\) with the corresponding value of the marginal function \(marginal\ f(x+1)\text{.}\)</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-158"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-1063">Use \(f(x)=x^2+3\) at \(x=2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-78" id="solution-78"><span class="type">Solution</span></a><div id="hk-solution-78" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-321">
+<p id="p-1064">Using Slope= (B14-B4)/(10*B1) we get the following</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1065">So the slope for this choice of delx is 4.</p>
+<p id="p-1066">Your may have chosen a slightly different delx, and as long as the graph looks roughly linear that would be fine.</p>
+</li>
+<li id="li-322">
+<p id="p-1067">You can either change delx and record each of the slopes in the Excel sheet above, or we can set up another table that records the slopes for us. We prefer the second method because the table of values allows us to inspect the pattern more easily.</p>
+<p id="p-1068">Excel commands for the table:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol1b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol1b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1069">The limit is 4.</p>
+</li>
+<li id="li-323">
+<div class="displaymath">
+\begin{equation*}
+f'(x)\approx\frac{f(x+0.001)-f(x-0.001)}{0.002}
+\end{equation*}
+</div>
+<p id="p-1070">So \(f'(x)\approx\frac{f(2+.001)-f(2-.001)}{.002}=4\) (second entry in the table for delx)</p>
+</li>
+<li id="li-324">
+<div class="displaymath" id="p-1071">
+\begin{equation*}
+Marginal\ f(x+1)=f(x+1)-f(x).
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+Marginal\ f(2+1)=f(3)-f(2)=(9+3)-(4+3)=5.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-159"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-1072">Use \(f(x)=(3x)^2-5\) at \(x=-2\text{.}\)</p></article><article class="exercise-like" id="exercise-160"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-1073">Use \(f(x)=5(x-2)^2\) at \(x=3.5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-79" id="solution-79"><span class="type">Solution</span></a><div id="hk-solution-79" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-325">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1074">The slope of the secant line is 15.</p>
+</li>
+<li id="li-326"><p id="p-1075">From work in part a, the limit is also 15.</p></li>
+<li id="li-327"><p id="p-1076">From Row 21 we see that the slope of the tangent line is estimated to be 15</p></li>
+<li id="li-328">
+<div class="displaymath" id="p-1077">
+\begin{equation*}
+Marginal\ f(4.5)=f(4.5)-f(3.5)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=5 (2.5)^2-5(1.5)^2=5(6.25-2.25)=20.
+\end{equation*}
+</div>
+<p>So the derivative is 15 and the marginal function is 20 at this point.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-161"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-1078">Use \(f(x)=7\) at \(x=5\text{.}\)</p></article><article class="exercise-like" id="exercise-162"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-1079">Use \(f(x)=7x-4\) at \(x=3\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-80" id="solution-80"><span class="type">Solution</span></a><div id="hk-solution-80" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-329">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1080">The slope of the secant line is 7.</p>
+</li>
+<li id="li-330"><p id="p-1081">From work in part a, the limit is also 7.</p></li>
+<li id="li-331"><p id="p-1082">From Row 21 we see that the slope of the tangent line is estimated to be 7</p></li>
+<li id="li-332">
+<div class="displaymath" id="p-1083">
+\begin{equation*}
+Marginal\ f(4)=f(4)-f(3)=7
+\end{equation*}
+</div>
+<p>So the derivative is 7 and the marginal function is 7 at this point.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-163"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-1084">Use \(f(x)=x^3-5\) at \(x=2\text{.}\)</p></article><article class="exercise-like" id="exercise-164"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-1085">Use \(f(x)=e^{2x}\) at \(x=1\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-81" id="solution-81"><span class="type">Solution</span></a><div id="hk-solution-81" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-333">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1086">The slope of the secant line is 14.78.</p>
+</li>
+<li id="li-334"><p id="p-1087">From work in part a, the limit is also 14.78.</p></li>
+<li id="li-335"><p id="p-1088">From Row 21 we see that the slope of the tangent line is estimated to be 14.78</p></li>
+<li id="li-336">
+<div class="displaymath" id="p-1089">
+\begin{equation*}
+Marginal\ f(2)=f(2)-f(1)=e^4-e^2\approx 47.21
+\end{equation*}
+</div>
+<p>Comment: Notice the very large difference between the derivative and the marginal function. The exponential function is very curved and this curvature means that the discrepancy between the marginal function and the derivative will be large. The difference between the two is much smaller for graphs that are less curved.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-165"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-1090">Use \(f(x)=2^x\) at \(x=3\text{.}\)</p></article><article class="exercise-like" id="exercise-166"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-1091">Use \(f(x)=\ln(x)\) at \(x=5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-82" id="solution-82"><span class="type">Solution</span></a><div id="hk-solution-82" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-337">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1092">The slope of the secant line is 0.2.</p>
+</li>
+<li id="li-338"><p id="p-1093">From work in part a, the limit is also 0.2.</p></li>
+<li id="li-339"><p id="p-1094">From Row 21 we see that the slope of the tangent line is estimated to be 0.2</p></li>
+<li id="li-340"><div class="displaymath" id="p-1095">
+\begin{equation*}
+Marginal\ f(6)=f(6)-f(5)=\ln(6)-\ln(5)\approx 0.18
+\end{equation*}
+</div></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-167"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-1096">Use \(f(x)=x^3-5\) at \(x=2\text{.}\)</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-16">
+<div class="introduction" id="introduction-17">
+<p id="p-1097">For problems 11-18) For each specified function, do the following:</p>
+<ol class="lower-alpha">
+<li id="li-341"><p id="p-1098">On a single graph, but using separate axes, graph the function and its derivative.</p></li>
+<li id="li-342"><p id="p-1099">Using goal seek, identify places where the derivative is 0 in the interval \(-10 \lt x \lt 10\text{.}\)</p></li>
+<li id="li-343"><p id="p-1100">For each point where the derivative is 0, tell whether the corresponding point on the graph of the function is locally a maximum, minimum, or neither.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-168"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-1101">Let \(f(x)=x^3-4 x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-83" id="solution-83"><span class="type">Solution</span></a><div id="hk-solution-83" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-344"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
+<li id="li-345"><p id="p-1102">The derivative seems to be zero at \(x=-1.15\) and at \(x=1.15\text{.}\)</p></li>
+<li id="li-346"><p id="p-1103">We have a local maximum at \(x=-1.15\) and a local minimum at \(x=1.15\text{.}\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-169"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-1104">Let \(f(x)=x^4-49 x^2\text{.}\)</p></article><article class="exercise-like" id="exercise-170"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-1105">Let \(f(x)=x^4-7 x^3\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-84" id="solution-84"><span class="type">Solution</span></a><div id="hk-solution-84" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-347"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol13a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
+<li id="li-348"><p id="p-1106">The derivative seems to be 0 when \(x=0\) and \(x=5.25\text{.}\)</p></li>
+<li id="li-349"><p id="p-1107">It seems that the graph has a minimum at \(x=o\text{.}\)  It seems that the graph has neither at \(x=5.25\text{.}\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-171"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-1108">Let \(f(x)=5x e^{-x}\text{.}\)</p></article><article class="exercise-like" id="exercise-172"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<p id="p-1109">Let \(f(x)=8x e^{-x^2 }\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-85" id="solution-85"><span class="type">Solution</span></a><div id="hk-solution-85" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-350"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol15a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
+<li id="li-351"><p id="p-1110">It looks like the derivative is 0 at \(x=-0.707\) and at \(x-0.707\text{.}\)</p></li>
+<li id="li-352"><p id="p-1111">The first of those points is a local minimum.  The second point is a local maximum.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-173"><h6 class="heading"><span class="codenumber">16.</span></h6>
+<p id="p-1112">Let \(f(x)=3x+5\text{.}\)</p></article><article class="exercise-like" id="exercise-174"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<p id="p-1113">Let \(f(x)=\pi^2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-86" id="solution-86"><span class="type">Solution</span></a><div id="hk-solution-86" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-353"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol17a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
+<li id="li-354"><p id="p-1114">The derivative is always 0 for this function.</p></li>
+<li id="li-355"><p id="p-1115">All points are both local maximums and local minimums.</p></li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-175"><h6 class="heading"><span class="codenumber">18.</span></h6>
+<p id="p-1116">Let \(f(x)=x^3-4 x\text{.}\)</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-17">
+<div class="introduction" id="introduction-18">
+<p id="p-1117">For problems 19-22) For each specified function, do the following:</p>
+<ol class="lower-alpha">
+<li id="li-356"><p id="p-1118">On a single graph, but using separate axes, graph the function and its derivative.</p></li>
+<li id="li-357"><p id="p-1119">Looking at the graph of the derivative, decide what kind of function is an appropriate model for the derivative.</p></li>
+<li id="li-358"><p id="p-1120">Add a trendline to produce a formula for the derivative.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-176"><h6 class="heading"><span class="codenumber">19.</span></h6>
+<p id="p-1121">Let \(f(x)=x^3-6 x^2+3x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-87" id="solution-87"><span class="type">Solution</span></a><div id="hk-solution-87" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-359"><p id="p-1122"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol19a.png" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
+<li id="li-360"><p id="p-1123">The derivative looks like a polynomial of order 2. It is a parabola.</p></li>
+<li id="li-361">
+<p id="p-1124">The trendline indicates the formula for the derivative can be approximated by</p>
+<div class="displaymath">
+\begin{equation*}
+y=3x^2-12x+3
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-177"><h6 class="heading"><span class="codenumber">20.</span></h6>
+<p id="p-1125">Let \(f(x)=x^4-36 x^2+x\text{.}\)</p></article><article class="exercise-like" id="exercise-178"><h6 class="heading"><span class="codenumber">21.</span></h6>
+<p id="p-1126">Let \(f(x)=e^{3x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-88" id="solution-88"><span class="type">Solution</span></a><div id="hk-solution-88" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-362"><p id="p-1127"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-2-sol21a.png" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
+<li id="li-363"><p id="p-1128">The derivative looks like an exponential function.</p></li>
+<li id="li-364">
+<p id="p-1129">The trendline indicates the formula for the derivative can be approximated by</p>
+<div class="displaymath">
+\begin{equation*}
+y=3 e^{3x}
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-179"><h6 class="heading"><span class="codenumber">22.</span></h6>
+<p id="p-1130">Let \(f(x)=\ln(x)\text{.}\)</p></article>
+</div>
+</div></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

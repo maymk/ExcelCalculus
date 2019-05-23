@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:48-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.7.5</span>. <span class="title">Proportional growth and continuous reinvestment.</span>
+</h6>
+<p>I put $20,000 in a retirement account that earns 4% interest compounded continuously.  I reinvest all my earnings from the account back into the retirement account.   I would like a simple formula for the principal at sometime in the future.</p>
+<p><dfn class="terminology">Solution</dfn>: We already have the formula for continuous growth, but it is worthwhile to derive it again.  We are told</p>
+<div class="displaymath">
+\begin{equation*}
+Principal' (time)=.05*Principal(time)
+\end{equation*}
+</div>
+<p>or</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{Principal' (time)}{Principal(time)}=.05
+\end{equation*}
+</div>
+<p>Integrating both sides with respect to time, we get</p>
+<div class="displaymath">
+\begin{equation*}
+\ln (Principal(time))=.05*time+C
+\end{equation*}
+</div>
+<p>Exponentiating both sides gives</p>
+<div class="displaymath">
+\begin{equation*}
+Principal(time)=\exp(0.05*time)*\exp(C)=e^C e^{.05*time}.
+\end{equation*}
+</div>
+<p>Since we know that the Principal is $20,000 at time 0, we see that \(e^C=20000\) and our equation simplifies to</p>
+<div class="displaymath">
+\begin{equation*}
+Principal(time)=20000e^{.05*time}.
+\end{equation*}
+</div>
+<p>This is the formula we took on faith in the last chapter.</p></article><span class="incontext"><a href="sec-7-7-InvestmentDepreciation.html#example-140">in-context</a></span>
+</body>
+</html>

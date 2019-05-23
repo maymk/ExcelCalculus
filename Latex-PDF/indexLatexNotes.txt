@@ -1,0 +1,19 @@
+\usepackage[margin=1.0in]{geometry}
+changes the margins to one inch
+
+\href{http://www.census.gov/hhes/www/income/data/historical/inequality/index.html}{http://www.census.gov/hhes/www/income/data/historical/inequality/index.html}, and \hfil\break
+\href{http://www.wealthandwant.com/issues/income/income_distribution.html}{http://www.wealthandwant.com/issues/income/income\textunderscore{}distribution.html}
+
+from
+\href{http://www.census.gov/hhes/www/income/data/historical/inequality/index.html}{http://www.census.gov/hhes/www/income/data/historical/inequality/index.html}, and 
+\href{http://www.wealthandwant.com/issues/income/income_distribution.html}{http://www.wealthandwant.com/issues/income/income\textunderscore{}distribution.html}
+
+Global replacement
+width=1\linewidth]
+width=0.91\linewidth]
+
+\item[9.]\hypertarget{exercise-72}{}  The tax revenues of the states can be found online.  (A good site is the census bureau at 
+\href{http://www.census.gov/govs/state/}{http://www.census.gov/govs/state/}
+to
+\item[9.]\hypertarget{exercise-72}{}  The tax revenues of the states can be found online.  (A good site is the census bureau at \hfil\break
+\href{http://www.census.gov/govs/state/}{http://www.census.gov/govs/state/}

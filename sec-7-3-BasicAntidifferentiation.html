@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:28-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Basic Antidifferentiation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-7-2-FundamentalTheoremCalculius.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-7-4-ChangeVariables.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7-2-FundamentalTheoremCalculius.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-7-4-ChangeVariables.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation" class="active">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-7-3-BasicAntidifferentiation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.3</span> <span class="title">Basic Antidifferentiation</span>
+</h2>
+<a href="sec-7-3-BasicAntidifferentiation.html" class="permalink">¶</a><p id="p-2721">In the last section we looked at the fundamental theorem of calculus and saw that it could be used to find definite integrals.  We saw</p>
+<article class="assemblage-like" id="assemblage-51"><p id="p-2722"><dfn class="terminology">Fundamental Theorem of Calculus (second version)</dfn> Let \(f(x)\) be a continuous function on the interval \([a, b]\text{.}\)  Suppose \(F(x)\) is any continuous,  differentiable function with \(\frac{d}{dx} F(x)=f(x)\text{.}\)  Then \(\int_a^b f(t)\ dt=F(b)-F(a)\text{.}\)</p></article><p id="p-2723">We thus find it very useful to be able to systematically find an anti-derivative of a function.  The standard notation is to use an integral sign without the limits of integration to denote the general anti-derivative. Thus \(\int_a^b f(t)dt\) is referred to as the definite integral of \(f(x)\) from \(a\) to \(b\text{,}\)  and is a number.  In contrast, \(\int f(x) dx\) is the indefinite integral of \(f(x)\) and it is a function.  We use indefinite integrals or anti-derivatives to evaluate definite integrals or areas.</p>
+<p id="p-2724">We find anti-derivatives by starting with the differentiation formulas of basic functions and manipulating them so the derivative is a nice function</p>
+<p id="p-2725"><dfn class="terminology">Elementary Anti-derivative 1</dfn> – Find a formula for \(\int x^n\  dx\text{.}\) We start with the closest differentiation formula \(\frac{d}{dx} x^n=nx^{n-1}\text{,}\) and manipulate it so \(x^n\) is on the right hand side.  We first replace \(n\) with \(n+1\) to get \(\frac{d}{dx}  x^{n+1}=(n+1)x^n\text{.}\)  We then divide both sides by \(n+1\) to obtain \(x^n=\frac{d}{dx}   x^{n+1}/(n+1)\text{.}\)  Finally, we note that adding a constant \(C\) does not change the derivative, so  \(x^n=\frac{d}{dx}  (x^{n+1}/(n+1)+C)\text{.}\)  Since we have divided by \(n+1\text{,}\) we need to insist that \(n+1\ne 0\text{.}\)  Using the notation of indefinite integrals we obtain our power rule formula:</p>
+<article class="assemblage-like" id="assemblage-52"><div class="displaymath" id="p-2726">
+\begin{equation*}
+\int x^n\  dx=\frac{x^{n+1}}{n+1}+C, \hbox{assuming }n\ne -1.
+\end{equation*}
+</div></article><p id="p-2727">Note that this matches the pattern we found in the last section.</p>
+<p id="p-2728"><dfn class="terminology">Elementary Anti-derivative 2</dfn> – Find a formula for \(\int 1/x \ dx\text{.}\) We start with the closest differentiation formula \(\frac{d}{dx}   \ln (x)=1/x\text{.}\)  In this case we need to note that natural logarithms are only defined positive numbers and we would like a formula that is true for positive and negative numbers.  We can do this with an appropriate use of absolute value bars.  Thus \(\frac{d}{dx} (\ln(|x|)+C)=1/x\text{,}\) and we have our second formula:</p>
+<article class="assemblage-like" id="assemblage-53"><div class="displaymath" id="p-2729">
+\begin{equation*}
+\int 1/x\  dx=\ln |x|+C.
+\end{equation*}
+</div></article><p id="p-2730"><dfn class="terminology">Elementary Anti-derivative 3</dfn> – Find a formula for \(\int e^x\  dx\text{.}\) Once again, we start with the closest differentiation formula \(\frac{d}{dx}  e^x=e^x\text{.}\) In this case we don't have to do any manipulation, and we have our formula:</p>
+<article class="assemblage-like" id="assemblage-54"><div class="displaymath" id="p-2731">
+\begin{equation*}
+\int e^x \ dx=e^x+C.
+\end{equation*}
+</div></article><p id="p-2732"><dfn class="terminology">Elementary Anti-derivative 4</dfn> – Find a formula for \(\int a^x\  dx\) for a positive number a. This formula requires a bit more work.  We start with the formula \(\frac{d}{dx}  a^x=\ln (a) a^x\text{.}\)   Dividing both sides by the constant ln(a) gives \(a^x=\frac{d}{dx}  (a^x/\ln (a) +C)\)  Thus our integral is:</p>
+<article class="assemblage-like" id="assemblage-55"><div class="displaymath" id="p-2733">
+\begin{equation*}
+\int a^x  dx=\frac{a^x}{\ln (a)} +C.
+\end{equation*}
+</div></article><p id="p-2734"><dfn class="terminology">Sum, Difference, and Constant Multiple rules</dfn> – The rules we had for taking derivatives of sums, differences, and constant multiples of functions translate into similar rules for integrals.</p>
+<p id="p-2735">The derivatives of a sum rule, \(\frac{d}{dx}(f(x)+g(x))=\frac{d}{dx}f(x)+\frac{d}{dx}g(x)
+\text{,}\) becomes the</p>
+<article class="assemblage-like" id="assemblage-56"><p id="p-2736"><dfn class="terminology">Integral of a Sum Rule</dfn>:</p>
+<div class="displaymath" id="p-2737">
+\begin{equation*}
+\int (f(x)+g(x))\ dx=\int f(x)\ dx+\int g(x)\ dx
+\end{equation*}
+</div></article><p id="p-2738">The derivatives of a difference rule, \(\frac{d}{dx}(f(x)-g(x))=\frac{d}{dx}f(x)-\frac{d}{dx}g(x)
+\text{,}\) becomes the</p>
+<article class="assemblage-like" id="assemblage-57"><p id="p-2739"><dfn class="terminology">Integral of a Difference Rule</dfn>:</p>
+<div class="displaymath" id="p-2740">
+\begin{equation*}
+\int (f(x)-g(x))\ dx=\int f(x)\ dx-\int g(x)\ dx
+\end{equation*}
+</div></article><article class="assemblage-like" id="assemblage-58"><p id="p-2741"><dfn class="terminology">Integral of a Constant Multiple Rule</dfn>:</p>
+<div class="displaymath" id="p-2742">
+\begin{equation*}
+\int cf(x) dx=c\int f(x)\ dx
+\end{equation*}
+</div></article><p id="p-2743">We can use these rules to find the indefinite integrals on a lot of functions.  They cover all polynomials.</p>
+<article class="example-like" id="example-113"><a data-knowl="" class="id-ref" data-refid="hk-example-113"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.1</span>. <span class="title">Antiderivative of integral powers.</span>
+</h6></a></article><div id="hk-example-113" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2744">Find the integral \(\int 3x^5+4x^2+5+\frac{7}{x}\ dx\text{.}\)</p>
+<p id="p-2745"><dfn class="terminology">Solution</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+\int 3x^5+4x^2+5+\frac{7}{x}\ dx
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\int 3x^5\ dx+\int 4x^2\ dx+\int 5\ dx+\int \frac{7}{x}\ dx\qquad\hbox{(sum rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=3\int x^5\ dx+4\int x^2\ dx+5\int \ dx+\int 7\frac{1}{x}\ dx\qquad\hbox{(constant multiple rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=3\int x^5\ dx+4\int x^2\ dx+5\int \ dx+ 7\ln|x|+C\qquad\hbox{(natural log rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{3}{6} x^6+\frac{4}{3}x^3+5x+ 7\ln|x|+C\qquad\hbox{(power rule)}
+\end{equation*}
+</div>
+<p id="p-2746">One might argue that the last line should have been</p>
+<div class="displaymath">
+\begin{equation*}
+=\frac{3}{6} x^6+C_1+\frac{4}{3}x^3+C_2+5x+C_3+ 7\ln|x|+C_4
+\end{equation*}
+</div>
+<p id="p-2747">since each indefinite integral gets a constant C.  However all of the \(C_i\)’s used here are arbitrary constants and they can be collapsed together into a single constant C.</p></article></div>
+<p id="p-2748">We can also use these rules to find indefinite integrals for roots.</p>
+<article class="example-like" id="example-114"><a data-knowl="" class="id-ref" data-refid="hk-example-114"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.2</span>. <span class="title">Antiderivative of fractional powers.</span>
+</h6></a></article><div id="hk-example-114" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2749">Find the integral \(\int \sqrt{2x}+\sqrt[3]{4x}\ dx\text{.}\)</p>
+<p id="p-2750">Solution</p>
+<div class="displaymath">
+\begin{equation*}
+\int \sqrt{2x}+\sqrt[3]{4x}\ dx
+=\int \sqrt{2x}\ dx+\int \sqrt[3]{4x}\ dx\qquad\hbox{(sum rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\sqrt{2}\int \sqrt{x}\ dx+\sqrt[3]{4}\int \sqrt[3]{x}\ dx \qquad\hbox{(constant multiple rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\sqrt{2}\int x^{(1/2)}\ dx+\sqrt[3]{4}\int x^{(1/3)}\ dx\qquad\hbox{(rules of exponents)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\sqrt{2} x^{(3/2)}(2/3)+\sqrt[3]{4}x^{(4/3)}(3/4)+C\qquad\hbox{(power rule)}
+\end{equation*}
+</div></article></div>
+<p id="p-2751">We can also find anti-derivatives of exponential and power functions.</p>
+<article class="example-like" id="example-115"><a data-knowl="" class="id-ref" data-refid="hk-example-115"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.3</span>. <span class="title">Antiderivative of power and exponential functions.</span>
+</h6></a></article><div id="hk-example-115" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2752">Find the integral \(\int 2*3^5+4e^x\ dx\text{.}\)</p>
+<p id="p-2753">Solution</p>
+<div class="displaymath">
+\begin{equation*}
+\int 2*3^5+4e^x\ dx=\int 2*3^5\ dx+\int 4e^x\ dx\qquad\hbox{(sum rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=2\int 3^5\ dx+4\int e^x\ dx\qquad\hbox{(constant multiple rule)}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{2}{\ln(3)} 3^5+4 e^x+C\qquad\hbox{(exponential rules)}
+\end{equation*}
+</div></article></div>
+<p id="p-2754">As we mentioned earlier in the section, the normal reason for wanting to find indefinite integrals is to be able to use them with the fundamental theorem of calculus to find definite integrals.</p>
+<article class="example-like" id="example-116"><a data-knowl="" class="id-ref" data-refid="hk-example-116"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.4</span>. <span class="title">Area under a polynomial function.</span>
+</h6></a></article><div id="hk-example-116" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2755">Evaluate the definite integral \(\int_1^3 6x^2+2\ dx\text{.}\)</p>
+<p id="p-2756">Solution</p>
+<p id="p-2757">We first evaluate the indefinite integral to find an anti-derivative.</p>
+<div class="displaymath">
+\begin{equation*}
+\int 6x^2+2\ dx=2x^3+2x+C.
+\end{equation*}
+</div>
+<p id="p-2758">Since we can use any anti-derivative, we simplify by setting \(C = 0\) and choosing the anti-derivative  \(F(x)=2x^3+2x\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_1^3 6x^2+2\ dx=F(3)-F(1)=60-4=56.
+\end{equation*}
+</div></article></div>
+<article class="example-like" id="example-117"><a data-knowl="" class="id-ref" data-refid="hk-example-117"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.5</span>. <span class="title">Area under \(\frac{1}{x}\).</span>
+</h6></a></article><div id="hk-example-117" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2759">Evaluate the definite integral \(\int_1^{100}\frac{1}{x} dx\text{.}\)</p>
+<p id="p-2760">Solution</p>
+<p id="p-2761">We first evaluate the indefinite integral to find an antiderivative.</p>
+<div class="displaymath">
+\begin{equation*}
+\int \frac{1}{x}\ dx=\ln(|x|)+C
+\end{equation*}
+</div>
+<p id="p-2762">Since we can use any antiderivative, we simplify by setting \(C = 0\) and choosing that anti-derivative  \(F(x)=\ln(|x|)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_1^{100}\frac{1}{x}\ dx=F(100)-F(1)=\ln(100)-\ln(1)=\ln(100).
+\end{equation*}
+</div></article></div>
+<article class="example-like" id="example-118"><a data-knowl="" class="id-ref" data-refid="hk-example-118"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.6</span>. <span class="title">Using the FTC when the function is fit from data.</span>
+</h6></a></article><div id="hk-example-118" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2763">From experience, I know that the output of an oil well follows a model of exponential decay.  I have the following data for the production, in barrels, for the first 5 months.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Month</td>
+<td class="c m b1 r0 l0 t3 lines">Jan</td>
+<td class="c m b1 r0 l0 t3 lines">Feb</td>
+<td class="c m b1 r0 l0 t3 lines">Mar</td>
+<td class="c m b1 r0 l0 t3 lines">Apr</td>
+<td class="c m b1 r0 l0 t3 lines">May</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Production</td>
+<td class="c m b2 r0 l0 t0 lines">1000</td>
+<td class="c m b2 r0 l0 t0 lines">971</td>
+<td class="c m b2 r0 l0 t0 lines">925</td>
+<td class="c m b2 r0 l0 t0 lines">887</td>
+<td class="c m b2 r0 l0 t0 lines">859</td>
+</tr>
+</table></div></div></div>
+<p id="p-2764">Find the production over the first 5 years.</p>
+<p id="p-2765">Solution</p>
+<p id="p-2766">The total production for 5 years will be the definite integral of the production function for the first 60 months.  We first use Excel to find a best fitting exponential function.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-3-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2767">The production function (P) in terms of the number of months (x) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+P(x)=1043 e^{-0.03945 x}
+\end{equation*}
+</div>
+<p id="p-2768">We would like to take an anti-derivative, but we don’t have a formula for this anti-derivative yet.  However, we note</p>
+<div class="displaymath">
+\begin{equation*}
+e^{-0.03945 x}=  (e^{-0.03945} )^x=0.9613^x
+\end{equation*}
+</div>
+<p id="p-2769">and we know that \(\ln (0.9613)=-0.03945\text{.}\) We can now use our exponential rule, and</p>
+<div class="displaymath">
+\begin{equation*}
+AntiderivP(x)=\frac{(1043*0.9613^x)}{(-0.03945)}+C
+\end{equation*}
+</div>
+<p id="p-2770">Since we can use any anti-derivative, we simplify by setting \(C = 0\text{.}\) We can do this without creating any problems because we are using the equation where two values of the anti-derivative will be subtracted from one another, and hence the C values would cancel anyways. We now evaluate our integral.</p>
+<div class="displaymath">
+\begin{equation*}
+TotalP(60)= ArtiderivP(60)– AntiderivP(0)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= (-2467) – (-26438) = 23962
+\end{equation*}
+</div>
+<p id="p-2771">Thus over 5 years the well will produce 23,962 barrels.</p></article></div>
+<p id="p-2772">Another application for anti-derivatives is solving an initial value problem.  In that case we want to a particular anti-derivative that has a particular value for a specified x. In this situation we may not set C to zero. In fact, part of the problem will be to find the appropriate value of C.</p>
+<article class="example-like" id="example-119"><a data-knowl="" class="id-ref" data-refid="hk-example-119"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.7</span>. <span class="title">Finding a value of C to match initial conditions.</span>
+</h6></a></article><div id="hk-example-119" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2773">The marginal cost (MC) of producing a certain quantity (q) of widgets is given by</p>
+<div class="displaymath">
+\begin{equation*}
+MC(q)=5-0.002 q
+\end{equation*}
+</div>
+<p id="p-2774">The cost of producing 1000 widgets is $6,000.  Assume that the derivative of the cost function is approximated closely enough by the marginal cost to be used interchangeably.  Find a cost function for producing widgets.</p>
+<p id="p-2775"><dfn class="terminology">Solution</dfn>: Since Cost is an anti-derivative of the Marginal Cost we have \(Cost(q) = 5q - 0.001*q^2  + C\)</p>
+<p id="p-2776">We also know \(Cost(1000) = 6000\text{.}\)  Plugging that in gives</p>
+<div class="displaymath">
+\begin{equation*}
+Cost(1000)= 5*1000 - 0.001*1000^2  + C=6000
+\end{equation*}
+</div>
+<p id="p-2777">Solving for C gives \(C = 2000\text{.}\)  Thus our cost function is</p>
+<div class="displaymath">
+\begin{equation*}
+Cost(q) = 5q - 0.001*q^2  + 2000
+\end{equation*}
+</div></article></div>
+<article class="example-like" id="example-120"><a data-knowl="" class="id-ref" data-refid="hk-example-120"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.8</span>. <span class="title">Building a profit function form data.</span>
+</h6></a></article><div id="hk-example-120" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2778">Experience tells me that the marginal profit of producing gadgets is a linear function.  My start-up costs are $2 million.  I have the following data with my units being thousands of dollars per millions of units.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Production</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">1</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">3</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Marginal Profit</td>
+<td class="c m b2 r0 l0 t0 lines">$3,3967</td>
+<td class="c m b2 r0 l0 t0 lines">$3,603</td>
+<td class="c m b2 r0 l0 t0 lines">$3,236</td>
+<td class="c m b2 r0 l0 t0 lines">$2,795</td>
+<td class="c m b2 r0 l0 t0 lines">$2,384</td>
+</tr>
+</table></div></div></div>
+<p id="p-2779">Produce a profit function, find the number of units that maximizes profit, and find the maximum profit</p>
+<p id="p-2780">Solution</p>
+<p id="p-2781">I start by finding a best fitting line to the data.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-3-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2782">Excel tells me the marginal profit function is</p>
+<div class="displaymath">
+\begin{equation*}
+MP(x) = -397.4 x + 3991.8
+\end{equation*}
+</div>
+<p id="p-2783">We have maximum profit when the marginal profit is zero.  Using Goal Seek, the Marginal Profit is zero with a production of 10.0448 millions of units.  The anti-derivative of this function is</p>
+<div class="displaymath">
+\begin{equation*}
+P(x)= -198.7 x^2  + 3991.8x + C
+\end{equation*}
+</div>
+<p id="p-2784">Plugging in the initial costs into the production model, recalling that our function is written in thousands of dollars per millions of widgets, gives</p>
+<div class="displaymath">
+\begin{equation*}
+P(0) = -2000 = C
+\end{equation*}
+</div>
+<p id="p-2785">So our profit function is</p>
+<div class="displaymath">
+\begin{equation*}
+P(x)= -198.7 x^2  + 3991.8 x-2000
+\end{equation*}
+</div>
+<p id="p-2786">We saw that \(MP(x) = 0\text{,}\) when \(x = 10.0448\text{.}\) The maximum profit is the computed by evaluating \(P(x)\) at \(x = 10.0448\text{.}\) A quick computation shows that the  maximum profit is $18,049 thousands of dollars, or a bit more than $18 million.</p></article></div>
+<article class="assemblage-like" id="assemblage-59"><p id="p-2787">It is worthwhile summarizing our list of integration formulas.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">\(f(x)\)</td>
+<td class="c m b1 r0 l0 t3 lines">\(\int f(x)\ dx\)</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle x^n\hbox{, assuming }n\ne 1\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle \frac{x^{n+1}}{n+1}+C\)</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle \frac{1}{x}\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle \ln|x|+C\)</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle e^x\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle e^x+C\)</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle a^x\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle \frac{a^x}{\ln(a)}+C\)</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle (f+g)(x)\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle \int f(x)dx+\int g(x)dx\)</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle (f-g)(x)\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle \int f(x)dx-\int g(x)dx\)</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle c*f(x)\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\displaystyle c*\int f(x)dx\)</td>
+</tr>
+</table></div></div></div></article><p id="p-2788">A word of warning – The anti-differentiation formulas we have produced only work for the functions given, allowing for changes in variables.  At this point the only way we have for finding  \(\int(3x+5)^2 dx\) is expand the integrand getting  \(\int(9x^2+30x+25)dx\) before applying our rules.  In general the process of finding anti-derivatives symbolically is an art form that we only begin to work with in this course.</p>
+<section class="exercises" id="exercises-set-sec-7-3"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Basic Antidifferentiation Problems</span>
+</h3>
+<a href="sec-7-3-BasicAntidifferentiation.html#exercises-set-sec-7-3" class="permalink">¶</a><p id="p-2789">Find antiderivatives for the given functions.</p>
+<article class="exercise-like" id="exercise-446"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=3x+5.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-226" id="solution-226"><span class="type">Solution</span></a><div id="hk-solution-226" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+F(x)=\frac{3x^2}{2}+5x+Constant
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-447"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=5x^3+4x+3.
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-448"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=x^{3,124,567}+2x^{473}+327 x^{-2,786,534}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-227" id="solution-227"><span class="type">Solution</span></a><div id="hk-solution-227" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+F(x)=\frac{x^{3,124,568}}{3,124,568}+2 \frac{x^{474}}{474}+327 \frac{x^{-2,786,533}}{-2,786,533}+Constant
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-449"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\sqrt{11x}+\frac{5}{x}.
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-450"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+f(x)=e^x+\left(\frac{1}{2}\right)^x.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-228" id="solution-228"><span class="type">Solution</span></a><div id="hk-solution-228" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+F(x)=e^x+\frac{\left(\frac{1}{2}\right)^x}{\ln\left(\frac{1}{2}\right)}+Constant
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-451"><h6 class="heading"><span class="codenumber">6.</span></h6>\(f(x)=\pi^x+\pi^\pi+x^\pi.\)</article><p id="p-2790">Evaluate the definite integrals by first finding an antiderivative.</p>
+<article class="exercise-like" id="exercise-452"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_0^5 x+7\  dx
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-229" id="solution-229"><span class="type">Solution</span></a><div id="hk-solution-229" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+\begin{equation*}
+\int_0^5 (x+7)dx=F(5)- F(0)=\frac{25}{2}+35-0=\frac{95}{2}
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise-like" id="exercise-453"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_1^{10}\ln(x)\  dx
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-454"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_2^{10} 3x+\frac{5}{x}\  dx
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-230" id="solution-230"><span class="type">Solution</span></a><div id="hk-solution-230" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2792">The anti-derivative is: \(F(x)=(3x^2)/2+5 \ln|x|\)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_2^{10} 3x+\frac{5}{x}  dx =F(10)-F(2)
+=\frac{300}{2}+5 \ln(10)-\left(\frac{12}{2}+5 \ln(2) \right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=150+5 \ln(10)-6-5 \ln(2)=144+5(\ln(10)-\ln(2) )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= 144+5 \ln\left(\frac{10}{2}\right)=144+5 \ln(5)
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-455"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_1^{100}\left(\frac{1}{2}\right)^x\   dx.
+\end{equation*}
+</div></article><article class="exercise-like" id="exercise-456"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_{-10}^2 e^x+e \  dx
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-231" id="solution-231"><span class="type">Solution</span></a><div id="hk-solution-231" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2793">The anti-derivative is: \(F(x)=e^x+e x\)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{-10}^2 e^x+e  dx =F(2)-F(-10)=e^2+2e-(e^{-10}-10 e)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= e^2-\frac{1}{e^{10}} -8 e
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-457"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\int_{-2}^5 x^{-2}+x^{-1} \  dx
+\end{equation*}
+</div></article><p id="p-2794">Solve the Initial value problem.</p>
+<article class="exercise-like" id="exercise-458"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-2795">Let \(f(x)=4x+3\text{.}\)  The function \(F(x)\) is an antiderivative, and \(F(0)=7\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-232" id="solution-232"><span class="type">Solution</span></a><div id="hk-solution-232" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2796">The anti-derivative is: \(F(x)=2x^2+3x+C\text{.}\)</p>
+<p id="p-2797">\(F(0)= 7\) implies that \(F(0)=0+C=7\text{,}\) so \(C = 7\)</p>
+<p id="p-2798">Then \(F(x)=2x^2+3x+7\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-459"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-2799">Let \(f(x)=3x^2-6x+5\text{.}\)  The function \(F(x)\)  is an antiderivative, and \(F(3)=17\text{.}\)</p></article><article class="exercise-like" id="exercise-460"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<p id="p-2800">Let \(f(x)=100(0.95)^x\text{.}\)  The function \(F(x)\)  is an antiderivative, and \(F(5)=9\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-233" id="solution-233"><span class="type">Solution</span></a><div id="hk-solution-233" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2801">The anti-derivative is:</p>
+<div class="displaymath">
+\begin{equation*}
+F(x)=\frac{100 (0.95)^x }{\ln(0.95)}   +C
+\end{equation*}
+</div>
+<p id="p-2802">\(F(5)= 9\) implies that</p>
+<div class="displaymath">
+\begin{equation*}
+F(5)=\frac{100 (0.95^5 )}{\ln(0.95)} +C=9
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+C=9-\frac{100 (0.95^5 )}{\ln(0.95)}\approx 9+1508.54=1517.54
+\end{equation*}
+</div>
+<p id="p-2803">Then</p>
+<div class="displaymath">
+\begin{equation*}
+F(x)\approx\frac{100 (0.95^x )}{\ln(0.95)} +1517.54
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-461"><h6 class="heading"><span class="codenumber">16.</span></h6>
+<p id="p-2804">Let \(f(x)=7/x+x^2\text{.}\)  The function \(F(x)\)  is an antiderivative, and \(F(1)=11\text{.}\)</p></article><article class="exercise-like" id="exercise-462"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<p id="p-2805">An investment provides an income stream of \(1000 (0.95)^t\) dollars per year.  How much is received in the first 10 years?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-234" id="solution-234"><span class="type">Solution</span></a><div id="hk-solution-234" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="displaymath">
+\begin{equation*}
+Income=\int_0^{10}1000(0.95)^t  dt
+=\left.\frac{1000(0.95)^t)}{\ln(0.95)} \right|_{t=0}^{t=10}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{1000(0.95)^{10}}{\ln(0.95)} -\frac{1000(0.95)^0)}{\ln(0.95)} 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\approx -11672.81+19495.73=7822.91
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-463"><h6 class="heading"><span class="codenumber">18.</span></h6>
+<p id="p-2806">A firm has a marginal profit function of \(MP(x) = 50 – 3 x\) in thousands of dollars per thousands of units.  How much is profit increased if production is shifted from 10 to 15 thousand units.</p></article><article class="exercise-like" id="exercise-464"><h6 class="heading"><span class="codenumber">19.</span></h6>
+<p id="p-2807">After the first year, the rate of sales of a fad product are \(sales(t) = \frac{1000}{t}\) with time in years.  How many units are sold from the end of the first year to the end of the tenth year?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-235" id="solution-235"><span class="type">Solution</span></a><div id="hk-solution-235" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="displaymath">
+\begin{equation*}
+sales=\int_1^{10}\frac{1000}{t} dt=1000 \ln(t) |_{t=1}^{t=10}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=1000(\ln(10)-\ln(0) )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=1000\ln(10)\approx 2302.58
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-465"><h6 class="heading"><span class="codenumber">20.</span></h6>
+<p id="p-2808">A software company allows your company to expand the number of licenses your company owns by charging a marginal rate of \(MR(licenses)=\frac{200}{\sqrt{licenses}}\text{.}\)  How much does it cost to increase your license from 1000 to 2000 licenses?</p></article><article class="exercise-like" id="exercise-466"><h6 class="heading"><span class="codenumber">21.</span></h6>
+<p id="p-2809">The production function for a given oil well is \(rate(t) = 400(0.9)^t\) with time measured in years and production measured in millions of barrels of oil.</p>
+<ol class="lower-alpha">
+<li id="li-754"><p id="p-2810">How much oil is produced in the first year?</p></li>
+<li id="li-755"><p id="p-2811">How much oil is produced in the tenth year?</p></li>
+<li id="li-756"><p id="p-2812">If I need to produce 75 thousand barrels of oil per year for the well to be financially viable, what is the life of the well?</p></li>
+<li id="li-757"><p id="p-2813">How much oil will the well produce before being shut down?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-236" id="solution-236"><span class="type">Solution</span></a><div id="hk-solution-236" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-758">
+<div class="displaymath">
+\begin{equation*}
+Production=\int_0^{1}400(0.9)^t dt
+=\left.\frac{400}{\ln(0.9)}  (0.9)^t \right|_{t=0}^{t=1}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{400}{\ln(0.9)} (0.9-1)\approx 379.649
+\end{equation*}
+</div>
+</li>
+<li id="li-759">
+<div class="displaymath">
+\begin{equation*}
+Production=\int_9^{10}400(0.9)^t dt
+=\left.\frac{400}{\ln(0.9)}  (0.9)^t \right|_{t=9}^{t=10}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\frac{400}{\ln(0.9)} (0.9^{10}-0.9^{9})\approx 147.08
+\end{equation*}
+</div>
+</li>
+<li id="li-760"><p id="p-2814">If I need to produce 75 thousand barrels of oil per year for the well to be financially viable, what is the life of the well?</p></li>
+<li id="li-761">
+<p id="p-2815">Use Goal seek.</p>
+<div class="displaymath">
+\begin{equation*}
+75=400(0.9^t)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+t\approx 15.8881
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-467"><h6 class="heading"><span class="codenumber">22.</span></h6>
+<p id="p-2816">The expected value received from a particular revenue stream should be an exponential function.  I have the following data for income received over the past 5-year period.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Year</td>
+<td class="c m b1 r0 l0 t3 lines">1</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">3</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">5</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Income</td>
+<td class="c m b2 r0 l0 t0 lines">$1,030</td>
+<td class="c m b2 r0 l0 t0 lines">$1,078</td>
+<td class="c m b2 r0 l0 t0 lines">$1,110</td>
+<td class="c m b2 r0 l0 t0 lines">$1,169</td>
+<td class="c m b2 r0 l0 t0 lines">$1,225</td>
+</tr>
+</table></div></div></div>
+<p id="p-2817">How much do I expect to receive over the next 10 years?</p></article><article class="exercise-like" id="exercise-468"><h6 class="heading"><span class="codenumber">23.</span></h6>
+<p id="p-2818">From experience, I expect the marginal revenue for my firm to be a quadratic function.  I have the following data on revenue at a variety of levels, with production in thousands of units and marginal profit in millions of dollars.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Production</td>
+<td class="c m b1 r0 l0 t3 lines">$4.90</td>
+<td class="c m b1 r0 l0 t3 lines">$7.04</td>
+<td class="c m b1 r0 l0 t3 lines">9.00</td>
+<td class="c m b1 r0 l0 t3 lines">11.03</td>
+<td class="c m b1 r0 l0 t3 lines">14.00</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">MProfit</td>
+<td class="c m b2 r0 l0 t0 lines">7.40</td>
+<td class="c m b2 r0 l0 t0 lines">9.12</td>
+<td class="c m b2 r0 l0 t0 lines">9.90</td>
+<td class="c m b2 r0 l0 t0 lines">9.89</td>
+<td class="c m b2 r0 l0 t0 lines">8.40</td>
+</tr>
+</table></div></div></div>
+<p id="p-2819">What is the expected change in revenue as I increase production from 15 to 20 thousand units?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-237" id="solution-237"><span class="type">Solution</span></a><div id="hk-solution-237" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-2820">Using trend line, my function for \(MProfit\) is</p>
+<div class="displaymath">
+\begin{equation*}
+MProfit=-0.01Production^2+2Production+0.11
+\end{equation*}
+</div>
+<p id="p-2821">Integrating from 15 to 20</p>
+<div class="displaymath">
+\begin{equation*}
+Profit= \int_{15}^{20}-0.01x^2+2x+0.11  dx
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \left.-\frac{0.01}{3} x^3+x^2+0.11x\right|_{x=15}^{x=20}
+\approx 160.133
+\end{equation*}
+</div>The profit is approximately $160.133 million.</div></div>
+</div></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

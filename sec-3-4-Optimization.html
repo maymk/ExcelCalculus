@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:24-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Optimization</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.11;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-3-3-LocalLinearity.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-3-5-IntroductionSolver.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-3-3-LocalLinearity.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-3-5-IntroductionSolver.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Frontmatter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-1-FunctionsGraphsExcel.html" data-scroll="chap-1-FunctionsGraphsExcel"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a><ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html" data-scroll="sec-1-1-LinearFunctionsAndModels">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html" data-scroll="sec-1-2-FunctionsBusinessSetting">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html" data-scroll="sec-1-3-IntroExcelSpreadsheets">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html" data-scroll="sec-1-4-GraphingFunctionsExcel">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html" data-scroll="sec-1-5-IntroBestFitCurves">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html" data-scroll="sec-1-6-GoalSeek">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-2-BusinessApplications.html" data-scroll="chap-2-BusinessApplications"><span class="codenumber">2</span> <span class="title">Business Applications</span></a><ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" data-scroll="sec-2-1-MarketEquilibriumProblems">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html" data-scroll="sec-2-2-ModelingRevenueCostProfit">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html" data-scroll="sec-2-3-NonlinearFunctions">Nonlinear Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-3-RateChangeDerivatives.html" data-scroll="chap-3-RateChangeDerivatives"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a><ul>
+<li><a href="sec-3-1-MarginalFunctions.html" data-scroll="sec-3-1-MarginalFunctions">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html" data-scroll="sec-3-2-NumericDerivativesLimits">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" data-scroll="sec-3-3-LocalLinearity">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html" data-scroll="sec-3-4-Optimization" class="active">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html" data-scroll="sec-3-5-IntroductionSolver">An Introduction to Solver</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-4-SymbolicDIfferentiation.html" data-scroll="chap-4-SymbolicDIfferentiation"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a><ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html" data-scroll="sec-4-1-ElementaryDerivatives">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html" data-scroll="sec-4-2DerivativesCombinationFunctions">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html" data-scroll="sec-4-3-ChainRule">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html" data-scroll="sec-4-4-DIfferentiationComputerAlgebra">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html" data-scroll="sec-4-5-SecondDerivativeConcavity">The Second Derivative and Concavity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-5-DIfferentiationApplications.html" data-scroll="chap-5-DIfferentiationApplications"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a><ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html" data-scroll="sec-5-1-ImplicitDifferentiation">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html" data-scroll="sec-5-2-RelatedRates">Related Rates</a></li>
+<li><a href="sec-5-3-Elasticity.html" data-scroll="sec-5-3-Elasticity">Elasticity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-6-FunctionsSeveralVariables.html" data-scroll="chap-6-FunctionsSeveralVariables"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a><ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" data-scroll="sec-6-1-EvaluatingFunctionsSeveralVariables">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html" data-scroll="sec-6-2-PartialDerivatives">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html" data-scroll="sec-6-3-CriticalPointsExtrema">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" data-scroll="sec-6-4-OptimizationBestFitCurves">Optimization and Best Fitting Curves</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-7-Intergration.html" data-scroll="chap-7-Intergration"><span class="codenumber">7</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec-7-1-RiemannSums.html" data-scroll="sec-7-1-RiemannSums">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" data-scroll="sec-7-2-FundamentalTheoremCalculius">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html" data-scroll="sec-7-3-BasicAntidifferentiation">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html" data-scroll="sec-7-4-ChangeVariables">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html" data-scroll="sec-7-5-IntroductionComputerAlgebra">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html" data-scroll="sec-7-6-NormalDistribution">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html" data-scroll="sec-7-7-InvestmentDepreciation">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html" data-scroll="sec-7-8-BusinessApplicationsIntegral">Economics Applications of the Integral</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-3-4-Optimization"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Optimization</span>
+</h2>
+<a href="sec-3-4-Optimization.html" class="permalink">¶</a><p id="p-1200"><a class="external" href="./Examples/Section-3-4-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
+<p id="p-1201">In Section 3.2 we noticed that the high and low points of the graph of a function often coincided with a point where the derivative of the function was 0.  In a business setting, we are often concerned with finding the maximum and minimum values of a function, because one or the other will be a best, or optimum value.  We typically want to maximize functions like profit, utility, revenue, and market share.  We typically want to minimize functions like cost and liability.  We will use the same basic process to optimize, whether the extremum we are finding is a maximum and minimum.</p>
+<p id="p-1202">Recall, we said that the derivative can be thought of as the slope of the apparent line, obtained by zooming in on the graph of a function.  Clearly, we cannot have an extremum at an interior point of the domain if the derivative is nonzero, because we could go either higher or lower by moving a little to the right or left.  Thus we can only have extrema at a critical point, a place when the derivative is zero or undefined, or at an endpoint where we cannot go both left and right.  This gives us a small list of candidate points for the optimum value.</p>
+<p id="p-1203">Our process for optimization will be to find all the candidate points, then to see which gives the highest and lowest values.  When our curve has a point that is a maximum or minimum in some interval around the point, we call it a “relative” maximum or minimum.  If it is the highest or lowest point for the whole domain of the function it is called a “global” maximum or minimum.</p>
+<article class="example-like" id="example-33"><a data-knowl="" class="id-ref" data-refid="hk-example-33"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.4.1</span>. <span class="title">Profit function for widgets.</span>
+</h6></a></article><div id="hk-example-33" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1204">We have determined that the profit function for selling widgets is</p>
+<div class="displaymath">
+\begin{equation*}
+profit(quantity)=quantity*(400-quantity)-5000,
+\end{equation*}
+</div>
+<p id="p-1205">with the function valid on the interval \(0\le quantity\le 500\text{.}\)  Find the minimum and maximum profit in the given interval.</p>
+<p id="p-1206"><dfn class="terminology">Solution A</dfn>: The first example was chosen because it can be done without using any calculus, so we solve it with easier methods first.  The profit function is a quadratic function in quantity, so it is a downward pointing parabola.  The location of the vertex is at \(quantity=200\text{,}\) which we obtain from the coefficients of the quadratic and linear terms.  Thus we need to check this point and the two endpoints.  Plugging in values, we get \((0,-5000)\text{,}\) \((200, 35000)\) and \((500, -55000)\text{.}\)  The maximum occurs when we sell 200 widgets and our profit is $35,000, the minimum occurs when we sell 500 widgets and our loss is $55,000.  A relative minimum occurs when we sell 0 widgets and our loss is $5,000.</p>
+<p id="p-1207"><dfn class="terminology">Solution B</dfn>:  We want to set up the problem to be able to graph the profit function and its derivative on the same graph.  We will us the calculator approximation of the derivative.  As we did in the last section, we set up a worksheet with columns for, \(q\text{,}\) \(q+.001\text{,}\) \(q-0.001\text{,}\) \(p(q)\text{,}\) \(p(q+.001)\text{,}\) \(p(q-0.001)\text{,}\) and \(p'(q)\text{.}\)  This allows most of the worksheet to be filled in with quick fill.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1208">We then look at the values, and compare the table to a graph.  We find the same three candidate points and the same maximum and minimum values.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-2.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-1209">For a second example we want to look at a function where we can’t find the maximum by algebraic means.</p>
+<article class="example-like" id="example-34"><a data-knowl="" class="id-ref" data-refid="hk-example-34"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.4.2</span>. <span class="title">Cumquat oil.</span>
+</h6></a></article><div id="hk-example-34" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1210">We have determined that the profit function for selling cumquat oil is</p>
+<div class="displaymath">
+\begin{equation*}
+profit(quantity)=(10quantity-20)*exp(-quantity/50)-10.
+\end{equation*}
+</div>
+<p id="p-1211">We understand that the function is valid on the interval \(0\le quantity\le 400\text{,}\) where the quantity is measured in thousands of pints and profit is measured in thousands of dollars.  Find the minimum and maximum profit in the given interval.</p>
+<p id="p-1212"><dfn class="terminology">Solution</dfn>:  The spreadsheet is set up like it was in the first example, but with the function changed.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1213">Looking at the graph and the chart we expect to find local minima at the endpoints, and the maximum when q is close to 50.  We use goal seek to find where the derivative is zero.  As we see below, Goal Seek does not find a point where the derivative is zero.  Instead it finds a point where the derivative is “close enough” to zero.  By default, “close enough” is understood by Excel as being within 0.001.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1214">If the default definition of “close enough” is good enough for our purposes, then the maximum profit of $166,727 occurs when we sell 51,998 pints of oil.  (In fact, selling 2 more pints of oil will yield an extra 0.01 cents.)  The minimum profit occurs when we sell no product, in which case we have a loss of $30,000.</p></article></div>
+<p id="p-1215">One of the things to notice about the last example is the robustness of the method.  From an algebraic point of view, the function was rather ugly.  All we needed to know to use the method was that the function was smooth enough, that when we zoomed in to a scale of x changing by 0.001 the graph looked like a straight line.</p>
+<p id="p-1216">Throughout the section we have looked for places where the derivative is zero when looking for extrema.  We have not paid any attention to how we decide if the point we find is a local maximum or a local minimum.  There are several approaches we could use.  Since we are computing the derivative we could note that a local maximum is a place where the function goes from increasing to decreasing, so the derivative goes from positive to negative.  (Similarly, a local minimum is at a place where the derivative goes from positive to negative.)  There is also a test that looks at the derivative of the derivative.  Those tests will be more useful in the next chapter when we are finding a formula for the derivative by symbolic means.  However, with the numeric technique we are using, the easiest test is that a local maximum is greater than or equal to points a little bit to both the left and right.  We simply plug in points a little bit to each side to test.  Since a change in q of 0.001 makes the graph look like a flat straight line, we change q by 0.01.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1217">As expected, profit goes down as we move away from our expected maximum.</p>
+<article class="example-like" id="example-35"><a data-knowl="" class="id-ref" data-refid="hk-example-35"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.4.3</span>. <span class="title">Gizmo profit.</span>
+</h6></a></article><div id="hk-example-35" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1218">A plant can produce between 150 and 300 gizmos.  The profit function for the plant is:</p>
+<div class="displaymath">
+\begin{equation*}
+profit(quantity)=4 quantity^2-1300 quantity+125000.
+\end{equation*}
+</div>
+<p id="p-1219">Find the production level that maximizes profit.</p>
+<p id="p-1220"><dfn class="terminology">Solution</dfn>: We set up the problem as before, using goal seek on the derivative to find critical points, and checking the ends of the interval.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1221">We have three candidates for the extrema, the two endpoints and the critical point at 162.5.  However by looking at the points to the side of the critical point, we see it is a local minimum.  We also see, that of our 3 candidate points, the one that gives the maximum profit is the right endpoint, when quantity is 300.</p>
+<p id="p-1222">For our first three examples we have been trying to find the minimum or maximum of a functions that has been given to us as a function of one variable.  Sometimes we need to do a bit of work to get the function in that format.</p></article></div>
+<article class="example-like" id="example-36"><a data-knowl="" class="id-ref" data-refid="hk-example-36"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.4.4</span>. <span class="title">Minimizing material costs.</span>
+</h6></a></article><div id="hk-example-36" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1223">I am manufacturing goop, a liquid that needs to be put in cans.  We will use cans that have a standard cylindrical shape.  Find the height and radius of a 1 liter can that uses a minimal amount of metal surface.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1224"><dfn class="terminology">Solution</dfn>: Using basic geometry we recall the formulas for the volume and surface area of a cylinder.</p>
+<div class="displaymath">
+\begin{equation*}
+volume= \pi radius^2*height
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+area=2 \pi radius^2+2 \pi*radius*height
+\end{equation*}
+</div>
+<p id="p-1225">Since I am measuring volume in liters, I want to measure radius and height in deciliters so the units work correctly.  In order to optimize, we need to reduce the problem to a single function of a single variable.  We are told that the volume is 1, so we can solve for height as a function of radius, then plug it into the equation for area.  Then area is a function of a single variable, radius, and we can find the critical points and check for a minimum.</p>
+<div class="displaymath">
+\begin{equation*}
+height=1/( \pi radius^2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+area=2 \pi radius^2+2 /radius
+\end{equation*}
+</div>
+<p id="p-1226">Since we now have area as a function of the single variable radius we can take a derivative to find the critical point, then find the optimal shape.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1227">Solving for where the derivative of area is zero, we find the radius of the can should be 0.5419 deciliters.  We plug that value back into the formula for height in terms of radius and see that the height should be 1.083854 deciliters.  To understand the shape of the can we see that the height is twice the radius, or the same thing as the diameter of the can.  The can is optimally shaped when it is the shape of a large paint can.</p></article></div>
+<p id="p-1228">There are three technical details worth mentioning from the last example.  First, in Excel, the best way to put \(\pi\) in a formula is with the constant PI(). Second, the function for area is defined on an open interval where the radius is positive.  There is no maximum area for a can of fixed volume.  (However inefficient our can is, we can always make it worse, by moving farther from the optimum.)  Third, one should also note that for this problem, we wanted several numbers as part of our answer.  The worksheet for the problem puts the best height and radius at the top, where the reader can easily find it.</p>
+<p id="p-1229">In this last example we had to reduce two equations in two unknowns to a single equation in one unknown to be able to optimize.  We may also need to produce an equation from data.</p>
+<article class="example-like" id="example-37"><a data-knowl="" class="id-ref" data-refid="hk-example-37"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.4.5</span>. <span class="title">Maximized profits and break-even points.</span>
+</h6></a></article><div id="hk-example-37" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1230">For widget production and sales we have the following data on profit based on sales.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+<td class="c m b1 r0 l0 t3 lines">200</td>
+<td class="c m b1 r0 l0 t3 lines">250</td>
+<td class="c m b1 r0 l0 t3 lines">300</td>
+<td class="c m b1 r0 l0 t3 lines">400</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Profit</td>
+<td class="c m b1 r0 l0 t0 lines">-$2,083</td>
+<td class="c m b1 r0 l0 t0 lines">$31,040</td>
+<td class="c m b1 r0 l0 t0 lines">$48,587</td>
+<td class="c m b1 r0 l0 t0 lines">$49,845</td>
+<td class="c m b1 r0 l0 t0 lines">$46,146</td>
+<td class="c m b1 r0 l0 t0 lines">$23,670</td>
+</tr>
+</table></div></div></div>
+<p id="p-1231">Find the break even points and the quantity that maximizes profit.</p>
+<p id="p-1232"><dfn class="terminology">Solution</dfn>:  From looking at a quick plot of the data, I am going to assume that the profit function is a downward facing parabola, so I find the best fitting quadratic polynomial for the data.  Using trendlines, my profit function is</p>
+<div class="displaymath">
+\begin{equation*}
+profit(q)=-1.002 q^2+477.22 q=6720.9.
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1233">I now set up the table for special values with goal seek.  I use starting points of 20 and 450 for the break even points and 250 for the maximum.  To find break even points, I Goal Seek on the profit function.  To find the maximum point, I Goal Seek on the derivative of the profit function.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1234">Rounding to the nearest whole number in each case, my break even points are for selling 15 and 460 widgets.  My maximum profit of $50,032 occurs when I sell 238 widgets.</p></article></div>
+<article class="example-like" id="example-38"><a data-knowl="" class="id-ref" data-refid="hk-example-38"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.4.6</span>. <span class="title">Minimizing expenses.</span>
+</h6></a></article><div id="hk-example-38" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1235">We are running a business and want to minimize equipment expenses.  For a particular piece of equipment the costs can be broken into initial outlays to buy the equipment, fixed annual expenses to keep the equipment in the inventory, and repair costs which we anticipate rising as the equipment gets older.  A widget press costs $10,000 to buy, and the operating expenses are $500 a year, and the total repair costs are \(300t^2\) over the first \(t\) years.  What is the optimal length of time to use a widget press before replacing it?</p>
+<p id="p-1236"><dfn class="terminology">Solution</dfn>:  My annual cost equation is total cost divided by t.  This annual cost is:</p>
+<div class="displaymath">
+\begin{equation*}
+AnnualCost(t)=10000/t+500+300t.
+\end{equation*}
+</div>
+<p id="p-1237">I create a spreadsheet that calculates the cost and its derivative over the first 10 years.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-11.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1238">Looking at the data, the minimal annual cost is obtained by keeping the press between 5.5 and 6.0 years.  Using Goal seek on the derivative, I find the minimal annual cost of $3,964.10 is obtained by keeping the press for 5.77 years.</p></article></div>
+<section class="exercises" id="exercises-set-sec-3-4"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Optimization</span>
+</h3>
+<a href="sec-3-4-Optimization.html#exercises-set-sec-3-4" class="permalink">¶</a><div class="exercisegroup" id="exercisegroup-20">
+<div class="introduction" id="introduction-21">
+<p id="p-1239">For problems 1-10, for the given function and domain:</p>
+<ol class="lower-alpha">
+<li id="li-385"><p id="p-1240">Plot the function and its derivative on the same graph.</p></li>
+<li id="li-386"><p id="p-1241">Identify the regions where the function is increasing and the regions where the function is decreasing.</p></li>
+<li id="li-387"><p id="p-1242">Identify the local maximum and minimum for the given domain.</p></li>
+<li id="li-388"><p id="p-1243">Identify the global maximum and minimum for the given domain</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise-like" id="exercise-191"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<p id="p-1244">\(f(x)=-2x^2+17x+23\) on the interval \(0\le x\le 50\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-95" id="solution-95"><span class="type">Solution</span></a><div id="hk-solution-95" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1245">Setting up these problems in Excel follows the same process.</p>
+<ul class="disc">
+<li id="li-389"><p id="p-1246">We create columns for \(x, x+.001, x-.001, f(x), f(x+.001), f(x-.001)\text{,}\)and \(f'(x)\)</p></li>
+<li id="li-390"><p id="p-1247">Once you enter \(f(x)\text{,}\) doing a right quick fill easily finds \(f(x+.001)\) and \(f(x-.001)\text{,}\) and then \(f'(x)\) is easy to compute.</p></li>
+<li id="li-391"><p id="p-1248">Once you graph \(f\) and \(f'\text{,}\) it is usually a good idea to graph the derivative using the secondary axis: double click on the derivative function and choose the appropriate button in the dialogue box.</p></li>
+</ul>
+<ol class="lower-alpha">
+<li id="li-392">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1249">The table is truncated at \(x = 25\text{,}\) but the rest was used to create the graph.</p>
+</li>
+<li id="li-393">
+<p id="p-1250">We can do a Goalseek to find the critical point: set \(f'(x)=0\text{.}\)</p>
+<p id="p-1251">In this example \(f'(x)=0\) when \(x = 4.25\)</p>
+<p id="p-1252">The function \(f\) is increasing for \(0\lt x \lt 4.25\text{.}\)</p>
+<p id="p-1253">The function \(f\) is decreasing for \(x\gt 4.25\)</p>
+</li>
+<li id="li-394">
+<p id="p-1254">The function has a local max at \(x = 4.25\) and the maximum value is \(59.13\)</p>
+<p id="p-1255">The only local minimums are the endpoints, \((0, 23)\) and \((50, -4127)\text{.}\)</p>
+</li>
+<li id="li-395">
+<p id="p-1256">To find the global maximum and minimum we check the endpoints and the critical points</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">\(x\)</td>
+<td class="c m b1 r0 l0 t3 lines">\(f(x)\)</td>
+<td class="c m b1 r0 l0 t3 lines">status</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">23</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">4.25</td>
+<td class="c m b1 r0 l0 t0 lines">59.13</td>
+<td class="c m b1 r0 l0 t0 lines">maximum</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">50</td>
+<td class="c m b1 r0 l0 t0 lines">-4127</td>
+<td class="c m b1 r0 l0 t0 lines">minimum</td>
+</tr>
+</table></div></div></div>
+<p id="p-1257">The global minimum value is  \(-4127\) at \(x=50.\)</p>
+<p id="p-1258">The global maximum value is  \(59.13\) at \(x=4.25\)</p>
+</li>
+</ol>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-192"><h6 class="heading"><span class="codenumber">2.</span></h6>
+<p id="p-1259">\(g(x)=-3x^2+18x+25\) on the interval \(10\le x\le 50\text{.}\)</p></article><article class="exercise-like" id="exercise-193"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<p id="p-1260">\(h(x)=x^3-9x+12\) on the interval \(0\le x\le 10.\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-96" id="solution-96"><span class="type">Solution</span></a><div id="hk-solution-96" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-396"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
+<li id="li-397">
+<p id="p-1261">The place where \(f'(x)=0\) is at \(x = 1.73\)</p>
+<p id="p-1262">The function \(f\) is decreasing for \(0\lt x \lt 1.73\text{.}\)</p>
+<p id="p-1263">The function \(f\) is increasing for \(1.73 \lt x\lt 10\)</p>
+</li>
+<li id="li-398">
+<p id="p-1264">The function has a local minimum at \((1.73, 1.61)\text{.}\)</p>
+<p id="p-1265">The function has a local maximums at \((0, 12)\) and \((10, 922\text{.}\)</p>
+</li>
+<li id="li-399">
+<p id="p-1266">To find the global maximum and minimum we check the endpoints and the critical points</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">\(x\)</td>
+<td class="c m b1 r0 l0 t3 lines">\(f(x)\)</td>
+<td class="c m b1 r0 l0 t3 lines">status</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">12</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">1.73</td>
+<td class="c m b1 r0 l0 t0 lines">1.61</td>
+<td class="c m b1 r0 l0 t0 lines">minimum</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+<td class="c m b1 r0 l0 t0 lines">922</td>
+<td class="c m b1 r0 l0 t0 lines">maximum</td>
+</tr>
+</table></div></div></div>
+<p id="p-1267">The global minimum value is  \(1.73\) at \(x=1.61.\)</p>
+<p id="p-1268">The global maximum value is  \(922\) at \(x=10\)</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-194"><h6 class="heading"><span class="codenumber">4.</span></h6>
+<p id="p-1269">\(k(x)=x^3-6x^2+12x+5\) on the interval \(0\le x\le 10\text{.}\)</p></article><article class="exercise-like" id="exercise-195"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-1270">\(m(x)=5x+9\) on the interval \(-10\le x\le 30\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-97" id="solution-97"><span class="type">Solution</span></a><div id="hk-solution-97" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-400"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
+<li id="li-401">
+<p id="p-1271">The derivative is never zero</p>
+<p id="p-1272">The function \(m(x)\) is always increasing for \(-10 \lt x\lt 30\)</p>
+</li>
+<li id="li-402"><p id="p-1273">The function has a local minimum at \((-10, -41)\) and a local maximum at \((30, 159)\text{.}\)</p></li>
+<li id="li-403">
+<p id="p-1274">The global minimum value is  \(-41\) at the left endpoint \(x=-10.\)</p>
+<p id="p-1275">The global maximum value is  \(159\) at the right endpoint \(x=30\)</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-196"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<p id="p-1276">\(n(x)=42\) on the interval \(0\le x\le 10\text{.}\)</p></article><article class="exercise-like" id="exercise-197"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-1277">\(f(x)=(x-3)\exp(-0.02 x)\) on the interval \(0\le x\le 100\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-98" id="solution-98"><span class="type">Solution</span></a><div id="hk-solution-98" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-404"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
+<li id="li-405">
+<p id="p-1278">The place where \(f'(x)=0\) is at \(x = 52.95\)</p>
+<p id="p-1279">The function \(f\) is increasing for \(0\lt x \lt 52.95\text{.}\)</p>
+<p id="p-1280">The function \(f\) is decreasing for \(52.95 \lt x\lt 100\)</p>
+</li>
+<li id="li-406">
+<p id="p-1281">The function has a local max at \(x = 52.95\) and the maximum value is \(17.32\)</p>
+<p id="p-1282">The function has a local minimum at \((0, -3)\) and \((100, 13.13)\text{.}\)</p>
+</li>
+<li id="li-407">
+<p id="p-1283">To find the global maximum and minimum we check the endpoints and the critical points</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">\(x\)</td>
+<td class="c m b1 r0 l0 t3 lines">\(f(x)\)</td>
+<td class="c m b1 r0 l0 t3 lines">status</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">-3</td>
+<td class="c m b1 r0 l0 t0 lines">minimum</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">52.95</td>
+<td class="c m b1 r0 l0 t0 lines">17.32</td>
+<td class="c m b1 r0 l0 t0 lines">maximum</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">100</td>
+<td class="c m b1 r0 l0 t0 lines">13.13</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div>
+<p id="p-1284">The global minimum value is  \(-3\) at \(x=0.\)</p>
+<p id="p-1285">The global maximum value is  \(17.32\) at \(x=52.95\)</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-198"><h6 class="heading"><span class="codenumber">8.</span></h6>
+<p id="p-1286">\(g(x)=(x^3-9 x)exp(-0.1 x)\) on the interval\(0\le x\le 100\text{.}\)</p></article><article class="exercise-like" id="exercise-199"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<p id="p-1287">\(h(x)=100/x+5 x\) on the interval \(1\le x\le 50\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-99" id="solution-99"><span class="type">Solution</span></a><div id="hk-solution-99" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<li id="li-408"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
+<li id="li-409">
+<p id="p-1288">The place where \(f'(x)=0\) is at \(x = 4.47\)</p>
+<p id="p-1289">The function \(h\) is decreasing for \(1\lt x \lt 4.47\text{.}\)</p>
+<p id="p-1290">The function \(h\) is increasing for \(4.47 \lt x\lt 50\)</p>
+</li>
+<li id="li-410">
+<p id="p-1291">The function has a local min at \(x = 4.47\) and the minimum value is \(44.72\)</p>
+<p id="p-1292">The function has a local maximums at \((1, 105)\) and \((50, 252)\text{.}\)</p>
+</li>
+<li id="li-411">
+<p id="p-1293">To find the global maximum and minimum we check the endpoints and the critical points</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">\(x\)</td>
+<td class="c m b1 r0 l0 t3 lines">\(h(x)\)</td>
+<td class="c m b1 r0 l0 t3 lines">status</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">105</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">4.47</td>
+<td class="c m b1 r0 l0 t0 lines">44.73</td>
+<td class="c m b1 r0 l0 t0 lines">minimum</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">50</td>
+<td class="c m b1 r0 l0 t0 lines">252</td>
+<td class="c m b1 r0 l0 t0 lines">maximum</td>
+</tr>
+</table></div></div></div>
+<p id="p-1294">The global minimum value is  \(44.73\) at \(x=4.47.\)</p>
+<p id="p-1295">The global maximum value is  \(252\) at \(x=50\)</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise-like" id="exercise-200"><h6 class="heading"><span class="codenumber">10.</span></h6>
+<p id="p-1296">\(k(x)=75/x+3 x^2\) on the interval \(1\le x\le 50\text{.}\)</p></article>
+</div>
+</div>
+<article class="exercise-like" id="exercise-201"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<p id="p-1297">The demand price for widgets is given by \(price(q)=300-0.5q\text{.}\)  The fixed costs are $7,500 and the variable costs are $10 per widget.</p>
+<ol class="lower-alpha">
+<li id="li-412"><p id="p-1298">Give a profit function for widgets.  Specify the domain on which the function makes sense.</p></li>
+<li id="li-413"><p id="p-1299">Identify the candidate points for maximizing profit.</p></li>
+<li id="li-414"><p id="p-1300">Give the quantity that maximizes profit along with the maximum profit.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-100" id="solution-100"><span class="type">Solution</span></a><div id="hk-solution-100" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1301">Preliminary work: find the formulas for price (given) and cost (described).</p>
+<div class="displaymath">
+\begin{equation*}
+price(q)=300-0.5q
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+cost(q)=10 q+7,500
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-415">
+<div class="displaymath">
+\begin{equation*}
+profit(q)=revenue(q)- cost(q)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= 300q-0.5 q^2-10q-7500
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= -0.5 q^2+290q-7500
+\end{equation*}
+</div>
+<p id="p-1302">One assumption that makes sense is that the price should be positive.</p>
+<div class="displaymath">
+\begin{equation*}
+price(q)=300-0.5q \gt 0  
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+-0.5 q \gt -300 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+q \lt 600
+\end{equation*}
+</div>
+</li>
+<li id="li-416"><p id="p-1303">We find profit and the derivative of the profit function to determine where the derivative is 0. Below is the graph of \(Profit, Profit'\) and we did GoalSeek to find the critical point (x=290).  We should also consider endpoints, but the vertex is clearly above 0. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
+<li id="li-417"><p id="p-1304">The profit is maximized at 290 and the maximum profit is $34,550</p></li>
+</ol>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-202"><h6 class="heading"><span class="codenumber">12.</span></h6>
+<p id="p-1305">The cost equation for gizmos is \(Cost(q)=1000+3q\) and the demand function is \(price(q)=500-3q\text{.}\)  Find the maximum profit.</p></article><article class="exercise-like" id="exercise-203"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<p id="p-1306">The cost equation for gadgets is \(Cost(q)=1000+2q+.0001q^2\) and the demand function is \(price(q)=100/(1+.01q)\text{.}\)  Find the maximum profit.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-101" id="solution-101"><span class="type">Solution</span></a><div id="hk-solution-101" class="hidden-content tex2jax_ignore"><div class="solution">
+<div class="displaymath">
+\begin{equation*}
+profit(q)=revenue(q)- cost(q)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=q*100/(1+.01q)- (1000+2q+.0001q^2
+\end{equation*}
+</div>) <p id="p-1307">Assuming that the price should be a positive number does not help us in this problem. We can check, but all we get is that \(q \gt -100\text{,}\) but \(q\) should be positive.</p>
+<p id="p-1308">If domain restrictions are not obvious or the algebra is challenging we can resort to trial and error.  The small coefficients (.0001 for instance) do suggest we have fairly large values for \(q\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol13a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1309">Using \(0\lt q\lt 1000\text{,}\) we see that there is a maximum near \(q = 600\text{.}\) Goal Seek shows that the critical point is at \(q = 588\) gadgets. The maximum profit is $6336.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-204"><h6 class="heading"><span class="codenumber">14.</span></h6>
+<p id="p-1310">The cost equation for gizmos is \(Cost(q)=10000+10q\) and the demand function is \(price(q)=100/\sqrt{1+.01q}\text{.}\)  Find the maximum profit.</p></article><article class="exercise-like" id="exercise-205"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<p id="p-1311">Suppose the cost function for your operation is \(Cost(q)=10000+10q+20000/(1+.1q)\text{.}\) Find the quantity that minimizes price.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-102" id="solution-102"><span class="type">Solution</span></a><div id="hk-solution-102" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1312">The function is interesting in that the minimum cost is not easily see on the graph.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol15a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1313">The function is graphed for \(0\le q\le 150\) in steps of 10. The cost function almost looks as though it is leveling out and reaching an asymptote. An inspection of the table shows that this is not true. The derivative goes from negative to positive right around 130. GoalSeek shows that the derivative is zero at approximately 131.42. The recorded Cost is $12,728.40, which is the minimal cost for this function.</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-206"><h6 class="heading"><span class="codenumber">16.</span></h6>
+<p id="p-1314">Suppose your cost function is \(Cost(q)=10000(0.8)^{.1q}+.1q^2\text{.}\)  Find the quantity that minimizes price.</p></article><article class="exercise-like" id="exercise-207"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<p id="p-1315">With rental property, a simplified model of costs spreads the purchase cost over the time that the property is held and assume that repair costs will rise the longer the property is held.  This gives a formula for annual expenses as</p>
+<div class="displaymath">
+\begin{equation*}
+AnnualExpense(t)=(PurchasePrice)/t+RepairFactor*t^r
+\end{equation*}
+</div>
+<p>where r is a positive number that depends on the type of property.  Assume for carpet cleaners that the replacement cost is $600, that the repair costs in the first year are $50, and r=1.  Find the length of time the property should be held to minimize the annual expense.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-103" id="solution-103"><span class="type">Solution</span></a><div id="hk-solution-103" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1316">In this instance the Annual Expense function is</p>
+<div class="displaymath">
+\begin{equation*}
+AnnualExpense(t)=600/t+50*t^1=600/t+50t
+\end{equation*}
+</div>
+<p id="p-1317">Note that the function is not defined when \(t = 0\text{.}\) So we will graph the function and the derivative for \(1 \le t \le 10\text{.}\) The property should be held for 3.5 years.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol17a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-208"><h6 class="heading"><span class="codenumber">18.</span></h6>
+<p id="p-1318">With rental property, a better model factors in the depreciation of the property and how much can be recovered by selling the property used.  If we use a 5 year straight line depreciation the formula becomes</p>
+<div class="displaymath">
+\begin{equation*}
+AnnualExpense(t)=(PurchasePrice*(1-0.2t))/t+RepairFactor*t^r
+\end{equation*}
+</div>
+<p>Repeat the assumptions from the problem above.  Assume for carpet cleaners that the replacement cost is $600, that the repair costs in the first year are $50, and \(r=1\text{.}\)  Find the length of time the property should be held to minimize the annual expense.</p></article><article class="exercise-like" id="exercise-209"><h6 class="heading"><span class="codenumber">19.</span></h6>
+<p id="p-1319">The annual sales rate for a new toy is found to be \(Sales(t)=10000 t^2  \exp(-t^2/16)\text{.}\) Find the month that maximizes sales.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref" data-refid="hk-solution-104" id="solution-104"><span class="type">Solution</span></a><div id="hk-solution-104" class="hidden-content tex2jax_ignore"><div class="solution">
+<p id="p-1320">If we are minimizing according to month, we will graph the function for \(1 \le t \le 12\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-sol19a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-1321">GoalSeek does not improve our estimate, and we see that the maximum sales must occur when \(t = 4\text{.}\) The derivative is (close to) 0 there and this means our sales are maximized in April (assuming 1 represents January).</p>
+</div></div>
+</div></article><article class="exercise-like" id="exercise-210"><h6 class="heading"><span class="codenumber">20.</span></h6>
+<p id="p-1322">Consider the following sales data for your business.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Production level</td>
+<td class="c m b1 r0 l0 t3 lines">1903</td>
+<td class="c m b1 r0 l0 t3 lines">2424</td>
+<td class="c m b1 r0 l0 t3 lines">3065</td>
+<td class="c m b1 r0 l0 t3 lines">3424</td>
+<td class="c m b1 r0 l0 t3 lines">4076</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Profit</td>
+<td class="c m b1 r0 l0 t0 lines">$828,560.10</td>
+<td class="c m b1 r0 l0 t0 lines">$942,625.40</td>
+<td class="c m b1 r0 l0 t0 lines">$1,006,167.50</td>
+<td class="c m b1 r0 l0 t0 lines">$987,980.40</td>
+<td class="c m b1 r0 l0 t0 lines">$929,780.40</td>
+</tr>
+</table></div></div></div>
+<ol class="lower-alpha">
+<li id="li-418"><p id="p-1323">Plot the data and find a reasonable best fitting curve for the data.</p></li>
+<li id="li-419"><p id="p-1324">Find the production level that maximizes profit.</p></li>
+<li id="li-420"><p id="p-1325">Find the maximum profit.</p></li>
+</ol></article></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.11/login.js"></script>
+</body>
+</html>

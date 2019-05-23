@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-03-20T21:59:29-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Evaluating and Graphing Functions of Several Variables</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="chap-6-FunctionsSeveralVariables.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-6-FunctionsSeveralVariables.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-6-2-PartialDerivatives.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap-6-FunctionsSeveralVariables.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-6-FunctionsSeveralVariables.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-6-2-PartialDerivatives.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Frontmatter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="acknowledgement-1.html">Acknowledgements</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="chap-1-FunctionsGraphsExcel.html"><span class="codenumber">1</span><span class="title">Functions Graphs and Excel</span></a></h2>
+<ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+<h2 class="link"><a href="chap-2-BusinessApplications.html"><span class="codenumber">2</span><span class="title">Business Applications</span></a></h2>
+<ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html">Nonlinear Functions</a></li>
+</ul>
+<h2 class="link"><a href="chap-3-RateChangeDerivatives.html"><span class="codenumber">3</span><span class="title">Rate of Change and Derivatives</span></a></h2>
+<ul>
+<li><a href="sec-3-1-MarginalFunctions.html">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html">An Introduction to Solver</a></li>
+</ul>
+<h2 class="link"><a href="chap-4-SymbolicDIfferentiation.html"><span class="codenumber">4</span><span class="title">Symbolic Differentiation</span></a></h2>
+<ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html">The Second Derivative and Concavity</a></li>
+</ul>
+<h2 class="link"><a href="chap-5-DIfferentiationApplications.html"><span class="codenumber">5</span><span class="title">Differentiation Techniques and Applications</span></a></h2>
+<ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html">RelatedRates</a></li>
+<li><a href="sec-5-3-Elasticity.html">Elasticity</a></li>
+</ul>
+<h2 class="link active"><a href="chap-6-FunctionsSeveralVariables.html"><span class="codenumber">6</span><span class="title">Functions of Several Variables</span></a></h2>
+<ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" class="active">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html">Optimization and Best Fitting Curves</a></li>
+</ul>
+<h2 class="link"><a href="chap-7-Intergration.html"><span class="codenumber">7</span><span class="title">Integration</span></a></h2>
+<ul>
+<li><a href="sec-7-1-RiemannSums.html">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html">Economics Applications of the Integral</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2>
+<ul>
+<li><a href="appendix-1.html">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-2.html">Notation</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+<li><a href="colophon-2.html">Colophon</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-6-1-EvaluatingFunctionsSeveralVariables"><header title="Section 6.1 Evaluating and Graphing Functions of Several Variables"><h1 class="heading hide-type" alt="Section 6.1 Evaluating and Graphing Functions of Several Variables">
+<span class="type">Section</span><span class="codenumber">6.1</span><span class="title">Evaluating and Graphing Functions of Several Variables</span><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1514">
+When we were evaluating functions of a single variable we had to replace the variable with a cell reference.  We do the same for functions of several variables.  We simply have to use several cell references.</p>
+<article class="example-like" id="example-68"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">6.1.1</span><span class="title">Bank balances</span>
+</h5>
+<p id="p-1515"> Find the amount of money I will have in the bank in 10 years if I deposit $1000 and the bank pays 5% interest, compounded quarterly.  Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.</p>
+<p id="p-1516">Solution: We use the formula for future value of a single deposit.</p>\begin{equation*}FutureAmount=InitialDeposit*\left(1+
+\frac{rate}{ppy}\right)^{years*ppy}\end{equation*}<p id="p-1517">Rather than typing the numbers into the formula, we place them in separate cells, so we can easily change the values for any of the 4 variables.</p>
+<figure class="figure-like" id="figure-193"><img width="40%" src="images/sec-6-1-1.png" alt=""></figure><figure class="figure-like" id="figure-194"><img width="40%" src="images/sec-6-1-2.png" alt=""></figure><p id="p-1518">At the end of 10 years, we have $1,643.62 in the bank.  By simply changing values in the worksheet, I find that compounding the interest annually reduces the final amount on 10 years to $1.628.89, while compounding weekly increases the final amount to $1,648.33.</p></article><p id="p-1519">In this example we have as many as four variables. We could vary: the initial deposit, the rate, the number of periods per year and the interest rate. 
+In previous chapters we have a variable (say q) and the function (such as profit) that depends on \(q\). Such a function might be written as something like \(profit(q)= -3 q^2+500q-1000\).</p>
+<p id="p-1520">If we simplify the notation a little bit in this example so that we have </p>\begin{equation*}FA(d,r,p,y)=d*\left(1+\frac{r}{p}\right)^{(y*p)}\end{equation*}<p id="p-1521">Where FA is the future amount, and this is a function of four variables d (deposit), r (interest rate), p (number of payments), and y (number of years).</p>
+<article class="example-like" id="example-69"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">6.1.2</span><span class="title">Slope form 2 points</span>
+</h5>
+<p id="p-1522"> Find the revenue for widgets 500 widgets if I know that the demand price for 100 widgets is $20, the demand price for 200 widgets is $18.75, and that the demand price is a linear function.  Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.</p>
+<p id="p-1523"><em class="terminology">Solution</em>: To make our worksheet easier to read, we use named cells.  We first have to find an equation for the demand price formula.  We compute a slope and intercept for this line from the points (100, 20) and (200, 18.75).  Once we have this function, we find that the demand price is $15 when quantity is 500.  We then compute revenue as price times quantity.</p>
+<figure class="figure-like" id="figure-195"><img width="60%" src="images/sec-6-1-3.png" alt=""></figure><figure class="figure-like" id="figure-196"><img width="40%" src="images/sec-6-1-4.png" alt=""></figure><p id="p-1524">In this problem, revenue is a function of 5 variables: Demand1, Demand2, Price1, Price2, and NewDemand.</p></article><p id="p-1525">The next task to consider is making a table of values for a function of several variables.  Since our screens have 2 dimensions, we first look at the case when we allow two values to change.  When we made a table for a single variable, we had to use both absolute and relative cell reference to distinguish between constant values used for all entries and variables that changed in each case.  With functions of two variables our table will have rows where one variable is held constant and columns where the other is held constant.  We note that quick filling a formula with the reference $A5 will keep the column, A constant but allow the row to change.  Similarly with the reference A$5 the column can change, but the row is constant.</p>
+<article class="example-like" id="example-70"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">6.1.3</span><span class="title">Building a table with two variables</span>
+</h5>
+<p id="p-1526"> – I want to produce a table that shows how much I need to put in the bank to have $100,000 at some point in the future.  I will assume that interest is compounded annually.  I want interest rate and number of years to be treated as variables with interest rate ranging from 0.5% to 0.6% and the length of time to vary from 5 to 40 years.</p>
+<p id="p-1527"><em class="terminology">Solution</em>: We use the formula for present value of a single deposit.  Since the interest is compounded annually, the formula simplifies.</p>
+<article class="assemblage-like" id="assemblage-27"><h5 class="heading"></h5>
+<p id="p-1528">\begin{equation*}PresentAmount=\frac{FutureAmount}{(1+rate)^{years}}\end{equation*}</p></article><p id="p-1529">As we build the table, the future amount will be a constant, so it needs to be given as an absolute reference.  The number of years will be down the left side of the table and will be constant across a row, so its reference should have a dollar sign before the letter.  The interest rate will be listed across the top of the table, so its reference should have a dollar sign before the number.</p>
+<figure class="figure-like" id="figure-197"><img width="80%" src="images/sec-6-1-5.png" alt=""></figure><p id="p-1530">This lets us build the table we desire.  From the complete table, we see that we can have $100,000 in the bank in 40 years by making a deposit of $9,722.22 at 6% interest.  In contrast if we only earn 5% interest and can only keep the money in the bank for 15 years, we need to start with $48,101.71.</p>
+<figure class="figure-like" id="figure-198"><img width="70%" src="images/sec-6-1-6.png" alt=""></figure></article><p id="p-1531">Similarly, we might want to produce a table that shows the monthly payment on a mortgage where both the annual interest rate and the number of years are treated as variables.  Such a chart would be useful in deciding how big a mortgage a person can afford with different kinds of mortgages.</p>
+<article class="example-like" id="example-71"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">6.1.4</span><span class="title">Mortgage payments</span>
+</h5>
+<p id="p-1532"> I want to produce a table that shows the monthly payment on a $100,000 mortgage with a range of interest rates and lengths of the mortgage.</p>
+<p id="p-1533"><em class="terminology">Solution</em>: We use the PMT command to find the monthly payment.</p>
+<figure class="figure-like" id="figure-199"><img width="80%" src="images/sec-6-1-7.png" alt=""></figure><p id="p-1534">We can see that the monthly payment is $421.60 for a 30-year fixed rate mortgage at 3% compounded monthly.  For a 10-year mortgage at 6% the payment increases to $1,110.21.</p>
+<figure class="figure-like" id="figure-200"><img width="70%" src="images/sec-6-1-8.png" alt=""></figure></article><p id="p-1535">After we build a table for a function we would also like to see a graph of the function.  Excel’s abilities to graph surfaces in not one of the program’s strong points.  Nevertheless, it is useful to be “able to see the big picture” by looking at a graph.  We will also note how to draw a graph of a surface with Wolfram Alpha.</p>
+<p id="p-1536">When we looked at models of price, quantity, cost, revenue, and profit, we made the simplifying assumption that a company only produces one product.  We want to consider what happens with two products.</p>
+<article class="example-like" id="example-72"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">6.1.5</span><span class="title">Table and graph</span>
+</h5>
+<p id="p-1537"> I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>\begin{equation*}PriceGizmos=10-QuantityGizmos/50\end{equation*}\begin{equation*}PriceWidgets=20-QuantityWidgets/40\end{equation*}<p id="p-1538">Produce a table and a graph for revenue as a function of the quantity of gizmos and widgets produced.</p>
+<p id="p-1539">Solution:  We need to start by producing a formula for revenue.  To shorten the equations we will abbreviate the terms or use initials.  We need formulas for revenue for each of our products:</p>\begin{equation*}RevG=PriceG*QG=\left(10-\frac{QG}{50}\right)QG=10QG-\frac{QG^2}{50}.\end{equation*}\begin{equation*}RevW=PriceW*QW=\left(20-\frac{QW}{40}\right)QW=20QW-\frac{QW^2}{40}.\end{equation*}<p id="p-1540">Putting the equations together gives an equation for revenue.</p>\begin{equation*}Rev=RevG+RevW=10QG-\frac{QG^2}{50}+20QW-\frac{QW^2}{40}.\end{equation*}<p id="p-1541">Next we build a build a table for the function as we have done above.</p>
+<figure class="figure-like" id="figure-201"><img width="80%" src="images/sec-6-1-9.png" alt=""></figure><p id="p-1542">	Finally, we would like to see a graph of the function.  We notice that the 3D plots in Excel have a number of drawbacks.  The plots do not label the input variables.  These first plots also don’t tell us what values of the variables correspond to particular points on the graph.  Some of these drawbacks can be overcome, but only with more work than we wish to expend in this course.  We will only add one non-intuitive option to make the graphs work better.  </p>
+<figure class="figure-like" id="figure-202"><img width="100%" src="images/sec-6-1-10.png" alt=""></figure><p id="p-1543">We will move the names of the variables out of the upper left corner of the chart and into the row above and to the side of the data.  We leave the corner cell blank.  This will let us see the values of the variables in the graphs.
+In the table, we select the data we would like to graph.  In this example we select from cells B4 through M12.  Finally we select a chart to insert.  The charts we are interested in are surface charts.  The types of interest are 3-D Surface, Wireframe 3-D, and contour.  Each of these chart types highlights some useful information.</p>
+<p id="p-1544">The 3-D Surface gives a fast picture.  It is useful in seeing local minimums and maximums.</p>
+<figure class="figure-like" id="figure-203"><img width="60%" src="images/sec-6-1-11.png" alt=""></figure><p id="p-1545">The Wireframe 3-D chart emphasizes that we can build a reasonable picture from the curves obtained by treating either x or y as a constant.  It lets us understand a function of 2 variables by putting together a collection of several functions of one variable.  This point of view will be useful when we try to take derivatives.</p>
+<figure class="figure-like" id="figure-204"><img width="80%" src="images/sec-6-1-12.png" alt=""></figure><p id="p-1546">The Contour chart emphasizes the level curves. The rate of change will be fastest in a direction perpendicular to the level curves.</p>
+<figure class="figure-like" id="figure-205"><img width="60%" src="images/sec-6-1-13.png" alt=""></figure><p id="p-1547">Another alternative for seeing a graph is to use Wolfram Alpha.  Unfortunately variable names in Alpha seem to be limited to a single letter, or a letter followed by a digit.  Thus we change the formula to one using the names g and w.</p>
+<figure class="figure-like" id="figure-206"><img width="80%" src="images/sec-6-1-14.png" alt=""></figure></article><p id="p-1548">The techniques of this section let us look at functions of two variables.  In the next section we explore techniques for understanding functions of several variables by treating some of the variables as constants.</p>
+<section class="exercises" id="exercises-set-sec-6-1"><header title="Exercises 6.1.1 Exercises: Evaluating and Graphing Functions of Several Variables Problems"><h1 class="heading hide-type" alt="Exercises 6.1.1 Exercises: Evaluating and Graphing Functions of Several Variables Problems">
+<span class="type">Subsection</span><span class="codenumber">6.1.1</span><span class="title">Exercises: Evaluating and Graphing Functions of Several Variables Problems</span><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html#exercises-set-sec-6-1" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1549">
+For exercises 1-9, set up an Excel notebook, and evaluate the given function of several variables at the indicated values.  The workbook should be set up so that the input values can be changed and the formula will re-compute with the new values.</p>
+<article class="exercise-like" id="exercise-376"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-1550"> Evaluate the function \(f(x,y)=x^2+3xy+4y^2\), when \(x=4\), and \(y=-2\).</p></article><article class="exercise-like" id="exercise-377"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-1551"> Evaluate the function \(f(x,y,z)=x^2+3xy+4y^3+5xyz\), when \(x=3\), \(y=5\), and \(z=7\).</p></article><article class="exercise-like" id="exercise-378"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-1552"> Express cost as a function of quantity, initial cost, and per-unit cost, when the initial cost is $2,000, the per-unit cost is $25, and the quantity is 75.</p></article><article class="exercise-like" id="exercise-379"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-1553"> Express revenue as a function of two quantity demand-price pairs and quantity, assuming that demand price is a linear function, where the quantity demand-price pairs are \((0, 20)\) and \((100, 18)\) and the quantity is 300.  (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)
+</p></article><article class="exercise-like" id="exercise-380"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-1554"> Express revenue as a function of two quantity demand-price pairs and quantity, assuming that demand price is an exponential function, where the quantity price pairs are \((0, 20)\) and \((100, 18)\) and the quantity is 300.  (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)</p></article><article class="exercise-like" id="exercise-381"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-1555"> Express profit as a function of two quantity demand-price pairs, quantity, initial cost, and per-unit cost, assuming that demand price is a linear function, where the quantity demand-price pairs are \((100, 30)\) and \((200, 28)\), the quantity is 300, the initial cost is $3000, and the per-unit cost is $8.  (You may find it useful to have intermediate computations that find the cost and revenue.)</p></article><article class="exercise-like" id="exercise-382"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-1556"> Express the future value of a deposit as a function of the initial deposit, the annual interest rate, the number of years the deposit is held, and the number of times per year that the interest is compounded, where the deposit of $10,000 is held for 20 years at 3% interest, compounded monthly.</p></article><article class="exercise-like" id="exercise-383"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-1557"> Express the future value of a regular series of deposits as a function of the periodic deposit amount, the annual interest rate, the number of years the deposits accumulate, and the number of times per year that the deposits are made, where the deposit of $200 is deposited weekly for 20 years at 3% interest, compounded weekly.</p></article><article class="exercise-like" id="exercise-384"><h5 class="heading"><span class="codenumber">9</span></h5>
+<p id="p-1558"> Express the current value of a bond as a function of the final value, the annual interest rate, and the number of years the bond is held, where the final value of the bond is $10,000, held for 15 years at 3.5% interest, compounded monthly.</p></article><p id="p-1559">For exercises 10-17, set up an Excel notebook to produce a table for the given function as a function of the two specified variables and the other parameters. The workbook should be set up so that the input values can be changed and the formula will recompute with the new values.</p>
+<article class="exercise-like" id="exercise-385"><h5 class="heading"><span class="codenumber">10</span></h5>
+<p id="p-1560"> Create a table for the function \(f(x,y)=3x^2+xy+5y^2\), with \(x\) ranging from –10 to 10, and \(y\) ranging from -5 to 15.</p></article><article class="exercise-like" id="exercise-386"><h5 class="heading"><span class="codenumber">11</span></h5>
+<p id="p-1561"> Create a table for the function \(f(x,y,z)=xyz+x^2 y-y^2+5z\), with \(x\) ranging from –10 to 10, and \(y\) ranging from -5 to 15, with \(z=2\).</p></article><article class="exercise-like" id="exercise-387"><h5 class="heading"><span class="codenumber">12</span></h5>
+<p id="p-1562"> Create a table that expresses cost as a function of quantity, and per-unit cost, with initial cost as a parameter, when the initial cost is $3,000, the per-unit cost ranges from $20 to $40 by $2, and the quantity ranges from 50 to 100 by 5.</p></article><article class="exercise-like" id="exercise-388"><h5 class="heading"><span class="codenumber">13</span></h5>
+<p id="p-1563"> Create a table that expresses the future value of a deposit as a function of the annual interest rate and the number of years the deposit is held, with the amount of the initial deposit and the number of times per year that the interest is compounded being treated as parameters, where the interest on a deposit of $10,000 is compounded quarterly, and the deposit is held for 20 to 40 years at interest rates ranging from 3% to 5%.</p></article><article class="exercise-like" id="exercise-389"><h5 class="heading"><span class="codenumber">14</span></h5>
+<p id="p-1564"> Create a table that expresses the future value of a regular series of deposits as a function of the annual interest rate and the number of years the deposit accumulate, with the amount of the deposits and the number of times per year that the interest is compounded being treated as parameters, where a deposit of $2,000 is made monthly, and the deposits accumulate for 20 to 40 years at interest rates ranging from 3% to 5%.</p></article><article class="exercise-like" id="exercise-390"><h5 class="heading"><span class="codenumber">15</span></h5>
+<p id="p-1565"> Create a table that expresses the current value of a bond as a function of the number of years the bond is held and the interest rate, where the final value of the bond is $10,000, the number of years the bond is held runs from 5 to 40 and the interest rate runs from 2% to 6%.</p></article><article class="exercise-like" id="exercise-391"><h5 class="heading"><span class="codenumber">16</span></h5>
+<p id="p-1566"> Create a table that expresses revenue as a function of the quantity of widgets and gizmos sold as both quantities range from 0 to 1000, where the demand price functions are:</p>\begin{equation*}PriceGizmo=50-\frac{QuantityGizmo}{40}-\frac{QuantiyWidget}{300}\end{equation*}\begin{equation*}PriceWidget=40-\frac{QuantityGizmo}{400}-\frac{QuantiyWidget}{50}\end{equation*}</article><article class="exercise-like" id="exercise-392"><h5 class="heading"><span class="codenumber">17</span></h5>
+<p id="p-1567"> Create a table that expresses revenue as a function of the quantity of widgets and gizmos sold as both quantities range from 0 to 1000, where the demand price functions are:</p>\begin{equation*}PriceGizmo=60(0.9)^{QuantityGizmo/100}-\frac{QuantiyWidget}{200}\end{equation*}\begin{equation*}PriceWidget=40(0.85)^{QuantityWidget/100}-\frac{QuantityGizmo}{100}\end{equation*}</article><p id="p-1568">For exercises 18-25, use either Excel or WolframAlpha to produce a graph of the function described in exercises 10-17 respectively.</p></section></section></div></main>
+</div>
+</body>
+</html>

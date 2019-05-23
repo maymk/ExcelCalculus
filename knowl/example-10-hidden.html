@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:31-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>We have obtained the following data for sales of gizmos in our location.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">653</td>
+<td class="c m b1 r0 l0 t3 lines">762</td>
+<td class="c m b1 r0 l0 t3 lines">847</td>
+<td class="c m b1 r0 l0 t3 lines">943</td>
+<td class="c m b1 r0 l0 t3 lines">1050</td>
+<td class="c m b1 r0 l0 t3 lines">1130</td>
+<td class="c m b1 r0 l0 t3 lines">1260</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">5.52</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">6.20</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">6.85</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">7.48</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">6.68</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">6.50</td>
+<td class="c m b2 r0 l0 t0 lines">6.38</td>
+<td class="c m b2 r0 l0 t0 lines">6.31</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></div></div></div>
+<p>Assume the supply and demand curves are linear for quantities between 600 and 1300.  Find the best fitting lines for the supply and demand functions.  Find the equilibrium point.  Make a chart listing how many we can sell for $6.40 and $6.60.  Remember that sales will be the minimum of the supply and the demand.</p>
+<p><dfn class="terminology">Solution</dfn>: We start by putting the data into a spreadsheet and finding the best fitting lines.  We select the option to show the equations in the chart. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-1-8.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p>The supply and demand functions are:</p>
+<div class="displaymath">
+\begin{equation*}
+supply\  price=.0032*quantity+3.44
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+demand\ price=-0.0010*quantity+7.46
+\end{equation*}
+</div>
+<p>We add columns for the projected supply and demand prices, using the equations obtained from the best fitting lines.  We also add a column, and compute the difference of the supply and demand functions. We can now use goal seek to solve the problem. <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-1-9.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p>We now use Goal Seek to find the equilibrium point. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-1-10.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p>At equilibrium we sell 956 gizmos at $6.50.  To find sales at $6.40 and $6.60, we use Goal Seek to get those values at both supply and demand prices. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec2-1-11.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p>We see that we can sell 1055 gizmos at $6.40, but can only obtain 925.  Thus our sales at $6.40 will be 925.  At $6.60 we can obtain 987 gizmos, but can only sell 855.  Thus our sales at $6.60 will be 855.  We can eliminate a step in this process if we recall that below equilibrium price the constraint is supply, while above equilibrium price the constraint will be demand.</p></article></body>
+</html>

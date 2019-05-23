@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-03-20T21:59:28-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Local Linearity</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec-3-2-NumericDerivativesLimits.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-3-4-Optimization.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-3-2-NumericDerivativesLimits.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-3-RateChangeDerivatives.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-3-4-Optimization.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Frontmatter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="acknowledgement-1.html">Acknowledgements</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="chap-1-FunctionsGraphsExcel.html"><span class="codenumber">1</span><span class="title">Functions Graphs and Excel</span></a></h2>
+<ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+<h2 class="link"><a href="chap-2-BusinessApplications.html"><span class="codenumber">2</span><span class="title">Business Applications</span></a></h2>
+<ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html">Nonlinear Functions</a></li>
+</ul>
+<h2 class="link active"><a href="chap-3-RateChangeDerivatives.html"><span class="codenumber">3</span><span class="title">Rate of Change and Derivatives</span></a></h2>
+<ul>
+<li><a href="sec-3-1-MarginalFunctions.html">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html" class="active">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html">An Introduction to Solver</a></li>
+</ul>
+<h2 class="link"><a href="chap-4-SymbolicDIfferentiation.html"><span class="codenumber">4</span><span class="title">Symbolic Differentiation</span></a></h2>
+<ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html">The Second Derivative and Concavity</a></li>
+</ul>
+<h2 class="link"><a href="chap-5-DIfferentiationApplications.html"><span class="codenumber">5</span><span class="title">Differentiation Techniques and Applications</span></a></h2>
+<ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html">RelatedRates</a></li>
+<li><a href="sec-5-3-Elasticity.html">Elasticity</a></li>
+</ul>
+<h2 class="link"><a href="chap-6-FunctionsSeveralVariables.html"><span class="codenumber">6</span><span class="title">Functions of Several Variables</span></a></h2>
+<ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html">Optimization and Best Fitting Curves</a></li>
+</ul>
+<h2 class="link"><a href="chap-7-Intergration.html"><span class="codenumber">7</span><span class="title">Integration</span></a></h2>
+<ul>
+<li><a href="sec-7-1-RiemannSums.html">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html">Economics Applications of the Integral</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2>
+<ul>
+<li><a href="appendix-1.html">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-2.html">Notation</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+<li><a href="colophon-2.html">Colophon</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-3-3-LocalLinearity"><header title="Section 3.3 Local Linearity"><h1 class="heading hide-type" alt="Section 3.3 Local Linearity">
+<span class="type">Section</span><span class="codenumber">3.3</span><span class="title">Local Linearity</span><a href="sec-3-3-LocalLinearity.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-784">The last two sections examined rate of change in both the discrete and continuous case.  The first application for rate of change at a point is to make projections for values of the function close to that point. We want to find the equation of a linear function that can be used to approximate our function.  This is straightforward using the point-slope version of a linear equation.</p>
+<p id="p-785">
+For the discrete case, given a function \(y=f(x)\), where we know value of, \(mf(a+1)\), the marginal change in \(f(x)\) to get to \(x=a+1\), then our discrete linear approximation has the form</p>
+<article class="aside-like" id="aside-9"><h5 class="heading"></h5>
+<p id="p-786">\begin{equation*}discrete\ linear\ f_a (x)=f(a)+mf(a+1)*(x-a).\end{equation*}</p></article><figure class="figure-like" id="figure-129"><img width="60%" src="images/sec3-3-1.png" alt=""></figure><p id="p-787">In the differentiable case, given a function \(y=f(x)\), where we know value of, \(f'(a)\), the derivative of \(f(x)\) at \(x=a\), then our linear approximation has the form</p>
+<article class="aside-like" id="aside-10"><h5 class="heading"></h5>
+<p id="p-788">\begin{equation*}linear\ f_a (x)=f(a)+f'(a)*(x-a).\end{equation*}</p></article><figure class="figure-like" id="figure-130"><img width="60%" src="images/sec3-3-2.png" alt=""></figure><p id="p-789">The two formulas are almost the same.  The discrete case uses the slope of a secant line obtained by looking at points where the x values differ by 1.  In the differentiable case we look at the slope of the tangent line.  One of the reasons for looking at the linear approximation of a function is that linear functions are easy to evaluate.</p>
+<article class="example-like" id="example-16"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.3.1</span><span class="title">Estimating profit</span>
+</h5>
+<p id="p-790">  The profit from selling 10,000 gizmos is $487,253.  We also know that marginal profit(10001)=$45.  Estimate the profit from selling 10,013 gizmos.</p>
+<p id="p-791"><em class="terminology">Solution</em>: We use the formula from above</p>
+<article class="aside-like" id="aside-11"><h5 class="heading"></h5>
+<p id="p-792">\begin{equation*}discrete\ linear\ profit_a (x)=profit(a)+marginal\ profit(a+1)*(x-a).\end{equation*}</p></article><p id="p-793">Filling in the values from the problem yields:</p>\begin{equation*}discrete\ linear\ profit_{10000} (x)=487253+45*(x-10000).\end{equation*}\begin{equation*}discrete\ linear\ profit_{10000} (10013)=487253+45*(13)=487828.\end{equation*}<p id="p-794">Thus we estimate the profit from selling 10013 gizmos to be $487,828.</p></article><article class="example-like" id="example-17"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.3.2</span><span class="title">Estimating square roots</span>
+</h5>
+<p id="p-795"> Use information about \(f(x)=\sqrt{x}\) near \(x_0=100\) to estimate the square roots of 96 through 104.  Check the accuracy of your approximations.</p>
+<p id="p-796"><em class="terminology">Solution</em>:  We first use Excel to find the value of the function and its derivative at 100.  For the derivative we use the calculator approximation.</p>
+<figure class="figure-like" id="figure-131"><img width="80%" src="images/sec3-3-3.png" alt=""></figure><figure class="figure-like" id="figure-132"><img width="80%" src="images/sec3-3-4.png" alt=""></figure><p id="p-797">Thus the linear approximation is</p>
+<p id="p-798">\begin{equation*}\begin{aligned} linear\ f(x) \amp = 
+f(100)+f'(100)(x-100) \\ 
+\amp =10+(0.05)(x-100). \end{aligned}\end{equation*}</p>
+<p id="p-799">We can set up the worksheet to compute the approximation and to give us the error, both as a number and as a percentage of the correct answer.</p>
+<figure class="figure-like" id="figure-133"><img width="70%" src="images/sec3-3-5.png" alt=""></figure><figure class="figure-like" id="figure-134"><img width="60%" src="images/sec3-3-6.png" alt=""></figure><p id="p-800">It is then straightforward to compute values and check accuracy.  On the given domain, the linear approximation has an error under 0.03%.</p></article><article class="example-like" id="example-18"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.3.3</span><span class="title">Estimating reciprocals</span>
+</h5>
+<p id="p-801"> Use information about \(f(x)=100/x\) near \(x_0=400\) to estimate the reciprocals of the integers from of 396 through 404.  Check the accuracy of your approximations.</p>
+<p id="p-802"><em class="terminology">Solution</em>:  Once again, we use Excel to find the value of the function and its derivative at 400.  For the derivative we use the calculator approximation.</p>
+<figure class="figure-like" id="figure-135"><img width="70%" src="images/sec3-3-7.png" alt=""></figure><p id="p-803">Thus the linear approximation is</p>
+<p id="p-804">\begin{equation*}\begin{aligned} linear\ f(x) \amp = 
+f(400)+f'(400)(x-400) \\ 
+\amp =.25+(-0.000625)(x-400). \end{aligned}\end{equation*}</p>
+<figure class="figure-like" id="figure-136"><img width="60%" src="images/sec3-3-8.png" alt=""></figure><p id="p-805">It is then straightforward to compute values and check accuracy.  On the given domain, the linear approximation has an error under 0.01%.</p></article><article class="example-like" id="example-19"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.3.4</span><span class="title">Estimating exponential functions</span>
+</h5>
+<p id="p-806"> For approximating interest with continual compounding it is useful to have a linear approximation of \(f(r)=exp(r)\) when \(r\) is close to 0.  Use information about \(f(r)=exp(r)\) near \(r_0=0\) to estimate the exponential function for numbers near 0.  Check the accuracy of your approximations and give a domain where the approximation is good enough to use.</p>
+<p id="p-807"><em class="terminology">Solution</em>:  Once again, we use Excel to find the value of the function and its derivative at 0.  For the derivative we use the calculator approximation.</p>
+<figure class="figure-like" id="figure-137"><img width="80%" src="images/sec3-3-9.png" alt=""></figure><p id="p-808">Thus the linear approximation is </p>
+<p id="p-809">\begin{equation*}\begin{aligned} linear\ f(x) \amp = 
+f(0)+f'(0)(r-0)\\
+\amp = 1+(1)(r). \end{aligned}\end{equation*}</p>
+<p id="p-810">This is much easier to compute than the exponential function.  However when we check accuracy we find that it is not very accurate for other integer values.
+</p>
+<figure class="figure-like" id="figure-138"><img width="60%" src="images/sec3-3-10.png" alt=""></figure><p id="p-811">That brings us back to the last part of the question, which asks for a domain where the approximation is good enough to use.  The phrase “good enough to use” will depend on the setting, but we will be happy with an estimate that is within 1%.  Since we are going to use this for interest rates, we are interested in positive rates.  </p>
+<p id="p-812">We modify the worksheet to allow a step size, \(del\ x\), to be used.  Then we experiment with step sized till we get a domain where the error is under 1%.</p>
+<figure class="figure-like" id="figure-139"><img width="60%" src="images/sec3-3-11.png" alt=""></figure><p id="p-813">We see that \(\exp(r)\approx 1+r\) for \(0\le r\lt 0.15\). This gives us an approximation we can use for rates of up to 15%.</p></article><p id="p-814">The last example illustrates that linear approximations should only be used for a limited domain.  The size of the domain where the linear approximation is “good enough” will depend on the definition of “good enough” or the acceptable error in our approximation.  The good domain will also depend on how far the graph is from linear, or how fast it is bending.
+</p>
+<section class="exercises" id="exercises-set-sec-3-3"><header title="Exercises 3.3.1 Exercises: Local Linearity"><h1 class="heading hide-type" alt="Exercises 3.3.1 Exercises: Local Linearity">
+<span class="type">Subsection</span><span class="codenumber">3.3.1</span><span class="title">Exercises: Local Linearity</span><a href="sec-3-3-LocalLinearity.html#exercises-set-sec-3-3" class="permalink">¶ permalink</a>
+</h1></header><p id="p-815">
+For problems 1-5, for the given function and value for \(x_0\):</p>
+<ol id="ol-36" style="list-style-type: lower-alpha;">
+<li id="li-180"><p id="p-816">Give the formula for the discrete linear approximation.</p></li>
+<li id="li-181"><p id="p-817">Evaluate the approximation at \(x_1\).</p></li>
+</ol>
+<article class="exercise-like" id="exercise-179"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-818"> \(x_0=10\), \(f(10)=50\), \(mf(11)=6\), and \(x_1=15\).
+</p></article><article class="exercise-like" id="exercise-180"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-819">  \(x_0=15\), \(profit(15)=50\), \(marginal\ profit(16)=2\), and \(x_1=6\).
+</p></article><article class="exercise-like" id="exercise-181"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-820">  \(x_0=20\), \(f(19)=191\), \(f(20)=200\), \(f(21)=210\), and \(x_1=28\).
+</p></article><article class="exercise-like" id="exercise-182"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-821">  \(x_0=50\), \(revenue(49)=1007\), \(revenue(50)=1000\), \(revenue(51)=994\), and \(x_1=45\).
+</p></article><article class="exercise-like" id="exercise-183"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-822">  \(x_0=100\), \(cost(99)=3740\), \(cost(100)=3743\), \(cost(101)=3754\), and \(x_1=112\).
+</p></article><p id="p-823">For problems 6-10, for the given function and value for \(x_0\):</p>
+<ol id="ol-37" style="list-style-type: lower-alpha;">
+<li id="li-182"><p id="p-824">Calculate the numeric approximation of the derivative at \(x_0\).</p></li>
+<li id="li-183"><p id="p-825">Give the formula for the linear approximation at that point.</p></li>
+<li id="li-184"><p id="p-826">Evaluate the approximation at \(x_1\).</p></li>
+<li id="li-185"><p id="p-827">Evaluate the function at \(x_1\) and compute the accuracy of the approximation.</p></li>
+</ol>
+<article class="exercise-like" id="exercise-184"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-828">  \(f(x)=\ln(x)\), \(x_0=100\), and \(x_1=105\).
+</p></article><article class="exercise-like" id="exercise-185"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-829">  \(g(x)=\sqrt{x}\), \(x_0=81\) and \(x_1=85\).
+</p></article><article class="exercise-like" id="exercise-186"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-830">  \(profit(x)=-x^2/10+3000x-7862\), \(x_0=2000\) and \(x_1=2050\).
+</p></article><article class="exercise-like" id="exercise-187"><h5 class="heading"><span class="codenumber">9</span></h5>
+<p id="p-831">  \(revenue(x)=x*\ln(x)\), \(x_0=3000\) and \(x_1=3100\).
+</p></article><article class="exercise-like" id="exercise-188"><h5 class="heading"><span class="codenumber">10</span></h5>
+<p id="p-832">  \(cost(x)=(x*\ln(x))/2+x^2/300\), \(x_0=3000\) and \(x_1=3100\).
+</p></article><article class="exercise-like" id="exercise-189"><h5 class="heading"><span class="codenumber">11</span></h5>
+<p id="p-833">  Let \(f(x)=(1+x)^r\) and \(x_0=0\).</p>
+<ol id="ol-38" style="list-style-type: lower-alpha;">
+<li id="li-186"><p id="p-834">Find the linear approximation of \(f(x)\) at \(x_0\) for r=1/3,1/2,-1 and 2.</p></li>
+<li id="li-187"><p id="p-835">Give a rule for the linear approximation for a general value of r.</p></li>
+<li id="li-188"><p id="p-836">How accurate is the linear approximation for square and cube roots of 1.1, </p></li>
+<li id="li-189"><p id="p-837">obtained at \(x_1=0.1\).</p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

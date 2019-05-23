@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:34-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.4.4</span>. <span class="title">Minimizing material costs.</span>
+</h6>
+<p>I am manufacturing goop, a liquid that needs to be put in cans.  We will use cans that have a standard cylindrical shape.  Find the height and radius of a 1 liter can that uses a minimal amount of metal surface.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-7.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p><dfn class="terminology">Solution</dfn>: Using basic geometry we recall the formulas for the volume and surface area of a cylinder.</p>
+<div class="displaymath">
+\begin{equation*}
+volume= \pi radius^2*height
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+area=2 \pi radius^2+2 \pi*radius*height
+\end{equation*}
+</div>
+<p>Since I am measuring volume in liters, I want to measure radius and height in deciliters so the units work correctly.  In order to optimize, we need to reduce the problem to a single function of a single variable.  We are told that the volume is 1, so we can solve for height as a function of radius, then plug it into the equation for area.  Then area is a function of a single variable, radius, and we can find the critical points and check for a minimum.</p>
+<div class="displaymath">
+\begin{equation*}
+height=1/( \pi radius^2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+area=2 \pi radius^2+2 /radius
+\end{equation*}
+</div>
+<p>Since we now have area as a function of the single variable radius we can take a derivative to find the critical point, then find the optimal shape.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Solving for where the derivative of area is zero, we find the radius of the can should be 0.5419 deciliters.  We plug that value back into the formula for height in terms of radius and see that the height should be 1.083854 deciliters.  To understand the shape of the can we see that the height is twice the radius, or the same thing as the diameter of the can.  The can is optimally shaped when it is the shape of a large paint can.</p></article><span class="incontext"><a href="sec-3-4-Optimization.html#example-36">in-context</a></span>
+</body>
+</html>

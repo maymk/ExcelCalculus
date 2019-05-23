@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:42-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">6.2.11.1</span>.</h6>
+<p>We can do the entire problem in terms of gadgets, gizmos and widgets, but for notation sake we will replace them (alphabetically) as follows:</p>
+<div class="displaymath">
+\begin{equation*}
+x=gadgets,\quad y=gizmos,\quad z=widgets.
+\end{equation*}
+</div>
+<p>We need the revenue function and we have the price functions, so we have that</p>
+<div class="displaymath">
+\begin{equation*}
+Revenue=R(x,y,z)= x Price_x+y Price_y+z Price_z
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=x \left(40-\frac{z}{45}-\frac{y}{600}-\frac{x}{300}\right)
++y\left(30-\frac{y}{50}-\frac{z}{300}-\frac{x}{500}\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++z\left(20-\frac{z}{40}-\frac{y}{500}-\frac{x}{400}\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  -\frac{x^2}{300}-\frac{11 x y}{3000}-\frac{89 x z}{3600}+40 x-\frac{y^2}{50}-\frac{2 y z}{375}+30 y-\frac{z^2}{40}+20 z
+\end{equation*}
+</div>
+<p>(Note: the last step /simplification was done in Wolfram Alpha)</p>
+<ol class="lower-alpha">
+<li>
+<p>Give the 3 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
+<div class="displaymath">
+\begin{equation*}
+R(x,500,700)= \frac{1}{900}  (-3 x^2+18775 x+8895000)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R(1000,y,700)= \frac{1}{450}  (-9 y^2+10170 y+9500000)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R(1000,500,z)= \frac{1}{360}  (-9 z^2-2660 z+16140000)
+\end{equation*}
+</div>
+<p>So the cross sectional function are all quadratic (parabolas) that open downwards.</p>
+</li>
+<li>
+<p>Find the partial derivatives of the original function.</p>
+<p>Finding the partial derivatives when dealing with three variables is very similar to the procedure we use when we have two variables. We treat the other variables as constants.</p>
+<div class="displaymath">
+\begin{equation*}
+R_x  (x,y,z)=  -\frac{x}{150}-\frac{11  y}{3000}-\frac{89  z}{3600}+40 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R_y  (x,y,z)=  -\frac{11 x }{3000}-\frac{y}{25}-\frac{2  z}{375}+30 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R_z  (x,y,z)=  -\frac{89 x }{3600}-\frac{2 y}{375}-\frac{z}{20}+20 
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Evaluate the partial derivatives at \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+R_x  (1000,500,700)=  -\frac{1000}{150}-\frac{5500}{3000}-\frac{89  (700)}{3600}+40=\frac{511}{36}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R_y  (1000,500,700)=  -\frac{11000 }{3000}-\frac{500}{25}-\frac{1400}{375}+30=\frac{13}{5}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+R_z  (1000,500,700)=  -\frac{89000 }{3600}-\frac{1000 }{375}-\frac{700}{20}+20=-\frac{76}{18}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Give the equation of the linear approximating function through \(P_1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+R(1000,500,700)=\frac{246700}{9}
+\end{equation*}
+</div>
+<p>Then the linear approximation is given by</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ Revenue(x,y,z)= R(1000,500,700)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++R_x  (1000,500,700)  (x-1000)
++  R_y  (1000,500,700)(y-500)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
++  R_x  (1000,500,700)(z-700) 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  \frac{246700}{9}+\frac{511}{36} (x-1000)+\frac{13}{5} (y-500)-\frac{763}{18}(z-700)
+\end{equation*}
+</div>
+</li>
+<li>
+<p>The approximation at \(P_2\) obtained from the function in d.</p>
+<div class="displaymath">
+\begin{equation*}
+Linear\ Revenue(1050,575,625)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=  \frac{246700}{9}+\frac{511}{36} (50)+\frac{13}{5} (75)-\frac{763}{18} (-75)
+=31,495  
+\end{equation*}
+</div>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec-6-2-PartialDerivatives.html#solution-204">in-context</a></span>
+</body>
+</html>

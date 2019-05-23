@@ -1,0 +1,32 @@
+         <chapter xml:id="MiscSections">
+            <title>Misc Sections</title>
+        
+        <section xml:id="section-interesting">
+            <title>A Bit More Interesting</title>
+
+<!--            <p>The previous section (<xref ref="LinearFunctionsAndModels" autoname="yes"/>) was a bit boring.</p>
+-->
+
+            <p>This paragraph has some inline math, a Diophantine equation, <m>x^2 + \doubler{y^2} = z^2</m>.  And some display math about infinite series: <me>\sum_{n=1}^\infty\,\frac{1}{n^2} = \frac{\pi^2}{6}.</me>  Look at the XML source to see how <latex /> macros are employed universally across all possible output formats.</p>
+        </section>
+
+        <section xml:id="section-computation">
+            <title>Computation</title>
+
+            <p>The following is a chunk of Sage code.  Your output format will dictate what you see next.  In print, you will see expected output.  In HTML you will have an executable, and editable, Sage Cell to work with.  In a SageMathCloud worksheet, you will be able to execute and edit the code with all the other features of SageMathCloud.  Note that if you include the expected output in your source, then you can test the example to verify that the behavior of Sage has not changed.</p> 
+
+            <sage>
+                <input>
+                A = matrix(4,5, srange(20))
+                A.rref()
+                </input>
+                <output>
+                [ 1  0 -1 -2 -3]
+                [ 0  1  2  3  4]
+                [ 0  0  0  0  0]
+                [ 0  0  0  0  0]
+                </output>
+            </sage>
+        </section>
+
+</chapter>

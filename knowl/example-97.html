@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:43-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.4.3</span>. <span class="title">Finding a Best-Fit Curve with the Definition and Calculus.</span>
+</h6>
+<p>Use calculus, partial derivatives, and the definition of best fitting to find the best fitting line for the data:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">8</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+</tr>
+</table></div></div></div>
+<p>Solution:  Before we can use partial derivatives to find a best fitting line, we need a function whose derivatives we are taking.  We start with the chart we produced when we were using solver.  This gives a formula for the squared error at each point in terms of the slope and intercept of the line.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Point</td>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">y</td>
+<td class="c m b1 r0 l0 t3 lines">Predicted-y</td>
+<td class="c m b1 r0 l0 t3 lines">\(error\)</td>
+<td class="c m b1 r0 l0 t3 lines">\(error^2\)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(P1\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(2\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(1\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(m*2+b\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(m*2+b-1\)</td>
+<td class="c m b1 r0 l0 t0 lines">\((m*2+b-1)^2\)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">P2</td>
+<td class="c m b1 r0 l0 t0 lines">4</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines">m*4+b</td>
+<td class="c m b1 r0 l0 t0 lines">m*4+b-15</td>
+<td class="c m b1 r0 l0 t0 lines">(m*4+b-15)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">P3</td>
+<td class="c m b1 r0 l0 t0 lines">8</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines">m*8+b</td>
+<td class="c m b1 r0 l0 t0 lines">m*8+b-15</td>
+<td class="c m b1 r0 l0 t0 lines">\((m*8+b-15)^2\)</td>
+</tr>
+</table></div></div></div>
+<p>We can expand the error squared term and add up those values.  After a straightforward but tedious computation, we see that we are trying to minimize</p>
+<div class="displaymath">
+\begin{equation*}
+SumErrorSq(m,b)=84m^2+28mb+3b^2-62b-364m+451.
+\end{equation*}
+</div>
+<p>We take the partial derivative of this function with respect to the slope \(m\) and the intercept \(b\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+SumErrorSq_m (m,b)=168m+28b-364.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+SumErrorSq_b (m,b)=28m+6b-62.
+\end{equation*}
+</div>
+<p>Setting the two partials to zero and solving we see the partials are both zero when \(m=2\) and \(b=1\text{.}\)  One again, this method produces the same best fitting line.</p></article><span class="incontext"><a href="sec-6-4-OptimizationBestFitCurves.html#example-97">in-context</a></span>
+</body>
+</html>

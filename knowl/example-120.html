@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:45-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">7.3.8</span>. <span class="title">Building a profit function form data.</span>
+</h6>
+<p>Experience tells me that the marginal profit of producing gadgets is a linear function.  My start-up costs are $2 million.  I have the following data with my units being thousands of dollars per millions of units.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Production</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">1</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">3</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Marginal Profit</td>
+<td class="c m b2 r0 l0 t0 lines">$3,3967</td>
+<td class="c m b2 r0 l0 t0 lines">$3,603</td>
+<td class="c m b2 r0 l0 t0 lines">$3,236</td>
+<td class="c m b2 r0 l0 t0 lines">$2,795</td>
+<td class="c m b2 r0 l0 t0 lines">$2,384</td>
+</tr>
+</table></div></div></div>
+<p>Produce a profit function, find the number of units that maximizes profit, and find the maximum profit</p>
+<p>Solution</p>
+<p>I start by finding a best fitting line to the data.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-3-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Excel tells me the marginal profit function is</p>
+<div class="displaymath">
+\begin{equation*}
+MP(x) = -397.4 x + 3991.8
+\end{equation*}
+</div>
+<p>We have maximum profit when the marginal profit is zero.  Using Goal Seek, the Marginal Profit is zero with a production of 10.0448 millions of units.  The anti-derivative of this function is</p>
+<div class="displaymath">
+\begin{equation*}
+P(x)= -198.7 x^2  + 3991.8x + C
+\end{equation*}
+</div>
+<p>Plugging in the initial costs into the production model, recalling that our function is written in thousands of dollars per millions of widgets, gives</p>
+<div class="displaymath">
+\begin{equation*}
+P(0) = -2000 = C
+\end{equation*}
+</div>
+<p>So our profit function is</p>
+<div class="displaymath">
+\begin{equation*}
+P(x)= -198.7 x^2  + 3991.8 x-2000
+\end{equation*}
+</div>
+<p>We saw that \(MP(x) = 0\text{,}\) when \(x = 10.0448\text{.}\) The maximum profit is the computed by evaluating \(P(x)\) at \(x = 10.0448\text{.}\) A quick computation shows that the  maximum profit is $18,049 thousands of dollars, or a bit more than $18 million.</p></article><span class="incontext"><a href="sec-7-3-BasicAntidifferentiation.html#example-120">in-context</a></span>
+</body>
+</html>

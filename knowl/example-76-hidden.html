@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:39-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>We are producing widgets (w).  The manufacturing process turns goop (g) into sludge (s) and sludge into widgets.  The yield equations in the appropriate units are:</p>
+<div class="displaymath">
+\begin{equation*}
+widgets(sludge)=4*sludge-0.1*sludge^2, 
+\end{equation*}
+</div>
+<p>or in shorthand notation: \(w(s)=4 s-0.1 s^2\)</p>
+<div class="displaymath">
+\begin{equation*}
+sludge(goop)=3*goop+.1*goop^2.
+\end{equation*}
+</div>
+<p>or in shorthand notation: \(s(g)=3 g+.1 g^2\)</p>
+<p>Find the derivative of widgets with respect to goop when \(goop=10\text{.}\)</p>
+<p><dfn class="terminology">Solution</dfn>: We note that when \(g=10\text{,}\) we have \(s=3*10+.1*10^2=40\text{.}\)  In this example we will take the derivatives of our equation.  We will then multiply them to get the derivative we want.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ widgets}{d\ sludge}=\frac{dw}{ds}=4-0.02*s.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ sludge}{d\ goop}=\frac{ds}{dg}=3+.2*g.
+\end{equation*}
+</div>
+<p>When \(goop=10\text{,}\) \(\frac{d\ w}{d\ s}  =(4-0.02*40)=3.2\text{,}\) and \(\frac{d\ s}{d\ g}\text{.}\)  We need to multiply the derivatives to cancel the \(d\ s\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dw}{dg}  =\frac{dw}{ds}*\frac{ds}{dg}=(3.2)(5)=16.
+\end{equation*}
+</div>
+<p>Thus the rate of widget production is increasing by 16 units per increase in on unit of goop at that point.</p></article></body>
+</html>

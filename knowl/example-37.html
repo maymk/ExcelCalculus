@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:34-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.4.5</span>. <span class="title">Maximized profits and break-even points.</span>
+</h6>
+<p>For widget production and sales we have the following data on profit based on sales.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Quantity</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+<td class="c m b1 r0 l0 t3 lines">200</td>
+<td class="c m b1 r0 l0 t3 lines">250</td>
+<td class="c m b1 r0 l0 t3 lines">300</td>
+<td class="c m b1 r0 l0 t3 lines">400</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Profit</td>
+<td class="c m b1 r0 l0 t0 lines">-$2,083</td>
+<td class="c m b1 r0 l0 t0 lines">$31,040</td>
+<td class="c m b1 r0 l0 t0 lines">$48,587</td>
+<td class="c m b1 r0 l0 t0 lines">$49,845</td>
+<td class="c m b1 r0 l0 t0 lines">$46,146</td>
+<td class="c m b1 r0 l0 t0 lines">$23,670</td>
+</tr>
+</table></div></div></div>
+<p>Find the break even points and the quantity that maximizes profit.</p>
+<p><dfn class="terminology">Solution</dfn>:  From looking at a quick plot of the data, I am going to assume that the profit function is a downward facing parabola, so I find the best fitting quadratic polynomial for the data.  Using trendlines, my profit function is</p>
+<div class="displaymath">
+\begin{equation*}
+profit(q)=-1.002 q^2+477.22 q=6720.9.
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>I now set up the table for special values with goal seek.  I use starting points of 20 and 450 for the break even points and 250 for the maximum.  To find break even points, I Goal Seek on the profit function.  To find the maximum point, I Goal Seek on the derivative of the profit function.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-4-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Rounding to the nearest whole number in each case, my break even points are for selling 15 and 460 widgets.  My maximum profit of $50,032 occurs when I sell 238 widgets.</p></article><span class="incontext"><a href="sec-3-4-Optimization.html#example-37">in-context</a></span>
+</body>
+</html>

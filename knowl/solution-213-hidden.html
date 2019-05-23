@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:43-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution">
+<p>The function we are looking for has a linear component (Amount1+Return1*time), and an exponential component. There is no trendline that would do this for us.</p>
+<p>What do we know about these values?</p>
+<ul class="disc">
+<li><p>We have $10,000 at the very beginning and this is split into two different investments, so Amount 1 + Amount 2 = $10,000.</p></li>
+<li><p>What is Return 1? It should be the return on the first part of the investment. So it should be some amount we receive on an investment of at most $10,000. A first guess would be that the value is in the hundreds of dollars, but maybe close to $150 or $200?</p></li>
+<li><p>The rate is our final parameter. This is the growth due to interests. We will start with a guess of \(rate = 1.05\text{.}\)</p></li>
+</ul>
+<p>The Excel commands used to generate the table are as follows:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>It is worth graphing both the actual data and the predicted data to see if we are setting the problem up correctly.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol7b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The general shape of the predicted values graph seems fine. The values are off, but Solver will be able to reduce the error.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol7c.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The solution is:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Amount 1</td>
+<td class="c m b1 r0 l0 t3 lines">3317.59</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">return 1</td>
+<td class="c m b1 r0 l0 t0 lines">163.19</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">rate</td>
+<td class="c m b1 r0 l0 t0 lines">1.07</td>
+</tr>
+</table></div></div></div>
+<p>Hence \(Amount 2 = 10,000 – 3,317.59 = 6,682.41\text{,}\) and we have that</p>
+<div class="displaymath">
+\begin{equation*}
+Amount(time)=$3,317.59+$163.19*time+$6,682.41* (1.07)^{time}
+\end{equation*}
+</div>
+<p>In Excel the data and the predicted values now line up very nicely.</p>
+</div></body>
+</html>

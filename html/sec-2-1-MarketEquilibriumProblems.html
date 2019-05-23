@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-03-20T21:59:27-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Market Equilibrium Problems</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="chap-2-BusinessApplications.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-2-BusinessApplications.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-2-2-ModelingRevenueCostProfit.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap-2-BusinessApplications.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-2-BusinessApplications.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-2-2-ModelingRevenueCostProfit.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Frontmatter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="acknowledgement-1.html">Acknowledgements</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="chap-1-FunctionsGraphsExcel.html"><span class="codenumber">1</span><span class="title">Functions Graphs and Excel</span></a></h2>
+<ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+<h2 class="link active"><a href="chap-2-BusinessApplications.html"><span class="codenumber">2</span><span class="title">Business Applications</span></a></h2>
+<ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html" class="active">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html">Nonlinear Functions</a></li>
+</ul>
+<h2 class="link"><a href="chap-3-RateChangeDerivatives.html"><span class="codenumber">3</span><span class="title">Rate of Change and Derivatives</span></a></h2>
+<ul>
+<li><a href="sec-3-1-MarginalFunctions.html">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html">An Introduction to Solver</a></li>
+</ul>
+<h2 class="link"><a href="chap-4-SymbolicDIfferentiation.html"><span class="codenumber">4</span><span class="title">Symbolic Differentiation</span></a></h2>
+<ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html">The Second Derivative and Concavity</a></li>
+</ul>
+<h2 class="link"><a href="chap-5-DIfferentiationApplications.html"><span class="codenumber">5</span><span class="title">Differentiation Techniques and Applications</span></a></h2>
+<ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html">RelatedRates</a></li>
+<li><a href="sec-5-3-Elasticity.html">Elasticity</a></li>
+</ul>
+<h2 class="link"><a href="chap-6-FunctionsSeveralVariables.html"><span class="codenumber">6</span><span class="title">Functions of Several Variables</span></a></h2>
+<ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html">Optimization and Best Fitting Curves</a></li>
+</ul>
+<h2 class="link"><a href="chap-7-Intergration.html"><span class="codenumber">7</span><span class="title">Integration</span></a></h2>
+<ul>
+<li><a href="sec-7-1-RiemannSums.html">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html">Economics Applications of the Integral</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2>
+<ul>
+<li><a href="appendix-1.html">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-2.html">Notation</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+<li><a href="colophon-2.html">Colophon</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-2-1-MarketEquilibriumProblems"><header title="Section 2.1 Market Equilibrium Problems"><h1 class="heading hide-type" alt="Section 2.1 Market Equilibrium Problems">
+<span class="type">Section</span><span class="codenumber">2.1</span><span class="title">Market Equilibrium Problems</span><a href="sec-2-1-MarketEquilibriumProblems.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-424">
+	As we mentioned in the previous chapter, many functions are locally linear, so if we restrict the domain the function will appear linear.  Thus we often start with linear models when trying to understand a situation.  In this section we look at the concepts of supply and demand and market equilibrium.  For our examples in this section we will assume that the functions are linear in the range we care about.</p>
+<p id="p-425"><em class="terminology">Supply and Demand and Market Equilibrium</em></p>
+<p id="p-426">The normal laws of supply and demand assume we are in a market with many producers and consumers, operating independently, all of them looking out for their own best interests.  We expect that when the price goes up, more producers are willing to sell but fewer consumers are willing to buy.  Conversely, when the price goes down, fewer producers are willing to sell but more consumers are willing to buy.
+
+</p>
+<p id="p-427">Consider the example of gasoline prices.  Different prices will make some areas of exploration and production profitable or not profitable.  When prices go up, new wells get drilled. If prices go down to far, stripper wells cease being profitable and are shut down. From the consumer side, when prices go up, more people look at mass transit or getting a more fuel-efficient vehicle.  When prices go down, it is easier to think about a road trip.
+
+</p>
+<p id="p-428">The <em class="terminology">law of supply</em> looks at the economy from the supplier’s point of view.  Price and quantity available for sale always move in the same direction.  If the price goes up we can assume that all the old suppliers are still willing to sell at the higher price, but some more suppliers may enter the market.  If the price goes down, no new suppliers will enter the market, and some old suppliers may leave the market.  For a linear model</p>
+<article class="assemblage-like" id="assemblage-13"><h5 class="heading"></h5>
+<p id="p-429">\begin{equation*}
+slope\  of\ supply\ curve=\frac{change\ in\ price}{change\ in\ quantity\ supplied}=
+\frac{\delta p}{\delta q} \gt 0.
+\end{equation*}</p></article><p id="p-430">The <em class="terminology">law of demand</em> looks at the economy from the consumer’s point of view.  Price and quantity available for sale always move in the opposite direction.  If the price goes down we can assume that all the old consumers are still willing to buy at the lower price, but some more consumers may leave the market.  If the price goes up, no new consumers will enter the market, and some old consumers may leave the market.  For a linear model</p>
+<article class="assemblage-like" id="assemblage-14"><h5 class="heading"></h5>
+<p id="p-431">\begin{equation*}
+slope\  of\ demand\ curve=\frac{change\ in\ price}{change\ in\ quantity\ demanded}=
+\frac{\delta p}{\delta q} \gt 0.
+\end{equation*}</p></article><p id="p-432">When we look at a graph of the supply price graph and the demand price graph on the same graph, we know the supply curve goes up as we go left to right, while the demand curve goes down.  From the properties of lines we know there is a single point where such a pair of lines can intersect.  It is at the point where the amount of goods offered for a price equals the amount of goods desired for the same price.  </p>
+<article class="assemblage-like" id="assemblage-15"><h5 class="heading"></h5>
+<p id="p-433"></p>
+<ul id="ul-13" style="list-style-type: disc;">
+<li id="li-117"><p id="p-434">This intersection of the supply and the demand functions is called the point of <em class="terminology">market equilibrium</em>, or <em class="terminology">equilibrium point</em>.  </p></li>
+<li id="li-118"><p id="p-435">The price at this point is referred to as the <em class="terminology">equilibrium price</em>`. </p></li>
+<li id="li-119"><p id="p-436">The standard economic theory says that a free and open market will naturally settle on the equilibrium price.</p></li>
+</ul></article><figure class="figure-like" id="figure-77"><img width="60%" src="images/sec2-1-1.png" alt=""></figure><p id="p-437"><em class="terminology">Example 1</em>:  Suppose \(q\) denotes quantity, and the supply price for widgets is given by</p>\begin{equation*}price=6+\frac{q}{100}\end{equation*}<p id="p-438">We are also told the demand price is given by</p>\begin{equation*}price=18-\frac{2q}{100}.\end{equation*}<p id="p-439">Find the equilibrium price and quantity.
+
+
+</p>
+<p id="p-440"><em class="terminology">Solution 1a</em>: We have started with an example that we can do by basic algebra without any technology.  Subtracting the two equations, we see that</p>\begin{equation*}0=12-\frac{3q}{100}.\end{equation*}<p id="p-441">Some straightforward algebra shows that the equilibrium quantity is 400.  Substituting back into either equation gives an equilibrium price of $10.
+
+
+</p>
+<p id="p-442"><em class="terminology">Solution 1b</em>: While we can do this example by hand, we also want to use it to set up a solution with Excel, since we may want help on problems where the numbers are not as nice.  Our plan is to use Goal Seek to find the intersection.  We need a cell where we can solve the problem by forcing the cell to have a value of zero.
+
+  <figure class="figure-like" id="figure-78"><img width="50%" src="images/sec2-1-2.png" alt=""></figure> 
+ 
+
+
+</p>
+<p id="p-443">When cell D2 is zero, the supply price will be the same as the demand price.  We now invoke Goal Seek.
+
+  <figure class="figure-like" id="figure-79"><img width="60%" src="images/sec2-1-3.png" alt=""></figure> 
+ 
+
+</p>
+<p id="p-444">As expected, it finds equilibrium when \(q=400\).</p>
+<p id="p-445">We need to do a bit more work when we are simply given data points and need to find the supply and demand curves.
+
+
+</p>
+<p id="p-446"><em class="terminology">Example 2</em>:  My market data indicates customers will buy 700 gizmos if they are priced at $13 each.  If the price rises to $15, they will only buy 500.  If the price is $12 a unit, the produces will make 400 gizmos.  If the price rises to $13 they will produce 600 gizmos.  Assume that the supply and demand curves are linear for between 300 and 1000 gizmos.  Find the equilibrium point for the gizmo market.
+
+
+</p>
+<p id="p-447"><em class="terminology">Solution</em>: We start by making a chart for the values given. We add a scatterplot so that we can see the values.
+
+  <figure class="figure-like" id="figure-80"><img width="80%" src="images/sec2-1-4.png" alt=""></figure> 
+ 
+ 
+
+
+</p>
+<p id="p-448">Next we add linear trendlines for both the supply and demand.  We select the option to show the equations.
+
+  <figure class="figure-like" id="figure-81"><img width="80%" src="images/sec2-1-5.png" alt=""></figure> 
+ 
+ 
+
+
+</p>
+<p id="p-449">The projected equations are:</p>\begin{equation*}supply\ price=0.005*quantity+10\end{equation*}\begin{equation*}demand\ price=-0.01*quantity+20\end{equation*}<p id="p-450">We set up columns for the projected supply and demand curves.  We also add a column for the difference so that we can use Goal seek to find the equilibrium point.
+
+  <figure class="figure-like" id="figure-82"><img width="80%" src="images/sec2-1-6.png" alt=""></figure> 
+ 
+ 
+
+It is then straightforward to see that the equilibrium quantity is 666.67 and the equilibrium price is $13.33.</p>
+<figure class="figure-like" id="figure-83"><img width="80%" src="images/sec2-1-7.png" alt=""></figure><p id="p-451">There is one more detail worth noting from this last example.  Depending on the units used, the slope can be very close to zero.  If we are selling tens of millions of units for a price under a dollar, the change in price of a penny may correspond to a change in quantity of several thousand.  Make sure to include enough digits for your equation to be meaningful.
+
+
+</p>
+<p id="p-452"><em class="terminology">Example 3</em>:  We have obtained the following data for sales of gizmos in our location.</p>
+<figure class="figure-like" id="table-13"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">653</td>
+<td class="c m b1 r0 l0 t3 lines">762</td>
+<td class="c m b1 r0 l0 t3 lines">847</td>
+<td class="c m b1 r0 l0 t3 lines">943</td>
+<td class="c m b1 r0 l0 t3 lines">1050</td>
+<td class="c m b1 r0 l0 t3 lines">1130</td>
+<td class="c m b1 r0 l0 t3 lines">1260</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">5.52</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">6.20</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">685</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">7.48</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">6.68</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">6.50</td>
+<td class="c m b2 r0 l0 t0 lines">6.38</td>
+<td class="c m b2 r0 l0 t0 lines">6.31</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></figure><p id="p-453">Assume the supply and demand curves are linear for quantities between 600 and 1300.  Find the best fitting lines for the supply and demand functions.  Find the equilibrium point.  Make a chart listing how many we can sell for $6.40 and $6.60.  Remember that sales will be the minimum of the supply and the demand.
+
+
+</p>
+<p id="p-454"><em class="terminology">Solution</em>: We start by putting the data into a spreadsheet and finding the best fitting lines.  We select the option to show the equations in the chart.
+
+  <figure class="figure-like" id="figure-84"><img width="80%" src="images/sec2-1-8.png" alt=""></figure> 
+ 
+
+
+</p>
+<p id="p-455">The supply and demand functions are:
+</p>\begin{equation*}supply\  price=.0032*quantity+3.44\end{equation*}\begin{equation*}demand\ price=-0.0010*quantity+7.46\end{equation*}<p id="p-456">We add columns for the projected supply and demand prices, using the equations obtained from the best fitting lines.  We also add a column, and compute the difference of the supply and demand functions. We can now use goal seek to solve the problem.
+
+  <figure class="figure-like" id="figure-85"><img width="60%" src="images/sec2-1-9.png" alt=""></figure> 
+ 
+ 
+
+
+</p>
+<p id="p-457">We now use Goal Seek to find the equilibrium point.
+
+   <figure class="figure-like" id="figure-86"><img width="80%" src="images/sec2-1-10.png" alt=""></figure> 
+ 
+
+
+
+</p>
+<p id="p-458">At equilibrium we sell 956 gizmos at $6.50.  To find sales at $6.40 and $6.60, we use Goal Seek to get those values at both supply and demand prices.
+
+  <figure class="figure-like" id="figure-87"><img width="50%" src="images/sec2-1-11.png" alt=""></figure> 
+ 
+ 
+
+
+</p>
+<p id="p-459">We see that we can sell 1055 gizmos at $6.40, but can only obtain 925.  Thus our sales at $6.40 will be 925.  At $6.60 we can obtain 987 gizmos, but can only sell 855.  Thus our sales at $6.60 will be 855.  We can eliminate a step in this process if we recall that below equilibrium price the constraint is supply, while above equilibrium price the constraint will be demand.</p>
+<section class="exercises" id="exercises-set-sec-2-1"><header title="Exercises 2.1.1 Exercises 2.1 Equilibrium Problems"><h1 class="heading hide-type" alt="Exercises 2.1.1 Exercises 2.1 Equilibrium Problems">
+<span class="type">Subsection</span><span class="codenumber">2.1.1</span><span class="title">Exercises 2.1 Equilibrium Problems</span><a href="sec-2-1-MarketEquilibriumProblems.html#exercises-set-sec-2-1" class="permalink">¶ permalink</a>
+</h1></header><p id="p-460">
+For problems 1-4, given the equations of the supply and demand curves:</p>
+<ol id="ol-24" style="list-style-type: lower-alpha;">
+<li id="li-120"><p id="p-461"> Evaluate the curves at \(q_0\).</p></li>
+<li id="li-121"><p id="p-462"> Find the market equilibrium.</p></li>
+</ol>
+<article class="exercise-like" id="exercise-91"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-463"> Given \(supply\ price=3 quantity+10\) and \(demand\ price=-2 quantity+30\), with \(q_0=6\).
+</p></article><article class="exercise-like" id="exercise-92"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-464"> Given \(p_s=2 q+20\) and \(p_d=- q+200\), with \(q_0=40\).
+</p></article><article class="exercise-like" id="exercise-93"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-465"> Given \(supply\ price=.2 q+157.3\) and \(demand\ price=-0.01 q+3468.9\), with \(q_0=6000\).
+</p></article><article class="exercise-like" id="exercise-94"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-466"> Given \(p_s=.0035 q+23\) and \(p_d=-0.0027 q+463\), with \(q_0=46,798\).
+</p></article><article class="exercise-like" id="exercise-95"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-467"> I am given \(p=-2 q+100\) and \(p=3 q-30\), as my supply and demand curves, but am not told which is which.  Determine which curve is the supply curve and explain how you did it.  What limits can you put on the domain of the supply and demand functions?
+</p></article><p id="p-468">
+For problems 6-9, given the supply and demand data:</p>
+<ol id="ol-25" style="list-style-type: lower-alpha;">
+<li id="li-122"><p id="p-469"> Find equations of the supply and demand curves, assuming they are both linear.</p></li>
+<li id="li-123"><p id="p-470"> Find the market equilibrium.</p></li>
+</ol>
+<article class="exercise-like" id="exercise-96"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-471"> Given 
+</p>
+<figure class="figure-like" id="table-14"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">50</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">4</td>
+<td class="c m b2 r0 l0 t0 lines">10</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines">9</td>
+<td class="c m b2 r0 l0 t0 lines">5</td>
+</tr>
+</table></figure></article><article class="exercise-like" id="exercise-97"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-472"> Given 
+</p>
+<figure class="figure-like" id="table-15"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">60</td>
+<td class="c m b1 r0 l0 t3 lines">70</td>
+<td class="c m b1 r0 l0 t3 lines">90</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">14</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">20</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">19</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">16</td>
+</tr>
+</table></figure></article><article class="exercise-like" id="exercise-98"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-473"> Given 
+</p>
+<figure class="figure-like" id="table-16"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">4356</td>
+<td class="c m b1 r0 l0 t3 lines">4792</td>
+<td class="c m b1 r0 l0 t3 lines">6503</td>
+<td class="c m b1 r0 l0 t3 lines">7038</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">$1.00</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">$1.15</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">$1.10</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">$.98</td>
+</tr>
+</table></figure></article><article class="exercise-like" id="exercise-99"><h5 class="heading"><span class="codenumber">9</span></h5>
+<p id="p-474"> Given 
+</p>
+<figure class="figure-like" id="table-17"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">5378</td>
+<td class="c m b1 r0 l0 t3 lines">7984</td>
+<td class="c m b1 r0 l0 t3 lines">8352</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">$8.00</td>
+<td class="c m b2 r0 l0 t0 lines">$9.50</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines">$12.00</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">$10.00</td>
+</tr>
+</table></figure></article><p id="p-475">For problems 10-12, given the supply and demand data:
+</p>
+<ol id="ol-26" style="list-style-type: lower-alpha;">
+<li id="li-124"><p id="p-476"> Find equations of the supply and demand curves, assuming they are both linear.</p></li>
+<li id="li-125"><p id="p-477"> Find the market equilibrium.</p></li>
+<li id="li-126"><p id="p-478"> Find the projected supply and demand prices for the extra quantities given.</p></li>
+</ol>
+<article class="exercise-like" id="exercise-100"><h5 class="heading"><span class="codenumber">10</span></h5>
+<p id="p-479"> Given </p>
+<figure class="figure-like" id="table-18"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+<td class="c m b1 r0 l0 t3 lines">120</td>
+<td class="c m b1 r0 l0 t3 lines">140</td>
+<td class="c m b1 r0 l0 t3 lines">160</td>
+<td class="c m b1 r0 l0 t3 lines">180</td>
+<td class="c m b1 r0 l0 t3 lines">155</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">10.5</td>
+<td class="c m b2 r0 l0 t0 lines">11.8</td>
+<td class="c m b2 r0 l0 t0 lines">13.9</td>
+<td class="c m b2 r0 l0 t0 lines">16.3</td>
+<td class="c m b2 r0 l0 t0 lines">17.5</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines">21.3</td>
+<td class="c m b2 r0 l0 t0 lines">18.1</td>
+<td class="c m b2 r0 l0 t0 lines">14.7</td>
+<td class="c m b2 r0 l0 t0 lines">12.3</td>
+<td class="c m b2 r0 l0 t0 lines">8.6</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></figure></article><article class="exercise-like" id="exercise-101"><h5 class="heading"><span class="codenumber">11</span></h5>
+<p id="p-480"> Given </p>
+<figure class="figure-like" id="table-19"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">5021</td>
+<td class="c m b1 r0 l0 t3 lines">6051</td>
+<td class="c m b1 r0 l0 t3 lines">6968</td>
+<td class="c m b1 r0 l0 t3 lines">7901</td>
+<td class="c m b1 r0 l0 t3 lines">9023</td>
+<td class="c m b1 r0 l0 t3 lines">9917</td>
+<td class="c m b1 r0 l0 t3 lines">7500</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines">13.18</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">16.76</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">17.89</td>
+<td class="c m b2 r0 l0 t0 lines">19.32</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">19.69</td>
+<td class="c m b2 r0 l0 t0 lines">18.78</td>
+<td class="c m b2 r0 l0 t0 lines">18.05</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">17.61</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></figure></article><article class="exercise-like" id="exercise-102"><h5 class="heading"><span class="codenumber">12</span></h5>
+<p id="p-481"> Given</p>
+<figure class="figure-like" id="table-20"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">quantity</td>
+<td class="c m b1 r0 l0 t3 lines">3160</td>
+<td class="c m b1 r0 l0 t3 lines">3615</td>
+<td class="c m b1 r0 l0 t3 lines">4092</td>
+<td class="c m b1 r0 l0 t3 lines">4462</td>
+<td class="c m b1 r0 l0 t3 lines">4837</td>
+<td class="c m b1 r0 l0 t3 lines">5261</td>
+<td class="c m b1 r0 l0 t3 lines">5579</td>
+<td class="c m b1 r0 l0 t3 lines">6000</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Supply price</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">20.54</td>
+<td class="c m b2 r0 l0 t0 lines">20.70</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">22.37</td>
+<td class="c m b2 r0 l0 t0 lines">22.43</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Demand price</td>
+<td class="c m b2 r0 l0 t0 lines">25.31</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">18.91</td>
+<td class="c m b2 r0 l0 t0 lines">17.04</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">14.37</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+</table></figure></article></section></section></div></main>
+</div>
+</body>
+</html>

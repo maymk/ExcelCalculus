@@ -1,0 +1,19 @@
+         <chapter xml:id="MinChapter1">
+            <title>Minimal Chapter 1</title>
+        
+        <section >
+            <title>First section</title>
+
+
+            <p>Some text</p>
+        </section>
+
+        <section >
+            <title>Second Section</title>
+
+            <p>more text</p> 
+        </section>
+
+</chapter>
+
+

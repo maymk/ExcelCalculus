@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-03-20T21:59:30-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Fundamental Theorem of Calculus</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec-7-1-RiemannSums.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-7-3-BasicAntidifferentiation.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-7-1-RiemannSums.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-7-Intergration.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec-7-3-BasicAntidifferentiation.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Frontmatter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="acknowledgement-1.html">Acknowledgements</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="chap-1-FunctionsGraphsExcel.html"><span class="codenumber">1</span><span class="title">Functions Graphs and Excel</span></a></h2>
+<ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+<h2 class="link"><a href="chap-2-BusinessApplications.html"><span class="codenumber">2</span><span class="title">Business Applications</span></a></h2>
+<ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html">Nonlinear Functions</a></li>
+</ul>
+<h2 class="link"><a href="chap-3-RateChangeDerivatives.html"><span class="codenumber">3</span><span class="title">Rate of Change and Derivatives</span></a></h2>
+<ul>
+<li><a href="sec-3-1-MarginalFunctions.html">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html">An Introduction to Solver</a></li>
+</ul>
+<h2 class="link"><a href="chap-4-SymbolicDIfferentiation.html"><span class="codenumber">4</span><span class="title">Symbolic Differentiation</span></a></h2>
+<ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html">The Second Derivative and Concavity</a></li>
+</ul>
+<h2 class="link"><a href="chap-5-DIfferentiationApplications.html"><span class="codenumber">5</span><span class="title">Differentiation Techniques and Applications</span></a></h2>
+<ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html">RelatedRates</a></li>
+<li><a href="sec-5-3-Elasticity.html">Elasticity</a></li>
+</ul>
+<h2 class="link"><a href="chap-6-FunctionsSeveralVariables.html"><span class="codenumber">6</span><span class="title">Functions of Several Variables</span></a></h2>
+<ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html">Optimization and Best Fitting Curves</a></li>
+</ul>
+<h2 class="link active"><a href="chap-7-Intergration.html"><span class="codenumber">7</span><span class="title">Integration</span></a></h2>
+<ul>
+<li><a href="sec-7-1-RiemannSums.html">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html" class="active">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html">Economics Applications of the Integral</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2>
+<ul>
+<li><a href="appendix-1.html">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-2.html">Notation</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+<li><a href="colophon-2.html">Colophon</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-7-2-FundamentalTheoremCalculius"><header title="Section 7.2 The Fundamental Theorem of Calculus"><h1 class="heading hide-type" alt="Section 7.2 The Fundamental Theorem of Calculus">
+<span class="type">Section</span><span class="codenumber">7.2</span><span class="title">The Fundamental Theorem of Calculus</span><a href="sec-7-2-FundamentalTheoremCalculius.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1835">
+In the last section we defined the definite integral, \(\int_a^b f(t)dt\), the signed area under the curve \(y= f(t)\) from \(t=a\) to \(t=b\), as the limit of the area found by approximating the region with thinner and thinner rectangles.  We also saw that we can easily find a reasonable approximation to the area using Excel to find such a sum with a fairly large number of rectangles.  </p>
+<p id="p-1836">
+In the trivial case where we have a constant function \(f(t)=c\) we can find the area of the area with a simple formula, \(\int_a^bc dt=c(b-a)=cb-ca\). If we define an area function, \(F(x)\), as the area under the curve \(y=f(t)\) from \(t=0\) to \(t=x\), then the area function in this case is  \(F(x)=c*x\).  We would like to be able to evaluate more integrals with a process like this, where we have a simple area function.  </p>
+<p id="p-1837">
+(<em class="terminology">Technical note</em> – We shifted the independent variable from \(t\) for the function \(f\) to \(x\) for the function \(F\) because we have two independent variables in our discussion and we want to keep them separate to avoid confusion.  We will consider \(f\) as a function of \(t\), and want to find the area under the graph of \(f(t)\).  We will consider \(F\) as a function of \(x\), and understand it as the area under the curve \(y=f(t)\) from some starting point \(t=a\) to \(t=x.\))</p>
+<p id="p-1838">
+We start by exploring cases where we can justify an area function without using calculus.  We will then look at some cases where we can experimentally verify the area function with Excel.  Finally we will give he general rule for the area function, the Fundamental Theorem of Calculus, and will give some justification.</p>
+<p id="p-1839">
+Example 1: Let \(f(t)=c\).  For a constant function, \(f(t)=c\), the area under the curve will be the area of a rectangle of height \(c\) and width \(b-a\).  The obvious area function is \(F(x)=c*x\).  Then </p>\begin{equation*}\int_a^b c dt=F(b)-F(a)=c*b-c*a=c(b-a).\end{equation*}<p id="p-1840">
+It is worth noting that this formula gives "signed area."  If c or b-a is negative, the "area" is negative.</p>
+<figure class="figure-like" id="figure-241"><img width="60%" src="images/sec7-2-1.png" alt=""></figure><p id="p-1841">
+Example 2:  Let \(f(t) = c*t\).  For a linear function, \(f(t) = c*t\), the area under the curve from 0 to \(b\) will be the area of a triangle of height \(c*b\) and width \(b\). </p>
+<figure class="figure-like" id="figure-242"><img width="60%" src="images/sec7-2-2.png" alt=""></figure><p id="p-1842">
+The obvious area function is \(F(x)=c*x^2/2\).  If \(a\) is also nonzero, the area is the difference of the areas of two triangles.  </p>\begin{equation*}\int_a^b c*t dt=F(b)-F(a)=
+\frac{c*b^2}{2}-\frac{c*a^2}{2}=\frac{c (b^2-a^2 )}{2}.\end{equation*}<p id="p-1843">
+<em class="terminology">Technical Note</em>: As we consider finding area with Excel and Riemann sums, rather than use a right-hand rule for the rectangles, we are going to use a midpoint rule where we find the area of rectangles evaluated at the middle of each interval.  </p>
+<figure class="figure-like" id="figure-243"><img width="60%" src="images/sec7-2-3.png" alt=""></figure><p id="p-1844">
+The right-hand rule uses an easier formula, so we used it first.  For the ith rectangle we evaluate at \(x_i=a+i\Delta x\).  For the midpoint formula, we evaluate at the midpoint of the interval, at \(mid_i=a+i\Delta x-\Delta x/2\).  As the picture suggests, the midpoint formula gives a better approximation.  The right-hand rule always overestimates an increasing function.  The midpoint rule is exact for linear functions where the midpoint is the average value. </p>
+<p id="p-1845">
+In both of the examples we have examined the area function has the original function as its derivative.  We would like to use Excel to test a few more cases. In the worksheets we set up in the last section, SumArea is the area function we are looking for.  We will plot the area function and use a best-fit curve to find the equation of the area function.</p>
+<p id="p-1846">
+Example 2a: Repeat Example 2 with Excel.  With a linear function we have use the following to produce an area function.</p>
+<figure class="figure-like" id="figure-244"><img width="90%" src="images/sec7-2-4.png" alt=""></figure><p id="p-1847">
+Column C has our list of \(t\) values in the center of each interval.  Column D has the value of \(f(t)\) evaluated at those points.  The area of the rectangle is the height \(f(mid_n)\) times the width, Interval width.  SumArea is our running area function.  When we plot the area function we have something that seems to be quadratic with leading coefficient \(c/2\) and very small linear and constant coefficients.  In fact the linear and constant coefficients are zero up to a rounding factor for numbers of the size we are using.</p>
+<figure class="figure-like" id="figure-245"><img width="60%" src="images/sec7-2-5.png" alt=""></figure><p id="p-1848">
+This matches the result we had solving the problem with geometry.  However, we can repeat the process with Excel and use functions of higher order.</p>
+<p id="p-1849">
+Example 3: Find the area function when \(f(t) = 6t^2\).</p>
+<p id="p-1850">
+For this problem we essentially repeat the work of the previous example with a quadratic function for \(f(t)\).</p>
+<figure class="figure-like" id="figure-246"><img width="90%" src="images/sec7-2-6.png" alt=""></figure><p id="p-1851">
+When we plot the area function we get a very good fit with a cubic function.  Once again, allowing for the way best-fit curves may return small random values for coefficients that should be zero, we see that if \(f(t) =c*t^2\), then the related area function is </p>\begin{equation*}F(x)=c*t^3/3\end{equation*}.
+
+  <figure class="figure-like" id="figure-247"><img width="100%" src="images/sec7-2-7.png" alt=""></figure><p id="p-1852">
+Example 4: Find the area when \(f(x)=6 x^3\).  </p>
+<p id="p-1853">
+Once again, we can use Excel to produce an area function.  The area function seems to be \(F(x)=1.5 x^4\).</p>
+<figure class="figure-like" id="figure-248"><img width="100%" src="images/sec7-2-8.png" alt=""></figure><p id="p-1854">
+In all 4 examples we note that the area function, \(F(x)\),  has \(f(x)\), the curve we are finding the area under, as its derivative.  Thus, in these cases, the area is an anti-derivative of \(f(x)\).  This observation generalizes to the Fundamental Theorem of Calculus, which has two versions:</p>
+<article class="assemblage-like" id="assemblage-35"><h5 class="heading"></h5>
+<p id="p-1855">
+<em class="terminology">Fundamental Theorem of Calculus (first version)</em> Let \(f(x)\) be a continuous function on the interval \([a, b]\).  On that interval define an area function by \(F(x)=\int_a^x f(t)  dt\). Then \(\frac{d}{dx} F(x)=f(x)\).</p></article><article class="assemblage-like" id="assemblage-36"><h5 class="heading"></h5>
+<p id="p-1856">
+<em class="terminology">Fundamental Theorem of Calculus (second version)</em> Let \(f(x)\) be a continuous function on the interval \([a, b]\).  Suppose \(F(x)\) is any continuous,  differentiable function with \(\frac{d}{dx} F(x)=f(x)\).  Then \(\int_a^b f(t) dt=F(b)-F(a)\).</p></article><p id="p-1857">
+In practice we use the second version of the fundamental theorem to evaluate definite integrals.  We find a function \(F(x)\) whose derivative is the integrand \(f(x)\) and then evaluate \( F(x)\) at the endpoints.
+It is easier to prove or justify the first version of the fundamental theorem.  The basic argument notes that is \(F(x)=\int_a^xf(t) \ dt\), then formally </p>\begin{equation*}\frac{d}{dx} F(x)=\lim_{h\to 0}
+\frac{(F(x+h)-F(x))}{h}.\end{equation*}<figure class="figure-like" id="figure-249"><img width="70%" src="images/sec7-2-9.png" alt=""></figure><p id="p-1858">
+But if \(h\) is small, \(F(x+h)-F(x)\) is approximately the area of a rectangle of height \(f(x)\) and with \(h\), so the \(F'(x) = f(x)\).  We then note that any two anti-derivatives of a function differ by a constant.</p>
+<p id="p-1859">
+Example 5 – In example 2 in the previous section, we used Riemann sums with 100 and 1000 intervals to approximate the area under \(y = x*(4-x)\) with \(x\) between 0 and 4.  Find the area using the fundamental theorem of calculus,</p>
+<p id="p-1860">
+We rewrite the curve as \(f(x) = 4x – x^2\) and note that one anti-derivative of \(f(x)\) is 
+\(F(x) = 2 x^2 - x^3/3\).  Then</p>\begin{equation*}\int_0^4 f(x)\ dx=F(4)-F(0)=(32-64/3)-(0)=10 2/3.\end{equation*}<p id="p-1861">
+To get the same answer to 4 decimal places, we needed to use 1000 intervals with Riemann sums.  Clearly, it is easier to solve this problem with the fundamental theorem of calculus than to make an approximation with that many intervals.</p>
+<p id="p-1862">
+Example 6 – Let \(f(x)=x^2 exp(-x)\).  We are told \(F(x)=(x^2+2 x+2) (-\exp(-x))\)  is an anti-derivative of \(f(x)\).  Verify the anti-derivative and find the area under the curve with \(x\) between 0 and 2.</p>
+<p id="p-1863">
+Using the product rule, </p>\begin{equation*}F'(x)=(2x+2) (-\exp(-x)) + (x^2+2x+2) (\exp(-x))=x^2 \exp(-x)=f(x)\end{equation*}<p id="p-1864">
+The area is </p>\begin{equation*}F(2) – F(0) = 10(-exp(-2)) – 2(exp(0)) = 2 – 10/e^2 = 0.646647\end{equation*}<p id="p-1865">
+We also want to revisit our first three examples in light of the fundamental theorem if calculus.  In all of those examples we used Excel to find a best fitting curve for an area function.  We can now check our work by taking the derivative, adjusting parameters as needed to find an anti-derivative.  For constant and linear functions we have already done the adjusting because we could find the area function from geometry.</p>
+<p id="p-1866">
+Example 3a: Find the area function when \(f(t) = 6t^2\).</p>
+<p id="p-1867">
+We have already used Excel to find a best fitting curve.
+</p>
+<figure class="figure-like" id="figure-250"><img width="100%" src="images/sec7-2-10.png" alt=""></figure><p id="p-1868">
+We are thus suspicious that the anti-derivative should be a cubic polynomial.  We need</p>\begin{equation*}6t^2=d/dt (at^3+bt^2+ct+d)=3at^2+2bt+c.\end{equation*}<p id="p-1869">
+Setting coefficients equal for each power, we see \(a = 2\) and \(b = c = 0\).  Thus our area function has the form \(F(t) = 2 t^3 + d\).  Since \(F(0)\) is the area of a region between \(t = 0\) and \(t = 0\), we conclude \(d = 0\) and our area function is \(F(t) = 2 t^3\).</p>
+<p id="p-1870">
+Example 4a: Find the area when \(f(x) = 6 x^3\).  </p>
+<p id="p-1871">
+Using Excel we guessed the area function \(F(x) = 1.5 x^4\).  We can now verify that the derivative of \(F(x)\) is \(f(x)\), so we have found an anti-derivative.</p>
+<p id="p-1872">
+It is worth noting that using the fundamental theorem to evaluate integrals requires us to be able to find an anti-derivative of a function.  Finding an anti-derivative may be quite hard or even an impossible task.  The method we have just used is often referred to as the “guess and check” method of finding anti-derivatives.  We will look at methods of finding anti-derivatives in the next several sections.
+</p>
+<section class="exercises" id="exercises-set-sec-7-2"><header title="Exercises 7.2.1 Exercises: The Fundamental Theorem of Calculus Problems"><h1 class="heading hide-type" alt="Exercises 7.2.1 Exercises: The Fundamental Theorem of Calculus Problems">
+<span class="type">Subsection</span><span class="codenumber">7.2.1</span><span class="title">Exercises: The Fundamental Theorem of Calculus Problems</span><a href="sec-7-2-FundamentalTheoremCalculius.html#exercises-set-sec-7-2" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1873">For problems 1-8, given the equations of the cost and demand price function:</p>
+<ol id="ol-76" style="list-style-type: lower-alpha;">
+<li id="li-364"><p id="p-1874"> Identify the fixed and variable costs.</p></li>
+<li id="li-365"><p id="p-1875"> Find the revenue and profit functions.</p></li>
+<li id="li-366"><p id="p-1876"> Evaluate cost, demand price, revenue, and profit at \(q_0\).</p></li>
+<li id="li-367"><p id="p-1877"> Find all break-even points.</p></li>
+<li id="li-368"><p id="p-1878"> Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p></li>
+</ol>
+<article class="exercise-like" id="exercise-433"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-1879"> Let \(f(x) = 4 x + 5\).  We are told that \(F(x) = 2 x^2 + 5 x + 7 \)is an anti-derivative. </p>
+<ol id="ol-77" style="list-style-type: lower-alpha;">
+<li id="li-369"><p id="p-1880">  Verify that \(f(x)\) is a derivative of \(F(x)\).</p></li>
+<li id="li-370"><p id="p-1881"> Use the fundamental theorem of calculus to evaluate \(\int_1^5 f(x)\ dx\).</p></li>
+<li id="li-371"><p id="p-1882"> Approximate \(\int_1^5 f(x)\ dx\), using Riemann sums and 100 intervals.</p></li>
+</ol></article><article class="exercise-like" id="exercise-434"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-1883"> Let \(f(x) = 6 x^2 + 3\).  We are told that \(F(x) = 2 x^3 + 3 x - 2\) is an anti-derivative. </p>
+<ol id="ol-78" style="list-style-type: lower-alpha;">
+<li id="li-372"><p id="p-1884">   Verify that \(f(x)\) is a derivative of \(F(x)\).</p></li>
+<li id="li-373"><p id="p-1885"> Use the fundamental theorem of calculus to evaluate \(\int_(-2)^4 f(x)\ dx/\).</p></li>
+<li id="li-374"><p id="p-1886"> Approximate \(\int_(-2)^4 f(x)\ dx\), using Riemann sums and 100 intervals.</p></li>
+</ol></article><article class="exercise-like" id="exercise-435"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-1887"> Let \(f(x) = 5/x\).  We are told that \(F(x) = \ln(x^5) + 9\) is an anti-derivative. </p>
+<ol id="ol-79" style="list-style-type: lower-alpha;">
+<li id="li-375"><p id="p-1888">   Verify that \(f(x)\) is a derivative of \(F(x)\).</p></li>
+<li id="li-376"><p id="p-1889"> Use the fundamental theorem of calculus to evaluate \(\int_1^{20} f(x)\ dx\).</p></li>
+<li id="li-377"><p id="p-1890"> Approximate \(\int_1^{20} f(x)\ dx\), using Riemann sums and 200 intervals.</p></li>
+</ol></article><article class="exercise-like" id="exercise-436"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-1891"> Let \(f(x) = (2 x +3)^4\).  We are told that \(F(x) = 0.1 (2 x + 3)^5\) is an anti-derivative. </p>
+<ol id="ol-80" style="list-style-type: lower-alpha;">
+<li id="li-378"><p id="p-1892">   Verify that \(f(x)\) is a derivative of \(F(x)\).</p></li>
+<li id="li-379"><p id="p-1893"> Use the fundamental theorem of calculus to evaluate \(\int_{-1}^1 f(x)\ dx\).</p></li>
+<li id="li-380"><p id="p-1894"> Approximate \(\int_{-1}^1 f(x)\ dx,\) using Riemann sums and 100 intervals.</p></li>
+</ol></article><article class="exercise-like" id="exercise-437"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-1895"> Let \(f(x) = x exp(-0.05 x)\).  We are told that \(F(x) = -20 (x+20) \exp(-0.05x)+3\) is an anti-derivative. </p>
+<ol id="ol-81" style="list-style-type: lower-alpha;">
+<li id="li-381"><p id="p-1896">  Verify that \(f(x)\) is a derivative of \(F(x)\).</p></li>
+<li id="li-382"><p id="p-1897"> Use the fundamental theorem of calculus to evaluate \(\int_0^{10} f(x)\ dx\).</p></li>
+<li id="li-383"><p id="p-1898"> Approximate \(\int_0^{10} f(x)\ dx\), using Riemann sums and 100 intervals.</p></li>
+</ol></article><article class="exercise-like" id="exercise-438"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-1899"> Explain why, if \(F(x)\) is an anti-derivative of \(f(x)\), then \(F(x) + 7\) is also an anti-derivative of \(f(x)\).
+</p></article><article class="exercise-like" id="exercise-439"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-1900"> Using an area function from Riemann sums and best fitting curves we have guessed that a quadratic function will have a cubic anti-derivative.</p>
+<ol id="ol-82" style="list-style-type: lower-alpha;">
+<li id="li-384"><p id="p-1901">   Find an anti-derivative of \(f(x)=-x^2+6x-2\) </p></li>
+<li id="li-385">
+<p id="p-1902"> Use the fundamental theorem of calculus to evaluate 
+</p>
+<ul id="ul-30" style="list-style-type: disc;">
+<li id="li-386">\(\int_0^3 f(x)\ dx\)</li>
+<li id="li-387">\(\int_{-2}^4 (x)\ dx\)</li>
+</ul>
+<p>.
+</p>
+</li>
+</ol></article><article class="exercise-like" id="exercise-440"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-1903"> Using an area function from Riemann sums and best fitting curves we have guessed that a cubic function will have a fourth degree anti-derivative.</p>
+<ol id="ol-83" style="list-style-type: lower-alpha;">
+<li id="li-388"><p id="p-1904">  Find an anti-derivative of \(f(x)=x^3+9x^2+7x-3\). </p></li>
+<li id="li-389"><p id="p-1905"> Use the fundamental theorem of calculus to evaluate \(\int_1^5 f(x)\ dx\).
+</p></li>
+</ol></article><article class="exercise-like" id="exercise-441"><h5 class="heading"><span class="codenumber">9</span></h5>
+<p id="p-1906"> I am interested in finding an anti-derivative for \(f(x)=e^{2x}\).</p>
+<ol id="ol-84" style="list-style-type: lower-alpha;">
+<li id="li-390"><p id="p-1907">   Using Excel and 100 subintervals of \(0 \le  x \le  2\), compute an approximate area function for \(f(x)\).  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
+<li id="li-391"><p id="p-1908"> Based on your best fitting curve, use guess and check to find the anti-derivative.
+</p></li>
+</ol></article><article class="exercise-like" id="exercise-442"><h5 class="heading"><span class="codenumber">10</span></h5>
+<p id="p-1909"> I am interested in finding an anti-derivative for \(f(x)=e^{-5x}\).</p>
+<ol id="ol-85" style="list-style-type: lower-alpha;">
+<li id="li-392"><p id="p-1910">   Using Excel and 100 subintervals of \(0 \le  x \le  2\), compute an approximate error function for \(f(x)\).  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
+<li id="li-393"><p id="p-1911"> Based on your best fitting curve, use guess and check to find the anti-derivative.
+</p></li>
+</ol></article><article class="exercise-like" id="exercise-443"><h5 class="heading"><span class="codenumber">11</span></h5>
+<p id="p-1912"> I am interested in finding an anti-derivative for \(f(x)=1/x\).</p>
+<ol id="ol-86" style="list-style-type: lower-alpha;">
+<li id="li-394"><p id="p-1913">   Using Excel and 100 subintervals of \(1 \le  x \le  5\), compute an approximate error function for \(f(x)\).  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
+<li id="li-395"><p id="p-1914"> Based on your best fitting curve, use guess and check to find the anti-derivative.
+</p></li>
+</ol></article>
+
+ 
+
+
+ 
+</section></section></div></main>
+</div>
+</body>
+</html>

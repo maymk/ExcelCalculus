@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:43-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution">
+<h6 class="heading">
+<span class="type">Solution</span> <span class="codenumber">6.4.5.1</span>.</h6>
+<p>A scatter plot of the data will help us find some good initial guesses for the initial amount and the rate.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The \(y\)-intercept is about $5000. This occurs when time = 0, so the initial guess for the initial amount will be 5,000. The graph is an increasing function, so we know rate  \(\gt 1\text{.}\)</p>
+<p>Choosing rate = 1 will cause problems (the base of an exponential function should not be 1). Assuming this is a reasonable investment problem we will assume 5$ growth, so \(r = 1.05\)</p>
+<p>The initial set-up looks like this. We have included a graph of the data given versus the predicted numbers. The initial guesses are not bad, but clearly we can do better.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol5b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>After using Solver we determine that the best model function for our data is as follows:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol5c.png" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="displaymath">
+\begin{equation*}
+Amount(time)=5,013.11* (1.06)^{time}
+\end{equation*}
+</div>
+<p>Notice that the data is now indistinguishable from the model function in the graph.</p>
+<p>Remark: If we use Trendlines to find a exponential function that fits the data, we would get \(y=5001 e^{0.0583*time}\)</p>
+<p>The least square error analysis shows that this is not as good of an approximation as the one we just found using Solver! The least squares error for the trendline is approximately 30% greater than for the value we found using Solver.</p>
+</div>
+<span class="incontext"><a href="sec-6-4-OptimizationBestFitCurves.html#solution-212">in-context</a></span>
+</body>
+</html>

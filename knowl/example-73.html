@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-23T13:08:39-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.2.1</span>. <span class="title">Change in revenue with respect to expense, doable two ways.</span>
+</h6>
+<p>We can buy widgets for $10.  The demand price of widgets is $20 minus 0.1 times the quantity to be sold.  Find the derivative of revenue with respect to expense.</p>
+<p><dfn class="terminology">Solution</dfn> a: The revenue and cost functions for widgets depend on the quantity (q). The formulas for revenue and cost are:</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=q(20-0.1q)=20q-0.1q^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+cost=10q.
+\end{equation*}
+</div>
+<p>We can solve the second equation for quantity and substitute back into the first equation. This now gives us the revenue function in terms of cost (c).</p>
+<div class="displaymath">
+\begin{equation*}
+quantity =.1*c.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+revenue=2c-0.001 c^2.
+\end{equation*}
+</div>
+<p>It is straightforward to take the derivative.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ revenue}{d\ cost}=2-0.002*cost.
+\end{equation*}
+</div>
+<p>Note that the derivative is positive for cost between $0 and $1000. This implies that the revenue is rising until the cost is $1000. After we hit a cost of $1000, the derivative becomes negative. This indicates that the revenue will actually decrease.</p>
+<p>The alternative method is to differentiate the equations for revenue (\(r\)) and cost (\(c\)) with respect to quantity (\(q\)), and find the two derivatives \(\frac{d\ r}{d\ q}\) and \(\frac{d\ c}{d\ q}\text{,}\) then treat them as fractions.  The derivative we want is the quotient of these fractions.</p>
+<p><dfn class="terminology">Solution b</dfn>: The revenue and cost functions for widgets are the same as above.</p>
+<div class="displaymath">
+\begin{equation*}
+revenue=20q-0.1 q^2.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+cost=10q.
+\end{equation*}
+</div>
+<p>We now differentiate</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ r}{d\ q}  =20-0.2 q.
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\frac{d\ c}{d\ q}=10.
+\end{equation*}
+</div>
+<p>We divide these derivatives to get the desired derivative.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{change\ in\ revenue}{change\ in\ cost}: \frac{d\ r}{d\ c}=\frac{d\ r}{d\ q}/\frac{d\ c}{d\ q}=(20-0.2 q)/10
+\end{equation*}
+</div>
+<p>Substituting q =.1 c gives the same solution we had from the first method.</p></article><span class="incontext"><a href="sec-5-2-RelatedRates.html#example-73">in-context</a></span>
+</body>
+</html>

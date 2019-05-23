@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-03-20T21:59:30-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Optimization and Best Fitting Curves</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec-6-3-CriticalPointsExtrema.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-6-FunctionsSeveralVariables.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chap-7-Intergration.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-6-3-CriticalPointsExtrema.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-6-FunctionsSeveralVariables.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chap-7-Intergration.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Frontmatter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="acknowledgement-1.html">Acknowledgements</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="chap-1-FunctionsGraphsExcel.html"><span class="codenumber">1</span><span class="title">Functions Graphs and Excel</span></a></h2>
+<ul>
+<li><a href="sec-1-1-LinearFunctionsAndModels.html">Linear Functions and models</a></li>
+<li><a href="sec-1-2-FunctionsBusinessSetting.html">Functions in the Business setting</a></li>
+<li><a href="sec-1-3-IntroExcelSpreadsheets.html">Introduction to Excel Spreadsheets</a></li>
+<li><a href="sec-1-4-GraphingFunctionsExcel.html">Graphing functions with Excel</a></li>
+<li><a href="sec-1-5-IntroBestFitCurves.html">Using Excel to find best-fit curves</a></li>
+<li><a href="sec-1-6-GoalSeek.html">Finding Numerical Solutions with Goal Seek</a></li>
+</ul>
+<h2 class="link"><a href="chap-2-BusinessApplications.html"><span class="codenumber">2</span><span class="title">Business Applications</span></a></h2>
+<ul>
+<li><a href="sec-2-1-MarketEquilibriumProblems.html">Market Equilibrium Problems</a></li>
+<li><a href="sec-2-2-ModelingRevenueCostProfit.html">Modeling Revenue, Costs, and Profit</a></li>
+<li><a href="sec-2-3-NonlinearFunctions.html">Nonlinear Functions</a></li>
+</ul>
+<h2 class="link"><a href="chap-3-RateChangeDerivatives.html"><span class="codenumber">3</span><span class="title">Rate of Change and Derivatives</span></a></h2>
+<ul>
+<li><a href="sec-3-1-MarginalFunctions.html">Marginal Functions and Difference Quotients</a></li>
+<li><a href="sec-3-2-NumericDerivativesLimits.html">Numeric Derivatives and Limits</a></li>
+<li><a href="sec-3-3-LocalLinearity.html">Local Linearity</a></li>
+<li><a href="sec-3-4-Optimization.html">Optimization</a></li>
+<li><a href="sec-3-5-IntroductionSolver.html">An Introduction to Solver</a></li>
+</ul>
+<h2 class="link"><a href="chap-4-SymbolicDIfferentiation.html"><span class="codenumber">4</span><span class="title">Symbolic Differentiation</span></a></h2>
+<ul>
+<li><a href="sec-4-1-ElementaryDerivatives.html">Elementary Derivatives</a></li>
+<li><a href="sec-4-2DerivativesCombinationFunctions.html">Derivative Rules for Combinations of Functions</a></li>
+<li><a href="sec-4-3-ChainRule.html">The Chain Rule</a></li>
+<li><a href="sec-4-4-DIfferentiationComputerAlgebra.html">Differentiation Using Computer Algebra</a></li>
+<li><a href="sec-4-5-SecondDerivativeConcavity.html">The Second Derivative and Concavity</a></li>
+</ul>
+<h2 class="link"><a href="chap-5-DIfferentiationApplications.html"><span class="codenumber">5</span><span class="title">Differentiation Techniques and Applications</span></a></h2>
+<ul>
+<li><a href="sec-5-1-ImplicitDifferentiation.html">Implicit Differentiation</a></li>
+<li><a href="sec-5-2-RelatedRates.html">RelatedRates</a></li>
+<li><a href="sec-5-3-Elasticity.html">Elasticity</a></li>
+</ul>
+<h2 class="link active"><a href="chap-6-FunctionsSeveralVariables.html"><span class="codenumber">6</span><span class="title">Functions of Several Variables</span></a></h2>
+<ul>
+<li><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html">Evaluating and Graphing Functions of Several Variables</a></li>
+<li><a href="sec-6-2-PartialDerivatives.html">Wire Frames, Partial Derivatives, and Tangent Planes</a></li>
+<li><a href="sec-6-3-CriticalPointsExtrema.html">Critical Points and Extrema</a></li>
+<li><a href="sec-6-4-OptimizationBestFitCurves.html" class="active">Optimization and Best Fitting Curves</a></li>
+</ul>
+<h2 class="link"><a href="chap-7-Intergration.html"><span class="codenumber">7</span><span class="title">Integration</span></a></h2>
+<ul>
+<li><a href="sec-7-1-RiemannSums.html">Approximating Definite Integrals as Sums</a></li>
+<li><a href="sec-7-2-FundamentalTheoremCalculius.html">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec-7-3-BasicAntidifferentiation.html">Basic Antidifferentiation</a></li>
+<li><a href="sec-7-4-ChangeVariables.html">Integration by Change of Variables or Substitution</a></li>
+<li><a href="sec-7-5-IntroductionComputerAlgebra.html">Integration using Computer Algebra</a></li>
+<li><a href="sec-7-6-NormalDistribution.html">The Normal Distribution: An extended numeric example</a></li>
+<li><a href="sec-7-7-InvestmentDepreciation.html">Applications of the integral: Investment and depreciation</a></li>
+<li><a href="sec-7-8-BusinessApplicationsIntegral.html">Economics Applications of the Integral</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html"><span class="title">Reference</span></a></h2>
+<ul>
+<li><a href="appendix-1.html">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-2.html">Notation</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+<li><a href="colophon-2.html">Colophon</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec-6-4-OptimizationBestFitCurves"><header title="Section 6.4 Optimization and Best Fitting Curves"><h1 class="heading hide-type" alt="Section 6.4 Optimization and Best Fitting Curves">
+<span class="type">Section</span><span class="codenumber">6.4</span><span class="title">Optimization and Best Fitting Curves</span><a href="sec-6-4-OptimizationBestFitCurves.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1709">
+In the last section we looked at using the partial derivatives to find the maximum or minimum of a function in several variables.  This is an extension of the optimization problems we did with functions of a single variable.  It is worthwhile to take another look at best fitting curves or trendlines, a process Excel has been doing throughout the course and see that it is a particular example of optimization.  This will let us to best fitting curves that use models other than the ones used by the trendline command.</p>
+<p id="p-1710"><em class="terminology">Definition of Best Fitting Curve</em></p>
+<p id="p-1711">Before we can find the curve that is best fitting to a set of data, we need to understand how “best fitting” is defined.  We start with the simplest nontrivial example.  We consider a data set of 3 points, \((1,0),(3,5),(6,5)\) and a line that we will use to predict the y-value given the x-value, \(predicted(x)=x/2 +1\).  We want to determine how well the line matches that data.  For each point, \((x_0,y_0)\), in the set we start by finding the corresponding point, \((x_0,prdicted(x_0 ))\), on the line.  This gives us a set of predicted points, \((1,1.5),(3,2.5),(6,4)\).</p>
+<figure class="figure-like" id="figure-220"><img width="80%" src="images/sec-6-4-1.png" alt=""></figure><p id="p-1712">For each point we now compute the difference between the actual y-values and the predicted y-values.  Our errors are the lengths of the brown segments in the picture, in this case \(3/2,3/2,1\).  Finally we add the squares of the errors, \(9/4+9/4+1=11/2\).  </p>
+<p id="p-1713">The best fitting line is defined to be the line that that minimizes the sum of the squares of the error.  If we are trying to fit the data with a different model we want to choose the equation from that model that minimizes the sum of the squares of the error.  </p>
+<p id="p-1714">Now that we have a definition we want to look at fitting a line to a data set in three ways.  We want to start with the familiar method, using the trendline command from a graph.  Then we want to use solver to minimize the sum of squared errors.  Finally we want to look at the function for sum of squared errors to se how we find the line using partial derivatives.  After we have looked at all three approaches for this first example we will consider more complicated examples. </p>
+<p id="p-1715">Example 1A – Use the trendline command to find the best fitting line for the data:</p>
+<figure class="figure-like" id="table-55"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">8</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+</tr>
+</table></figure><p id="p-1716">Solution:  We start by making a table adding a scatterplot and adding a trendline to the graph.  We remember to select the option to make the formula visible.  The trendline command tells us the slope should be 6 and the intercept should be 3.</p>
+<figure class="figure-like" id="figure-221"><img width="80%" src="images/sec-6-4-2.png" alt=""></figure><p id="p-1717">Example 1B – Use solver and the definition of best fitting to find the best fitting line for the data:</p>
+<figure class="figure-like" id="table-56"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">8</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+</tr>
+</table></figure><p id="p-1718">Solution:  To use solver we need to add the predicting equation.  We start with a randomly chosen slope and intercept for our prediction line.  Our table has a PredictedY column, which gives the value that would be on the line with our slope and intercept.  We add in the error, which is the difference between the predicted y and the actual y, and the square of the error.  We then take the sum of the squares of the errors.</p>
+<figure class="figure-like" id="figure-222"><img width="80%" src="images/sec-6-4-3.png" alt=""></figure><p id="p-1719">Our use of Solver is similar to when we were looking for a minimum of a function of one variable.  We need to designate the cell with the value we want to minimize.  We select the button to minimize.  We now designate two cells that represent variables we can change. </p>
+<figure class="figure-like" id="figure-223"><img width="80%" src="images/sec-6-4-4.png" alt=""></figure><p id="p-1720">Solver produces the same answer.  The best fitting line is </p>\begin{equation*}y=2x+1.\end{equation*}<p id="p-1721">Example 1C – Use calculus, partial derivatives, and the definition of best fitting to find the best fitting line for the data:</p>
+<figure class="figure-like" id="table-57"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines">8</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+</tr>
+</table></figure><p id="p-1722">Solution:  Before we can use partial derivatives to find a best fitting line, we need a function whose derivatives we are taking.  We start with the chart we produced when we were using solver.  This gives a formula for the squared error at each point in terms of the slope and intercept of the line.</p>
+<figure class="figure-like" id="table-58"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Point</td>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">y</td>
+<td class="c m b1 r0 l0 t3 lines">Predicted-y</td>
+<td class="c m b1 r0 l0 t3 lines">\(error\)</td>
+<td class="c m b1 r0 l0 t3 lines">\(error^2\)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(P1\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(2\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(1\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(m*2+b\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(m*2+b-1\)</td>
+<td class="c m b1 r0 l0 t0 lines">\((m*2+b-1)^2\)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">P2</td>
+<td class="c m b1 r0 l0 t0 lines">4</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines">m*4+b</td>
+<td class="c m b1 r0 l0 t0 lines">m*4+b-15</td>
+<td class="c m b1 r0 l0 t0 lines">(m*4+b-15)</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">P3</td>
+<td class="c m b1 r0 l0 t0 lines">8</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines">m*8+b</td>
+<td class="c m b1 r0 l0 t0 lines">m*8+b-15</td>
+<td class="c m b1 r0 l0 t0 lines">\((m*8+b-15)^2\)</td>
+</tr>
+</table></figure><p id="p-1723">We can expand the error squared term and add up those values.  After a straightforward but tedious computation, we see that we are trying to minimize</p>\begin{equation*}SumErrorSq(m,b)=84m^2+28mb+3b^2-62b-364m+451.\end{equation*}<p id="p-1724">We take the partial derivative of this function with respect to the slope \(m\) and the intercept \(b\).</p>\begin{equation*}SumErrorSq_m (m,b)=168m+28b-364.\end{equation*}\begin{equation*}SumErrorSq_b (m,b)=28m+6b-62.\end{equation*}<p id="p-1725">Setting the two partials to zero and solving we see the partials are both zero when \(m=2\) and \(b=1\).  One again, this method produces the same best fitting line.</p>
+<p id="p-1726">We can use the same methods with a larger problem.</p>
+<p id="p-1727">Example 2 – The table below gives census data for a collection of 10 states.  Find the best fitting line to predict 2010 population based on 2000 population.</p>
+<figure class="figure-like" id="table-59"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines"></td>
+<td class="c m b1 r0 l0 t3 lines">Pop 2000</td>
+<td class="c m b1 r0 l0 t3 lines">Pop 2010</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Wyoming</td>
+<td class="c m b1 r0 l0 t0 lines">493,782</td>
+<td class="c m b1 r0 l0 t0 lines">563,62</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Delaware</td>
+<td class="c m b1 r0 l0 t0 lines">783,600</td>
+<td class="c m b1 r0 l0 t0 lines">897,934</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Maine</td>
+<td class="c m b1 r0 l0 t0 lines">1,274,923</td>
+<td class="c m b1 r0 l0 t0 lines">1,328,361</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Nevada</td>
+<td class="c m b1 r0 l0 t0 lines">1,998,257</td>
+<td class="c m b1 r0 l0 t0 lines">2,700,551</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Iowa</td>
+<td class="c m b1 r0 l0 t0 lines">2,926,324</td>
+<td class="c m b1 r0 l0 t0 lines">3,046,355</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Kentucky</td>
+<td class="c m b1 r0 l0 t0 lines">4,041,769</td>
+<td class="c m b1 r0 l0 t0 lines">4,339,367</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Arizona</td>
+<td class="c m b1 r0 l0 t0 lines">5,130,632</td>
+<td class="c m b1 r0 l0 t0 lines">6,392,017</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Washington</td>
+<td class="c m b1 r0 l0 t0 lines">5,894,121</td>
+<td class="c m b1 r0 l0 t0 lines">6,724,540</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">New Jersey</td>
+<td class="c m b1 r0 l0 t0 lines">8,414,350</td>
+<td class="c m b1 r0 l0 t0 lines">8,791,894</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">California</td>
+<td class="c m b1 r0 l0 t0 lines">33,871,648</td>
+<td class="c m b1 r0 l0 t0 lines">37,253,956</td>
+</tr>
+</table></figure><p id="p-1728">Solution:  We set up a spreadsheet in the same way we set it up in the last example.  For an initial slope we will start with 1.1 for 10% growth.  For a starting point we will guess an intercept of 0.  As we did in the last example, the predicted population in 2010 is the slope time the population in 2000 plus the intercept.  We add extra columns for the predicted population, the error between the prediction and the actual population, the square of the error.  At the bottom of the last column, we add the squared errors.  This gives the value we want to minimize.</p>
+<figure class="figure-like" id="figure-224"><img width="80%" src="images/sec-6-4-5.png" alt=""></figure><p id="p-1729">When we use solver, the best fitting line is </p>\begin{equation*}2010population=1.096*2000population+98,154.\end{equation*}<p id="p-1730">The advantage of using the sum of squares definition is that we can find a best fitting curve using a model not supported by Excel.  For example if we have money invested with interest, but a portion of the capital kept available as cash without earning interest, we are looking for a curve of the form:</p>\begin{equation*}TotalValue(time)=CashAmount+DepositAmount*rate^time.\end{equation*}<p id="p-1731">The trendline command does not let us choose such a model to find a best fitting curve.  It is straightforward using the best fit construction.</p>
+<p id="p-1732">Example 3 – We are given the following data on the value of a portfolio over time:</p>
+<figure class="figure-like" id="table-60"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Year</td>
+<td class="c m b1 r0 l0 t3 lines">Amount</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">$10,000</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines">$10,920</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">$12,490</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">8</td>
+<td class="c m b1 r0 l0 t0 lines">$14,300</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">9</td>
+<td class="c m b1 r0 l0 t0 lines">$14,960</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">12</td>
+<td class="c m b1 r0 l0 t0 lines">$17,169</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">14</td>
+<td class="c m b1 r0 l0 t0 lines">$18,820</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">17</td>
+<td class="c m b1 r0 l0 t0 lines">$21,630</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">19</td>
+<td class="c m b1 r0 l0 t0 lines">$23,740</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">20</td>
+<td class="c m b1 r0 l0 t0 lines">$24,880</td>
+</tr>
+</table></figure><p id="p-1733">We think the investor put some money in a secure account that does not give interest (a coffee can) and the rest of the money in an account that bore interest (an investment account).  Find the amount deposited in each account and the interest rate of the investment account.</p>
+<p id="p-1734">Solution:  We set this up much like we did for the linear model, except of model equation is now</p>\begin{equation*}TotalValue(time)=CashAmount+DepositAmount*rate^{time}.\end{equation*}<figure class="figure-like" id="figure-225"><img width="80%" src="images/sec-6-4-6.png" alt=""></figure><p id="p-1735">We then use Solver to minimize cell E26, by changing cells B20:B22.  Our solution indicates that CashAmount=$997.76, DepositAmount=$9,005.51, and 
+rate=1.05.</p>
+<p id="p-1736">When we use this technique with other mathematical models, the only change is in the formula used for the predicted y value.  </p>
+<p id="p-1737">Example 4 – We are managing a wood harvesting business.  The number of trees available in a plot is modeled as constrained growth.  That means we expect it to be modeled by a logistic equation.</p>\begin{equation*}AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )\end{equation*}<p id="p-1738">We have the following information.  Find the best fitting curve.</p>
+<figure class="figure-like" id="table-61"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Time</td>
+<td class="c m b1 r0 l0 t3 lines">Trees</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines">150</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">400</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+<td class="c m b1 r0 l0 t0 lines">1030</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">20</td>
+<td class="c m b1 r0 l0 t0 lines">5300</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">30</td>
+<td class="c m b1 r0 l0 t0 lines">12020</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">40</td>
+<td class="c m b1 r0 l0 t0 lines">14510</td>
+</tr>
+</table></figure><p id="p-1739">Solution:  We set this up much like we did for the linear model, but using the logistic model.</p>
+<p id="p-1740">We then use Solver to minimize cell E12, by changing cells B1:B3.  Our solution indicates that Capacity=14996, C=99.93, and 
+rate=0.200.</p>
+<figure class="figure-like" id="figure-226"><img width="80%" src="images/sec-6-4-7.png" alt=""></figure><p id="p-1741"><em class="terminology">Strengths and weaknesses of the three methods of fitting curves:
+</em></p>
+<p id="p-1742">We have examined three methods for finding a best fitting curve.  From chapter 1, we reviewed the method of plotting points and adding a trendline.  Using the sum of least squared error definition of best fit we looked at creating an error function and using Solver to minimize the error.  We also looked at using partial derivatives to find critical points of the error function.  It is worthwhile to look at some of the strengths and weaknesses of each method.</p>
+<p id="p-1743">
+The method of graphing points and using the trendline command has the advantage of being the simplest method when it works.  The biggest disadvantage of this method is that it only works with a small collection of mathematical models.  (We can use this method if our desired equation is linear, \(y=mx+b\), logarithmic, \(y=a \log(x)+b\), polynomial of degree no more than 6, power, \(y=ax^b\), or exponential, \(y=ae^bx\).)  As we have seen in this section, it is not hard to find situations where some other model should be used.  This method also has the disadvantage of simply giving an answer without showing intermediate steps that might provide other useful information.</p>
+<p id="p-1744">
+The method of using partial derivatives has the advantage of being mathematically clear.  It shows us what is going on when we find a best fitting curve.  However, in all but the simplest cases, this method has the disadvantage of involving a daunting flood of computations.  This method is good for informing us about how the method works, but not a method we want to use in practice for most realistic problems.</p>
+<p id="p-1745">
+The middle method, using Solver is a hybrid of the other two methods.  We start by deciding on the mathematical model that should fit our situation.  As we saw, the method is straightforward to adapt to any kind of equation.  It is straightforward to explicitly build our error function.  This method also has the advantage of making the error attributed to each point visible.  We can see if another curve is almost as good as the solution we find.  </p>
+<p id="p-1746">
+The disadvantages of the Solver method are the standard disadvantages of using Solver to find a minimum.  Recall that Solver simply finds a local minimum from a starting point.  Since solver uses numerical methods it looks for places where the partial derivatives are within our tolerance bounds of zero.  We cannot expect Solver to give an answer that is more precise than the tolerance bounds.
+With all of the methods we should be aware that we need enough points to get a reasonable fit of the curve.  Intuitively a small change in any point should not cause a big change in the curve.</p>
+<p id="p-1747">
+ As a general rule, we will use the trendline command when it works with the kind of equation we have decided to use as our model.
+</p>
+<section class="exercises" id="exercises-set-sec-6-4"><header title="Exercises 6.4.1 Exercises: Optimization and Best Fitting Curves Problems"><h1 class="heading hide-type" alt="Exercises 6.4.1 Exercises: Optimization and Best Fitting Curves Problems">
+<span class="type">Subsection</span><span class="codenumber">6.4.1</span><span class="title">Exercises: Optimization and Best Fitting Curves Problems</span><a href="sec-6-4-OptimizationBestFitCurves.html#exercises-set-sec-6-4" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1748">
+For exercises 1-4, for the given data sets:</p>
+<ol id="ol-70" style="list-style-type: decimal;">
+<li id="li-340"><p id="p-1749">Plot the points and add a linear trendline.  Show the equation of the line.</p></li>
+<li id="li-341"><p id="p-1750">Create a spreadsheet to compare the data to a linear function.</p></li>
+<li id="li-342"><p id="p-1751">Add error to your spreadsheet.  Find the best fitting line, using Solver.</p></li>
+<li id="li-343"><p id="p-1752">Explicitly find the sum of squared errors function as a quadratic function of the slope m, and the intercept b.</p></li>
+<li id="li-344"><p id="p-1753">Find the values of m and b that minimize the error function by taking partial derivatives and setting them equal to 0.</p></li>
+</ol>
+<article class="exercise-like" id="exercise-413"><h5 class="heading"><span class="codenumber">1</span></h5>
+<p id="p-1754"> The given points are:
+</p>
+<figure class="figure-like" id="table-62"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">-2</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">6</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">-7</td>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">15</td>
+</tr>
+</table></figure></article><article class="exercise-like" id="exercise-414"><h5 class="heading"><span class="codenumber">2</span></h5>
+<p id="p-1755"> The given points are:
+</p>
+<figure class="figure-like" id="table-63"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">-2</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">6</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">24</td>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+<td class="c m b1 r0 l0 t0 lines">20</td>
+</tr>
+</table></figure></article><article class="exercise-like" id="exercise-415"><h5 class="heading"><span class="codenumber">3</span></h5>
+<p id="p-1756"> The given points are:
+</p>
+<figure class="figure-like" id="table-64"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">-3</td>
+<td class="c m b1 r0 l0 t3 lines">-1</td>
+<td class="c m b1 r0 l0 t3 lines">1</td>
+<td class="c m b1 r0 l0 t3 lines">3</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">-2</td>
+<td class="c m b1 r0 l0 t0 lines">6</td>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+</tr>
+</table></figure></article><article class="exercise-like" id="exercise-416"><h5 class="heading"><span class="codenumber">4</span></h5>
+<p id="p-1757"> The given points are:
+</p>
+<figure class="figure-like" id="table-65"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">x</td>
+<td class="c m b1 r0 l0 t3 lines">-2</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">4</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">y</td>
+<td class="c m b1 r0 l0 t0 lines">-7</td>
+<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines">11</td>
+<td class="c m b1 r0 l0 t0 lines">11</td>
+</tr>
+</table></figure></article><p id="p-1758">For exercises 5-8, find the curve of the indicated type that gives the best fit for the data.</p>
+<article class="exercise-like" id="exercise-417"><h5 class="heading"><span class="codenumber">5</span></h5>
+<p id="p-1759"> Sally has money invested in a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is:</p>\begin{equation*}Amount(time)=InitialAmount* rate^{time}\end{equation*}<p id="p-1760">With the data:</p>
+<figure class="figure-like" id="table-66"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Time</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">5</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+<td class="c m b1 r0 l0 t3 lines">15</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Amount</td>
+<td class="c m b1 r0 l0 t0 lines">$5000</td>
+<td class="c m b1 r0 l0 t0 lines">$5600</td>
+<td class="c m b1 r0 l0 t0 lines">$6700</td>
+<td class="c m b1 r0 l0 t0 lines">$9000</td>
+<td class="c m b1 r0 l0 t0 lines">$12000</td>
+<td class="c m b1 r0 l0 t0 lines">$16000</td>
+</tr>
+</table></figure><p id="p-1761">Find the best fitting curve of the given model.
+</p></article><article class="exercise-like" id="exercise-418"><h5 class="heading"><span class="codenumber">6</span></h5>
+<p id="p-1762"> Fred has put some of his money in a cash account that pays no interest and the rest of his money a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is</p>\begin{equation*}Amount(time)=CashAmount+InvestmentAmount*rate^{time}\end{equation*}<p id="p-1763">With the data:</p>
+<figure class="figure-like" id="table-67"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Time</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">5</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+<td class="c m b1 r0 l0 t3 lines">15</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Amount</td>
+<td class="c m b1 r0 l0 t0 lines">$10000</td>
+<td class="c m b1 r0 l0 t0 lines">$11000</td>
+<td class="c m b1 r0 l0 t0 lines">$14000</td>
+<td class="c m b1 r0 l0 t0 lines">$19000</td>
+<td class="c m b1 r0 l0 t0 lines">$27000</td>
+<td class="c m b1 r0 l0 t0 lines">$39000</td>
+</tr>
+</table></figure><p id="p-1764">Find the best fitting curve of the given model.
+</p></article><article class="exercise-like" id="exercise-419"><h5 class="heading"><span class="codenumber">7</span></h5>
+<p id="p-1765"> Mary has put some of her money in an investment that pays simple and the rest of her money a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is</p>\begin{equation*}Amount(time)=Amount1+Return1*time+Amount2*rate2^{time}\end{equation*}<p id="p-1766">With the data:</p>
+<figure class="figure-like" id="table-68"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Time</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">5</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+<td class="c m b1 r0 l0 t3 lines">15</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">30</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Amount</td>
+<td class="c m b1 r0 l0 t0 lines">$10000</td>
+<td class="c m b1 r0 l0 t0 lines">$11300</td>
+<td class="c m b1 r0 l0 t0 lines">$13500</td>
+<td class="c m b1 r0 l0 t0 lines">$18300</td>
+<td class="c m b1 r0 l0 t0 lines">$24700</td>
+<td class="c m b1 r0 l0 t0 lines">$33500</td>
+<td class="c m b1 r0 l0 t0 lines">$62600</td>
+<td class="c m b1 r0 l0 t0 lines">$118800</td>
+</tr>
+</table></figure><p id="p-1767">Find the best fitting curve of the given model.
+</p></article><article class="exercise-like" id="exercise-420"><h5 class="heading"><span class="codenumber">8</span></h5>
+<p id="p-1768"> John has divided his money between two accounts.  They both compound their returns, but they pay different rates.  Thus, the formula that models the investment is:</p>\begin{equation*}Amount(time)=Amount1*rate1^{time}+Amount2*rate2^{time}\end{equation*}<p id="p-1769">With the data:</p>
+<figure class="figure-like" id="table-69"><table>
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Time</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">2</td>
+<td class="c m b1 r0 l0 t3 lines">5</td>
+<td class="c m b1 r0 l0 t3 lines">10</td>
+<td class="c m b1 r0 l0 t3 lines">15</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">30</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">Amount</td>
+<td class="c m b1 r0 l0 t0 lines">$10000</td>
+<td class="c m b1 r0 l0 t0 lines">$11500</td>
+<td class="c m b1 r0 l0 t0 lines">$14000</td>
+<td class="c m b1 r0 l0 t0 lines">$20000</td>
+<td class="c m b1 r0 l0 t0 lines">$29000</td>
+<td class="c m b1 r0 l0 t0 lines">$41500</td>
+<td class="c m b1 r0 l0 t0 lines">$87000</td>
+<td class="c m b1 r0 l0 t0 lines">$183500</td>
+</tr>
+</table></figure><p id="p-1770">Find the best fitting curve of the given model.
+</p></article></section></section></div></main>
+</div>
+</body>
+</html>
