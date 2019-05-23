@@ -1,0 +1,2979 @@
+         <chapter xml:id="chap-7-Intergration">
+            <title>Integration</title>
+
+<introduction>
+
+
+<p>Suppose that for a given company the marginal cost has been determined to be</p>
+<me>MC(x)=x^3+3x^2</me>
+<p>We would like to re-construct the cost function from this data. Suppose we also know that the fixed cost is equal to $100. How do we find out the cost for producing <m>x</m> items?</p>
+<ul>
+<li><p> Start with the fixed cost.</p></li>
+<li><p> Add the marginal cost for each consecutive item.</p></li>
+<li><p> Create a sidebyside to keep track of the cost as we accumulate the data.</p></li>
+</ul>
+
+<p>For this example we would get:</p>
+  <sidebyside width="80%">
+                <image width="80%" source="images/sec7-0-1.png">
+                </image>
+            </sidebyside> 
+
+<p>We would like to relate this data to the original graph of the marginal cost. When we consider this graph we see that the estimated cost actually corresponds to the are underneath the Marginal Cost function MC(x).</p>
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-0-2.png">
+                </image>
+            </sidebyside> 
+ 
+<p>In other words, the cost function is the accumulation of the derivative (the marginal cost). Graphically, the cost function corresponds to the area underneath the marginal cost function.</p>
+
+<p>We want to consider the accumulation of continuous functions.  In the language of calculus this is called finding an integral. 
+</p></introduction>
+
+         <section xml:id="sec-7-1-RiemannSums">
+            <title>Approximating Definite Integrals as Sums</title>
+
+<p><url href="./Examples/Section-7-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p> 
+The standard approach to accumulation is to reduce the problem to an area problem.  If we let f(t) be a velocity function, then the area under the y=f(t) curve between a starting value of t=a and a stopping value of t=b is the distance traveled in that time period.  In the easiest case, the velocity is constant and we use the simple formula</p>
+
+<me>distance = velocity * time </me>
+
+<example><title>Distance with Constant Speed</title>
+<p>Find the distance traveled if I go 60 mph from 12:30 until 3:00.</p>
+
+<p>This problem is easy to do without any calculus.  If we graph the velocity function</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-1.png">
+                </image>
+            </sidebyside> 
+
+<p>we find the area of the rectangle by taking base times height and noting <m>60*(3-0.5)=150</m>.  Note that we do the same computation if I ask how much I earn over a period of 2.5 years if I make $60K a year, or how much oil is produced in 2 and a half hours form an oil well that produces 60 barrels of oil an hour.</p></example>
+
+<p>In a similar manner, if the function I am accumulating is linear, I can find area by using the area formula of a triangle, one half base time height.  The question becomes more difficult when I want to find the area under a curve that is not linear.  Suppose for example that we want to find the area under the curve </p>
+
+<me>y = x * (4-x)</me>
+
+<p>between x=0 and x=4.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-2.png">
+                </image>
+            </sidebyside> 
+
+<p>We no longer have a nice formula from geometry for the area.  Thus we start making approximations.  The easiest approximation is to note that the area has to be less than the area of the 4 by 4 rectangle we can draw around the region.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-3.png">
+                </image>
+            </sidebyside> 
+
+<p>We can improve our estimate by dividing the interval [0, 4] into 4 equal subintervals and then taking the combined area of the 4 rectangles we need to contain the region.  This reduces our upper estimate from 16 to 14.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-4.png">
+                </image>
+            </sidebyside> 
+
+<p>Similarly we could get a better estimate by looking at 8 subintervals and seeing that the area under the parabola is no more than 12.5</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-5.png">
+                </image>
+            </sidebyside> 
+
+<p>If we continue the process with 100 subintervals, our estimate is down to 10.83.  From the picture, it looks like a fairly good estimate.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-6.png">
+                </image>
+            </sidebyside> 
+
+<p>While this process would be very long and tedious by hand, the process of finding the area of each of 100 rectangles and adding the areas is rather easy in Excel.  Before going to Excel, we want to make a small adjustment in our method.  The method we used always gives an overestimate.  It also requires that we know where the function reaches a maximum on each subinterval.  It will be easier if we estimate area by always taking the height of the rectangle at the right end of the subinterval.  With 4 subintervals this gives an estimate of 10 for our area.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-7.png">
+                </image>
+            </sidebyside> 
+
+<p>When we increase the number of subintervals to 100, we once again get a fairly good estimate of the area.  From the picture, it is hard to see difference between the area defined by the curve and the area defined by the rectangles.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-8.png">
+                </image>
+            </sidebyside> 
+
+<example xml:id="area-parabola-down"><title>Approximating an Area with a Riemann Sum</title>
+<p>Find the area under the curve <m>y=x*(4-x)</m> with <m>x</m> between 0 and 4 with Excel</p>
+
+<p>We will approximate the area with 100 rectangles.  We set up a worksheet to find the area of the first rectangle.</p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-1-9.png">
+                </image>
+            </sidebyside> 
+
+<p>Following our standard practice, we set up the question and answer in labeled areas at the top of the worksheet.  The width of a subinterval is the width of the whole interval divided by the number of subintervals.  The column <m>x_n</m> is for the x value at the right side of the n-th subinterval.   The value of <m>x_n</m> is the starting point plus n times the width of a subinterval.  We then evaluate the function at <m>x_n</m>.  The area of the n-th rectangle is the height, or <m>f(x_n)</m>, times the width of the subinterval.  The last column is the total area for the first n rectangles.  The area for 100 rectangles is our area estimate.</p>
+<p>To find the area we quick fill our worksheet.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-1-10.png">
+                </image>
+            </sidebyside> 
+
+<p>For a more accurate estimate we divide into smaller rectangles.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-1-11.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<p>While 100 subintervals will be close enough for most of the problems we are interested is, the "area", or definite integral will be defined as the limit of this sum as the number of subintervals goes to infinity.  Thus</p>
+
+<assemblage><p>
+<me>  \int_a^bf(x)  dx=\lim_{n\to \infty} \Sigma_i^nf (x_i)\Delta x </me></p>
+<p> with <m>\Delta x=\frac{b-a}{n}</m>  and  <m>x_i=a*i*\Delta x</m>.</p></assemblage>
+
+<p>The sums of the form, <m>\Sigma_{i=1}^n  f(x_i)\Delta x</m> with <m>\Delta x=\frac{b-a}{n}</m> and <m>x_i=a+i*\Delta x</m>, are called <term>Riemann sums</term>.  The limit, written <m>\int_a^bf(x)  dx</m>, is called a <term>definite integral</term>.</p>
+
+<p>As a memory aid, it is worth noting that the symbol used for the sum is an upper case sigma, or S for sum in the Greek alphabet.  When we take the limit we use an integral sign, which is a stylized S in the Latin alphabet.  </p>
+
+<p>It is worth noting that in this definition we are finding “signed area under a curve.”  If the function <m>f(x)</m> is negative over the interval, the integral will also be negative, in the same we would have a negative change in our bank statement if we were steadily removing money.  Similarly we can get a negative integral when the ends of the interval are reversed.  If I am steadily adding money to an account, the net change is negative if I measure from 5 years in the future back to today.</p>
+
+<p>We should note that, for functions nice enough to be considered in this class, we get to the same limit by using rectangles with the function evaluated on the right side of the rectangle or the left side of the rectangle, or any point in the rectangle we choose.  Choosing the right hand side for evaluation makes our formulas a little simpler.</p>
+
+<example><title>Present Value of a Revenue Stream</title>
+<p>The estimated current value of the revenue stream, in billions of dollars, of a company being bought out is <m>f(x)=\exp(-0.06*x)*0.235</m>.
+The present value of that revenue stream is the area of the region under the curve <m>y=f(x)</m> from <m>x=0</m> to <m>x=15</m>.  Use 500 intervals to estimate the present value.</p>
+
+<p>Although the data in the question for this example is quite different from the previous example, the setup for the worksheet to evaluate the Riemann sum is the same.</p>
+
+  <sidebyside width="80%" >
+                <image width="80%" source="images/sec7-1-12.png">
+                </image>
+            </sidebyside> 
+
+<p>With 500 intervals we estimate the present value of the revenue stream to be worth $2.3222 Billion.  If we had only used 100 intervals, the estimate would have been for $2.318 Billion, while 1000 intervals gives an estimate of $2.3232 Billion.
+</p>
+</example>
+
+<exercises xml:id="exercises-set-sec-7-1">
+	<title>Exercises: Approximating Definite Integrals as Sums Problems</title>
+
+
+<exercise ><statement><p> Let <m>f(x) = 4 x + 5</m>.  Estimate the area under <m>f(x)</m> on the interval <m>0 \le  x \lt 7</m> using 100 rectangles and a right hand rule.
+</p></statement><solution>
+<p>The Excel commands are:</p>
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-1-sol1a.png">
+                </image>
+            </sidebyside> 
+<p>The answer is given as follows. Note that in this screen grab the center part of the sidebyside was hidden so that the image is a reasonable size</p>
+
+<p>The area is approximately 133.98</p>
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-sol1b.png">
+                </image>
+            </sidebyside> 
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = 5 – 3 x</m>.  Estimate the area under <m>f(x)</m> on the interval <m>2 \le  x \lt 10</m> using 200 rectangles and a right hand rule.
+</p></statement></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = x^2  + 3 x + 1</m>.  Estimate the area on the interval <m>-10\le  x \lt -2</m> under <m>f(x)</m> using 200 rectangles and a right hand rule.
+</p></statement><solution>
+<p>The set-up is very similar to the one in problem 1.</p>
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-1-sol3a.png">
+                </image>
+            </sidebyside> 
+<p>The area underneath the curve is approximately 193.228 according to the Excel computation.</p>
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-sol3b.png">
+                </image>
+            </sidebyside> 
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = -x^2  + 7 x - 10</m>.  Estimate the area below the curve <m>y =  f(x)</m> and above the x-axis using 100 rectangles and a right hand rule.
+</p></statement></exercise>
+
+<exercise ><statement><p>  Let <m>f(x) = 3 \ln(x)</m>.  Estimate the area under <m>f(x)</m> on the interval <m>1 \le  x \lt 10</m> using 50 rectangles and a right hand rule.
+</p></statement><solution>
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-1-sol5a.png">
+                </image>
+            </sidebyside> 
+<p>A set-up similar to the one in problems 1 and 3 gives us an approximation for the area of  42.69.</p>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = x \exp(-0.7 x)</m>.  Estimate the area on the interval <m>1 \le  x \lt 5</m> under <m>f(x)</m> using 100 rectangles and a right hand rule.
+</p></statement></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = (5 x + 3) \exp(-0.7 x)</m>.  Estimate the area under <m>f(x)</m> on the interval <m>0 \le  x \lt 5</m> using 100 rectangles and a right hand rule.
+</p></statement><solution>
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-1-sol7a.png">
+                </image>
+            </sidebyside> 
+<p>The area underneath the curve is approximately 12.92</p>
+</solution></exercise>
+
+<exercise ><statement><p> Consider the area under the line <m>y = 5 x + 7</m> on the interval <m>1 \le  x \le  5</m>.</p>
+<ol label="(a)">
+<li><p> Using only what you know about areas of rectangles and triangles, find the exact area.</p></li>
+<li><p> Find the approximations to the area using Riemann sums with 50, 100, and 200 intervals.</p></li>
+<li><p> Find the error for each of the three approximations you made.</p></li>
+<li><p> For this case, make an estimate of the error in terms of the number of intervals used.</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p> Consider the area under the line <m>y = x^2</m> on the interval <m>0 \le  x \le  3</m>.  In later sections we will show that the exact area is 9.</p>
+<ol label="(a)">
+<li><p> Find the approximations to the area using Riemann sums with 1, 10, 100, and 1000 intervals.</p></li>
+<li><p> Find the error for each of the four approximations you made.</p></li>
+<li><p> For this case, make an estimate of the error in terms of the number of intervals used.</p></li>
+<li><p> How many intervals would we need for an error of less that <m>10^{-6}</m>?</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li>           <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>N</cell>
+<cell>Riemann Sum</cell>
+<cell>Error</cell>
+</row>                    
+<row bottom="minor">
+<cell>1</cell>
+<cell>27</cell>
+<cell>18</cell>
+</row>                    
+<row bottom="minor">
+<cell>10</cell>
+<cell>10.395</cell>
+<cell>1.395</cell>
+</row>                    
+<row bottom="minor">
+<cell>100</cell>
+<cell>9.135</cell>
+<cell>0.135</cell>
+</row>                    
+<row bottom="minor">
+<cell>1000</cell>
+<cell>9.0135</cell>
+<cell>0.0135</cell>
+</row>                    
+                    
+                </tabular>
+            </sidebyside>
+            </li>
+<li><p> The errors are included in the sidebyside above. Subtract 9 from the approximation found in Excel.  Note that there is a bit of a pattern. </p></li>
+<li><p> The larger values of N seem to have an error of about <m>\frac{13.5}{N}</m></p></li>
+<li><p> If  error <m>\lt 10^{-6}</m>. Then <m>\frac{13.5}{N}\lt 10^{-6}</m>. 
+Then <m>\frac{N}{13.5}\gt 1,000,000</m>, and hence <m>N\gt 13,500,000</m>.
+</p></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> You have a natural gas well.  You have been told that as gas is extracted and the pressure in the well lessens, the rate of extraction also decreases. The weekly production is <m>10000 \exp(-0.01 t)</m> cubic feet per week. </p>
+<ol label="(a)">
+<li><p> Estimate the production in the first year.</p></li>
+<li><p> Estimate the production in the third year.</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p> Sales of your new gadget are estimated at <m>500*2^{.08 t}</m> units per week.</p>
+<ol label="(a)">
+<li><p> Estimate the total sales in the first year.</p></li>
+<li><p> Estimate the total sales in the fourth year.</p></li>
+<li><p> Estimate the total sales over the first 5 years.</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><p> Estimate the total sales in the first year.</p>
+<p>The total sales would be the sum of the sales each month. This is the same as a right hand sum of the function <m>Sales(t)= 500*2^{.08 t}</m> on the interval [0,12] with 12 subdivisions. The Excel commands are as follows (quick fill down to complete the sidebyside)</p>
+  <sidebyside width="80%">
+                <image width="80%" source="images/sec7-1-sol11a.png">
+                </image>
+            </sidebyside> 
+<p>Results:</p>
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-1-sol11b.png">
+                </image>
+            </sidebyside> 
+ 
+<p>So the total sales is $8,762.22</p>
+</li>
+<li><p> Estimate the total sales in the fourth year.</p>
+<p>We need to adjust the computation so that the sales added correspond to the sales of the fourth year only. This would be from month 36 to 48.
+We can just adjust the values in the sidebyside above!</p>
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-1-sol11c.png">
+                </image>
+            </sidebyside> 
+<p>So the total sales in the fourth year are $64,503.12</p>
+</li>
+<li><p> Estimate the total sales over the first 5 years.</p>
+<p>This will be a much larger range. We will add the sales for the first 5 years. In other words: the first 60 months. Note that this means we want to change <m>N</m> to 60 (we want to do the computation for each month) The rows from 13 to 65 have been hidden from views to create a smaller size image for this solution manual:</p>
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-1-sol11d.png">
+                </image>
+            </sidebyside> 
+ 
+<p>The total sales for the first 5 years is $248,947.41</p>
+</li>
+</ol>
+
+</solution></exercise>
+
+<exercise ><statement><p> You run a low cost, high volume widget manufacturing plant.  For reports, you write your reports in terms of millions of units.  When measured in units of one million widgets and one million dollars, the marginal profit function is 
+<m>p(x) = -1 + 10 x – x^2</m>.
+</p>
+<ol label="(a)">
+<li><p> Find the profit from making 12 million widgets.</p></li>
+<li><p> What quantities have 0 marginal profit?</p></li>
+<li><p> What is the maximum profit to be made manufacturing widgets?</p></li>
+</ol>
+</statement></exercise>
+
+
+</exercises>
+        </section>
+ 
+         <section xml:id="sec-7-2-FundamentalTheoremCalculius">
+            <title>The Fundamental Theorem of Calculus</title>
+
+<p><url href="./Examples/Section-7-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+<p>
+In the last section we defined the definite integral, <m>\int_a^b f(t)dt</m>, the signed area under the curve <m>y= f(t)</m> from <m>t=a</m> to <m>t=b</m>, as the limit of the area found by approximating the region with thinner and thinner rectangles.  We also saw that we can easily find a reasonable approximation to the area using Excel to find such a sum with a fairly large number of rectangles.  </p>
+<p>
+In the trivial case where we have a constant function <m>f(t)=c</m> we can find the area of the area with a simple formula, <m>\int_a^bc dt=c(b-a)=cb-ca</m>. If we define an area function, <m>F(x)</m>, as the area under the curve <m>y=f(t)</m> from <m>t=0</m> to <m>t=x</m>, then the area function in this case is  <m>F(x)=c*x</m>.  We would like to be able to evaluate more integrals with a process like this, where we have a simple area function.  </p>
+
+<remark><title>Note on variables used</title><p> We shifted the independent variable from <m>t</m> for the function <m>f</m> to <m>x</m> for the function <m>F</m> because we have two independent variables in our discussion and we want to keep them separate to avoid confusion.  We will consider <m>f</m> as a function of <m>t</m>, and want to find the area under the graph of <m>f(t)</m>.  We will consider <m>F</m> as a function of <m>x</m>, and understand it as the area under the curve <m>y=f(t)</m> from some starting point <m>t=a</m> to <m>t=x</m>.</p>
+</remark>
+
+<p>
+We start by exploring cases where we can justify an area function without using calculus.  We will then look at some cases where we can experimentally verify the area function with Excel.  Finally we will give the general rule for the area function, the Fundamental Theorem of Calculus, and will give some justification.</p>
+
+<example><title>Area function for constant by geometry</title>
+<p>
+Let <m>f(t)=c</m>.  For a constant function, <m>f(t)=c</m>, the area under the curve will be the area of a rectangle of height <m>c</m> and width <m>b-a</m>.  The obvious area function is <m>F(x)=c*x</m>.  Then </p>
+
+<me>\int_a^b c dt=F(b)-F(a)=c*b-c*a=c(b-a).</me>
+
+<p>
+It is worth noting that this formula gives "signed area."  If c or b-a is negative, the "area" is negative.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-2-1.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<example><title>Area function for linear function by geometry</title>
+<p>
+Let <m>f(t) = c*t</m>.  For a linear function, <m>f(t) = c*t</m>, the area under the curve from 0 to <m>b</m> will be the area of a triangle of height <m>c*b</m> and width <m>b</m>. </p> 
+ 
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-2-2.png">
+                </image>
+            </sidebyside> 
+
+<p>
+The obvious area function is <m>F(x)=c*x^2/2</m>.  If <m>a</m> is also nonzero, the area is the difference of the areas of two triangles.  </p>
+<me>\int_a^b c*t dt=F(b)-F(a)=
+\frac{c*b^2}{2}-\frac{c*a^2}{2}=\frac{c (b^2-a^2 )}{2}.</me>
+</example>
+
+<remark><title>A note on versions of Riemann sum used</title>
+<p>
+ As we consider finding area with Excel and Riemann sums, rather than use a right-hand rule for the rectangles, we are going to use a midpoint rule where we find the area of rectangles evaluated at the middle of each interval.  </p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-2-3.png">
+                </image>
+            </sidebyside> 
+
+<p>
+The right-hand rule uses an easier formula, so we used it first.  For the ith rectangle we evaluate at <m>x_i=a+i\Delta x</m>.  For the midpoint formula, we evaluate at the midpoint of the interval, at <m>mid_i=a+i\Delta x-\Delta x/2</m>.  As the picture suggests, the midpoint formula gives a better approximation.  The right-hand rule always overestimates an increasing function.  The midpoint rule is exact for linear functions where the midpoint is the average value. </p>
+</remark>
+
+<p>
+In both of the examples we have examined the area function has the original function as its derivative.  We would like to use Excel to test a few more cases. In the worksheets we set up in the last section, SumArea is the area function we are looking for.  We will plot the area function and use a best-fit curve to find the equation of the area function.</p>
+
+<example><title>Best fitting area function for a linear function</title>
+<p>
+Repeat the last example, finding the area under <m>f(x)=6x</m>, with Excel.  With a linear function we have use the following to produce an area function.</p>
+
+  <sidebyside width="90%">
+                <image width="90%" source="images/sec7-2-4.png">
+                </image>
+            </sidebyside> 
+
+<p>
+Column C has our list of <m>t</m> values in the center of each interval.  Column D has the value of <m>f(t)</m> evaluated at those points.  The area of the rectangle is the height <m>f(mid_n)</m> times the width, Interval width.  SumArea is our running area function.  When we plot the area function we have something that seems to be quadratic with leading coefficient <m>c/2</m> and very small linear and constant coefficients.  In fact the linear and constant coefficients are zero up to a rounding factor for numbers of the size we are using.</p>
+
+  <sidebyside width="80%" >
+                <image width="80%" source="images/sec7-2-5.png">
+                </image>
+            </sidebyside> 
+</example>
+a 
+<p>
+This matches the result we had solving the problem with geometry.  However, we can repeat the process with Excel and use functions of higher order.</p>
+
+<example><title>Best fitting area function for a quadratic function</title>
+<p>
+Find the area function when <m>f(t) = 6t^2</m>.</p>
+
+<p>
+For this problem we essentially repeat the work of the previous example with a quadratic function for <m>f(t)</m>.</p>
+
+  <sidebyside width="90%">
+                <image width="90%" source="images/sec7-2-6.png">
+                </image>
+            </sidebyside> 
+
+<p>
+When we plot the area function we get a very good fit with a cubic function.  Once again, allowing for the way best-fit curves may return small random values for coefficients that should be zero, we see that if <m>f(t) =c*t^2</m>, then the related area function is </p>
+<me>F(x)=c*t^3/3</me>.
+
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-2-7.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<example><title>Best fitting area function for a cubic function</title>
+<p>
+ Find the area when <m>f(x)=6 x^3</m>.  </p>
+
+<p>
+Once again, we can use Excel to produce an area function.  The area function seems to be <m>F(x)=1.5 x^4</m>.</p>
+
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-2-8.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<p>
+In all the examples above we note that the area function, <m>F(x)</m>,  has <m>f(x)</m>, the curve we are finding the area under, as its derivative.  Thus, in these cases, the area is an anti-derivative of <m>f(x)</m>.  This observation generalizes to the Fundamental Theorem of Calculus, which has two versions:</p>
+
+<assemblage><p>
+<theorem><title>Fundamental Theorem of Calculus (first version)</title> 
+<statement>Let <m>f(x)</m> be a continuous function on the interval <m>[a, b]</m>.  On that interval define an area function by <m>F(x)=\int_a^x f(t)  dt</m>. Then <m>\frac{d}{dx} F(x)=f(x)</m>.
+</statement></theorem>
+</p></assemblage>
+
+<assemblage><p>
+<theorem><title>Fundamental Theorem of Calculus (second version)</title> 
+<statement>Let <m>f(x)</m> be a continuous function on the interval <m>[a, b]</m>.  Suppose <m>F(x)</m> is any continuous,  differentiable function with <m>\frac{d}{dx} F(x)=f(x)</m>.  Then <m>\int_a^b f(t) dt=F(b)-F(a)</m>.
+</statement></theorem></p></assemblage>
+
+<p>
+In practice we use the second version of the fundamental theorem to evaluate definite integrals.  We find a function <m>F(x)</m> whose derivative is the integrand <m>f(x)</m> and then evaluate <m> F(x)</m> at the endpoints.
+It is easier to prove or justify the first version of the fundamental theorem.  The basic argument notes that is <m>F(x)=\int_a^xf(t) \ dt</m>, then formally </p>
+
+<me>\frac{d}{dx} F(x)=\lim_{h\to 0}
+\frac{(F(x+h)-F(x))}{h}.</me>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-2-9.png">
+                </image>
+            </sidebyside> 
+
+<p>
+But if <m>h</m> is small, <m>F(x+h)-F(x)</m> is approximately the area of a rectangle of height <m>f(x)</m> and with <m>h</m>, so the <m>F'(x) = f(x)</m>.  We then note that any two anti-derivatives of a function differ by a constant.</p>
+
+<example><title>Redoing an old area problem by the  FTC</title><p>
+In <xref ref="area-parabola-down"> example </xref> in the previous section, we used Riemann sums with 100 and 1000 intervals to approximate the area under <m>y = x*(4-x)</m> with <m>x</m> between 0 and 4.  Find the area using the fundamental theorem of calculus,</p>
+
+<p>
+We rewrite the curve as <m>f(x) = 4x – x^2</m> and note that one anti-derivative of <m>f(x)</m> is 
+<m>F(x) = 2 x^2 - x^3/3</m>.  Then</p>
+
+<me>\int_0^4 f(x)\ dx=F(4)-F(0)=\left(32-\frac{64}{3}\right)-(0)=10 \frac{2}{3}.</me>
+</example>
+
+<p>
+To get the same answer to 4 decimal places, we needed to use 1000 intervals with Riemann sums.  Clearly, it is easier to solve this problem with the fundamental theorem of calculus than to make an approximation with that many intervals.</p>
+
+<example><title>Verifying an antiderivative to find area</title><p>
+ Let <m>f(x)=x^2 e^{-x}</m>.  We are told <m>F(x)=(x^2+2 x+2) (-e^{-x})</m>  is an anti-derivative of <m>f(x)</m>.  Verify the anti-derivative and find the area under the curve with <m>x</m> between 0 and 2.</p>
+
+<p>
+Using the product rule, </p>
+
+<me>F'(x)=(2x+2) (-e^{-x}) + (x^2+2x+2) (e^{-x})=x^2 e^{-x}=f(x)</me>
+
+<p>
+The area is </p>
+
+<me>F(2) – F(0) = 10(-e^{-2}) – 2(e^{0}) = -2 – 10/e^2 = -3.3534</me>
+</example>
+
+<p>
+We also want to revisit our first three examples in light of the fundamental theorem if calculus.  In all of those examples we used Excel to find a best fitting curve for an area function.  We can now check our work by taking the derivative, adjusting parameters as needed to find an anti-derivative.  For constant and linear functions we have already done the adjusting because we could find the area function from geometry.</p>
+
+<example><title>Using the FTC to guess and check area under a quadratic</title><p>
+Example 3a: Find the area function when <m>f(t) = 6t^2</m>.</p>
+
+<p>
+We have already used Excel to find a best fitting curve.
+</p>
+ 
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-2-10.png">
+                </image>
+            </sidebyside> 
+
+<p>
+We are thus suspicious that the anti-derivative should be a cubic polynomial.  We need</p>
+
+<me>6t^2=d/dt (at^3+bt^2+ct+d)=3at^2+2bt+c.</me>
+
+<p>
+Setting coefficients equal for each power, we see <m>a = 2</m> and <m>b = c = 0</m>.  Thus our area function has the form <m>F(t) = 2 t^3 + d</m>.  Since <m>F(0)</m> is the area of a region between <m>t = 0</m> and <m>t = 0</m>, we conclude <m>d = 0</m> and our area function is <m>F(t) = 2 t^3</m>.</p>
+</example>
+
+
+<example><title> Verifying the best fitting function for area under a cubic function</title><p>Find the area when <m>f(x) = 6 x^3</m>.  </p>
+
+<p>
+Using Excel we guessed the area function <m>F(x) = 1.5 x^4</m>.  We can now verify that the derivative of <m>F(x)</m> is <m>f(x)</m>, so we have found an anti-derivative.</p></example>
+
+<p>
+It is worth noting that using the fundamental theorem to evaluate integrals requires us to be able to find an anti-derivative of a function.  Finding an anti-derivative may be quite hard or even an impossible task.  The method we have just used is often referred to as the “guess and check” method of finding anti-derivatives.  We will look at methods of finding anti-derivatives in the next several sections.
+</p>
+
+<exercises xml:id="exercises-set-sec-7-2">
+	<title>Exercises: The Fundamental Theorem of Calculus Problems</title>
+
+
+<exercise ><statement><p> Let <m>f(x) = 4 x + 5</m>.  We are told that <m>F(x) = 2 x^2 + 5 x + 7</m> is an anti-derivative. </p> 
+<ol label="(a)">
+<li><p>  Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+<li><p> Use the fundamental theorem of calculus to evaluate <m>\int_1^5 f(x)\ dx</m>.</p></li>
+<li><p> Approximate <m>\int_1^5 f(x)\ dx</m>, using Riemann sums and 100 intervals.</p>
+</li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><me>F' (x)=\frac{d}{dx}  (2 x^2+ 5 x + 7)=4x+5     </me></li>
+<li><me>\int_1^5 f(x) dx=F(5)-F(1)= 82-14=68</me></li>
+<li><p> The midpoint sum gives us an approximation of 68.</p>
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-2-sol1a.png">
+                </image>
+            </sidebyside> 
+</li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = 6 x^2 + 3</m>.  We are told that <m>F(x) = 2 x^3 + 3 x - 2</m> is an anti-derivative. </p> 
+<ol label="(a)">
+<li><p>   Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+<li><p> Use the fundamental theorem of calculus to evaluate <m>\int_{-2}^4 f(x)\  dx</m>.</p></li>
+<li><p> Approximate <m>\int_{-2}^4 f(x)\ dx</m>, using Riemann sums and 100 intervals.</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = 5/x</m>.  We are told that <m>F(x) = \ln(x^5) + 9</m> is an anti-derivative. </p> 
+<ol label="(a)">
+<li><p>   Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+<li><p> Use the fundamental theorem of calculus to evaluate <m>\int_1^{20} f(x)\ dx</m>.</p></li>
+<li><p> Approximate <m>\int_1^{20} f(x)\ dx</m>, using Riemann sums and 200 intervals.</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><me>F' (x)=\frac{d}{dx} [\ln(x^5 )+ 9]=\frac{1}{x^5}   (5x^4 )+ 0=\frac{5}{x}</me>
+<p>or</p>
+<me>F' (x)=\frac{d}{dx} [\ln(x^5 )+ 9]=\frac{d}{dx} [5\ln(x)+ 9]=5\frac{1}{x}+ 0=\frac{5}{x}</me>
+</li>
+<li><me>\int_1^{20}\frac{5}{x} dx=F(20)-F(1)=\ln(20^5 )+9-(\ln(1)+9)=ln(20^5) =14.98</me></li>
+<li><p> The midpoint sum with N = 200 gives an approximation of 14.978</p>
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-2-sol3a.png">
+                </image>
+            </sidebyside> 
+</li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = (2 x +3)^4</m>.  We are told that <m>F(x) = 0.1 (2 x + 3)^5</m> is an anti-derivative. </p> 
+<ol label="(a)">
+<li><p>   Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+<li><p> Use the fundamental theorem of calculus to evaluate <m>\int_{-1}^1 f(x)\ dx</m>.</p></li>
+<li><p> Approximate <m>\int_{-1}^1 f(x)\ dx,</m> using Riemann sums and 100 intervals.</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p> Let <m>f(x) = x exp(-0.05 x)</m>.  We are told that <m>F(x) = -20 (x+20) \exp(-0.05x)+3</m> is an anti-derivative. </p> 
+<ol label="(a)">
+<li><p>  Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+<li><p> Use the fundamental theorem of calculus to evaluate <m>\int_0^{10} f(x)\ dx</m>.</p></li>
+<li><p> Approximate <m>\int_0^{10} f(x)\ dx</m>, using Riemann sums and 100 intervals.</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li>
+<me>F'(x)=\frac{d}{dx}  [-20(x+20)  e^{-0.05x}+3]</me>
+<me>=-20 [(1)  e^{-0.05x}+(x+20)  e^{-0.05x} (-0.05)] </me>            
+<me>= [(-20)  e^{-0.05x}+(x+20)  e^{-0.05x}]    </me>
+<me>=e^{-0.05x}  [(-20)+(x+20)] </me>
+<me>=e^{-0.05x} x </me>
+</li>
+<li><me>\int_0^{10}x e^{-0.05 x} dx=F(10)-F(0)=-360.92-(-397)=36.08></me>
+</li><li>
+<p> The midpoint sum with N = 100 gives an approximation of 38.06</p>
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-2-sol5a.png">
+                </image>
+            </sidebyside> 
+</li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> Explain why, if <m>F(x)</m> is an anti-derivative of <m>f(x)</m>, then <m>F(x) + 7</m> is also an anti-derivative of <m>f(x)</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> Using an area function from Riemann sums and best fitting curves we have guessed that a quadratic function will have a cubic anti-derivative.</p> 
+<ol label="(a)">
+<li><p>   Find an anti-derivative of <m>f(x)=-x^2+6x-2</m> </p></li>
+<li><p> Use the fundamental theorem of calculus to evaluate 
+<ul>
+<li><m>\int_0^3 f(x)\ dx</m></li>
+<li><m>\int_{-2}^4 (x)\ dx</m></li>
+</ul>.
+</p></li></ol>
+</statement><solution>
+<ol label="(a)">
+<li><p>The anti-derivative should be a cubic, so something of the form </p>
+<me>F(x)=ax^3+bx^2+cx+d</me>
+    <p> And the derivative should be <m>f(x)= -x^2+6x-2</m>.</p>
+<p> We can ''guess and check'': <m>F(x)=-1/3 x^3+3x^2-2x+0</m> and sure enough, the derivative is <m>f(x)</m>.</p> 
+<p>If you are not comforsidebyside with that method note that</p> 
+<me>F' (x)=3ax^2+2bx+c</me>
+<p>So <m>3a= -1</m>,<m>2b=6</m>, and <m>c=-2</m>.</p>
+<p>Hence <m>a= -1/3</m>,   <m>b=3</m>, and <m>c=-2</m>.</p>
+<p>There are no conditions on <m>d</m>, so that coefficient can be anything. We picked 0 to keep things simple. But then</p>
+<me>F(x)=ax^3+bx^2+cx+d=-1/3 x^3+3x^2-2x</me>
+</li>
+<li><p> Use the fundamental theorem of calculus to evaluate 
+<ul>
+<li><me>\int_0^3 f(x)\ dx=F(3)-F(0)=(-9+27-6)-(0)= 12</me></li>
+<li><me>\int_{-2}^4 (x)\ dx=F(4)-F(-2)</me>
+<me>=(-64/3+48-8)-(8/3+12+4)= -24+40-16=0</me></li>
+</ul>.
+</p></li></ol>
+</solution></exercise>
+
+<exercise ><statement><p> Using an area function from Riemann sums and best fitting curves we have guessed that a cubic function will have a fourth degree anti-derivative.</p> 
+<ol label="(a)">
+<li><p>  Find an anti-derivative of <m>f(x)=x^3+9x^2+7x-3</m>. </p></li>
+<li><p> Use the fundamental theorem of calculus to evaluate <m>\int_1^5 f(x)\ dx</m>.
+</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p> I am interested in finding an anti-derivative for <m>f(x)=e^{2x}</m>.</p> 
+<ol label="(a)">
+<li><p>   Using Excel and 100 subintervals of <m>0 \le  x \le  2</m>, compute an approximate area function for <m>f(x)</m>.  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
+<li><p> Based on your best fitting curve, use guess and check to find the anti-derivative.
+</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><p>A quick computation gives the total area:</p>
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-2-sol9a.png">
+                </image>
+            </sidebyside> 
+<p>The area under the curve is approx. 26.8.</p>
+<p>The area under the curve looks like an exponential curve.</p>
+<p>A curve fitting using the Trendlines gives us that </p>
+<me>F(x)= 0.1618 e^2.739x</me>
+<p>Note that this is not a very good approximation. The curve does not follow the data very well on the right hand side of the graph.</p>
+</li>
+<li><p> Based on the curve we would say that the anti-derivative should be an exponential function. The derivative of <m>e^{2x}</m> is <m>2e^{2x}</m>, so it seems reasonable to start with the anti-derivative being <m>F(x)=A e^{2x}+B</m>.</p>
+<p>Then the derivative has to  be <m>f(x)</m>.</p>
+
+<me>F' (x)=A e^2x  (2)+0=2A e^2x+0=e^2x</me>
+<p>Hence A=0.5 and we may choose B to be any constant we want. Then</p>
+<me>F(x)=1/2  e^2x+B  </me>
+<p>That shows us where the problem is in our estimate.  Excel’s best fitting routine does not allow for constants in exponential functions.  Since <m>F(0)=.5+B</m>, and <m>Area(0)=0</m>, we need to add .5 to the area to get a good best fit curve.  Then the best fit line works.</p>
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-2-sol9b.png">
+                </image>
+            </sidebyside> </li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> I am interested in finding an anti-derivative for <m>f(x)=e^{-5x}</m>.</p> 
+<ol label="(a)">
+<li><p>   Using Excel and 100 subintervals of <m>0 \le  x \le  2</m>, compute an approximate area function for <m>f(x)</m>.  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
+<li><p> Based on your best fitting curve, use guess and check to find the anti-derivative.
+</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p> I am interested in finding an anti-derivative for <m>f(x)=1/x</m>.</p> 
+<ol label="(a)">
+<li><p>   Using Excel and 100 subintervals of <m>1 \le  x \le  5</m>, compute an approximate area function for <m>f(x)</m>.  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
+<li><p> Based on your best fitting curve, use guess and check to find the anti-derivative.
+</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li> 
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-2-sol11a.png">
+                </image>
+            </sidebyside> 
+
+<p>The cumulative function looks like a logarithmic function.</p>
+
+<p>The Trendline approximation gives the equation <m>y = 0.9913ln(x) + 0.0167</m>.</p> 
+<p>We can make the fit better when we realize that we are evaluating at the midpoint of each interval but taking the are to the end of the interval.  We want to look at an adjusted x at the right side of each interval.</p>
+  <sidebyside width="100%">
+                <image width="100%" source="images/sec7-2-sol11b.png">
+                </image>
+            </sidebyside>  
+<p>Rounding off the coefficients, we would have that </p>
+<me>F(x) = ln(x) </me>
+</li>
+<li><p> We would say that the anti-derivative is <m>F(x)=\ln(x)+constant</m>.</p>
+<p>And we have seen before that</p>
+ <me>F'(x)=\frac{d}{dx}  \ln(x)+\frac{d}{dx} constant=\frac{1}{x}</me>
+</li>
+</ol>
+</solution></exercise>
+
+
+ 
+</exercises> 
+        </section>
+ 
+         <section xml:id="sec-7-3-BasicAntidifferentiation">
+            <title>Basic Antidifferentiation</title>
+
+<p>
+In the last section we looked at the fundamental theorem of calculus and saw that it could be used to find definite integrals.  We saw</p>
+
+
+<assemblage><p><term>
+Fundamental Theorem of Calculus (second version)</term> Let <m>f(x)</m> be a continuous function on the interval <m>[a, b]</m>.  Suppose <m>F(x)</m> is any continuous,  differentiable function with <m>\frac{d}{dx} F(x)=f(x)</m>.  Then <m>\int_a^b f(t)\ dt=F(b)-F(a)</m>.</p></assemblage>
+
+<p>
+We thus find it very useful to be able to systematically find an anti-derivative of a function.  The standard notation is to use an integral sign without the limits of integration to denote the general anti-derivative. Thus <m>\int_a^b f(t)dt</m> is referred to as the definite integral of <m>f(x)</m> from <m>a</m> to <m>b</m>,  and is a number.  In contrast, <m>\int f(x) dx</m> is the indefinite integral of <m>f(x)</m> and it is a function.  We use indefinite integrals or anti-derivatives to evaluate definite integrals or areas.</p>
+
+<p>
+We find anti-derivatives by starting with the differentiation formulas of basic functions and manipulating them so the derivative is a nice function</p>
+
+<p>
+<term>Elementary Anti-derivative 1</term> – Find a formula for <m>\int x^n\  dx</m>.
+We start with the closest differentiation formula <m>\frac{d}{dx} x^n=nx^{n-1}</m>, and manipulate it so <m>x^n</m> is on the right hand side.  We first replace <m>n</m> with <m>n+1</m> to get <m>\frac{d}{dx}  x^{n+1}=(n+1)x^n</m>.  We then divide both sides by <m>n+1</m> to obtain <m>x^n=\frac{d}{dx}   x^{n+1}/(n+1)</m>.  Finally, we note that adding a constant <m>C</m> does not change the derivative, so  <m>x^n=\frac{d}{dx}  (x^{n+1}/(n+1)+C)</m>.  Since we have divided by <m>n+1</m>, we need to insist that <m>n+1\ne 0</m>.  Using the notation of indefinite integrals we obtain our power rule formula:</p>
+
+<assemblage><p><me>\int x^n\  dx=\frac{x^{n+1}}{n+1}+C, \hbox{assuming }n\ne -1.</me></p></assemblage>
+
+<p>
+Note that this matches the pattern we found in the last section.</p>
+
+<p>
+<term>Elementary Anti-derivative 2</term> – Find a formula for <m>\int 1/x \ dx</m>.
+We start with the closest differentiation formula <m>\frac{d}{dx}   \ln (x)=1/x</m>.  In this case we need to note that natural logarithms are only defined positive numbers and we would like a formula that is true for positive and negative numbers.  We can do this with an appropriate use of absolute value bars.  Thus <m>\frac{d}{dx} (\ln(|x|)+C)=1/x</m>, and we have our second formula:</p>
+
+<assemblage>
+<p><me>\int 1/x\  dx=\ln |x|+C.</me></p></assemblage>
+
+<p><term>Elementary Anti-derivative 3</term> – Find a formula for <m>\int e^x\  dx</m>.
+Once again, we start with the closest differentiation formula <m>\frac{d}{dx}  e^x=e^x</m>. In this case we don't have to do any manipulation, and we have our formula:</p>
+
+<assemblage><p><me>\int e^x \ dx=e^x+C.</me></p></assemblage>
+
+
+<p><term>Elementary Anti-derivative 4</term> – Find a formula for <m>\int a^x\  dx</m> for a positive number a.
+This formula requires a bit more work.  We start with the formula <m>\frac{d}{dx}  a^x=\ln (a) a^x</m>.   Dividing both sides by the constant ln(a) gives <m>a^x=\frac{d}{dx}  (a^x/\ln (a) +C)</m>  Thus our integral is:</p>
+
+<assemblage><p><me>\int a^x  dx=\frac{a^x}{\ln (a)} +C.</me></p></assemblage>
+
+
+<p><term>Sum, Difference, and Constant Multiple rules</term> – The rules we had for taking derivatives of sums, differences, and constant multiples of functions translate into similar rules for integrals.</p>
+<p>The derivatives of a sum rule, 
+<m>\frac{d}{dx}(f(x)+g(x))=\frac{d}{dx}f(x)+\frac{d}{dx}g(x)
+</m>, becomes the </p>
+
+<assemblage><p><term>Integral of a Sum Rule</term>:</p>
+   <p><me>\int (f(x)+g(x))\ dx=\int f(x)\ dx+\int g(x)\ dx</me></p></assemblage>
+
+<p>The derivatives of a difference rule, 
+<m>\frac{d}{dx}(f(x)-g(x))=\frac{d}{dx}f(x)-\frac{d}{dx}g(x)
+</m>, becomes the </p>
+
+<assemblage><p><term>Integral of a Difference Rule</term>:</p>
+   <p><me>\int (f(x)-g(x))\ dx=\int f(x)\ dx-\int g(x)\ dx</me></p></assemblage>
+
+<assemblage><p><term>Integral of a Constant Multiple Rule</term>:</p>
+   <p><me>\int cf(x) dx=c\int f(x)\ dx</me></p>
+  </assemblage>
+
+<p>We can use these rules to find the indefinite integrals on a lot of functions.  They cover all polynomials.</p>
+
+<example><title>Antiderivative of integral powers</title>
+<p>Find the integral  
+<m>\int 3x^5+4x^2+5+\frac{7}{x}\ dx</m>.</p>
+
+<p><term>Solution</term></p>
+
+<me>\int 3x^5+4x^2+5+\frac{7}{x}\ dx</me>
+<me>=\int 3x^5\ dx+\int 4x^2\ dx+\int 5\ dx+\int \frac{7}{x}\ dx\qquad\hbox{(sum rule)}</me>
+<me>
+=3\int x^5\ dx+4\int x^2\ dx+5\int \ dx+\int 7\frac{1}{x}\ dx\qquad\hbox{(constant multiple rule)}</me>
+<me>
+=3\int x^5\ dx+4\int x^2\ dx+5\int \ dx+ 7\ln|x|+C\qquad\hbox{(natural log rule)}</me>
+<me>
+=\frac{3}{6} x^6+\frac{4}{3}x^3+5x+ 7\ln|x|+C\qquad\hbox{(power rule)}</me>
+
+<p>One might argue that the last line should have been</p>
+ 
+<me>
+=\frac{3}{6} x^6+C_1+\frac{4}{3}x^3+C_2+5x+C_3+ 7\ln|x|+C_4</me>
+ 
+<p>since each indefinite integral gets a constant C.  However all of the <m>C_i</m>’s used here are arbitrary constants and they can be collapsed together into a single constant C.</p>
+</example>
+
+<p>We can also use these rules to find indefinite integrals for roots.</p>
+
+<example><title>Antiderivative of fractional powers</title>
+<p> Find the integral <m>\int \sqrt{2x}+\sqrt[3]{4x}\ dx</m>.</p>
+
+<p>Solution </p>
+
+<me>\int \sqrt{2x}+\sqrt[3]{4x}\ dx
+=\int \sqrt{2x}\ dx+\int \sqrt[3]{4x}\ dx\qquad\hbox{(sum rule)}</me>
+<me>=\sqrt{2}\int \sqrt{x}\ dx+\sqrt[3]{4}\int \sqrt[3]{x}\ dx \qquad\hbox{(constant multiple rule)}</me>
+<me>=\sqrt{2}\int x^{(1/2)}\ dx+\sqrt[3]{4}\int x^{(1/3)}\ dx\qquad\hbox{(rules of exponents)}</me>
+<me>=\sqrt{2} x^{(3/2)}(2/3)+\sqrt[3]{4}x^{(4/3)}(3/4)+C\qquad\hbox{(power rule)}</me>
+</example>
+
+<p>We can also find anti-derivatives of exponential and power functions.</p>
+
+<example><title>Antiderivative of power and exponential functions</title>
+<p>Find the integral  
+<m>\int 2*3^5+4e^x\ dx</m>.</p>
+
+<p>Solution </p>
+
+<me>\int 2*3^5+4e^x\ dx=\int 2*3^5\ dx+\int 4e^x\ dx\qquad\hbox{(sum rule)}</me>
+<me>=2\int 3^5\ dx+4\int e^x\ dx\qquad\hbox{(constant multiple rule)}</me>
+<me>=\frac{2}{\ln(3)} 3^5+4 e^x+C\qquad\hbox{(exponential rules)}</me>
+</example>
+
+<p>As we mentioned earlier in the section, the normal reason for wanting to find indefinite integrals is to be able to use them with the fundamental theorem of calculus to find definite integrals.</p>
+
+<example><title>Area under a polynomial function</title>
+<p>Evaluate the definite integral <m>\int_1^3 6x^2+2\ dx</m>.</p>
+<p>Solution</p>
+
+<p>We first evaluate the indefinite integral to find an anti-derivative.</p>
+ <me>\int 6x^2+2\ dx=2x^3+2x+C.</me>
+<p>Since we can use any anti-derivative, we simplify by setting <m>C = 0</m> and choosing the anti-derivative  <m>F(x)=2x^3+2x</m>.</p>
+ <me>\int_1^3 6x^2+2\ dx=F(3)-F(1)=60-4=56.</me>
+</example>
+
+<example><title>Area under <m>\frac{1}{x}</m></title>
+<p>Evaluate the definite integral <m>\int_1^{100}\frac{1}{x} dx</m>.</p>
+
+<p>Solution</p>
+
+<p>We first evaluate the indefinite integral to find an antiderivative.</p>
+<me>\int \frac{1}{x}\ dx=\ln(|x|)+C</me>
+<p>Since we can use any antiderivative, we simplify by setting <m>C = 0</m> and choosing that anti-derivative  <m>F(x)=\ln(|x|)</m>.</p>
+ <me>\int_1^{100}\frac{1}{x}\ dx=F(100)-F(1)=\ln(100)-\ln(1)=\ln(100).</me>
+</example>
+
+<example><title>Using the FTC when the function is fit from data</title>
+<p>From experience, I know that the output of an oil well follows a model of exponential decay.  I have the following data for the production, in barrels, for the first 5 months.</p>
+
+            <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Month</cell><cell>Jan</cell><cell>Feb</cell><cell>Mar</cell>
+<cell>Apr</cell><cell>May</cell></row>
+<row bottom="medium">
+<cell>Production</cell><cell>1000</cell><cell>971</cell>
+<cell>925</cell><cell>887</cell>
+<cell>859</cell></row>
+                </tabular>
+            </sidebyside>
+<p>Find the production over the first 5 years.</p>
+
+<p>Solution</p>
+
+<p>The total production for 5 years will be the definite integral of the production function for the first 60 months.  We first use Excel to find a best fitting exponential function.</p>
+ 
+  <sidebyside width="80%">
+                <image width="80%" source="images/sec7-3-1.png">
+                </image>
+            </sidebyside> 
+
+<p>The production function (P) in terms of the number of months (x) is given by</p>
+<me>P(x)=1043 e^{-0.03945 x}</me>
+
+<p>We would like to take an anti-derivative, but we don’t have a formula for this anti-derivative yet.  However, we note</p>
+<me> e^{-0.03945 x}=  (e^{-0.03945} )^x=0.9613^x</me>
+
+<p>and we know that <m>\ln (0.9613)=-0.03945</m>. We can now use our exponential rule, and </p>
+
+<me>AntiderivP(x)=\frac{(1043*0.9613^x)}{(-0.03945)}+C</me>
+
+<p>Since we can use any anti-derivative, we simplify by setting <m>C = 0</m>. We can do this without creating any problems because we are using the equation where two values of the anti-derivative will be subtracted from one another, and hence the C values would cancel anyways. We now evaluate our integral.</p>
+
+<me>TotalP(60)= ArtiderivP(60)– AntiderivP(0)</me>
+<me>= (-2467) – (-26438) = 23962</me>
+
+<p>Thus over 5 years the well will produce 23,962 barrels.</p>
+</example>
+
+<p>Another application for anti-derivatives is solving an initial value problem.  In that case we want to a particular anti-derivative that has a particular value for a specified x. In this situation we may not set C to zero. In fact, part of the problem will be to find the appropriate value of C.</p>
+
+<example><title>Finding a value of C to match initial conditions</title>
+<p>The marginal cost (MC) of producing a certain quantity (q) of widgets is given by</p>
+<me>MC(q)=5-0.002 q</me>
+
+<p>The cost of producing 1000 widgets is $6,000.  Assume that the derivative of the cost function is approximated closely enough by the marginal cost to be used interchangeably.  Find a cost function for producing widgets.</p>
+
+<p><term>Solution</term>: Since Cost is an anti-derivative of the Marginal Cost we have
+<m>Cost(q) = 5q - 0.001*q^2  + C</m></p>
+
+<p>We also know <m>Cost(1000) = 6000</m>.  Plugging that in gives</p>
+
+<me>Cost(1000)= 5*1000 - 0.001*1000^2  + C=6000</me>
+
+<p>Solving for C gives <m>C = 2000</m>.  Thus our cost function is</p>
+
+<me>Cost(q) = 5q - 0.001*q^2  + 2000</me>
+</example>
+
+<example><title>Building a profit function form data</title>
+<p>Experience tells me that the marginal profit of producing gadgets is a linear function.  My start-up costs are $2 million.  I have the following data with my units being thousands of dollars per millions of units.</p>
+
+            <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Production</cell><cell>0</cell><cell>1</cell><cell>2</cell>
+<cell>3</cell><cell>4</cell></row>
+<row bottom="medium">
+<cell>Marginal Profit</cell><cell>$3,3967</cell><cell>$3,603</cell>
+<cell>$3,236</cell><cell>$2,795</cell>
+<cell>$2,384</cell></row>
+                </tabular>
+            </sidebyside>
+<p>Produce a profit function, find the number of units that maximizes profit, and find the maximum profit</p>
+
+<p>Solution</p>
+
+<p>I start by finding a best fitting line to the data. </p> 
+
+  <sidebyside width="80%">
+                <image width="80%" source="images/sec7-3-2.png">
+                </image>
+            </sidebyside> 
+
+<p>Excel tells me the marginal profit function is</p>
+
+<me>MP(x) = -397.4 x + 3991.8</me>
+
+<p>We have maximum profit when the marginal profit is zero.  Using Goal Seek, the Marginal Profit is zero with a production of 10.0448 millions of units.  The anti-derivative of this function is </p>
+
+<me>P(x)= -198.7 x^2  + 3991.8x + C</me>
+
+<p>Plugging in the initial costs into the production model, recalling that our function is written in thousands of dollars per millions of widgets, gives</p>
+
+<me>P(0) = -2000 = C</me>
+
+<p>So our profit function is</p>
+
+<me>P(x)= -198.7 x^2  + 3991.8 x-2000</me>
+
+<p>We saw that <m>MP(x) = 0</m>, when <m>x = 10.0448</m>. The maximum profit is the computed by evaluating <m>P(x)</m> at <m>x = 10.0448</m>. A quick computation shows that the  maximum profit is $18,049 thousands of dollars, or a bit more than $18 million.</p>
+</example>
+
+<assemblage>
+<p>It is worthwhile summarizing our list of integration formulas.
+</p>
+
+            <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell><m>f(x)</m></cell><cell><m>\int f(x)\ dx</m></cell></row>
+<row bottom="medium">
+<cell><m>\displaystyle x^n\hbox{, assuming }n\ne 1</m></cell>
+<cell><m>\displaystyle \frac{x^{n+1}}{n+1}+C</m></cell>
+</row>
+<row bottom="medium">
+<cell><m>\displaystyle \frac{1}{x}</m></cell>
+<cell><m>\displaystyle \ln|x|+C</m></cell></row>
+<row bottom="medium">
+<cell><m>\displaystyle e^x</m></cell>
+<cell><m>\displaystyle e^x+C</m></cell></row>
+<row bottom="medium">
+<cell><m>\displaystyle a^x</m></cell>
+<cell><m>\displaystyle \frac{a^x}{\ln(a)}+C</m></cell></row>
+<row bottom="medium">
+<cell><m>\displaystyle (f+g)(x)</m></cell>
+<cell><m>\displaystyle \int f(x)dx+\int g(x)dx</m></cell></row>
+<row bottom="medium">
+<cell><m>\displaystyle (f-g)(x)</m></cell>
+<cell><m>\displaystyle \int f(x)dx-\int g(x)dx</m></cell></row>
+<row bottom="medium">
+<cell><m>\displaystyle c*f(x)</m></cell>
+<cell><m>\displaystyle c*\int f(x)dx</m></cell></row>
+                </tabular>
+            </sidebyside>
+</assemblage>
+
+<p>A word of warning – The anti-differentiation formulas we have produced only work for the functions given, allowing for changes in variables.  At this point the only way we have for finding  <m>\int(3x+5)^2 dx</m> is expand the integrand getting  <m>\int(9x^2+30x+25)dx</m> before applying our rules.  In general the process of finding anti-derivatives symbolically is an art form that we only begin to work with in this course.
+
+</p> 
+
+<exercises xml:id="exercises-set-sec-7-3">
+	<title>Exercises: Basic Antidifferentiation Problems</title>
+
+
+<p>
+Find antiderivatives for the given functions.</p>
+
+<exercise ><statement><me> f(x)=3x+5.</me></statement><solution>
+<me>
+F(x)=\frac{3x^2}{2}+5x+Constant
+</me></solution></exercise>
+
+<exercise ><statement><me> f(x)=5x^3+4x+3.</me></statement></exercise>
+
+<exercise ><statement><me> f(x)=x^{3,124,567}+2x^{473}+327 x^{-2,786,534}.</me></statement><solution>
+<me>F(x)=\frac{x^{3,124,568}}{3,124,568}+2 \frac{x^{474}}{474}+327 \frac{x^{-2,786,533}}{-2,786,533}+Constant</me>
+</solution></exercise>
+
+<exercise ><statement><me> f(x)=\sqrt{11x}+\frac{5}{x}.</me></statement></exercise>
+
+<exercise ><statement><me> f(x)=e^x+\left(\frac{1}{2}\right)^x.</me></statement><solution>
+<me>F(x)=e^x+\frac{\left(\frac{1}{2}\right)^x}{\ln\left(\frac{1}{2}\right)}+Constant</me>
+</solution></exercise>
+
+<exercise ><statement><m> f(x)=\pi^x+\pi^\pi+x^\pi.</m></statement></exercise>
+
+
+<p>Evaluate the definite integrals by first finding an antiderivative.</p>
+
+	
+<exercise ><statement><me> \int_0^5 x+7\  dx</me></statement>
+<p>The anti-derivative is: <m>F(x)=x^2/2+7x</m> (with these definite integrals we may choose the constant to be 0.)
+</p><solution>
+<me>
+\int_0^5 (x+7)dx=F(5)- F(0)=\frac{25}{2}+35-0=\frac{95}{2}
+</me></solution></exercise>
+	
+<exercise ><statement><me> \int_1^{10}\ln(x)\  dx</me></statement></exercise>
+	
+<exercise ><statement><me> \int_2^{10} 3x+\frac{5}{x}\  dx</me></statement><solution>
+<p>The anti-derivative is: <m>F(x)=(3x^2)/2+5 \ln|x|</m>
+</p>
+<me>\int_2^{10} 3x+\frac{5}{x}  dx =F(10)-F(2)
+=\frac{300}{2}+5 \ln(10)-\left(\frac{12}{2}+5 \ln(2) \right)</me>
+<me>=150+5 \ln(10)-6-5 \ln(2)=144+5(\ln(10)-\ln(2) )</me>
+<me>= 144+5 \ln\left(\frac{10}{2}\right)=144+5 \ln(5)</me>
+</solution></exercise>
+
+	
+<exercise ><statement><me> \int_1^{100}\left(\frac{1}{2}\right)^x\   dx.</me></statement></exercise>
+	
+<exercise ><statement><me> \int_{-10}^2 e^x+e \  dx</me></statement><solution>
+<p>The anti-derivative is: <m>F(x)=e^x+e x</m>
+</p>
+<me>\int_{-10}^2 e^x+e  dx =F(2)-F(-10)=e^2+2e-(e^{-10}-10 e)</me>
+<me>= e^2-\frac{1}{e^{10}} -8 e</me>
+</solution></exercise>
+	
+<exercise ><statement><me> \int_{-2}^5 x^{-2}+x^{-1} \  dx</me></statement></exercise>
+
+<p>Solve the Initial value problem.</p>
+
+<exercise ><statement><p> Let <m>f(x)=4x+3</m>.  The function <m>F(x)</m> is an antiderivative, and <m>F(0)=7</m>. </p></statement><solution>
+<p>The anti-derivative is: <m>F(x)=2x^2+3x+C</m>.</p>
+<p><m>F(0)= 7</m> implies that <m>F(0)=0+C=7</m>, so <m>C = 7</m></p>
+<p>Then <m>F(x)=2x^2+3x+7</m>.</p>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>f(x)=3x^2-6x+5</m>.  The function <m>F(x)</m>  is an antiderivative, and 
+<m>F(3)=17</m>. </p></statement></exercise>
+
+<exercise ><statement><p> Let <m>f(x)=100(0.95)^x</m>.  The function <m>F(x)</m>  is an antiderivative, and <m>F(5)=9</m>. </p></statement><solution>
+<p>
+The anti-derivative is: </p>
+<me>F(x)=\frac{100 (0.95)^x }{\ln(0.95)}   +C</me>
+<p><m>F(5)= 9</m> implies that </p>
+<me>F(5)=\frac{100 (0.95^5 )}{\ln(0.95)} +C=9</me>
+<me>C=9-\frac{100 (0.95^5 )}{\ln(0.95)}\approx 9+1508.54=1517.54</me>
+<p>Then</p>
+ <me>F(x)\approx\frac{100 (0.95^x )}{\ln(0.95)} +1517.54</me>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>f(x)=7/x+x^2</m>.  The function <m>F(x)</m>  is an antiderivative, and <m>F(1)=11</m>. </p></statement></exercise>
+
+<exercise ><statement><p> An investment provides an income stream of <m>1000 (0.95)^t</m> dollars per year.  How much is received in the first 10 years?</p></statement>
+<solution>
+<me>Income=\int_0^{10}1000(0.95)^t  dt
+=\left.\frac{1000(0.95)^t)}{\ln(0.95)} \right|_{t=0}^{t=10}</me>
+<me>=\frac{1000(0.95)^{10}}{\ln(0.95)} -\frac{1000(0.95)^0)}{\ln(0.95)} </me>
+<me>\approx -11672.81+19495.73=7822.91</me>
+</solution></exercise>
+
+<exercise ><statement><p> A firm has a marginal profit function of <m>MP(x) = 50 – 3 x</m> in thousands of dollars per thousands of units.  How much is profit increased if production is shifted from 10 to 15 thousand units.</p></statement></exercise>
+
+<exercise ><statement><p> After the first year, the rate of sales of a fad product are <m>sales(t) = \frac{1000}{t}</m> with time in years.  How many units are sold from the end of the first year to the end of the tenth year? </p></statement><solution>
+<me>sales=\int_1^{10}\frac{1000}{t} dt=1000 \ln(t) |_{t=1}^{t=10}</me>
+<me>=1000(\ln(10)-\ln(0) )</me>
+<me>=1000\ln(10)\approx 2302.58</me>
+</solution></exercise>
+
+<exercise ><statement><p> A software company allows your company to expand the number of licenses your company owns by charging a marginal rate of <m>MR(licenses)=\frac{200}{\sqrt{licenses}}</m>.  How much does it cost to increase your license from 1000 to 2000 licenses?</p></statement></exercise>
+
+<exercise ><statement><p> The production function for a given oil well is <m>rate(t) = 400(0.9)^t</m> with time measured in years and production measured in millions of barrels of oil.</p>
+<ol label="(a)">
+<li><p>How much oil is produced in the first year?</p></li>
+<li><p>How much oil is produced in the tenth year?</p></li>
+<li><p>If I need to produce 75 thousand barrels of oil per year for the well to be financially viable, what is the life of the well?</p></li>
+<li><p>How much oil will the well produce before being shut down?</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><me>Production=\int_0^{1}400(0.9)^t dt
+=\left.\frac{400}{\ln(0.9)}  (0.9)^t \right|_{t=0}^{t=1}</me>
+<me>=\frac{400}{\ln(0.9)} (0.9-1)\approx 379.649
+</me></li>
+<li><me>Production=\int_9^{10}400(0.9)^t dt
+=\left.\frac{400}{\ln(0.9)}  (0.9)^t \right|_{t=9}^{t=10}</me>
+<me>=\frac{400}{\ln(0.9)} (0.9^{10}-0.9^{9})\approx 147.08
+</me></li>
+<li><p>If I need to produce 75 thousand barrels of oil per year for the well to be financially viable, what is the life of the well?</p></li>
+<li><p>Use Goal seek.</p>
+<me>75=400(0.9^t)</me>
+<me>t\approx 15.8881</me>
+</li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> The expected value received from a particular revenue stream should be an exponential function.  I have the following data for income received over the past 5-year period.</p>
+            <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Year</cell><cell>1</cell><cell>2</cell>
+<cell>3</cell><cell>4</cell><cell>5</cell></row>
+<row bottom="medium">
+<cell>Income</cell><cell>$1,030</cell><cell>$1,078</cell>
+<cell>$1,110</cell><cell>$1,169</cell>
+<cell>$1,225</cell></row>
+                </tabular>
+            </sidebyside>
+<p>How much do I expect to receive over the next 10 years?
+</p></statement></exercise>
+
+<exercise ><statement><p> From experience, I expect the marginal revenue for my firm to be a quadratic function.  I have the following data on revenue at a variety of levels, with production in thousands of units and marginal profit in millions of dollars.</p>
+            <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Production</cell><cell>$4.90</cell><cell>$7.04</cell>
+<cell>9.00</cell><cell>11.03</cell><cell>14.00</cell></row>
+<row bottom="medium">
+<cell>MProfit</cell><cell>7.40</cell><cell>9.12</cell>
+<cell>9.90</cell><cell>9.89</cell>
+<cell>8.40</cell></row>
+                </tabular>
+            </sidebyside>
+<p>
+What is the expected change in revenue as I increase production from 15 to 20 thousand units?
+</p></statement><solution>
+<p>Using trend line, my function for <m>MProfit</m> is</p>
+<me>MProfit=-0.01Production^2+2Production+0.11</me>
+<p>Integrating from 15 to 20</p>
+<me>Profit= \int_{15}^{20}-0.01x^2+2x+0.11  dx</me>
+<me>= \left.-\frac{0.01}{3} x^3+x^2+0.11x\right|_{x=15}^{x=20}
+\approx 160.133</me>
+
+The profit is approximately $160.133 million.
+
+</solution></exercise>
+
+</exercises>
+        </section>
+ 
+         <section xml:id="sec-7-4-ChangeVariables">
+            <title>Integration by Change of Variables or Substitution</title>
+
+<p>
+At the end of the last section we warned that the symbolic integration techniques we have developed only work for problems that exactly fit our formulas.  When we tried integrating an exponential function where the exponent was a constant times t, we had to change the base to get a function with only t in the exponent.  We want to develop one more technique of integration, that of change of variables or substitution, to handle integrals that are pretty close to our stated rules. This technique is often called u-substitution and is related to the chain rule for differentiation.</p>
+
+<p>We start by exploring some examples where we can get the desired result by the guess and check technique.</p>
+
+<example xml:id="power-of-linear"><title>Power of a linear by guess and check</title>
+<p>Find <m>\int (3x+5)^7  dx</m>.</p>
+
+<p><term>Solution</term>:  We could do this problem by rewriting the integrand as an explicit seventh degree polynomial and then using the power and sum rules, but that is too much work.  Instead I will notice the integrand looks almost like a power, and thus guess an answer of <m>\frac{1}{8} (3x+5)^8+C</m>.  I then check by differentiating.  Using the chain rule</p>
+
+<me>\frac{d}{dx}  (\frac{1}{8} (3x+5)^8+C)=\frac{1}{8}*8(3x+5)^{8-1}*3=3(3x+5)^7.</me>
+.
+<p>Thus our guess was off by a factor of 3 and the correct antiderivative is </p>
+
+<me>\frac{1}{3}*1\frac{1}{8} (3x+5)^8+C=\frac{1}{24} (3x+5)^8+C.</me>
+</example>
+
+<p>We can easily use the same trick to produce a rule for powers of a linear polynomial.</p>
+
+<example><title>Power of a generic linear by guess and check</title>
+<p>Find <m>\int (ax+b)^n  dx</m>.</p>
+
+<p><term>Solution</term>:  As we did in example 1, we first guess the antiderivative to be 
+<m>\frac{1}{n+1} (ax+b)^{n+1}+C</m>. We then take the derivative of that expression and obtain <m>a(ax+b)^n</m>.  This misses our integrand by a factor of <m>a</m>.  We adjust by that factor and find the antiderivative is <m>\frac{1}{a}  \frac{1}{n+1} (ax+b)^{n+1}+C</m>.</p>
+</example>
+
+<p>We can easily use the same trick to produce a rule for functions that are the exponential of a linear function.</p>
+
+<example><title>Antidifferentiation of an exponential function by guess and check</title>
+<p>Find <m>\int e^{ax+b}  dx</m>.</p>
+
+<p><term>Solution</term>:  As we did in example 2, our first guess uses the basic rule without worrying about the linear term, so we guess <m>e^{ax+b}+C</m>. We then take the derivative of that expression and obtain <m>ae^{ax+b}</m>.  This misses our integrand by a factor of <m>a</m>.  We adjust by that factor and find the antiderivative is <m>\frac{1}{a} e^{ax+b}+C</m>.</p>
+</example>
+
+<p>We run into a problem if we try to extend this method with quadratic terms.  If we start with <m>(x^2+5)^3</m> and guess an antiderivative of <m>\frac{1}{4} (x^2+5)^4</m>, when we differentiate we get <m>(x^2+5)^3 2x</m> and are off by a factor of <m>8x</m>.  However when we divide by that factor to get <m>\frac{(x^2+5)^4}{8x}</m> as a proposed antiderivative, and then differentiate again we get</p>
+
+<me>\frac{4*2x(x^2+5)^3*8x-(x^2+5)^4*8}{8x}</me>
+
+<p>which is not what we want.  The key is to start by recalling the chain rule</p>
+
+<me>\frac{d}{dx}  (f(g(x)))=f'(g(x))g'(x).</me>
+
+<p>We want to use the same rule with a different notation, using implicit differentiation and a new variable <m>u</m>:</p>
+
+<me>\frac{d}{dx}  (f(u))=f'(u)\frac{du}{dx}.</me>
+
+<p>By the fundamental theorem of calculus, we can convert this to an integration formula:</p>
+<me>\int f' (u)  \frac{du}{dx}  dx=f(u)+C.</me>
+
+<p>We will generally simplify <m>\frac{du}{dx} dx</m> to <m>du</m>, so our substitution rule is </p>
+<me>\int f' (u)du=f(u)+C.</me>
+
+
+<p>Let us rework some earlier examples with this method and then illustrate the method with a more difficult problem.</p>
+
+<example><title>Power of linear example redone with change of variables</title>
+<p>Find <m>\int (3x+5)^7 dx</m>.</p>
+
+<p><term>Solution</term>:  The obvious candidate for <m>u</m> is <m>3x+5</m>.  Then <m>du=3dx</m>.  Thus</p>
+
+<me>\begin{aligned}  \int (3x+5)^7  dx
+\amp =\frac{1}{3} \int (3x+5)^7  (3dx)
+\amp \quad \hbox{ (Make u and du explicit.)}\\ 
+\amp =\frac{1}{3} \int (u)^7  du
+\amp \quad \hbox{ (Do the substitution.)}\\ 
+\amp =\frac{1}{3*8} (u)^8+C
+\amp \quad \hbox{ (Find the integral in terms of u.)}\\ 
+\amp =\frac{1}{24} (3x+5)^8+C
+\amp \quad \hbox{ (Substitute back.)}\\ 
+\end{aligned}</me>
+</example>
+
+<p>This is easy to generalize for a power of a linear term.</p>
+
+<example><title>Power of generic linear example redone with change of variables</title>
+<p>Find <m>\int (ax+b)^n dx</m>.</p>
+
+<p><term>Solution</term>:  The obvious candidate for <m>u</m> is <m>ax+b</m>.  Then <m>du=a dx</m>.  Hence</p>
+
+<me>\begin{aligned}  \int (ax+b)^n dx
+\amp =\frac{1}{a} \int (ax+b)^n  (dx)
+\amp \quad \hbox{ (Make u and du explicit.)}\\ 
+\amp =\frac{1}{a} \int (u)^n  du
+\amp \quad \hbox{ (Do the substitution.)}\\ 
+\amp =\frac{1}{a*(n+1)} (u)^{n+1}+C
+\amp \quad \hbox{ (Find the integral in terms of u.)}\\ 
+\amp =\frac{1}{a*(n+1)} (ax+b)^{n+1}+C
+\amp \quad \hbox{ (Substitute back.)}\\ 
+\end{aligned}</me>
+</example>
+
+<p>To use this method with u replacing something more complicated than a linear term, we need to have <m>du</m> available, with the possible addition of multiplying by a scalar constant.</p>
+
+<example><title>Power of quadratic function with change of variables</title>
+<p>Find <m>\int (2x^3+11)^7 x^2 dx</m>.</p>
+
+<p><term>Solution</term>:  The obvious candidate for <m>u</m> is <m>2x^3+11</m>.  Then <m>du=6x^2d</m>x.  Thus</p>
+
+<me>\begin{aligned}  \int (2x^3+11)^7 x^2 dx
+\amp =\frac{1}{6} \int (2x^3+11)^7 6x^2 dx)
+\amp \quad \hbox{ (Make u and du explicit.)}\\ 
+\amp =\frac{1}{6} \int (u)^7  du
+\amp \quad \hbox{ (Do the substitution.)}\\ 
+\amp =\frac{1}{6*8} (u)^8+C
+\amp \quad \hbox{ (Find the integral in terms of u.)}\\ 
+\amp =\frac{1}{48} (2x^3+11)^8+C
+\amp \quad \hbox{ (Substitute back.)}\\ 
+\end{aligned}</me>
+</example>
+
+<p>By convention, <m>u</m> is often used the new variable used with this change of variables technique, so the technique is often called u-substitution. </p>
+
+<p><term>Change of variables for definite integrals</term></p>
+
+<p>In the definite integral, we understand that a and b are the <m>x</m>-values of the ends of the integral.  We could be more explicit and write <m>x=a</m> and <m>x=b</m>.  The last step in solving a definite integral is to substitute the endpoints back into the antiderivative we have found.  We can either change the variables for the endpoints as well, or we can convert the antiderivative back to the original variables before substituting.  Consider the following example.</p>
+
+<example><title>A definite integral with change of variables</title>
+<p>Evaluate <m>\int_1^3 e^{2x+5} dx</m>.</p>
+
+<p><term>Solution 1</term>:  (Convert everything to <m>u</m>.) The obvious candidate for <m>u</m> is <m>2x+5</m>.  Then    <m>du=2dx</m>.  For the lower endpoint, <m>x=1</m> becomes <m>u=7</m>.  For the upper endpoint
+<m>x=3</m> becomes <m>u=11</m>.  Substituting, </p>
+
+<me>\begin{aligned}  \int_1^3 e^{2x+5} dx
+\amp =\frac{1}{2} \int_1^3 e^{2x+5} (2dx)
+\amp \quad \hbox{ (Make u and du explicit.)}\\ 
+\amp =\frac{1}{2} \int_{u=7}^{u=11}e^u du
+\amp \quad \hbox{ (Do the substitution.)}\\ 
+\amp =\left.\frac{1}{2} e^u\right|_7^{11}
+\amp \quad \hbox{ (Find the antiderivative.)}\\ 
+\amp =\frac{1}{2} e^{11}-\frac{1}{2} e^7.
+\amp \quad \hbox{ (Evaluate.)}\\ 
+\end{aligned}</me>
+
+<p><term>Solution 2</term>:  (Keeping, but labeling the endpoints.) We have the same u and du, but do not convert the endpoints.  To reduce confusion we make sure to label the variable when we are using both <m>x</m> and <m>u</m>.  Thus, </p>
+
+
+<me>\begin{aligned}  \int_1^3 e^{2x+5} dx
+\amp =\frac{1}{2} \int_1^3 e^{2x+5} (2dx)
+\amp \quad \hbox{ (Make u and du explicit.)}\\ 
+\amp =\frac{1}{2} \int_{x=1}^{x=3}e^u du
+\amp \quad \hbox{ (Do the substitution.)}\\ 
+\amp =\left.\frac{1}{2} e^u\right|_{x=1}^{x=3}
+\amp \quad \hbox{ (Find the antiderivative.)}\\ 
+\amp =\left.\frac{1}{2} e^{2x+3}\right|_{x=1}^{x=3}
+\amp \quad \hbox{ (Convert back.)}\\ 
+\amp =\frac{1}{2}  e^{11}-\frac{1}{2} e^7.
+\amp \quad \hbox{ (Evaluate.)}\\ 
+\end{aligned}</me>
+</example>
+
+<p>It should be noted that when we change variables we may find ourselves looking at an integral from <m>a</m> to <m>b</m> where the <m>b \lt a</m>.  We do not change the order of the endpoints.</p>
+
+<example><title>A second definite integral with change of variables</title>
+<p>Evaluate <m>\int_{-2}^1 x \exp(x^2)d</m>x</p>
+
+<p><term>Solution</term>: (Convert everything to <m>u</m>.) The obvious candidate for <m>u</m> is <m>x^2</m>.  Then <m>du=2 dx</m>. For the lower endpoint, <m>x=-2</m> becomes <m>u=4</m>.  For the upper endpoint <m>x=1</m> becomes <m>u=1</m>. Substituting, </p>
+
+<me>\begin{aligned}  \int_{-2}^1 x e^{(x^2)}dx
+\amp =\frac{1}{2} \int_{-2}^1 e^{(x^2)}(2x dx)
+\amp \quad \hbox{ (Make u and du explicit.)}\\ 
+\amp =\frac{1}{2} \int_{1}^{4}e^u du
+\amp \quad \hbox{ (Do the substitution.)}\\ 
+\amp =\left.\frac{1}{2} e^u\right|_1^{4}
+\amp \quad \hbox{ (Find the antiderivative.)}\\ 
+\amp =\frac{1}{2}  e^4-\frac{1}{2} e^1.
+\amp \quad \hbox{ (Evaluate.)}\\ 
+\end{aligned}</me>
+</example>
+
+<exercises xml:id="exercises-set-sec-7-4">
+	<title>Exercises: Integration by Change of Variables or Substitution Problems</title>
+
+<p>
+Evaluate the following integrals.  In each case identify the term that will be treated as u.</p>
+
+<exercise ><statement><me> \int (5x+3)^4  dx</me></statement>
+<solution>
+<p>Let <m>u=5x+3</m>.  Then <m>du=5dx</m>.</p>
+<me>\int (5x+3)^4  dx=\int \frac{(u)^4  du}{5}=\frac{u^5}{25} +c
+=\frac{(5x+3)^5}{25} +c</me>
+</solution></exercise>
+<exercise ><statement><me> \int (7x-9)^{11}  dx</me></statement></exercise>
+<exercise ><statement><me> \int (x/5-2)^{2/3}  dx</me></statement>
+<solution>
+<p>Let <m>u=x/5-2</m>.  Then <m>du=dx/5</m>.</p>
+<me>\int (x/5-2)^{2/3}  dx=5\int {u^{2/3}  du}=3{u^{5/3}}+c
+=3{(x/5-2)^{5/3}} +c</me></solution></exercise>
+<exercise ><statement><me> \int (143567x+98736)^{2578965}  dx </me></statement></exercise>
+<exercise ><statement><me> \int \sqrt{(8x-3)}  dx</me></statement>
+<solution>
+<p>Let <m>u=8x-3</m>.  Then <m>du=8dx</m>.</p>
+<me>\int (8x-3)^{1/2}  dx=1/8 \int {u^{1/2}  du}=\frac{1}{12}{u^{3/2}}+c
+=\frac{1}{12}{(8x-3)^{3/2}} +c</me></solution></exercise>
+<exercise ><statement><me> \int \frac{1}{\sqrt{3x+7}}  dx </me></statement></exercise>
+<exercise ><statement><me> \int 100e^{.06t-5}  dt</me></statement>
+<solution>
+<p>Let <m>u=0.06t-5</m>.  Then <m>du=0.06dt</m>.</p>
+<me>\int 100 e^{0.06t-5}dt
+=\frac{1}{0.06} \int {100 e^{u}du}=\frac{100 e^{u}}{0.06}+c
+=\frac{100 e^{0.06t-5}}{0.06}+c</me></solution></exercise>
+<exercise ><statement><me> \int 150(1/2)^{t/5}  dt</me></statement></exercise>
+<exercise ><statement><me> \int (2x+5) (x^2+5x+3)^5  dx </me></statement>
+<solution>
+<p>Let <m>u=x^2+5x+3</m>.  Then <m>du=(2x+5)dx</m>.</p>
+<me>\int (2x+5) (x^2+5x+3)^5  dx=\int u^5\ du</me>
+<me>=\frac{u^6}{6} +c
+=\frac{(x^2+5x+3)^6}{6} +c</me>
+</solution></exercise>
+
+<exercise ><statement><me> \int 50xe^{-x^2 }  dx</me></statement></exercise>
+<exercise ><statement><me>  \int \frac{3x^2+1}{x^3+x+9} dx </me></statement>
+<solution>
+<p>Let <m>u=x^3+x+9</m>.  Then <m>du=(3x^2+1)dx</m>.</p>
+<me>\int \frac{3x^2+1}{x^3+x+9} dx=\int \frac{du}{u}</me>
+<me>=\ln|u| +c
+=\ln|x^3+x+9| +c</me>
+</solution></exercise>
+<exercise ><statement><me>  \int x\sqrt{x^2-9}  dx</me></statement></exercise>
+
+<exercise ><statement><me>  \int_0^3 e^{3x+1} dx</me></statement>
+<solution>
+<p>Let <m>u=3x+1</m>.  Then <m>du=3dx</m>.</p>
+<me>\int_0^3 e^{3x+1} dx=\int_{u=1}^{u=10} e^u \ du</me>
+<me>=\left.\frac{1}{3}e^u\right|_{u=1}^{u=10}
+=\frac{1}{3} (e^{10}-e^1)</me>
+</solution></exercise>
+<exercise ><statement><me> \int_0^10 100e^{-0.04t} dt </me></statement></exercise>
+
+<exercise ><statement><me> \int_0^5 e^{(-0.05(t+1))} dt </me></statement>
+<solution>
+<p>Let <m>u=-0.05(t+1)</m>.  Then <m>du=-0.05dt</m>.</p>
+<me>\int_0^5 e^{-0.05(t+1)} dt=-frac{1}{0.05}\int_{u=-0.05}^{u=-0.3} e^u \ du</me>
+<me>=\left.-20e^u\right|_{u=-0.05}^{u=-0.3}
+=-20 (e^{-0.3}-e^{-0.05})</me>
+</solution></exercise>
+<exercise ><statement><me> \int_1^3 (2x+5)^{-2} dx</me></statement></exercise>
+
+<exercise ><statement><me> \int_1^6 x\sqrt{3x^2+7} dx </me></statement>
+<solution>
+<p>Let <m>u=3x^2+7</m>.  Then <m>du=6x\ dx</m>.</p>
+<me>\int_1^6 x(3x^2+7)^{1/2} dx=\frac{1}{6}\int_{u=10}^{u=115} u^{1/2} \ du</me>
+<me>=\left.\frac{1}{9}u^{3/2}\right|_{u=10}^{u=115}
+=\frac{1}{9} (115^{3/2}-10^{3/2})\approx 133.51</me>
+</solution></exercise>
+
+<exercise ><statement><me> \int_0^2 x^2 e^{(1-0.2x^3)} dx </me></statement></exercise>
+
+<exercise ><statement><p>  Find an antiderivative <m>F(x)</m> for <m>f(x)=x^2(x^3+7)^3</m> such that <m>F(0)=5</m>.</p></statement><solution>
+<p>Let <m>u=x^3+7</m>.  Then <m>du=6x^2 dx</m>.</p>
+<me>\int (x^2 ) (x^3+7)^3 dx=\frac{1}{6} \int u^3 du=\frac{u^4}{24}+c=\frac{(x^3+7)^4}{24}+c</me>
+<me>F(0)=5=\frac{(7)^4}{24}+c</me>
+<me>c=5-\frac{(7)^4}{24}4</me>
+<me>F(x)=\frac{(x^3+7)^4}{24}+5-\frac{(7)^4}{24}</me>
+</solution></exercise>
+<exercise ><statement><p> Find an antiderivative <m>F(x)</m>  for <m>f(x)=(4x^3+5)\exp(x^4+5x-9)</m> such that <m>F(0)=2</m>.</p></statement></exercise>
+
+<exercise ><statement><p>  An investment stream pays out at a rate of $10,000 per year.  In computing present value, I assume an investment return rate of 5% compounded continuously.  What is the present value of the first 10 years of the payout?</p></statement><solution>
+<me>Value=\int_0^{10}10000e^{-0.05t} dt
+=\left.\frac{-10000e^{-0.05t}}{0.05}\right|_0^{10}</me>
+<me>=\frac{-10000}{0.05} (e^{-0.5}-1)
+\approx 78693.87</me>
+</solution></exercise>
+<exercise ><statement><p>  My gas well is returning a payout of  $10,000.  The well output is expected to decay exponentially with half as much output in 7 years.  How much do I make over the next 10 years?</p></statement></exercise>
+
+<exercise ><statement><p> The sales rate on a book is <m>s(t)=1000t \exp(-t^2/4)</m>, with time in years.  </p>
+<ol label="(a)">
+<li><p>What are the total sales over 10 years?</p></li>
+<li><p>When does the sales rate drop to 10?</p></li>
+<li><p>What is the maximum sales rate?</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><p>Let <m>u=-\frac{t^2}{4}</m>.  Then <m>du=-\frac{t}{2} dt</m>.</p>
+<me>Sales=\int_0^{10} 1000t e^{-t^2/4}dt=\int_0^{-25}-2000 e^u\ du</me>
+<me>=\left.-2000e^u)\right|_0^{-25}
+=2000((1-e^{-25})\approx 2000</me>
+</li>
+<li><me>10=1000t e^{-t^2/4}</me>
+<me>t\approx 5.0028</me>
+</li>
+<li><p>At <m>t=1.454</m>, sales are approximately 857.4</p></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p>  The marginal profit on an item is <m>Mp(q)=\frac{(100q)}{(q^2+1)}-2</m>, measured in thousands of dollars per thousands of units.</p>
+<ol label="(a)">
+<li><p>How much should I produce to maximize profits?</p></li>
+<li><p>What is my profit function if my start up cost is $60,000?</p></li>
+<li><p>What is the maximum profit?</p></li>
+</ol>
+</statement></exercise>
+  
+
+
+</exercises>
+        </section>
+ 
+         <section xml:id="sec-7-5-IntroductionComputerAlgebra">
+            <title>Integration using Computer Algebra</title>
+
+<p>
+Recall that the fundamental theorem of calculus states that if <m>F(x)</m> is a function with its derivative equal to <m>f(x)</m> on the region <m>a \le  x \le  b</m>, then  <m>\int_a^b f(x)dx=F(b)-F(a)</m>.  We say <m>\int_a^b f(x)dx</m>  is the definite integral of <m>f(x)</m> from <m>a</m> to <m>b</m>.  If <m>f(x)</m> is a derivative of <m>F(x)</m>, then <m>F(x)</m> is an anti-derivative of <m>f(x)</m>, and any anti-derivative of <m>f(x)</m> has the form <m>F(x) + c</m>, for some constant <m>c</m>.  We use the symbol  <m>\int f(x)dx</m>, without limits of integration, for the indefinite integral.  </p>
+
+<p>
+In section 7.1 we looked at approximating definite integrals with a Riemann sum that added up the area of a bunch of rectangles.  In section 7.2 we saw that the fundamental theorem of calculus lets us use an antiderivative or indefinite integral to evaluate a definite integral.  In sections 7.3 and 7.4 we saw how to compute indefinite integrals by hand for a limited number of functions.  In this section we will look at how to use computer software at a web site to find antiderivatives.</p>
+
+<p>
+We start with Wolfram|Alpha, available at (http://www.wolframalpha.com>.  We can give Wolfram|Alpha the question we want solved in plain English.  In our case we would like to find the antiderivative of <m>x^n</m> with respect to <m>x</m>.</p>
+ 
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-1.png">
+                </image>
+            </sidebyside> 
+
+<p>
+The Alpha provides an answer.</p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-2.png">
+                </image>
+            </sidebyside> 
+
+<p>
+Note that the response tells us the question the Wolfram|Alpha is answering.  That helps us check that we have been properly understood.  We may find it useful to give a formula without the extra words.</p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-3.png">
+                </image>
+            </sidebyside> 
+
+<p>
+The interface is fairly robust.  It understands the convention that the variable for math problems is typically <m>x</m>, so it will generally guess that x is our variable if we don't specify the variable with respect to which we are integrating.</p>
+ 
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-4.png">
+                </image>
+            </sidebyside> 
+
+<p>
+It is worth noting that Wolfram|Alpha is connected with Mathematica, so it will understand questions in Mathematica syntax.  On the right side to the screen there is a link for related links.  In particular, there will be a link for the related command in Mathematica.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-5-5.png">
+                </image>
+            </sidebyside> 
+ 
+<p>
+Following that link gives more information on the syntax of the Mathematica command.  We generally don't need to know the syntax, but it is useful if we want to use specific options.</p>
+
+  <sidebyside >
+                <image width="60%" source="images/sec7-5-6.png">
+                </image>
+            </sidebyside> 
+
+<p>
+We should note that Wolfram|Alpha will easily find antiderivatives that we would find very hard to do or beyond the scope of this class.</p>
+ 
+  <sidebyside width="80%">
+                <image width="80%" source="images/sec7-5-7.png">
+                </image>
+            </sidebyside> 
+
+<p>
+The output also has a link for showing steps on complicated problems.</p>
+
+  <sidebyside width="80%">
+                <image width="80%" source="images/sec7-5-8.png">
+                </image>
+            </sidebyside> 
+
+<p>
+The show steps link only works on the paid version of Alpha.  However we can find other tools by searching for integral calculator.  Such a search reveals symbolab, 
+( https://www.symbolab.com/solver/definite-integral-calculator>, which we also used in chapter 4.</p>
+ 
+  <sidebyside width="90%">
+                <image width="90%" source="images/sec7-5-9.png">
+                </image>
+            </sidebyside> 
+
+<p>
+In chapter 4, we found a derivative calculator.  Similarly we can find an integral calculator (http://www.integral-calculator.com/>  that will show steps.
+For problems of at the level of difficulty we have been doing, Wolfram|Alpha also produces plots of the integral.</p>
+
+  <sidebyside width="90%">
+                <image width="90%" source="images/sec7-5-10.png">
+                </image>
+            </sidebyside> 
+
+<p>
+<term>Definite integrals</term> - One of the reasons we wanted to find antiderivatives was to be able to use them to evaluate definite integrals.  We can ask Wolfram|Alpha for the definite integral directly.  In that case, Wolfram|Alpha will give the numeric answer and will also produce the relevant graph.  (Symbolab will also do definite integrals.)</p>
+ 
+  <sidebyside width="90%">
+                <image width="90%" source="images/sec7-5-11.png">
+                </image>
+            </sidebyside> 
+
+<p>
+This is particularly useful when finding the antiderivative is beyond the scope of this course.  Consider for example if we want to find the area under a portion of a curve that has the shape of a normal curve.</p>
+
+  <sidebyside width="90%">
+                <image width="90%" source="images/sec7-5-12.png">
+                </image>
+            </sidebyside> 
+ 
+<p>
+Another example when we can easily set up integrals we cannot solve by hand occurs when we are trying to find the current value of a revenue stream.  A value, <m>V</m>, that we get <m>t</m> years in the future, has a present value of <m>V exp(-r t)</m> where <m>r</m> is an investment return rate.  Thus the current value of a revenue stream, <m>V(t)</m>, from time <m>a</m> to time <m>b</m>, is <m>\int_a^b V(t)*e^{(-r*t)} dt</m>.  However we only have a rule for finding the antiderivative when <m>V(t)</m> is either a constant or exponential function.  With a CAS program it is straightforward to compute such integrals for a broad range of value stream functions.</p>
+
+  <sidebyside width="80%">
+                <image width="80%" source="images/sec7-5-13.png">
+                </image>
+            </sidebyside> 
+
+<p>
+If you are going to use Wolfram|Alpha in doing work, you should realize that the terms of use of the site require you to appropriately cite Wolfram|Alpha.  (This is standard academic procedure.)  Your citation should include that date that you got your answer from the site.  The results above were obtained on Feb 29, 2012.</p>
+
+<p>
+In business situations, we are rarely asked to simply find an integral.  Instead, finding an integral is generally part of a larger problem.  Thus we often use CAS for part of a problem. </p>
+
+<p>
+<term>Initial value problems</term> - We often want to choose a particular antiderivative of a function.  We typically do this when we have the value of the antiderivative for some value.  We simply plug that value into the general antiderivative and solve for <m>C</m>.</p>
+
+<example><title>Finding the antiderivative, then the constant</title><p>
+ The rate of change profit with respect to quantity is given by
+ <m>P' (q)=-q^2+5q+50</m> and the break-even point occurs when <m>q=5</m>.  Find the formula for profit as a function of <m>q</m>.  Find the maximum profit.</p>
+
+<p>
+We can do this by putting together things we have already done.  First we use Wolfram|Alpha to find an antiderivative.</p>
+ 
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-14.png">
+                </image>
+            </sidebyside> 
+
+<p>
+Thus we know <m>P(q)=\frac{1q^3}{3}+\frac{5q^2}{2}+50q+C</m> for some constant <m>C</m>.  We also know <m>P(5)=0</m>.  We now plug the function, without the <m>C</m>, into Excel and evaluate at <m>q=5</m>.  </p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-15.png">
+                </image>
+            </sidebyside> 
+
+<p>
+We make C the negative of our answer and modify our function accordingly.  We now use solver to maximize the function. </p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-16.png">
+                </image>
+            </sidebyside> 
+
+<p>
+Thus the maximum profit is $145.83, and it occurs when <m>q=10</m>.</p>
+</example>
+
+<example><title>The previous example in one step</title><p>
+ The rate of change profit with respect to quantity is given by
+ <m>P' (q)=-q^2+5q+50</m> and the break-even point occurs when <m>q=5</m>.  Find the formula for profit as a function of <m>q</m>.  Find the maximum profit.</p>
+
+<p>
+We can also do this with Wolfram|Alpha setting up the boundary value problem.  We give the alpha bot the derivative we want integrated and the fixed value of the original function.  (Notice that the answer does not include a +C, since we have computed a particular constant.)</p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-17.png">
+                </image>
+            </sidebyside> 
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-18.png">
+                </image>
+            </sidebyside> 
+
+<p>
+We then ask Alpha to maximize the function.</p>
+ 
+  <sidebyside width="90%">
+                <image width="90%" source="images/sec7-5-19.png">
+                </image>
+            </sidebyside> 
+<p>
+This gives the same answer of $145.83.</p>
+</example>
+
+<p>
+This first example could easily have been done by hand.  We can repeat the process with an example that could not be easily been by hand.</p>
+
+<example><title>A more complicated initial value problem</title><p>
+ The rate of change of profit with respect to quantity is given by 
+<m>P' (q)=q^2  \exp(-q/10)-q/10</m> and a break-even point occurs when <m>q = 5</m>.  Find the formula for profit as a function of <m>q</m>.  Find the maximum profit.</p>
+
+<p>
+In structure, this example is very similar to the first example.  However, where in the first example, the function would have been easy to do by hand, in this case, the problem is very hard to do by hand.  We use Wolfram/Alpha to find the antiderivative.</p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-20.png">
+                </image>
+            </sidebyside> 
+ 
+<me>P(q) = exp(-q/10)*(-10*q^2-200*q-2000)-q^2/20+C.</me>
+
+<p>
+We then use Excel to find <m>C</m>, noting that if we use <m>P(q)</m> without the <m>C</m>, then <m>C</m> is the value of <m>–P(5) = 1972.474</m>.</p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-21.png">
+                </image>
+            </sidebyside> 
+
+<p>
+We plug in 5 and note <m>P(5) = 0 = C-1972.474</m>, thus <m>C = 1972.474</m>.  We use solver to maximize and find the maximum profit of $1675.17 occurs at <m>q=64.72775</m>.</p>
+
+  <sidebyside width="90%">
+                <image width="90%" source="images/sec7-5-22.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<p>
+Riemann sums - We can also use Alpha to do Riemann sums.  We need to give a starting and ending point and the number of intervals.</p>
+
+<example><title>Riemann sums with Wolfram|Alph</title><p>
+ Find the current value of a revenue stream <m>V(t)=2000+5t</m> for 0 years with an investment rate of <m>r=1.03</m>, assuming payments are made daily.</p>
+
+<p>
+We approximate the current value with the integral </p>
+
+<me>CurrentValue=\int_{start}^{stop} r^{-t} V(t)dt= \int_0^{10} 1.03^{-t} (2000+5t)dt.</me>
+
+<p>
+What we really want is the Riemann sum with one interval per day.  Over 10 years we have 3652 days.</p>
+ 
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-23.png">
+                </image>
+            </sidebyside> 
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-5-24.png">
+                </image>
+            </sidebyside> 
+ 
+<p>
+If we assume payments start at the beginning of the first day we would use the left endpoint method.
+</p> 
+</example>
+
+<exercises xml:id="exercises-set-sec-7-5">
+	<title>Exercises: Integration using Computer Algebra Problems</title>
+
+<p>
+For 1-10, find the antiderivative of the given function</p>
+
+ 
+<exercise ><statement><me> f(x)=x \ln(x)</me></statement>
+<solution>
+<me>\int x \ln(x)dx=\frac{1}{4} x^{2}(2\ln(x)-1) +c</me>
+</solution></exercise>
+
+<exercise ><statement><me> f(t)=e^{.07t} (-t^2+3t+5)</me></statement></exercise>
+
+<exercise ><statement><me> f(t)=t^2 e^(-0.06t)</me></statement><solution>
+<me>\int t^2 e^{-0.06 t} dt= e^{-0.06t} (-9259.26 - 555.556 t - 16.6667 t^2)+c
+</me></solution></exercise>
+
+<exercise ><statement><me> f(x)=\ln(x)</me></statement></exercise>
+
+<exercise ><statement><me> f(t)=(t+1) e^{-0.06t}</me></statement><solution>
+<me>\int (t+1) e^{-0.06t}\ dt =e^(-0.06t) (-294.444 - 16.6667 t)+c
+</me></solution></exercise>
+
+
+<exercise ><statement><me> f(x)=\frac{1}{(1+2x)(3+x)(5+6x) }</me></statement></exercise>
+
+<exercise ><statement><me> f(x)=\frac{1}{\sqrt{1+x^2}}</me></statement><solution>
+<me>\int \frac{1}{\sqrt{1+x^2}}\ dx= \sinh^{-1}(x)+c
+</me></solution></exercise>
+
+
+<exercise ><statement><me> f(x)=\frac{1}{(3+2x)^2} </me></statement></exercise>
+
+<exercise ><statement><me> f(x)=\frac{5}{9+x^2 }</me></statement><solution>
+<me>\int \frac{5}{9+x^2 }\ dx = \left(\frac{5}{3}\right)\tan^{-1}\left(\frac{x}{3}\right)+c
+</me></solution></exercise>
+
+
+<exercise ><statement><me> f(x)=\frac{1}{(5x+4)^2 (7x+9)}</me></statement></exercise>
+
+
+<p>For problems 11-16 evaluate the definite integral. </p>
+ 
+
+ 
+<exercise ><statement><me> \int_0^{10} t^2 e^{-0.06t}  dt </me></statement><solution>
+<me> \int_0^{10} t^2 e^{-0.06t}  dt \approx 214.03</me>
+</solution></exercise>
+
+<exercise ><statement><me> \int_1^{10}\frac{dt}{t} </me></statement>
+</exercise>
+
+<exercise ><statement><me> \int_1^8(x-1)(x-8)  dx</me></statement>
+<solution>
+<me> \int_1^8(x-1)(x-8)  dx \approx -57.167</me>
+</solution></exercise>
+
+<exercise ><statement><me> \int_0^{10}t^2 e^{.05(10-t)}  dt </me></statement></exercise>
+
+<exercise ><statement><me> \int_0^2 e^{-x^2} dx</me></statement><solution>
+<me>  \int_0^2 e^{-x^2} dx \approx 0.882081</me>
+</solution></exercise>
+
+<exercise ><statement><me> \int_9^{16} \frac{1}{\sqrt{2\pi}} e^{-(x-10)^2}  dx </me></statement></exercise>
+
+ 
+
+<p>For problems 17-20 do the initial value problem.</p>
+
+<exercise ><statement><me> P' (q)=-q^2+3q+5\hbox{ and }P(3)=5.\hbox{ Find } P(q)</me></statement><solution>
+<me>P(q)=\frac{1}{6} (-2q^3+9q^2+30q-87)
+</me>
+</solution></exercise>
+
+<exercise ><statement><me> F' (t)=t^2 e^{-0.1t} \hbox{ and } F(10)=2.  \hbox{ Find } F(t).</me></statement></exercise>
+
+<exercise ><statement><me> P' (q)=\sqrt{q^2+5q+7} \hbox{ and } P(0)=7.  \hbox{ Find } P(q).</me></statement><solution><me>
+P(q) = (56 - 50 \sqrt{157} + (4q+10) \sqrt{7 + 5 q + q^2} </me>
+<me>- 3 \sinh^{-1}\left(\frac{25}{\sqrt{3}}\right)+ 3 \sinh^{-1}\left(\frac{5 + 2 q}{\sqrt{3}}\right))/8</me>
+</solution></exercise>
+
+<exercise ><statement><me> P' (q)=-(q^2+2q+3)^2 \hbox{ and } P(10)=-7.  \hbox{ Find } P(q).</me></statement></exercise>
+
+<exercise ><statement><p>
+I have an investment that produces income at a rate of <m>P(t)=5000+100t</m>.  I assume the present value of an asset decreases continuously at a rate of 2% per year for the length of time I have to wait for the asset.  What is the present value of the first 7 years of return from my investment?</p></statement><solution>
+<me>\int_0^7(5000+100t) (.98)^t dt\approx 34868.6</me>
+</solution></exercise>
+
+<exercise ><statement><p>
+My oil well is producing revenue at a rate of <m>P(t)=5000(0.09^t)</m>.  I assume the present value of an asset decreases continuously at a rate of 3% per year for the length of time I have to wait for the asset.  What is the present value of the first 10 years of return from my investment?</p></statement></exercise>
+
+<exercise ><statement><p>
+ The rate of marginal profit is <m>MP(q)=100-12\ln(q)</m> and a break-even point occurs at <m>q=100</m>. Find the quantity that produces the most profit and the amount of profit generated at that point.</p></statement><solution>
+<p>We have maximal profit when <m>MP(q)=0</m>, or when <m>q=e^8=2981</m>.</p>
+<p>Using WolframAlpha to solve the initial value problem we get</p>
+<me>P(q)=16(7q-700+75ln(100))-12q ln(q)</me>
+<me>P(2981)= 16(7*2981-700+75ln(100))-12*2981 ln(2981)=42021.7</me>
+ </solution></exercise>
+
+<exercise ><statement><p>
+Our marginal cost function is <m>MC(q)=10q \ln(q)</m> and the startup costs are $23,000.  Produce a cost function.
+</p></statement></exercise>
+
+</exercises>
+        </section>
+ 
+         <section xml:id="sec-7-6-NormalDistribution">
+            <title>The Normal Distribution: An extended numeric example</title>
+
+<p><url href="./Examples/Section-7-6-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+<p>
+We want to look at an extended example where we realistically want to find a definite integral, but need to use numerical methods rather than solving for the antiderivative and using the fundamental theorem of calculus.
+Most students are familiar with the concept of a course that is graded on a curve.  Formally that means that there is a preset distribution of grades available in the class, with a certain percentage of the students getting an A, a certain percentage getting a B, and so forth.  Most college students are also familiar with the ACT, SAT, or other standardized tests, where the grades typically follow a normal or bell curve.  The result we pull from more advanced mathematics is that many phenomena such as height, weight, and hat size, also follow a bell curve.  In a business setting, we are often concerned whether or not a portion of a market will be big enough to support a specialty store.  We also want to know how much of my production should be allocated to a range of sizes of a product.  This question often boils down to finding the area under a specified portion of the normal curve.</p>
+
+<p><term>Background from probability</term></p>
+
+<p>
+We want to pull some definitions and results from the theory of probability.  In particular we want a description of the function we are finding the area under and also of the related area function.</p>
+
+<assemblage><p>
+<term>Definition: A Probability Density Function</term> is a function that spreads the area 1 over the entire real line, with the obvious understanding that no value can have a negative probability.</p>
+
+<p>
+In calculus terms, a <term>Probability Density Function</term> is a function  <m>f(x)</m> defined for <m>-\infty\lt x \lt \infty </m>  such that <m>f(x)\ge 0</m>  and  <m>\int_{-\infty}^{\infty}f(x)dx=1</m>. </p></assemblage>
+
+<p>
+A probability density function is also called a continuous distribution function.  The probability density function that is of most interest to us is the normal distribution.  The normal density function is given by </p>
+<me>f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-(x-\mu)^2}{2\sigma^2}\right)</me>
+<p>
+where sigma, <m>\sigma</m>, and mu, <m>\mu</m>, are respectively the standard deviation and mean of the distribution.  For this course the mean is the center of the distribution and the standard deviation is a measure of how tightly packed the distribution is.  If we set the mean to 0 and the standard deviation to 1 we have the standardized normal distribution, or the familiar bell curve.</p>
+
+<p>
+Thus, when I note that the adult men in the United States have a height distribution that is normal with a mean of 70 inches and a standard deviation of 3 inches, the distribution is</p>
+<me>f(x)=\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x70)^2}{2*3^2}\right)</me>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-6-1.png">
+                </image>
+            </sidebyside> 
+
+<p>
+Thus finding the percentage of men less than 5 feet tall, reduces to evaluating the appropriate integral.  Since finding the percentage of the population that fits in our market reduces to finding the area under a specified portion of this curve, we are also interested in the anti-derivative of the distribution.</p>
+
+<assemblage><p>
+<term>Definition</term>: Given a probability density function, <m>f(x)</m> , the related <term>Cumulative Distribution Function</term>,  <m>CDFf(x)</m>, is a function that measures how much area is over the interval  <m>(-\infty,x]</m>.</p>
+
+<p>
+In calculus terms,  <m>CDFf(x)</m>, the <term>Cumulative Distribution Function</term> of  <m>f(x)</m>, is  <m>\int_{-\infty}^x f(t)dt</m>. </p></assemblage>
+
+<p>
+You will notice the techniques we have for anti-differentiation will not work with the normal distribution.  In fact, the normal distribution has no closed form anti-derivative using the functions we are familiar with.  Thus we need to use numeric methods.</p>
+
+<example><title>Tall men in an area</title>
+<p>In the United States, the height of men follows a normal distribution with a mean of 70 inches (5' 10") and a standard deviation of 3 inches.  I want to set up a specialty shop for men who are at least 6’ tall, but no more than 7' tall.  In an area with 100,000 adult men, how big is my potential market?</p>
+
+<p>
+<term>Solution set up</term>.  My distribution function is  
+<m>\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^3}\right)</m>.  
+Since I have a population of 100,000 and am interested in the men who are between 72 and 84 inches tall, my potential market is</p>
+<me>100000\int_{72}^{84} \frac{1}{3\sqrt{2\pi}} \exp\left(\frac{-(x-70)^2}{2*3^2} \right)dx.</me>
+
+<p>As an alternative, I can convert the problem so it is expressed in terms of standard deviations.  Then I use the standardized normal distribution and my limits of integration are</p>
+
+<me>low\ bound\ in\ SD = (low\ bound-mean)/(SD) = (72-70)/3 = 2/3</me>
+<me>upper\ bound\ in\ SD = (upper\ bound-mean)/(SD) = (84-70)/3 = 14/3.</me>
+
+<p>Then my potential market is</p>
+
+<me>100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx.</me>
+
+<p><term>Solution 1, using Excel and Riemann Sums</term>:  I want to set up a spreadsheet to find the area under the curve.  Since I think I may do this for several problems, I want to set up the worksheet as a template that I can simply fill in.  It will make my life easier if I recast the problem in terms of standard deviations.   My potential market is <m>100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx</m>.   I am ready to set up a Riemann sum worksheet as we did in section 7.1</p>
+
+  <sidebyside width="80%">
+                <image width="80%" source="images/sec7-6-2.png">
+                </image>
+            </sidebyside> 
+
+<p>In cells F3 through F5 we convert the lower bound, upper bound, and del x to standard deviations.  We recall that we get better accuracy by evaluating the rectangles with a midpoint.  The midpoint of the nth rectangle is (n-0.5)*del x above the lower bound.  As we did in previous sections, we use the offset command to bring our answer into the top region.  When we look at the numbers we see that the potential market is 25,249.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-6-3.png">
+                </image>
+            </sidebyside> 
+
+<p><term>Solution 1a, using Excel Statistics Commands</term>:  By this point in the course you should expect that if we claim a computation is important and done by business many times, that there is an Excel command to do the computation.</p>
+
+<p>
+The function we are interested in is</p>
+
+<me>
+\hbox{NORM.DIST(x, mean, standard deviation, cumulative).}</me>
+
+<p>
+Where <m>x</m>, mean, and standard deviation have the obvious meanings.  The cumulative parameter is either true or false.  If it is true we get the cumulative distribution function.  If it is false we get the probability density function.  If we are working with the standardized normal distribution, where the mean is 0 and the standard deviation is 1, the command is </p>
+
+<me>
+\hbox{NORM.S.DIST(x, cumulative).}</me>
+
+<p>
+(If you are using older versions of Excel, the syntax of the command is a little different.  Check the appropriate help page if you are using an older version of Excel.)  With these commands, our spreadsheet is noticeably simpler.</p>
+
+  <sidebyside width="70%">
+                <image width="70%" source="images/sec7-6-4.png">
+                </image>
+            </sidebyside> 
+
+<p>
+When we look at the values, we get a target population of 25,249.  This agrees with our estimate to 5 significant figures.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-6-5.png">
+                </image>
+            </sidebyside> 
+
+<p>
+<term>Solution 1b, using Wolfram alpha</term>:  Once I have reduced the problem to evaluating a definite integral, I can find a numeric solution with a CAS package like Wolfram|Alpha.</p>
+
+<me>100000\int_{72}^{84} \frac{1}{3\sqrt{2\pi}} \exp\left(\frac{-(x-70)^2}{2*3^2 }\right)dx</me>
+
+<p>becomes</p>
+
+<me>\text{100000*integrate(exp(-(x-70)^2/(2*3^2))/(3*sqrt(2*pi))) from 72 to 84.}</me>
+
+<p>We get our familiar answer of 25,249.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-6-6.png">
+                </image>
+            </sidebyside> 
+
+<p>When we compute a target population, we sometimes want to include the tail of the distribution.  We might, for example be concerned with all women who are 5 feet tall or less.  This sets up an integral over an infinite interval, which we can’t do as a Riemann sum.  The first workaround notes that the tails are very small.  If all humans who have ever lived are normally distributed, less than 1 is more than 7 standard deviations from the mean.  Taking the integral down to -7 will practically be the same as integrating down to <m>-\infty</m>.  The second workaround uses the symmetry of the normal distribution.</p>  
+
+<me>\int_{-\infty}^a SND(x)dx=\int_{-\infty}^0 SND(x)dx+\int_0^a SND(x)dx=.5+\int_0^a SND(x)dx.</me>
+</example>
+
+<example><title>Finding tall women</title>
+<p>In the United States, the height of women follows a normal distribution with a mean of 64 inches (5' 4") and a standard deviation of 2.75 inches.  I want to set up a specialty shop for women who are no more than 5' tall.  In an area with 500,000 adult women, how big is my potential market?</p>
+
+<p><term>Solution</term>: Set up.  Using the reasoning as above, I want to estimate my market if it is 50% of the population plus the percentage between 0 and (-4/2.75) standard deviations below the mean. </p>
+
+<p><term>Solution</term>: Using Excel and Riemann Sums:  One advantage of having set up the first exercise well, it the Riemann sum problem is now a matter of changing the parameters and subtracting from 0.5 before multiplying by the market size.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-6-7.png">
+                </image>
+            </sidebyside> 
+
+<p>We notice that since we are finding the area under the standardized normal distribution from 0 to a negative number, we get a negative area.  Our potential market is composed of 3,645 women.</p>
+
+<p><term>Solution a</term>: Using Excel Statistics Commands:  When using the statistics commands, the area function is zero at <m>-\infty</m>.  Thus we simply have to evaluate </p>
+
+NORM.S.DIST(right hand limit, cumulative).
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-6-8.png">
+                </image>
+            </sidebyside> 
+
+<p>Once again, we get a potential market of 3,645 women.</p>
+</example>
+
+<p>While the normal distribution spreads a population over the real numbers, most objects come in discrete sizes.  Depending on the kind of shoes, the sizes are either whole or half numbers.  You can’t buy a shoe of size 8.764.  The normal procedure is to divide the population at the middle between the sizes.</p>
+
+<example><title>Women's shoes</title>
+<p>In the United States, the shoe sizes of women follows a normal distribution with a mean of 8 and a standard deviation of 1.5.  I want to order 1000 pairs of shoes.  If the shoes are only available in full sizes, how many pairs should I order of size 7?</p>
+
+<p><term>Solution</term>:  I want the portion of the population between size 6.5 and 7.5.   I fit it into my worksheet for Riemann sums.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-6-7.png">
+                </image>
+            </sidebyside> 
+
+<p>Of the 1000 pairs of shoes, 211 should be size 7.</p>
+</example>
+
+<p>We have looked at three methods for finding a portion of a normally distributed population, which we describe as Excel with Riemann sums, Excel with statistics commands, and CAS.  It is worthwhile to consider the advantages and disadvantages of the methods.  The Riemann sums method takes the most work to set up.  It is also conceptually the most straightforward and the most flexible.  It is the easiest to adapt if we are doing some nonstandard distribution of a population.  It also shows intermediate values if we have a less sharp question and are trying to see what is going on and are still deciding on the business question we want to ask.  The Excel with statistics command approach requires us to learn special commands.  It is also less work.  It would probably be the favored method if we were doing a lot of these computations.  It should be noted that Excel has corresponding commands for the other standard probability distributions. The CAS method does not require special commands, but it takes us out of our Excel environment.  It does not let us leave a worksheet that is well documented and that can be easily modified by someone else asking similar questions.
+
+</p> 
+
+<exercises xml:id="exercises-set-sec-7-6">
+	<title>Exercises: Normal Distribution Problems</title>
+
+
+<exercise ><statement><p> Assume that women’s shoe sizes are normally distributed with a mean of 8 and a standard deviation of 1.5.  A particular style of shoes in available in full and half sizes.  I plan to make 10,000 pairs of this style.</p>
+<ol label="(a)">>
+<li><p>Express, as an integral, the number of pairs I should make of size 9.</p></li>
+<li><p> How many pairs of size 9 shoes should I make?</p></li>
+<li><p> How do your answers change if the shoes are only to be made in full sizes?</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">>
+<li><me>\hbox{pairs size 9}=10000\int_{8.75}^{9.25}
+\frac{1}{1.5\sqrt{2\pi}}e^{\left({\frac{-(x-9)^2}{2*1.5^2}}\right)}\ dx
+</me></li>
+<li><me>10000\int_{8.75}^{9.25} \frac{1}{1.5\sqrt{2\pi}} e^{\left({\frac{-(x-9)^2}{2*1.5^2}}\right)}\ dx=1062.
+</me></li>
+<li><p> If we only have full sizes the limits of integration go from 8.5 to 9.5.  I then need 2108 pairs of size 9.</p></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> Men's shoes in Europe are made if full sizes with a different measuring system than we use in the United States.  They are normally distributed with a mean of 43 and a standard deviation of 2/3.  I plan to buy 1,000 pairs of shoes for my store.</p>
+<ol label="(a)">
+<li><p> Express, as an integral, the number of pairs I should order of size 45.</p></li>
+<li><p> Express, as an Excel command, the number of pairs I should order of size 45.</p></li>
+<li><p> How many pairs should I order of size 44?  (Give a number, not an equation.)</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p> Assume that women’s dress sizes are normally distributed with a mean of 14 and a standard deviation of 3.  For a particular style, 5000 dresses will be made, and they are available in even integer sizes.  (2, 4, …).</p>
+<ol label="(a)">
+<li><p>  Express, as an integral, the number of dresses I should make of size 10.</p></li>
+<li><p>  How many size 6 dresses should I make?</p></li>
+<li><p>  How many size 10 dresses should I make?</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><me>\hbox{size 10 dresses}=5000\int_{9}^{11}
+\frac{1}{3\sqrt{2\pi}}e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\ dx
+</me></li>
+<li><me>5000\int_{5}^{7}\frac{1}{3\sqrt{2\pi}} e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\ dx = 43
+</me></li>
+<li><me>5000\int_{9}^{11}\frac{1}{3\sqrt{2\pi}} e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\ dx = 555
+</me></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> Assume that men’s suit coat sizes are normally distributed with a mean of 44 and a standard deviation of 4.  For a particular style, 2000 suit coats will be made, and they are available in even integer sizes.  (2, 4, …).</p>
+<ol label="(a)">
+<li><p>  Express, as an integral, the number of suit coats I should make of size 44.</p></li>
+<li><p>  How many size 44 suit coats should I make?</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p>  A study of the size of male soldiers found the headband lengths were normally distributed with a mean of 22.1 inches and a standard deviation of 0.85 inches.  Standard sized caps will fit headbands lengths of 20-25 inches.</p>
+<ol label="(a)">
+<li><p>  Express, as an integral, the percentage of soldiers for who will fit the standard sized caps.</p></li>
+<li><p>  Cap sizes come in quarter sizes with a full size corresponding to a change in headband size of 3 inches, with a size 8 corresponding to 25 inches.  Out of 1,000 soldiers, how many need a size 8 cap?</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><me>\hbox{pecentage fit}=100\int_{20}^{25}\frac{1}{0.85\sqrt{2\pi}} e^{\left({\frac{-(x-22.1)^2}{2*0.85^2}}\right)}\ dx =99.29
+</me></li>
+<li><me>\hbox{size 8 caps}=1000\int_{24.625}^{25.375}\frac{1}{0.85\sqrt{2\pi}} e^{\left({\frac{-(x-22.1)^2}{2*0.85^2}}\right)}\ dx =1.42
+</me></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p>  A study of the size of male soldiers found the hip breadths were normally distributed with a mean of 13.45 inches and a standard deviation of 0.64 inches.  Seats on one airline measure 17 inches between the armrests.  Express, as an integral, the percentage of soldiers who hips are too wide for the seats.
+</p></statement></exercise>
+
+<exercise ><statement><p>  Assume that women’s shoe sizes are normally distributed with a mean of 8 and a standard deviation of 1.5.  A particular style of shoes is available in full and half sizes.  I plan to make 1,000 pairs of this style.  Using the Excel statistics commands, make a chart telling me many pairs I should make of each size.
+</p></statement><solution>
+<p> Since the shoes come in half sizes, we want the area under the normal distribution function from 0.25 before the given size to 0.25 after the given size.</p>
+<p>The desired syntax is</p>
+<p>Population size * (NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) - 
+NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) )</p>
+  <sidebyside  width="80%" >
+                <image width="80%" source="images/sec7-6-sol7a.png">
+                </image>
+            </sidebyside> 
+  <sidebyside  width="40%" >
+                <image width="40%" source="images/sec7-6-sol7b.png">
+                </image>
+            </sidebyside> 
+
+</solution></exercise>
+
+
+<exercise ><statement><p>  Assume that men’s suit coat sizes are normally distributed with a mean of 44 and a standard deviation of 4.  For a particular style, 2,000 suit coats will be made, and they are available in even integer sizes.  (2, 4, …). Using the Excel statistics commands, make a chart telling me many suits I should make of each size.
+</p></statement></exercise>
+
+<exercise ><statement><p>  Assume that results on an intelligence test are normally distributed with a mean of 100 and a standard deviation of 15.  Using the Excel statistics commands, make a chart distributing 1,000,000 people between intervals of size 10 (90-100, 100-110, etc.).  What is the highest IQ score I should expect to find in my population of 1 million?
+</p></statement><solution>
+<p> We set the ranges with a high value nd a low value..</p>
+<p>The desired syntax is</p>
+<p>Population size * (NORM.DIST(High value, Mean, Standard Deviation, TRUE) - 
+NORM.DIST(Low value, Mean, Standard Deviation, TRUE) )</p>
+  <sidebyside  width="80%" >
+                <image width="80%" source="images/sec7-6-sol9a.png">
+                </image>
+            </sidebyside> 
+  <sidebyside  width="40%" >
+                <image width="40%" source="images/sec7-6-sol9b.png">
+                </image>
+            </sidebyside> 
+<p>With a million people, the high IQ should be between 170 and 180.</p>
+</solution></exercise>
+
+<exercise ><statement><p>  I have been informed that the distance from the back of a chair to the front of the knee of a man sitting is normally distributed with a mean of 24 inches and a standard deviation of 1.3 inches.  I want to design airline chairs to fit 99% of the male passengers with 1 inch between the knee and the back of the next chair.  How much distance do I need between the front of on chair seat and the back of the next?
+</p></statement></exercise>
+
+<exercise ><statement><p>  I have been informed that the breadth at the shoulders of an adult male is normally distributed with a mean of 17.9 inches and a standard deviation of 1 inch.  The standard coach seat on a plane is 17.2 inches wide.  What percentage of adult males fit in such a seat without overflow?
+</p></statement><solution>
+<me>\hbox{pecentage fit}=100\int_{0}^{17.2}\frac{1}{1\sqrt{2\pi}} e^{\left({\frac{-(x-17.9)^2}{2*1^2}}\right)}\ dx =24.196
+</me>
+</solution></exercise>
+
+<exercise ><statement><p>  The techniques used in this section can easily be adapted to other distributions.  For example, the mean time to failure of a brand of hard drives, measured in units of 10,000 hours, has been found to follow a Weibull distribution with shape variable 3 and scale variable 5.  The probability density function of failure is </p>
+<me>FailureDensity(x)=(3/5) (x/5)^2 \exp(-(x/5)^3 ).</me>
+<ol label="(a)">
+<li><p>   Our warranty is for 10,000 hours of use.  (This is approximately 1 year.)  What percentage of drives get replaced under warrantee?</p></li>
+<li><p>   We offer an extended warrantee that replaces the hard drive if it fails in under 30,000 hours of use.  What percentage of users who buy the extended warranty will have their hard drive fail in the period of time between the expiration of the original warrantee and the end of the extended warranty?</p></li>
+<li><p>   Some credit cards double the manufacturer’s warranty.  What percentage of the people who use this plan will have their hard drive replaced by the credit card company?</p></li>
+<li><p>   What percentage of customers see their hard drives last for 100,000 hours of use?</p></li>
+</ol></statement></exercise>
+
+<exercise ><statement><p>  – Project – Pick a product and find evidence on the kind of function that describes its failure rate.  Based on that data, determine how long we expect it to take until 10% , 50% , and 90%  of the products fail.
+</p></statement></exercise>
+
+
+</exercises>
+        </section>
+ 
+          <section xml:id="sec-7-7-InvestmentDepreciation">
+            <title>Applications of the integral: Investment and depreciation</title>
+
+<p><url href="./Examples/Section-7-7-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+<p>
+Having looked at several ways to evaluate definite integrals, we return to practical problems that we can solve be evaluating an integral.  We will break our applications in this section into two groups.  Problems in the first group reduce to accumulation over time, and are analogous to finding the area under a curve, or finding a definite integral.  Problems in the second group ask you to find a specific anti-derivative of a function.  They are called boundary value problems.</p> 
+
+<p>
+<term>Basic Accumulation</term>– The most straightforward problem for integration is one where I have a function for some value, like an income stream, or materials produced, or a cost, and I am interested if calculating how much accumulates in a specified interval.  We work through a series of examples where the accumulation function gets progressively more complicated.</p> 
+
+<example><title>Accumulating a constant function over time</title><p>
+Mary runs a small shop that is temporarily disconnected from the power network.  A generator that provides power uses 2 gallons of fuel per hour.  How much fuel does she need to keep the shop running from 8 in the morning until 6 in the afternoon.</p> 
+
+<p>
+<term>Solution</term>: We started with a problem that is easy to do without calculus to give us confidence in our method.  We solve it with algebra first.  Mary wants to run the generator for 10 hours and it consumes 2 gallons of fuel per hour.  She needs (10 hours)(2 gallons/hour) = 20 gallons of fuel.</p> 
+
+<p>
+To set the problem up for calculus, we use a 24-hour clock to put time on a number line.  We are accumulating <m>FuelConsumption(t)=2</m> from <m>t=8</m> to <m>t=18</m>.  We need</p> 
+
+<me>\int_8^{18} 2 dt=|2t|_8^{18}=(2*18)-(2*8)=20</me>
+
+<p>
+gallons of fuel.</p> 
+ 
+  <sidebyside  width="70%" >
+                <image width="70%" source="images/sec7-7-1.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<example><title>Accumulating marginal cost</title>
+
+<me>
+Marginal Cost(quantity)=50+quantity/1000</me>
+
+<p>
+Find the increase in cost as production goes from 50,000 to 80,000.</p> 
+
+<p>
+<term>Solution</term>: Since the change in cost looks like a Riemann sum with 30,000 intervals, we will approximate the change in cost with the integral of the marginal cost.  With this function we can easily find an antiderivative and evaluate. The change in cost is </p> 
+
+<me>\int_{50000}^{80000} 50+\frac{q}{1000} dq=
+\left.\left( 
+50q+\frac{q^2}{2000}
+\right)\right|_{50000}^{80000}</me>
+
+<me>=(7,200,000)-(3,750,000)=3,450,000.</me>
+
+<p>
+The change in cost of production is $3,450,000.</p> 
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-7-2.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<example><title>Oil production</title>
+<p>
+An oil well in Texas initially produces oil at a rate of 2 million barrels of oil per year.  The production rate will typically fall 15% per year.  How much oil is produced over a 5-year period?</p> 
+
+<p>
+<term>Solution</term>: We want to integrate our production rate of <m>2(0.85)^t</m> as <m>t</m> goes from 0 to 5.  We can use our antidifferentiation formulas for this problem.</p> 
+
+<me>\int_0^5 2(0.85)^t   dt= \left.\left(\frac{2(0.85)^t}{\ln (0.85)}\right)\right|_0^5=\frac{2}{\ln (0.85)}  (0.85^5-1)=6.846.</me>
+
+<p>
+Over 5 years, the well will produce 6.846 million barrels of oil.</p> 
+
+  <sidebyside  width="40%" >
+                <image width="40%" source="images/sec7-7-3.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<example><title>Discounted revenue stream</title><p>
+Your company is interested in acquiring a revenue stream that is currently producing are a rate of 
+50+5 t  thousand dollars per year, where t is measured in years.  To obtain current value, you are discounting at a rate of 6%/year compounded continuously.  What is the current value of the first 10 years of income from the stream?</p> 
+
+<p>
+<term>Solution</term>: To find the total income we would want to integrate <m>(50+5t)</m> as <m>t</m> goes from 0 to 10.  To find the current value we must discount the income based in when we receive it.  Thus we want to integrate <m>(50+5t) e^{-0.06t}</m> as <m>t</m> goes from 0 to 10.  We set up the integral <m>\int_0^{10} (50+5t) e^{-0.06t}  dt</m>.  Since we do not know how to find the anti-derivative for this function, we find the area either with Excel and Riemann sums, or with Wolfram Alpha.  </p> 
+
+  <sidebyside  width="80%" >
+                <image width="80%" source="images/sec7-7-4.png">
+                </image>
+            </sidebyside> 
+
+<p>
+With either method, we find that the present value of the revenue stream to be $545,298.</p> 
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-7-5.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<p>
+<term>Boundary value problems</term>: The accumulation problems asked you to find the area under a curve between two specific points.  For those problems, we are not interested in a formulation of a general area function.  A second set of applications starts with a derivative and is interested in finding the particular anti-derivative that meets certain initial conditions.  (We use the conditions to find the correct value of "+C" in the general anti-derivative.)  These problems are often solved once to find the general anti-derivative for a particular kind of problem, and the general solution is then used as a formula to find the constant C.</p> 
+
+<example><title>Proportional growth and continuous reinvestment</title><p>
+I put $20,000 in a retirement account that earns 4% interest compounded continuously.  I reinvest all my earnings from the account back into the retirement account.   I would like a simple formula for the principal at sometime in the future.  </p> 
+
+<p>
+<term>Solution</term>: We already have the formula for continuous growth, but it is worthwhile to derive it again.  We are told </p> 
+
+<me>Principal' (time)=.05*Principal(time)</me>
+ 
+<p>
+or</p> 
+
+<me>\frac{Principal' (time)}{Principal(time)}=.05</me>
+ 
+<p>
+Integrating both sides with respect to time, we get</p> 
+
+<me>\ln (Principal(time))=.05*time+C</me>
+
+<p>
+Exponentiating both sides gives</p> 
+
+<me>Principal(time)=\exp(0.05*time)*\exp(C)=e^C e^{.05*time}.</me>
+
+<p>
+Since we know that the Principal is $20,000 at time 0, we see that <m>e^C=20000</m> and our equation simplifies to </p> 
+
+<me>Principal(time)=20000e^{.05*time}.</me>
+
+<p>
+This is the formula we took on faith in the last chapter.</p> 
+</example>
+
+<p>
+<term>Depreciation</term>
+When computing costs of a business, we need to evaluate the depreciation cost of capital equipment.  There are a number of reasonable ways of computing depreciation. </p> 
+<ul>
+<li><p>
+<term>Straight-line depreciation</term>, which assumes that a piece of equipment loses the same amount of value each year until it is worthless. </p> 
+
+<assemblage><p><me>Annual\ Depreciation\ Expense=  \frac{Cost\ of\ fixed\ Asset-Residual\ Value}{Useful\ life\ of\ Asset\ (in\ years)}</me></p></assemblage></li>
+
+<li><p>
+<term>The sum of digits method of depreciation</term>.  It assumes the rate of depreciation is proportional to the expected remaining useful life of the piece of equipment. For example with a sum of years method and defining V(t) as the value, EL is the expected lifetime, k is a constant, and t is time, we would have:</p> 
+
+<assemblage><p><me>V' (t)= -k (EL-t)</me></p></assemblage></li>
+
+<li><p>
+<term>The declining balance depreciation</term>.  This method assumes the rate of depreciation is proportional to the current value, with the initial rate of depreciation twice the straight-line rate, with depreciation stopping when the value is the scrap value. We let N be the estimated life of the asset and we let the rate of depreciation be:</p> 
+	
+<assemblage><p><me>
+Depreciation\ rate=1- \sqrt[N]{
+\frac{residual\ value}{cost\ of\ fixed\ asset}}</me></p></assemblage></li>
+</ul>
+
+<example><title>Straight Line Depreciation</title><p>
+You buy a car for $18,000 and you want to depreciate it to $0 over 5 years. Find a formula for the value of the car.
+We assume the value decreases a constant rate, so we use straight-line depreciation.  Give a simple formula to find the book value of the equipment after 3.5 years.</p> 
+
+<p>
+<term>Solution</term>: The easiest way to do this problem is not to use calculus, but to realize we want the equation of a line and we have two points. </p>  
+
+<me>Value(0)=18000 \hbox{ and } Value(5)=0.</me>
+
+<p>
+Taking slope as rise over run, the slope is -3,600 and the intercept is 18,000.  Thus our equation is </p> 
+
+<me>Value(time)=18000-3600*time.</me>
+
+<me>Value(3.5)=5,400.</me>
+
+<p>
+Using calculus on the same problem we have </p> 
+
+<me>Value' (time)=-k\hbox{ for some constant }k, </me>
+
+<me>Value(0)=18000\hbox{ and } Value(5)=0.</me>
+.
+<p>
+Integrating the first equation gives</p> 
+
+<me>Value(time)=-k*time+C.</me>
+
+<p>
+Thus, straight-line depreciation gives a value function, which is a straight line.  We now plug in known values to find the constants.  We plug in for <m>time = 0</m> to see <m>C = 18,000</m>.  We plug in for <m>time = 5</m> to see <m>k = 3.600</m>.  This gives us the same equation using calculus as we obtained using algebra.  The book value of the equipment at 3.5 years is $5,400 with this method of depreciation.</p> 
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-7-6.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<example><title>Sum of years method</title><p>
+After buying the same car from the example above, we assume that the depreciation is proportional to the amount of useful life that the equipment has left.  (A car loses more value in its first year than in its last year of life.)   Produce an equation for the book value of the same $18,000 car with this method.</p>
+
+<p><term>
+Solution</term>: We start with the observation that we are given that <m>V' (t)=-k(EL-t)</m> for some constant <m>k</m>, and we know that <m>V(0)=18,000</m> and <m>V(5)=0</m>.</p> 
+
+<p>
+With an expected lifetime of 5, integrating the first equation gives</p> 
+
+<me>Value(time)=-k*5*t+k*t^2/2+C.</me>
+
+<p>
+Thus the sum of years method gives a value function which is quadratic.  Once again, we plug in known points to find the constants.  We plug in for time = 0 to see C = 18,000.  We plug in for time = 5 and get</p> 
+
+<me>0=-k*25+k*25/2+18,000.</me>
+
+<p>
+Solving this we get <m>k = 1,440</m>.  Our book value formula is then</p> 
+
+<me>Value(time)=-7,200 t+720 t^2+18000.</me>
+
+<p>
+At 3.5 years the value will be 	</p> 
+
+<me>Value(3.5)=-7,200*3.5+720*12.25+18000=1620.</me>
+
+<p>
+The book value at 3.5 years is $1,620 with this method of depreciation.</p> 
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-7-7.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<example><title>Declining Balance depreciation</title><p>
+This method of depreciation says an item loses value in proportion to its current value.  The standard method uses a rate that is twice the rate of straight-line depreciation until we reach scrap value, when depreciation stops.  Use this method to find the book value of our $100,000 piece of equipment at 3.5 years if the scrap value is $10,000 and the useful life is 5 years..</p> 
+
+<p>
+<term>Solution</term>: In example 5 we saw that proportional growth or decay give an exponential function.  The basic value function is </p> 
+
+<me>Value(time)=100000(1-2*.20)^{time}=100000(0.6)^{time}.</me>
+
+<p>
+However we need to find when the piece of equipment stops depreciating.  Solving</p> 
+
+<me>10000=100000(0.6)^{time}.</me>
+
+<p>
+we get </p> 
+
+<me>.1=(0.6)^{time}.</me>
+
+<p>
+or</p> 
+
+<me>time=\ln (0.1)/\ln (0.6) =4.508.</me>
+
+<p>
+Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book value is <m>100,000*(0.6)^{3.}5 = $16,731</m>.</p> 
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-7-8.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<exercises xml:id="exercises-set-sec-7-7">
+	<title>Exercises: Applications of the integral: Investment and depreciation Problems</title>
+
+
+<exercise ><statement><p>  The marginal costs for producing widgets is </p>
+<me>Marginal\ cost(q+1)=20-\frac{q}{10000}</me>
+<p>Find the increase in cost in going from producing 60,000 units to producing 80,000 units.</p></statement><solution>
+<md>
+<mrow>\hbox{increased cost}\amp=\int_{start}^{stop}\hbox{marginal cost}\ dq</mrow>
+<mrow>\amp=\int_{60000}^{80000}(20-\frac{q}{10000})\ dq</mrow>
+<mrow>\amp=\left.(20q-\frac{q^2}{20000}\right|_{60000}^{80000})\ </mrow>
+<mrow>\amp=1280000-1020000</mrow>
+<mrow>\amp=260000</mrow>
+</md>
+</solution></exercise>
+
+<exercise ><statement><p>  The marginal profit for producing gizmos is </p>
+<me>Marginal\ profit(q+1)=200-\frac{q}{1000}-\frac{q^2}{100,000,000}</me>
+<p>Find the change in profit in going from producing 70,000 units to producing 90,000 units.</p></statement></exercise>
+
+<exercise ><statement><p>  The daily sales projections for a fad item are: </p>
+<me>Daily\ Sales(t)=100 t^2 e^{-t/5}</me>
+<p>Find the estimated total sales over the first 100 days.</p></statement><solution>
+  <sidebyside width="80%" >
+                <image width="80%" source="images/sec7-7-sol3a.png">
+                </image>
+            </sidebyside> 
+<p>We expect sales of about 25000 units.</p>
+</solution></exercise>
+
+<exercise ><statement><p>  The daily sales projections for a new item are: </p>
+<me>Daily\ Sales(t)=100+10t-\frac{t^2}{100}</me>
+<p>Find the estimated total sales over the first 200 days.</p></statement></exercise>
+
+<exercise ><statement><p>  The production from an oil well starts at a rate of 10,000 barrels per year and declines exponentially at a rate of 10% per year.  How much is produced in 6 years?</p></statement><solution>
+  <sidebyside width="80%" >
+                <image width="80%" source="images/sec7-7-sol5a.png">
+                </image>
+            </sidebyside> 
+<p>We expect 44,472 barrels of oil over the 6 years.</p>
+</solution></exercise>
+
+<exercise ><statement><p>  An oil well is producing 15,000 barrels per year.  The rate of production is continuously declining at a rate of 10% per year.  The well will be capped as unproductive when it produces 3,000 barrels per year.  How much will it produce before being capped?</p></statement></exercise>
+
+<exercise ><statement><p>  A stream of revenue produces at a rate of $40,000 per year.  We assume that the risk free investment rate is 3% per year.  What is the current value of the revenue stream over 20 years?</p></statement><solution>
+  <sidebyside width="80%" >
+                <image width="80%" source="images/sec7-7-sol7a.png">
+                </image>
+            </sidebyside> 
+<p>We evaluate the revenue stram to be worth $603,982.</p>
+</solution></exercise>
+
+<exercise ><statement><p>  A stream of revenue produces at a rate of 
+<m>$40,000+$2,000t</m> dollars per year with <m>t</m> measured in years.  We assume that the risk free investment rate is 3% per year.  What is the current value of the revenue stream over 20 years?</p></statement></exercise>
+ 
+
+</exercises>
+        </section>
+ 
+         <section xml:id="sec-7-8-BusinessApplicationsIntegral">
+            <title>Economics Applications of the Integral</title>
+
+<p><url href="./Examples/Section-7-8-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+<p>
+We have looked at the definite integral as the signed area under a curve.  This lets us compute total profit, or revenue, or cost, from the related marginal functions.  We have looked at a number of applications where this was interpreted as an accumulation over time, including total production of an oil well and present value of a revenue stream.  For some applications we want to look at the area between two curves. For example, considering profit as the area between the cost and revenue curves.</p>
+
+<p>
+In this section we will look at more applications from finance and economics where the concepts can easily be described in terms as of the area between curves.</p>
+
+<p><term>Consumer and Producer Surplus</term></p>
+
+<p>When we looked at supply and demand curves we found an equilibrium point where the amount being offered for sale was equal to the amount people wanted to buy.  </p>
+
+  <sidebyside  width="50%">
+                <image width="50%" source="images/sec7-8-1.png">
+                </image>
+            </sidebyside> 
+
+<p>However, in that model, there were people who were willing to sell for less than the equilibrium price and people who were willing to buy for more than the equilibrium price.  These people got an exceptionally good deal in the transaction.  We would like to measure that benefit, since we can think of it as the extra profit the suppliers and buyers make on the transaction.  We note that each side will have an incentive to maximize that benefit.</p>
+
+<p>Focus first on the consumer side.  The area under the demand function, from 0 to the quantity sold, measures the consumers’ willingness to spend.  The area in the rectangle with that same base and height equal to the sale price measures the actual consumer expenditure.  The difference between the two is a quantity we will call <term>consumer surplus</term>.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-8-2.png">
+                </image>
+            </sidebyside> 
+
+<p>In calculus terms:</p>
+
+<assemblage>
+<p><me>Willingness\ To\ Spend= \int_0^{q_s} demand\ function(q) dq</me></p>
+<p><me>consumer\ expendature= \int_0^{q_s} p_s  dq</me></p>
+<p><me>consumer surplus= \int_0^{q_s} (demand\ function(q)- p_s )  dq</me></p>
+</assemblage>
+
+<p>As long as the price stays on the demand function curve, a lower price means a greater quantity sold, and a greater consumer surplus.</p>
+
+<p>In a similar manner, we can focus on the producer side. The area under the supply function, from 0 to the quantity sold, measures the producers’ need for revenue.  The area in the rectangle with that same base and height equal to the sale price measures the actual producer revenue.  The difference between the two is a quantity we will call <term>producer surplus</term>.</p>
+
+  <sidebyside  width="50%" >
+                <image width="50%" source="images/sec7-8-3.png">
+                </image>
+            </sidebyside> 
+
+<p>In calculus terms:</p>
+
+<assemblage>
+<p><me>Needed\ revenue= \int_0^{q_s} supply function(q) dq</me></p>
+<p><me>producer\ revenue= \int_0^{q_s} p_s  dq</me></p>
+<p><me>producer\ surplus= \int_0^{q_s} ( p_s-supply function(q))  dq</me></p>
+</assemblage>
+
+<p>As long as the price stays on the supply function curve, a higher price means a greater quantity sold, and a greater producer surplus.    Consider first an example where the supply and demand functions are simple enough that the computations can all be done by hand.</p>
+
+<example><title>Producer surplus with linear functions</title><p> I am trying to sell widgets and have determined the supply and demand functions to be:</p>
+
+<me>supply price(quantity)=4+quantity</me>
+
+<me>demand price(quantity)=106- 2*quantity</me>
+
+<p>Find the equilibrium price and quantity.  Find the producer and consumer surpluses when the shirts are sold at the equilibrium price.  If the producers form a cartel, find the price that maximizes producer surplus.</p>
+
+<p>
+<term>Solution</term>: By setting supply price and demand price equal to each other we find an equilibrium quantity of 34 and an equilibrium price of 38.  The formulas for the consumer and producer surpluses become:</p>
+
+<me>consumer surplus= \int_0^{34} ((106-2q)-38)  dq</me>
+<me>producer surplus= \int_0^{34} ( 38-(4+q))  dq</me>
+
+
+<p>To evaluate the integrals we can notice that each is a triangle of base 34.  One has height of 34 and the other has a height of 68.  Using geometry, the consumer surplus is $1,156 and the producer surplus is $578.</p>
+<p>  
+To find the maximum producer surplus, we need to turn the endpoint into a variable.  If the producers act as a cartel</p>
+
+<me>producer\ surplus= \int_0^x ( (106-2x)-(4+q))  dq=\int_0^x ( 102-2x-q)  dq</me>
+<me>=\left.\left((102-2x)q-\frac{q^2}{2}\right) \right|_0^x=((102-2x)x-\frac{x^2}{2}=102x-\frac{5x^2}{2}</me>
+
+<p>We can find the maximum of this by taking its derivative and setting it equal to 0.  The maximum occurs when <m>x=\frac{102}{5}=20.4</m>.  At that point the producer surplus is $1,040.40</p></example>
+
+<p>We now try an example where we need other techniques to evaluate the integrals.</p>
+
+<example><title>Producer surplus with numeric integration</title><p> A store trying to sell t-shirts on campus has determined the supply and demand functions to be:</p>
+
+<me>supply price(quantity)=5+\ln (quantity+10)</me>
+<me>demand price(quantity)=10+100/(quantity+2)</me>
+
+<p>Find the equilibrium price and quantity.  Find the producer and consumer surpluses when the shirts are sold at the equilibrium price.</p>
+
+<p><term>Solution</term>: We load the supply and demand price functions into excel and use Goal Seek to find an equilibrium price.  Rounding to the nearest unit for quantity and cent for price, we have an equilibrium price of $10.45 for a quantity of 222 shirts.</p>
+
+  <sidebyside  width="40%" >
+                <image width="40%" source="images/sec7-8-4.png">
+                </image>
+            </sidebyside> 
+  <sidebyside  width="40%" >
+                <image width="40%" source="images/sec7-8-5.png">
+                </image>
+            </sidebyside> 
+
+<p>We then substitute these values into the equations for consumer and producer surplus.</p>
+
+<me>consumer\ surplus= \int_0^{q_s} (demand\ function(q)- p_s )  dq</me>
+<me>consumer\ surplus= \int_0^{222} ((10+100/(quantity+2))- 10.45)  dq</me>
+
+
+<me>producer\ surplus=\int_0^{q_s} ( p_s-supply\ function(q))  dq</me>
+<me>producer\ surplus=\int_0^{222} ( 10.45-(5+\ln (quantity+10)))  dq</me>
+
+<p>To evaluate these integrals we either use a Riemann sum approximation, like the one found on the example worksheet, or use Wolfram Alpha.  In either case, rounded to the nearest dollar, we have a consumer surplus of $372 and a producer surplus of $191.</p>
+
+  <sidebyside  width="40%" >
+                <image width="40%" source="images/sec7-8-6.png">
+                </image>
+            </sidebyside> 
+  <sidebyside  width="40%" >
+                <image width="40%" source="images/sec7-8-7.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<p>The sum of the consumer surplus and the producer surplus is referred to as the <term>total social gain</term>.   As we looked at consumers' surplus, we assumed that the sales were determined by supply and the price-quantity point was on the supply curve.  Similarly, when looking at producers' surplus we assume price is set by demand and the price-quantity point was on the demand curve.  If both sides are made up of many individuals acting independently, the price-quantity point is the equilibrium point, which is on both curves.  Selling at that point also maximizes the total social gain.</p>
+
+  <sidebyside  width="60%" >
+                <image width="60%" source="images/sec7-8-8.png">
+                </image>
+            </sidebyside> 
+<p> 
+If however, either the producers or consumers can organize and act as a unit, they can form a cartel and limit the amount sold.  If the producers form a cartel, they can lower production and raise the price.</p>
+
+  <sidebyside  width="60%" >
+                <image width="60%" source="images/sec7-8-9.png">
+                </image>
+            </sidebyside> 
+
+<p>As we can see from the picture, this always lowers the total social gain.  However for some reduction of quantity the producers’ surplus is increased.  In the equation for producer surplus the price <m>p_s</m> is <m>demand\ function (q_s)</m> rather than <m>supply\ function (q_s)</m>.  If the quantity goes down too far the producer surplus will also go down.</p>
+
+<example><title>Computing loss of social gain</title><p>
+ A store trying to sell t-shirts on campus has determined the supply and demand functions to be:</p>
+
+<me>supply\ price(quantity)=5+\ln (quantity+10)</me>
+<me>demand\ price(quantity)=10+100/(quantity+2)</me>
+
+<p>The store owner has a monopoly on campus and decides to limit the quantity sold to 200 shirts and charge what the market will bear.  Find the price, the producer surplus, and consumer surpluses.  Find these numbers if the owner decides to limit sales to 50.   How many shirts should the owner sell at what price to maximize producer surplus?  If producer surplus is maximized, how much is the total social gain reduced?</p>
+
+<p>
+<term>Solution</term>: The formulas involved for supply and demand are the same ones we used in example 2.  With a slight modification if the worksheet from that example we can set it to compute the Riemann sums approximating the surpluses.  In particular, we use the demand function for finding the height of producer surplus.  (See cell D7.)</p>
+
+  <sidebyside  width="80%" >
+                <image width="80%" source="images/sec7-8-10.png">
+                </image>
+            </sidebyside> 
+
+<p>
+If we only want to sell 200 shirts, we can raise the price to from $10.45 to $10.50.  The producer surplus rises from $191 to $199.  However the consumer surplus falls from $372 to $362.</p>
+ 
+  <sidebyside width="50%" >
+                <image width="50%" source="images/sec7-8-11.png">
+                </image>
+            </sidebyside> 
+
+<p>
+If we only want to sell 50 shirts, we can raise the price from$10.45 to $11.92.  The producer surplus falls from $191 to $174.  The consumer surplus falls from $372 to $230.</p>
+ 
+  <sidebyside width="50%" >
+                <image width="50%" source="images/sec7-8-12.png">
+                </image>
+            </sidebyside> 
+
+<p>
+We can use solver to maximize the Producer surplus by varying the quantity.  A quantity of 140 maximizes the producer surplus at $210, but is doing that the total social gain is down to $537 from $563.</p>
+ 
+  <sidebyside width="50%" >
+                <image width="50%" source="images/sec7-8-13.png">
+                </image>
+            </sidebyside> 
+</example>
+
+<p>
+Similarly, if the consumers form a cartel, they can artificially reduce the demand.  Since they will then pay the supply price the total social gain will be decreased, but the consumers’ surplus may be increased.  In this case the consumer surplus is the integral of the difference between the demand function and the supply price of the quantity that will be sold.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-8-14.png">
+                </image>
+            </sidebyside> 
+
+<p>
+In the example we just looked at, both the supply and demand curves have a small slope, so the market is quite elastic from both the producers and consumers point of view.  Is such a case there is less incentive to form a cartel.  In other markets, like gas and oil, where the market is more inelastic, there is more incentive to engage in monopolistic practices.</p>
+
+
+<p>
+<term>Lorenz Curves and the Gini Index</term></p>
+
+<p>
+A question that arises in economics looks at the equity of income or wealth distribution in a country.  In standard economic theories either too much or too little equity indicates a lack of opportunity and is a hindrance to growth.  However, before being able to address the advantages or disadvantages of a level of inequity we need to be able to quantify the level of equity or inequity.  The standard method is to use the <term>Lorenz curve</term> and the <term>Gini index</term>.</p>
+
+<p>
+The Lorenz curve is defined by a function <m>L(x)</m>, with <m>0\le x\le 1</m>, that measures the proportion of something is held by the bottom <m>x</m> proportion of the population.  Thus, if <m>L(0.2)=.1</m>, for the Lorenz function for income in a country, then the bottom 20% of the population earns 10% of the income in the country.  Since, under usual definitions, a person cannot have negative income, the Lorenz functions are nonnegative and increasing.  Since the Lorenz functions are measured from the bottom, we also have <m>L(x)\le x</m> for all <m>x</m>.</p>
+
+<p>
+We can make a few more observations.  The population as a whole has the entire income of the population.  An empty set of the population has none of the population's income.  Any bottom segment will have nonnegative income.  In formulas these observations become <m>L(1)=1</m>, <m>L(0)=0</m>, and <m>L(x)\ge 0</m>, for all <m>x</m>, respectively.</p>
+
+<p>
+If we had perfect equity, our Lorenz function would be <m>L(x)=x</m>.  Any Lorenz curve we find for a real population will be below this curve.  The Gini index (or Gini coefficient) measures the percentage that a real Lorenz curve is below the ideal curve.</p>
+
+  <sidebyside width="50%" >
+                <image width="50%" source="images/sec7-8-15.png">
+                </image>
+            </sidebyside> 
+
+<p>
+Computationally,</p>
+ 
+<me>G=\frac{\int_0^1 (x-L(x))dx}{\int_0^1 x  dx}=2\int_0^1 (x-L(x))dx.</me>
+
+<p>In practice this number is often multiply by 100, reporting the percentage (0 to 100) rather than proportion (0 to 1) of the area under the ideal function and above the measured function.</p>
+
+<example><title>Gini index with a formula for income distribution</title><p>
+The Lorenz curve for income in a certain country is given by 
+<m>L(x)=.8x^3+.2x</m>.  What proportion of the income is earned by the bottom half of the population?  Find the Gini index.</p>
+
+<p>
+<term>Solution</term>: To find the proportion earned by the bottom half of the population we substitute 0.5 in the equation.</p>
+
+<me>L(0.5)=(0.8) (0.5)^3+(0.2)(0.5)=0.1+0.1=0.2.</me>
+
+<p>Thus the bottom 50% of the population earns 20.% of the total income.
+To compute the Gini index, we compute:</p>
+
+<me>G=2\int_0^1 (x-0.8x^3-0.2x)dx=(2)(0.4x^2-0.2x^4 ) |_0^1=.4</me>
+
+<p>So the Gini index in this hypothetical country is 40.  To put this number in context, the reported Gini index for the United States in 2009 was 46.8.</p>
+</example>
+
+<p>
+In practice, the Gini index is an application where a numeric approximation of an integral is the method most likely to be used.  We are unlikely to get a formula for income distribution.  Instead we are likely to find data points.  Since there is no good model for how the income will be distributed, we can simply connect the points with line segments and find the area using the area formula for a trapezoid.</p>
+
+<example><title>Gini index with a chart for income distribution</title><p>
+  We have the following data from the census bureau on income distribution in the US in 2008.  Compute the Gini index.</p>
+            <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Population %tile</cell> <cell>0</cell><cell>20</cell><cell>40</cell>
+<cell>60</cell><cell>80</cell><cell>90</cell><cell>100</cell>
+</row>
+<row bottom="medium">
+<cell>Income %tile</cell><cell>0</cell><cell>3.4</cell>
+<cell>12.0</cell><cell>26.7</cell><cell>50.0</cell>
+<cell>78.5</cell><cell>100</cell></row>
+                </tabular>
+            </sidebyside>
+
+<p>
+<term>Solution</term>:  We recall that the area of a trapezoid is (width)(average height).  We put the data into a spreadsheet.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-8-16.png">
+                </image>
+            </sidebyside> 
+
+<p>
+Then we evaluate the formulas.</p>
+
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-8-17.png">
+                </image>
+            </sidebyside> 
+
+<p>
+In percentages, the Gini index is approximated at 45.</p> 
+</example>
+
+<exercises xml:id="exercises-set-sec-7-8">
+	<title>Exercises: Business Applications of the Integral Problems</title>
+
+
+<p>
+For exercises 1-6, assume we have a free market and that goods are sold at market equilibrium.  Find the consumer surplus, producer surplus, and total social gain.</p>
+
+<exercise ><statement><p> <m>SupplyPrice(q)= 50+q/2</m> and <m>DemandPrice(q)= 150-q/5</m>.</p></statement>
+<solution><p>
+The two curve intersect at the point of market equilibrium,
+<m>\left({\frac{1000}{7},\frac{850}{7}}\right)</m>.</p>
+<me>ProducerSurplus=
+\int_0^{1000/7}
+\left({\frac{850}{7}}\right)-
+\left({50+\frac{x}{2}}\right)\ dx=5102.04</me>
+<me>ConsumerSurplus=
+\int_0^{1000/7}
+\left({150-\frac{x}{5}}\right)-\left({\frac{850}{7}}\right)\ dx=2040.82.</me>
+<me>TotalSocialGaine=ProducerSurplus+ConsumerSurplus=7142.86</me>
+</solution></exercise>
+
+<exercise ><statement><p> <m>SupplyPrice(q)=\ln (q+10)</m> and <m>DemandPrice(q)= 100-q</m>.</p></statement></exercise>
+
+<exercise ><statement><p> <m>SupplyPrice(q)= 50(1-(0.99)^q)</m> and <m>DemandPrice(q)= 100(0.99)^q</m>.</p></statement>
+<solution><p>
+The two curve intersect at the point of market equilibrium,
+<m>(109.31, 33.33)</m>.</p>
+<me>ProducerSurplus=
+\int_0^{109.31}
+(33.33)-
+\left({50(1-(0.99)^q)}\right)\ dx=1494.79</me>
+<me>ConsumerSurplus=
+\int_0^{109.31}
+\left({100(0.99)^q}\right)-33.33)\ dx=2989.58.</me>
+<me>TotalSocialGaine=ProducerSurplus+ConsumerSurplus=4484.37</me>
+</solution></exercise>
+
+<exercise ><statement><p> <m>SupplyPrice(q)= 50(1-(0.95)^{q/10}</m> and <m>DemandPrice(q)= 150(0.95)^{q/10}</m>.</p></statement></exercise>
+
+<exercise ><statement>
+<me>SupplyPrice(q)=\begin{cases}
+5&amp;q\le 10\\
+q^2/20&amp;q>10\\
+\end{cases}</me>
+<p>and</p>
+<me>DemandPrice(q)=\begin{cases}
+100&amp;q\le 10\\
+110-q&amp;q>10\\
+\end{cases}</me>
+</statement><solution>
+<p>
+The two curve intersect at the point of market equilibrium,
+<m>(37.958, 72.042)</m>.</p>
+<me>ProdSurplus=
+\int_0^{37.958}
+(72.042)-
+(SupplyPrice(q))\ dx=1789.732.</me>
+<p>The integral needs to be done in two parts with the break at 10.</p>
+<me>ConsSurplus=
+\int_0^{37.958}
+DemandPrice(q)-72.042\ dx=670.405.</me>
+<me>TotalSocialGain=ProdSurplus+ConsSurplus=2460.137.</me>
+</solution></exercise>
+
+<exercise ><statement><p> <m>SupplyPrice(q)= q/2</m> and </p>
+<me>DemandPrice(q)=\begin{cases}
+200&amp;q\le 10\\
+250*.8^{q/10}&amp;q>10\\
+\end{cases}</me>
+</statement></exercise>
+
+<exercise ><statement><p> Assume SupplyPrice(q)= 30+q and DemandPrice(q)= 170-q.</p>
+<ol label="(a)">
+<li><p> Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+<li><p> If the producers can form a cartel and restrict the available quantity to 50, selling at the supply price for 50, what are the consumer surplus, producer surplus, and total social gain?</p></li>
+<li><p> Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><p>
+The two curve intersect at the point of market equilibrium,
+<m>(70, 100)</m>.</p>
+<me>ProdSurplus=
+\int_0^{70}
+(100)-
+(30+q)\ dx=2450.</me>
+<me>ConsSurplus=
+\int_0^{70}
+(170-q)-100\ dx=2450.</me>
+<me>TotalSocialGain=ProdSurplus+ConsSurplus=4900.</me></li>
+<li>
+<me>DemandPrice(50)=120.</me>
+<me>ProdSurplus=
+\int_0^{50}
+(120)-
+(30+q)\ dx=3250.</me>
+<me>ConsSurplus=
+\int_0^{50}
+(170-q)-120\ dx=1250.</me>
+<me>TotalSocialGain=ProdSurplus+ConsSurplus=4500.</me></li>
+<li><p> The formula for the producer surplus at x is </p>
+<me>\int_0^x DemandPrice(t)-SupplyPrice(x)\ dx</me>
+<p>In our case we get</p>
+<me>\int_0^x (170-t)-(30+x) \ dt=\int_0^x(140-t-x) \ dt</me>
+<p>We note that x is a constant for our integration.  Thus, thus we get</p>
+<me>\left.\left({140t-\frac{t^2}{2}-xt}\right)\right|_0^x=140x-\frac{3x^2}{2}</me>
+<p>The Maximum Producer surplus is 3266.67, achieved when q is 46.67</p></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> Assume SupplyPrice(q)= 10+q/2 and DemandPrice(q)= 110-q/3.</p>
+<ol label="(a)">
+<li><p> Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+<li><p> If the producers can form a cartel and restrict the available quantity to 400, selling at the supply price for 400, what are the consumer surplus, producer surplus, and total social gain?</p></li>
+<li><p> Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+</ol>
+</statement></exercise>
+
+<exercise ><statement><p> Assume <m>SupplyPrice(q)= 10+q^2</m> and <m>DemandPrice(q)= 210-q^2</m>.</p>
+<ol label="(a)">
+<li><p> Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+<li><p> If the producers can form a cartel and restrict the available quantity to 5, selling at the demand price for 5 (for a price of 185), what are the consumer surplus, producer surplus, and total social gain?</p></li>
+<li><p> Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+</ol>
+</statement><solution>
+<ol label="(a)">
+<li><p>
+The two curve intersect at the point of market equilibrium,
+<m>(10, 110)</m>.</p>
+<me>ProdSurplus=
+\int_0^{10}
+(110)-
+(10+q^2)\ dx=\frac{2000}{3}.</me>
+<me>ConsSurplus=
+\int_0^{10}
+(210-q^2)-110\ dx=\frac{2000}{3}.</me>
+<me>TotalSocialGain=ProdSurplus+ConsSurplus=\frac{4000}{3}.</me></li>
+<li>
+<me>DemandPrice(5)=185.</me>
+<me>ProdSurplus=
+\int_0^{5}
+(185)-
+(10+q^2)\ dx=\frac{2500}{3}.</me>
+<me>ConsSurplus=
+\int_0^{5}
+(210-q^2)\ dx=\frac{250}{3}.</me>
+<me>TotalSocialGain=ProdSurplus+ConsSurplus=\frac{2750}{3}.</me></li>
+<li><p> The formula for the producer surplus at <m>x</m>e is </p>
+<me>\int_0^x DemandPrice(t)-SupplyPrice(x)\ dx</me>
+<p>In our case we get</p>
+<me>\int_0^x (210-t^2)-(10+x^2) \ dt=\int_0^x(200-t^2-x^2) \ dt</me>
+<p>We not that x is a constant for our integration.  Thus, thus we get</p>
+<me>\left.\left({200t-\frac{t^3}{3}-x^2t}\right)\right|_0^x=200x-\frac{4x^3}{3}</me>
+<p>To find the maximum producer surplus, we take the derivative of the function above and see it is zero at <m>\sqrt{50}</m>.  The maximum producer surplus is 942.81, achieved when q is <m>\sqrt{50}</m></p></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> Consider the Lorenz curve <m>L(x)=0.2x+0.8x^2</m>.  Find the Gini index.</p></statement></exercise>
+
+<exercise ><statement><p> Consider the Lorenz curve <m>L(x)=.03x+0.7x^4</m>.  Find the Gini index.</p>
+</statement><solution>
+<me>G=\frac{100 \int_0^1(x-(0.3x+0.7x^4))dx}{.5}
+=200 \int_0^1(-0.7x+0.7x^4)dx=42</me>
+</solution></exercise>
+
+
+<exercise ><statement><p> You research a country and find the following information on income share:</p>
+            <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Population %tile</cell> <cell>20</cell><cell>40</cell>
+<cell>60</cell><cell>80</cell></row>
+<row bottom="medium">
+<cell>Income %tile</cell><cell>5</cell><cell>15</cell>
+<cell>30</cell><cell>50</cell></row>
+                </tabular>
+            </sidebyside>
+<p>Compute an approximation of the Gini index.</p></statement></exercise>
+
+<exercise ><statement><p> You research a country and find the following information on income share:</p>
+            <sidebyside >
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Population %tile</cell> <cell>20</cell><cell>40</cell>
+<cell>60</cell><cell>80</cell><cell>90</cell><cell>95</cell>
+<cell>99</cell></row>
+<row bottom="medium">
+<cell>Income %tile</cell><cell>5</cell><cell>15</cell>
+<cell>30</cell><cell>50</cell><cell>65</cell>
+<cell>75</cell><cell>90</cell></row>
+                </tabular>
+            </sidebyside>
+<p>Compute an approximation of the Gini index.</p></statement>
+<solution><p>We approximate the area by using straight lines between the given point and using trapezoids for the area of section.  We then need to multiply by 2, since we want the percentage below the diagonal line, and multiply by 100 to go from percentile to percents.</p>
+  <sidebyside width="60%" >
+                <image width="60%" source="images/sec7-8-sol13a.png">
+                </image>
+            </sidebyside> 
+<p> The Gini index is approximately 57.</p>
+</solution></exercise>
+
+<exercise ><statement><p> Find data online on the income distribution in the United States.  Good sources are the Census Bureau, at 
+<url href="http://www.census.gov/hhes/www/income/data/historical/inequality/index.html">http://www.census.gov/hhes/www/income/data/historical/inequality/index.html</url>, and 
+<url href="http://www.wealthandwant.com/issues/income/income_distribution.html">http://www.wealthandwant.com/issues/income/income_distribution.html</url>
+. Compute an approximation of the Gini index from your data.</p></statement></exercise>
+
+
+
+
+</exercises>
+        </section>
+ 
+
+        </chapter>
+        

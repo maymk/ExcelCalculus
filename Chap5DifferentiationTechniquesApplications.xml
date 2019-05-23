@@ -1,0 +1,988 @@
+         <chapter xml:id="chap-5-DIfferentiationApplications">
+            <title>Differentiation Techniques and Applications</title>
+ 
+ <introduction>
+<p> In the previous chapter we have see how to symbolically compute the derivative of functions. In an applied setting we do not always have a simple formula to work with. We may have several equations, which are dependent on each other, or we may have equations that relate variables in ways that cannot be simplified as a simple function. In this chapter we will consider these cases and provide techniques for computing the rate of change.</p>
+ </introduction>
+ 
+         <section xml:id="sec-5-1-ImplicitDifferentiation">
+            <title>Implicit Differentiation</title>
+
+<p>We often run into situations where y is expressed not as a function of x, but as being in a relation with x.  The most familiar example is the equation for a circle of radius 5,  </p>
+<me>x^2+y^2=25.</me>
+
+<p>We recall that a circle is not actually the graph of a function.  It is however the combined graph of the two functions representing the top and bottom halves of the circle.  </p>
+
+<p>We have two approaches if we want to find the slope of the line tangent to the circle at <m>(4,3)</m>.  We could first use algebra to express <m>y</m> as a function of <m>x</m>, and then use our rules to find the derivative.  That approach works in this problem but will fail with more complicated relations.  The alternative method is to say that <m>y</m> is implicitly a function of <m>x</m>.  We can then use the chain rule to take the derivative of the relation with the derivative of <m>y</m> being designated as <m>y'</m>.  We can then solve for <m>y'</m> in terms of <m>x</m> and <m>y</m>.  This second method is called implicit differentiation.  </p>
+
+<p>We start by trying both approaches on the equation of a circle.</p>
+
+
+<example><title>Tangent to a circle</title><p> Find the equation of the line tangent to <m>x^2+y^2=25</m> at <m>(4,3)</m>.</p>
+
+<p><term>Solution a</term>: To find the equation of a line we need a point and a slope.  We already have the point at <m>(4,3)</m>.  To find the slope, we can express the circle as the graph of 2 functions.   We first solve for <m>y^2</m>.  We then take the square root to produce 2 functions.</p>
+
+<me>y^2=25-x^2.</me>
+
+<me>f_1 (x)=\sqrt{25-x^2 }.</me>
+
+<me>f_2 (x)=-\sqrt{25-x^2 }.</me>
+
+<p>The point is on the first function, which is the top half of the circle, so we take its derivative and evaluate at <m>x=4</m>.</p>
+
+<me>f_1' (x)=1/2 (25-x^2 )^{-1/2} (-2x).</me>
+
+<me>f_1' (4)=1/2 (25-4^2 )^{-1/2} (-4)=-4/3.</me>
+
+<p>Thus the tangent line, in point-slope form, is:</p>
+
+<me>y=3-\frac{4}{3} (x-4).</me>
+
+<p><term>Solution b</term>: To find the equation of a line we need a point and a slope.  We already have the point at <m>(4,3)</m>.  To find the slope we take the derivative of our equation.  Since we do not have y as a function of <m>x</m>, we simply note that its derivative is the placeholder <m>y'</m>.  Recall that <m>\frac{d}{dx} x</m>, the derivative of <m>x</m> with respect to <m>x</m>, is simply 1.</p>
+
+<me>\frac{d}{dx}(x^2+y^2=25).</me>
+
+<me>\frac{d}{dx}(x^2)+\frac{d}{dx}(y^2)=\frac{d}{dx}(25).</me>
+
+
+<me>2x \frac{d}{dx}(x)+2y \frac{d}{dx}(y)=0.</me>
+
+
+<me>2x+2y y'=0.</me>
+
+<p>We then solve for <m>y'</m> and substitute our point <m>(4,3)</m> in for <m>(x,y)</m>.</p>
+
+<me>y'=-\frac{2}{2y}=-\frac{x}{y}.</me>
+
+<p>When we substitute our point <m>(4,3)</m> in for <m>(x,y)</m> we get the same value, <m>y'=-\frac{4}{3}</m>.  Thus the tangent line, in point-slope form, is:</p>
+
+<me>y=3-\frac{4}{3} (x-4).</me>
+</example>
+
+<p>For the equation of a circle, either method works.  We may encounter relations where solving for an explicit function is hard or impossible.</p>
+
+<example><title>Differentiation of a price-quantity relationship</title><p> The quantity (q) and demand price (p) for widgets satisfy the relation</p>
+
+<me>10p+2pq+q^2=1000,</me>
+
+<p>with <m>10\lt q\lt 90</m>, where quantity is in thousands of units.  If I am currently selling 20,000 widgets, what is the relationship between change in quantity and change in price?</p>
+ 
+<p><term>Solution</term>: Instead of solving for quantity as an explicit function of price, we will implicitly differentiate.</p>
+
+<me>\frac{d}{d\ q}(10p+2pq+q^2=1000)</me>
+
+
+<me>10 \frac{d\ p}{d\ q}+2*\frac{d\ p}{d\ q}*q+2p+2q=0</me>
+
+<me>\frac{d\ p}{d\ q} (10+2q)=-2*(p+q)</me>
+
+<me>\frac{d\ p}{d\ q}=\frac{-2*(p+q)}{(10+2q) }</me>
+
+<p>Since quantity is in thousands of unity, if we are selling 20,000 widgets, <m>quantity:q=20</m> and <m>price:p=14.64</m>.  Substituting those values into the formula for the derivative of price with respect to quantity, we see</p>
+
+<me>\frac{d\ price}{d\ quantity}=\frac{-2(14.64+20)}{(10+2*20) }=-1.386.</me>
+
+<p>We increase sales by 1000 by dropping price by $1.386.</p>
+</example>
+
+<p>For the first two examples, the relation was quadratic, so it was straightforward to find the derivative by either solving for an explicit function or by differentiating implicitly.  However, if the relation more complicated we will find implicit differentiation easier than solving for the function.</p>
+
+<example><title>Another price-quantity relationship</title>
+<p> The quantity (q) and demand price (p) for gizmos satisfy the relation</p>
+
+<me>5p+3*(pq)^{1.5}+2q=2000,</me>
+
+<p>with <m>10\lt q\lt 100</m>, where quantity is in thousands of units.  If I am currently selling 25,000 widgets, what is the relationship between change in quantity and change in price?</p>
+ 
+<p><term>Solution</term>: There is no easy method to solve this relation for either price or quantity as an explicit function of the other.  Instead, we will implicitly differentiate.</p>
+
+<me>\frac{d\ }{d\ q}(5*p+3*(p*q)^1.5+2*q=2000)</me>
+
+
+<me>5 \frac{d\ p}{d\ q}+3*(1.5*p^.5*(d p)/(d q)*q^{1.5}+p^{1.5}*1.5*q^{.5} )+2=0</me>
+
+<me>\frac{d\ p}{d\ q}*(5+4.5*p^{.5}*q^{1.5} )=-(2+4.5*p^{1.5}*q^{.5})</me>
+
+<me>\frac{d\ p}{d\ q}=-\frac{(2+4.5*p^{1.5}*q^{.5})}{(5+4.5*p^{.5}*q^{1.5} ) }</me>
+
+<p>Since quantity is in thousands of unity, if we are selling 25,000 widgets, quantity=25 and price=2.986.  Substituting those values into the formula for the derivative of price with respect to quantity, we see</p>
+
+<me>\frac{d\ price}{d\ quantity}=\frac{-118.104}{997.025}=-0.12088.</me>
+
+<p>We increase sales by 1000 by dropping price by $0.121.</p>
+</example>
+
+<assemblage>
+<p>A standard result from economics is the <term>Cobb-Douglas equation</term> that claims</p>
+
+<p><me>Y=AL^\alpha K^\beta,</me></p>
+
+<p>where Y, L, and K represent total production, labor, and capital, respectively.  In the classical model <m>\alpha+\beta=1</m>.  </p>
+</assemblage>
+
+<p>This can be understood as a relation involving capital and labor.  An interesting question is to ask for the rate of change of capital with respect to labor, or how increasing or reducing capital investment will raise or lower labor costs.</p>
+
+<example><title>Differentiation of Cobb-Douglas</title>
+<p>Example 4:  A widget manufacturer has a production function given by</p>
+
+<me>Y=50L^.75 K^.25.</me>
+
+<p>The manufacturer currently uses 81 units of labor and 16 units of capital.  Find the derivative of labor with respect to capital and interpret your result.</p>
+
+<p><term>Solution</term>: We implicitly differentiate our equation with respect to capital.</p>
+
+<me>\frac{d\ }{d\ K}(Y=50L^{.75} K^{.25})</me>
+
+
+<me>0=50*(0.75*L^{-0.25}*\frac{d\ L}{d\ K}*K^{.25}+L^{.75}*.25*K^{-0.75} )</me>
+
+<me>\frac{d\ L}{d\ K}*(0.75*L^{-0.25}*K^{.25} )=-(L^{.75}*.25*K^{-0.75})</me>
+
+<me>\frac{d\ L}{d\ K}*=-(L^{.75}*.25*K^{-0.75})/((0.75*L^{-0.25}*K^{.25} ) )=-L/3K</me>
+
+<p>Substituting in our values for <m>L</m> and K we see that <m>Y=50*81^{.75} 16^{.25}=2700</m> and <m>(d L)/(d K)=-81/48\approx-1.6875</m>.  This means, if we want to keep level production, changing capital investment by 1 unit allows us to change labor by -1.6875 units.</p>
+</example>
+
+<p><term>Implicit differentiation using CAS</term></p>
+
+<p>As with regular differentiation, we can use online computer algebra systems to do implicit differentiation.  The easiest way to do this is with a web search for implicit differentiation calculator.</p>
+
+<sidebyside width="100%">
+                <image width="100%" source="images/sec5-1-1.png">
+                </image>
+            </sidebyside> 
+ 
+<p>The first option we are given is a widget interface for WolframAlpha.  It easily lets us do the first example in this section.</p>
+ 
+<sidebyside width="70%">
+                <image width="70%" source="images/sec5-1-2.png">
+                </image>
+            </sidebyside>  
+
+<p>The second option from the search takes us to a calculator from Symbolab.  It will easily do the second example from this section.</p>
+
+<sidebyside width="10%">
+                <image width="100%" source="images/sec5-1-3.png">
+                </image>
+            </sidebyside> 
+
+<p>You should notice that the Symbolab calculator lets you use other variables and has an easy option for showing step by step solutions.</p>
+
+<p><term>Summary</term></p>
+
+<p>Implicit differentiation is an application of the chain rule.  To use this technique we need an equation between two variables that we can think of as implicitly defining one variable as a function of the other.  If assume one variable is implicitly a function of the other, differentiating the equation gives us an equation in the two variables and the derivative.  We can then use algebra to solve the new equation for the derivative.</p>
+
+
+
+
+<exercises xml:id="exercises-set-sec-5-1">
+	<title>Exercises: Implicit Differentiation Problems</title>
+
+
+<p>
+For the following equations find the specified derivative.</p>
+
+<exercise ><statement><p> <m>2x+3y=23</m>.	Find <m>\frac{dy}{dx}</m>.
+</p></statement><solution>
+<p>The best method is to notice this is a line with slope <m>\frac{-2}{3}</m>.  Plunging ahead without noticing that:</p>
+<me>\frac{d}{dx}  (2x+3y )= \frac{d}{dx}  23</me>
+<me>\text{Implies that }2+  \frac{dy}{dx} =0</me>
+<p>Solve for <m>\frac{dy}{dx}</m>:</p>
+<me>\frac{dy}{dx}  =\frac{-2}{3}</me>
+
+</solution></exercise>
+
+<exercise ><statement><p> <m>7x+9y=23</m>.	Find <m>\frac{dy}{dx}</m>.  (You can use two different methods.)
+</p></statement></exercise>
+
+<exercise ><statement><p> <m>x^2+3xy+5y^2=23</m>.	Find <m>\frac{dy}{dx}</m>.
+</p></statement><solution>
+<me>\frac{d}{dx}  (x^2+3xy+5y^2 )= \frac{d}{dx}  23</me>
+<me>\text{Implies that }2x+3  \frac{d}{dx} (xy)+5  \frac{d}{dx}  y^2=0</me>
+<p>For the  <m>\frac{d}{dx} (xy)</m> term we need to use the product rule and for  <m>\frac{d}{dx}  y^2</m> we need the chain rule. We then get</p>
+<me>2x+3[(1)y+x\frac{dy}{dx}]+5 (2y)\frac{dy}{dx}  =0</me>
+<p>Solve for <m>\frac{dy}{dx}</m>:</p>
+<me>2x+3y+3x \frac{dy}{dx}+10y \frac{dy}{dx}  =0</me>
+<me>\text{Hence }(3x+10y)  \frac{dy}{dx}  =-(2x+3y)</me>
+<me>\text{And  }\frac{dy}{dx}  =-((2x+3y))/((3x+10y) )</me>
+
+</solution></exercise>
+
+<exercise ><statement><p> <m>(x^3+x^2+1)(y^3+2y+3)=5</m>.	Find <m>\frac{dy}{dx}</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> <m>75*price+(quantity^2)/100=2000</m>.	Find <m>\left(\frac{d\ price}{d\ quantity}\right)</m>.
+</p></statement><solution>
+<p>Some may find this easier with shorter variable labels: <m>75P+Q^2/100=2000</m>.   Find <m>\frac{dP}{dQ}</m>.</p>
+<me>\frac{d}{dQ}  [75P+\frac{Q^2}{100}]=\frac{d}{dQ}  2000</me>
+<me>   75  \frac{dP}{dQ}+\frac{Q}{50}=0</me>
+<p>Hence    <m>\frac{dP}{dQ}=-  \frac{Q}{50*75}= \frac{-Q}{3750}</m></p>
+<p>So we have that <m>\frac{dPrice}{dQuantity}/= \frac{-Quantity}{3750}</m>.</p>
+<p>So if we were to increase the Quantity by 1 (<m>d\ Quantity = 1</m>), then there would be a decrease in price (<m>= d Price</m>) equal to the Quantity divided by 3750.
+So a small increase in quantity would result in a (small) decrease in price.</p>
+</solution></exercise>
+
+<exercise ><statement><p> <m>50*price+5*price*quantity+(quantity^2)/10=5000</m>.	Find <m>\frac{d\ price}{d\ quantity}</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> <m>40*price+7*price*quantity+\sqrt{quantity}=2000</m>.	Find <m>\frac{d\ price}{d\ quantity}</m>.
+</p></statement><solution>
+<p>Rewrite as:   <m>40p+7pq+\sqrt{q}=2000</m>.  Find <m>\frac{d\ p}{d\ q}</m>.</p>
+<p>We take the derivative with respect to q of both sides. In other words we apply <m>\frac{d}{d\ q}</m> to both sides.</p>
+<me>\frac{d}{d\ q}  [40p+7pq+q^{0.5} ]=\frac{d}{d\ q} 2000</me>
+<me>40 \frac{d\ p}{d\ q}+7[dp/dq  q+p]+0.5 q^{-0.5}=0</me>
+<me>(40+7q)\frac{d\ p}{d\ q}+7p+0.5 q^{-0.5}=0</me>
+<me>\frac{d\ p}{d\ q}=  \frac{-7p-0.5 q^{-0.5}}{40+7q}</me>
+</solution></exercise>
+
+<exercise ><statement><p> <m>50*price^2+5*price*quantity=3000</m>.			Find <m>\frac{d\ price}{d\ quantity}</m>.
+</p></statement></exercise>
+
+
+<exercise ><statement><p> <m>1000=5L^{0.6} K^{0.4}</m>.	Find <m>\frac{dK}{dL}</m>.
+</p></statement><solution>
+<p>Take the derivative with respect to <m>L</m> to both sides:</p>
+<me>\frac{d}{dL} 1000=5 \frac{d}{dL} [L^{0.6} K^{0.4} ]</me>
+<me>0=5[\frac{d}{dL}(L)^{0.6})K^{0.4}+L^{0.6}  \frac{d}{dL}(K^{0.4})]  \qquad \text{(product rule)}</me>
+<me>0=5[0.6 L^{-0.4}  K^{0.4}+L^{0.6}  0.4K^{-0.6}  \frac{dK}{dL}]   </me>
+<p>Divide both sides by 5 and solve for <m>\frac{dK}{dL}</m>.</p>
+<me>\frac{dK}{dL}=-  \frac{0.6 L^{-0.4}  K^{0.4}}{L^{0.6}  0.4K^{-0.6}}=
+\frac{-3K}{2L}.</me>
+</solution></exercise>
+
+<exercise ><statement><p> <m>2000=7L^.3 K^.7.</m>	Find <m>\frac{dK}{dL}</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> <m>3000=2L^.25 K^.75</m>.	Find <m>\frac{dL}{dK}</m>.
+</p></statement><solution>
+<me>\frac{d}{dK} 3000=2 \frac{d}{dK} [L^{0.25} K^{0.75} ]</me>
+<me>0=2[\frac{d}{dK}( L^{0.25}) K^{0.75}+L^{0.25} \frac{d}{dK}( K^{0.75} )]   \qquad\text{(product rule)}</me>
+<me>0=2[0.25L^{-0.75}\frac{dL}{dK} K^{0.75}+L^{0.25} 0.75K^{-0.25} ]   </me>
+<me>\frac{dL}{dK}=-\frac{L^{0.25} 0.75K^{-0.25}}{0.25L^{-0.75} K^{0.75}}
+=-3 \frac{L}{K}.</me>
+
+</solution></exercise>
+
+<exercise ><statement><p> 7<m>000=11L^.8 K^.2</m>.	Find <m>\frac{dL}{dK}</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> The production function for a widget factory is <m>1000=15L^{0.7} K^{0.3}</m>.  Find <m>\frac{dK}{dL}</m> and <m>\frac{dL}{dK}</m>.  Interpret what they mean.
+</p></statement><solution>
+<p>Part 1 Find <m>\frac{dK}{dL}</m></p>
+<me>\frac{d}{dL} 1000=15\frac{d}{dL}[L^{0.7} K^{0.3}]</me>
+<me>0=15[\frac{d}{dL}  (L^{0.7} )K^{0.3}+L^{0.7}  \frac{d}{dL} (K^{0.3})]</me>
+<me>0=[0.7 L^{-0.3} K^{0.3}+L^{0.7} 0.3K^{-0.7}  \frac{dK}{dL}]</me>
+<me>\frac{dK}{dL}L=\frac{-0.7 L^{-0.3} K^{0.3}}{L^{0.7} 0.3K^{-0.7}} = -\frac{7K}{3L}.</me>
+<p>Part 2 Find <m>\frac{dL}{dK}</m>.</p>
+<me>\frac{d}{dK} 1000=15\frac{d}{dK}[L^{0.7} K^{0.3}]</me>
+<me>0=15[\frac{d}{dK}  (L^{0.7}) K^{0.3}+L^{0.7} \frac{d}{dK} (K^{0.3})]</me>
+<me>0=[0.7 L^{-0.3}  \frac{dL}{dK} K^{0.3}+L^{0.7} 0.3K^{-0.7}]</me>
+
+<me>\frac{dL}{dK}=
+\frac{- 0.3 L^{0.7} K^{-0.7}}{0.7  L^{-0.3} K^{0.3}} = \frac{-3L}{7K}.</me>
+
+<p>Part 3 Interpret</p>
+<p><m>\frac{dK}{dL}</m> and <m>\frac{dL}{dK}</m> are reciprocals of one another. In other words: <m>\frac{dK}{dL}=\frac{1}{\frac{dL}{dK}}</m>.</p>
+<p>If we increase <m>L</m>, the <m>K</m> will decrease and vice versa.</p>
+
+</solution></exercise>
+
+<exercise ><statement><p>  Let <m>30*price+3*price*quantity+(quantity^2)/100=2000</m> be an equation relating supply and price for gizmos.   Find <m>\frac{d\ price}{d\ quantity}</m> and <m>\frac{d\ quantity}{d\ price}</m>.  Explain what each derivative means.
+</p></statement></exercise>
+ 
+<exercise ><statement><p> <m>e^{xy}+2x+3y=17</m>.	Find <m>\frac{dy}{dx}</m>.
+</p></statement><solution>
+<me> \frac{d}{dx}  (e^{xy}+2x+3y)= \frac{d}{dx}  17</me>
+<p>Evaluating the derivatives:   </p>
+<me> e^{xy}   \frac{d}{dx}  (xy)+2+3 \frac{dy}{dx}=0</me>
+<p>Which gives:    </p>
+<me>e^{xy} [y+x \frac{dy}{dx}]+2+3 \frac{dy}{dx}=0</me>
+<p>Next we solve for <m>\frac{dy}{dx}</m></p>
+<me>e^{xy} y+xe^{xy}  \frac{dy}{dx}+2+3 \frac{dy}{dx}=0</me>
+<me>(xe^{xy}+3)\frac{dy}{dx}=-(e^{xy} y+2)</me>
+<me>\frac{dy}{dx}=-\frac{(y e^{xy}+2)}{(x e^{xy}+3)}</me>
+</solution></exercise>
+
+
+
+</exercises>
+        </section>
+ 
+         <section xml:id="sec-5-2-RelatedRates">
+            <title>Related Rates</title>
+
+<p>	As we have seen, <m>\frac{dy}{dx}</m> is the instantaneous rate of change of <m>y</m> with respect to <m>x</m>.  In chapter 4 we learned techniques for finding <m>\frac{dy}{dx}</m> when <m>y</m> is defined as a function of <m>x</m>.  In the last section we learned how to use implicit differentiation to find <m>\frac{dy}{dx}</m> when we were given an equation in <m>x</m> and <m>y</m>.  In this section we want find <m>\frac{dy}{dx}</m> when <m>x</m> and <m>y</m> are both described in terms of another variable.  As with the section on related rates, we will start with an example where we can solve the problem by eliminating the extra variable before differentiating, and then look at how to solve with related rates.</p>
+
+<example><title>Change in revenue with respect to expense, doable two ways</title>
+<p> We can buy widgets for $10.  The demand price of widgets is $20 minus 0.1 times the quantity to be sold.  Find the derivative of revenue with respect to expense. </p>
+
+<p><term>Solution</term> a: The revenue and cost functions for widgets depend on the quantity (q). The formulas for revenue and cost are:</p>
+
+<me>revenue=q(20-0.1q)=20q-0.1q^2.</me>
+
+<me>cost=10q.</me>
+
+<p>We can solve the second equation for quantity and substitute back into the first equation. This now gives us the revenue function in terms of cost (c).</p>
+
+<me>quantity =.1*c.</me>
+
+<me>revenue=2c-0.001 c^2.</me>
+
+<p>It is straightforward to take the derivative.</p>
+
+<me>\frac{d\ revenue}{d\ cost}=2-0.002*cost.</me>
+
+<p>Note that the derivative is positive for cost between $0 and $1000. This implies that the revenue is rising until the cost is $1000. After we hit a cost of $1000, the derivative becomes negative. This indicates that the revenue will actually decrease.</p>
+
+<p>The alternative method is to differentiate the equations for revenue (<m>r</m>) and cost (<m>c</m>) with respect to quantity (<m>q</m>), and find the two derivatives <m>\frac{d\ r}{d\ q}</m> and <m>\frac{d\ c}{d\ q}</m>, then treat them as fractions.  The derivative we want is the quotient of these fractions.</p>
+
+<p><term>Solution b</term>: The revenue and cost functions for widgets are the same as above.</p>
+
+<me>revenue=20q-0.1 q^2.</me>
+
+<me>cost=10q.</me>
+
+<p>We now differentiate</p>
+
+<me>\frac{d\ r}{d\ q}  =20-0.2 q.</me>
+
+<me>\frac{d\ c}{d\ q}=10.</me>
+
+<p>We divide these derivatives to get the desired derivative.</p>
+
+<me>\frac{change\ in\ revenue}{change\ in\ cost}: \frac{d\ r}{d\ c}=\frac{d\ r}{d\ q}/\frac{d\ c}{d\ q}=(20-0.2 q)/10</me>
+
+<p>Substituting q =.1 c gives the same solution we had from the first method.</p>
+</example>
+
+<p>When using the method of related rates, we act as if the derivatives are fractions that we can multiply or divide to obtain the appropriate fraction.  We want to use a bit of caution with that approach, because it does not work with higher order derivatives, or with derivatives of functions of several variables.  However, for derivatives of one variable the intuition works.  Once again, if we zoom in far enough, the curve will look like a straight line and the derivative is the quotient of rise over run.  </p>
+
+<p>For the first example we could use both methods.  We either use algebra to eliminate the extra variable or find two rates of change and combine them to find the rate we are interested in.  For some problems we will only have one choice, either because the algebra is too hard, or because we have been given partial information and the algebraic method is impossible.</p>
+
+<example><title>Change in revenue with respect to expense, q elimination hard</title>
+<p> The cost (<m>c(q)</m>) and revenue (<m>r(q)</m>) equations for gizmos are both given in terms of quantity (q)</p>
+
+<me>r(q)=30q-0.1 q^2-0.001 q^3.</me>
+
+<me>c(q)=500+10q-0.01 q^2.</me>
+
+<p>Find the derivative of revenue with respect to cost (i.e. <m>\frac{dr}{dc}</m> when <m>q=50</m>. </p>
+
+<p><term>Solution</term>:  Since the cost is quadratic in quantity, solving for revenue as a function of cost involves more work than we need for this problem.  The appropriate derivatives are:</p>
+
+<me>\frac{d\ r}{d\ q}  =30-0.2 q-0.003 q^2.</me>
+
+<me>\frac{d\ c}{d\ q}=10-0.02 q.</me>
+
+<p>When q =50, we have</p>
+
+<me>\frac{d\ r}{d\ q}  =30-0.2*50-0.003*50^2=12.5.</me>
+
+<me>\frac{d\ c}{d\ q}=10-0.02*50=9.</me>
+
+<p>We divide these derivatives to get the desired derivative.</p>
+
+<me>\frac{d\ r}{d\ c}  =\frac{d\ r}{d\ q}/\frac{d\ c}{d\ q}
+=\frac{12.5}{9}\approx 1.389</me>
+
+<p>This means that when <m>quantity=50</m>, there is an increase of $1.39 for every dollar increase in cost of investment.</p>
+</example>
+
+<example><title>Change in revenue with respect to expense, long variable names</title>
+<p> We have the following cost and revenue information for whatchamacallits: </p>
+
+<me>revenue=50*quantity-0.01*quantity^2.</me>
+
+<me>\frac{d\ cost}{d\ quantity}=15.</me>
+
+<p>Find the derivative of revenue with respect to cost when quantity=100. </p>
+
+<p><term>Solution</term>:  In this example we do not have a formula that lets us solve for revenue as a function of cost, so we must use the method of related rates.  The other derivatives is:</p>
+
+<me>\frac{d\ revenue}{d\ quantity}  =50-0.02*quantity.</me>
+
+<p>When <m>quantity=100</m>, we have <m>\frac{d\ revenue}{d\ quantity}  =50-0.02*100=48</m>.  Thus</p>
+
+<me>\frac{d\ revenue}{d\ cost} 
+ =\frac{d\ revenue}{d\ quantity}/\frac{d\ cost}{d\ quantity}
+=\frac{48}{15}=3.2.</me>
+</example>
+
+<p>Related rates are also useful when we are looking at a two-step process and we are interested in the rate of the combined process.</p>
+
+<example><title>Composition of functions</title>
+<p> We are producing widgets (w).  The manufacturing process turns goop (g) into sludge (s) and sludge into widgets.  The yield equations in the appropriate units are:</p>
+
+<me>widgets(sludge)=4*sludge-0.1*sludge^2, </me>
+<p>or in shorthand notation: <m>w(s)=4 s-0.1 s^2</m></p>
+
+<me>sludge(goop)=3*goop+.1*goop^2.</me>
+<p>or in shorthand notation: <m>s(g)=3 g+.1 g^2</m></p>
+
+<p>Find the derivative of widgets with respect to goop when <m>goop=10</m>.</p> 
+
+<p><term>Solution</term>: We note that when <m>g=10</m>, we have <m>s=3*10+.1*10^2=40</m>.  In this example we will take the derivatives of our equation.  We will then multiply them to get the derivative we want.</p>
+
+<me>\frac{d\ widgets}{d\ sludge}=\frac{dw}{ds}=4-0.02*s.</me>
+
+<me>\frac{d\ sludge}{d\ goop}=\frac{ds}{dg}=3+.2*g.</me>
+
+<p>When <m>goop=10</m>, <m>\frac{d\ w}{d\ s}  =(4-0.02*40)=3.2</m>, and <m>\frac{d\ s}{d\ g}</m>.  We need to multiply the derivatives to cancel the <m>d\ s</m>.</p>
+
+<me>\frac{dw}{dg}  =\frac{dw}{ds}*\frac{ds}{dg}=(3.2)(5)=16.</me>
+
+<p>Thus the rate of widget production is increasing by 16 units per increase in on unit of goop at that point.</p>
+</example>
+
+<p>We often run into situations where several quantities are related by some constraint or equation.  In such situations we will want to know the rate at which quantities are changing with time.  The technique of related rates gives us a way to move from one rate with respect to time to another.
+Recall the Cobb-Douglas equation from the last section.</p>
+
+<me>Y=AL^\alpha K^\beta,</me>
+
+<p>where <m>Y</m>, <m>L</m>, and <m>K</m> represent total production, labor, and capital, respectively.  If we know the rate of investment in capital equipment, we will be interested in the rate of change of labor with respect to time.  An interesting question is to ask for the rate of change of capital with respect to labor, or how increasing or reducing capital investment will raise or lower labor costs.</p>
+
+<example><title>Cobb-Douglas</title>
+<p>  A gizmo manufacturer has a production function given by</p>
+
+<me>Y=50L^.75 K^.25.</me>
+
+<p>The manufacturer currently uses 16 units of labor and 81 units of capital.  The total production is constant but the manufacturer is investing in automation.  The derivative of capital with respect to time is 5.  How fast is the amount of labor needed changing?</p>
+
+<p><term>Solution</term>: We are gong to assume that both labor and capital are functions of time and the Y is a constant.  We start by implicitly differentiating our equation with respect to time.</p>
+
+<me>\frac{d}{dt}(Y=50L^.75 K^.25)</me>
+
+<me>0=50*(0.75*L^{-0.25}*\frac{dL}{dt}*K^{.25}+L^{.75}*.25*K^{-0.75}*\frac{dK}{dt})</me>
+
+<p>We now substitute in for the values of <m>K</m>, <m>L</m>, and 
+<m>\frac{dK}{dt}</m>, which were given.</p>
+<me>0=50*(0.75*16^{-0.25}*\frac{d\ L}{(d\ t}*81^{.25}+16^{.75}*.25*81^{-0.75}*2)</me>
+
+<me>0=3/4*1/2*\frac{dL}{dt}*3+8*1/4*1/27*2</me>
+
+<me>\frac{dL}{dt}=-32/243\approx -0.1317</me>
+
+<p>If capital is increasing at a rate of 2 per unit of time, then labor is decreasing at a rate of -0.1317 per unit of time.</p>
+</example>
+
+<p><term>Summary</term></p>
+
+<p>The related rates technique is an application of the chain rule.  We use this technique when we have either three variables.  We may want the rate of change of one variable with respect to a second and those variables may be connected through equations using a third variable.  We may also want to relate the rate of change of two variables with respect to time.  We take advantage of the fact that we can think of a derivative as a fraction of two small values.  We either want to multiply or divide theses fractions to obtain the desired derivative.</p>
+
+<exercises xml:id="exercises-set-sec-5-2">
+	<title>Exercises: Related Rates Problems</title>
+
+
+<exercise ><statement><p> Let <m>y=3x+5</m> and <m>z=4y+7</m>. Find <m>\frac{dz}{dx}</m> when <m>x=2</m> by solving for <m>z</m> as a function of <m>x</m> and taking the derivative, and also by finding <m>\frac{dz}{dy}</m> and <m>\frac{dy}{dx}</m> and using related rates to apply the chain rule.
+</p></statement><solution>
+<ul><li><me>z=4y+7= 4(3x+5)+7=12x+27</me>
+<me>\frac{dz}{dx}=12</me></li>
+<li>
+<me>z=4y+7,\qquad y=3x+5</me>
+<me>\frac{dz}{dy}=4  \qquad \frac{dy}{dx}=3</me>
+<me>\frac{dz}{dx}=\frac{dz}{dy}  \frac{dy}{dx}=4*3=12</me>
+</li>
+</ul>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>y=x^2-3x+5</m> and <m>z=y^2-y+6</m>. Find dz/dx when x=1 by solving for <m>z</m> as a function of <m>x</m> and taking the derivative, and also by finding <m>\frac{dz}{dy}</m> and <m>\frac{dy}{dx}</m> and using related rates to apply the chain rule.
+</p></statement></exercise>
+
+<exercise ><statement><p> Let <m>y=1000*1.06^x</m> and <m>z=200y+3</m>. Find <m>\frac{dz}{dx}</m> when <m>x=5</m>.
+</p></statement><solution>
+<p>First find the derivative</p>
+<me>\frac{dz}{dx}=\frac{dz}{dy}  \frac{dy}{dx}=(200)  (1000*1.06^x  \ln(1.06) )= 200,000 \ln(1.06)  1.06^x</me>
+<p>Next plug in our value of <m>x</m>:</p>
+<me>\text{When }x=5,\quad    \frac{dz}{dx}= 200,000 \ln(1.06)  1.06^5</me>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>y=200*1.08^x+500x</m> and <m>z=y^2+y</m>. Find <m>\frac{dz}{dx}</m> when <m>x= 3</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> Let <m> y=3x+5</m> and <m>z=4x+7</m>. Find <m>\frac{dz}{dy}</m> when <m>x=2</m> by solving for <m>z</m> as a function of <m>y</m> and taking the derivative, and also by finding <m>\frac{dz}{dx}</m> and<m>\frac{dy}{dx}</m> and using related rates to apply the chain rule.
+</p></statement><solution><ul>
+<li><p>If <m>y=3x+5</m> then <m>x=
+\frac{y-5}{3}</m>. Hence <m>z=4x+7=\frac{4}{3}  (y-5)+7=\frac{4}{3} y+\frac{1}{3}</m>.
+So <m>\frac{dz}{dy}=\frac{4}{3}</m>.</p>
+</li><li>
+<me>\frac{dz}{dx}=4, \quad \frac{dy}{dx}=3,\quad
+\frac{dz}{dy}=  \frac{dz/dx}{dy/dx}=\frac{4}{3}</me>
+</li>
+</ul></solution></exercise>
+
+<exercise ><statement><p> Let <m>y=x^2-3x+5</m> and <m>z=x^2+4x+5</m>. Find <m>\frac{dz}{dy}</m> when <m>x=3</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> Let <m>y=1000*1.05^x</m> and <m>z=100*(1+.5x)</m>. Find <m>\frac{dz}{dy}</m> when <m>x=10</m>.
+</p></statement><solution>
+<p>First find the derivative</p>
+<me>\frac{dz}{dy}=  \frac{dz/dx}{dy/dx}=\frac{50}{1000*1.05^x*\ln(1.05)}</me>
+<p>Next plug in our value of <m>x</m>:</p>
+<me>\text{When }x=10,   \frac{dz}{dy}=\frac{50}{1000*1.05^{10}*\ln(1.05)}</me>
+
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>y=100*1.08^x</m> and <m>z=100*1.02^x</m>. Find <m>\frac{dz}{dy}</m> when x=10.
+</p></statement></exercise>
+
+<exercise ><statement><p> Let <m>y=x^2-3x+5</m> and <m>\frac{dz}{dy} =3</m>. Find <m>\frac{dz}{dx}</m> when <m>x=7</m>.
+</p></statement><solution>
+<p>
+We want to find <m>\frac{dz}{dx}</m>. We know <m>\frac{dz}{dy}</m> and we can compute <m>\frac{dy}{dx}</m>, hence we compute:</p>
+<me>\frac{dy}{dx}=2x-3,\text{ hence at }x=7\text{ we have }\frac{dy}{dx}=11</me>
+<me>\frac{dz}{dx}=\frac{dz}{dy}\frac{dy}{dx}=(3)(11)=33</me>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>y=500*.96^x</m> and <m><m>\frac{dz}{dy}</m>  \frac{dz}{dy}=5</m>. Find <m>\frac{dz}{dx}</m> when x=4.
+</p></statement></exercise>
+
+<exercise ><statement><p> Let <m>y=x^2-5x+7</m> and <m>\frac{dz}{dx}  =8</m>. Find <m>\frac{dz}{dy}</m> when x=7.
+</p></statement><solution>
+<p>
+We want to find <m>\frac{dz}{dy}</m>. We know <m>\frac{dz}{dx}</m> and we can compute <m>\frac{dy}{dx}</m>, hence we compute:</p>
+<me>\frac{dy}{dx}=2x-5,\text{ hence at }x=7\text{ we have }\frac{dy}{dx}=9</me>
+<me>\frac{dz}{dy}=\frac{dz/dx}{dy/dx}=\frac{8}{9}</me>
+</solution></exercise>
+
+<exercise ><statement><p> Let <m>z=x^2-3x+5</m> and <m>\frac{dy}{dx}  =3</m>. Find dy/dz when x=7.
+</p></statement></exercise>
+
+<exercise ><statement><p> The revenue and expense equations for gizmos are</p>
+<me>revenue=30*quantity-0.1*quantity^2.</me>
+<me>expense=500+10*quantity.</me>
+<p>Find the derivative of revenue with respect to expense when <m>quantity=100</m>. 
+</p></statement><solution>
+<p>If <m>R= revenue=30q-0.1q^2</m>, then <m>\frac{dR}{dq}=30-0.2q</m>.</p>
+<p>If <m>E= expense=500+10q</m>, then  <m>\frac{dE}{dq}=10</m>.</p>
+<p>Combining the two rates we get</p>
+<me>\frac{dR}{dE}=\frac{dR/dq}{dE/dq}=\frac{30-0.2q}{10}</me>
+<p>Hence at <m>q =100</m> we have that</p>
+<me>\frac{dR}{dE}={30-0.2(100)}{10}=\frac{10}{10}=1</me>
+</solution></exercise>
+
+<exercise ><statement><p> The revenue and expense equations for widgets are</p>
+<me>revenue=200*quantity-0.1*quantity^2+.005*quantity^3.</me>
+<me>expense=1000+20*quantity.</me>
+<p>Find the derivative of revenue with respect to expense when quantity=50. 
+</p></statement></exercise>
+
+<exercise ><statement><p> The production of gadgets is a two step process</p>
+
+<me>productA=50*RawMaterial+.01*RawMaterial^2.</me>
+
+<me>gadgets=4*productA-0.0001*productA^2.</me>
+
+<p>Find the derivative of gadgets with respect to RawMaterial when
+ productA =20. 
+</p></statement><solution>
+<p>Let’s simplify the notation and write the two equations as</p>
+<me>p=50r+0.01 r^2.</me>
+<me>g=4 p-0.0001 p^2.</me>
+<p> We want to find <m>\frac{dg}{dr}</m> when <m>p = 20</m>.</p>
+<p>What do we have?</p>
+<me>\frac{dp}{dr}=50+0.02 r.</me>
+<me>\frac{dg}{dp}=4 -0.0002 p.</me>
+<me>\text{Then }\frac{dp}{dr}r=\frac{dg}{dp}  \frac{dp}{dr}r=(4 -0.0002 p)  (50+0.02 r)</me>
+
+<p>We know <m>p = 20</m> (given), but we need <m>r</m> to plug into the second part of the equation:</p>
+<p>The only function that tells us anything about <m>r</m> is <m>p=50r+0.01 r^2</m>.</p>
+<p>If <m>p = 20</m> this means <m>20=50r+0.01 r^2</m>.  So <m>0.01 r^2+50r-20=0</m>.</p>  
+<p>By the quadratic equation we have <m>r=  \frac{-50\pm \sqrt{2500-4(0.01)(-20)}}{0.02}</m>.</p>
+<p>Using Wolfram Alpha we have that <m>r = 0.4</m>.
+Then</p>
+<me>\frac{dg}{dr}=(4 -0.004 )  (50+0.008 )\approx 199.83 
+\frac{gadgets}{raw\ material}</me>
+</solution></exercise>
+
+<exercise ><statement><p> The production of whatchamacallits is a three step process</p>
+
+<me>productA=10*RawMaterial-7.</me>
+
+<me>productB=15*productA-20.</me>
+
+<me>whatchamacallits=6*productB-5.</me>
+
+<p>Find the derivative of <m>whatchamacallits</m> with respect to <m>RawMaterial</m> when <m>productA =15</m>. 
+</p></statement></exercise>
+
+<p>Find the indicated derivative for the production function. </p>
+<exercise ><statement><p> Our production function is <m>960=5L^{0.25} K^{0.75}</m>.  Find <m>\frac{dL}{dt}</m> if <m>L=81</m>, <m>K=256</m>,  <m>\frac{dK}{dt}=5</m>.
+</p></statement><solution>
+<p>Take the derivative with respect to <m>t</m>:</p>
+<me>\frac{d}{dt} 960=5 \frac{d}{dt}[L^{0.25} K^{0.75}]</me>
+<me>0=5[\frac{d}{dt} (L{0.25}) K^{0.75}+L^{0.25} \frac{d}{dt} (K^{0.75}) ]  </me>
+<me>0=[0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}+L^{0.25} 0.75K^(-0.25) \frac{dK}{dt}]</me>
+<p>Solve for  <m>\frac{dL}{dt}</m></p>
+<me>0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}=-L^{0.25} 0.75K^(-0.25)  \frac{dK}{dt}</me>
+<me>\frac{dL}{dt}=\frac{-L^{0.25} 0.75K^(-0.25)}{ 0.25 L^{-0.75} K^{0.75}}   \frac{dK}{dt}            =-3  \frac{L}{K}  \frac{dK}{dt}</me>
+<p>
+If <m>L=81</m>, <m>K=256</m>,  <m>\frac{dK}{dt}=5</m>, then we have
+<m>\frac{dL}{dt}=-3  \frac{81}{256}5 \approx -4.75</m>.</p>
+</solution></exercise>
+
+<exercise ><statement><p> Our production function is <m>4000=4L^.25 K^.75</m>. Find <m>\frac{dK}{dt}</m> if <m>L=1000</m>, <m>K=1000</m>,  <m>\frac{dL}{dt}=10</m>.
+</p></statement></exercise>
+
+ 
+</exercises> 
+        </section>
+ 
+         <section xml:id="sec-5-3-Elasticity">
+            <title>Elasticity</title>
+
+
+<p>
+Elasticity of demand is a concept from economics that looks at relative rate of change rather than rate of change.  We want to look at how we express this as a variant of the derivative.</p>
+
+<p>
+The law of demand states we increase demand by lowering price and lower demand by raising price.  The naive rate of change in that case would be the change in quantity with respect to price.  However that rate of change is not particularly useful.  If I am told that I can sell 100 more units if I lower the price by $1 a unit, I don’t know if I should lower the price.  I would definitely want to lower the price if I sell cars for an average price of $20,000 and typically sell 200 cars a year.  I would not want to lower the price if I sell gasoline at $4.00 a gallon and sell 5,000,000 gallons a year. </p>
+
+<assemblage><p>
+Rather than looking at the derivative of quantity with respect to price, or the rate of change with respect to price, we want to look at the relative rate of change with respect to price, or the <term>Elasticity of Demand</term>. </p>
+</assemblage>
+
+<p>
+If a small change in price causes a big change in demand, the demand is elastic.  In that case, I generally want to lower the price and get a lot more customers.  If I need to make a big change in price to get a small change in demand, the demand is inelastic.  With inelastic demand I can raise revenue by raising price.  Thus, elasticity of demand gives us a tool for maximizing revenue.  We can look at this issue is either the discrete case (arc elasticity) or the continuous case (point elasticity).</p>
+
+<p>
+<term>Point Elasticity</term></p>
+<p>
+To understand elasticity we look at the simple case when the demand price function is linear.  In that case, we can use geometry to understand the problem.  </p>
+
+<sidebyside width="60%">
+                <image width="60%" source="images/sec5-3-1.png">
+                </image>
+            </sidebyside> 
+
+<p>
+If <m>(Q_0,P(Q_0 ))</m> is a point for a given price <m>P(Q_0)</m> and quantity <m>Q_0</m>, then revenue is <m>Q_0*P(Q_0)</m>, the price times the quantity at that point, or the area of the rectangle above.  We want to know if we should pick a different point on the demand curve to increase the area of the rectangle.</p>
+
+<p>
+If the special case where the price and quantity are both 1, the revenue rectangle is a square and we can simply look at the slope of the demand function. In that case, when the demand curve is flatter than a slope of minus 1, increasing the quantity increases the area because quantity increases faster than price decreases.  Similarly, when the demand curve is steeper than a slope of minus 1, increasing the quantity causes the price to decrease even faster, so the area of the rectangle decreases. </p> 
+
+
+<sidebyside width="60%">
+                <image width="60%" source="images/sec5-3-2.png">
+                </image>
+            </sidebyside> 
+
+<p>We note that the slope of the normalized demand curve is almost always negative.  It is thus convenient to talk about the negative of the slope of the normalized demand price curve.  </p>
+
+
+<assemblage><p>
+We refer to that quantity as <term>Elasticity of Demand</term>. </p> 
+
+<me>E=-\frac{d( Quantity/Q_0)}{d( Price/P(Q_0))}
+=-\frac{d\ Quantity/Q_0}{d\ Price/P(Q_0)}
+=-\frac{d\ Quantity}{d\ Price}*\frac{P(Q_0)}{Q_0} </me>
+</assemblage>
+
+<p>If the elasticity is greater than 1, a small relative change in the price goes with a large relative change in the quantity.  We would expect high elasticity in products that can easily be substituted.  The demand for gasoline at one gas station, when there are 2 other gas stations at the same intersection, would be highly elastic.  </p> 
+
+<assemblage>
+<p>When demand is elastic <m>(E \gt 1)</m>, we raise revenue by lowering price.
+</p></assemblage>
+
+<p>
+We would expect low elasticity in products that are essential for which there is no reasonable substitute.  Wedding rings and lifesaving medicine would have highly inelastic demand.  </p> 
+
+<assemblage>
+<p>When the demand is inelastic (E <m>\lt</m> 1), we increase revenue by increasing price.</p> 
+</assemblage>
+
+<p>A relatively large change in price will produce a relatively small change in demand. Revenue will be at a maximum when elasticity is 1.  This condition is referred to as unit elasticity.</p> 
+
+
+<p>Note that we have usually described price as a function of quantity and in the definition of elasticity we use the derivative obtained from making quantity a function of price.  From related rates, we know that these derivatives are reciprocals of each other.</p> 
+
+
+<example><title>Point elasticity</title>
+<p> The demand price function for widgets is given in terms of quantity (q).</p> 
+
+
+<me>P(q)=20-q/100.</me>
+
+<ol label="(A)"> 
+<li><p>Find the elasticity when q=800.  Interpret what that means for the strategy to raise revenue.  </p> </li>
+
+<li><p>Compare to the situation when q=1500.</p></li>
+</ol>
+
+<p>Solution:</p>
+<ol label="(A)"> 
+<li><p>The formula for elasticity is:</p> 
+
+<me>E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} </me>
+
+<p>I need to compute <m>P(Q_0 )</m> and <m>\frac{-d Q}{d P}</m>.  Substituting into the demand function,</p> 
+
+<me>P(800)=20-800/100=20-8=12</me>
+
+<p>To find <m>\frac{d Q}{d P}</m>, I recall from related rates, that <m>\frac{d Q}{d P}=1/\frac{d P}{d Q}</m>.</p> 
+
+<me>\frac{d Q}{d P}=1/\left(\frac{d P}{d Q}\right)=1/\left(\frac{-1}{100}\right)=-100</me>
+
+
+<p>Thus</p>
+
+<me>Elasticity= \frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} 
+=-(-100)*\frac{12}{800}=1.5</me>
+
+
+<p>Since the demand is elastic when the quantity is 800, we should lower the price, causing a relatively large increase in quantity, to raise revenue.
+</p> </li>
+
+<li><p> When the quantity is 1500, the demand price is 5 and the derivative of quantity with respect to price is still -100.
+</p> 
+
+<me>Elasticity=\frac{-d\ Quantity}{d\ Price}*\frac{P(Q_0)}{Q_0} =-(-100)*\frac{5}{1500}=1/3</me>
+
+
+<p>Since the demand is inelastic when the quantity is 1500, we should raise the price, causing a relatively small decrease in quantity, to raise revenue.
+</p> 
+
+
+<p>In this example, the revenue function is
+</p> 
+
+<me>revenue=price*quantity=20 q-q^2/100.</me>
+
+<p>We recognize that this is a downward parabola with a maximum when q=1000, which is consistent with our results.</p></li>
+</ol>
+</example>
+
+<p><term>Arc Elasticity</term></p> 
+
+
+
+<p>Point elasticity was developed for use with a continuous demand price function where we could take a derivative.  Often, our demand price function is a set of discrete points, because our quantity has to be a whole number.  We would like to adapt elasticity to that case. 
+</p> 
+
+<p>For arc elasticity we have two quantity-price points <m>(quantity_1,price_1)</m> and <m>(quantity_2,price_2)</m>.  We want to adapt our formula for elastic to the discrete case.  We can think of the derivative,  <m>\frac{d Q}{d Q}</m>, as the ratio of small changes in quantity and price.  The best value for price and quantity is the average value from the two points.  
+</p> 
+
+<sidebyside width="70%">
+                <image width="70%" source="images/sec5-3-3.png">
+                </image>
+            </sidebyside> 
+
+
+<p>Our formula is converted to:
+</p> 
+
+<me>E=\frac{-\Delta quantity}{\Delta price}*\frac{average\ price}{average\ quantity}</me>
+
+<me>=-\frac{quantity_2-quantity_1}{price_2-price_1} *\frac{(price_1+price_2)/2}{(quantity_1+quantiy_2)/2}</me>
+
+
+<assemblage><p><term>Arc Elasticity</term>:  <m>E=-\frac{quantity_2-quantity_1}{price_2-price_1} *\frac{price_1+price_2}{quantity_1+quantiy_2}</m></p>
+</assemblage>
+
+
+<example><title>Elasticity from two points</title>
+<p> Two quantity-price points for gizmos are (5000, 20) and (5200, 18).  What is the arc elasticity between the two points?  Which price produces higher revenue?</p>
+
+
+<p><term>Solution</term>:  The formula for arc elasticity is:
+</p> 
+
+<me>E=-\frac{quantity_2-quantity_1}{price_2-price_1} *\frac{price_1+price_2}{quantity_1+quantiy_2}</me>
+
+<me>E=-\frac{5200-5000}{18-20}*\frac{20+18}{5000+5200} =-\frac{200}{-2}*\frac{38}{10400}\approx.373</me>
+
+
+<p>The market for gizmos is inelastic, as a price drop of about 10% only increases the market by about 4%.  To increase revenue, I should charge the higher price.
+</p> 
+</example>
+
+
+<p>Checking my work by computing the revenue at the two points, the first point, with the higher price and lower quantity produces $100,000, while the second point, with a lower price and higher quantity produces $93,600 in revenue.
+</p> 
+
+
+<p>We can use elasticity to approximate change in revenue form a change in price.
+</p> 
+
+<example><title>Elasticity in terms of per cent change</title>
+<p>Example 3: The short-term elasticity for gadgets is 0.6.  What is the percentage change in revenue if the price is raised by 5%?
+</p> 
+
+
+<p>Solution 3: An alternate formula for elasticity is:
+</p> 
+
+<assemblage>
+<p><me>E=-\frac{\% change\ in\ quantity}
+{\% change\ in\ price}</me></p>
+</assemblage>
+
+<p>Thus we see the % change in quantity is -(0.6)*5%=-3%.  Thus the new price is 1.05 times the old price and the new quantity is 0.97 times the old quantity.
+</p> 
+
+<me>NewRevenue=NewPrice*NewQuantiy</me>
+<me>=(1.05*OldPrice)*(0.97*OldQuantity)</me>
+<me>=1.0185*OldRevenue</me>
+
+
+<p>Thus raising the price by 5% will raise revenue by 1.85%.
+</p> 
+</example>
+
+<exercises xml:id="exercises-set-sec-5-3">
+	<title>Exercises: Elasticity Problems</title>
+
+<p>
+For problems 1-6, for the given demand-price function and quantity:</p>
+<ul>
+<li><p>Find the price associated with the given quantity.</p></li>
+<li><p>Find the elasticity for the given quantity.</p></li>
+<li><p>State which pricing strategy, raising, lowering, or holding steady on prices, increases revenue.</p></li>
+<li><p>Find the price and quantity that maximizes profit.</p></li>
+</ul>
+
+
+<exercise ><statement><me> price=30-\frac{quantity}{50};\quad quantity=300.
+</me></statement><solution>
+<ul>
+<li><me>price=30-\frac{300}{50}=30-6=24</me></li>
+<li><me>
+E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} = \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} = \frac{-1}{-1/50}  \frac{24}{300}=\frac{50*24}{300}=4
+</me></li>
+<li><p><m>E \gt 1</m> so demand is elastic, which means we raise revenue by lowering prices.</p></li>
+<li><p>
+We can maximize revenue by finding the price and quantity when <m>E = 1</m> (unit elastic).  We want</p>
+<me>1=E=\frac{-1}{dP/dQ}\frac{P(q)}{q}</me> 
+<me>1=50 \frac{30-q/50}{q}=\frac{1500-q}{q}</me>
+<p>First solve for <m>q</m>:</p>
+<me>q=1500-q \Longrightarrow     2q=1500 \Longrightarrow   q=750 </me>
+<p>Next find the price:</p>
+<me>price=30-\frac{quantity}{50},\qquad price(750=30-\frac{750}{50}=30-15=15</me>
+<p>Hence we have a maximum revenue when <m>quantity=750</m> and <m>price=</m>$15.  
+(The actual maximum revenue is <m>revenue=quantity*price=750*15=</m>$11,250.)
+</p></li></ul>
+</solution></exercise>
+
+<exercise ><statement><m> price=40-\frac{quantity}{75};\quad quantity=1600.
+</m></statement></exercise>
+
+<exercise ><statement><me> price=50-\frac{quantity}{100};\quad quantity=2500.
+</me></statement><solution>
+<ul>
+<li><me>price=50-\frac{q}{100}=50-\frac{2500}{100}=50-25=$25</me></li>
+<li><me>
+E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} = \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} = \frac{-1}{-1/100}  \frac{25}{2500}=\frac{2500}{2500}=1
+</me></li>
+<li><p>When <m>E = 1</m> we have unit elasticity and the revenue is at a maximum.
+Hence we want to leave the price as is.
+</p></li>
+<li><p>
+The maximum revenue occurs when <m>E = 1</m>, so we want <m>q = 2500</m> and <m>P = $25</m>.</p>
+</li>
+</ul>
+</solution></exercise>
+
+<exercise ><statement><m> price=30*(0.9)^{\frac{quantity}{100} };\quad quantity=400.
+</m></statement></exercise>
+
+<exercise ><statement><me> price=20*(0.95)^{\frac{quantity}{50} };\quad quantity=800.
+</me></statement><solution>
+<ul>
+<li><me>price=20*(.95)^{(800/50)}=$8.80</me></li>
+<li><me>E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0}
+= \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} </me>
+<me>\frac{dP}{dQ}= 20*(.95)^{quantity/50}\ln(.95)*\frac{1}{50}</me>
+<me>\left.\frac{dP}{dQ}\right|_{95}= 20*(.95)^{800/50}\ln(.95)*\frac{1}{50}=-0.009</me>
+<me>E=\frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0}
+=\frac{-1}{-0.009} \frac{8.80}{800}=1.22 </me>
+</li> 
+<li><p><m>E \gt 1</m>, so we raise revenue by lowering the price.</p></li>
+<li><p>
+We can maximize revenue by finding the price and quantity when <m>E = 1</m> (unit elastic).  We want</p>
+<me>1=E=\frac{-1}{dP/dQ}\frac{P(q)}{q}</me> 
+<me>1=-\frac{1}{20*(.95)^{q/50}\ln(0.95)\frac{1}{50}}
+\frac{20*(.95)^{q/50}}{q}
+=-\frac{50}{q ln(0.95)}</me>
+<p>And hence <m>\ln(.95)  q= -50</m>, so <m>q= -50/\ln(.95)\approx 975</m>.
+When <m>q=975</m>, we have that <m>price=20*(.95)^{(975/50) }=$7.36</m>.</p>
+</li>
+</ul>
+</solution></exercise>
+
+<exercise ><statement><m> price=40*(0.8)^{\frac{quantity}{50} };\quad quantity=300.
+</m></statement></exercise>
+
+<p>
+For problems 7-10, for the given demand-quantity points:</p>
+<ul>
+<li><p>Find the elasticity for the given pair of points.</p></li>
+<li><p>State which price-point, increases revenue.</p></li>
+</ul>
+
+
+<exercise ><statement><p> First price-quantity point = ($50,1000)
+Second price-quantity point = ($51,900).
+</p></statement><solution>
+<ul>
+<li><me>E=-\frac{(q_2-q_1 )}{(p_2-p_1 )}
+*\frac{(p_1+p_2 )}{(q_1+q_2 )}</me>
+<me>=-\frac{(900-1000)}{(51-50)}*\frac{(50+51)}{(1000+900)}
+=\frac{10100}{1900}=5.32
+</me></li>
+<li><p><m>E\gt 1</m>, So the market is elastic and we should choose the lower price. <m>($50, 1000)</m></p></li>
+</ul>
+</solution></exercise>
+
+<exercise ><statement><p> First price-quantity point = ($5.00,387)
+Second price-quantity point = ($4.95,410).
+</p></statement></exercise>
+
+<exercise ><statement><p> First price-quantity point = ($1.99,2500)
+Second price-quantity point = ($2.01,2385).
+</p></statement><solution>
+<ul>
+<li><me>E=-\frac{(q_2-q_1 )}{(p_2-p_1 )}
+*\frac{(p_1+p_2 )}{(q_1+q_2 )}</me>
+<me>=-\frac{(2500-2385)}{(1.99-2.01)}*\frac{(1.99+2.01)}{(2500+2385)}
+=\frac{460}{57.7}
+</me></li>
+<li><p><m>E\gt 1</m>, So the market is elastic and we should choose the lower price. <m>($1.99, 2500)</m></p></li>
+</ul>
+</solution></exercise>
+
+<exercise ><statement><p> First price-quantity point = ($783,455)
+Second price-quantity point = ($792,442).
+</p></statement></exercise>
+
+<exercise ><statement><p> List 3 items where you would expect the demand price to be elastic and 3 items where you would expect the demand price to be inelastic.  Explain why you have put each item into its category.
+</p></statement><solution>
+<p>
+Hint:</p>
+<p>Elastic (<m>E \gt 1</m>) The book mentions an elastic market points to something that can be easily substituted and where revenue goes up when prices go down. Examples are a particular cut of meet and for instance a brand of clothes. If there is a sale we would choose the cheaper item. What else falls into this category?</p>
+
+<p>Inelastic (<m>E \lt 1</m>) This is something where an increase in price would not decrease revenue. One situation would be items that are not easily substituted. For example wedding rings or life saving medication.
+What else falls into this category?</p>
+
+</solution></exercise>
+
+<exercise ><statement><p> Give reasons why a vendor might set a price that does not maximize revenues.
+</p></statement></exercise>
+
+<exercise ><statement><p> If the short-term elasticity for widgets is 2.5 and the price is raised by 10%, find the percent change in quantity and revenue.
+</p></statement><solution>
+<me>E=-\frac{\text{percent change in quantity}}
+{\text{percent change in price}}</me>
+<p>So we have <m>2.5=\frac{-\text{percent change in quantity}}
+{10 \text{ percent}}</m>, and thus change in quantity=-25%.</p>
+<p>And the new revenue=(1.10 old price)(0.75 old quantity)=.8250 old price.</p>
+<p>Hence we have a -17.5$ change in revenue.</p>
+</solution></exercise>
+
+<exercise ><statement><p> If the short-term elasticity for thingamabobs is 0.8 and the price is raised by 10%, find the percent change in quantity and revenue.
+</p></statement></exercise>
+
+</exercises>
+        </section>
+ 
+ 
+        </chapter>
+        

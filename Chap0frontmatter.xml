@@ -1,0 +1,130 @@
+        <frontmatter>
+            <title>Frontmatter</title>
+
+            <titlepage>
+                <author>
+                    <personname>Mike May, S.J.</personname>
+            <department>Department of Mathematics and Statistics</department>
+                    <institution>Saint Louis University</institution>
+            <email>maymk@slu.edu</email>
+                </author>
+                <author>
+                    <personname>Anneke Bart</personname>
+            <department>Department of Mathematics and Statistics</department>
+                    <institution>Saint Louis University</institution>
+            <email>barta@slu.edu</email>
+                </author>
+                <date><today /></date>
+            </titlepage>
+
+<!--            <abstract>
+                <p>An attempt to build a chapter.</p>
+            </abstract>
+            -->
+
+    <colophon>
+
+        <copyright>
+            <year>2012<ndash />2017</year>
+            <holder>Mike May, S.J. and Anneke Bart</holder>
+            <minilicense>Creative Commons BY-NC-SA</minilicense>
+            <shortlicense>
+            
+ <!--           
+            <url href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0"  />
+              <figure >
+                <image width="15%" source="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+                </image>
+            </figure> 
+</url>
+-->
+
+            <line />This work is licensed under a 
+          
+            <url href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonComercial-ShareAlike 4.0 International License</url>.</shortlicense>
+            <creativecommons BY="yes" NC="yes" ubiquity="medium"/> 
+        </copyright>
+
+
+
+    </colophon>
+
+	<!-- Accepted order: acknowledgements, forewords, prefaces -->
+
+	<acknowledgement>
+
+
+		<!-- Added NSF support statement.   -->
+		<p>This book got its start at a talk by Felkel and Richardson  at ICTCM in 2000 where they claimed "Business students should be taught math using spreadsheets."  A number of years later I tried teaching with their book and found much to appreciate from their approach.  Their book, Networked Business Mathematics, is the initial inspiration of this book.  However, as often happens when an academic looks at a textbook, I found the authors had made some choices I disagreed with, so I wanted to write my own text.  As I was going through beta versions of this book, I  discovered the 2004 report of the Curriculum Reform Across the First Two Years (CRAFTY) sub-committee of the Mathematical Association of America (MAA), and the MAA's 2004 curriculum guide.  That report has guided many decision concerning this text.
+</p>
+
+<p>  This year the book has been rewritten in MathBook XML (<url href="http://mathbook.pugetsound.edu">http://mathbook.pugetsound.edu</url>), making it possible to quickly output print, web, <acro>PDF</acro> versions and more from the same source.</p>
+
+<p>  The continued development of my attempt to make make courses that better fit the needs of business students has  has received support from the National Science Foundation (Award #DUE-16251423.)</p>
+
+	</acknowledgement>
+
+	<preface>
+
+<p>This text is intended for a one semester calculus course for business students with the equivalent of a college algebra prerequisite.  Rather than being a three-semester engineering calculus course that has been watered down to fit into one semester it is designed for the business students.</p>
+
+<p> We assume that </p>
+<ul>
+<li><p>The student has easy access to a spreadsheet and the internet.</p></li>
+<li><p>This is probably the last math class the student will take.</p></li>
+<li><p>The student is either majoring in business, or will use mathematics in a business setting.</p></li>
+</ul>
+
+<p>This text tries to follow the recommendations of the CAFTY reports.</p>
+
+<p>
+The MAA curriculum guide (2004) notes that many of our current math courses were designed in the last century in response to the needs of physics and engineering. One might caricaturize a standard textbook for business calculus, often called brief calculus as a watered down version of a three-semester course in calculus that was designed for physics or math majors. Since it is trying to cover more topics in less time, the main emphasis is skill in symbolic manipulation. The standard text for a one semester survey of calculus is also used for both business and the life sciences. To allow for broad marketing the text is technology agnostic, follows the arrangement of a course for majors, and uses the notational conventions of mathematics.</p>
+
+<p>
+In contrast, following the Curriculum Reform Project recommendations, a course for business calculus should:</p>
+<ul>
+<li><p>Use spreadsheets as the primary computational engine.</p></li>
+<li><p>Have greater emphasis on constructing mathematical models from data.</p></li>
+<li><p>Increase the emphasis on numerical methods rather than symbolic manipulation.</p></li>
+<li><p>Whenever possible use the terminology and notational conventions of the
+business world.</p></li>
+<li><p>Consistently use examples that the students will recognize as relevant 
+to the courses in their major.</p></li>
+</ul>
+
+<p> Following the CRAFTY guidelines lead to a number of subtle but pervasive shifts in a calculus text.</p>
+<ul>
+<li><p>Teaching the technology in a way that makes it portable: Experience showed, as expected, that the students would have to be taught to use Excel. Since the intent was to have the students see the material as usable outside of class, the text does not use any macros or instructor provided tools. Students are also expected to use “Good Excel Style” and make worksheets readable with sufficient documentation. 
+</p></li>
+<li><p> Use of business terminology and conventions: Economics examples traditionally use p and q axes with q as the independent variable. In business disciplines a marginal function is not a derivative, as it is often described in calculus texts, but a difference quotient with denominator 1. </p></li>
+
+<li><p> Use of business examples: The standard textbook example for related rates is that of a person on a ladder that is sliding down a wall. One student commented that he learned to never stand on an unsecured ladder. In contrast our text uses the Cobb-Douglas equation and rate of change of revenue with respect to cost to illustrate related rates, given that both are functions of quantity. Other examples in the text include the standard supply and demand problems, marginal cost, revenue and profit problems, and present and future value of an investment. 
+</p></li>
+<li><p> Change of order of topics: Checking with business faculty we have found that partial derivatives are considered more important than integrals. We reorder the sequence of topics to do multivariable functions and partial derivatives before integration.
+</p></li>
+<li><p> Numerical techniques: With a spreadsheet, approximations of the derivative using the symmetric difference and Riemann sums for integration are reasonable tasks that work effectively for a wide variety of functions. The numerical examples shift from simply being theoretical underpinnings to being a practical approach. With the use of numerical techniques presented first, the main examples are introduced before the student has learned symbolic techniques. 
+</p></li>
+<li><p> Use of CAS: Finding the current value of a revenue stream is an application of integration at the end of the course. The students know enough to set up the problem, but only have the integration techniques for solving symbolically if the stream is constant or exponential. Using simple CAS allows the focus to remain on a conceptual understanding of the problem. 
+</p></li>
+<li><p> An increased emphasis on real data and modeling: With a spreadsheet is becomes reasonable to have students collect data from the web and to find a variety of best fitting curves. In the review of pre-calculus topics students are asked to decide which model should be expected to go with the data in a situation and then to find real data and produce an appropriate best fitting curve. 
+</p></li>
+<li><p> Focus on communication and application: As mentioned above, the conventions of school mathematics use a terse style with one letter names like x, y, f, and g used as variable and function names to aid in symbol manipulation. If the goal is to produce work that someone else can read and understand 6 months later more descriptive variable and function names are used, and having sufficient documentation is considered part of answering the question. </p></li>
+</ul>
+, 
+
+<p>The initial reaction from students and teachers to the text have been positive.  In particular, many report leaving the course with an understanding of how the course connects to the rest of their business curriculum</p>
+
+<p> This book remains a work in progress.  Feel free to send comments, corrections, or rebuttals.</p>
+
+
+
+		<attribution>
+			<line>Mike May, S.J.</line>
+			<line>mike dot may at slu dotedu</line>
+			<line>St Louis, MO 2018</line>
+		</attribution>
+
+	</preface>
+
+
+        </frontmatter>
