@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:27-05:00    *-->
+<!--*    on 2020-01-19T10:07:15-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -164,49 +168,49 @@ var js_version = 0.11;
 <td class="c m b1 r0 l0 t3 lines">x</td>
 <td class="c m b1 r0 l0 t3 lines">2</td>
 <td class="c m b1 r0 l0 t3 lines">4</td>
-<td class="c m b1 r0 l0 t3 lines">8</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">8</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">15</td>
-<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">15</td>
 </tr>
 </table></div></div></div> We want to start with the familiar method, using the trendline command from a graph.  Then we want to use solver to minimize the sum of squared errors.  Finally we want to look at the function for sum of squared errors to see how we find the line using partial derivatives.  After we have looked at all three approaches for this first example we will consider more complicated examples.</p>
-<article class="example-like" id="example-95"><a data-knowl="" class="id-ref" data-refid="hk-example-95"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.4.1</span>. <span class="title">Finding a Best-Fit Curve with Trendline.</span>
-</h6></a></article><div id="hk-example-95" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2444">Use the trendline command to find the best fitting line for the data:</p>
+<article class="example example-like" id="example-95"><a data-knowl="" class="id-ref original" data-refid="hk-example-95"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Best-Fit Curve with Trendline.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-95"><article class="example example-like"><p id="p-2444">Use the trendline command to find the best fitting line for the data:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">x</td>
 <td class="c m b1 r0 l0 t3 lines">2</td>
 <td class="c m b1 r0 l0 t3 lines">4</td>
-<td class="c m b1 r0 l0 t3 lines">8</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">8</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">15</td>
-<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">15</td>
 </tr>
 </table></div></div></div>
 <p id="p-2445">Solution:  We start by making a table adding a scatterplot and adding a trendline to the graph.  We remember to select the option to make the formula visible.  The trendline command tells us the slope should be 2 and the intercept should be 1.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-4-2.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
-<article class="example-like" id="example-96"><a data-knowl="" class="id-ref" data-refid="hk-example-96"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.4.2</span>. <span class="title">Finding a Best-Fit Curve with the Definition and Solver.</span>
-</h6></a></article><div id="hk-example-96" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2446">Use solver and the definition of best fitting to find the best fitting line for the data:</p>
+<article class="example example-like" id="example-96"><a data-knowl="" class="id-ref original" data-refid="hk-example-96"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Best-Fit Curve with the Definition and Solver.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-96"><article class="example example-like"><p id="p-2446">Use solver and the definition of best fitting to find the best fitting line for the data:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">x</td>
 <td class="c m b1 r0 l0 t3 lines">2</td>
 <td class="c m b1 r0 l0 t3 lines">4</td>
-<td class="c m b1 r0 l0 t3 lines">8</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">8</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">15</td>
-<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">15</td>
 </tr>
 </table></div></div></div>
 <p id="p-2447">Solution:  To use solver we need to add the predicting equation.  We start with a randomly chosen slope and intercept for our prediction line.  Our table has a PredictedY column, which gives the value that would be on the line with our slope and intercept.  We add in the error, which is the difference between the predicted y and the actual y, and the square of the error.  We then take the sum of the squares of the errors.</p>
@@ -219,21 +223,21 @@ var js_version = 0.11;
 y=2x+1.
 \end{equation*}
 </div></article></div>
-<article class="example-like" id="example-97"><a data-knowl="" class="id-ref" data-refid="hk-example-97"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.4.3</span>. <span class="title">Finding a Best-Fit Curve with the Definition and Calculus.</span>
-</h6></a></article><div id="hk-example-97" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2450">Use calculus, partial derivatives, and the definition of best fitting to find the best fitting line for the data:</p>
+<article class="example example-like" id="example-97"><a data-knowl="" class="id-ref original" data-refid="hk-example-97"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Best-Fit Curve with the Definition and Calculus.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-97"><article class="example example-like"><p id="p-2450">Use calculus, partial derivatives, and the definition of best fitting to find the best fitting line for the data:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">x</td>
 <td class="c m b1 r0 l0 t3 lines">2</td>
 <td class="c m b1 r0 l0 t3 lines">4</td>
-<td class="c m b1 r0 l0 t3 lines">8</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">8</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">15</td>
-<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">15</td>
 </tr>
 </table></div></div></div>
 <p id="p-2451">Solution:  Before we can use partial derivatives to find a best fitting line, we need a function whose derivatives we are taking.  We start with the chart we produced when we were using solver.  This gives a formula for the squared error at each point in terms of the slope and intercept of the line.</p>
@@ -244,7 +248,7 @@ y=2x+1.
 <td class="c m b1 r0 l0 t3 lines">y</td>
 <td class="c m b1 r0 l0 t3 lines">Predicted-y</td>
 <td class="c m b1 r0 l0 t3 lines">\(error\)</td>
-<td class="c m b1 r0 l0 t3 lines">\(error^2\)</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">\(error^2\)</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">\(P1\)</td>
@@ -252,7 +256,7 @@ y=2x+1.
 <td class="c m b1 r0 l0 t0 lines">\(1\)</td>
 <td class="c m b1 r0 l0 t0 lines">\(m*2+b\)</td>
 <td class="c m b1 r0 l0 t0 lines">\(m*2+b-1\)</td>
-<td class="c m b1 r0 l0 t0 lines">\((m*2+b-1)^2\)</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">\((m*2+b-1)^2\)</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">P2</td>
@@ -260,7 +264,7 @@ y=2x+1.
 <td class="c m b1 r0 l0 t0 lines">15</td>
 <td class="c m b1 r0 l0 t0 lines">m*4+b</td>
 <td class="c m b1 r0 l0 t0 lines">m*4+b-15</td>
-<td class="c m b1 r0 l0 t0 lines">(m*4+b-15)</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">(m*4+b-15)</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">P3</td>
@@ -268,7 +272,7 @@ y=2x+1.
 <td class="c m b1 r0 l0 t0 lines">15</td>
 <td class="c m b1 r0 l0 t0 lines">m*8+b</td>
 <td class="c m b1 r0 l0 t0 lines">m*8+b-15</td>
-<td class="c m b1 r0 l0 t0 lines">\((m*8+b-15)^2\)</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">\((m*8+b-15)^2\)</td>
 </tr>
 </table></div></div></div>
 <p id="p-2452">We can expand the error squared term and add up those values.  After a straightforward but tedious computation, we see that we are trying to minimize</p>
@@ -290,64 +294,64 @@ SumErrorSq_b (m,b)=28m+6b-62.
 </div>
 <p id="p-2454">Setting the two partials to zero and solving we see the partials are both zero when \(m=2\) and \(b=1\text{.}\)  One again, this method produces the same best fitting line.</p></article></div>
 <p id="p-2455">We can use the same methods with a larger problem.</p>
-<article class="example-like" id="example-98"><a data-knowl="" class="id-ref" data-refid="hk-example-98"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.4.4</span>. <span class="title">Use the Solver Method on a larger Data Set.</span>
-</h6></a></article><div id="hk-example-98" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2456">The table below gives census data for a collection of 10 states.  Find the best fitting line to predict 2010 population based on 2000 population.</p>
+<article class="example example-like" id="example-98"><a data-knowl="" class="id-ref original" data-refid="hk-example-98"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Use the Solver Method on a larger Data Set.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-98"><article class="example example-like"><p id="p-2456">The table below gives census data for a collection of 10 states.  Find the best fitting line to predict 2010 population based on 2000 population.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines"></td>
 <td class="c m b1 r0 l0 t3 lines">Pop 2000</td>
-<td class="c m b1 r0 l0 t3 lines">Pop 2010</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">Pop 2010</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Wyoming</td>
 <td class="c m b1 r0 l0 t0 lines">493,782</td>
-<td class="c m b1 r0 l0 t0 lines">563,62</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">563,62</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Delaware</td>
 <td class="c m b1 r0 l0 t0 lines">783,600</td>
-<td class="c m b1 r0 l0 t0 lines">897,934</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">897,934</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Maine</td>
 <td class="c m b1 r0 l0 t0 lines">1,274,923</td>
-<td class="c m b1 r0 l0 t0 lines">1,328,361</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">1,328,361</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Nevada</td>
 <td class="c m b1 r0 l0 t0 lines">1,998,257</td>
-<td class="c m b1 r0 l0 t0 lines">2,700,551</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">2,700,551</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Iowa</td>
 <td class="c m b1 r0 l0 t0 lines">2,926,324</td>
-<td class="c m b1 r0 l0 t0 lines">3,046,355</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3,046,355</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Kentucky</td>
 <td class="c m b1 r0 l0 t0 lines">4,041,769</td>
-<td class="c m b1 r0 l0 t0 lines">4,339,367</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">4,339,367</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Arizona</td>
 <td class="c m b1 r0 l0 t0 lines">5,130,632</td>
-<td class="c m b1 r0 l0 t0 lines">6,392,017</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">6,392,017</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Washington</td>
 <td class="c m b1 r0 l0 t0 lines">5,894,121</td>
-<td class="c m b1 r0 l0 t0 lines">6,724,540</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">6,724,540</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">New Jersey</td>
 <td class="c m b1 r0 l0 t0 lines">8,414,350</td>
-<td class="c m b1 r0 l0 t0 lines">8,791,894</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">8,791,894</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">California</td>
 <td class="c m b1 r0 l0 t0 lines">33,871,648</td>
-<td class="c m b1 r0 l0 t0 lines">37,253,956</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">37,253,956</td>
 </tr>
 </table></div></div></div>
 <p id="p-2457">Solution:  We set up a spreadsheet in the same way we set it up in the last example.  For an initial slope we will start with 1.1 for 10% growth.  For a starting point we will guess an intercept of 0.  As we did in the last example, the predicted population in 2010 is the slope times the population in 2000 plus the intercept.  We add extra columns for the predicted population, the error between the prediction and the actual population, the square of the error.  At the bottom of the last column, we add the squared errors.  This gives the value we want to minimize.</p>
@@ -365,53 +369,53 @@ TotalValue(time)=CashAmount+DepositAmount*rate^{time}.
 \end{equation*}
 </div>
 <p id="p-2460">The trendline command does not let us choose such a model to find a best fitting curve.  It is straightforward using the best fit construction.</p>
-<article class="example-like" id="example-99"><a data-knowl="" class="id-ref" data-refid="hk-example-99"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.4.5</span>. <span class="title">Finding a Best-Fit Curve for a Nonstandard Model Equation.</span>
-</h6></a></article><div id="hk-example-99" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2461">We are given the following data on the value of a portfolio over time:</p>
+<article class="example example-like" id="example-99"><a data-knowl="" class="id-ref original" data-refid="hk-example-99"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Best-Fit Curve for a Nonstandard Model Equation.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-99"><article class="example example-like"><p id="p-2461">We are given the following data on the value of a portfolio over time:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">Year</td>
-<td class="c m b1 r0 l0 t3 lines">Amount</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">Amount</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">$10,000</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$10,000</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">$10,920</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$10,920</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">5</td>
-<td class="c m b1 r0 l0 t0 lines">$12,490</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$12,490</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">8</td>
-<td class="c m b1 r0 l0 t0 lines">$14,300</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$14,300</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">9</td>
-<td class="c m b1 r0 l0 t0 lines">$14,960</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$14,960</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">12</td>
-<td class="c m b1 r0 l0 t0 lines">$17,169</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$17,169</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">14</td>
-<td class="c m b1 r0 l0 t0 lines">$18,820</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$18,820</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">17</td>
-<td class="c m b1 r0 l0 t0 lines">$21,630</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$21,630</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">19</td>
-<td class="c m b1 r0 l0 t0 lines">$23,740</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$23,740</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">20</td>
-<td class="c m b1 r0 l0 t0 lines">$24,880</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$24,880</td>
 </tr>
 </table></div></div></div>
 <p id="p-2462">We think the investor put some money in a secure account that does not give interest (a coffee can) and the rest of the money in an account that bore interest (an investment account).  Find the amount deposited in each account and the interest rate of the investment account.</p>
@@ -424,9 +428,9 @@ TotalValue(time)=CashAmount+DepositAmount*rate^{time}.
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-4-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2464">We then use Solver to minimize cell E26, by changing cells B20:B22.  Our solution indicates that CashAmount=$997.76, DepositAmount=$9,005.51, and rate=1.05.</p></article></div>
 <p id="p-2465">When we use this technique with other mathematical models, the only change is in the formula used for the predicted y value.</p>
-<article class="example-like" id="example-100"><a data-knowl="" class="id-ref" data-refid="hk-example-100"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.4.6</span>. <span class="title">Finding a Best-Fit Logistic Curve.</span>
-</h6></a></article><div id="hk-example-100" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2466">We are managing a wood harvesting business.  The number of trees available in a plot is modeled as constrained growth.  That means we expect it to be modeled by a logistic equation.</p>
+<article class="example example-like" id="example-100"><a data-knowl="" class="id-ref original" data-refid="hk-example-100"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Best-Fit Logistic Curve.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-100"><article class="example example-like"><p id="p-2466">We are managing a wood harvesting business.  The number of trees available in a plot is modeled as constrained growth.  That means we expect it to be modeled by a logistic equation.</p>
 <div class="displaymath">
 \begin{equation*}
 AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )
@@ -436,31 +440,31 @@ AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">Time</td>
-<td class="c m b1 r0 l0 t3 lines">Trees</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">Trees</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">150</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">150</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">5</td>
-<td class="c m b1 r0 l0 t0 lines">400</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">400</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">10</td>
-<td class="c m b1 r0 l0 t0 lines">1030</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">1030</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">20</td>
-<td class="c m b1 r0 l0 t0 lines">5300</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">5300</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">30</td>
-<td class="c m b1 r0 l0 t0 lines">12020</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">12020</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">40</td>
-<td class="c m b1 r0 l0 t0 lines">14510</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">14510</td>
 </tr>
 </table></div></div></div>
 <p id="p-2468">Solution:  We set this up much like we did for the linear model, but using the logistic model.</p>
@@ -474,7 +478,7 @@ AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )
 <p id="p-2475">The disadvantages of the Solver method are the standard disadvantages of using Solver to find a minimum.  Recall that Solver simply finds a local minimum from a starting point.  Since solver uses numerical methods it looks for places where the partial derivatives are within our tolerance bounds of zero.  We cannot expect Solver to give an answer that is more precise than the tolerance bounds. With all of the methods we should be aware that we need enough points to get a reasonable fit of the curve.  Intuitively a small change in any point should not cause a big change in the curve.</p>
 <p id="p-2476">As a general rule, we will use the trendline command when it works with the kind of equation we have decided to use as our model.</p>
 <section class="exercises" id="exercises-set-sec-6-4"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Optimization and Best Fitting Curves Problems</span>
+<span class="type">Exercises</span> <span class="codenumber">6.4.1</span> <span class="title">Exercises: Optimization and Best Fitting Curves Problems</span>
 </h3>
 <a href="sec-6-4-OptimizationBestFitCurves.html#exercises-set-sec-6-4" class="permalink">¶</a><p id="p-2477">For exercises 1-4, for the given data sets:</p>
 <ol class="decimal">
@@ -484,24 +488,24 @@ AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )
 <li id="li-679"><p id="p-2481">Explicitly find the sum of squared errors function as a quadratic function of the slope m, and the intercept b.</p></li>
 <li id="li-680"><p id="p-2482">Find the values of m and b that minimize the error function by taking partial derivatives and setting them equal to 0.</p></li>
 </ol>
-<article class="exercise-like" id="exercise-415"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-415"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-2483">The given points are:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">x</td>
 <td class="c m b1 r0 l0 t3 lines">-2</td>
 <td class="c m b1 r0 l0 t3 lines">0</td>
-<td class="c m b1 r0 l0 t3 lines">6</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">6</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
 <td class="c m b1 r0 l0 t0 lines">-7</td>
 <td class="c m b1 r0 l0 t0 lines">5</td>
-<td class="c m b1 r0 l0 t0 lines">15</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">15</td>
 </tr>
 </table></div></div></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-210" id="solution-210"><span class="type">Solution</span></a><div id="hk-solution-210" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-210" id="solution-210"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-210"><div class="solution solution-like">
 <p id="p-2484">With trendlines we get the best fitting line:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2485">The line that gives us the best fitting curve is \(y=2.5 x+1\text{.}\)</p>
@@ -516,22 +520,22 @@ AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )
 <p id="p-2491">The least square method gives us the function \(y=2.5x+1\)</p>
 <p id="p-2492">(Comment: this shows that the least squares method gives the same answer as the trendline method. The Least Square method is a more general technique however and can be used in cases where the trendlines are not sufficient. )</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-416"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-416"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-2493">The given points are:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">x</td>
 <td class="c m b1 r0 l0 t3 lines">-2</td>
 <td class="c m b1 r0 l0 t3 lines">0</td>
-<td class="c m b1 r0 l0 t3 lines">6</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">6</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
 <td class="c m b1 r0 l0 t0 lines">24</td>
 <td class="c m b1 r0 l0 t0 lines">10</td>
-<td class="c m b1 r0 l0 t0 lines">20</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">20</td>
 </tr>
-</table></div></div></div></article><article class="exercise-like" id="exercise-417"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</table></div></div></div></article><article class="exercise exercise-like" id="exercise-417"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-2494">The given points are:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -539,18 +543,18 @@ AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )
 <td class="c m b1 r0 l0 t3 lines">-3</td>
 <td class="c m b1 r0 l0 t3 lines">-1</td>
 <td class="c m b1 r0 l0 t3 lines">1</td>
-<td class="c m b1 r0 l0 t3 lines">3</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">3</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
 <td class="c m b1 r0 l0 t0 lines">-2</td>
 <td class="c m b1 r0 l0 t0 lines">6</td>
 <td class="c m b1 r0 l0 t0 lines">10</td>
-<td class="c m b1 r0 l0 t0 lines">10</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">10</td>
 </tr>
 </table></div></div></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-211" id="solution-211"><span class="type">Solution</span></a><div id="hk-solution-211" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-211" id="solution-211"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-211"><div class="solution solution-like">
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2495">We would define \(m\) and \(b\) and use these to create</p>
 <div class="displaymath">
@@ -566,7 +570,7 @@ predicted\ y=mx+b
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol3c.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2500">Setting up Solver as shown above we get \(m = 2\) and \(b = 6\text{.}\)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-418"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-418"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-2501">The given points are:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -574,17 +578,17 @@ predicted\ y=mx+b
 <td class="c m b1 r0 l0 t3 lines">-2</td>
 <td class="c m b1 r0 l0 t3 lines">0</td>
 <td class="c m b1 r0 l0 t3 lines">2</td>
-<td class="c m b1 r0 l0 t3 lines">4</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">4</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
 <td class="c m b1 r0 l0 t0 lines">-7</td>
 <td class="c m b1 r0 l0 t0 lines">5</td>
 <td class="c m b1 r0 l0 t0 lines">11</td>
-<td class="c m b1 r0 l0 t0 lines">11</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">11</td>
 </tr>
 </table></div></div></div></article><p id="p-2502">For exercises 5-8, find the curve of the indicated type that gives the best fit for the data.</p>
-<article class="exercise-like" id="exercise-419"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<article class="exercise exercise-like" id="exercise-419"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-2503">Sally has money invested in a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -600,7 +604,7 @@ Amount(time)=InitialAmount* rate^{time}
 <td class="c m b1 r0 l0 t3 lines">5</td>
 <td class="c m b1 r0 l0 t3 lines">10</td>
 <td class="c m b1 r0 l0 t3 lines">15</td>
-<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">20</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Amount</td>
@@ -609,12 +613,12 @@ Amount(time)=InitialAmount* rate^{time}
 <td class="c m b1 r0 l0 t0 lines">$6700</td>
 <td class="c m b1 r0 l0 t0 lines">$9000</td>
 <td class="c m b1 r0 l0 t0 lines">$12000</td>
-<td class="c m b1 r0 l0 t0 lines">$16000</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$16000</td>
 </tr>
 </table></div></div></div>
 <p id="p-2505">Find the best fitting curve of the given model.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-212" id="solution-212"><span class="type">Solution</span></a><div id="hk-solution-212" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-212" id="solution-212"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-212"><div class="solution solution-like">
 <p id="p-2506">A scatter plot of the data will help us find some good initial guesses for the initial amount and the rate.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec6-4-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2507">The \(y\)-intercept is about $5000. This occurs when time = 0, so the initial guess for the initial amount will be 5,000. The graph is an increasing function, so we know rate  \(\gt 1\text{.}\)</p>
@@ -632,7 +636,7 @@ Amount(time)=5,013.11* (1.06)^{time}
 <p id="p-2512">Remark: If we use Trendlines to find a exponential function that fits the data, we would get \(y=5001 e^{0.0583*time}\)</p>
 <p id="p-2513">The least square error analysis shows that this is not as good of an approximation as the one we just found using Solver! The least squares error for the trendline is approximately 30% greater than for the value we found using Solver.</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-420"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-420"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-2514">Fred has put some of his money in a cash account that pays no interest and the rest of his money a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -648,7 +652,7 @@ Amount(time)=CashAmount+InvestmentAmount*rate^{time}
 <td class="c m b1 r0 l0 t3 lines">5</td>
 <td class="c m b1 r0 l0 t3 lines">10</td>
 <td class="c m b1 r0 l0 t3 lines">15</td>
-<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">20</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Amount</td>
@@ -657,10 +661,10 @@ Amount(time)=CashAmount+InvestmentAmount*rate^{time}
 <td class="c m b1 r0 l0 t0 lines">$14000</td>
 <td class="c m b1 r0 l0 t0 lines">$19000</td>
 <td class="c m b1 r0 l0 t0 lines">$27000</td>
-<td class="c m b1 r0 l0 t0 lines">$39000</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$39000</td>
 </tr>
 </table></div></div></div>
-<p id="p-2516">Find the best fitting curve of the given model.</p></article><article class="exercise-like" id="exercise-421"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-2516">Find the best fitting curve of the given model.</p></article><article class="exercise exercise-like" id="exercise-421"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-2517">Mary has put some of her money in an investment that pays simple and the rest of her money a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -678,7 +682,7 @@ Amount(time)=Amount1+Return1*time+Amount2*rate2^{time}
 <td class="c m b1 r0 l0 t3 lines">15</td>
 <td class="c m b1 r0 l0 t3 lines">20</td>
 <td class="c m b1 r0 l0 t3 lines">30</td>
-<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">40</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Amount</td>
@@ -689,12 +693,12 @@ Amount(time)=Amount1+Return1*time+Amount2*rate2^{time}
 <td class="c m b1 r0 l0 t0 lines">$24700</td>
 <td class="c m b1 r0 l0 t0 lines">$33500</td>
 <td class="c m b1 r0 l0 t0 lines">$62600</td>
-<td class="c m b1 r0 l0 t0 lines">$118800</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$118800</td>
 </tr>
 </table></div></div></div>
 <p id="p-2519">Find the best fitting curve of the given model.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-213" id="solution-213"><span class="type">Solution</span></a><div id="hk-solution-213" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-213" id="solution-213"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-213"><div class="solution solution-like">
 <p id="p-2520">The function we are looking for has a linear component (Amount1+Return1*time), and an exponential component. There is no trendline that would do this for us.</p>
 <p id="p-2521">What do we know about these values?</p>
 <ul class="disc">
@@ -712,26 +716,26 @@ Amount(time)=Amount1+Return1*time+Amount2*rate2^{time}
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">Amount 1</td>
-<td class="c m b1 r0 l0 t3 lines">3317.59</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">3317.59</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">return 1</td>
-<td class="c m b1 r0 l0 t0 lines">163.19</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">163.19</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">rate</td>
-<td class="c m b1 r0 l0 t0 lines">1.07</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">1.07</td>
 </tr>
 </table></div></div></div>
 <p id="p-2529">Hence \(Amount 2 = 10,000 – 3,317.59 = 6,682.41\text{,}\) and we have that</p>
 <div class="displaymath">
 \begin{equation*}
-Amount(time)=$3,317.59+$163.19*time+$6,682.41* (1.07)^{time}
+Amount(time)=\$3,317.59+\$163.19*time+\$6,682.41* (1.07)^{time}
 \end{equation*}
 </div>
 <p id="p-2530">In Excel the data and the predicted values now line up very nicely.</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-422"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-422"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-2531">John has divided his money between two accounts.  They both compound their returns, but they pay different rates.  Thus, the formula that models the investment is:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -749,7 +753,7 @@ Amount(time)=Amount1*rate1^{time}+Amount2*rate2^{time}
 <td class="c m b1 r0 l0 t3 lines">15</td>
 <td class="c m b1 r0 l0 t3 lines">20</td>
 <td class="c m b1 r0 l0 t3 lines">30</td>
-<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">40</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Amount</td>
@@ -760,12 +764,12 @@ Amount(time)=Amount1*rate1^{time}+Amount2*rate2^{time}
 <td class="c m b1 r0 l0 t0 lines">$29000</td>
 <td class="c m b1 r0 l0 t0 lines">$41500</td>
 <td class="c m b1 r0 l0 t0 lines">$87000</td>
-<td class="c m b1 r0 l0 t0 lines">$183500</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">$183500</td>
 </tr>
 </table></div></div></div>
 <p id="p-2533">Find the best fitting curve of the given model.</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

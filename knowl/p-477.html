@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:31-05:00    *-->
+<!--*    on 2020-01-19T10:07:19-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Instead of finding a value with \(x^2 = 2\text{,}\) I found a value with \(x^2 = 1.99999495\text{.}\) <article class="assemblage-like"><ul class="disc">
+<p>Instead of finding a value with \(x^2 = 2\text{,}\) I found a value with \(x^2 = 1.99999495\text{.}\) <article class="assemblage assemblage-like"><ul class="disc">
 <li><p>We note that Excel is not solving the problem algebraically, but is finding a numerical approximation within a preset tolerance.</p></li>
 <li><p>It is actually finding an x such that f(x) is within 0.001 of 2.</p></li>
 </ul></article> For most of our work, that is close enough.  Sometimes however we may want more precision.  (Our units may be millions of dollars.)  In that case, we can improve the precision with a work around.  We add another cell with a formula whose value is a large number, say \(10^6\text{,}\) times the error.  We then use Goal Seek to make that value close to zero.  We effectively reduce our error tolerance by a factor of our large number.  Applying this to our example gives: <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-5.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>

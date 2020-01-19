@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:26-05:00    *-->
+<!--*    on 2020-01-19T10:07:14-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -154,9 +158,9 @@ var js_version = 0.11;
 </h2>
 <a href="sec-6-2-PartialDerivatives.html" class="permalink">¶</a><p id="p-2203"><a class="external" href="./Examples/Section-6-2-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
 <p id="p-2204">A standard technique in mathematics courses is to try to break a complicated problem into smaller and easier problems.  For functions of several variables this can be done by looking at the variables one at a time, and treating the other variables as constants.  Then we are back to considering functions of a single variable.  We start by returning to Example 5 from the previous section, and seeing what information can be obtained by looking at one variable at a time.</p>
-<article class="example-like" id="example-86"><a data-knowl="" class="id-ref" data-refid="hk-example-86"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.2.1</span>. <span class="title">Optimizing Revenue with Two Products.</span>
-</h6></a></article><div id="hk-example-86" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2205">I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
+<article class="example example-like" id="example-86"><a data-knowl="" class="id-ref original" data-refid="hk-example-86"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Optimizing Revenue with Two Products.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-86"><article class="example example-like"><p id="p-2205">I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
 <div class="displaymath">
 \begin{equation*}
 PriceGizmos=10-\frac{QuantityGizmos}{50}=10-\frac{QG}{50}
@@ -211,9 +215,9 @@ Revenue(QG,400)=10QG-\frac{QG^2}{50}+4000,
 <p id="p-2216">Putting the information together, the maximum must occur at (250,400).  Putting these values back in the original equation gives a maximum of $5250 for the revenue function.</p></article></div>
 <p id="p-2217"><dfn class="terminology">Partial Derivatives</dfn></p>
 <p id="p-2218">The procedure we used in the first example of replacing one variable with a constant and then taking the derivative of the resulting single variable function is a bit cumbersome.  We can simplify the process by taking the derivative of the original function with respect to one variable while treating the other variables as constants.  This is referred to as taking a partial derivative.  There is also a change in notation.  The familiar derivative of \(f\) with respect to \(x\) uses the symbol \(\frac{d}{dx} f\)  while the partial derivative with respect to \(x\) uses the symbol \(\frac{\partial }{\partial x} f\text{,}\) or \(f_x\text{.}\)  Similarly, the partial derivative with respect to \(y\) uses the symbol\(\frac{\partial }{\partial y} f\text{,}\) or \(f_y\text{.}\)</p>
-<article class="example-like" id="example-87"><a data-knowl="" class="id-ref" data-refid="hk-example-87"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.2.2</span>. <span class="title">Finding and Interpreting Partial Derivatives.</span>
-</h6></a></article><div id="hk-example-87" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2219">Find the partial derivatives of \(f(x,y)=x^2+ 2xy+3y^2-4x-3y\) at  \((x,y)=(3.5,-0.5)\text{.}\)  Explain what the partial derivatives mean in terms of the graph.</p>
+<article class="example example-like" id="example-87"><a data-knowl="" class="id-ref original" data-refid="hk-example-87"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Finding and Interpreting Partial Derivatives.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-87"><article class="example example-like"><p id="p-2219">Find the partial derivatives of \(f(x,y)=x^2+ 2xy+3y^2-4x-3y\) at  \((x,y)=(3.5,-0.5)\text{.}\)  Explain what the partial derivatives mean in terms of the graph.</p>
 <p id="p-2220">Solution:  It is useful to look at a picture with the graph, the two curves obtained by keeping \(x=3.5\) and \(y=1.5\text{,}\) and the tangent lines to those curves.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-2-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2221">We also want to look at the slices corresponding keeping \(x=-3.5\) and \(y=.5\text{.}\)</p>
@@ -243,20 +247,20 @@ Revenue(QG,400)=10QG-\frac{QG^2}{50}+4000,
 <p id="p-2223">The partial derivatives give the slopes of the purple and red lines above.  At the point \((3.5,-0.5)\text{,}\) the (yellow) curves obtained by treating y as a constant and letting \(x\) vary has a (magenta) tangent line with a slope of \(2\text{,}\) the value \(\frac{\partial }{\partial x} f(3.5,-0.5)\text{.}\)   At the point \((3.5,-0.5)\text{,}\) the (blue) curves obtained by treating \(x\) as a constant and letting \(y\) vary has a (red) tangent line with a slope of 1, the value \(\frac{\partial }{\partial y} f(3.5,-0.5)\text{.}\)</p></article></div>
 <p id="p-2224"><dfn class="terminology">Tangent Planes and Linear Approximation</dfn></p>
 <p id="p-2225">For functions of one variable, we had two main uses of the derivative.  One was to identify candidate points for maxima and minima.  We will look at critical points and extrema in the next section.  The other use of the derivative was to produce a linear approximation or tangent line.  We can generalize the tangent line for one variable to a tangent plane for two variables.  For a function \(f(x)\text{,}\) we used the value of the point, \((x_0,f(x_0))\) and the slope \(f(x_0)\) to get the equation of the tangent line approximation near \(x_0\text{.}\)</p>
-<article class="assemblage-like" id="assemblage-42"><p id="p-2226"><dfn class="terminology">Tangent line</dfn>:</p>
+<article class="assemblage assemblage-like" id="assemblage-42"><p id="p-2226"><dfn class="terminology">Tangent line</dfn>:</p>
 <div class="displaymath" id="p-2227">
 \begin{equation*}
 Linear f(x)=f' (x_0 )(x-x_0 )+f(x_0 ).
 \end{equation*}
 </div></article><p id="p-2228">For a function, \(f(x,y)\text{,}\) of two variables, we simply use partials for the slopes.</p>
-<article class="assemblage-like" id="assemblage-43"><p id="p-2229"><dfn class="terminology">Tangent Plane</dfn>:</p>
+<article class="assemblage assemblage-like" id="assemblage-43"><p id="p-2229"><dfn class="terminology">Tangent Plane</dfn>:</p>
 <div class="displaymath" id="p-2230">
 \begin{equation*}
 Linear f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0)+f(x_0,y_0 ).
 \end{equation*}
-</div></article><article class="example-like" id="example-88"><a data-knowl="" class="id-ref" data-refid="hk-example-88"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.2.3</span>. <span class="title">Approximating with a Tangent Plane.</span>
-</h6></a></article><div id="hk-example-88" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2231">The general Cobb-Douglas production function determines the Production (P), in terms of the variables Labor (L) and Capital (C):</p>
+</div></article><article class="example example-like" id="example-88"><a data-knowl="" class="id-ref original" data-refid="hk-example-88"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating with a Tangent Plane.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-88"><article class="example example-like"><p id="p-2231">The general Cobb-Douglas production function determines the Production (P), in terms of the variables Labor (L) and Capital (C):</p>
 <div class="displaymath">
 \begin{equation*}
 Production(Labor,Capital)=c Labor^{\alpha}  Capital^{\beta},
@@ -318,7 +322,7 @@ Production(85,14)\approx 5(85-81)+8.4375(14-16)+540=543.125.
 <p id="p-2240"><dfn class="terminology">Linear Approximations of Functions of More than Two Variables</dfn></p>
 <p id="p-2241">In this section we have focused on functions of 2 variables since their graphs are surfaces in 3 dimensions, which is a familiar concept.  For real world functions, we are often concerned with functions of many variables.  The concept of partial derivative easily extends, with one variable and multiple parameters.  Finding the linear approximation also extends without difficulty.  We simply have a linear term for each variable.</p>
 <section class="exercises" id="exercises-set-sec-6-2"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</span>
+<span class="type">Exercises</span> <span class="codenumber">6.2.1</span> <span class="title">Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</span>
 </h3>
 <a href="sec-6-2-PartialDerivatives.html#exercises-set-sec-6-2" class="permalink">¶</a><div class="exercisegroup" id="exercisegroup-27">
 <div class="introduction" id="introduction-34">
@@ -332,10 +336,10 @@ Production(85,14)\approx 5(85-81)+8.4375(14-16)+540=543.125.
 </ol>
 </div>
 <div class="exercisegroup-exercises">
-<article class="exercise-like" id="exercise-395"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-395"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-2248">The function is \(f(x,y)=x^2+3xy+4y^2\text{,}\) \(P_1=(4,2)\text{,}\) and \(P_2=(3,2.5)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-199" id="solution-199"><span class="type">Solution</span></a><div id="hk-solution-199" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-199" id="solution-199"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-199"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-617">
 <p id="p-2249">Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
 <div class="displaymath">
@@ -403,11 +407,11 @@ Linear\ f(3,2.5)=14(3-4)+28(2.5-2)+56
 </div>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-396"><h6 class="heading"><span class="codenumber">2.</span></h6>
-<p id="p-2255">The function is \(f(x,y)=(x+3y)/(x^2+y^2 )\text{,}\) \(P_1=(2,3)\text{,}\) and \(P_2=(3,2.5)\text{.}\)</p></article><article class="exercise-like" id="exercise-397"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-396"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-2255">The function is \(f(x,y)=(x+3y)/(x^2+y^2 )\text{,}\) \(P_1=(2,3)\text{,}\) and \(P_2=(3,2.5)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-397"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-2256">The function is \(f(x,y)=(x^2)(x+2^y)\text{,}\) \(P_1=(3,-1)\text{,}\) and \(P_2=(3,0)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-200" id="solution-200"><span class="type">Solution</span></a><div id="hk-solution-200" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-200" id="solution-200"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-200"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-622">
 <p id="p-2257">Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
 <div class="displaymath">
@@ -486,7 +490,7 @@ Linear\ f(3,0)=30* (0)+\frac{9}{2} \ln(2) *(1)+\frac{63}{2}=\frac{9}{2}  \ln(2)+
 </div>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-398"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-398"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-2263">The function is the revenue function for selling widgets and gizmos with demand price functions</p>
 <div class="displaymath">
 \begin{equation*}
@@ -498,7 +502,7 @@ PriceGizmos=30-\frac{QuantityGizmos}{50}-\frac{QuantityWidgets}{300}
 PriceWidgets=20-\frac{QuantityWidgets}{40}-\frac{QuantityGizmos}{500}
 \end{equation*}
 </div>
-<p id="p-2264">and, \(P_1=(QuanityGizmos,QuantityWidgets)=(1000,500)\text{,}\) and \(P_2=(1050,575)\text{.}\)</p></article><article class="exercise-like" id="exercise-399"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<p id="p-2264">and, \(P_1=(QuanityGizmos,QuantityWidgets)=(1000,500)\text{,}\) and \(P_2=(1050,575)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-399"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-2265">The function is the revenue function for selling widgets and gizmos with demand price functions</p>
 <div class="displaymath">
 \begin{equation*}
@@ -512,7 +516,7 @@ PriceWidgets=20(0.9)^{(QuantityWidgets/150)}-\frac{QuantityGizmos}{250}
 </div>
 <p id="p-2266">and, \(P_1=(QuanityGizmos,QuantityWidgets)=(800,400)\text{,}\) and \(P_2=(750,425)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-201" id="solution-201"><span class="type">Solution</span></a><div id="hk-solution-201" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-201" id="solution-201"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-201"><div class="solution solution-like">
 <p id="p-2267">For the sake of notation we will use the following abbreviations:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -689,14 +693,14 @@ Linear\ Rev(750,425)=8.80(-50)+4.99(25)+19,615.88=19,300.63
 </li>
 </ol>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-400"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-400"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-2285">The function is the Cobb-Douglas production function in a widget factory,</p>
 <div class="displaymath">
 \begin{equation*}
 Production(Labor,Capital)=10 Labor^{0.8}  Capital^{0.2}
 \end{equation*}
 </div>
-<p id="p-2286">where labor is in workers, capital equipment is in units of $20,000, and production is in units of 200 widgets produced per month.  In the \((Labor,Capital)\) plane, let \(P_1=(100,30)\text{,}\) and \(P_2=(110,25)\text{.}\)</p></article><article class="exercise-like" id="exercise-401"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-2286">where labor is in workers, capital equipment is in units of $20,000, and production is in units of 200 widgets produced per month.  In the \((Labor,Capital)\) plane, let \(P_1=(100,30)\text{,}\) and \(P_2=(110,25)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-401"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-2287">The function is the Cobb-Douglas production function in a country,</p>
 <div class="displaymath">
 \begin{equation*}
@@ -705,7 +709,7 @@ Production(Labor,Capital)=10 Labor^{0.74}Capital^{0.26}
 </div>
 <p id="p-2288">where labor is in millions of workers, capital equipment is in units of billions of dollars, and production is in units of billions of dollars per year.  In the \((Labor,Capital)\) plane, let \(P_1=(300,30)\text{,}\) and \(P_2=(310,32)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-202" id="solution-202"><span class="type">Solution</span></a><div id="hk-solution-202" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-202" id="solution-202"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-202"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-632">
 <p id="p-2289">Give the 2 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
 <div class="displaymath">
@@ -828,11 +832,11 @@ Lin Prod(310, 32)   =4.07(310-300)+14.29(32-30)+1648.62=1717.9.
 </ol>
 </div>
 <div class="exercisegroup-exercises">
-<article class="exercise-like" id="exercise-402"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-2304">The function is \(f(x,y,z)=x^2+3xy+4y^2+2z^2+5xz\text{,}\) \(P_1=(4,2,1)\text{,}\) and \(P_2=(3,2.5,2)\text{.}\)</p></article><article class="exercise-like" id="exercise-403"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<article class="exercise exercise-like" id="exercise-402"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-2304">The function is \(f(x,y,z)=x^2+3xy+4y^2+2z^2+5xz\text{,}\) \(P_1=(4,2,1)\text{,}\) and \(P_2=(3,2.5,2)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-403"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-2305">The function is \(f(x,y,z)=(x+3y-2z)/(x^2+y^2+z^2 )\text{,}\) \(P_1=(2,3,-1)\text{,}\) and \(P_2=(3,2.5,0)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-203" id="solution-203"><span class="type">Solution</span></a><div id="hk-solution-203" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-203" id="solution-203"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-203"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-642">
 <p id="p-2306">Give the 3 functions of one variable through \(P_1\) obtained by holding each variable constant.</p>
 <div class="displaymath">
@@ -951,8 +955,8 @@ Linear f(3,2.5,0)=  \frac{13}{14}-\frac{19}{98}  (1)-\frac{9}{49} \left(-\frac{1
 </div>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-404"><h6 class="heading"><span class="codenumber">10.</span></h6>
-<p id="p-2311">The function is \(f(x,y,z)=(x^2 z)(x+2^y+z^3)\) \(P_1=(3,-1,1)\text{,}\) and \(P_2=(2,0,1)\text{.}\)</p></article><article class="exercise-like" id="exercise-405"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-404"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-2311">The function is \(f(x,y,z)=(x^2 z)(x+2^y+z^3)\) \(P_1=(3,-1,1)\text{,}\) and \(P_2=(2,0,1)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-405"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-2312">The function is the revenue function for selling widgets, gizmos, and gadgets with demand price functions</p>
 <div class="displaymath">
 \begin{equation*}
@@ -969,9 +973,9 @@ PriceWidgets=20-\frac{QuantityWidgets}{40}-\frac{QuantityGizmos}{500}-\frac{Quan
 PriceGagets=40-\frac{QuantityWidgets}{45}-\frac{QuantityGizmos}{600}-\frac{QuantityGadgets}{300}
 \end{equation*}
 </div>
-<p>and in \((QuanityGizmos,QuantityWidgets,QuantityGadgets)\) space, \(P_1=(1000,500,700)\text{,}\) and \(P_2=(1050,575,625)\text{.}\)</p>
+<p data-braille="continuation">and in \((QuanityGizmos,QuantityWidgets,QuantityGadgets)\) space, \(P_1=(1000,500,700)\text{,}\) and \(P_2=(1050,575,625)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-204" id="solution-204"><span class="type">Solution</span></a><div id="hk-solution-204" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-204" id="solution-204"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-204"><div class="solution solution-like">
 <p id="p-2313">We can do the entire problem in terms of gadgets, gizmos and widgets, but for notation sake we will replace them (alphabetically) as follows:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -1109,6 +1113,6 @@ Linear\ Revenue(1050,575,625)
 </div></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

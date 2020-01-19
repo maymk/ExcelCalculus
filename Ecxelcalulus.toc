@@ -1,0 +1,21 @@
+\hypertarget {x:book:index}{}
+\contentsline {chapter}{Acknowledgements}{v}{chapter*.1}
+\contentsline {chapter}{Preface}{vi}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Integration}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Approximating Definite Integrals as Sums}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Exercises: Approximating Definite Integrals as Sums Problems}{7}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}The Fundamental Theorem of Calculus}{11}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Exercises: The Fundamental Theorem of Calculus Problems}{18}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Basic Antidifferentiation}{23}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Exercises: Basic Antidifferentiation Problems}{29}{subsection.1.3.1}
+\contentsline {section}{\numberline {1.4}Integration by Change of Variables or Substitution}{33}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Exercises: Integration by Change of Variables or Substitution Problems}{36}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.5}Integration using Computer Algebra}{39}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Exercises: Integration using Computer Algebra Problems}{47}{subsection.1.5.1}
+\contentsline {section}{\numberline {1.6}The Normal Distribution: An extended numeric example}{50}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Exercises: Normal Distribution Problems}{55}{subsection.1.6.1}
+\contentsline {section}{\numberline {1.7}Applications of the integral: Investment and depreciation}{59}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Exercises: Applications of the integral: Investment and depreciation Problems}{64}{subsection.1.7.1}
+\contentsline {section}{\numberline {1.8}Economics Applications of the Integral}{66}{section.1.8}
+\contentsline {subsection}{\numberline {1.8.1}Exercises: Business Applications of the Integral Problems}{74}{subsection.1.8.1}
+\contentsfinish 

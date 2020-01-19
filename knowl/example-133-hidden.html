@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:47-05:00    *-->
+<!--*    on 2020-01-19T10:07:35-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>In the United States, the height of men follows a normal distribution with a mean of 70 inches (5' 10") and a standard deviation of 3 inches.  I want to set up a specialty shop for men who are at least 6’ tall, but no more than 7' tall.  In an area with 100,000 adult men, how big is my potential market?</p>
+<body><article class="example example-like"><p>In the United States, the height of men follows a normal distribution with a mean of 70 inches (5' 10") and a standard deviation of 3 inches.  I want to set up a specialty shop for men who are at least 6’ tall, but no more than 7' tall.  In an area with 100,000 adult men, how big is my potential market?</p>
 <p><dfn class="terminology">Solution set up</dfn>.  My distribution function is \(\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^3}\right)\text{.}\) Since I have a population of 100,000 and am interested in the men who are between 72 and 84 inches tall, my potential market is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -63,11 +63,7 @@ upper\ bound\ in\ SD = (upper\ bound-mean)/(SD) = (84-70)/3 = 14/3.
 \end{equation*}
 </div>
 <p>becomes</p>
-<div class="displaymath">
-\begin{equation*}
-\text{100000*integrate(exp(-(x-70)^2/(2*3^2))/(3*sqrt(2*pi))) from 72 to 84.}
-\end{equation*}
-</div>
+<p>100000*integrate(exp(-(x-70)^2/(2*3^2))/(3*sqrt(2*pi))) from 72 to 84.</p>
 <p>We get our familiar answer of 25,249.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-6-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p>When we compute a target population, we sometimes want to include the tail of the distribution.  We might, for example be concerned with all women who are 5 feet tall or less.  This sets up an integral over an infinite interval, which we can’t do as a Riemann sum.  The first workaround notes that the tails are very small.  If all humans who have ever lived are normally distributed, less than 1 is more than 7 standard deviations from the mean.  Taking the integral down to -7 will practically be the same as integrating down to \(-\infty\text{.}\)  The second workaround uses the symmetry of the normal distribution.</p>

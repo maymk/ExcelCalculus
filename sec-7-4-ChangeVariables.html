@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:28-05:00    *-->
+<!--*    on 2020-01-19T10:07:16-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -152,67 +156,67 @@ var js_version = 0.11;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-7-4-ChangeVariables"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">7.4</span> <span class="title">Integration by Change of Variables or Substitution</span>
 </h2>
-<a href="sec-7-4-ChangeVariables.html" class="permalink">¶</a><p id="p-2822">At the end of the last section we warned that the symbolic integration techniques we have developed only work for problems that exactly fit our formulas.  When we tried integrating an exponential function where the exponent was a constant times t, we had to change the base to get a function with only t in the exponent.  We want to develop one more technique of integration, that of change of variables or substitution, to handle integrals that are pretty close to our stated rules. This technique is often called u-substitution and is related to the chain rule for differentiation.</p>
-<p id="p-2823">We start by exploring some examples where we can get the desired result by the guess and check technique.</p>
-<article class="example-like" id="power-of-linear"><a data-knowl="" class="id-ref" data-refid="hk-power-of-linear"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.4.1</span>. <span class="title">Power of a linear by guess and check.</span>
-</h6></a></article><div id="hk-power-of-linear" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2824">Find \(\int (3x+5)^7  dx\text{.}\)</p>
-<p id="p-2825"><dfn class="terminology">Solution</dfn>:  We could do this problem by rewriting the integrand as an explicit seventh degree polynomial and then using the power and sum rules, but that is too much work.  Instead I will notice the integrand looks almost like a power, and thus guess an answer of \(\frac{1}{8} (3x+5)^8+C\text{.}\)  I then check by differentiating.  Using the chain rule</p>
+<a href="sec-7-4-ChangeVariables.html" class="permalink">¶</a><p id="p-2821">At the end of the last section we warned that the symbolic integration techniques we have developed only work for problems that exactly fit our formulas.  When we tried integrating an exponential function where the exponent was a constant times t, we had to change the base to get a function with only t in the exponent.  We want to develop one more technique of integration, that of change of variables or substitution, to handle integrals that are pretty close to our stated rules. This technique is often called u-substitution and is related to the chain rule for differentiation.</p>
+<p id="p-2822">We start by exploring some examples where we can get the desired result by the guess and check technique.</p>
+<article class="example example-like" id="power-of-linear"><a data-knowl="" class="id-ref original" data-refid="hk-power-of-linear"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Power of a linear by guess and check.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-power-of-linear"><article class="example example-like"><p id="p-2823">Find \(\int (3x+5)^7  dx\text{.}\)</p>
+<p id="p-2824"><dfn class="terminology">Solution</dfn>:  We could do this problem by rewriting the integrand as an explicit seventh degree polynomial and then using the power and sum rules, but that is too much work.  Instead I will notice the integrand looks almost like a power, and thus guess an answer of \(\frac{1}{8} (3x+5)^8+C\text{.}\)  I then check by differentiating.  Using the chain rule</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{d}{dx}  (\frac{1}{8} (3x+5)^8+C)=\frac{1}{8}*8(3x+5)^{8-1}*3=3(3x+5)^7.
 \end{equation*}
-</div>. <p id="p-2826">Thus our guess was off by a factor of 3 and the correct antiderivative is</p>
+</div>. <p id="p-2825">Thus our guess was off by a factor of 3 and the correct antiderivative is</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{3}*1\frac{1}{8} (3x+5)^8+C=\frac{1}{24} (3x+5)^8+C.
 \end{equation*}
 </div></article></div>
-<p id="p-2827">We can easily use the same trick to produce a rule for powers of a linear polynomial.</p>
-<article class="example-like" id="example-122"><a data-knowl="" class="id-ref" data-refid="hk-example-122"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.4.2</span>. <span class="title">Power of a generic linear by guess and check.</span>
-</h6></a></article><div id="hk-example-122" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2828">Find \(\int (ax+b)^n  dx\text{.}\)</p>
-<p id="p-2829"><dfn class="terminology">Solution</dfn>:  As we did in example 1, we first guess the antiderivative to be \(\frac{1}{n+1} (ax+b)^{n+1}+C\text{.}\) We then take the derivative of that expression and obtain \(a(ax+b)^n\text{.}\)  This misses our integrand by a factor of \(a\text{.}\)  We adjust by that factor and find the antiderivative is \(\frac{1}{a}  \frac{1}{n+1} (ax+b)^{n+1}+C\text{.}\)</p></article></div>
-<p id="p-2830">We can easily use the same trick to produce a rule for functions that are the exponential of a linear function.</p>
-<article class="example-like" id="example-123"><a data-knowl="" class="id-ref" data-refid="hk-example-123"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.4.3</span>. <span class="title">Antidifferentiation of an exponential function by guess and check.</span>
-</h6></a></article><div id="hk-example-123" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2831">Find \(\int e^{ax+b}  dx\text{.}\)</p>
-<p id="p-2832"><dfn class="terminology">Solution</dfn>:  As we did in example 2, our first guess uses the basic rule without worrying about the linear term, so we guess \(e^{ax+b}+C\text{.}\) We then take the derivative of that expression and obtain \(ae^{ax+b}\text{.}\)  This misses our integrand by a factor of \(a\text{.}\)  We adjust by that factor and find the antiderivative is \(\frac{1}{a} e^{ax+b}+C\text{.}\)</p></article></div>
-<p id="p-2833">We run into a problem if we try to extend this method with quadratic terms.  If we start with \((x^2+5)^3\) and guess an antiderivative of \(\frac{1}{4} (x^2+5)^4\text{,}\) when we differentiate we get \((x^2+5)^3 2x\) and are off by a factor of \(8x\text{.}\)  However when we divide by that factor to get \(\frac{(x^2+5)^4}{8x}\) as a proposed antiderivative, and then differentiate again we get</p>
+<p id="p-2826">We can easily use the same trick to produce a rule for powers of a linear polynomial.</p>
+<article class="example example-like" id="example-122"><a data-knowl="" class="id-ref original" data-refid="hk-example-122"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Power of a generic linear by guess and check.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-122"><article class="example example-like"><p id="p-2827">Find \(\int (ax+b)^n  dx\text{.}\)</p>
+<p id="p-2828"><dfn class="terminology">Solution</dfn>:  As we did in example 1, we first guess the antiderivative to be \(\frac{1}{n+1} (ax+b)^{n+1}+C\text{.}\) We then take the derivative of that expression and obtain \(a(ax+b)^n\text{.}\)  This misses our integrand by a factor of \(a\text{.}\)  We adjust by that factor and find the antiderivative is \(\frac{1}{a}  \frac{1}{n+1} (ax+b)^{n+1}+C\text{.}\)</p></article></div>
+<p id="p-2829">We can easily use the same trick to produce a rule for functions that are the exponential of a linear function.</p>
+<article class="example example-like" id="example-123"><a data-knowl="" class="id-ref original" data-refid="hk-example-123"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Antidifferentiation of an exponential function by guess and check.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-123"><article class="example example-like"><p id="p-2830">Find \(\int e^{ax+b}  dx\text{.}\)</p>
+<p id="p-2831"><dfn class="terminology">Solution</dfn>:  As we did in example 2, our first guess uses the basic rule without worrying about the linear term, so we guess \(e^{ax+b}+C\text{.}\) We then take the derivative of that expression and obtain \(ae^{ax+b}\text{.}\)  This misses our integrand by a factor of \(a\text{.}\)  We adjust by that factor and find the antiderivative is \(\frac{1}{a} e^{ax+b}+C\text{.}\)</p></article></div>
+<p id="p-2832">We run into a problem if we try to extend this method with quadratic terms.  If we start with \((x^2+5)^3\) and guess an antiderivative of \(\frac{1}{4} (x^2+5)^4\text{,}\) when we differentiate we get \((x^2+5)^3 2x\) and are off by a factor of \(8x\text{.}\)  However when we divide by that factor to get \(\frac{(x^2+5)^4}{8x}\) as a proposed antiderivative, and then differentiate again we get</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{4*2x(x^2+5)^3*8x-(x^2+5)^4*8}{8x}
 \end{equation*}
 </div>
-<p id="p-2834">which is not what we want.  The key is to start by recalling the chain rule</p>
+<p id="p-2833">which is not what we want.  The key is to start by recalling the chain rule</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{d}{dx}  (f(g(x)))=f'(g(x))g'(x).
 \end{equation*}
 </div>
-<p id="p-2835">We want to use the same rule with a different notation, using implicit differentiation and a new variable \(u\text{:}\)</p>
+<p id="p-2834">We want to use the same rule with a different notation, using implicit differentiation and a new variable \(u\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{d}{dx}  (f(u))=f'(u)\frac{du}{dx}.
 \end{equation*}
 </div>
-<p id="p-2836">By the fundamental theorem of calculus, we can convert this to an integration formula:</p>
+<p id="p-2835">By the fundamental theorem of calculus, we can convert this to an integration formula:</p>
 <div class="displaymath">
 \begin{equation*}
 \int f' (u)  \frac{du}{dx}  dx=f(u)+C.
 \end{equation*}
 </div>
-<p id="p-2837">We will generally simplify \(\frac{du}{dx} dx\) to \(du\text{,}\) so our substitution rule is</p>
+<p id="p-2836">We will generally simplify \(\frac{du}{dx} dx\) to \(du\text{,}\) so our substitution rule is</p>
 <div class="displaymath">
 \begin{equation*}
 \int f' (u)du=f(u)+C.
 \end{equation*}
 </div>
-<p id="p-2838">Let us rework some earlier examples with this method and then illustrate the method with a more difficult problem.</p>
-<article class="example-like" id="example-124"><a data-knowl="" class="id-ref" data-refid="hk-example-124"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.4.4</span>. <span class="title">Power of linear example redone with change of variables.</span>
-</h6></a></article><div id="hk-example-124" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2839">Find \(\int (3x+5)^7 dx\text{.}\)</p>
-<p id="p-2840"><dfn class="terminology">Solution</dfn>:  The obvious candidate for \(u\) is \(3x+5\text{.}\)  Then \(du=3dx\text{.}\)  Thus</p>
+<p id="p-2837">Let us rework some earlier examples with this method and then illustrate the method with a more difficult problem.</p>
+<article class="example example-like" id="example-124"><a data-knowl="" class="id-ref original" data-refid="hk-example-124"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Power of linear example redone with change of variables.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-124"><article class="example example-like"><p id="p-2838">Find \(\int (3x+5)^7 dx\text{.}\)</p>
+<p id="p-2839"><dfn class="terminology">Solution</dfn>:  The obvious candidate for \(u\) is \(3x+5\text{.}\)  Then \(du=3dx\text{.}\)  Thus</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}  \int (3x+5)^7  dx
@@ -227,11 +231,11 @@ var js_version = 0.11;
 \end{aligned}
 \end{equation*}
 </div></article></div>
-<p id="p-2841">This is easy to generalize for a power of a linear term.</p>
-<article class="example-like" id="example-125"><a data-knowl="" class="id-ref" data-refid="hk-example-125"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.4.5</span>. <span class="title">Power of generic linear example redone with change of variables.</span>
-</h6></a></article><div id="hk-example-125" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2842">Find \(\int (ax+b)^n dx\text{.}\)</p>
-<p id="p-2843"><dfn class="terminology">Solution</dfn>:  The obvious candidate for \(u\) is \(ax+b\text{.}\)  Then \(du=a dx\text{.}\)  Hence</p>
+<p id="p-2840">This is easy to generalize for a power of a linear term.</p>
+<article class="example example-like" id="example-125"><a data-knowl="" class="id-ref original" data-refid="hk-example-125"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Power of generic linear example redone with change of variables.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-125"><article class="example example-like"><p id="p-2841">Find \(\int (ax+b)^n dx\text{.}\)</p>
+<p id="p-2842"><dfn class="terminology">Solution</dfn>:  The obvious candidate for \(u\) is \(ax+b\text{.}\)  Then \(du=a dx\text{.}\)  Hence</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}  \int (ax+b)^n dx
@@ -246,11 +250,11 @@ var js_version = 0.11;
 \end{aligned}
 \end{equation*}
 </div></article></div>
-<p id="p-2844">To use this method with u replacing something more complicated than a linear term, we need to have \(du\) available, with the possible addition of multiplying by a scalar constant.</p>
-<article class="example-like" id="example-126"><a data-knowl="" class="id-ref" data-refid="hk-example-126"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.4.6</span>. <span class="title">Power of quadratic function with change of variables.</span>
-</h6></a></article><div id="hk-example-126" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2845">Find \(\int (2x^3+11)^7 x^2 dx\text{.}\)</p>
-<p id="p-2846"><dfn class="terminology">Solution</dfn>:  The obvious candidate for \(u\) is \(2x^3+11\text{.}\)  Then \(du=6x^2d\)x.  Thus</p>
+<p id="p-2843">To use this method with u replacing something more complicated than a linear term, we need to have \(du\) available, with the possible addition of multiplying by a scalar constant.</p>
+<article class="example example-like" id="example-126"><a data-knowl="" class="id-ref original" data-refid="hk-example-126"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Power of quadratic function with change of variables.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-126"><article class="example example-like"><p id="p-2844">Find \(\int (2x^3+11)^7 x^2 dx\text{.}\)</p>
+<p id="p-2845"><dfn class="terminology">Solution</dfn>:  The obvious candidate for \(u\) is \(2x^3+11\text{.}\)  Then \(du=6x^2d\)x.  Thus</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}  \int (2x^3+11)^7 x^2 dx
@@ -265,13 +269,13 @@ var js_version = 0.11;
 \end{aligned}
 \end{equation*}
 </div></article></div>
-<p id="p-2847">By convention, \(u\) is often used the new variable used with this change of variables technique, so the technique is often called u-substitution.</p>
-<p id="p-2848"><dfn class="terminology">Change of variables for definite integrals</dfn></p>
-<p id="p-2849">In the definite integral, we understand that a and b are the \(x\)-values of the ends of the integral.  We could be more explicit and write \(x=a\) and \(x=b\text{.}\)  The last step in solving a definite integral is to substitute the endpoints back into the antiderivative we have found.  We can either change the variables for the endpoints as well, or we can convert the antiderivative back to the original variables before substituting.  Consider the following example.</p>
-<article class="example-like" id="example-127"><a data-knowl="" class="id-ref" data-refid="hk-example-127"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.4.7</span>. <span class="title">A definite integral with change of variables.</span>
-</h6></a></article><div id="hk-example-127" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2850">Evaluate \(\int_1^3 e^{2x+5} dx\text{.}\)</p>
-<p id="p-2851"><dfn class="terminology">Solution 1</dfn>:  (Convert everything to \(u\text{.}\)) The obvious candidate for \(u\) is \(2x+5\text{.}\)  Then    \(du=2dx\text{.}\)  For the lower endpoint, \(x=1\) becomes \(u=7\text{.}\)  For the upper endpoint \(x=3\) becomes \(u=11\text{.}\)  Substituting,</p>
+<p id="p-2846">By convention, \(u\) is often used the new variable used with this change of variables technique, so the technique is often called u-substitution.</p>
+<p id="p-2847"><dfn class="terminology">Change of variables for definite integrals</dfn></p>
+<p id="p-2848">In the definite integral, we understand that a and b are the \(x\)-values of the ends of the integral.  We could be more explicit and write \(x=a\) and \(x=b\text{.}\)  The last step in solving a definite integral is to substitute the endpoints back into the antiderivative we have found.  We can either change the variables for the endpoints as well, or we can convert the antiderivative back to the original variables before substituting.  Consider the following example.</p>
+<article class="example example-like" id="example-127"><a data-knowl="" class="id-ref original" data-refid="hk-example-127"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">A definite integral with change of variables.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-127"><article class="example example-like"><p id="p-2849">Evaluate \(\int_1^3 e^{2x+5} dx\text{.}\)</p>
+<p id="p-2850"><dfn class="terminology">Solution 1</dfn>:  (Convert everything to \(u\text{.}\)) The obvious candidate for \(u\) is \(2x+5\text{.}\)  Then    \(du=2dx\text{.}\)  For the lower endpoint, \(x=1\) becomes \(u=7\text{.}\)  For the upper endpoint \(x=3\) becomes \(u=11\text{.}\)  Substituting,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}  \int_1^3 e^{2x+5} dx
@@ -286,7 +290,7 @@ var js_version = 0.11;
 \end{aligned}
 \end{equation*}
 </div>
-<p id="p-2852"><dfn class="terminology">Solution 2</dfn>:  (Keeping, but labeling the endpoints.) We have the same u and du, but do not convert the endpoints.  To reduce confusion we make sure to label the variable when we are using both \(x\) and \(u\text{.}\)  Thus,</p>
+<p id="p-2851"><dfn class="terminology">Solution 2</dfn>:  (Keeping, but labeling the endpoints.) We have the same u and du, but do not convert the endpoints.  To reduce confusion we make sure to label the variable when we are using both \(x\) and \(u\text{.}\)  Thus,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}  \int_1^3 e^{2x+5} dx
@@ -303,38 +307,38 @@ var js_version = 0.11;
 \end{aligned}
 \end{equation*}
 </div></article></div>
-<p id="p-2853">It should be noted that when we change variables we may find ourselves looking at an integral from \(a\) to \(b\) where the \(b \lt a\text{.}\)  We do not change the order of the endpoints.</p>
-<article class="example-like" id="example-128"><a data-knowl="" class="id-ref" data-refid="hk-example-128"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.4.8</span>. <span class="title">A second definite integral with change of variables.</span>
-</h6></a></article><div id="hk-example-128" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2854">Evaluate \(\int_{-2}^1 x \exp(x^2)d\)x</p>
-<p id="p-2855"><dfn class="terminology">Solution</dfn>: (Convert everything to \(u\text{.}\)) The obvious candidate for \(u\) is \(x^2\text{.}\)  Then \(du=2 dx\text{.}\) For the lower endpoint, \(x=-2\) becomes \(u=4\text{.}\)  For the upper endpoint \(x=1\) becomes \(u=1\text{.}\) Substituting,</p>
+<p id="p-2852">It should be noted that when we change variables we may find ourselves looking at an integral from \(a\) to \(b\) where the \(b \lt a\text{.}\)  We do not change the order of the endpoints.</p>
+<article class="example example-like" id="example-128"><a data-knowl="" class="id-ref original" data-refid="hk-example-128"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">A second definite integral with change of variables.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-128"><article class="example example-like"><p id="p-2853">Evaluate \(\int_{-2}^1 x \exp(x^2)dx\)</p>
+<p id="p-2854"><dfn class="terminology">Solution</dfn>: (Convert everything to \(u\text{.}\)) The obvious candidate for \(u\) is \(x^2\text{.}\)  Then \(du=2x\  dx\text{.}\) For the lower endpoint, \(x=-2\) becomes \(u=4\text{.}\)  For the upper endpoint \(x=1\) becomes \(u=1\text{.}\) Substituting,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}  \int_{-2}^1 x e^{(x^2)}dx
 \amp =\frac{1}{2} \int_{-2}^1 e^{(x^2)}(2x dx)
 \amp \quad \hbox{ (Make u and du explicit.)}\\ 
-\amp =\frac{1}{2} \int_{1}^{4}e^u du
+\amp =\frac{1}{2} \int_{4}^{1}e^u du
 \amp \quad \hbox{ (Do the substitution.)}\\ 
-\amp =\left.\frac{1}{2} e^u\right|_1^{4}
+\amp =\left.\frac{1}{2} e^u\right|_4^{1}
 \amp \quad \hbox{ (Find the antiderivative.)}\\ 
-\amp =\frac{1}{2}  e^4-\frac{1}{2} e^1.
+\amp =\frac{1}{2}  e^1-\frac{1}{2} e^4.
 \amp \quad \hbox{ (Evaluate.)}\\ 
 \end{aligned}
 \end{equation*}
 </div></article></div>
 <section class="exercises" id="exercises-set-sec-7-4"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Integration by Change of Variables or Substitution Problems</span>
+<span class="type">Exercises</span> <span class="codenumber">7.4.1</span> <span class="title">Exercises: Integration by Change of Variables or Substitution Problems</span>
 </h3>
-<a href="sec-7-4-ChangeVariables.html#exercises-set-sec-7-4" class="permalink">¶</a><p id="p-2856">Evaluate the following integrals.  In each case identify the term that will be treated as u.</p>
-<article class="exercise-like" id="exercise-469"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<a href="sec-7-4-ChangeVariables.html#exercises-set-sec-7-4" class="permalink">¶</a><p id="p-2855">Evaluate the following integrals.  In each case identify the term that will be treated as u.</p>
+<article class="exercise exercise-like" id="exercise-469"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int (5x+3)^4  dx
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-238" id="solution-238"><span class="type">Solution</span></a><div id="hk-solution-238" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2857">Let \(u=5x+3\text{.}\)  Then \(du=5dx\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-238" id="solution-238"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-238"><div class="solution solution-like">
+<p id="p-2856">Let \(u=5x+3\text{.}\)  Then \(du=5dx\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int (5x+3)^4  dx=\int \frac{(u)^4  du}{5}=\frac{u^5}{25} +c
@@ -342,20 +346,20 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-470"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-470"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int (7x-9)^{11}  dx
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-471"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-471"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int (x/5-2)^{2/3}  dx
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-239" id="solution-239"><span class="type">Solution</span></a><div id="hk-solution-239" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2858">Let \(u=x/5-2\text{.}\)  Then \(du=dx/5\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-239" id="solution-239"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-239"><div class="solution solution-like">
+<p id="p-2857">Let \(u=x/5-2\text{.}\)  Then \(du=dx/5\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int (x/5-2)^{2/3}  dx=5\int {u^{2/3}  du}=3{u^{5/3}}+c
@@ -363,20 +367,20 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-472"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-472"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int (143567x+98736)^{2578965}  dx 
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-473"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-473"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int \sqrt{(8x-3)}  dx
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-240" id="solution-240"><span class="type">Solution</span></a><div id="hk-solution-240" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2859">Let \(u=8x-3\text{.}\)  Then \(du=8dx\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-240" id="solution-240"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-240"><div class="solution solution-like">
+<p id="p-2858">Let \(u=8x-3\text{.}\)  Then \(du=8dx\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int (8x-3)^{1/2}  dx=1/8 \int {u^{1/2}  du}=\frac{1}{12}{u^{3/2}}+c
@@ -384,20 +388,20 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-474"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-474"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int \frac{1}{\sqrt{3x+7}}  dx 
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-475"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-475"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int 100e^{.06t-5}  dt
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-241" id="solution-241"><span class="type">Solution</span></a><div id="hk-solution-241" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2860">Let \(u=0.06t-5\text{.}\)  Then \(du=0.06dt\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-241" id="solution-241"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-241"><div class="solution solution-like">
+<p id="p-2859">Let \(u=0.06t-5\text{.}\)  Then \(du=0.06dt\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int 100 e^{0.06t-5}dt
@@ -406,20 +410,20 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-476"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-476"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int 150(1/2)^{t/5}  dt
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-477"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-477"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int (2x+5) (x^2+5x+3)^5  dx 
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-242" id="solution-242"><span class="type">Solution</span></a><div id="hk-solution-242" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2861">Let \(u=x^2+5x+3\text{.}\)  Then \(du=(2x+5)dx\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-242" id="solution-242"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-242"><div class="solution solution-like">
+<p id="p-2860">Let \(u=x^2+5x+3\text{.}\)  Then \(du=(2x+5)dx\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int (2x+5) (x^2+5x+3)^5  dx=\int u^5\ du
@@ -432,20 +436,20 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-478"><h6 class="heading"><span class="codenumber">10.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-478"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int 50xe^{-x^2 }  dx
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-479"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-479"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int \frac{3x^2+1}{x^3+x+9} dx 
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-243" id="solution-243"><span class="type">Solution</span></a><div id="hk-solution-243" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2862">Let \(u=x^3+x+9\text{.}\)  Then \(du=(3x^2+1)dx\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-243" id="solution-243"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-243"><div class="solution solution-like">
+<p id="p-2861">Let \(u=x^3+x+9\text{.}\)  Then \(du=(3x^2+1)dx\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int \frac{3x^2+1}{x^3+x+9} dx=\int \frac{du}{u}
@@ -458,20 +462,20 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-480"><h6 class="heading"><span class="codenumber">12.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-480"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int x\sqrt{x^2-9}  dx
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-481"><h6 class="heading"><span class="codenumber">13.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-481"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int_0^3 e^{3x+1} dx
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-244" id="solution-244"><span class="type">Solution</span></a><div id="hk-solution-244" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2863">Let \(u=3x+1\text{.}\)  Then \(du=3dx\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-244" id="solution-244"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-244"><div class="solution solution-like">
+<p id="p-2862">Let \(u=3x+1\text{.}\)  Then \(du=3dx\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^3 e^{3x+1} dx=\int_{u=1}^{u=10} e^u \ du
@@ -484,20 +488,20 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-482"><h6 class="heading"><span class="codenumber">14.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-482"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int_0^10 100e^{-0.04t} dt 
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-483"><h6 class="heading"><span class="codenumber">15.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-483"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int_0^5 e^{(-0.05(t+1))} dt 
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-245" id="solution-245"><span class="type">Solution</span></a><div id="hk-solution-245" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2864">Let \(u=-0.05(t+1)\text{.}\)  Then \(du=-0.05dt\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-245" id="solution-245"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-245"><div class="solution solution-like">
+<p id="p-2863">Let \(u=-0.05(t+1)\text{.}\)  Then \(du=-0.05dt\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^5 e^{-0.05(t+1)} dt=-frac{1}{0.05}\int_{u=-0.05}^{u=-0.3} e^u \ du
@@ -510,20 +514,20 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-484"><h6 class="heading"><span class="codenumber">16.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-484"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int_1^3 (2x+5)^{-2} dx
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-485"><h6 class="heading"><span class="codenumber">17.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-485"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int_1^6 x\sqrt{3x^2+7} dx 
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-246" id="solution-246"><span class="type">Solution</span></a><div id="hk-solution-246" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2865">Let \(u=3x^2+7\text{.}\)  Then \(du=6x\ dx\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-246" id="solution-246"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-246"><div class="solution solution-like">
+<p id="p-2864">Let \(u=3x^2+7\text{.}\)  Then \(du=6x\ dx\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int_1^6 x(3x^2+7)^{1/2} dx=\frac{1}{6}\int_{u=10}^{u=115} u^{1/2} \ du
@@ -536,16 +540,16 @@ var js_version = 0.11;
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-486"><h6 class="heading"><span class="codenumber">18.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-486"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 \int_0^2 x^2 e^{(1-0.2x^3)} dx 
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-487"><h6 class="heading"><span class="codenumber">19.</span></h6>
-<p id="p-2866">Find an antiderivative \(F(x)\) for \(f(x)=x^2(x^3+7)^3\) such that \(F(0)=5\text{.}\)</p>
+</div></article><article class="exercise exercise-like" id="exercise-487"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-2865">Find an antiderivative \(F(x)\) for \(f(x)=x^2(x^3+7)^3\) such that \(F(0)=5\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-247" id="solution-247"><span class="type">Solution</span></a><div id="hk-solution-247" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-2867">Let \(u=x^3+7\text{.}\)  Then \(du=6x^2 dx\text{.}\)</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-247" id="solution-247"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-247"><div class="solution solution-like">
+<p id="p-2866">Let \(u=x^3+7\text{.}\)  Then \(du=6x^2 dx\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \int (x^2 ) (x^3+7)^3 dx=\frac{1}{6} \int u^3 du=\frac{u^4}{24}+c=\frac{(x^3+7)^4}{24}+c
@@ -567,11 +571,11 @@ F(x)=\frac{(x^3+7)^4}{24}+5-\frac{(7)^4}{24}
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-488"><h6 class="heading"><span class="codenumber">20.</span></h6>
-<p id="p-2868">Find an antiderivative \(F(x)\)  for \(f(x)=(4x^3+5)\exp(x^4+5x-9)\) such that \(F(0)=2\text{.}\)</p></article><article class="exercise-like" id="exercise-489"><h6 class="heading"><span class="codenumber">21.</span></h6>
-<p id="p-2869">An investment stream pays out at a rate of $10,000 per year.  In computing present value, I assume an investment return rate of 5% compounded continuously.  What is the present value of the first 10 years of the payout?</p>
+</div></article><article class="exercise exercise-like" id="exercise-488"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-2867">Find an antiderivative \(F(x)\)  for \(f(x)=(4x^3+5)\exp(x^4+5x-9)\) such that \(F(0)=2\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-489"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-2868">An investment stream pays out at a rate of $10,000 per year.  In computing present value, I assume an investment return rate of 5% compounded continuously.  What is the present value of the first 10 years of the payout?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-248" id="solution-248"><span class="type">Solution</span></a><div id="hk-solution-248" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-248" id="solution-248"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-248"><div class="solution solution-like">
 <div class="displaymath">
 \begin{equation*}
 Value=\int_0^{10}10000e^{-0.05t} dt
@@ -585,18 +589,18 @@ Value=\int_0^{10}10000e^{-0.05t} dt
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-490"><h6 class="heading"><span class="codenumber">22.</span></h6>
-<p id="p-2870">My gas well is returning a payout of  $10,000.  The well output is expected to decay exponentially with half as much output in 7 years.  How much do I make over the next 10 years?</p></article><article class="exercise-like" id="exercise-491"><h6 class="heading"><span class="codenumber">23.</span></h6>
-<p id="p-2871">The sales rate on a book is \(s(t)=1000t \exp(-t^2/4)\text{,}\) with time in years.</p>
+</div></article><article class="exercise exercise-like" id="exercise-490"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-2869">My gas well is returning a payout of  $10,000.  The well output is expected to decay exponentially with half as much output in 7 years.  How much do I make over the next 10 years?</p></article><article class="exercise exercise-like" id="exercise-491"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-2870">The sales rate on a book is \(s(t)=1000t \exp(-t^2/4)\text{,}\) with time in years.</p>
 <ol class="lower-alpha">
-<li id="li-762"><p id="p-2872">What are the total sales over 10 years?</p></li>
-<li id="li-763"><p id="p-2873">When does the sales rate drop to 10?</p></li>
-<li id="li-764"><p id="p-2874">What is the maximum sales rate?</p></li>
+<li id="li-762"><p id="p-2871">What are the total sales over 10 years?</p></li>
+<li id="li-763"><p id="p-2872">When does the sales rate drop to 10?</p></li>
+<li id="li-764"><p id="p-2873">What is the maximum sales rate?</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-249" id="solution-249"><span class="type">Solution</span></a><div id="hk-solution-249" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-249" id="solution-249"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-249"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-765">
-<p id="p-2875">Let \(u=-\frac{t^2}{4}\text{.}\)  Then \(du=-\frac{t}{2} dt\text{.}\)</p>
+<p id="p-2874">Let \(u=-\frac{t^2}{4}\text{.}\)  Then \(du=-\frac{t}{2} dt\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 Sales=\int_0^{10} 1000t e^{-t^2/4}dt=\int_0^{-25}-2000 e^u\ du
@@ -621,17 +625,17 @@ t\approx 5.0028
 \end{equation*}
 </div>
 </li>
-<li id="li-767"><p id="p-2876">At \(t=1.454\text{,}\) sales are approximately 857.4</p></li>
+<li id="li-767"><p id="p-2875">At \(t=1.454\text{,}\) sales are approximately 857.4</p></li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-492"><h6 class="heading"><span class="codenumber">24.</span></h6>
-<p id="p-2877">The marginal profit on an item is \(Mp(q)=\frac{(100q)}{(q^2+1)}-2\text{,}\) measured in thousands of dollars per thousands of units.</p>
+</div></article><article class="exercise exercise-like" id="exercise-492"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-2876">The marginal profit on an item is \(Mp(q)=\frac{(100q)}{(q^2+1)}-2\text{,}\) measured in thousands of dollars per thousands of units.</p>
 <ol class="lower-alpha">
-<li id="li-768"><p id="p-2878">How much should I produce to maximize profits?</p></li>
-<li id="li-769"><p id="p-2879">What is my profit function if my start up cost is $60,000?</p></li>
-<li id="li-770"><p id="p-2880">What is the maximum profit?</p></li>
-</ol></article>  </section></section></div></main>
+<li id="li-768"><p id="p-2877">How much should I produce to maximize profits?</p></li>
+<li id="li-769"><p id="p-2878">What is my profit function if my start up cost is $60,000?</p></li>
+<li id="li-770"><p id="p-2879">What is the maximum profit?</p></li>
+</ol></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:22-05:00    *-->
+<!--*    on 2020-01-19T10:07:11-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -194,7 +198,7 @@ var js_version = 0.11;
 <p id="p-251">Next we want to compute the number of shares for each stock.  This is 10 times the closing price of Google divided by the closing price of the stock we selected.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-10ShareAjustments.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-252">In the formula for the number of shares of MSFT, we used $B$3 for the initial price of GOOG.  This is an absolute cell reference.  When we copy the formula from cell C1 to cell D1, the new formula is =10*$B$3/D3.  This formula in cell D1 asks for 10 times the value in cell B3, divided by the value in the 2 rows below the cell of the formula.</p>
-<article class="assemblage-like" id="assemblage-8"><p id="p-253"><dfn class="terminology">Absolute references</dfn> refer to a particular column and/or row.  The dollar sign '$' is used to fix the reference.</p>
+<article class="assemblage assemblage-like" id="assemblage-8"><p id="p-253"><dfn class="terminology">Absolute references</dfn> refer to a particular column and/or row.  The dollar sign '$' is used to fix the reference.</p>
 <p id="p-254"><dfn class="terminology">Relative references</dfn> refer to the cell the same distance away from the cell containing the formula.</p></article><p id="p-255">We continue our example by computing the change in value of our GOOG portfolio in the first month.  That will be the share price at the beginning of the next month minus the share price at the beginning of the month, times the number of shares.  For January 2009, for GOOG this becomes =(B4-B3)*B$1.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-11.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-256">Since we have properly used relative and absolute references, we can now copy this formula to complete the chart, and Excel will modify the formula appropriately.</p>
@@ -205,7 +209,7 @@ var js_version = 0.11;
 <p id="p-259"><dfn class="terminology">Note</dfn>: Excel can also make references across multiple pages of a workbook, but we will not need that capability for htis course.</p>
 <p id="p-260"><dfn class="terminology">Named Cell References</dfn></p>
 <p id="p-261">An alternative to using absolute references in formulas is to name the cells.</p>
-<article class="assemblage-like" id="assemblage-9"><p id="p-262">By default, Excel names each cell by its row and column.  We can use the name cell in the upper left corner of the Excel sheet to change the name from the letter/number format into a descriptive name.</p></article><p id="p-263">The more descriptive name can be useful when constructing and documenting the process we are using for our computations.  Consider the previous example with the rich uncle.  In cells B1, C1, and D1, we had the number of shares of Google, Microsoft, and Apple we could have had in the portfolio.  Better names for those cells would then be SharesGOOG, SharesMSFT, and SharesAAPL.  We can name a cell by editing the name box at the left side of the formula bar.</p>
+<article class="assemblage assemblage-like" id="assemblage-9"><p id="p-262">By default, Excel names each cell by its row and column.  We can use the name cell in the upper left corner of the Excel sheet to change the name from the letter/number format into a descriptive name.</p></article><p id="p-263">The more descriptive name can be useful when constructing and documenting the process we are using for our computations.  Consider the previous example with the rich uncle.  In cells B1, C1, and D1, we had the number of shares of Google, Microsoft, and Apple we could have had in the portfolio.  Better names for those cells would then be SharesGOOG, SharesMSFT, and SharesAAPL.  We can name a cell by editing the name box at the left side of the formula bar.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-14.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-264">We can then use the names in formulas.  In general, the formulas with nicely named variables are easier to read.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-15.png" style="width: 100%; height: auto;" alt=""></div></div></div>
@@ -229,12 +233,12 @@ var js_version = 0.11;
 <li id="li-92"><p id="p-278">Excel has a number of very useful operations on collections of numbers.  We start with easy ones where the name is self explanatory, like SUM, AVERAGE, COUNT, MIN, and MAX.</p></li>
 </ul>
 <section class="exercises" id="exercises-set-sec-1-3"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises Introduction to Excel Spreadsheets</span>
+<span class="type">Exercises</span> <span class="codenumber">1.3.1</span> <span class="title">Exercises Introduction to Excel Spreadsheets</span>
 </h3>
-<a href="sec-1-3-IntroExcelSpreadsheets.html#exercises-set-sec-1-3" class="permalink">¶</a><article class="exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<a href="sec-1-3-IntroExcelSpreadsheets.html#exercises-set-sec-1-3" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-279">Produce a spreadsheet where the first 100 rows are used.  The cell in row n and column A should have value n.  The cell in row n and column B should have value 2*n.  You should be able to do this by typing in the value of 4 cells and using quick fill.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span></a><div id="hk-solution-22" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
 <p id="p-280">The formulas entered should look like this:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-281">Once we quickfill and have the regular view (not showing the formulas)</p>
@@ -245,25 +249,25 @@ var js_version = 0.11;
 <li id="li-95"><p id="p-284">If you want to check the formulas used you go to the “Formula” menu and choose “Show formulas”. This feature is good for debugging any problem that may happen.</p></li>
 </ul>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">2.</span></h6>
-<p id="p-285">Produce a spreadsheet where the first 100 rows are used.  Column A should contain the first 100 odd numbers.  Column B should contain multiples of 7 starting with 21.</p></article><article class="exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-285">Produce a spreadsheet where the first 100 rows are used.  Column A should contain the first 100 odd numbers.  Column B should contain multiples of 7 starting with 21.</p></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-286">Start with the worksheet given.  Complete the worksheet in such a way that if the values of x, y, and z are changed, the other values are automatically recomputed. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-e1.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span></a><div id="hk-solution-23" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
 <p id="p-287">We do not need to use absolute references in this case, but when we are computing something involving the \(x\text{,}\) \(y\) and \(z\) values we should refer to cells B1, B2, and B3 respectively.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-sol3b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-288">The spreadsheet should have entries as shown above.</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">4.</span></h6>
-<p id="p-289">Produce a spreadsheet where the first 101 rows are used.  Row 1 should be used for labels. Column A should contain integers from 1 to 100.  Columns B through F should contain the squares, cubes, square roots, logs base 10 and natural logs of the entries in columns A.</p></article><article class="exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-289">Produce a spreadsheet where the first 101 rows are used.  Row 1 should be used for labels. Column A should contain integers from 1 to 100.  Columns B through F should contain the squares, cubes, square roots, logs base 10 and natural logs of the entries in columns A.</p></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-290">Start with the spreadsheet section below. <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-e2.png" style="width: 100%; height: auto;" alt=""></div></div></div> If column E is copied and pasted into column G, give both the formula and value for each non-empty cell in column G.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span></a><div id="hk-solution-24" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
 <p id="p-291">Any entry that is absolute (with a $) will be fixed. The relative references (without the $) will change all the Bs to Ds because we moved over 2 columns.</p>
 <p id="p-292">Formulas <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-293">Entries <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-sol5b.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-294">We would like to really understand what happens when we use quick fill.</p>
 <ol class="upper-alpha">
 <li id="li-96">
@@ -271,21 +275,21 @@ var js_version = 0.11;
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-e3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 </li>
 <li id="li-97"><p id="p-296">Next, we can set up the values in column D. Do quick fill to fill in the 3 columns to the right? Explain the pattern of values we see. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-e4.png" style="width: 100%; height: auto;" alt=""></div></div></div></p></li>
-</ol></article><article class="exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-297">Complete the spreadsheet section below so that columns A through C are complete for numbers 1 to 100.  (The value for a should be a random number generated by the formula in cell E1.) <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-e5.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span></a><div id="hk-solution-25" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like">
 <p id="p-298">The random number will differ from person to person, but the Excel entries are as follows. Note that we need to use an absolute reference for the value of a !</p>
 <p id="p-299">Formulas <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-300">The entry in C2 could also have been given as =A2^2+$E$1.</p>
 <p id="p-301">Just E$1 will work as well. We are filling down so we really need to fix the row in this case.</p>
 <p id="p-302">In this version the random number settled on -6 (yours is likely different) and the first part of the table looks as follows. The actual answer has all 100 rows completed. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-sol7b.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-303">Using the help functions to check syntax, write a formula for cell B2, that looks at the value for cell A2, and if it is negative, returns the square of it, and if positive returns its square root.</p></article><article class="exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-303">Using the help functions to check syntax, write a formula for cell B2, that looks at the value for cell A2, and if it is negative, returns the square of it, and if positive returns its square root.</p></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-304">Using your favorite source on the web create a spreadsheet that has the closing price of your favorite stock on the first day of the month for the past 5 years.  Compute the change in adjusted stock price for each month and identify which month had the greatest increase. (<a class="external" href="http://finance.yahoo.com/" target="_blank">http://finance.yahoo.com/</a>) is one source for such data.)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span></a><div id="hk-solution-26" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like">
 <p id="p-305">For example if we type in Coca-Cola we get to “The Coca-Cola Company (KO)”</p>
 <p id="p-306">From the menu on the left choose “Historical Prices” and pull the monthly data from the past 5 years. Then scroll down and download to spreadsheet.</p>
 <p id="p-307">Using the Adjusted close we compute the change: <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-3-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
@@ -293,11 +297,11 @@ var js_version = 0.11;
 <p id="p-309">Using the MAX function for this data the biggest change is $3.39.</p>
 <p id="p-310">Finding the month can be done by inspection as this point (there are more sophisticated ways to do this, but that requires rather advanced Excel commands). In this instance the greatest change took place in December 2013.</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">10.</span></h6>
-<p id="p-311">Using your favorite source on the web create a spreadsheet that has the closing price of your favorite stock on the first day of the month for the past 5 years.  Compute the percentage change in adjusted stock price for each month and identify which month had the greatest increase.</p></article><article class="exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-311">Using your favorite source on the web create a spreadsheet that has the closing price of your favorite stock on the first day of the month for the past 5 years.  Compute the percentage change in adjusted stock price for each month and identify which month had the greatest increase.</p></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-312">Create a spreadsheet showing the Consumer Price Index by month from 1930-2010.  (Good sources are <a class="external" href="http://inflationdata.com/" target="_blank">http://inflationdata.com/</a> and <a class="external" href="http://www.bls.gov/cpi/" target="_blank">http://www.bls.gov/cpi/</a> at the Bureau of Labor Statistics.)  Compute the percentage change between January and July for each year.  Which year had the greatest percentage change in the first half of the year?</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

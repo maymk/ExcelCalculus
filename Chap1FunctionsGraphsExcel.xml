@@ -112,7 +112,7 @@ Recall, that the slope of a line through the points <m>P_0=(q_0,p_0)</m> and <m>
               		<sidebyside width="100%" >
                 <tabular>
                     <row>
-                        <cell><m>a p+b q+c=0</m></cell>
+                        <cell><m>a q+b p+c=0</m></cell>
                         <cell> The general form of a line</cell>
                      </row>
                     <row>
@@ -162,7 +162,7 @@ And finally the general form will be another exercise in algebra. We clear the f
 <p>In this example <m>m = 11</m> and <m>b = 400</m>, hence the equation of the line is
 <me>C=11 q+400</me></p>
 <p>b) Using the equation form part a) we see that the cost of producing 200 widgets is
-<me>C=11 (200)+400=$2,600</me>
+<me>C=11 (200)+400=\$2,600</me>
 </p></example>
 
 <example><title>A nonlinear function</title><p>
@@ -1193,7 +1193,7 @@ With the values of the cells filled in we highlight the cells we want to graph (
             </sidebyside> 
 </example>
 
-<example><title>Controlling the viewing window</title><p> graphing <m>y=x^2 - 6 x</m> as an example of <m>y = a x^2 + b x + c</m> over the domain <m>-10 \le x \le 10</m>, but with the ability to easily chance the domain of the graph.</p>
+<example><title>Controlling the viewing window</title><p> graphing <m>y=x^2 - 6 x</m> as an example of <m>y = a x^2 + b x + c</m> over the domain <m>-10 \le x \le 10</m>, but with the ability to easily change the domain of the graph.</p>
 
 <p>Often, when we graph, we will want to change the domain of the graph.  Most easily, I may want to zoom in on a particular region to get a better view of some interesting feature.  I may want to look closely at several different regions.</p>
 
@@ -1862,7 +1862,7 @@ More realistic examples: finding the intersection of two curves, or equivalently
 
 </p><p>
 In economics, there are the concepts of supply and demand prices, the prices that will produce a specified supply or demand.  (We will look at this problem in more depth in the next chapter.)  Suppose we are told the formula for the supply and demand prices of a product are:
-<me>Supply\  Price (q) = ln(50 + 100 q) + q</me>
+<me>Supply\  Price (q) = ln(50 + 1000 q) + q</me>
 <me>Demand\  Price (q) = 1000*exp(-0.02*q)</me>
 We want to find the quantity where supply and demand prices are equal.  We first do a fast graph to get an understanding of what is going on.
 
@@ -1948,7 +1948,7 @@ As mentioned earlier, the reason for looking under the hood of Goal Seek is to u
 
 </p><p>
 As a general rule, Goal Seek will get to the correct answer if there are no big curves between the guess and the answer.
-Another difficulty arises if you ask Goal Seek a question for which there is no answer.  The easy case is when there is no answer and we don't even get close.  We could ask it to find an x with <m>x^2-1=0</m>.  Since we know that all squares are non-negative, this does not have an answer.  Goal Seek will tell us that, but it will make some pretty wild guesses.
+Another difficulty arises if you ask Goal Seek a question for which there is no answer.  The easy case is when there is no answer and we don't even get close.  We could ask it to find an x with <m>x^2+1=0</m>.  Since we know that all squares are non-negative, this does not have an answer.  Goal Seek will tell us that, but it will make some pretty wild guesses.
 
   <sidebyside width="80%" >
                 <image width="80%" source="images/sec1-6-14.png">

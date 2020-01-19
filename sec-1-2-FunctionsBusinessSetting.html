@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:22-05:00    *-->
+<!--*    on 2020-01-19T10:07:11-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -169,13 +173,13 @@ var js_version = 0.11;
 Revenue=price*quantity=p*q
 \end{equation*}
 </div>
-<p>In some of the models we will investigate later in the course price will be a linear function. We will assume \(Price=m q+b\text{.}\) This implies that</p>
+<p data-braille="continuation">In some of the models we will investigate later in the course price will be a linear function. We will assume \(Price=m q+b\text{.}\) This implies that</p>
 <div class="displaymath">
 \begin{equation*}
 Revenue=(m q+b)*q=m q^2+b q
 \end{equation*}
 </div>
-<p>If \(m &gt; 0\text{,}\) then the revenue function will look like a parabola that opens up. If \(m \lt 0,\) then the revenue function will look like a parabola that opens down.</p>
+<p data-braille="continuation">If \(m &gt; 0\text{,}\) then the revenue function will look like a parabola that opens up. If \(m \lt 0,\) then the revenue function will look like a parabola that opens down.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-2-QuadraticFunctions.png" style="width: 100%; height: auto;" alt="The intersection revenue and demand price"></div></div></div>
 <p id="p-140">For a quadratic model we are often very interested in the coordinates of the vertex, and any possible zeros. For the general equation \(y=a x^2+b x+c\) the sign of the coefficient of \(x^2\text{,}\) \(a\text{,}\) will determine if we have a maximum or a minimum. If \(a\) is positive, the parabola opens up and the vertex will be a minimum. If \(a\) is negative, the parabola opens down and the vertex will be a maximum.</p>
 <p id="p-141">Recall that we can find the zeros of a quadratic by using the quadratic equation.</p>
@@ -185,7 +189,7 @@ roots\ or\ zeroes  =
 \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 \end{equation*}
 </div>
-<p>From this equation we see that the vertex must be located at \(x= -b/(2a.)\text{.}\) The discriminant (the term underneath the radical sign determines if there are 0, 1, or 2 roots.</p>
+<p data-braille="continuation">From this equation we see that the vertex must be located at \(x= -b/(2a.)\text{.}\) The discriminant (the term underneath the radical sign determines if there are 0, 1, or 2 roots.</p>
 <ul class="disc">
 <li id="li-65"><p id="p-142">If \(b^2-4ac&gt;0\text{,}\) then there are 2 roots.</p></li>
 <li id="li-66"><p id="p-143">If \(b^2-4ac=0\text{,}\) then there is 1 root (the vertex will touch the axis)</p></li>
@@ -196,7 +200,7 @@ roots\ or\ zeroes  =
 <p id="p-147">The <dfn class="terminology">exponential model</dfn>, with an equation of the form \(f(t)=p*e^t\text{.}\) Sometimes the exponential function \(e^t\) is denoted by \(exp(t)\text{.}\) Excel will use this format, so it is worth looking at the notation in this case. \(f(t)=p*e^{rt}\) can also be written as  \(f(t)=p*exp(r t)\)</p>
 <p id="p-148">Math books (and Excel) like using a base of \(e\) because it makes the mathematics easier when we do calculus, so the equation is written as \(f(t)=p*e^{rt}\) or \(f(t)=p*exp(r t)\text{.}\) However, in real world applications we tend to use \(A=pR^t\) and make the equation \(f(t)=p*R^t\text{.}\)  (The reader is warned that \(R=e^r\) and both \(R\) and \(r\) are referred to as the <dfn class="terminology">rate</dfn>.  You will have to use the context to tell them apart.)</p>
 <p id="p-149">Exponential functions are used for proportional growth or decay.  In business, compound interest is given as an exponential function. In particular, if \(P\) is the principal and \(r\) is the interest rate "compounded continuously" (expressed as a decimal), then the amount \(A\) after time \(t\) is given by \(A=P e^rt\text{.}\) The relationship (in general) between a <dfn class="terminology">future value</dfn> (FV) and the <dfn class="terminology">present value</dfn> (PV) given an interest rate \(r\) per period, with \(t\) being the number of compounding periods is given by:</p>
-<article class="assemblage-like" id="FutureValueDef"><div class="displaymath" id="p-150">
+<article class="assemblage assemblage-like" id="FutureValueDef"><div class="displaymath" id="p-150">
 \begin{equation*}
 Future Value: FV=PV*(1+r)^t
 \end{equation*}
@@ -245,45 +249,45 @@ f(x)=a e^{\left(\frac{-(m-m)}{s}\right)^2}=a e^0=a*1=a,
 <p id="p-169">The <dfn class="terminology">logarithmic model</dfn> looks at equations of the form \(f(x)=a*\ln (x)+b\) or \(f(x)=a*\ln (Bx)\text{.}\)  This model shows up in two ways.  It can be obtained as the accumulation of a quantity that is inversely proportional to our variable.  It also shows up as the inverse of the exponential model.  (If \(y\) is described as an exponential function of \(x\text{,}\) then \(x\) is a logarithmic function of \(y\text{.}\))</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-2-LogCurve.png" style="width: 100%; height: auto;" alt="A logarithmic function graph"></div></div></div>
 <section class="exercises" id="exercises-set-sec-1-2"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises  Functions in the Business Setting</span>
+<span class="type">Exercises</span> <span class="codenumber">1.2.1</span> <span class="title">Exercises  Functions in the Business Setting</span>
 </h3>
 <a href="sec-1-2-FunctionsBusinessSetting.html#exercises-set-sec-1-2" class="permalink">¶</a><p id="p-170">For each model, some features of the graph are listed.  Describe how to change each feature by changing the parameters of the model.  (E.g., With the linear model, \(f(x)=a x+b\text{,}\) the parameters are \(a\) and \(b\text{.}\)  The place where the line intercepts the \(x\)-axis is \(–b/a\text{,}\) so any \(x\)-intercept can be produced with \(a=-1\) and \(b\) equal to the desired value.)</p>
-<article class="exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-171">For a linear model, \(f(x)=a x+b\text{,}\) how do I get a graph with</p>
 <ol class="lower-alpha">
 <li id="li-68"><p id="p-172">A positive \(y\)-intercept?</p></li>
 <li id="li-69"><p id="p-173">A negative slope?</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span></a><div id="hk-solution-11" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-70"><p id="p-174">How to obtain a positive \(y\)-intercept. - The \(y\)-intercept is determined by \(b\text{,}\) so we just let \(b\gt 0\text{.}\)</p></li>
 <li id="li-71"><p id="p-175">How to obtain a negative slope. - The slope is determined by \(a\) in the formula above, so we let \(a\lt 0\)</p></li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-176">Suppose we are working with a quadratic model, \(f(x)=a x^2+b x+c\)</p>
 <ol class="lower-alpha">
 <li id="li-72"><p id="p-177">How do we get a graph, that points down? (i.e. a graph that has a maximum)?</p></li>
 <li id="li-73"><p id="p-178">How will we know if the graph of the function intercepts the \(x\)-axis at two positive values?</p></li>
-</ol></article><article class="exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-179">For a quadratic model, \(f(x)=a x^2+b x+c\text{,}\) How do I get a graph where the vertex has \(x=5\text{?}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div id="hk-solution-12" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
 <p id="p-180">Quadratics are parabolas and the zeros (if they exist) are at \(x=  \frac{-b\pm \sqrt{b^2-4ac}}{2a}\text{.}\)</p>
 <p id="p-181">The vertex is always located at \(x=  \frac{-b}{2a}\text{.}\) So if the vertex is to be at \(x = 5\) we need to make sure \(\frac{-b}{2a}=5\text{.}\) There are many ways to do this (there are infinitely many different parabolas with their vertex located at x = 5). One possible solution would be to let \(b = -10\) and \(a = 1\text{.}\)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">4.</span></h6>
-<p id="p-182">For a polynomial model, \(f(x)=a_n x^n+\cdots+a_1 x+a_0\text{,}\) how do I get a graph that goes up at both ends?</p></article><article class="exercise-like" id="exercise-25"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-182">For a polynomial model, \(f(x)=a_n x^n+\cdots+a_1 x+a_0\text{,}\) how do I get a graph that goes up at both ends?</p></article><article class="exercise exercise-like" id="exercise-25"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-183">For an exponential model, \(f(x)=P*\exp(r x)\text{,}\) how do I get a graph with \(f(0)=100\text{,}\) that goes to zero as x gets large?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span></a><div id="hk-solution-13" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><ul class="disc">
 <li id="li-74"><p id="p-184">\(f(0)=P*\exp(0)= P\text{,}\) so if  \(f(0)=100\) we know that \(P=100\text{.}\)</p></li>
 <li id="li-75"><p id="p-185">If \(f\) goes to 0 as \(x\) gets large it must be an exponential decay function which means that the coefficient \(r\) must be negative.</p></li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">6.</span></h6>
-<p id="p-186">For an exponential model, \(f(x)=P*\exp(-r x)+b\text{,}\) how do I get a graph where \(f(x)\) goes to 10 as \(x\) gets large, \(f(0)=1\text{,}\) and \(f(10)\) is at least \(9\text{?}\)</p></article><article class="exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-186">For an exponential model, \(f(x)=P*\exp(-r x)+b\text{,}\) how do I get a graph where \(f(x)\) goes to 10 as \(x\) gets large, \(f(0)=1\text{,}\) and \(f(10)\) is at least \(9\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-187">For a logistic growth model, \(f(x)=\frac{M}{1+a \exp(-r*t)}\text{,}\) how do I get a graph where \(f(x)\) goes to \(10\) as \(x\) gets large, \(f(0)=1\text{,}\) and \(f(10)\) is at least \(9\text{?}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span></a><div id="hk-solution-14" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like">
 <p id="p-188">We have several conditions here that need to be met. We use them to find our parameters one at a time.</p>
 <ul class="disc">
 <li id="li-76">
@@ -294,11 +298,11 @@ f(x)=a e^{\left(\frac{-(m-m)}{s}\right)^2}=a e^0=a*1=a,
 <li id="li-78"><p id="p-192">\(f(10)\) is at least \(9\text{.}\) With \(M = 10\) and  \(a = 9\) we have that \(f(10)=10/(1+9 \exp(-r*10) )\gt 9\) This implies that \(1+9 \exp(-r*10)\lt 10/9\) and hence \(\exp(-r*10)\lt 1/81\) This means that  \(r\gt -1/10  \ln(1/81)= 0.44\)</p></li>
 </ul>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-28"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-193">For a sinusoidal model, \(f(x)=M+A \sin(2\pi(x+shift)/period)\text{,}\) based on seasonal change through the year, if \(x\) is measured in months, what value should period have?</p></article><article class="exercise-like" id="exercise-29"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-193">For a sinusoidal model, \(f(x)=M+A \sin(2\pi(x+shift)/period)\text{,}\) based on seasonal change through the year, if \(x\) is measured in months, what value should period have?</p></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-194">For a normal model, \(f(x)=a \exp\left(-\left(\frac{x-m}{s}\right)^2\right)\text{,}\) how do I produce a graph with a high point at \((7, 20)\text{,}\) and the value of \(f(4)\) between 1 and 2?  (You need to use trial and error on this problem.)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span></a><div id="hk-solution-15" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><ul class="disc">
 <li id="li-79"><p id="p-195">The high point of the graph occurs when \(\frac{x-m}{s}=0\text{.}\) This happens at \(x = 7\text{,}\) so this means that \(m = 7\) as well.</p></li>
 <li id="li-80"><p id="p-196">Once we know that \(m = 7\text{,}\) then \(f(7)=a \exp\left(-\left(\frac{7-7}{s}\right)^2 \right)=a \exp(0)=a\) But \(f(7)=20\text{,}\) so \(a = 20\text{.}\)  This means that \(f(x)=20 \exp\left(-\left(\frac{x-7}{s}\right)^2\right)\text{.}\)</p></li>
 <li id="li-81">
@@ -323,51 +327,51 @@ f(x)=a e^{\left(\frac{-(m-m)}{s}\right)^2}=a e^0=a*1=a,
 \ln (1/20)\lt \frac{-9}{s^2}\lt \ln (1/10)
 \end{equation*}
 </div>
-<p>and hence</p>
+<p data-braille="continuation">and hence</p>
 <div class="displaymath">
 \begin{equation*}
 2.3026\lt \frac{9}{s^2} \lt 2.996
 \end{equation*}
 </div>
-<p>So  \(s^2\gt \frac{9}{2.996}\) and  \(s^2\lt\frac{9}{2.3026} \text{.}\) Hence \(1.734\lt s\lt 1.977\text{.}\)</p>
+<p data-braille="continuation">So  \(s^2\gt \frac{9}{2.996}\) and  \(s^2\lt\frac{9}{2.3026} \text{.}\) Hence \(1.734\lt s\lt 1.977\text{.}\)</p>
 </li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-30"><h6 class="heading"><span class="codenumber">10.</span></h6>
-<p id="p-198">For a normal model, \(f(x)=a \exp\left(-\left(\frac{x-m}{s}\right)^2\right)\text{,}\) how do I produce a graph with a high point at \((7, 20)\text{,}\) and the value of \(f(1)\) between 1 and 2?  (You need to use trial and error on this problem.)</p></article><article class="exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-198">For a normal model, \(f(x)=a \exp\left(-\left(\frac{x-m}{s}\right)^2\right)\text{,}\) how do I produce a graph with a high point at \((7, 20)\text{,}\) and the value of \(f(1)\) between 1 and 2?  (You need to use trial and error on this problem.)</p></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-199">For the power model, \(f(x)=a x^b\text{,}\) how do I produce a graph with \(f(1)=5\) and \(f(3)=1\text{?}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span></a><div id="hk-solution-16" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
 <p id="p-200">\(f(1)=5\) means that \(a 1^b=a=5\text{.}\)</p>
 <p id="p-201">\(f(3)=1\) means that \(a x^b=5*3^b=1\) hence \(3^b=0.2\) and hence \(\ln(3^b )=\ln(0.2)\text{.}\)</p>
 <p id="p-202">So \(b \ln(3)=\ln(0.2)\) which implies that \(b=\ln(0.2)/\ln(3) \approx -1.465\text{.}\)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-32"><h6 class="heading"><span class="codenumber">12.</span></h6>
-<p id="p-203">For the inversely proportional model, \(f(x)=a/x\text{,}\) how do I produce a graph with \(f(1) \lt 0\) and \(f(3)=-5?\)</p></article><article class="exercise-like" id="exercise-33"><h6 class="heading"><span class="codenumber">13.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-203">For the inversely proportional model, \(f(x)=a/x\text{,}\) how do I produce a graph with \(f(1) \lt 0\) and \(f(3)=-5?\)</p></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
 <p id="p-204">For the logarithmic model, \(f(x)=a \ln(x)\) how do I produce a graph with \(f(e)=3\text{?}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span></a><div id="hk-solution-17" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-205">\(f(e)=a \ln(e)=a (1)= a\text{,}\) hence \(a = 3\)</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><p id="p-205">\(f(e)=a \ln(e)=a (1)= a\text{,}\) hence \(a = 3\)</p></div></div>
 </div></article><p id="p-206">Exercises 14-21) For each situation, explain which model you would use for each situation (linear, quadratic, etc.).  Be sure to explicitly mention what you are using as the free variable (the equivalent of x), what you are using as the dependent variable (the equivalent of y), and why that model makes sense in the given situation.</p>
-<article class="exercise-like" id="exercise-34"><h6 class="heading"><span class="codenumber">14.</span></h6>
-<p id="p-207">The cost of producing an amount of a product is the sum of the fixed costs, like warehouse rent, and the variable costs, like labor and materials, which we can assume to be the same for each unit produced.</p></article><article class="exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<article class="exercise exercise-like" id="exercise-34"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-207">The cost of producing an amount of a product is the sum of the fixed costs, like warehouse rent, and the variable costs, like labor and materials, which we can assume to be the same for each unit produced.</p></article><article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
 <p id="p-208">When looking at revenue, we can assume that sales will be linear function of the price of the object.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span></a><div id="hk-solution-18" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
 <p id="p-209">Using a linear model we get  \(sales=m *price+b\text{.}\)</p>
 <p id="p-210">Price is the free variable (the input) and sales is the dependent variable (the output)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-36"><h6 class="heading"><span class="codenumber">16.</span></h6>
-<p id="p-211">The amount I expect to be able to withdraw from an account at a future date, assuming that interest is compounded continuously and is fixed.</p></article><article class="exercise-like" id="exercise-37"><h6 class="heading"><span class="codenumber">17.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-36"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-211">The amount I expect to be able to withdraw from an account at a future date, assuming that interest is compounded continuously and is fixed.</p></article><article class="exercise exercise-like" id="exercise-37"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
 <p id="p-212">The amount of time it takes an investment to double assuming a fixed interest rate.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span></a><div id="hk-solution-19" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
 <p id="p-213">The Future value is given by \(FV=PV*(1+r)^t\)</p>
 <p id="p-214">Here the Future value (\(FV\)) will be the input (it will be \(2*PV\)) and the output will be the time \(t\text{.}\)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-38"><h6 class="heading"><span class="codenumber">18.</span></h6>
-<p id="p-215">The amount of electricity needed for air conditioners in a Washington, D.C. at various times of the year.</p></article><article class="exercise-like" id="exercise-39"><h6 class="heading"><span class="codenumber">19.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-38"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-215">The amount of electricity needed for air conditioners in a Washington, D.C. at various times of the year.</p></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
 <p id="p-216">The amount of metal needed to build a fuel tank as a function of the amount of fuel to be stored.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span></a><div id="hk-solution-20" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like">
 <p id="p-217">Volume is 3-dimensional and the metal would be related to the surface area – which is 2-dimensional – so the formula would be something like:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -376,11 +380,11 @@ Amount\ of\ metal=K*(Volume)^{3/2}
 </div>
 <p id="p-218">\(Volume\) is the input, the \(K\) is some constant and \(Amount\ of\ Metal\) is the output.</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-40"><h6 class="heading"><span class="codenumber">20.</span></h6>
-<p id="p-219">The total length of booms needed to contain an oil spill as a function of the size of the spill.</p></article><article class="exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">21.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-219">The total length of booms needed to contain an oil spill as a function of the size of the spill.</p></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
 <p id="p-220">The monthly sales of a hot new electronic device in a country.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span></a><div id="hk-solution-21" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like">
 <p id="p-221">Sales will likely increase a lot initially, but then level out. So a logistic equation may be a reasonable model.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -388,10 +392,10 @@ f(x)=  M/(1+a e^{-rx} )
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">22.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
 <p id="p-222">The distribution of sales of pairs of pants by leg length.</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

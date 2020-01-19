@@ -10,7 +10,7 @@
 <ul>
 <li><p> Start with the fixed cost.</p></li>
 <li><p> Add the marginal cost for each consecutive item.</p></li>
-<li><p> Create a sidebyside to keep track of the cost as we accumulate the data.</p></li>
+<li><p> Create a running cost column to keep track of the cost as we accumulate the data.</p></li>
 </ul>
 
 <p>For this example we would get:</p>
@@ -19,7 +19,7 @@
                 </image>
             </sidebyside> 
 
-<p>We would like to relate this data to the original graph of the marginal cost. When we consider this graph we see that the estimated cost actually corresponds to the are underneath the Marginal Cost function MC(x).</p>
+<p>We would like to relate this data to the original graph of the marginal cost. When we consider this graph we see that the estimated cost actually corresponds to the area underneath the Marginal Cost function MC(x).</p>
   <sidebyside width="60%" >
                 <image width="60%" source="images/sec7-0-2.png">
                 </image>
@@ -133,10 +133,10 @@ The standard approach to accumulation is to reduce the problem to an area proble
 <p>While 100 subintervals will be close enough for most of the problems we are interested is, the "area", or definite integral will be defined as the limit of this sum as the number of subintervals goes to infinity.  Thus</p>
 
 <assemblage><p>
-<me>  \int_a^bf(x)  dx=\lim_{n\to \infty} \Sigma_i^nf (x_i)\Delta x </me></p>
-<p> with <m>\Delta x=\frac{b-a}{n}</m>  and  <m>x_i=a*i*\Delta x</m>.</p></assemblage>
+<me>  \int_a^bf(x)  dx=\lim_{n\to \infty} \sum_{i=1}^nf (x_i)\Delta x </me></p>
+<p> with <m>\Delta x=\frac{b-a}{n}</m>  and  <m>x_i=a+i*\Delta x</m>.</p></assemblage>
 
-<p>The sums of the form, <m>\Sigma_{i=1}^n  f(x_i)\Delta x</m> with <m>\Delta x=\frac{b-a}{n}</m> and <m>x_i=a+i*\Delta x</m>, are called <term>Riemann sums</term>.  The limit, written <m>\int_a^bf(x)  dx</m>, is called a <term>definite integral</term>.</p>
+<p>The sums of the form, <m>\sum_{i=1}^n  f(x_i)\Delta x</m> with <m>\Delta x=\frac{b-a}{n}</m> and <m>x_i=a+i*\Delta x</m>, are called <term>Riemann sums</term>.  The limit, written <m>\int_a^bf(x)  dx</m>, is called a <term>definite integral</term>.</p>
 
 <p>As a memory aid, it is worth noting that the symbol used for the sum is an upper case sigma, or S for sum in the Greek alphabet.  When we take the limit we use an integral sign, which is a stylized S in the Latin alphabet.  </p>
 
@@ -284,7 +284,7 @@ Then <m>\frac{N}{13.5}\gt 1,000,000</m>, and hence <m>N\gt 13,500,000</m>.
 </ol>
 </statement></exercise>
 
-<exercise ><statement><p> Sales of your new gadget are estimated at <m>500*2^{.08 t}</m> units per week.</p>
+<exercise ><statement><p> Sales of your new gadget are estimated at <m>500*2^{.08 t}</m> units per month.</p>
 <ol label="(a)">
 <li><p> Estimate the total sales in the first year.</p></li>
 <li><p> Estimate the total sales in the fourth year.</p></li>
@@ -293,7 +293,7 @@ Then <m>\frac{N}{13.5}\gt 1,000,000</m>, and hence <m>N\gt 13,500,000</m>.
 </statement><solution>
 <ol label="(a)">
 <li><p> Estimate the total sales in the first year.</p>
-<p>The total sales would be the sum of the sales each month. This is the same as a right hand sum of the function <m>Sales(t)= 500*2^{.08 t}</m> on the interval [0,12] with 12 subdivisions. The Excel commands are as follows (quick fill down to complete the sidebyside)</p>
+<p>The total sales would be the sum of the sales each month. This is the same as a right hand sum of the function <m>Sales(t)= 500*2^{.08 t}</m> on the interval [0,12] with 12 subdivisions. The Excel commands are as follows (quick fill down to complete the Excel table)</p>
   <sidebyside width="80%">
                 <image width="80%" source="images/sec7-1-sol11a.png">
                 </image>
@@ -308,7 +308,7 @@ Then <m>\frac{N}{13.5}\gt 1,000,000</m>, and hence <m>N\gt 13,500,000</m>.
 </li>
 <li><p> Estimate the total sales in the fourth year.</p>
 <p>We need to adjust the computation so that the sales added correspond to the sales of the fourth year only. This would be from month 36 to 48.
-We can just adjust the values in the sidebyside above!</p>
+We can just adjust the values in the EXCEL table above!</p>
   <sidebyside  width="50%" >
                 <image width="50%" source="images/sec7-1-sol11c.png">
                 </image>
@@ -864,13 +864,13 @@ This formula requires a bit more work.  We start with the formula <m>\frac{d}{dx
 
 <example><title>Antiderivative of power and exponential functions</title>
 <p>Find the integral  
-<m>\int 2*3^5+4e^x\ dx</m>.</p>
+<m>\int 2*3^x+4e^x\ dx</m>.</p>
 
 <p>Solution </p>
 
-<me>\int 2*3^5+4e^x\ dx=\int 2*3^5\ dx+\int 4e^x\ dx\qquad\hbox{(sum rule)}</me>
-<me>=2\int 3^5\ dx+4\int e^x\ dx\qquad\hbox{(constant multiple rule)}</me>
-<me>=\frac{2}{\ln(3)} 3^5+4 e^x+C\qquad\hbox{(exponential rules)}</me>
+<me>\int 2*3^x+4e^x\ dx=\int 2*3^x\ dx+\int 4e^x\ dx\qquad\hbox{(sum rule)}</me>
+<me>=2\int 3^x\ dx+4\int e^x\ dx\qquad\hbox{(constant multiple rule)}</me>
+<me>=\frac{2}{\ln(3)} 3^x+4 e^x+C\qquad\hbox{(exponential rules)}</me>
 </example>
 
 <p>As we mentioned earlier in the section, the normal reason for wanting to find indefinite integrals is to be able to use them with the fundamental theorem of calculus to find definite integrals.</p>
@@ -1078,7 +1078,7 @@ F(x)=\frac{3x^2}{2}+5x+Constant
 \int_0^5 (x+7)dx=F(5)- F(0)=\frac{25}{2}+35-0=\frac{95}{2}
 </me></solution></exercise>
 	
-<exercise ><statement><me> \int_1^{10}\ln(x)\  dx</me></statement></exercise>
+<exercise ><statement><me> \int_1^{10}\frac{1}{x}\  dx</me></statement></exercise>
 	
 <exercise ><statement><me> \int_2^{10} 3x+\frac{5}{x}\  dx</me></statement><solution>
 <p>The anti-derivative is: <m>F(x)=(3x^2)/2+5 \ln|x|</m>
@@ -1160,7 +1160,7 @@ The anti-derivative is: </p>
 =\left.\frac{400}{\ln(0.9)}  (0.9)^t \right|_{t=9}^{t=10}</me>
 <me>=\frac{400}{\ln(0.9)} (0.9^{10}-0.9^{9})\approx 147.08
 </me></li>
-<li><p>If I need to produce 75 thousand barrels of oil per year for the well to be financially viable, what is the life of the well?</p></li>
+<li><me>0.075=400*(0.9)^t</me><me>t=ln(0.75/400)/ln(0.9)\approx 81.451</me></li>
 <li><p>Use Goal seek.</p>
 <me>75=400(0.9^t)</me>
 <me>t\approx 15.8881</me>
@@ -1368,18 +1368,18 @@ At the end of the last section we warned that the symbolic integration technique
 <p>It should be noted that when we change variables we may find ourselves looking at an integral from <m>a</m> to <m>b</m> where the <m>b \lt a</m>.  We do not change the order of the endpoints.</p>
 
 <example><title>A second definite integral with change of variables</title>
-<p>Evaluate <m>\int_{-2}^1 x \exp(x^2)d</m>x</p>
+<p>Evaluate <m>\int_{-2}^1 x \exp(x^2)dx</m></p>
 
-<p><term>Solution</term>: (Convert everything to <m>u</m>.) The obvious candidate for <m>u</m> is <m>x^2</m>.  Then <m>du=2 dx</m>. For the lower endpoint, <m>x=-2</m> becomes <m>u=4</m>.  For the upper endpoint <m>x=1</m> becomes <m>u=1</m>. Substituting, </p>
+<p><term>Solution</term>: (Convert everything to <m>u</m>.) The obvious candidate for <m>u</m> is <m>x^2</m>.  Then <m>du=2x\  dx</m>. For the lower endpoint, <m>x=-2</m> becomes <m>u=4</m>.  For the upper endpoint <m>x=1</m> becomes <m>u=1</m>. Substituting, </p>
 
 <me>\begin{aligned}  \int_{-2}^1 x e^{(x^2)}dx
 \amp =\frac{1}{2} \int_{-2}^1 e^{(x^2)}(2x dx)
 \amp \quad \hbox{ (Make u and du explicit.)}\\ 
-\amp =\frac{1}{2} \int_{1}^{4}e^u du
+\amp =\frac{1}{2} \int_{4}^{1}e^u du
 \amp \quad \hbox{ (Do the substitution.)}\\ 
-\amp =\left.\frac{1}{2} e^u\right|_1^{4}
+\amp =\left.\frac{1}{2} e^u\right|_4^{1}
 \amp \quad \hbox{ (Find the antiderivative.)}\\ 
-\amp =\frac{1}{2}  e^4-\frac{1}{2} e^1.
+\amp =\frac{1}{2}  e^1-\frac{1}{2} e^4.
 \amp \quad \hbox{ (Evaluate.)}\\ 
 \end{aligned}</me>
 </example>
@@ -1506,9 +1506,6 @@ Evaluate the following integrals.  In each case identify the term that will be t
 <li><p>What is the maximum profit?</p></li>
 </ol>
 </statement></exercise>
-  
-
-
 </exercises>
         </section>
  
@@ -1732,8 +1729,8 @@ We plug in 5 and note <m>P(5) = 0 = C-1972.474</m>, thus <m>C = 1972.474</m>.  W
 <p>
 Riemann sums - We can also use Alpha to do Riemann sums.  We need to give a starting and ending point and the number of intervals.</p>
 
-<example><title>Riemann sums with Wolfram|Alph</title><p>
- Find the current value of a revenue stream <m>V(t)=2000+5t</m> for 0 years with an investment rate of <m>r=1.03</m>, assuming payments are made daily.</p>
+<example><title>Riemann sums with Wolfram|Alpha</title><p>
+ Find the current value of a revenue stream <m>V(t)=2000+5t</m> for 10 years with an investment rate of <m>r=1.03</m>, assuming payments are made daily.</p>
 
 <p>
 We approximate the current value with the integral </p>
@@ -1879,7 +1876,7 @@ Most students are familiar with the concept of a course that is graded on a curv
 We want to pull some definitions and results from the theory of probability.  In particular we want a description of the function we are finding the area under and also of the related area function.</p>
 
 <assemblage><p>
-<term>Definition: A Probability Density Function</term> is a function that spreads the area 1 over the entire real line, with the obvious understanding that no value can have a negative probability.</p>
+<term>Definition</term>: A <term>Probability Density Function</term> is a function that spreads the area 1 over the entire real line, with the obvious understanding that no value can have a negative probability.</p>
 
 <p>
 In calculus terms, a <term>Probability Density Function</term> is a function  <m>f(x)</m> defined for <m>-\infty\lt x \lt \infty </m>  such that <m>f(x)\ge 0</m>  and  <m>\int_{-\infty}^{\infty}f(x)dx=1</m>. </p></assemblage>
@@ -1892,7 +1889,7 @@ where sigma, <m>\sigma</m>, and mu, <m>\mu</m>, are respectively the standard de
 
 <p>
 Thus, when I note that the adult men in the United States have a height distribution that is normal with a mean of 70 inches and a standard deviation of 3 inches, the distribution is</p>
-<me>f(x)=\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x70)^2}{2*3^2}\right)</me>
+<me>f(x)=\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^2}\right)</me>
 
   <sidebyside  width="50%" >
                 <image width="50%" source="images/sec7-6-1.png">
@@ -1980,7 +1977,9 @@ When we look at the values, we get a target population of 25,249.  This agrees w
 
 <p>becomes</p>
 
-<me>\text{100000*integrate(exp(-(x-70)^2/(2*3^2))/(3*sqrt(2*pi))) from 72 to 84.}</me>
+<center>
+<p>100000*integrate(exp(-(x-70)^2/(2*3^2))/(3*sqrt(2*pi))) from 72 to 84.</p>
+</center>
 
 <p>We get our familiar answer of 25,249.</p>
 
@@ -2045,7 +2044,7 @@ NORM.S.DIST(right hand limit, cumulative).
 
 <exercise ><statement><p> Assume that women’s shoe sizes are normally distributed with a mean of 8 and a standard deviation of 1.5.  A particular style of shoes in available in full and half sizes.  I plan to make 10,000 pairs of this style.</p>
 <ol label="(a)">>
-<li><p>Express, as an integral, the number of pairs I should make of size 9.</p></li>
+<li><p> Express, as an integral, the number of pairs I should make of size 9.</p></li>
 <li><p> How many pairs of size 9 shoes should I make?</p></li>
 <li><p> How do your answers change if the shoes are only to be made in full sizes?</p></li>
 </ol>
@@ -2133,7 +2132,7 @@ NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) )</p>
 
 <exercise ><statement><p>  Assume that results on an intelligence test are normally distributed with a mean of 100 and a standard deviation of 15.  Using the Excel statistics commands, make a chart distributing 1,000,000 people between intervals of size 10 (90-100, 100-110, etc.).  What is the highest IQ score I should expect to find in my population of 1 million?
 </p></statement><solution>
-<p> We set the ranges with a high value nd a low value..</p>
+<p> We set the ranges with a high value and a low value.</p>
 <p>The desired syntax is</p>
 <p>Population size * (NORM.DIST(High value, Mean, Standard Deviation, TRUE) - 
 NORM.DIST(Low value, Mean, Standard Deviation, TRUE) )</p>
@@ -2148,7 +2147,7 @@ NORM.DIST(Low value, Mean, Standard Deviation, TRUE) )</p>
 <p>With a million people, the high IQ should be between 170 and 180.</p>
 </solution></exercise>
 
-<exercise ><statement><p>  I have been informed that the distance from the back of a chair to the front of the knee of a man sitting is normally distributed with a mean of 24 inches and a standard deviation of 1.3 inches.  I want to design airline chairs to fit 99% of the male passengers with 1 inch between the knee and the back of the next chair.  How much distance do I need between the front of on chair seat and the back of the next?
+<exercise ><statement><p>  I have been informed that the distance from the back of a chair to the front of the knee of a man sitting is normally distributed with a mean of 24 inches and a standard deviation of 1.3 inches.  I want to design airline chairs to fit 99% of the male passengers with 1 inch between the knee and the back of the next chair.  How much distance do I need between the front of one chair seat and the back of the next?
 </p></statement></exercise>
 
 <exercise ><statement><p>  I have been informed that the breadth at the shoulders of an adult male is normally distributed with a mean of 17.9 inches and a standard deviation of 1 inch.  The standard coach seat on a plane is 17.2 inches wide.  What percentage of adult males fit in such a seat without overflow?
@@ -2423,7 +2422,7 @@ or</p>
 <me>time=\ln (0.1)/\ln (0.6) =4.508.</me>
 
 <p>
-Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book value is <m>100,000*(0.6)^{3.}5 = $16,731</m>.</p> 
+Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book value is <m>100,000*(0.6)^{3.}5 = \$16,731</m>.</p> 
 
   <sidebyside width="60%" >
                 <image width="60%" source="images/sec7-7-8.png">

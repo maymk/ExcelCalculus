@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:27-05:00    *-->
+<!--*    on 2020-01-19T10:07:15-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -154,7 +158,7 @@ var js_version = 0.11;
 </h2>
 <a href="sec-6-3-CriticalPointsExtrema.html" class="permalink">¶</a><p id="p-2324"><a class="external" href="./Examples/Section-6-3-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
 <p id="p-2325">With functions of one variable we were interested in places where the derivative is zero, since they made candidate points for the maximum or minimum of a function.  If the derivative is not zero, we have a direction that is downhill and moving a little in that direction gives a lower value of the function.  Similarly, with functions of two variables we can only find a minimum or maximum for a function if both partial derivatives are 0 at the same time.  Such points are called critical points.</p>
-<article class="assemblage-like" id="assemblage-44"><p id="p-2326">The point \((a,b)\) is a <dfn class="terminology">critical point</dfn> for the multivariable function \(f(x,y)\text{,}\) if both partial derivatives are 0 at the same time.</p>
+<article class="assemblage assemblage-like" id="assemblage-44"><p id="p-2326">The point \((a,b)\) is a <dfn class="terminology">critical point</dfn> for the multivariable function \(f(x,y)\text{,}\) if both partial derivatives are 0 at the same time.</p>
 <p id="p-2327">In other words</p>
 <div class="displaymath" id="p-2328">
 \begin{equation*}
@@ -166,9 +170,9 @@ var js_version = 0.11;
 \begin{equation*}
 \frac{\partial }{\partial y} f(x,y)|_{x=a,y=b}=0
 \end{equation*}
-</div></article><article class="example-like" id="example-89"><a data-knowl="" class="id-ref" data-refid="hk-example-89"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.3.1</span>. <span class="title">Finding a Local Minimum of a Function.</span>
-</h6></a></article><div id="hk-example-89" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2331">Use the partial derivatives of \(f(x,y)=x^2+ 2xy+3y^2-4x-3y\) to find the minimum of the graph.</p>
+</div></article><article class="example example-like" id="example-89"><a data-knowl="" class="id-ref original" data-refid="hk-example-89"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Local Minimum of a Function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-89"><article class="example example-like"><p id="p-2331">Use the partial derivatives of \(f(x,y)=x^2+ 2xy+3y^2-4x-3y\) to find the minimum of the graph.</p>
 <p id="p-2332"><dfn class="terminology">Critical Point by Algebra</dfn>:  In the previous section, we already computed</p>
 <div class="displaymath">
 \begin{equation*}
@@ -235,10 +239,10 @@ x=9/4
 <p id="p-2341"><dfn class="terminology">Determining the Critical Point is a Minimum</dfn> We thus get a critical point at (9/4,-1/4) with any of the three methods of solving for both partial derivatives being zero at the same time. Once we have a critical point we want to determine if it is a maximum, minimum, or something else.  The easiest way is to look at the graph near the critical point.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec-6-3-5.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2342">It is clear from the graph that this critical point is a local minimum.</p></article></div>
-<p id="p-2343">It is easy to see that \(f(x,y)=x^2+y^2\) has a critical point at \((0,0)\) and that that point is a minimum for the function.  Similarly, \(f(x,y)=-x^2-y^2\) has a critical point at \((0,0)\) and that that point is a maximum for the function. For some functions, like \(f(x,y)=x^2-y^2\text{,}\) which has a critical point at \((0,0)\text{,}\) we can have a maximum in one direction and a minimum in another direction.  Such a point is called a saddle point.  We note that we can have a <dfn class="terminology">saddle point</dfn> even if the \(x\) and \(y\) slice curves both indicate a minimum.</p>
-<article class="example-like" id="example-90"><a data-knowl="" class="id-ref" data-refid="hk-example-90"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.3.2</span>. <span class="title">A Saddle Point at a Minimum on Both Axes.</span>
-</h6></a></article><div id="hk-example-90" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2344">Show that \(f(x,y)=x^2-3xy+y^2\) has a critical point at \((0,0)\text{,}\) which is a minimum of both slice curves, but is not a local minimum.</p>
+<p id="p-2343">It is easy to see that \(f(x,y)=x^2+y^2\) has a critical point at \((0,0)\) and that that point is a minimum for the function.  Similarly, \(f(x,y)=-x^2-y^2\) has a critical point at \((0,0)\) and that that point is a maximum for the function. For some functions, like \(f(x,y)=x^2-y^2\text{,}\) which has a critical point at \((0,0)\text{,}\) we can have a maximum in one direction and a minimum in another direction.  Such a point is called a <dfn class="terminology">saddle point</dfn>.  We note that we can have a saddle point even if the \(x\) and \(y\) slice curves both indicate a minimum.</p>
+<article class="example example-like" id="example-90"><a data-knowl="" class="id-ref original" data-refid="hk-example-90"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">A Saddle Point at a Minimum on Both Axes.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-90"><article class="example example-like"><p id="p-2344">Show that \(f(x,y)=x^2-3xy+y^2\) has a critical point at \((0,0)\text{,}\) which is a minimum of both slice curves, but is not a local minimum.</p>
 <p id="p-2345">Solution:  We look at the two partial derivatives, and notice they are both zero at the origin.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -272,15 +276,15 @@ f(x,-x)=x^2-3x x+x^2=-x^2.
 <p id="p-2349">With only first derivatives, we can just find the critical points.  To check if a critical point is maximum, a minimum, or a saddle point, using only the first derivative, the best method is to look at a graph to determine the kind of critical point.  For some applications we want to categorize the critical points symbolically.</p>
 <p id="p-2350"><dfn class="terminology">Second Partial Derivatives</dfn></p>
 <p id="p-2351">With functions of one variable we used the second derivative to test if a critical point was a maximum or minimum.  In the two variable case we need to define the second derivatives and use them to define the discriminant of a function to test if a critical point is a minimum, maximum, or saddle point.  We first need to define second partial derivatives.</p>
-<article class="assemblage-like" id="assemblage-45"><p id="p-2352"><dfn class="terminology">Second partials</dfn>:</p>
+<article class="assemblage assemblage-like" id="assemblage-45"><p id="p-2352"><dfn class="terminology">Second partials</dfn>:</p>
 <div class="displaymath" id="p-2353">
 \begin{equation*}
 f_{ab}=(f_a )_b=\frac{\partial}{\partial b}(\frac{\partial}{\partial a} f).
 \end{equation*}
 </div></article><p id="p-2354">Note that \(f_{xx}\) is simply the old second derivative of the curve \(f(x,y_0)\) and \(f_{yy}\) is simply the old second derivative of the curve \(f(x_0,y)\text{.}\)  For curves with continuous second partial derivatives, the mixed partials, \(f_{yx}\) and \(f_{xy}\) are the same.</p>
-<article class="example-like" id="example-91"><a data-knowl="" class="id-ref" data-refid="hk-example-91"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.3.3</span>. <span class="title">Finding Second Partial Derivatives.</span>
-</h6></a></article><div id="hk-example-91" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2355">Find the second partial derivatives of</p>
+<article class="example example-like" id="example-91"><a data-knowl="" class="id-ref original" data-refid="hk-example-91"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Second Partial Derivatives.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-91"><article class="example example-like"><p id="p-2355">Find the second partial derivatives of</p>
 <div class="displaymath">
 \begin{equation*}
 f(x,y)=x^2+ 3xy+5y^3-7x-11y. 
@@ -321,14 +325,14 @@ f_{yy}=\frac{\partial}{\partial y} f_y=30y
 <p id="p-2358">As expected, the mixed partials are the same.</p></article></div>
 <p id="p-2359"><dfn class="terminology">Using the Discriminant to Test Critical Points</dfn></p>
 <p id="p-2360">To test if a critical point is a maximum, minimum, or saddle point we compute the discriminant of the function.</p>
-<article class="assemblage-like" id="assemblage-46"><p id="p-2361"><dfn class="terminology">Discriminant</dfn>:</p>
+<article class="assemblage assemblage-like" id="assemblage-46"><p id="p-2361"><dfn class="terminology">Discriminant</dfn>:</p>
 <div class="displaymath" id="p-2362">
 \begin{equation*}
 D(f(x,y))=f_{xx} f_{yy}-f_{xy}^2.
 \end{equation*}
-</div></article><article class="example-like" id="example-92"><a data-knowl="" class="id-ref" data-refid="hk-example-92"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.3.4</span>. <span class="title">Finding the Discriminant of a Function.</span>
-</h6></a></article><div id="hk-example-92" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2363">Find the discriminant of</p>
+</div></article><article class="example example-like" id="example-92"><a data-knowl="" class="id-ref original" data-refid="hk-example-92"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Discriminant of a Function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-92"><article class="example example-like"><p id="p-2363">Find the discriminant of</p>
 <div class="displaymath">
 \begin{equation*}
 f(x,y)=x^2+ 3xy+5y^3-7x-11y.  
@@ -346,13 +350,13 @@ f_xx=2,\quad f_xy=3,\quad   f_yy=30y.
 D=(2)(30y)-3^2=60y-9.
 \end{equation*}
 </div></article></div>
-<article class="assemblage-like" id="assemblage-47"><p id="p-2366"><dfn class="terminology">Discriminant test</dfn>: Let \((a,b)\)  be a critical point of \(f(x,y)\text{.}\)</p>
+<article class="assemblage assemblage-like" id="assemblage-47"><p id="p-2366"><dfn class="terminology">Discriminant test</dfn>: Let \((a,b)\)  be a critical point of \(f(x,y)\text{.}\)</p>
 <p id="p-2367">If \(D(a,b)&gt;0\) and \(f_{xx} (a,b)&gt;0\) then \((a,b)\) is a local minimum of \(f(x,y)\text{.}\)</p>
 <p id="p-2368">If \(D(a,b)&gt;0 \) and \(f_{xx} (a,b)\lt 0\) then \((a,b)\) is a local maximum of \(f(x,y)\text{.}\)</p>
 <p id="p-2369">If \(D(a,b)\lt 0\) then \((a,b)\) is a saddle point of \(f(x,y)\text{.}\)</p>
-<p id="p-2370">If \(D(a,b)=0\) we do not have enough information to classify the point.</p></article>   <article class="example-like" id="example-93"><a data-knowl="" class="id-ref" data-refid="hk-example-93"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.3.5</span>. <span class="title">Using the Discriminant to Classify Critical Points.</span>
-</h6></a></article><div id="hk-example-93" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2371">Based on the information given, classify each of the following points as a local maximum, local minimum, saddle point, not a critical point, or not enough information to classify.</p>
+<p id="p-2370">If \(D(a,b)=0\) we do not have enough information to classify the point.</p></article><article class="example example-like" id="example-93"><a data-knowl="" class="id-ref original" data-refid="hk-example-93"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Discriminant to Classify Critical Points.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-93"><article class="example example-like"><p id="p-2371">Based on the information given, classify each of the following points as a local maximum, local minimum, saddle point, not a critical point, or not enough information to classify.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">p</td>
@@ -360,7 +364,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t3 lines">\({f_y}\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(f_{xx}\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(f_{xy}\)</td>
-<td class="c m b1 r0 l0 t3 lines">\(f_{yy}\)</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">\(f_{yy}\)</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">A</td>
@@ -368,7 +372,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">1</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">B</td>
@@ -376,7 +380,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">4</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">4</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">C</td>
@@ -384,7 +388,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">D</td>
@@ -392,7 +396,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">E</td>
@@ -400,7 +404,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">-1</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">F</td>
@@ -408,7 +412,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">-3</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
-<td class="c m b1 r0 l0 t0 lines">-2</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">-2</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">G</td>
@@ -416,7 +420,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
-<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3</td>
 </tr>
 </table></div></div></div>
 <p id="p-2372">Solution:  We need to compute the discriminant and apply the test.</p>
@@ -429,7 +433,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t3 lines">\(f_{xy}\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(f_{yy}\)</td>
 <td class="c m b1 r0 l0 t3 lines">Discriminant</td>
-<td class="c m b1 r0 l0 t3 lines">Classification</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">Classification</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">A</td>
@@ -439,7 +443,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">Not enough information</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not enough information</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">B</td>
@@ -449,7 +453,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">4</td>
 <td class="c m b1 r0 l0 t0 lines">8</td>
-<td class="c m b1 r0 l0 t0 lines">Not a critical point</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not a critical point</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">C</td>
@@ -459,7 +463,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">-4</td>
-<td class="c m b1 r0 l0 t0 lines">Not a critical point</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not a critical point</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">D</td>
@@ -469,7 +473,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">-4</td>
-<td class="c m b1 r0 l0 t0 lines">Saddle point</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Saddle point</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">E</td>
@@ -479,7 +483,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">-7</td>
-<td class="c m b1 r0 l0 t0 lines">Saddle point</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Saddle point</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">F</td>
@@ -489,7 +493,7 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">-2</td>
 <td class="c m b1 r0 l0 t0 lines">5</td>
-<td class="c m b1 r0 l0 t0 lines">Maximum</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Maximum</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">G</td>
@@ -499,12 +503,12 @@ D=(2)(30y)-3^2=60y-9.
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">Not enough information</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not enough information</td>
 </tr>
 </table></div></div></div></article></div>
-<article class="example-like" id="example-94"><a data-knowl="" class="id-ref" data-refid="hk-example-94"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.3.6</span>. <span class="title">Finding and Classifying Critical Points.</span>
-</h6></a></article><div id="hk-example-94" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2373">Let \(f(x,y)=x^3-3x+y^3-3y^2\text{.}\)  Find the critical points and classify them using the discriminant.</p>
+<article class="example example-like" id="example-94"><a data-knowl="" class="id-ref original" data-refid="hk-example-94"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Finding and Classifying Critical Points.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-94"><article class="example example-like"><p id="p-2373">Let \(f(x,y)=x^3-3x+y^3-3y^2\text{.}\)  Find the critical points and classify them using the discriminant.</p>
 <p id="p-2374">Solution:  We start by computing the first partial derivatives.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -527,7 +531,7 @@ f_{xx}=6x,\quad f_{xy}=0,\quad f_{yy}=6y-6,\quad D=(6x)(6y-6)-0^2=36xy-36x.
 <p id="p-2378">At \((-1,2)\) and \((1,0)\text{,}\) \(D\) is negative, so we have a saddle point.</p>
 <p id="p-2379">At (\((-1,0)\text{,}\) \(D\) is positive and \(f_{xx}\) is negative, so we have a local maximum.</p></article></div>
 <section class="exercises" id="exercises-set-sec-3-3"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Critical Points and Extrema Problems</span>
+<span class="type">Exercises</span> <span class="codenumber">6.3.1</span> <span class="title">Exercises: Critical Points and Extrema Problems</span>
 </h3>
 <a href="sec-6-3-CriticalPointsExtrema.html#exercises-set-sec-3-3" class="permalink">¶</a><p id="p-2380">For exercises 1-6, for the given functions and region:</p>
 <ul class="disc">
@@ -536,10 +540,10 @@ f_{xx}=6x,\quad f_{xy}=0,\quad f_{yy}=6y-6,\quad D=(6x)(6y-6)-0^2=36xy-36x.
 <li id="li-654"><p id="p-2383">Produce a small graph around any critical point.</p></li>
 <li id="li-655"><p id="p-2384">Determine if the critical points are maxima, minima, or saddle points.</p></li>
 </ul>
-<article class="exercise-like" id="exercise-406"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-406"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-2385">The function is \(f(x,y)=x^2+2xy+4y^2+5x-6y\text{,}\) for the region \(-10\le x\le 10\text{,}\) and \(-10\le y\le 10\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-205" id="solution-205"><span class="type">Solution</span></a><div id="hk-solution-205" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-205" id="solution-205"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-205"><div class="solution solution-like"><ul class="disc">
 <li id="li-656">
 <div class="displaymath">
 \begin{equation*}
@@ -626,11 +630,11 @@ D=f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2=2*8-2^2=12&gt;0
 <p id="p-2399">Since \(D\gt 0\) and \(f_{xx}  (x,y)\gt 0\) we have a local minimum.</p>
 </li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-407"><h6 class="heading"><span class="codenumber">2.</span></h6>
-<p id="p-2400">The function is \(f(x,y)=x^2+7xy+2y^2+4x-3y\text{,}\) for the region \(-10\le x\le 10\text{,}\) and \(-10\le y\le 10\text{.}\)</p></article><article class="exercise-like" id="exercise-408"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-407"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-2400">The function is \(f(x,y)=x^2+7xy+2y^2+4x-3y\text{,}\) for the region \(-10\le x\le 10\text{,}\) and \(-10\le y\le 10\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-408"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-2401">The function is \(f(x,y)=-x^2+2xy-4y^2+8x-11y\text{,}\) for the region \(-10\le x\le 10\text{,}\) and \(-10\le y\le 10\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-206" id="solution-206"><span class="type">Solution</span></a><div id="hk-solution-206" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-206" id="solution-206"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-206"><div class="solution solution-like"><ul class="disc">
 <li id="li-660">
 <div class="displaymath">
 \begin{equation*}
@@ -693,8 +697,8 @@ D=f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2=2*8-2^2=12\gt 0
 <p id="p-2409">Since \(D\gt 0\) and \(f_{xx}  (x,y)\lt 0\) we have a local maximum.</p>
 </li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-409"><h6 class="heading"><span class="codenumber">4.</span></h6>
-<p id="p-2410">The function is \(f(x,y)=x^3-12x+y^3-3y\text{,}\) for the region \(-10\le x\le 10\text{,}\) and \(-10\le y\le 10\text{.}\)</p></article><article class="exercise-like" id="exercise-410"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-409"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-2410">The function is \(f(x,y)=x^3-12x+y^3-3y\text{,}\) for the region \(-10\le x\le 10\text{,}\) and \(-10\le y\le 10\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-410"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-2411">The function is the revenue function for selling widgets and gizmos with demand price functions</p>
 <div class="displaymath">
 \begin{equation*}
@@ -708,7 +712,7 @@ PriceWidgets=30-\frac{QuantityWidgets}{45}-\frac{QuantityGizmos}{300}
 </div>
 <p id="p-2412">for the region \(0\le QuantityWidgets\le 1500\text{,}\) and \(0\le QuantityGizmos\le 1500\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-207" id="solution-207"><span class="type">Solution</span></a><div id="hk-solution-207" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-207" id="solution-207"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-207"><div class="solution solution-like">
 <p id="p-2413">To solve this problem we will rename Gizmos \(x\) and Widgets \(y\text{.}\) This will make using Wolfram Alpha slightly easier, and symbol manipulation a tad more straight forward.</p>
 <div class="displaymath">
 \begin{equation*}
@@ -787,7 +791,7 @@ D=f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2 \gt 0
 </li>
 </ul>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-411"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-411"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-2419">The function is the revenue function for selling widgets and gizmos with demand price functions</p>
 <div class="displaymath">
 \begin{equation*}
@@ -799,7 +803,7 @@ PriceGizmos=30(0.9)^{(QuantityGizmos/150) }-\frac{QuantityWidgets}{250}
 PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 \end{equation*}
 </div>
-<p id="p-2420">for the region \(0\le QuantityWidgets\le 1500\text{,}\) and \(0\le QuantityGizmos\le 1500\text{.}\)  (Warning: There are several critical points.)</p></article><article class="exercise-like" id="exercise-412"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-2420">for the region \(0\le QuantityWidgets\le 1500\text{,}\) and \(0\le QuantityGizmos\le 1500\text{.}\)  (Warning: There are several critical points.)</p></article><article class="exercise exercise-like" id="exercise-412"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-2421">Based on the information given, classify each of the following points as a local maximum, local minimum, saddle point, not a critical point, or not enough information to classify.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -808,7 +812,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t3 lines">\(f_y\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(f_{xx}\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(f_{xy}\)</td>
-<td class="c m b1 r0 l0 t3 lines">\(f_{yy}\)</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">\(f_{yy}\)</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">A</td>
@@ -816,7 +820,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">4</td>
-<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">5</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">B</td>
@@ -824,7 +828,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">C</td>
@@ -832,7 +836,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">5</td>
-<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">D</td>
@@ -840,7 +844,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">2</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">E</td>
@@ -848,7 +852,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">F</td>
@@ -856,7 +860,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
-<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">G</td>
@@ -864,11 +868,11 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">-1</td>
-<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
 </table></div></div></div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-208" id="solution-208"><span class="type">Solution</span></a><div id="hk-solution-208" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-208" id="solution-208"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-208"><div class="solution solution-like">
 <p id="p-2422">Add a column for D and classify.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -879,7 +883,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t3 lines">\(f_{xy}\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(f_{yy}\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(D\)</td>
-<td class="c m b1 r0 l0 t3 lines">Classification</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">Classification</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">A</td>
@@ -889,7 +893,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">4</td>
 <td class="c m b1 r0 l0 t0 lines">5</td>
 <td class="c m b1 r0 l0 t0 lines">-1</td>
-<td class="c m b1 r0 l0 t0 lines">Not Critical</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not Critical</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">B</td>
@@ -899,7 +903,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">Not Enough Info</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not Enough Info</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">C</td>
@@ -909,7 +913,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">5</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">-19</td>
-<td class="c m b1 r0 l0 t0 lines">Not Critical</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not Critical</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">D</td>
@@ -919,7 +923,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">Not Enough Info</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not Enough Info</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">E</td>
@@ -929,7 +933,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">-1</td>
-<td class="c m b1 r0 l0 t0 lines">Saddle Point</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Saddle Point</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">F</td>
@@ -939,7 +943,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">Not Enough Info</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not Enough Info</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">G</td>
@@ -949,11 +953,11 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">-1</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">Not Enough Info</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">Not Enough Info</td>
 </tr>
 </table></div></div></div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-413"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-413"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-2423">Based on the information given, classify each of the following points as a local maximum, local minimum, saddle point, not a critical point, or not enough information to classify.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -962,7 +966,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t3 lines">\(f_y\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(f_{xx}\)</td>
 <td class="c m b1 r0 l0 t3 lines">\(f_{xy}\)</td>
-<td class="c m b1 r0 l0 t3 lines">\(f_{yy}\)</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">\(f_{yy}\)</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">A</td>
@@ -970,7 +974,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">4</td>
-<td class="c m b1 r0 l0 t0 lines">5</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">5</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">B</td>
@@ -978,7 +982,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">C</td>
@@ -986,7 +990,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">5</td>
-<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">D</td>
@@ -994,7 +998,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">2</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">2</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">E</td>
@@ -1002,7 +1006,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
-<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">F</td>
@@ -1010,7 +1014,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
-<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">G</td>
@@ -1018,9 +1022,9 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">-1</td>
-<td class="c m b1 r0 l0 t0 lines">0</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
-</table></div></div></div></article><article class="exercise-like" id="exercise-414"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</table></div></div></div></article><article class="exercise exercise-like" id="exercise-414"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-2424">Using polynomials of the form \(f(x,y)=ax^3+bx^4+cy^3+dy^4\text{,}\) produce a function that has a critical point at \((0, 0)\text{,}\) of each type.</p>
 <ol class="decimal">
 <li id="li-668"><p id="p-2425">A local maximum.</p></li>
@@ -1029,7 +1033,7 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 <li id="li-671"><p id="p-2428">A saddle point where the function f(x,0)  and f(0,y)  both have inflection points.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-209" id="solution-209"><span class="type">Solution</span></a><div id="hk-solution-209" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-209" id="solution-209"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-209"><div class="solution solution-like">
 <p id="p-2429">It helps to consider the question with only one variable.</p>
 <p id="p-2430">\(f(x)=ax^3\) has an inflection point at \(x=0\) and neither a max nor a minimum.</p>
 <p id="p-2431">\(f(x)=ax^4\) has minimum at \(x=0\) if \(a\gt 0\) and a maximum if \(a\lt 0\text{.}\)</p>
@@ -1044,6 +1048,6 @@ PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}
 </div></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

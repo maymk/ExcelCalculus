@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:24-05:00    *-->
+<!--*    on 2020-01-19T10:07:13-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -154,44 +158,45 @@ var js_version = 0.11;
 </h2>
 <a href="sec-4-1-ElementaryDerivatives.html" class="permalink">¶</a><p id="p-1419"><a class="external" href="./Examples/Section-4-1-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
 <p id="p-1420">We start by recalling the formal definition, with a slight adjustment in notation to match the standard conventions:</p>
-<article class="definition-like" id="definition-4"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">4.1.1</span>.</h6>
+<article class="definition definition-like" id="definition-4"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+</h6>
 <p id="p-1421"> For a function \(f(x)\text{,}\) the instantaneous rate of change of \(f(x)\text{,}\) or the <dfn class="terminology">derivative of \(f(x)\)</dfn>, denoted as \(f'(x_0)\text{,}\)   is defined as</p>
 <div class="displaymath">
 \begin{equation*}
 f'(x )=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.
 \end{equation*}
 </div></article><p id="p-1422">We also want to recall some alternate notations we may use.</p>
-<article class="assemblage-like" id="assemblage-31"><p id="p-1423">Notation:  Let \(y=f(x)\text{.}\)</p>
+<article class="assemblage assemblage-like" id="assemblage-31"><p id="p-1423">Notation:  Let \(y=f(x)\text{.}\)</p>
 <p id="p-1424">The derivative of \(f(x)\)  is denoted as \(f'(x)\) or  \(\frac{d}{dx} f(x) \)or \(dy/dx\text{.}\)</p>
 <p id="p-1425">The derivative at \(x=x_0\) is denoted as \(f'(x_0 )\) or \(\frac{dy}{dx}|_{x=x_0}\text{.}\)</p></article><p id="p-1426">As is typical in mathematics, when there are several forms, we use the one that makes the most sense in the case on which we are working.</p>
-<dfn class="terminology">Derivatives of monomials</dfn><section class="introduction" id="introduction-23"><p id="p-1427">Our first rule for symbolic differentiation gives the derivative of a monomial</p></section><article class="theorem-like" id="claim-1"><h6 class="heading">
-<span class="type">Claim</span> <span class="codenumber">4.1.2</span>. <span class="title">Monomial rule.</span>
+<dfn class="terminology">Derivatives of monomials</dfn><section class="introduction" id="introduction-23"><p id="p-1427">Our first rule for symbolic differentiation gives the derivative of a monomial</p></section><article class="claim theorem-like" id="claim-1"><h6 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Monomial rule.</span>
 </h6>
 <p id="p-1428">If \(f(x)=a x^n\text{,}\) then \(f'(x)=n*a*x^{n-1}\text{.}\)</p></article><p id="p-1429">This rule is a generalization of the rule we found in section 3.2 using trendlines.  There we noticed that the derivative is linear whenever the function is quadratic.  The rule is valid for all values of n, not just for positive whole numbers. We can now find derivatives for expressions that can be converted into this form.</p>
-<article class="example-like" id="example-43"><a data-knowl="" class="id-ref" data-refid="hk-example-43"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.3</span>. <span class="title">Derivatives of monomials.</span>
-</h6></a></article><div id="hk-example-43" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1430">Using our first rule of symbolic differentiation, find the derivatives of the following functions:</p>
+<article class="example example-like" id="example-43"><a data-knowl="" class="id-ref original" data-refid="hk-example-43"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Derivatives of monomials.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-43"><article class="example example-like"><p id="p-1430">Using our first rule of symbolic differentiation, find the derivatives of the following functions:</p>
 <ol class="lower-alpha">
-<li id="li-449">\(f(x)=3 x\)</li>
-<li id="li-450">\(g(x)=5 x^2\)</li>
-<li id="li-451">\(h(x)=7x^{25}\)</li>
-<li id="li-452">\(j(x)=6 \sqrt{x}\)</li>
-<li id="li-453">\(k(x)=\frac{4}{x^3} \)</li>
+<li id="li-449">\(\displaystyle f(x)=3 x\)</li>
+<li id="li-450">\(\displaystyle g(x)=5 x^2\)</li>
+<li id="li-451">\(\displaystyle h(x)=7x^{25}\)</li>
+<li id="li-452">\(\displaystyle j(x)=6 \sqrt{x}\)</li>
+<li id="li-453">\(\displaystyle k(x)=\frac{4}{x^3} \)</li>
 </ol>
 <p id="p-1431"><dfn class="terminology">Solution: Using our rule</dfn>:</p>
 <ol class="lower-alpha">
-<li id="li-454">\(\frac{d}{dx} f(x)=  \frac{d}{dx} (3 x^1)=1*3 x^0=3.\)</li>
-<li id="li-455">\(\frac{d}{dx} g(x)=\frac{d}{dx}  (5 x^2 )=2*5 x^1=10 x.\)</li>
-<li id="li-456">\(\frac{d}{dx} h(x)=\frac{d}{dx} (7x^{25})=25*7 x^24=175x^{24}.\)</li>
-<li id="li-457">\(\frac{d}{dx} j(x)=\frac{d}{dx}  (6 \sqrt{x})=\frac{d}{dx}  (6x^{1/2} )=1/2*6x^{-1/2}=3x^{-1/2}\)</li>
-<li id="li-458">\(\frac{d}{dx}  k(x)=\frac{d}{dx}  \frac{4 }{x^3 }=d/dx (4 x^{(-3)} )=-3*4 x^{-4}=-12 x^{-4}\)</li>
+<li id="li-454">\(\displaystyle \frac{d}{dx} f(x)=  \frac{d}{dx} (3 x^1)=1*3 x^0=3.\)</li>
+<li id="li-455">\(\displaystyle \frac{d}{dx} g(x)=\frac{d}{dx}  (5 x^2 )=2*5 x^1=10 x.\)</li>
+<li id="li-456">\(\displaystyle \frac{d}{dx} h(x)=\frac{d}{dx} (7x^{25})=25*7 x^24=175x^{24}.\)</li>
+<li id="li-457">\(\displaystyle \frac{d}{dx} j(x)=\frac{d}{dx}  (6 \sqrt{x})=\frac{d}{dx}  (6x^{1/2} )=1/2*6x^{-1/2}=3x^{-1/2}\)</li>
+<li id="li-458">\(\displaystyle \frac{d}{dx}  k(x)=\frac{d}{dx}  \frac{4 }{x^3 }=d/dx (4 x^{(-3)} )=-3*4 x^{-4}=-12 x^{-4}\)</li>
 </ol></article></div>
 <p id="p-1432">For parts (d) and (e), we converted roots and fractions so they looked like monomials with negative or fractional exponents and applied our rule.</p>
 <p id="p-1433">Probably the most convincing demonstration of the truth of this rule is for us to use Excel and the techniques of the last chapter to find a function, its numeric and symbolic derivatives and see that the symbolic and numeric derivatives are the same up to round off error.  We would also like to see how the symbolic derivative can be derived from the formal definition of derivative in simple cases.</p>
-<article class="example-like" id="example-44"><a data-knowl="" class="id-ref" data-refid="hk-example-44"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.4</span>. <span class="title">Derivatives of linear functions.</span>
-</h6></a></article><div id="hk-example-44" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1434">From the formal definition of derivative, if \(f(x)=a x+b\text{,}\) then show \(f'(x)=a\text{.}\)</p>
+<article class="example example-like" id="example-44"><a data-knowl="" class="id-ref original" data-refid="hk-example-44"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Derivatives of linear functions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-44"><article class="example example-like"><p id="p-1434">From the formal definition of derivative, if \(f(x)=a x+b\text{,}\) then show \(f'(x)=a\text{.}\)</p>
 <p id="p-1435">Solution: Using our definition:</p>
 <div class="displaymath" id="p-1436">
 \begin{gather*}
@@ -203,9 +208,9 @@ f'(x)=lim_{h\to0}\frac{f(x+h)-f(x)}{h}
 </div>
 <p id="p-1437">The last step is justified by noting that as h gets very small the value of a simply stays a.</p></article></div>
 <p id="p-1438">We want to look at a quadratic function, since we will need to take a limit in that case.</p>
-<article class="example-like" id="example-45"><a data-knowl="" class="id-ref" data-refid="hk-example-45"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.5</span>. <span class="title">A quadratic derivative.</span>
-</h6></a></article><div id="hk-example-45" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1439">From the formal definition of derivative, if \(f(x)=a x^2\text{,}\) then show \(f'(x)=2 a x\text{.}\)</p>
+<article class="example example-like" id="example-45"><a data-knowl="" class="id-ref original" data-refid="hk-example-45"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">A quadratic derivative.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-45"><article class="example example-like"><p id="p-1439">From the formal definition of derivative, if \(f(x)=a x^2\text{,}\) then show \(f'(x)=2 a x\text{.}\)</p>
 <p id="p-1440"><dfn class="terminology">Solution</dfn>: Using our definition:</p>
 <div class="displaymath" id="p-1441">
 \begin{gather*}
@@ -219,9 +224,9 @@ f'(x)=lim_{h\to0}\frac{f(x+h)-f(x)}{h}
 <p id="p-1443">We can modify this last example to find a formula for the derivative of \(f(x)=x^n\) for any positive integer \(n\text{.}\)  We recall that</p>
 <p id="p-1444">\((x+h)^n=x^n+n x^{(n-1)}h+terms\ involving\ h^2.\)</p>
 <p id="p-1445">We are ready to generalize.</p>
-<article class="example-like" id="example-46"><a data-knowl="" class="id-ref" data-refid="hk-example-46"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.6</span>. <span class="title">derivative of power function.</span>
-</h6></a></article><div id="hk-example-46" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1446">From the formal definition of derivative, if \(f(x)=a x^n\text{,}\) then show \(f'(x)=n a x^{(n-1)}\text{.}\)</p>
+<article class="example example-like" id="example-46"><a data-knowl="" class="id-ref original" data-refid="hk-example-46"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">derivative of power function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-46"><article class="example example-like"><p id="p-1446">From the formal definition of derivative, if \(f(x)=a x^n\text{,}\) then show \(f'(x)=n a x^{(n-1)}\text{.}\)</p>
 <p id="p-1447"><dfn class="terminology">Solution</dfn>: Using our definition:</p>
 <div class="displaymath" id="p-1448">
 \begin{gather*}
@@ -233,35 +238,35 @@ f'(x)=lim_{h\to0}\frac{f(x+h)-f(x)}{h}
 \end{gather*}
 </div>
 <p id="p-1449">The last step is justified by noting that as h gets very small the value of h times a polynomial in h also gets very small.</p></article></div>
-<dfn class="terminology">Derivatives of Exponential Functions</dfn><article class="theorem-like" id="claim-2"><h6 class="heading">
-<span class="type">Claim</span> <span class="codenumber">4.1.7</span>. <span class="title">Exponential Rule.</span>
+<dfn class="terminology">Derivatives of Exponential Functions</dfn><article class="claim theorem-like" id="claim-2"><h6 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Exponential Rule.</span>
 </h6>
 <p id="p-1450">If \(f(x)=a*e^x\text{,}\) then \(f'(x)=a*e^x\text{.}\)</p></article><p id="p-1451">The elegance of this rule is part of the reason why mathematicians and math books like base \(e\) for exponential functions.  However we more typically want to use exponential functions based on a rate of growth or decay.</p>
-<article class="theorem-like" id="claim-3"><h6 class="heading">
-<span class="type">Claim</span> <span class="codenumber">4.1.8</span>. <span class="title">General Exponential Rule.</span>
+<article class="claim theorem-like" id="claim-3"><h6 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">General Exponential Rule.</span>
 </h6>
-<p id="p-1452">If \(f(x)=b*a^x\text{,}\) then \(f'(x)=b*\ln(a)*a^x\text{.}\)</p></article><article class="example-like" id="example-47"><a data-knowl="" class="id-ref" data-refid="hk-example-47"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.9</span>. <span class="title">Exponential examples.</span>
-</h6></a></article><div id="hk-example-47" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1453">Using the exponential rules of symbolic differentiation, find the derivatives of the following functions:</p>
+<p id="p-1452">If \(f(x)=b*a^x\text{,}\) then \(f'(x)=b*\ln(a)*a^x\text{.}\)</p></article><article class="example example-like" id="example-47"><a data-knowl="" class="id-ref original" data-refid="hk-example-47"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Exponential examples.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-47"><article class="example example-like"><p id="p-1453">Using the exponential rules of symbolic differentiation, find the derivatives of the following functions:</p>
 <ol class="lower-alpha">
-<li id="li-459">\(f(x)=2 e^x\)</li>
-<li id="li-460">\(g(x)=\pi e^x\)</li>
-<li id="li-461">\(h(x)=7*2^x\)</li>
-<li id="li-462">\(j(x)=5*(1.06)^x\)</li>
-<li id="li-463">\(k(x)=9*(0.97)^x\)</li>
+<li id="li-459">\(\displaystyle f(x)=2 e^x\)</li>
+<li id="li-460">\(\displaystyle g(x)=\pi e^x\)</li>
+<li id="li-461">\(\displaystyle h(x)=7*2^x\)</li>
+<li id="li-462">\(\displaystyle j(x)=5*(1.06)^x\)</li>
+<li id="li-463">\(\displaystyle k(x)=9*(0.97)^x\)</li>
 </ol>
 <p id="p-1454"><dfn class="terminology">Solution: Using our rule</dfn>:</p>
 <ol class="lower-alpha">
-<li id="li-464">\(\frac{d}{dx} f(x)=  \frac{d}{dx} (2 e^x)=2 e^x.\)</li>
-<li id="li-465">\(\frac{d}{dx} g(x)=\frac{d}{dx}  (\pi e^x )=\pi e^x.\)</li>
-<li id="li-466">\(\frac{d}{dx} h(x)=\frac{d}{dx} (7*2^x )=7*\ln(2)*2^x\)</li>
-<li id="li-467">\(\frac{d}{dx} j(x)=\frac{d}{dx}  (5*(1.06)^x) =5*\ln(1.06)*(1.06)^x \)</li>
-<li id="li-468">\(\frac{d}{dx}  k(x)=\frac{d}{dx}  (9*(0.97)^x) =9*\ln(0.97)*(0.97)^x \)</li>
+<li id="li-464">\(\displaystyle \frac{d}{dx} f(x)=  \frac{d}{dx} (2 e^x)=2 e^x.\)</li>
+<li id="li-465">\(\displaystyle \frac{d}{dx} g(x)=\frac{d}{dx}  (\pi e^x )=\pi e^x.\)</li>
+<li id="li-466">\(\displaystyle \frac{d}{dx} h(x)=\frac{d}{dx} (7*2^x )=7*\ln(2)*2^x\)</li>
+<li id="li-467">\(\displaystyle \frac{d}{dx} j(x)=\frac{d}{dx}  (5*(1.06)^x) =5*\ln(1.06)*(1.06)^x \)</li>
+<li id="li-468">\(\displaystyle \frac{d}{dx}  k(x)=\frac{d}{dx}  (9*(0.97)^x) =9*\ln(0.97)*(0.97)^x \)</li>
 </ol></article></div>
 <p id="p-1455">In some ways, the most convincing argument for these rules is to use Excel to plot the function, its numeric derivative and its symbolic derivative for a variety of values and see that the numeric and symbolic derivatives are the same up to rounding error.  We would also like to make an argument from the formal definition of the derivative.</p>
-<article class="example-like" id="example-48"><a data-knowl="" class="id-ref" data-refid="hk-example-48"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.10</span>. <span class="title">Justification of first exponential rule.</span>
-</h6></a></article><div id="hk-example-48" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1456">From the formal definition of derivative show that if \(f(x)=e^x\text{,}\) then \(f'(x)=e^x\text{.}\)</p>
+<article class="example example-like" id="example-48"><a data-knowl="" class="id-ref original" data-refid="hk-example-48"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Justification of first exponential rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-48"><article class="example example-like"><p id="p-1456">From the formal definition of derivative show that if \(f(x)=e^x\text{,}\) then \(f'(x)=e^x\text{.}\)</p>
 <p id="p-1457"><dfn class="terminology">Solution</dfn>: Using our definition:</p>
 <div class="displaymath" id="p-1458">
 \begin{gather*}
@@ -273,9 +278,9 @@ f'(x)=lim_{h\to0}\frac{f(x+h)-f(x)}{h}
 </div>. <p id="p-1459">It suffices to show that \(\left(lim_{h\to0}\frac{e^h-1}{h}\right) =1\text{.}\)  This can be done by starting with a formal definition of \(e\text{.}\)  For this class it can also be done by using Excel to evaluate the expression for smaller and smaller values of h.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-1-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-1460">It seems clear that \(\left(lim_{h\to0}\frac{e^h-1}{h}\right) =1\text{.}\)</p></article></div>
-<article class="example-like" id="example-49"><a data-knowl="" class="id-ref" data-refid="hk-example-49"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.11</span>. <span class="title">Justification of second exponential rule.</span>
-</h6></a></article><div id="hk-example-49" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1461">From the formal definition of derivative, if \(f(x)=a^x\text{,}\) then show \(f'(x)=\ln(a)*a^x\text{.}\)</p>
+<article class="example example-like" id="example-49"><a data-knowl="" class="id-ref original" data-refid="hk-example-49"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Justification of second exponential rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-49"><article class="example example-like"><p id="p-1461">From the formal definition of derivative, if \(f(x)=a^x\text{,}\) then show \(f'(x)=\ln(a)*a^x\text{.}\)</p>
 <p id="p-1462"><dfn class="terminology">Solution</dfn>: We start by mimicking the last problem.  At a key step we will recall that \(a^x=e^{x \ln(a)}\text{.}\)  We also want to note that \(\left(lim_{h\ln(a) \to0}\frac{e^{h\ln(a)}-1}{h\ln(a)}\right) = \left(lim_{h\to0}\frac{e^h-1}{h}\right) =1\text{.}\)</p>
 <p id="p-1463">Using our definition:</p>
 <div class="displaymath" id="p-1464">
@@ -291,56 +296,56 @@ f'(x)=lim_{h\to0}\frac{f(x+h)-f(x)}{h}
 \end{gather*}
 </div>.</article></div>
 <p id="p-1465">We are most likely to see exponential functions in the context of continuously compounding interest.</p>
-<article class="example-like" id="example-50"><a data-knowl="" class="id-ref" data-refid="hk-example-50"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.12</span>. <span class="title">Computing future rate of change.</span>
-</h6></a></article><div id="hk-example-50" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1466">If I have a dollar in the bank at an effective annual interest rate of 6%, compounded continuously, at what rate is the principal increasing after to years,</p>
+<article class="example example-like" id="example-50"><a data-knowl="" class="id-ref original" data-refid="hk-example-50"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Computing future rate of change.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-50"><article class="example example-like"><p id="p-1466">If I have a dollar in the bank at an effective annual interest rate of 6%, compounded continuously, at what rate is the principal increasing after to years,</p>
 <p id="p-1467"><dfn class="terminology">Solution</dfn>: We know \(f(x)=(1.06)^x\text{.}\)  Thus \(f'(x)=\ln(1.06)(1.06)^x\text{.}\)  We evaluate this at 10 years and get \(f'(10)=\ln(1.06)(1.06)^{10}=.10435074\text{.}\)  Thus after 10 years, I am earning a little more than 10 cents a year.</p></article></div>
 <dfn class="terminology">Derivatives of Logarithmic Functions</dfn><p id="p-1468">For a last rule for this section we want to find the derivative of \(f(x)=a \ln(x)\)</p>
-<article class="theorem-like" id="claim-4"><h6 class="heading">
-<span class="type">Claim</span> <span class="codenumber">4.1.13</span>. <span class="title">Logarithmic Rule.</span>
+<article class="claim theorem-like" id="claim-4"><h6 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">4.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Logarithmic Rule.</span>
 </h6>
-<p id="p-1469">If \(f(x)=a \ln(x)\text{,}\) then \(f'(x)=a/x\text{.}\)</p></article><article class="example-like" id="example-51"><a data-knowl="" class="id-ref" data-refid="hk-example-51"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.14</span>. <span class="title">Derivatives of logarithmic functions.</span>
-</h6></a></article><div id="hk-example-51" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1470">Using the logarithmic rule of symbolic differentiation, find the derivatives of the following functions:</p>
+<p id="p-1469">If \(f(x)=a \ln(x)\text{,}\) then \(f'(x)=a/x\text{.}\)</p></article><article class="example example-like" id="example-51"><a data-knowl="" class="id-ref original" data-refid="hk-example-51"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Derivatives of logarithmic functions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-51"><article class="example example-like"><p id="p-1470">Using the logarithmic rule of symbolic differentiation, find the derivatives of the following functions:</p>
 <ol class="lower-alpha">
-<li id="li-469">\(f(x)=2 \ln(x)\)</li>
-<li id="li-470">\(g(x)=3 \ln(x^2)\)</li>
-<li id="li-471">\(h(x)=5 \ln(1/x)\)</li>
+<li id="li-469">\(\displaystyle f(x)=2 \ln(x)\)</li>
+<li id="li-470">\(\displaystyle g(x)=3 \ln(x^2)\)</li>
+<li id="li-471">\(\displaystyle h(x)=5 \ln(1/x)\)</li>
 </ol>
 <p id="p-1471"><dfn class="terminology">Solution: Using our rule</dfn>:</p>
 <ol class="lower-alpha">
-<li id="li-472">\(\frac{d}{dx} f(x)=  \frac{d}{dx} (2 \ln(x))=2/x.\)</li>
-<li id="li-473">\(\frac{d}{dx} g(x)=\frac{d}{dx}  (3 \ln(x^2))= \frac{d}{dx}  (3*2\ln(x))=6/x.\)</li>
-<li id="li-474">\(\frac{d}{dx} h(x)=\frac{d}{dx}  (5 \ln(1/x))= \frac{d}{dx}  (-1*5\ln(x))=-5/x.\)</li>
+<li id="li-472">\(\displaystyle \frac{d}{dx} f(x)=  \frac{d}{dx} (2 \ln(x))=2/x.\)</li>
+<li id="li-473">\(\displaystyle \frac{d}{dx} g(x)=\frac{d}{dx}  (3 \ln(x^2))= \frac{d}{dx}  (3*2\ln(x))=6/x.\)</li>
+<li id="li-474">\(\displaystyle \frac{d}{dx} h(x)=\frac{d}{dx}  (5 \ln(1/x))= \frac{d}{dx}  (-1*5\ln(x))=-5/x.\)</li>
 </ol></article></div>
 <p id="p-1472">Our argument for this derivative rule will be more geometric.</p>
-<article class="example-like" id="example-52"><a data-knowl="" class="id-ref" data-refid="hk-example-52"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.15</span>. <span class="title">Justification of logarithmic rule.</span>
-</h6></a></article><div id="hk-example-52" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1473">If \(f(x)=\ln(x)\text{,}\) then show \(f'(x)=1/x\text{.}\)</p>
+<article class="example example-like" id="example-52"><a data-knowl="" class="id-ref original" data-refid="hk-example-52"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Justification of logarithmic rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-52"><article class="example example-like"><p id="p-1473">If \(f(x)=\ln(x)\text{,}\) then show \(f'(x)=1/x\text{.}\)</p>
 <p id="p-1474"><dfn class="terminology">Solution</dfn>: We start by noticing that \(y=e^x\) and \(y=\ln(x)\) are inverse functions.  That means their graphs can be obtained by reflecting across the line \(y=x\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec4-1-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-1475">The slope of the tangent line at \((a,e^a)\) is \(e^a\) by the exponential rule. Symmetry tells us the slope of the line tangent to \(y=\ln(x)\) at \((e^a,a)\)   is \(1⁄e^a\text{.}\)  Letting \(b=e^a\text{,}\) the slope of the line tangent to \(y=\ln(x)\) at \((b,\ln(b))\) is \(1⁄b\text{.}\)   Thus \(\frac{d}{dx}(\ln(x))=1/x\text{.}\)</p></article></div>
-<article class="example-like" id="example-53"><a data-knowl="" class="id-ref" data-refid="hk-example-53"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.16</span>. <span class="title">Slope of a tangent line.</span>
-</h6></a></article><div id="hk-example-53" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1476">Find the slope of the line tangent to \(y=\ln(x)\) at \(x=10\text{.}\)  Compare your answer to the estimate given by the approximation techniques of the last chapter.</p>
+<article class="example example-like" id="example-53"><a data-knowl="" class="id-ref original" data-refid="hk-example-53"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Slope of a tangent line.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-1476">Find the slope of the line tangent to \(y=\ln(x)\) at \(x=10\text{.}\)  Compare your answer to the estimate given by the approximation techniques of the last chapter.</p>
 <p id="p-1477"><dfn class="terminology">Solution</dfn>: Since \(f(x)=\ln(x)\text{,}\) \(f'(10) =1/10=.1\text{.}\) When I use Excel to compute \((f(10.001)-f(9.999))/.002\) I get \(0.1000000003\text{.}\)</p></article></div>
 <section class="exercises" id="exercises-set-sec-4-1"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Elementary Derivatives Problems</span>
+<span class="type">Exercises</span> <span class="codenumber">4.1.1</span> <span class="title">Exercises: Elementary Derivatives Problems</span>
 </h3>
 <a href="sec-4-1-ElementaryDerivatives.html#exercises-set-sec-4-1" class="permalink">¶</a><p id="p-1478">For exercises 1-12, use the symbolic rules to find the derivative of the function.</p>
-<article class="exercise-like" id="exercise-221"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-221"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-1479">\(f(x)=x^5\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution</span></a><div id="hk-solution-110" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like"><div class="displaymath">
 \begin{equation*}
 f(x)=5x^4
 \end{equation*}
 </div></div></div>
-</div></article><article class="exercise-like" id="exercise-222"><h6 class="heading"><span class="codenumber">2.</span></h6>
-<p id="p-1480">\(g(x)=7/x^3\text{.}\)</p></article><article class="exercise-like" id="exercise-223"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-222"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-1480">\(g(x)=7/x^3\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-223"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-1481">\(h(x)=3\sqrt{(x^7)}\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution</span></a><div id="hk-solution-111" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like">
 <p id="p-1482">Rewrite \(h(x)=3x^{7/2}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -348,20 +353,20 @@ h'(x)=\frac{21}{2}(x^{5/2})
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-224"><h6 class="heading"><span class="codenumber">4.</span></h6>
-<p id="p-1483">\(f(x)=2x^{\pi}\text{.}\)</p></article><article class="exercise-like" id="exercise-225"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-224"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-1483">\(f(x)=2x^{\pi}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-225"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-1484">\(k(x)=17\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution</span></a><div id="hk-solution-112" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like"><div class="displaymath">
 \begin{equation*}
 k'(x)=0
 \end{equation*}
 </div></div></div>
-</div></article><article class="exercise-like" id="exercise-226"><h6 class="heading"><span class="codenumber">6.</span></h6>
-<p id="p-1485">\(m(x)=9x^{-5}\text{.}\)</p></article><article class="exercise-like" id="exercise-227"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-226"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-1485">\(m(x)=9x^{-5}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-227"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-1486">\(f(x)=x^2 \sqrt{x}\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution</span></a><div id="hk-solution-113" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like">
 <p id="p-1487">Rewrite \(f(x)=x^{5/2}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -369,46 +374,46 @@ f'(x)=\frac{5}{2}x^{3/2} \text{.}
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-228"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-1488">\(g(x)=\ln(x)\text{.}\)</p></article><article class="exercise-like" id="exercise-229"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-228"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-1488">\(g(x)=\ln(x)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-229"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-1489">\(h(x)=e^x\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-114" id="solution-114"><span class="type">Solution</span></a><div id="hk-solution-114" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-114" id="solution-114"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-114"><div class="solution solution-like"><div class="displaymath">
 \begin{equation*}
 h'(x)=e^x
 \end{equation*}
 </div></div></div>
-</div></article><article class="exercise-like" id="exercise-230"><h6 class="heading"><span class="codenumber">10.</span></h6>
-<p id="p-1490">\(k(x)=5^x\text{.}\)</p></article><article class="exercise-like" id="exercise-231"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-230"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-1490">\(k(x)=5^x\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-231"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-1491">\(m(x)=1.03^x\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-115" id="solution-115"><span class="type">Solution</span></a><div id="hk-solution-115" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-115" id="solution-115"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-115"><div class="solution solution-like"><div class="displaymath">
 \begin{equation*}
 m'(x)=1.03^x\ln(1.03)
 \end{equation*}
 </div></div></div>
-</div></article><article class="exercise-like" id="exercise-232"><h6 class="heading"><span class="codenumber">12.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-232"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
 <p id="p-1492">\(n(x)=(0.9)^x\text{.}\)</p></article><p id="p-1493">For exercises 13-18, use the symbolic rules to find the derivative at the specified point.  Use Excel to find the numeric approximation using the “calculator formula.”  To how many digits do the two methods agree?</p>
-<article class="exercise-like" id="exercise-233"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<article class="exercise exercise-like" id="exercise-233"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
 <p id="p-1494">\(f(x)=x^2\text{.}\)  Evaluate at \(x=2\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-116" id="solution-116"><span class="type">Solution</span></a><div id="hk-solution-116" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-1495">\(f'(x)=2x\text{,}\) so \(f'(2)=4\text{.}\)  The numeric derivative agrees to 12 decimal digits.</p></div></div>
-</div></article><article class="exercise-like" id="exercise-234"><h6 class="heading"><span class="codenumber">14.</span></h6>
-<p id="p-1496">\(g(x)=5x\text{.}\)  Evaluate at \(x=7\text{.}\)</p></article><article class="exercise-like" id="exercise-235"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-116" id="solution-116"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-116"><div class="solution solution-like"><p id="p-1495">\(f'(x)=2x\text{,}\) so \(f'(2)=4\text{.}\)  The numeric derivative agrees to 12 decimal digits.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-234"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-1496">\(g(x)=5x\text{.}\)  Evaluate at \(x=7\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-235"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
 <p id="p-1497">\(h(x)=1.06^x\text{.}\)  Evaluate at \(x=10\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-117" id="solution-117"><span class="type">Solution</span></a><div id="hk-solution-117" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-1498">\(h'(x)=\ln(1.06)(1.06)^x\text{.}\)  So \(h'(10)=\ln(1.06)(1.06)^{10}\   (\approx 0.104)\text{.}\) The numeric derivative agrees to 10 decimal digits.</p></div></div>
-</div></article><article class="exercise-like" id="exercise-236"><h6 class="heading"><span class="codenumber">16.</span></h6>
-<p id="p-1499">\(f(x)=e^x\text{.}\)  Evaluate at \(x=5\text{.}\)</p></article><article class="exercise-like" id="exercise-237"><h6 class="heading"><span class="codenumber">17.</span></h6>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-117" id="solution-117"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-117"><div class="solution solution-like"><p id="p-1498">\(h'(x)=\ln(1.06)(1.06)^x\text{.}\)  So \(h'(10)=\ln(1.06)(1.06)^{10}\   (\approx 0.104)\text{.}\) The numeric derivative agrees to 10 decimal digits.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-236"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-1499">\(f(x)=e^x\text{.}\)  Evaluate at \(x=5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-237"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
 <p id="p-1500">\(k(x)=\ln(x)\text{.}\)  Evaluate at \(x=100\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-118" id="solution-118"><span class="type">Solution</span></a><div id="hk-solution-118" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-1501">\(k'(x)=1/x\text{.}\)   So \(k'(100)=0.01\text{.}\) The numeric derivative agrees to 13 decimal digits.</p></div></div>
-</div></article><article class="exercise-like" id="exercise-238"><h6 class="heading"><span class="codenumber">18.</span></h6>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-118" id="solution-118"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-118"><div class="solution solution-like"><p id="p-1501">\(k'(x)=1/x\text{.}\)   So \(k'(100)=0.01\text{.}\) The numeric derivative agrees to 13 decimal digits.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-238"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
 <p id="p-1502">\(m(x)=3/x\text{.}\)  Evaluate at \(x=\pi\text{.}\)</p></article><p id="p-1503">Find tangent lines to the given curves at the indicated points.</p>
-<article class="exercise-like" id="exercise-239"><h6 class="heading"><span class="codenumber">19.</span></h6>
+<article class="exercise exercise-like" id="exercise-239"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
 <p id="p-1504">\(f(x)=3x^4\text{.}\)  At \(x=1\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution</span></a><div id="hk-solution-119" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-119"><div class="solution solution-like">
 <p id="p-1505">We need a point: if \(x =1\) then \(y=f(1)=3\text{.}\)</p>
 <p id="p-1506">We need a slope: \(f'(x)=12 x^3\text{.}\)   Hence \(m=f'(1)=12\text{.}\)</p>
 <p id="p-1507">Find the line: \(y-y_0=m(x-x_0 )\text{,}\)  so \(y-3=12(x-1)\text{,}\)</p>
@@ -418,20 +423,20 @@ m'(x)=1.03^x\ln(1.03)
 <li id="li-476"><p id="p-1510">We could have used the slope intercept version of the line to solve the problem as well. Then \(y=mx-b\text{.}\) We know \(m = 12\text{,}\) and we can solve for \(b\) by letting \(x = 1\) and \(y = 3\text{.}\)</p></li>
 </ul>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-240"><h6 class="heading"><span class="codenumber">20.</span></h6>
-<p id="p-1511">\(g(x)=a x\text{.}\)  At \(x=b\text{.}\)</p></article><article class="exercise-like" id="exercise-241"><h6 class="heading"><span class="codenumber">21.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-240"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-1511">\(g(x)=a x\text{.}\)  At \(x=b\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-241"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
 <p id="p-1512">\(h(x)=1.05^x\text{.}\)  At \(x=20\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution</span></a><div id="hk-solution-120" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like">
 <p id="p-1513">We need a point: if \(x =20\) then \(y=h(20)=(1.05)^20\approx 2.6533\text{.}\)</p>
 <p id="p-1514">We need a slope: \(h'(x)=\ln(1.05) (1.05)^x\text{.}\)</p>
 <p id="p-1515">Hence \(m=\ln(1.05) (1.05)^{20}=0.12945\)</p>
 <p id="p-1516">Find the line: \(y-y_0=m(x-x_0 )\text{,}\)  so \(y-2.6533=0.12945(x-20)\text{.}\)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-242"><h6 class="heading"><span class="codenumber">22.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-242"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
 <p id="p-1517">\(f(x)=e^x\text{.}\)  At \(x=1\text{.}\)</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

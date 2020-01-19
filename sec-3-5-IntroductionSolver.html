@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:24-05:00    *-->
+<!--*    on 2020-01-19T10:07:12-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -154,9 +158,9 @@ var js_version = 0.11;
 </h2>
 <a href="sec-3-5-IntroductionSolver.html" class="permalink">¶</a><p id="p-1326"><a class="external" href="./Examples/Section-3-5-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
 <p id="p-1327">We should expect, whenever we look at an operation that is used a lot in the business world, that Excel will have a fairly simple command to achieve the result.  In section 1.5 we introduced Goal Seek, a tool that is part of Excel, and that can be used to solve an equation for a root from a given starting point.  In the last section, we noted that one can find candidates for a local maximum or minimum of a function by finding the derivative and using Goal Seek to find where the derivative is 0.  In this section we introduce Solver, an Add-In to Excel.  It is easiest to think of solver as a more powerful version of Goal Seek.  It will be easiest to walk through the use of Solver while working an example.</p>
-<article class="example-like" id="example-39"><a data-knowl="" class="id-ref" data-refid="hk-example-39"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.5.1</span>. <span class="title">Use Solver to gather information about the graph.</span>
-</h6></a></article><div id="hk-example-39" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1328">Let \(f(x)=9 x-x^2+7\) on the interval \(-1\le x \le 14\text{.}\)</p>
+<article class="example example-like" id="example-39"><a data-knowl="" class="id-ref original" data-refid="hk-example-39"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Use Solver to gather information about the graph.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-1328">Let \(f(x)=9 x-x^2+7\) on the interval \(-1\le x \le 14\text{.}\)</p>
 <p id="p-1329"><dfn class="terminology">Solution</dfn>:  As always, we start by using simpler tools.  In this case it is useful to have Excel sketch a graph and to use information we gathered in prior course.  From the form of the function we know the graph is a parabola that points downwards.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-1330">Looking at the chart and the picture we see that the vertex is close to \(x=4.5\text{.}\)  We also see that the x-intercepts are close to \(x=-0.5\) and \(x=9.5\text{.}\)</p>
@@ -179,9 +183,9 @@ var js_version = 0.11;
 <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-8.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-1341">Solver finds that the curve had a minimum at x=15 with f(x)=-83.</p></article></div>
 <p id="p-1342">To recap, using Solver on the interval \(0\le x\le 15\text{,}\) we found has a root at \(x=9.72015\text{,}\) a maximum at \(x=4.5\text{,}\) and local minimums at \(x=0\) and \(x=15\text{.}\)  We also found the values of \(f(x)\) at all of those points.  However, this example was chosen because we could get the same results with work by simply using the properties of parabolas.  Thus, we now want to ask the same questions about a problem we cannot solve algebraically.</p>
-<article class="example-like" id="example-40"><a data-knowl="" class="id-ref" data-refid="hk-example-40"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.5.2</span>. <span class="title">A deceptive graph.</span>
-</h6></a></article><div id="hk-example-40" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1343">Use solver to gather information, on the interval \(0\le x\le 15\text{,}\) on the graph of \(f(x)=(x^3-4x^2+4x+3) e^{(-x/2)}\text{.}\)</p>
+<article class="example example-like" id="example-40"><a data-knowl="" class="id-ref original" data-refid="hk-example-40"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">A deceptive graph.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-1343">Use solver to gather information, on the interval \(0\le x\le 15\text{,}\) on the graph of \(f(x)=(x^3-4x^2+4x+3) e^{(-x/2)}\text{.}\)</p>
 <p id="p-1344"><dfn class="terminology">Solution</dfn>:  As always, start by looking at a graph.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-1345">From the graph I expect the function has no roots on the interval.  It has local minimums near 0, 2.5, and 10.  It has local maximums near 0.5, and 8.  I will need to add constraints to find the local minimums at the boundaries.  To make my worksheet easy to read I add two extra columns for the x and y values of interesting point, and fill in guesses.</p>
@@ -192,9 +196,9 @@ var js_version = 0.11;
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-12.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-1348">In that case, we miss the local maximum at 0.29 and confuse the left endpoint as a local maximum.  Since Solver does not use the picture, it will not be misled by it.  This example points out that while the graph is useful for guidance, we need to verify that we have not been misled by not graphing with enough resolution.</p></article></div>
 <p id="p-1349"><dfn class="terminology">Warning</dfn>: In example 2 we saw that relying on the graph could deceive us.  The flip side is an example where relying on Solver can deceive us. We mentioned earlier that Solver uses a variant of Newton’s method to find values.  In rough terms, it repeatedly finds the linear approximation and slides up or down that line to the desired answer.  If we start close to the answer, this is a very effective method of finding a numerical solution.  However it is easy to construct problems where this leads to a blind alley or to the wrong answer.  In particular, the method has great difficulty with problems where the function is not differentiable or where it has several bends.  Consider the following example.</p>
-<article class="example-like" id="example-41"><a data-knowl="" class="id-ref" data-refid="hk-example-41"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.5.3</span>. <span class="title">Deceiving Solver.</span>
-</h6></a></article><div id="hk-example-41" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1350">Use solver to gather information, on the interval \(-2\le x\le 2\text{,}\) on the graph of</p>
+<article class="example example-like" id="example-41"><a data-knowl="" class="id-ref original" data-refid="hk-example-41"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Deceiving Solver.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-41"><article class="example example-like"><p id="p-1350">Use solver to gather information, on the interval \(-2\le x\le 2\text{,}\) on the graph of</p>
 <div class="displaymath">
 \begin{equation*}
 f(x)=\begin{cases}
@@ -211,9 +215,9 @@ f(x)=\begin{cases}
 <p id="p-1354">The lesson to learn is that solver will help us find our candidate points, but we still need to understand the functions behavior well enough to give a good starting point.</p>
 <p id="p-1355"><dfn class="terminology">A preview of things to come – Extrema of functions of two variables:</dfn></p>
 <p id="p-1356">There is another feature of Solver that we will come back to later in the course.  Goal Seek asked which cell should be changed to reach our desired goal.  Solver allows us to specify a number of cells that we can change.  This means it will work with functions of several variables.  This will allow us to shed some light on one of the “black boxes” we used earlier in this course, the ability of Excel to find a trendline, or best fitting curve to a set of data.</p>
-<article class="example-like" id="example-42"><a data-knowl="" class="id-ref" data-refid="hk-example-42"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.5.4</span>. <span class="title">Use solver to find a best fitting line to a data set.</span>
-</h6></a></article><div id="hk-example-42" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1357">Find a best fitting line to the following data</p>
+<article class="example example-like" id="example-42"><a data-knowl="" class="id-ref original" data-refid="hk-example-42"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Use solver to find a best fitting line to a data set.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-42"><article class="example example-like"><p id="p-1357">Find a best fitting line to the following data</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">x</td>
@@ -221,7 +225,7 @@ f(x)=\begin{cases}
 <td class="c m b1 r0 l0 t3 lines">2</td>
 <td class="c m b1 r0 l0 t3 lines">3</td>
 <td class="c m b1 r0 l0 t3 lines">4</td>
-<td class="c m b1 r0 l0 t3 lines">5</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">5</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">y</td>
@@ -229,7 +233,7 @@ f(x)=\begin{cases}
 <td class="c m b1 r0 l0 t0 lines">46</td>
 <td class="c m b1 r0 l0 t0 lines">78</td>
 <td class="c m b1 r0 l0 t0 lines">84</td>
-<td class="c m b1 r0 l0 t0 lines">114</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">114</td>
 </tr>
 </table></div></div></div>
 <p id="p-1358"><dfn class="terminology">Solution</dfn>:  As we mentioned in section 1.4, when we are asked to find a best fitting line, we are asked to create a predicting function \(prediction(x)=A x+B\text{,}\) with \(A\) and \(B\) chosen to minimize the sum of the squares of the error between the actual values and the predicted values.  We build a worksheet that finds the sum of squared errors.  We start with our variables, A and B, set at 5.</p>
@@ -239,7 +243,7 @@ f(x)=\begin{cases}
 <p id="p-1360">We see that we get the same answers, subject to rounding rules.</p></article></div>
 <p id="p-1361">The Trendline tool has the advantage of being easier to use in many cases.  Finding the best fitting curve with solver has the advantage of showing what we mean by best fitting.  It will also work with models that may not have been programmed into the Trendline tool.</p>
 <section class="exercises" id="exercises-set-sec-3-5"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: An Introduction to Solver</span>
+<span class="type">Exercises</span> <span class="codenumber">3.5.1</span> <span class="title">Exercises: An Introduction to Solver</span>
 </h3>
 <a href="sec-3-5-IntroductionSolver.html#exercises-set-sec-3-5" class="permalink">¶</a><p id="p-1362">In exercises 1-7 you are given a function and an interval it is defined over:</p>
 <ol class="lower-alpha">
@@ -248,10 +252,10 @@ f(x)=\begin{cases}
 <li id="li-423"><p id="p-1365">Find relative maxima and minima for the function.  (Remember to include the endpoints.).</p></li>
 <li id="li-424"><p id="p-1366">Find the absolute maximum and minimum of the function on the interval.</p></li>
 </ol>
-<article class="exercise-like" id="exercise-211"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-211"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-1367">\(f(x)=x^2-10x+9\text{,}\) on the interval \(0\le x\le 10\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution</span></a><div id="hk-solution-105" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-425"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
 <li id="li-426"><p id="p-1368">We can read off the roots from the table \(f(x)=0\) at \(x = 1\) and at \(x = 9\)</p></li>
 <li id="li-427">
@@ -265,11 +269,11 @@ f(x)=\begin{cases}
 <p id="p-1373">The absolute minimum is -16 (at \(x = 5\)) and the absolute maximum is 9 (at \(x = 1\) and 10)</p>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-212"><h6 class="heading"><span class="codenumber">2.</span></h6>
-<p id="p-1374">\(g(x)=10x*(4/5)^x-1\text{,}\) on the interval \(0\le x\le 10\text{.}\)</p></article><article class="exercise-like" id="exercise-213"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-212"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-1374">\(g(x)=10x*(4/5)^x-1\text{,}\) on the interval \(0\le x\le 10\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-213"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-1375">\(h(x)=(3000+200x) (0.97)^x\text{,}\) on the interval \(0\le x\le 100\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution</span></a><div id="hk-solution-106" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-429"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
 <li id="li-430"><p id="p-1376">This function does not have any roots on the interval \(0\le x \le 100\text{.}\)</p></li>
 <li id="li-431">
@@ -282,11 +286,11 @@ f(x)=\begin{cases}
 <p id="p-1381">The global minimum of 1093.71 (at \(x = 100\))</p>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-214"><h6 class="heading"><span class="codenumber">4.</span></h6>
-<p id="p-1382">The revenue function, \(revenue(q)=(500-3q)(q)\text{,}\) on the interval \(0\le q\le 200\text{.}\)</p></article><article class="exercise-like" id="exercise-215"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-214"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-1382">The revenue function, \(revenue(q)=(500-3q)(q)\text{,}\) on the interval \(0\le q\le 200\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-215"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-1383">The profit function, \(profit(q)=(500-3q)(q)-(12q+600)\text{,}\) on the interval \(0\le q\le 200\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution</span></a><div id="hk-solution-107" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-433"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div></li>
 <li id="li-434"><p id="p-1384">There are 2 roots: one near \(q = 0\text{,}\) and the other near \(q = 160\text{.}\) Using Solver we find the roots are at \(q = 1.24\) and \(q = 161.43\text{.}\)</p></li>
 <li id="li-435">
@@ -299,7 +303,7 @@ f(x)=\begin{cases}
 <p id="p-1389">The global minimum of -23000 (at \(x = 200\))</p>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-216"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-216"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-1390">The profit function obtained as the best fitting quadratic curve for the following data</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -308,7 +312,7 @@ f(x)=\begin{cases}
 <td class="c m b1 r0 l0 t3 lines">513</td>
 <td class="c m b1 r0 l0 t3 lines">702</td>
 <td class="c m b1 r0 l0 t3 lines">842</td>
-<td class="c m b1 r0 l0 t3 lines">995</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">995</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Profit</td>
@@ -316,10 +320,10 @@ f(x)=\begin{cases}
 <td class="c m b1 r0 l0 t0 lines">314,801</td>
 <td class="c m b1 r0 l0 t0 lines">322,223</td>
 <td class="c m b1 r0 l0 t0 lines">279,988</td>
-<td class="c m b1 r0 l0 t0 lines">189,263</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">189,263</td>
 </tr>
 </table></div></div></div>
-<p id="p-1391">on the interval \(0\le quantity\le 1200\text{.}\)</p></article><article class="exercise-like" id="exercise-217"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-1391">on the interval \(0\le quantity\le 1200\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-217"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-1392">The cost function obtained as the best fitting cubic curve for the following data,</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -328,7 +332,7 @@ f(x)=\begin{cases}
 <td class="c m b1 r0 l0 t3 lines">6</td>
 <td class="c m b1 r0 l0 t3 lines">9</td>
 <td class="c m b1 r0 l0 t3 lines">12</td>
-<td class="c m b1 r0 l0 t3 lines">15</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">15</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">Cost</td>
@@ -336,12 +340,12 @@ f(x)=\begin{cases}
 <td class="c m b1 r0 l0 t0 lines">539</td>
 <td class="c m b1 r0 l0 t0 lines">532</td>
 <td class="c m b1 r0 l0 t0 lines">541</td>
-<td class="c m b1 r0 l0 t0 lines">626</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">626</td>
 </tr>
 </table></div></div></div>
 <p id="p-1393">on the interval \(0\le quantity\le 16\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution</span></a><div id="hk-solution-108" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like">
 <p id="p-1394">First we need to use Trendlines to find the equation of the function. Use polynomial of degree 3 to find the function</p>
 <div class="displaymath">
 \begin{equation*}
@@ -353,9 +357,9 @@ Cost(x)= 0.3353x^3  - 7.9874x^2  + 59.63x + 396.91
 <li id="li-438"><p id="p-1395">There are no roots on the interval [0,16].</p></li>
 <li id="li-439"><p id="p-1396">There is a local maximum between 4 and 8, and a local minimum between 8 and 12. Using Solver We find the local maximum at (6.00, 539.57) and a local minimum at (9.88, 529.74).  We also have a local minimum at the endpoint \((0, 396.91)\) and a local maximum at the other endpoint \((16, 679.604)\text{.}\)</p></li>
 <li id="li-440">
-<p id="p-1397">Compare the local extrema to the endpoints.  We need to consider four points, \((0, $396.91)\text{,}\) \((6.00, $539.57)\text{,}\) \((9.88, $529.74)\text{,}\) and \((16, $584.30)\text{.}\)</p>
-<p id="p-1398">The global maximum is $396.91 (at \(x = 0\))</p>
-<p id="p-1399">The global minimum of $679.604 (at \(x = 16\))</p>
+<p id="p-1397">Compare the local extrema to the endpoints.  We need to consider four points, \((0, \$396.91)\text{,}\) \((6.00, \$539.57)\text{,}\) \((9.88, \$529.74)\text{,}\) and \((16, \$584.30)\text{.}\)</p>
+<p id="p-1398">The global maximum is \$396.91 (at \(x = 0\))</p>
+<p id="p-1399">The global minimum of \$679.604 (at \(x = 16\))</p>
 </li>
 </ol>
 </div></div>
@@ -365,8 +369,8 @@ Cost(x)= 0.3353x^3  - 7.9874x^2  + 59.63x + 396.91
 <li id="li-442"><p id="p-1402">Visually identify approximate local maxima and minima.</p></li>
 <li id="li-443"><p id="p-1403">Find a reasonable range of starting points from which Solver will find each local maximum or minimum.</p></li>
 </ol>
-<article class="exercise-like" id="exercise-218"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-1404">\(f(x)=-0.25x^4+5.3x^3-36x^2+90x-15\text{,}\) on the interval \(0\le x\le 15\text{.}\)</p></article><article class="exercise-like" id="exercise-219"><h6 class="heading"><span class="codenumber">9.</span></h6>
+<article class="exercise exercise-like" id="exercise-218"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-1404">\(f(x)=-0.25x^4+5.3x^3-36x^2+90x-15\text{,}\) on the interval \(0\le x\le 15\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-219"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <div class="displaymath" id="p-1405">
 \begin{equation*}
 g(x)=\begin{cases}
@@ -375,9 +379,9 @@ g(x)=\begin{cases}
 \end{cases}
 \end{equation*}
 </div>
-<p>on the interval \(0\le x\le 10\text{.}\)</p>
+<p data-braille="continuation">on the interval \(0\le x\le 10\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution</span></a><div id="hk-solution-109" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-444">
 <p id="p-1406">Inserting an empty row will allow us to see the break in the graph where we switch from the linear part to the quadratic part of the function. The functions have been included for clarity.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec3-5-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
@@ -398,7 +402,7 @@ g(x)=\begin{cases}
 <p id="p-1416">Thus we do not have a local maximum her.  The graph approaches 10 (gets infinitely close to it) as x approaches 5 from the left, but switches to 8 at he last minute.</p>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-220"><h6 class="heading"><span class="codenumber">10.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-220"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
 <div class="displaymath" id="p-1417">
 \begin{equation*}
 h(x)=\begin{cases}
@@ -407,9 +411,9 @@ h(x)=\begin{cases}
 \end{cases}
 \end{equation*}
 </div>
-<p>on the interval \(0\le x\le 10\text{.}\)</p></article></section></section></div></main>
+<p data-braille="continuation">on the interval \(0\le x\le 10\text{.}\)</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

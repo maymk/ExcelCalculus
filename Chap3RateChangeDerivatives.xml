@@ -76,7 +76,7 @@ To set up the problem I recall that we assume we are selling at the demand price
 </example>
 
 <p>The last equation illustrates the use of marginal functions.  While producing and selling the 26th widget did increase total revenue, the marginal profit was negative, so I would have been better off if I had made fewer widgets.  
-Notice that the marginal value of producing the 1st widget is not on the spreadsheet and needs to be dealt with as a special case.  Given our functions we have two reasonable ways to understand the value <m>Cost(0)</m>.  Either we can assume that there is no cost to not being in a business, so <m>Cost(0)=0</m>, and our cost function was only valid for positive numbers, or that the <m>Cost(0)</m> is understood an the fixed costs, which we have already undertaken, like a tax or license fee, so <m>Cost(0)=40</m> for this problem.  Both are reasonable interpretations.  We will need to look at the context of our problem to decide on the correct interpretation.</p>
+Notice that the marginal value of producing the 1st widget is not on the spreadsheet and needs to be dealt with as a special case.  Given our functions we have two reasonable ways to understand the value <m>Cost(0)</m>.  Either we can assume that there is no cost to not being in a business, so <m>Cost(0)=0</m>, and our cost function was only valid for positive numbers, or that the <m>Cost(0)</m> is understood as the fixed costs, which we have already undertaken, like a tax or license fee, so <m>Cost(0)=40</m> for this problem.  Both are reasonable interpretations.  We will need to look at the context of our problem to decide on the correct interpretation.</p>
 
 <p>Many questions in business can be translated into making some function as big or small as possible, depending on whether we think the value is good or bad.  It is thus often useful to see a graph of both the function of interest and the related marginal function on the same graph.</p>
 
@@ -157,14 +157,14 @@ Notice that the marginal value of producing the 1st widget is not on the spreads
 
 <p><term>Difference Quotients and Average Rate of Change</term></p>
 
-<p>The marginal value, <m>Mf(x+1)</m>, of a function <m>f(x)</m>, measures the amount of change from <m>f(x)</m> to <m>f(x+1)</m>.  It can also be understood as a special case the average rate of change of <m>f(x)</m>.</p>
+<p>The marginal value, <m>Mf(x+1)</m>, of a function <m>f(x)</m>, measures the amount of change from <m>f(x)</m> to <m>f(x+1)</m>.  It can also be understood as a special case of the average rate of change of <m>f(x)</m>.</p>
 
 <assemblage><p>It is easy to see that the average rate of change of <m>f(x)</m>  as <m>x</m> goes from a to b is <me>  \frac{f(b)-f(a)}{b-a}</me></p></assemblage>
 
 <p>There are a number of situations where we want to look at average rate of change for a period of some other change in the variable.  We may have production in thousands or millions of units.  If we are looking at monthly or quarterly financial records, we may want to look at the average rate of change over a year to take into account the seasonal variation of production.</p>
 
 <example><title>Rate of Change when denominator is not 1</title>
-<p><term>Example 4</term>:  We have the following monthly sales data on gizmos.</p>
+<p> We have the following monthly sales data on gizmos.</p>
 
   <sidebyside width="80%">
                 <image width="80%" source="images/sec3-1-10.png">
@@ -2134,9 +2134,9 @@ First we need to use Trendlines to find the equation of the function. Use polyno
 </li>
 <li>
 
-<p>Compare the local extrema to the endpoints.  We need to consider four points, <m>(0, $396.91)</m>, <m>(6.00, $539.57)</m>, <m>(9.88, $529.74)</m>, and <m>(16, $584.30)</m>.</p>
-<p>The global maximum is $396.91 (at <m>x = 0</m>) </p>
-<p>The global minimum of $679.604 (at <m>x = 16</m>)</p>
+<p>Compare the local extrema to the endpoints.  We need to consider four points, <m>(0, \$396.91)</m>, <m>(6.00, \$539.57)</m>, <m>(9.88, \$529.74)</m>, and <m>(16, \$584.30)</m>.</p>
+<p>The global maximum is \$396.91 (at <m>x = 0</m>) </p>
+<p>The global minimum of \$679.604 (at <m>x = 16</m>)</p>
 </li>
 </ol>
 </solution></exercise>

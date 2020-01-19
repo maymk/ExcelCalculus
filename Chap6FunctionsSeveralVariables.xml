@@ -82,7 +82,7 @@ In previous chapters we have a variable (say q) and the function (such as profit
 
 <p>The next task to consider is making a table of values for a function of several variables.  Since our screens have 2 dimensions, we first look at the case when we allow two values to change.  When we made a table for a single variable, we had to use both absolute and relative cell reference to distinguish between constant values used for all entries and variables that changed in each case.  With functions of two variables our table will have rows where one variable is held constant and columns where the other is held constant.  We note that quick filling a formula with the reference $A5 will keep the column, A constant but allow the row to change.  Similarly with the reference A$5 the column can change, but the row is constant.</p>
 
-<example><title>Building a table with two variables</title><p> – I want to produce a table that shows how much I need to put in the bank to have $100,000 at some point in the future.  I will assume that interest is compounded annually.  I want interest rate and number of years to be treated as variables with interest rate ranging from 0.5% to 0.6% and the length of time to vary from 5 to 40 years.</p>
+<example><title>Building a table with two variables</title><p> I want to produce a table that shows how much I need to put in the bank to have $100,000 at some point in the future.  I will assume that interest is compounded annually.  I want interest rate and number of years to be treated as variables with interest rate ranging from 5% to 6% and the length of time to vary from 5 to 40 years.</p>
 
 
 <p><term>Solution</term>: We use the formula for present value of a single deposit.  Since the interest is compounded annually, the formula simplifies.</p>
@@ -244,13 +244,13 @@ For exercises 1-9, set up an Excel notebook, and evaluate the given function of 
                 </sidebyside>
 </solution></exercise>
 
-<exercise ><statement><p> Express revenue as a function of two quantity demand-price pairs and quantity, assuming that demand price is a linear function, where the quantity demand-price pairs are <m>(0, $20)</m> and <m>(100, $18)</m> and the quantity is 300.  (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)
+<exercise ><statement><p> Express revenue as a function of two quantity demand-price pairs and quantity, assuming that demand price is a linear function, where the quantity demand-price pairs are <m>(0, \$20)</m> and <m>(100, \$18)</m> and the quantity is 300.  (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)
 </p></statement></exercise>
 
-<exercise ><statement><p> Express revenue as a function of two quantity demand-price pairs and quantity, assuming that demand price is an exponential function, where the quantity price pairs are <m>(0, $20)</m> and <m>(100, $18)</m> and the quantity is 300.  (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)</p></statement><solution>
+<exercise ><statement><p> Express revenue as a function of two quantity demand-price pairs and quantity, assuming that demand price is an exponential function, where the quantity price pairs are <m>(0, \$20)</m> and <m>(100, \$18)</m> and the quantity is 300.  (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)</p></statement><solution>
 <p>To get the price equation we can solve the system of equations we get by evaluating the exponential function <m>P=P_0  e^{kq}</m> at the two given points:</p>
-<me>(0,20)  gives us   20=P_0  e^{(k*0)}</me>
-<me>(100,18)  gives us   18=P_0  e^{(k*100)}</me>
+<me>(0,20)  \text{ gives us }   20=P_0  e^{(k*0)}</me>
+<me>(100,18)  \text{ gives us }   18=P_0  e^{(k*100)}</me>
 <p>Then <m>P_0=20</m> (from the first equation) , and 
 <m>18=P_0  e^{(k*100)}</m>  implies <m>18=20 e^{(k*100)}</m>  so that <m>e^{(k*100)}=18/20</m></p>
 <p>Hence <m>100*k=\ln(18/20)</m>.    
@@ -289,7 +289,7 @@ The simplest answer would be to treat Price as a function of quantity. But this 
                 </sidebyside>
 </solution></exercise>
 
-<exercise ><statement><p> Express profit as a function of two quantity demand-price pairs, quantity, initial cost, and per-unit cost, assuming that demand price is a linear function, where the quantity demand-price pairs are <m>(100, $30)</m> and <m>(200, $28)</m>, the quantity is 300, the initial cost is $3000, and the per-unit cost is $8.  (You may find it useful to have intermediate computations that find the cost and revenue.)</p></statement></exercise>
+<exercise ><statement><p> Express profit as a function of two quantity demand-price pairs, quantity, initial cost, and per-unit cost, assuming that demand price is a linear function, where the quantity demand-price pairs are <m>(100, \$30)</m> and <m>(200, \$28)</m>, the quantity is 300, the initial cost is $3000, and the per-unit cost is $8.  (You may find it useful to have intermediate computations that find the cost and revenue.)</p></statement></exercise>
 
 <exercise ><statement><p> Express the future value of a deposit as a function of the initial deposit, the annual interest rate, the number of years the deposit is held, and the number of times per year that the interest is compounded, where the deposit of $10,000 is held for 20 years at 3% interest, compounded monthly.</p></statement><solution>
 <me>FutureAmount=InitialDeposit*\left(1+\frac{rate}{ppy}\right)^{years*ppy}</me>
@@ -1060,7 +1060,7 @@ Once we have a critical point we want to determine if it is a maximum, minimum, 
 <p>It is clear from the graph that this critical point is a local minimum.</p>
 </example>
 
-<p>It is easy to see that <m>f(x,y)=x^2+y^2</m> has a critical point at <m>(0,0)</m> and that that point is a minimum for the function.  Similarly, <m>f(x,y)=-x^2-y^2</m> has a critical point at <m>(0,0)</m> and that that point is a maximum for the function. For some functions, like <m>f(x,y)=x^2-y^2</m>, which has a critical point at <m>(0,0)</m>, we can have a maximum in one direction and a minimum in another direction.  Such a point is called a saddle point.  We note that we can have a <term>saddle point</term> even if the <m>x</m> and <m>y</m> slice curves both indicate a minimum.</p>
+<p>It is easy to see that <m>f(x,y)=x^2+y^2</m> has a critical point at <m>(0,0)</m> and that that point is a minimum for the function.  Similarly, <m>f(x,y)=-x^2-y^2</m> has a critical point at <m>(0,0)</m> and that that point is a maximum for the function. For some functions, like <m>f(x,y)=x^2-y^2</m>, which has a critical point at <m>(0,0)</m>, we can have a maximum in one direction and a minimum in another direction.  Such a point is called a <term>saddle point</term>.  We note that we can have a saddle point even if the <m>x</m> and <m>y</m> slice curves both indicate a minimum.</p>
 
 <example><title>A Saddle Point at a Minimum on Both Axes</title><p> Show that <m>f(x,y)=x^2-3xy+y^2</m> has a critical point at <m>(0,0)</m>, which is a minimum of both slice curves, but is not a local minimum.</p>
 
@@ -1151,7 +1151,6 @@ Once we have a critical point we want to determine if it is a maximum, minimum, 
 
 <p>If <m>D(a,b)=0</m> we do not have enough information to classify the point.</p></assemblage>
 
- 
 <example><title>Using the Discriminant to Classify Critical Points</title>
 <p>Based on the information given, classify each of the following points as a local maximum, local minimum, saddle point, not a critical point, or not enough information to classify. </p>
 
@@ -2580,7 +2579,7 @@ For exercises 1-4, for the given data sets:</p>
 >
 
 <p>Hence <m>Amount 2 = 10,000 – 3,317.59 = 6,682.41</m>, and we have that</p>
-<me>Amount(time)=$3,317.59+$163.19*time+$6,682.41* (1.07)^{time}</me>
+<me>Amount(time)=\$3,317.59+\$163.19*time+\$6,682.41* (1.07)^{time}</me>
 
 <p>In Excel the data and the predicted values now line up very nicely.</p>
 

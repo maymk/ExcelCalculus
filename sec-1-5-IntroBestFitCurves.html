@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:22-05:00    *-->
+<!--*    on 2020-01-19T10:07:11-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -162,7 +166,7 @@ var js_version = 0.11;
 </ol>
 <p id="p-366">Coming up with a theoretical reason why we want to use a particular model in a given case forms the content of a large number of your business courses, both courses you have already taken and courses you are yet to take.  The models that come up repeatedly in the theoretical courses are given names and used without redoing the theoretical foundation for the model.  (This is why we introduced the normal distribution and the logistic growth function, neither of which looks like a simple equation.)  In this course, we will be happy with simple heuristic arguments on which model to choose.</p>
 <p id="p-367">The second half of the problem is deciding how to choose the parameters to give the curve that does the best job of fitting the data.  A moment of reflection shows deciding on the correct definition of “best fitting” is a nontrivial task beyond the scope of this course.  For the time being we will accept the standard definition</p>
-<article class="assemblage-like" id="assemblage-10"><p id="p-368">The <dfn class="terminology">best fitting curve</dfn> minimizes the sum of the squares of the differences between the measured and predicted values.</p></article><p id="p-369">We will come back to that definition later in the course, when we know more calculus, but for now we simply note that it is the standard definition, and is used by Excel.  Instead, we will focus on using Excel to produce a best fitting curve of the appropriate model. Excel has a preprogrammed feature that will find the best fitting equation for a data set for a select number of functions:</p>
+<article class="assemblage assemblage-like" id="assemblage-10"><p id="p-368">The <dfn class="terminology">best fitting curve</dfn> minimizes the sum of the squares of the differences between the measured and predicted values.</p></article><p id="p-369">We will come back to that definition later in the course, when we know more calculus, but for now we simply note that it is the standard definition, and is used by Excel.  Instead, we will focus on using Excel to produce a best fitting curve of the appropriate model. Excel has a preprogrammed feature that will find the best fitting equation for a data set for a select number of functions:</p>
 <ul class="disc">
 <li id="li-100"><p id="p-370">Linear model</p></li>
 <li id="li-101"><p id="p-371">Exponential model</p></li>
@@ -187,7 +191,7 @@ var js_version = 0.11;
 (Widgets Produced) = 6.00026*(Hour Worked)
 \end{equation*}
 </div>
-<p>instead of our original equation of</p>
+<p data-braille="continuation">instead of our original equation of</p>
 <div class="displaymath">
 \begin{equation*}
 (Widgets Produced) = 5.6975*(Hours Worked)+12.54.
@@ -215,9 +219,9 @@ var js_version = 0.11;
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-16.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-404">The obvious question that arises is to figure out what happened in 1983 that caused the economic model to shift.  That question is beyond the scope of this course.</p>
 <section class="exercises" id="exercises-set-sec-1-5"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Using Excel to find best fit curves</span>
+<span class="type">Exercises</span> <span class="codenumber">1.5.1</span> <span class="title">Exercises: Using Excel to find best fit curves</span>
 </h3>
-<a href="sec-1-5-IntroBestFitCurves.html#exercises-set-sec-1-5" class="permalink">¶</a><article class="exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<a href="sec-1-5-IntroBestFitCurves.html#exercises-set-sec-1-5" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-405">We have the following data on widget production:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -226,7 +230,7 @@ var js_version = 0.11;
 <td class="c m b1 r0 l0 t3 lines">Feb</td>
 <td class="c m b1 r0 l0 t3 lines">Mar</td>
 <td class="c m b1 r0 l0 t3 lines">Apr</td>
-<td class="c m b1 r0 l0 t3 lines">May</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">May</td>
 </tr>
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Production</td>
@@ -234,7 +238,7 @@ var js_version = 0.11;
 <td class="c m b2 r0 l0 t0 lines">30,687</td>
 <td class="c m b2 r0 l0 t0 lines">48,441</td>
 <td class="c m b2 r0 l0 t0 lines">55,751</td>
-<td class="c m b2 r0 l0 t0 lines">79,606</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">79,606</td>
 </tr>
 </table></div></div></div>
 <ol class="lower-alpha">
@@ -243,7 +247,7 @@ var js_version = 0.11;
 <li id="li-111"><p id="p-408">Give the production value that function predicts for July.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span></a><div id="hk-solution-32" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-112">
 <p id="p-409">Create a scatter plot for the data. Then use the menu to go to Chart – Chart layout – Trendlines. Find the linear approximation and under options choose to display the function. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div> Excel automatically changes the months into numerical values.</p>
 <p id="p-410">The best linear function for the data is y = 15108x + 891.8</p>
@@ -257,7 +261,7 @@ var js_version = 0.11;
 <p id="p-414">The linear model predicts a production of 106, 648 for the month of July.</p>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-415">We have the following data on gizmo sales:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -266,7 +270,7 @@ var js_version = 0.11;
 <td class="c m b1 r0 l0 t3 lines">Mar</td>
 <td class="c m b1 r0 l0 t3 lines">Apr</td>
 <td class="c m b1 r0 l0 t3 lines">July</td>
-<td class="c m b1 r0 l0 t3 lines">Aug</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">Aug</td>
 </tr>
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Units sold</td>
@@ -274,13 +278,13 @@ var js_version = 0.11;
 <td class="c m b2 r0 l0 t0 lines">9,042</td>
 <td class="c m b2 r0 l0 t0 lines">13,018</td>
 <td class="c m b2 r0 l0 t0 lines">21,873</td>
-<td class="c m b2 r0 l0 t0 lines">22,636</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">22,636</td>
 </tr>
 </table></div></div></div>
 <ol class="lower-alpha">
 <li id="li-115"><p id="p-416">Find the best fitting linear function for the data.</p></li>
 <li id="li-116"><p id="p-417">Extend the chart to give the projected sales for each month from January through September.  (You need to add a row for predicted sales, and also add a number of columns for missing months.)</p></li>
-</ol></article><article class="exercise-like" id="exercise-67"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-67"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-418">We have the following data on gadget revenue:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -289,7 +293,7 @@ var js_version = 0.11;
 <td class="c m b1 r0 l0 t3 lines">5,000</td>
 <td class="c m b1 r0 l0 t3 lines">7,000</td>
 <td class="c m b1 r0 l0 t3 lines">9,000</td>
-<td class="c m b1 r0 l0 t3 lines">11,000</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">11,000</td>
 </tr>
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Revenue</td>
@@ -297,7 +301,7 @@ var js_version = 0.11;
 <td class="c m b2 r0 l0 t0 lines">24,783</td>
 <td class="c m b2 r0 l0 t0 lines">34,484</td>
 <td class="c m b2 r0 l0 t0 lines">38,014</td>
-<td class="c m b2 r0 l0 t0 lines">33,030</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">33,030</td>
 </tr>
 </table></div></div></div>
 <ol class="lower-alpha">
@@ -307,7 +311,7 @@ var js_version = 0.11;
 <li id="li-120"><p id="p-422">Project the revenue for selling 15,000 units with both linear and quadratic models.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span></a><div id="hk-solution-33" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-121"><p id="p-423">We can do scatterplots and use the linear trendline find the models we need. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div> The linear model is \(y = 2.3485x + 12855\)</p></li>
 <li id="li-122">
 <p id="p-424">We can do scatterplots and use the polynomial trendline of degree 2 to find the model we need.  (See the second image in part (a).)</p>
@@ -321,7 +325,7 @@ var js_version = 0.11;
 <p id="p-430">[You can use Excel, a calculator or Wolfram Alpha to do these last computations.]</p>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-431">In building water tanks, design considerations indicate the weight of the dry tank should be roughly a power function of the capacity.  I am interested in building a larger tank than I have before. I have the following data between capacity and weight:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -330,7 +334,7 @@ var js_version = 0.11;
 <td class="c m b1 r0 l0 t3 lines">5,000</td>
 <td class="c m b1 r0 l0 t3 lines">7,000</td>
 <td class="c m b1 r0 l0 t3 lines">9,000</td>
-<td class="c m b1 r0 l0 t3 lines">17,000</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">17,000</td>
 </tr>
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Weight</td>
@@ -338,7 +342,7 @@ var js_version = 0.11;
 <td class="c m b2 r0 l0 t0 lines">878</td>
 <td class="c m b2 r0 l0 t0 lines">1,339</td>
 <td class="c m b2 r0 l0 t0 lines">1,927</td>
-<td class="c m b2 r0 l0 t0 lines">4,496</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">4,496</td>
 </tr>
 </table></div></div></div>
 <ol class="lower-alpha">
@@ -347,7 +351,7 @@ var js_version = 0.11;
 <li id="li-127"><p id="p-434">Find the best fitting linear function for the data.</p></li>
 <li id="li-128"><p id="p-435">Use your linear function to estimate the weight of a tank that holds 40,000 gallons.</p></li>
 <li id="li-129"><p id="p-436">Visually, both curves seem to fit the data quite well, yet they make noticeable different predictions for the weight of a larger tank.  Which prediction would you use.  Justify your answer.</p></li>
-</ol></article><article class="exercise-like" id="exercise-69"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-69"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-437">I am looking at sales figures for a new product, the gizmo.  The sales figures seem to be growing at an exponential rate.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -356,7 +360,7 @@ var js_version = 0.11;
 <td class="c m b1 r0 l0 t3 lines">Apr</td>
 <td class="c m b1 r0 l0 t3 lines">July</td>
 <td class="c m b1 r0 l0 t3 lines">Oct</td>
-<td class="c m b1 r0 l0 t3 lines">Jan</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">Jan</td>
 </tr>
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Units sold</td>
@@ -364,7 +368,7 @@ var js_version = 0.11;
 <td class="c m b2 r0 l0 t0 lines">1680</td>
 <td class="c m b2 r0 l0 t0 lines">2662</td>
 <td class="c m b2 r0 l0 t0 lines">3783</td>
-<td class="c m b2 r0 l0 t0 lines">6430</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">6430</td>
 </tr>
 </table></div></div></div>
 <ol class="lower-alpha">
@@ -372,12 +376,12 @@ var js_version = 0.11;
 <li id="li-131"><p id="p-439">Using your function, predict sales for the July after the data was collected.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span></a><div id="hk-solution-34" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-132"><p id="p-440">Using the scatterplot and the trendline from the Chart menu, we choose Exponential Trendline and display the function. Note that we do need to change the months to the appropriate numerical value. Excel would just replace them by consecutive numbers. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div> The best fitting exponential curve given by Trendlines is \(y = 934.78e^{0.1459x}\)</p></li>
 <li id="li-133"><p id="p-441">To find the predicted units sold for July we would need \(x = 19\) <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol5b.png" style="width: 100%; height: auto;" alt=""></div></div></div> Using Excel we see that the predicted number of units sold is 14,949.</p></li>
 </ol></div></div>
 </div></article><p id="p-442">Excel has a limited set of models that can be used for trend lines to automatically fit curves to data.  In later sections we will look at how to we can use calculus to find best fitting curves for other models.  Until we develop those techniques, we can make a guess at parameters that will make curves fit.</p>
-<article class="exercise-like" id="exercise-70"><h6 class="heading"><span class="codenumber">6.</span></h6>
+<article class="exercise exercise-like" id="exercise-70"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-443">The unit sales of widgets can be expected to follow a logistic model, with rapid growth of sales, but with eventual saturation of the market so that there is a cap on the market.  In such a case the sales should be modeled by a logistic equation, of the form \(sales(time)=MarketCap/(1+adjustment*exp(-rate*time)).\) We have the following data on sales:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -386,7 +390,7 @@ var js_version = 0.11;
 <td class="c m b1 r0 l0 t3 lines">2</td>
 <td class="c m b1 r0 l0 t3 lines">4</td>
 <td class="c m b1 r0 l0 t3 lines">6</td>
-<td class="c m b1 r0 l0 t3 lines">8</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">8</td>
 </tr>
 <tr>
 <td class="c m b2 r0 l0 t0 lines">sales</td>
@@ -394,17 +398,17 @@ var js_version = 0.11;
 <td class="c m b2 r0 l0 t0 lines">5610</td>
 <td class="c m b2 r0 l0 t0 lines">14,845</td>
 <td class="c m b2 r0 l0 t0 lines">19,095</td>
-<td class="c m b2 r0 l0 t0 lines">19,870</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">19,870</td>
 </tr>
 </table></div></div></div>
-<p id="p-444">Find values of the parameters MarketCap, adjustment, and rate to reasonably fit the data.</p></article><article class="exercise-like" id="exercise-71"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<p id="p-444">Find values of the parameters MarketCap, adjustment, and rate to reasonably fit the data.</p></article><article class="exercise exercise-like" id="exercise-71"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-445">The unit sales of an article of clothes for adults can be expected to follow the model of a normal distribution.  In such a case the sales should be modeled by a normal equation, of the form</p>
 <div class="displaymath">
 \begin{equation*}
 sales(size)=MaxPerSize*exp\left(-\left(\left(\frac{size-Mean}{StandardDeviation}\right)^2\right)\right).\text{.}
 \end{equation*}
 </div>
-<p>(Note we need an extra set of parenthesis to keep the order of operations correct.)  We have the following data on sales:</p>
+<p data-braille="continuation">(Note we need an extra set of parenthesis to keep the order of operations correct.)  We have the following data on sales:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
 <td class="c m b1 r0 l0 t3 lines">size</td>
@@ -413,7 +417,7 @@ sales(size)=MaxPerSize*exp\left(-\left(\left(\frac{size-Mean}{StandardDeviation}
 <td class="c m b1 r0 l0 t3 lines">9</td>
 <td class="c m b1 r0 l0 t3 lines">10</td>
 <td class="c m b1 r0 l0 t3 lines">11</td>
-<td class="c m b1 r0 l0 t3 lines">12</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">12</td>
 </tr>
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Weight</td>
@@ -422,12 +426,12 @@ sales(size)=MaxPerSize*exp\left(-\left(\left(\frac{size-Mean}{StandardDeviation}
 <td class="c m b2 r0 l0 t0 lines">12,820</td>
 <td class="c m b2 r0 l0 t0 lines">20,000</td>
 <td class="c m b2 r0 l0 t0 lines">12,826</td>
-<td class="c m b2 r0 l0 t0 lines">3,375</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">3,375</td>
 </tr>
 </table></div></div></div>
 <p id="p-446">Find values of the parameters MaxPerSize, Mean, and StandardDeviation to reasonably fit the data.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span></a><div id="hk-solution-35" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like">
 <p id="p-447">The initial plot shows that the distribution is normal: <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-5-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div> The maximum is at \(x = 10\text{.}\) This suggests that \(Mean = 10\text{.}\)</p>
 <p id="p-448">If we use \(Sales (x)= MaxPerSize*e^{-\left(\left(\frac{x-10}{STDev}\right)^2 \right)}\text{,}\) then if \(x = 10\) we have \(Sales (10)= MaxPerSize\text{,}\) and so \(MaxPerSize = 20,000\text{,}\) hence we have that</p>
 <div class="displaymath">
@@ -440,24 +444,24 @@ Sales (x)= 20,000*e^{-\left(\left(\frac{x-10}{STDev}\right)^2 \right)}
 <p id="p-451">So \(STDev= \sqrt{(-1/\ln(12825/20000  ) )}=1.5002\) so \(STDev= 1.5002\)</p>
 <p id="p-452">Comment: We will develop some methods to solve problems such as this using Excel in a section called Best Fit Curves (Chapter 6)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-453">The populations of the states can be found online for both the 2000 and 2010 censuses.  (A good site is <a class="external" href="http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population" target="_blank">http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population</a> .)</p>
 <ol class="lower-alpha">
 <li id="li-134"><p id="p-454">Explain why one would guess the 2010 population of a state is roughly a linear function of the 2000 population of the state.</p></li>
 <li id="li-135"><p id="p-455">Download the 2000 and 2010 populations of the 50 states.  Produce a scatterplot that has the 2010 population as a function of the 2000 population.  Find the equation of a best fitting curve for the data.</p></li>
 <li id="li-136"><p id="p-456">Explain what the y-intercept means in terms of people moving to or away from states with large populations.</p></li>
-</ol></article><article class="exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-457">The tax revenues of the states can be found online.  (A good site is the census bureau at <a class="external" href="http://www.census.gov/govs/state/" target="_blank">http://www.census.gov/govs/state/</a> .)</p>
 <ol class="lower-alpha">
 <li id="li-137"><p id="p-458">Explain why one would guess the 2010 tax revenue of a state is roughly a linear function of the 2010 population of the state.</p></li>
 <li id="li-138"><p id="p-459">For 10 states, produce a scatterplot that has the 2010 tax revenue as a function of the 2010 population.  Find the equation of a best fitting curve for the data.</p></li>
 <li id="li-139"><p id="p-460">Explain what the y-intercept means in terms of the relationship of the size of the state and the tax burden per person.</p></li>
 </ol></article><p id="p-461"><dfn class="terminology">Projects:</dfn></p>
-<article class="exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">10.</span></h6>
-<p id="p-462">Find the data for the consumer price index and the Dow Jones Industrial average at the start of the year for the past 50 years.  Over that time, what is the best linear relationship between the two indices?  To make your equation easier to understand, scale the indices so they both start at 100 on the same day.</p></article><article class="exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">11.</span></h6>
+<article class="exercise exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-462">Find the data for the consumer price index and the Dow Jones Industrial average at the start of the year for the past 50 years.  Over that time, what is the best linear relationship between the two indices?  To make your equation easier to understand, scale the indices so they both start at 100 on the same day.</p></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-463">Pick your two favorite stocks and chart their prices on the opening days for a period of 30 years.  How well are their prices modeled as a linear model of each other?  See if you can find two stocks that seem to be inversely proportional to each other.</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

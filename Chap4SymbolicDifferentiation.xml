@@ -1592,7 +1592,7 @@ For 1-9:</p>
 <me>h'' (t)=(2-2t)e^{-t}-(2t-t^2)e^{-t}=(2-4t+t^2 ) e^{-t}
 </me></li>
 <li><p>The function is concave down, where the second derivative is negative, that is for <m>2-\sqrt{2} \lt t \lt 2+\sqrt{2}</m>.  It is concave up outside this region.</p></li>
-<li><p>There are critical points when the derivative is undefined or 0. The only critical point is when <m>t=2</m>. When <m>t=2</m>, <m>h''(t)\lt 0</m>, so we have a local maximum.</p></li>
+<li><p>There are critical points when the derivative is undefined or 0. The only critical points are when <m>t=0</m> and <m>t=2</m>. When <m>t=0</m>, <m>h''(t)\gt 0</m>, so we have a local minimum. When <m>t=2</m>, <m>h''(t)\lt 0</m>, so we have a local maximum.</p></li>
 </ol>
 </solution>
 </exercise>

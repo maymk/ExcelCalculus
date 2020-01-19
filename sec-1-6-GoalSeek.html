@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:22-05:00    *-->
+<!--*    on 2020-01-19T10:07:11-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -155,7 +159,7 @@ var js_version = 0.11;
 <a href="sec-1-6-GoalSeek.html" class="permalink">¶</a><p id="p-464"><a class="external" href="./Examples/Section-1-6-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
 <p id="p-465">In previous sections we looked at deciding on a model to use for numerical data, and finding the best fitting curve of that model for our data.  Once we have completed those phases of the process, we have reduced our data to an equation.  At that point we want to use the equation to answer some question.  Sometimes that question will reduce to solving an equation, as when we have an equation for profit as a function of sales and we want to know when the business will break even.  At other times we want to know what input gives a desired output.  (E.g., How much do I need to sell to make $100,000 in commission?)</p>
 <p id="p-466">We can obviously use all the algebraic techniques we developed in previous courses to solve our problem symbolically.  However, Excel gives us two tools to use to solve problems numerically, Goal Seek and Solver.  In this section we will explore Goal Seek, the simpler of these tools.</p>
-<article class="assemblage-like" id="assemblage-11"><ul id="p-467" class="disc">
+<article class="assemblage assemblage-like" id="assemblage-11"><ul id="p-467" class="disc">
 <li id="li-140"><p id="p-468">We will use Goal Seek if we know what the desired output of an equation is, and would like to know when that output is achieved.</p></li>
 <li id="li-141"><p id="p-469">We need to have an equation to work with and we can only solve for one kind of input (variable).</p></li>
 <li id="li-142"><p id="p-470">Goal Seek is located under the What-If analysis menu.</p></li>
@@ -165,7 +169,7 @@ var js_version = 0.11;
 <p id="p-474">Excel finds the value and asks if it is OK to replace the initial guess with that value.  In this case, Excel found the value of 11.66666667 or 35/3, which we could also have found by simple algebra. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-3.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-475"><dfn class="terminology">A quadratic example and concern with precision</dfn></p>
 <p id="p-476">We move on to a quadratic example.  We let \(f(x)=x^2\) and want to find \(f(x)=2\text{.}\)  The set up is similar, with an appropriate change in the equation.  However when I use Goal Seek, I don't get quite the correct answer. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-4.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
-<p id="p-477">Instead of finding a value with \(x^2 = 2\text{,}\) I found a value with \(x^2 = 1.99999495\text{.}\) <article class="assemblage-like" id="assemblage-12"><ul id="p-478" class="disc">
+<p id="p-477">Instead of finding a value with \(x^2 = 2\text{,}\) I found a value with \(x^2 = 1.99999495\text{.}\) <article class="assemblage assemblage-like" id="assemblage-12"><ul id="p-478" class="disc">
 <li id="li-143"><p id="p-479">We note that Excel is not solving the problem algebraically, but is finding a numerical approximation within a preset tolerance.</p></li>
 <li id="li-144"><p id="p-480">It is actually finding an x such that f(x) is within 0.001 of 2.</p></li>
 </ul></article> For most of our work, that is close enough.  Sometimes however we may want more precision.  (Our units may be millions of dollars.)  In that case, we can improve the precision with a work around.  We add another cell with a formula whose value is a large number, say \(10^6\text{,}\) times the error.  We then use Goal Seek to make that value close to zero.  We effectively reduce our error tolerance by a factor of our large number.  Applying this to our example gives: <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-5.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
@@ -174,7 +178,7 @@ var js_version = 0.11;
 <p id="p-483">In economics, there are the concepts of supply and demand prices, the prices that will produce a specified supply or demand.  (We will look at this problem in more depth in the next chapter.)  Suppose we are told the formula for the supply and demand prices of a product are:</p>
 <div class="displaymath">
 \begin{equation*}
-Supply\  Price (q) = ln(50 + 100 q) + q
+Supply\  Price (q) = ln(50 + 1000 q) + q
 \end{equation*}
 </div>
 <div class="displaymath">
@@ -182,7 +186,7 @@ Supply\  Price (q) = ln(50 + 100 q) + q
 Demand\  Price (q) = 1000*exp(-0.02*q)
 \end{equation*}
 </div>
-<p>We want to find the quantity where supply and demand prices are equal.  We first do a fast graph to get an understanding of what is going on. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-6.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p data-braille="continuation">We want to find the quantity where supply and demand prices are equal.  We first do a fast graph to get an understanding of what is going on. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-6.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-484">We can see that the curves cross when q is somewhere between 100 and 110.  To make this a Goal Seek problem we add an extra column for the difference between supply and demand, and look for where that is zero. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-7.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-485">We see that equilibrium occurs when q is 106.725.  We could have found this algebraically by solving the equation</p>
 <div class="displaymath">
@@ -190,7 +194,7 @@ Demand\  Price (q) = 1000*exp(-0.02*q)
 0 = 1000*exp(-0.02*q) – (ln(50 + 1000*q) + q),
 \end{equation*}
 </div>
-<p>but that is not an easy problem.</p>
+<p data-braille="continuation">but that is not an easy problem.</p>
 <p id="p-486">Our last example for Goal Seek looks at financial computations.  Assume you have decided to open a retirement account when you get out of college.  You decide that you will start by contributing $2,000 at the beginning of each year, with that amount increasing by $100 each year, assuming a 5% annual interest rate.  The relevant formulas are:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -207,7 +211,7 @@ Interest\ Earned = (Beginning\ Balance + Deposits) * Interest\ Rate
 Beginning\ Balance = previous\ year's\ ending\ balance.
 \end{equation*}
 </div>
-<p>It becomes easy to set up a spreadsheet to compute the balance at the end of 40 years. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-8.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p data-braille="continuation">It becomes easy to set up a spreadsheet to compute the balance at the end of 40 years. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-8.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-487">(We will look at this example in greater detail in a later chapter.  For now, note that this example is in the Excel notebook for this section.)  We can see that we have a bit more than $420,000 after 40 years. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-9.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-488">With Goal Seek it is easy to ask the question of how we need to change the problem to have a balance of $500,000 after 40 years, either by changing the initial deposit, or the rate at which deposits are increasing, or the expected yield.  We see that we need a yield of 5.74% to have $500,000 ready for retirement. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-10.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-489">It is worthwhile to note that in this case our final balance is the result of a 120-step computation with our input variable.  Goal Seek finds a solution without us having to reduce that 120-step computation to a single long formula.</p>
@@ -217,39 +221,39 @@ Beginning\ Balance = previous\ year's\ ending\ balance.
 <p id="p-493">If we use the spreadsheet to illustrate Newton's method for our example, finding the solution for \(x^2 = 2\) starting with a guess of \(x = 1\text{,}\) we see that it converges in 5 iterations.  (At this point, we are simply illustrating how Goal Seek works.  You are not yet expected to be able to replicate the process.  You will learn how to find the slope of the tangent in later chapters.) <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-12.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-494">As mentioned earlier, the reason for looking under the hood of Goal Seek is to understand when it gives us an unexpected answer.  A simplified description of the method used is that it heads down to where it expects to find a solution and repeats the process until it is within 0.001 of the desired answer.  There are several easy ways for this method to cause problems.</p>
 <p id="p-495">The first difficulty is that Goal Seek may not give you the answer you are looking for if there are multiple answers.  The function \(f(x) = x^3 – x\) has three roots, x = -1, 0, 1.  If we give Goal Seek a starting point of x=.55, it will give the solution of x=0. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-13.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
-<p id="p-496">As a general rule, Goal Seek will get to the correct answer if there are no big curves between the guess and the answer. Another difficulty arises if you ask Goal Seek a question for which there is no answer.  The easy case is when there is no answer and we don't even get close.  We could ask it to find an x with \(x^2-1=0\text{.}\)  Since we know that all squares are non-negative, this does not have an answer.  Goal Seek will tell us that, but it will make some pretty wild guesses. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-14.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
+<p id="p-496">As a general rule, Goal Seek will get to the correct answer if there are no big curves between the guess and the answer. Another difficulty arises if you ask Goal Seek a question for which there is no answer.  The easy case is when there is no answer and we don't even get close.  We could ask it to find an x with \(x^2+1=0\text{.}\)  Since we know that all squares are non-negative, this does not have an answer.  Goal Seek will tell us that, but it will make some pretty wild guesses. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-14.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-497">In this case Goal Seek will run for a fixed number of iterations and tell us it “may not have found a solution.”  In that case it will tell us where it ended and give us the choice of accepting that point, or cancelling and going back to where we started.  If there is no solution and one of our intermediate points was close to a point with a flat tangent line, we may wind up anywhere.</p>
 <p id="p-498">The more challenging case arises when there is no answer, but we get close.  We can ask Goal Seek to find an x with \(1/x^4 = 0\text{.}\)  Clearly this problem has no answer.  However, if we start with a guess of x = 1, we get an answer of x = 6.14798.  That is because \(1/6.14798^4\) is within our tolerance of 0.  In both of these cases we see that when we use Goal Seek we should also look at the graph of the function in question to make sure we are asking a reasonable question. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-15.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-499">A variant of these problems occasionally shows up.  If we start with a carefully rigged problem we can set the algorithm of Goal Seek into a loop.  If we start with the function \(f(x) = x^3 – 50*x\) with an initial guess of x=1, and ask Goal Seek to find when f(x) = 500,  Goal Seek will not find an answer.  In this case we could look at a graph and make an initial guess of 6, and then get a correct answer.  Once again, with a numerical method, it pays to try some cases and make sure that our guess is close to a reasonable answer.  If f(x) is a continuous function, this means finding a value of x where f(x) is too low and another value where f(x) is too high.</p>
 <p id="p-500">While Excel is a powerful tool, we should always ask if there is an easier way to do a problem.  Most of the examples we looked at in this section boil down to finding a solution to \(f(x)=0\) where \(f(x)\) is a simple equation.  We can solve such problems more quickly with Wolfram Alpha. <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-16.png" style="width: 100%; height: auto;" alt=""></div></div></div></p>
 <p id="p-501">As noted above, Goal Seek is most useful for problems with lots of steps where we would have difficulty reducing the problem to a single equation.</p>
 <section class="exercises" id="exercises-set-sec-1-6"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Finding Numerical Solutions with Goal Seek</span>
+<span class="type">Exercises</span> <span class="codenumber">1.6.1</span> <span class="title">Finding Numerical Solutions with Goal Seek</span>
 </h3>
 <a href="sec-1-6-GoalSeek.html#exercises-set-sec-1-6" class="permalink">¶</a><p id="p-502">Use Goal Seek to find where the given equation has the desired value.</p>
-<article class="exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-503">Let \(f(x) = -2 x^2 + 20 x + 7\text{.}\)  Find an \(x\) so that \(f(x) = 50\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span></a><div id="hk-solution-36" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-504"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div> Wolfram detects two solutions.</p></div></div>
-</div></article><article class="exercise-like" id="exercise-77"><h6 class="heading"><span class="codenumber">2.</span></h6>
-<p id="p-505">Let \(f(x) = -x^2 + 4 x + 5\text{.}\)  Find an \(x\) so that \(f(x) = -5\text{.}\)</p></article><article class="exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">3.</span></h6>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><p id="p-504"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div> Wolfram detects two solutions.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-77"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-505">Let \(f(x) = -x^2 + 4 x + 5\text{.}\)  Find an \(x\) so that \(f(x) = -5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-506">Let \(f(x) = 5 x + 7/x\text{.}\)  Find an \(x\) so that \(f(x) = 20\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span></a><div id="hk-solution-37" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-507"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div></p></div></div>
-</div></article><article class="exercise-like" id="exercise-79"><h6 class="heading"><span class="codenumber">4.</span></h6>
-<p id="p-508">Let \(f(x) = 10 \exp(x/10)\text{.}\)  Find an \(x\) so that \(f(x) = 1000\text{.}\)</p></article><article class="exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">5.</span></h6>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like"><p id="p-507"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-79"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-508">Let \(f(x) = 10 \exp(x/10)\text{.}\)  Find an \(x\) so that \(f(x) = 1000\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-509">Let \(f(x) = \ln(x+5) + 7\text{.}\)  Find an \(x\) so that \(f(x) = 5\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span></a><div id="hk-solution-38" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like">
 <p id="p-510"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div> Note that next to the solution there is a button for “Approximate form”</p>
 <p id="p-511">We can use that to get a decimal approximation: <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol5b.png" style="width: 100%; height: auto;" alt=""></div></div></div> Note that we can get more digits if we want or return to the exact answer</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">6.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-512">Let \(f(x) = 1000*(1/2)^{(x/7)}\text{.}\)  Find an \(x\) so that \(f(x) = 50\text{.}\)</p></article><p id="p-513">Use Goal Seek to find the indicated number of points where the curves intersect</p>
-<article class="exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<article class="exercise exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-514">Find an intersection point of \(f(x) = 5 x + 7\) and \(g(x) = 40 – 2 x\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span></a><div id="hk-solution-39" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
 <p id="p-515">Finding the intersection point means we are setting the two equations equal to one another. Wolfram will include a plot of the solution as well as the numerical answer <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol7a.png" style="width: 100%; height: auto;" alt=""></div></div></div> Wolfram tells us that \(x=\frac{33}{7}\text{.}\) We can plug that into one of the equations and get</p>
 <div class="displaymath">
 \begin{equation*}
@@ -258,21 +262,21 @@ y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}
 </div>
 <p id="p-516">So the intersection point is \((x,y)=(\frac{33}{7}  ,\frac{214}{7})\)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-517">Find an intersection point of \(f(x) = 5 x\)  and \(g(x) = 9 x / 7\text{.}\)</p></article><article class="exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-517">Find an intersection point of \(f(x) = 5 x\)  and \(g(x) = 9 x / 7\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-518">Find an intersection point of \(f(t) = \exp(-0.05 t)*(3 t + 5)\) and \(g(t) = t/10\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span></a><div id="hk-solution-40" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like">
 <p id="p-519"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div> Wolfram finds two intersections: one at \(t\approx-1.71925\) and the other at \(t\approx68.5047\)</p>
 <p id="p-520">Using the function \(g(t)=t/10\) we get the two intersection points at \((-1.71925,-.171925)\) and \((68.5047,6.85047)\)</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">10.</span></h6>
-<p id="p-521">Find an intersection point of \(f(t) = 20 \ln(100 t + 854)\) and \(g(t) = 0.02 t\text{.}\)</p></article><article class="exercise-like" id="exercise-86"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-521">Find an intersection point of \(f(t) = 20 \ln(100 t + 854)\) and \(g(t) = 0.02 t\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-86"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-522">Find both intersection points of \(f(x) = 7 + 10 x – x^2\) and \(g(x) = 0\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span></a><div id="hk-solution-41" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-523"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div> The \(y\)-coordinates must be 0. If we use the approximate form of the solution we get \((-0.65685,0)\) and \((10.657,0)\text{.}\)</p></div></div>
-</div></article><article class="exercise-like" id="exercise-87"><h6 class="heading"><span class="codenumber">12.</span></h6>
-<p id="p-524">Find both intersection points of \(f(x) = 15 x + 200/x\) and \(g(x) = 20 + 25 x\text{.}\)</p></article><article class="exercise-like" id="exercise-88"><h6 class="heading"><span class="codenumber">13.</span></h6>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like"><p id="p-523"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div> The \(y\)-coordinates must be 0. If we use the approximate form of the solution we get \((-0.65685,0)\) and \((10.657,0)\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-87"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-524">Find both intersection points of \(f(x) = 15 x + 200/x\) and \(g(x) = 20 + 25 x\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-88"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
 <p id="p-525">We have reason to believe that the profit function for widget manufacturing is modeled by a quadratic equation.  We have the following data for sales and profits.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
 <tr>
@@ -281,7 +285,7 @@ y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}
 <td class="c m b1 r0 l0 t3 lines">250</td>
 <td class="c m b1 r0 l0 t3 lines">350</td>
 <td class="c m b1 r0 l0 t3 lines">500</td>
-<td class="c m b1 r0 l0 t3 lines">600</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">600</td>
 </tr>
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Profit</td>
@@ -289,7 +293,7 @@ y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}
 <td class="c m b2 r0 l0 t0 lines">$18,378</td>
 <td class="c m b2 r0 l0 t0 lines">$22,455</td>
 <td class="c m b2 r0 l0 t0 lines">$24,400</td>
-<td class="c m b2 r0 l0 t0 lines">$23,747</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">$23,747</td>
 </tr>
 </table></div></div></div>
 <ol class="lower-alpha">
@@ -297,18 +301,18 @@ y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}
 <li id="li-146"><p id="p-527">Find the two break-even point, or amount of sales that yield a profit of $0.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span></a><div id="hk-solution-42" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-147"><p id="p-528">Using Excel we find the best fitting polynomial of order 2: <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol13a.png" style="width: 100%; height: auto;" alt=""></div></div></div> \(y = -0.1006x2 + 100.66x - 555.65\)</p></li>
 <li id="li-148"><p id="p-529">Using Wolfram we then find where the profit is 0. Using the approximate form of the solution is preferable in this case because we want to know at what Sales we have 0 profit (the break-even points) <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol13b.png" style="width: 100%; height: auto;" alt=""></div></div></div> The break-even points are at sales of 5.55 and 995.05.</p></li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-89"><h6 class="heading"><span class="codenumber">14.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
 <p id="p-530">A certain bank will give a $75 bonus on a new account with a deposit of $1000, and then pays 5% interest compounded continuously.  A second investment opportunity will pay $100 per year.</p>
 <ol class="lower-alpha">
 <li id="li-149"><p id="p-531">Which opportunity pays more in the first year?</p></li>
 <li id="li-150"><p id="p-532">For what period of time do the two opportunities offer the same return?</p></li>
 <li id="li-151"><p id="p-533">What is the payout from the two opportunities for a 30-year investment?</p></li>
 <li id="li-152"><p id="p-534">What is the second period of time when the two opportunities offer the same return?</p></li>
-</ol></article><article class="exercise-like" id="exercise-90"><h6 class="heading"><span class="codenumber">15.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
 <p id="p-535">Let \(f(x) = (10 x-1) *\exp(-x) + 2\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-153"><p id="p-536">Find a solution with Goal Seek starting with x=1.</p></li>
@@ -316,7 +320,7 @@ y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}
 <li id="li-155"><p id="p-538">Explain why, from the graph of \(f(x)\text{,}\) we should expect this problem.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span></a><div id="hk-solution-43" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-156">
 <p id="p-539">The entry in cell B2 is <code class="code-inline tex2jax_ignore">=(10*A2-1)*EXP(-A2)+2</code></p>
 <p id="p-540">In the screen grab the values of \(f\) for \(x = 1\) and \(x = 2\) are given, and below it the result for the GoalSeek procedure are given. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec1-6-sol15a.png" style="width: 100%; height: auto;" alt=""></div></div></div> For \(x = 1\) as the starting point GoalSeek find a zero at \(x\approx-0.0839\)</p>
@@ -329,7 +333,7 @@ y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}
 <p id="p-544">If we start Goalseek at \(x = 2\text{,}\) the graph is sloping down to the right, which is why Goalseek approximates the zero to be at about \(= 53\text{.}\) The graph looks to be asymptotically approaching the \(x\)-axis. In this case Wolfram would have given the correct answer a bit more easily.</p>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-91"><h6 class="heading"><span class="codenumber">16.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-91"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
 <p id="p-545">Let \(f(x) = x^2*\exp(-(x^2))\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-159"><p id="p-546">Find a solution with Goal Seek, starting with \(x=.5\text{.}\)  Does this represent an actual solution?</p></li>
@@ -337,6 +341,6 @@ y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}
 </ol></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

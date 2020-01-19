@@ -105,7 +105,7 @@
 
 <me>\frac{d\ p}{d\ q}=-\frac{(2+4.5*p^{1.5}*q^{.5})}{(5+4.5*p^{.5}*q^{1.5} ) }</me>
 
-<p>Since quantity is in thousands of unity, if we are selling 25,000 widgets, quantity=25 and price=2.986.  Substituting those values into the formula for the derivative of price with respect to quantity, we see</p>
+<p>Since quantity is in thousands of units, if we are selling 25,000 widgets, quantity=25 and price=2.986.  Substituting those values into the formula for the derivative of price with respect to quantity, we see</p>
 
 <me>\frac{d\ price}{d\ quantity}=\frac{-118.104}{997.025}=-0.12088.</me>
 
@@ -161,7 +161,7 @@
 
 <p>The second option from the search takes us to a calculator from Symbolab.  It will easily do the second example from this section.</p>
 
-<sidebyside width="10%">
+<sidebyside width="70%">
                 <image width="100%" source="images/sec5-1-3.png">
                 </image>
             </sidebyside> 
@@ -868,7 +868,7 @@ We can maximize revenue by finding the price and quantity when <m>E = 1</m> (uni
 <exercise ><statement><me> price=50-\frac{quantity}{100};\quad quantity=2500.
 </me></statement><solution>
 <ul>
-<li><me>price=50-\frac{q}{100}=50-\frac{2500}{100}=50-25=$25</me></li>
+<li><me>price=50-\frac{q}{100}=50-\frac{2500}{100}=50-25=\$25</me></li>
 <li><me>
 E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} = \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} = \frac{-1}{-1/100}  \frac{25}{2500}=\frac{2500}{2500}=1
 </me></li>
@@ -876,7 +876,7 @@ E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} = \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} = 
 Hence we want to leave the price as is.
 </p></li>
 <li><p>
-The maximum revenue occurs when <m>E = 1</m>, so we want <m>q = 2500</m> and <m>P = $25</m>.</p>
+The maximum revenue occurs when <m>E = 1</m>, so we want <m>q = 2500</m> and <m>P = \$25</m>.</p>
 </li>
 </ul>
 </solution></exercise>
@@ -887,7 +887,7 @@ The maximum revenue occurs when <m>E = 1</m>, so we want <m>q = 2500</m> and <m>
 <exercise ><statement><me> price=20*(0.95)^{\frac{quantity}{50} };\quad quantity=800.
 </me></statement><solution>
 <ul>
-<li><me>price=20*(.95)^{(800/50)}=$8.80</me></li>
+<li><me>price=20*(.95)^{(800/50)}=\$8.80</me></li>
 <li><me>E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0}
 = \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} </me>
 <me>\frac{dP}{dQ}= 20*(.95)^{quantity/50}\ln(.95)*\frac{1}{50}</me>
@@ -903,7 +903,7 @@ We can maximize revenue by finding the price and quantity when <m>E = 1</m> (uni
 \frac{20*(.95)^{q/50}}{q}
 =-\frac{50}{q ln(0.95)}</me>
 <p>And hence <m>\ln(.95)  q= -50</m>, so <m>q= -50/\ln(.95)\approx 975</m>.
-When <m>q=975</m>, we have that <m>price=20*(.95)^{(975/50) }=$7.36</m>.</p>
+When <m>q=975</m>, we have that <m>price=20*(.95)^{(975/50) }=\$7.36</m>.</p>
 </li>
 </ul>
 </solution></exercise>
@@ -928,7 +928,7 @@ Second price-quantity point = ($51,900).
 <me>=-\frac{(900-1000)}{(51-50)}*\frac{(50+51)}{(1000+900)}
 =\frac{10100}{1900}=5.32
 </me></li>
-<li><p><m>E\gt 1</m>, So the market is elastic and we should choose the lower price. <m>($50, 1000)</m></p></li>
+<li><p><m>E\gt 1</m>, So the market is elastic and we should choose the lower price. <m>(\$50, 1000)</m></p></li>
 </ul>
 </solution></exercise>
 
@@ -945,7 +945,7 @@ Second price-quantity point = ($2.01,2385).
 <me>=-\frac{(2500-2385)}{(1.99-2.01)}*\frac{(1.99+2.01)}{(2500+2385)}
 =\frac{460}{57.7}
 </me></li>
-<li><p><m>E\gt 1</m>, So the market is elastic and we should choose the lower price. <m>($1.99, 2500)</m></p></li>
+<li><p><m>E\gt 1</m>, So the market is elastic and we should choose the lower price. <m>(\$1.99, 2500)</m></p></li>
 </ul>
 </solution></exercise>
 

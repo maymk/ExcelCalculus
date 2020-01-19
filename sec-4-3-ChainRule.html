@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:25-05:00    *-->
+<!--*    on 2020-01-19T10:07:13-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -153,7 +157,7 @@ var js_version = 0.11;
 <span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">The Chain Rule</span>
 </h2>
 <a href="sec-4-3-ChainRule.html" class="permalink">¶</a><p id="p-1614">In the last two sections we learned rules to symbolically differentiate some functions.  To summarize, we have established some elementary formulas and some arithmetic rules.</p>
-<aside class="aside-like" id="aside-1"><p id="p-1615"><dfn class="terminology">Elementary Formulas</dfn>:</p>
+<aside class="aside aside-like" id="aside-1"><p id="p-1615"><dfn class="terminology">Elementary Formulas</dfn>:</p>
 <p id="p-1616">If \(f(x)=a\text{,}\) then \(f'(x)=0\text{.}\)</p>
 <p id="p-1617">If \(f(x)=ax\text{,}\) then \(f'(x)=a\text{.}\)</p>
 <p id="p-1618">If \(f(x)=a*x^n\text{,}\) then \(f(x)=a*n*x^{n-1}\text{,}\) for any nonzero number n.</p>
@@ -165,21 +169,21 @@ var js_version = 0.11;
 <p id="p-1624"><dfn class="terminology">Sum and difference rule</dfn>: The derivative of \(f(x)\pm g(x)\) is \(f'(x)\pm g'(x)\text{.}\)</p>
 <p id="p-1625"><dfn class="terminology">Product Rule</dfn>:	 The derivative of \(f(x)g(x)\) is \(f' (x) g(x)+f(x)g'(x)\text{.}\)</p>
 <p id="p-1626"><dfn class="terminology">Quotient Rule</dfn>:  The derivative of \(f(x)/g(x)\) is \(\frac{f'(x)g(x)-f(x)g'(x)}{(g(x))^2} \text{.}\)</p></aside><p id="p-1627">The other way we traditionally build functions from simpler functions is by use of composition.  We want to be able to take derivatives of functions like \((2x+3)^{52}\text{,}\) \(\sqrt{(x^2 )+5x+7}\text{,}\) and \(1.06^{.2x}\text{.}\)</p>
-<article class="theorem-like" id="claim-9"><h6 class="heading">
-<span class="type">Claim</span> <span class="codenumber">4.3.1</span>. <span class="title">Chain rule.</span>
+<article class="claim theorem-like" id="claim-9"><h6 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Chain rule.</span>
 </h6>
 <p id="p-1628">The derivative of \(f(g(x))\) is \(f'(g(x))g'(x)\)   In other words,</p>
 <div class="displaymath">
 \begin{equation*}
 \left[f(g(x))\right]'=f'(g(x))*g'(x)\text{.}
 \end{equation*}
-</div></article><article class="example-like" id="example-60"><a data-knowl="" class="id-ref" data-refid="hk-example-60"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.3.2</span>. <span class="title">Simple chain rule.</span>
-</h6></a></article><div id="hk-example-60" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1629">Find the derivative of the following functions:</p>
+</div></article><article class="example example-like" id="example-60"><a data-knowl="" class="id-ref original" data-refid="hk-example-60"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Simple chain rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-1629">Find the derivative of the following functions:</p>
 <ol class="lower-alpha">
-<li id="li-497">\(f(p)=(p^3+2 p+5)^7.\)</li>
-<li id="li-498">\(g(q)=\sqrt{q^2+6}.\)</li>
-<li id="li-499">\(h(x)=e^{2 x+5}.\)</li>
+<li id="li-497">\(\displaystyle f(p)=(p^3+2 p+5)^7.\)</li>
+<li id="li-498">\(\displaystyle g(q)=\sqrt{q^2+6}.\)</li>
+<li id="li-499">\(\displaystyle h(x)=e^{2 x+5}.\)</li>
 </ol>
 <p id="p-1630"><dfn class="terminology">Solution</dfn></p>
 <ol class="lower-alpha">
@@ -220,10 +224,10 @@ f(g(x))=a (b x+d)+c=(a b) x+(a d+c).
 <p id="p-1638">The coefficient of the linear term is the product of the coefficients of the two linear terms we began with.  Hence we find that \([f(g(x_0 ))]'=a b=f'(g(x_0 ))*g'(x_0)\text{.}\)</p>
 <p id="p-1639"><dfn class="terminology">The Chain rule in other notation</dfn></p>
 <p id="p-1640">For the problems above, we used the prime notation, \(f'(x)\text{,}\) \(f'(q)\text{,}\) \(f'(t)\text{,}\) etc, for derivatives.  There is also a fractional notation for derivatives, \(\frac{df}{dx}\text{,}\) \(\frac{df}{dq}\text{,}\) \(\frac{df}{dt}\) or \(\frac{dy}{dx}\text{,}\) \(\frac{dp}{dq}\text{,}\) \(\frac{dq}{dt}\text{,}\) etc. that is commonly used.  Intuitively, when we have zoomed in far enough for the graph of \(f(x)\) to look like a straight line, then the derivative is the small unit of rise over the small unit of run.  With that notation the chain rule has a nice formulation where it reduces to the usual rules for multiplying fractions.</p>
-<article class="assemblage-like" id="assemblage-33"><p id="p-1641"><dfn class="terminology">Chain Rule (fractional notation version)</dfn>: If \(z=g(x)\) and \(y=f(z)\) so \(y=f(g(x))\text{,}\) then</p>
-<p id="p-1642">\(\frac{dy}{dx}=\frac{dy}{dz} \frac{dz}{dx}\)  or \(\frac{df}{dx}=\frac{df}{dg}  \frac{dg}{dx} \text{.}\)</p></article><article class="example-like" id="example-61"><a data-knowl="" class="id-ref" data-refid="hk-example-61"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.3.3</span>. <span class="title">Successive processes.</span>
-</h6></a></article><div id="hk-example-61" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1643">We have two processes that need to be run in succession to produce gizmos.  The yields of the two processes are given by:</p>
+<article class="assemblage assemblage-like" id="assemblage-33"><p id="p-1641"><dfn class="terminology">Chain Rule (fractional notation version)</dfn>: If \(z=g(x)\) and \(y=f(z)\) so \(y=f(g(x))\text{,}\) then</p>
+<p id="p-1642">\(\frac{dy}{dx}=\frac{dy}{dz} \frac{dz}{dx}\)  or \(\frac{df}{dx}=\frac{df}{dg}  \frac{dg}{dx} \text{.}\)</p></article><article class="example example-like" id="example-61"><a data-knowl="" class="id-ref original" data-refid="hk-example-61"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Successive processes.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-61"><article class="example example-like"><p id="p-1643">We have two processes that need to be run in succession to produce gizmos.  The yields of the two processes are given by:</p>
 <div class="displaymath">
 \begin{equation*}
 intermediate(raw)=-25+7.3 raw+.2 raw^2
@@ -259,9 +263,9 @@ gizmos(intermediate)=-5+12 intermediate
 \end{equation*}
 </div>
 <p id="p-1647">The rate of production is a linear function of the amount of raw material used.</p></article></div>
-<article class="example-like" id="example-62"><a data-knowl="" class="id-ref" data-refid="hk-example-62"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.3.4</span>. <span class="title">Chain rule with separate functions.</span>
-</h6></a></article><div id="hk-example-62" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-1648">Example 3: Find \(h'(x)\) for \(h(x)=f(g(x))\) for the given \(f(z)\) and \(g(x)\text{.}\)</p>
+<article class="example example-like" id="example-62"><a data-knowl="" class="id-ref original" data-refid="hk-example-62"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Chain rule with separate functions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-62"><article class="example example-like"><p id="p-1648">Example 3: Find \(h'(x)\) for \(h(x)=f(g(x))\) for the given \(f(z)\) and \(g(x)\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-503"><p id="p-1649">\(f(z)=2z+7\) and \(g(x)=z=3 x+5\text{.}\)</p></li>
 <li id="li-504"><p id="p-1650">\(f(z)=z^3\) and \(g(x)=x^2+7\text{.}\)</p></li>
@@ -269,13 +273,13 @@ gizmos(intermediate)=-5+12 intermediate
 </ol>
 <p id="p-1652"><dfn class="terminology">Solution</dfn>:</p>
 <ol class="lower-alpha">
-<li id="li-506">\(\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}=2*3=6.\)</li>
+<li id="li-506">\(\displaystyle \frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}=2*3=6.\)</li>
 <li id="li-507">
 <p id="p-1653">\(\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}
 =3z^2*2x=3(x^2+7)^2*2x.\)</p>
 <p id="p-1654">(Notice that the two derivatives are in terms of different variables.  We need to convert to a single variable.)</p>
 </li>
-<li id="li-508">\(\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}
+<li id="li-508">\(\displaystyle \frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}
 =e^z*2x=e^{(x^2+3)}*2x.\)</li>
 </ol></article></div>
 <p id="p-1655"><dfn class="terminology">Warning for this method</dfn>:  We tend to use x as the variable for almost all functions.  When we use the chain rule we need to remember that the input for the second function is the output from the first function.  It is safest to use separate variable for the two functions,</p>
@@ -284,13 +288,13 @@ gizmos(intermediate)=-5+12 intermediate
 <p id="p-1658"><dfn class="terminology">The general power rule</dfn>: \([(f(x))^n ]'=n (f(x))^{n-1} f'(x)\text{.}\)  This is simply the chain rule when the second function is a power.</p>
 <p id="p-1659"><dfn class="terminology">The chain rule with a linear function</dfn>:  \([(f(a x+b))]'=(f'(a x+b))*a\)</p>
 <section class="exercises" id="exercises-set-sec-4-3"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: The Chain Rule</span>
+<span class="type">Exercises</span> <span class="codenumber">4.3.1</span> <span class="title">Exercises: The Chain Rule</span>
 </h3>
 <a href="sec-4-3-ChainRule.html#exercises-set-sec-4-3" class="permalink">¶</a><p id="p-1660">Find the derivatives of the following functions.</p>
-<article class="exercise-like" id="exercise-269"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-269"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-1661">\(f(x)=(x^3+5 x+7)^4\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-134" id="solution-134"><span class="type">Solution</span></a><div id="hk-solution-134" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-134" id="solution-134"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-134"><div class="solution solution-like">
 <p id="p-1662">Let \(u=x^3+5 x+7\text{,}\) then \(f(x)=(u)^4\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
@@ -298,11 +302,11 @@ f'(x)=4u^3 du=4(x^3+5 x+7)^3  (3x^2+5).
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-270"><h6 class="heading"><span class="codenumber">2.</span></h6>
-<p id="p-1663">\(g(x)=(x^2-6x+8)^{123}\text{.}\)</p></article><article class="exercise-like" id="exercise-271"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-270"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-1663">\(g(x)=(x^2-6x+8)^{123}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-271"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-1664">\(h(x)=\sqrt{(5x^7+3x-2)}\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-135" id="solution-135"><span class="type">Solution</span></a><div id="hk-solution-135" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-135" id="solution-135"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-135"><div class="solution solution-like">
 <p id="p-1665">Let  \(h(x)=\sqrt{5x^7+3x-2}=u^{1/2}\text{,}\) with \(u= 5x^7+3x-2\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -326,11 +330,11 @@ h'(x)=\text{"derivative outside function"}*\text{"derivative inside function"}
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-272"><h6 class="heading"><span class="codenumber">4.</span></h6>
-<p id="p-1667">\(k(x)=\ln(e^x+5)\text{.}\)</p></article><article class="exercise-like" id="exercise-273"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-272"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-1667">\(k(x)=\ln(e^x+5)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-273"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-1668">\(m(x)=\ln(\ln(\ln(x^2+3)))\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-136" id="solution-136"><span class="type">Solution</span></a><div id="hk-solution-136" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-136" id="solution-136"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-136"><div class="solution solution-like">
 <div class="displaymath">
 \begin{equation*}
 m'(x)=\frac{1}{\ln(\ln(x^2+3))} \frac{d}{dx} \ln(\ln(x^2+3) )
@@ -352,20 +356,20 @@ m'(x)=\frac{1}{\ln(\ln(x^2+3))} \frac{d}{dx} \ln(\ln(x^2+3) )
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-274"><h6 class="heading"><span class="codenumber">6.</span></h6>
-<p id="p-1669">\(n(x)=(((x^2+2)^2+3)^2+4)^2+5\text{.}\)</p></article><article class="exercise-like" id="exercise-275"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-274"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-1669">\(n(x)=(((x^2+2)^2+3)^2+4)^2+5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-275"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-1670">\(f(x)=e^{2x+3}\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-137" id="solution-137"><span class="type">Solution</span></a><div id="hk-solution-137" class="hidden-content tex2jax_ignore"><div class="solution"><div class="displaymath">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-137" id="solution-137"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-137"><div class="solution solution-like"><div class="displaymath">
 \begin{equation*}
 f'(x)=e^(2x+3)  (2)
 \end{equation*}
 </div></div></div>
-</div></article><article class="exercise-like" id="exercise-276"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-1671">\(g(x)=(\ln(10x-15))^2\text{.}\)</p></article><article class="exercise-like" id="exercise-277"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-276"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-1671">\(g(x)=(\ln(10x-15))^2\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-277"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-1672">\(h(x)=\ln((10x-15)^2)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-138" id="solution-138"><span class="type">Solution</span></a><div id="hk-solution-138" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-138" id="solution-138"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-138"><div class="solution solution-like">
 <div class="displaymath">
 \begin{equation*}
 h'(x)=\frac{1}{(10x-15)^2}[2(10x-15)]*10
@@ -374,11 +378,11 @@ h'(x)=\frac{1}{(10x-15)^2}[2(10x-15)]*10
 </div>
 <p id="p-1673">Hint:  It is easier to simplify \(h(x)\) to \(2\ln(10x-15)\) first.</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-278"><h6 class="heading"><span class="codenumber">10.</span></h6>
-<p id="p-1674">\(k(x)=((\ln(x))(e^x))^3\text{.}\)</p></article><article class="exercise-like" id="exercise-279"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-278"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-1674">\(k(x)=((\ln(x))(e^x))^3\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-279"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-1675">\(m(x)=\ln(e^{(x^2+x)}+x)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-139" id="solution-139"><span class="type">Solution</span></a><div id="hk-solution-139" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-139" id="solution-139"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-139"><div class="solution solution-like">
 <div class="displaymath">
 \begin{equation*}
 m'(x)=\frac{1}{e^{(x^2+x)}+x} [e^{(x^2+x)}*(2x+1)+1]
@@ -390,19 +394,19 @@ m'(x)=\frac{1}{e^{(x^2+x)}+x} [e^{(x^2+x)}*(2x+1)+1]
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-280"><h6 class="heading"><span class="codenumber">12.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-280"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
 <div class="displaymath" id="p-1676">
 \begin{equation*}
 n(x)=\left(\frac{x^2-5x+3}{e^x }\right)^5\text{.}
 \end{equation*}
-</div></article><article class="exercise-like" id="exercise-281"><h6 class="heading"><span class="codenumber">13.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-281"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
 <div class="displaymath" id="p-1677">
 \begin{equation*}
 f(x)=\left(\frac{\ln(x)}{(2x+7)}\right)^4\text{.}
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-140" id="solution-140"><span class="type">Solution</span></a><div id="hk-solution-140" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-140" id="solution-140"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-140"><div class="solution solution-like">
 <div class="displaymath">
 \begin{equation*}
 f'(x)=4\left(\frac{\ln(x)}{2x+7}\right)^3*\frac{d}{dx} \left(\frac{\ln(x)}{2x+7}\right) 
@@ -427,7 +431,7 @@ f'(x)=4\left(\frac{\ln(x)}{2x+7}\right)^3*\frac{d}{dx} \left(\frac{\ln(x)}{2x+7}
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-282"><h6 class="heading"><span class="codenumber">14.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-282"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
 <div class="displaymath" id="p-1678">
 \begin{equation*}
 g(x)=\ln\left(\frac{x^3+2x+9}{1.07^x} \right)\text{.}
@@ -445,7 +449,7 @@ g(x)=\ln\left(\frac{x^3+2x+9}{1.07^x} \right)\text{.}
 <td class="c m b1 r0 l0 t3 lines">6</td>
 <td class="c m b1 r0 l0 t3 lines">7</td>
 <td class="c m b1 r0 l0 t3 lines">8</td>
-<td class="c m b1 r0 l0 t3 lines">9</td>
+<td class="c m b1 r0 l0 t3 lines" data-braille="last-cell">9</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">f(x)</td>
@@ -458,7 +462,7 @@ g(x)=\ln\left(\frac{x^3+2x+9}{1.07^x} \right)\text{.}
 <td class="c m b1 r0 l0 t0 lines">4</td>
 <td class="c m b1 r0 l0 t0 lines">2</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
-<td class="c m b1 r0 l0 t0 lines">6</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">6</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">f'(x)</td>
@@ -471,7 +475,7 @@ g(x)=\ln\left(\frac{x^3+2x+9}{1.07^x} \right)\text{.}
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">0</td>
 <td class="c m b1 r0 l0 t0 lines">9</td>
-<td class="c m b1 r0 l0 t0 lines">8</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">8</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">g(x)</td>
@@ -484,7 +488,7 @@ g(x)=\ln\left(\frac{x^3+2x+9}{1.07^x} \right)\text{.}
 <td class="c m b1 r0 l0 t0 lines">5</td>
 <td class="c m b1 r0 l0 t0 lines">1</td>
 <td class="c m b1 r0 l0 t0 lines">7</td>
-<td class="c m b1 r0 l0 t0 lines">3</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">3</td>
 </tr>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">g'(x)</td>
@@ -497,13 +501,13 @@ g(x)=\ln\left(\frac{x^3+2x+9}{1.07^x} \right)\text{.}
 <td class="c m b1 r0 l0 t0 lines">9</td>
 <td class="c m b1 r0 l0 t0 lines">3</td>
 <td class="c m b1 r0 l0 t0 lines">5</td>
-<td class="c m b1 r0 l0 t0 lines">1</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">1</td>
 </tr>
 </table></div></div></div>
-<article class="exercise-like" id="exercise-283"><h6 class="heading"><span class="codenumber">15.</span></h6>
+<article class="exercise exercise-like" id="exercise-283"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
 <p id="p-1680">\(h'(2)\text{,}\) where \(h(x)=f(g(x))\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-141" id="solution-141"><span class="type">Solution</span></a><div id="hk-solution-141" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-141" id="solution-141"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-141"><div class="solution solution-like">
 <div class="displaymath">
 \begin{equation*}
 h'(x)=f'(g(x)) g'(x)
@@ -517,11 +521,11 @@ h'(2)=f'(g(2))  g' (2)
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-284"><h6 class="heading"><span class="codenumber">16.</span></h6>
-<p id="p-1681">\(h'(5)\text{,}\) where \(h(x)=f(f(x))\text{.}\)</p></article><article class="exercise-like" id="exercise-285"><h6 class="heading"><span class="codenumber">17.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-284"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-1681">\(h'(5)\text{,}\) where \(h(x)=f(f(x))\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-285"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
 <p id="p-1682">\(h'(7)\text{,}\) where \(h(x)=g(g(x))\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-142" id="solution-142"><span class="type">Solution</span></a><div id="hk-solution-142" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-142" id="solution-142"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-142"><div class="solution solution-like">
 <div class="displaymath">
 \begin{equation*}
 h' (x)=g' (g(x))  g' (x)
@@ -535,11 +539,11 @@ h' (7)=g' (g(7))  g' (7)
 \end{equation*}
 </div>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-286"><h6 class="heading"><span class="codenumber">18.</span></h6>
-<p id="p-1683">\(h'(4)\text{,}\) where \(h(x)=g(f(x))\text{.}\)</p></article><article class="exercise-like" id="exercise-287"><h6 class="heading"><span class="codenumber">19.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-286"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-1683">\(h'(4)\text{,}\) where \(h(x)=g(f(x))\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-287"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
 <p id="p-1684">The pretax profit function is \(profit(q)=-q^2+300q-2500\) at the widget factory. The tax function is \(tax(profit)=0.4(profit-1000)\text{.}\)  Find the equation of the line tangent to the graph of after tax profits when \(q=100\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-143" id="solution-143"><span class="type">Solution</span></a><div id="hk-solution-143" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-143" id="solution-143"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-143"><div class="solution solution-like">
 <p id="p-1685">We will need a point and a slope to construct the tangent line.</p>
 <p id="p-1686">Point: when \(q=100\text{,}\) we have \(profit(100)=-100^2+300(100)-2500
 =-10,000+30,000-2500=18,500\)</p>
@@ -563,10 +567,10 @@ Tax(q)=40q+3000
 </div>
 <p id="p-1694">Note that here we have approximated a composite function by something much simpler. Finding tax meant we had to first find the profit, and then plug that profit into the tax function. Now, all we have to do is plug our value of q into the linear equation!</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-288"><h6 class="heading"><span class="codenumber">20.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-288"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
 <p id="p-1695">The revenue function for gizmos is \(revenue(q)=.2q^2+500q\text{.}\)  The commission cost to the sales force is \(commissions(rev)=0.1rev+rev^2/3,000,000\text{.}\)  Find the equation of the tangent line to commissions as a  function of quantity, when  \(q=1000\text{.}\)</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

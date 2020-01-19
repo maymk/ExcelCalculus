@@ -44,14 +44,14 @@ slope\  of\ demand\ curve=\frac{change\ in\ price}{change\ in\ quantity\ demande
             </sidebyside> 
 
 <example><title>Starting With Formulas</title><p>  Suppose <m>q</m> denotes quantity, and the supply price for widgets is given by</p> 
-<me>price=$6+\frac{q}{100}</me>
+<me>Supply \ price=\$6+\frac{q}{100}</me>
 <p>We are also told the demand price is given by</p>
-<me>price=$18-\frac{2q}{100}.</me>
+<me>Demand \ price=\$18-\frac{2q}{100}.</me>
 <p>Find the equilibrium price and quantity.
 
 
 </p><p><term>Solution a</term>: We have started with an example that we can do by basic algebra without any technology.  Subtracting the two equations, we see that</p> 
-<me>0=$12-\frac{3q}{100}.</me>
+<me>0=\$12-\frac{3q}{100}.</me>
 <p>Some straightforward algebra shows that the equilibrium quantity is 400.  Substituting back into either equation gives an equilibrium price of $10.
 
 
@@ -539,7 +539,7 @@ In the last section we looked at the economic model for supply and demand.  We w
             </sidebyside> 
  
 
-<example><title>Finding Revenue Form Linear Demand Price</title><p> We have determined that the demand price function for widgets is </p>
+<example><title>Finding Revenue From Linear Demand Price</title><p> We have determined that the demand price function for widgets is </p>
 
 <me>demand\ price(q)=10-q/1000</me>
 
@@ -771,7 +771,7 @@ ind the revenue and profit functions.
 <solution>
 <ol label="(a)">
 <li><p> Identify the fixed and variable costs.</p>
-<p><m>Fixed\ cost = $1234</m>, and the <m>variable cost =$54.60</m> (per unit)</p></li>
+<p><m>Fixed\ cost = \$1234</m>, and the <m>variable cost =\$54.60</m> (per unit)</p></li>
 <li><p> Find the revenue and profit functions.</p>
 <me>Revenue=q(-2.35 q+250)= -2.35 q^2+250 q</me>
 <md><mrow>Profit=revenue-cost \amp=-2.35 q^2+250 q-(54.6q+1234)</mrow>
@@ -788,7 +788,7 @@ ind the revenue and profit functions.
 <m>q = 59</m></p>
 </sidebyside>
 
-<p>At <m>q =59</m>, <m>cost = $4455.40</m>, <m>demand\  price = $111.35</m>, <m>revenue = $6569.65</m>, and <m>profit = <dollor />2114.25</m></p>
+<p>At <m>q =59</m>, <m>cost = \$4455.40</m>, <m>demand\  price = \$111.35</m>, <m>revenue = \$6569.65</m>, and <m>profit = <dollor />2114.25</m></p>
 </li>
 <li><p> Find all break-even points.</p>
 <sidebyside widths="65% 35%" valigns="middle top">
@@ -834,14 +834,14 @@ ind the revenue and profit functions.
                 </image>
             </sidebyside> 
  Identify the fixed and variable costs.</p>
-<p><m>Fixed\ cost = $150</m>, and the <m>variable cost =$3</m> (per unit)</p></li>
+<p><m>Fixed\ cost = \$150</m>, and the <m>variable cost =\$3</m> (per unit)</p></li>
 <li><p> Find the revenue and profit functions.</p>
 <me>Revenue=q(-0.04q+12)= -0.04 q^2+12x</me>
 <md><mrow>Profit=revenue-cost \amp=-0.04 q^2+12q-(3q+150)</mrow>
 <mrow>\amp=-0.04 q^2+9q-150</mrow></md>
 </li>
 <li><p> Evaluate cost, demand price, revenue, and profit at <m>q_0</m>.</p>
-<p>At <m>q =75</m>, <m>cost = $375</m>, <m>demand\  price = $9</m>, <m>revenue = $675</m>, and <m>profit = <dollor />300</m></p>
+<p>At <m>q =75</m>, <m>cost = \$375</m>, <m>demand\  price = \$9</m>, <m>revenue = \$675</m>, and <m>profit = <dollor />300</m></p>
 </li>
 <li><p> Find all break-even points.</p>
 <p>The break-even points are <m>q = 6.9</m> and <m>q = 76.3</m></p>
@@ -1155,7 +1155,7 @@ For problems 10-12, given the cost and demand data:</p>
 <cell>Parentheses needed for correct evaluation</cell></row>
 <row bottom="medium">
 <cell><m>f(x)=|x|</m></cell>
-<cell>=ABS(2*A1+7)</cell>
+<cell>=ABS(A1)</cell>
 <cell>Absolute value</cell></row>
                </tabular>
             </sidebyside>
@@ -1164,7 +1164,7 @@ For problems 10-12, given the cost and demand data:</p>
 
 <example><title>Exponential Supply and Demand Price</title><p> We are interested in selling gizmos.  The most a consumer will pay is $1,000.  If we drop the cost by 10% we increase demand by 100.  The cheapest that a supplier will sell for is $200.  We find the market will produce another 100 gizmos whenever we increase the price by 20%.  Find the market equilibrium.</p>
 
-<p><term>Solution</term>:  We start by converting out information about supply and demand into equations, plugging the equations into Excel, and sketching a graph.  We then use Goal Seek to find where the two equations are equal.</p>
+<p><term>Solution</term>:  We start by converting our information about supply and demand into equations, plugging the equations into Excel, and sketching a graph.  We then use Goal Seek to find where the two equations are equal.</p>
 
 <me>Demand\ Price(quantity)=1000*(0.9)^{(quantity/100)}</me>
 
@@ -1748,9 +1748,9 @@ Cost=\begin{cases}
 <cell>35</cell><cell>30</cell><cell>26</cell>
 <cell>22</cell></row>
 <row bottom="medium">
-<cell>Cost</cell><cell>2990</cell><cell>3280</cell>
-<cell>3570</cell><cell>3860</cell><cell>4150</cell>
-<cell>4440</cell></row>
+<cell>Cost</cell><cell>3000</cell><cell>3280</cell>
+<cell>3560</cell><cell>3860</cell><cell>4160</cell>
+<cell>4470</cell></row>
                 </tabular>
             </sidebyside>
 </statement></exercise>

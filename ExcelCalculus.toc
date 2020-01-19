@@ -1,0 +1,81 @@
+\hypertarget {index}{}
+\contentsline {chapter}{Acknowledgements}{v}{chapter*.1}
+\contentsline {chapter}{Preface}{vi}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Functions Graphs and Excel}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Linear Functions and models}{1}{section.1.1}
+\contentsline {subsection}{Exercises 1.1 Linear Functions and models}{4}{section*.13}
+\contentsline {section}{\numberline {1.2}Functions in the Business setting}{7}{section.1.2}
+\contentsline {subsection}{Exercises Functions in the Business Setting}{11}{section*.14}
+\contentsline {section}{\numberline {1.3}Introduction to Excel Spreadsheets}{14}{section.1.3}
+\contentsline {subsection}{Exercises Introduction to Excel Spreadsheets}{22}{section*.16}
+\contentsline {section}{\numberline {1.4}Graphing functions with Excel}{26}{section.1.4}
+\contentsline {subsection}{Exercises 1.4 Graphing functions with Excel}{33}{section*.19}
+\contentsline {section}{\numberline {1.5}Using Excel to find best-fit curves}{36}{section.1.5}
+\contentsline {subsection}{Exercises: Using Excel to find best fit curves}{44}{section*.20}
+\contentsline {section}{\numberline {1.6}Finding Numerical Solutions with Goal Seek}{49}{section.1.6}
+\contentsline {subsection}{Finding Numerical Solutions with Goal Seek}{56}{section*.22}
+\contentsline {chapter}{\numberline {2}Business Applications}{63}{chapter.2}
+\contentsline {section}{\numberline {2.1}Market Equilibrium Problems}{63}{section.2.1}
+\contentsline {subsection}{Exercises 2.1 Equilibrium Problems}{67}{section*.28}
+\contentsline {section}{\numberline {2.2}Modeling Revenue, Costs, and Profit}{72}{section.2.2}
+\contentsline {subsection}{Exercises: Modeling Revenue, Costs, and Profit}{77}{section*.36}
+\contentsline {section}{\numberline {2.3}Nonlinear Functions}{85}{section.2.3}
+\contentsline {subsection}{Exercises 2.3 Nonlinear functions}{90}{section*.42}
+\contentsline {chapter}{\numberline {3}Rate of Change and Derivatives}{100}{chapter.3}
+\contentsline {section}{\numberline {3.1}Marginal Functions and Difference Quotients}{100}{section.3.1}
+\contentsline {subsection}{Exercises: Marginal Functions and Difference Quotients Problems}{106}{section*.50}
+\contentsline {section}{\numberline {3.2}Numeric Derivatives and Limits}{111}{section.3.2}
+\contentsline {subsection}{Exercises: Numeric Derivatives and Limits}{117}{section*.61}
+\contentsline {section}{\numberline {3.3}Local Linearity}{124}{section.3.3}
+\contentsline {subsection}{Exercises: Local Linearity}{127}{section*.68}
+\contentsline {section}{\numberline {3.4}Optimization}{130}{section.3.4}
+\contentsline {subsection}{Exercises: Optimization}{135}{section*.74}
+\contentsline {section}{\numberline {3.5}An Introduction to Solver}{141}{section.3.5}
+\contentsline {subsection}{Exercises: An Introduction to Solver}{147}{section*.78}
+\contentsline {chapter}{\numberline {4}Symbolic Differentiation}{152}{chapter.4}
+\contentsline {section}{\numberline {4.1}Elementary Derivatives}{152}{section.4.1}
+\contentsline {subsection}{Exercises: Elementary Derivatives Problems}{157}{section*.95}
+\contentsline {section}{\numberline {4.2}Derivative Rules for Combinations of Functions}{159}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Derivatives of scalar products}{159}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Derivatives of products}{160}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Derivatives of quotients}{161}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Exercises: Derivative Rules for Combinations of Functions Problems}{162}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}The Chain Rule}{165}{section.4.3}
+\contentsline {subsection}{Exercises: The Chain Rule}{168}{Item.425}
+\contentsline {section}{\numberline {4.4}Differentiation Using Computer Algebra}{170}{section.4.4}
+\contentsline {subsection}{Exercises: Differentiation Using Computer Algebra Problems}{176}{section*.116}
+\contentsline {section}{\numberline {4.5}The Second Derivative and Concavity}{182}{section.4.5}
+\contentsline {subsection}{Exercises: The Second Derivative and Concavity Problems}{185}{Item.445}
+\contentsline {chapter}{\numberline {5}Differentiation Techniques and Applications}{189}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implicit Differentiation}{189}{section.5.1}
+\contentsline {subsection}{Exercises: Implicit Differentiation Problems}{193}{section*.125}
+\contentsline {section}{\numberline {5.2}Related Rates}{196}{section.5.2}
+\contentsline {subsection}{Exercises: Related Rates Problems}{200}{section*.130}
+\contentsline {section}{\numberline {5.3}Elasticity}{203}{section.5.3}
+\contentsline {subsection}{Exercises: Elasticity Problems}{207}{section*.139}
+\contentsline {chapter}{\numberline {6}Functions of Several Variables}{211}{chapter.6}
+\contentsline {section}{\numberline {6.1}Evaluating and Graphing Functions of Several Variables}{212}{section.6.1}
+\contentsline {subsection}{Exercises: Evaluating and Graphing Functions of Several Variables Problems}{217}{section*.145}
+\contentsline {section}{\numberline {6.2}Wire Frames, Partial Derivatives, and Tangent Planes}{224}{section.6.2}
+\contentsline {subsection}{Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems}{229}{section*.150}
+\contentsline {section}{\numberline {6.3}Critical Points and Extrema}{237}{section.6.3}
+\contentsline {subsection}{Exercises: Critical Points and Extrema Problems}{243}{section*.160}
+\contentsline {section}{\numberline {6.4}Optimization and Best Fitting Curves}{248}{section.6.4}
+\contentsline {subsection}{Exercises: Optimization and Best Fitting Curves Problems}{255}{section*.166}
+\contentsline {chapter}{\numberline {7}Integration}{261}{chapter.7}
+\contentsline {section}{\numberline {7.1}Approximating Definite Integrals as Sums}{262}{section.7.1}
+\contentsline {subsection}{Exercises: Approximating Definite Integrals as Sums Problems}{267}{section*.170}
+\contentsline {section}{\numberline {7.2}The Fundamental Theorem of Calculus}{271}{section.7.2}
+\contentsline {subsection}{Exercises: The Fundamental Theorem of Calculus Problems}{278}{section*.185}
+\contentsline {section}{\numberline {7.3}Basic Antidifferentiation}{283}{section.7.3}
+\contentsline {subsection}{Exercises: Basic Antidifferentiation Problems}{289}{section*.202}
+\contentsline {section}{\numberline {7.4}Integration by Change of Variables or Substitution}{293}{section.7.4}
+\contentsline {subsection}{Exercises: Integration by Change of Variables or Substitution Problems}{296}{section*.210}
+\contentsline {section}{\numberline {7.5}Integration using Computer Algebra}{299}{section.7.5}
+\contentsline {subsection}{Exercises: Integration using Computer Algebra Problems}{308}{section*.214}
+\contentsline {section}{\numberline {7.6}The Normal Distribution: An extended numeric example}{310}{section.7.6}
+\contentsline {subsection}{Exercises: Normal Distribution Problems}{315}{section*.219}
+\contentsline {section}{\numberline {7.7}Applications of the integral: Investment and depreciation}{319}{section.7.7}
+\contentsline {subsection}{Exercises: Applications of the integral: Investment and depreciation Problems}{324}{section*.230}
+\contentsline {section}{\numberline {7.8}Economics Applications of the Integral}{326}{section.7.8}
+\contentsline {subsection}{Exercises: Business Applications of the Integral Problems}{334}{section*.237}

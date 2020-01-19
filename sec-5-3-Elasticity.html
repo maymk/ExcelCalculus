@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:26-05:00    *-->
+<!--*    on 2020-01-19T10:07:14-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -154,7 +158,7 @@ var js_version = 0.11;
 </h2>
 <a href="sec-5-3-Elasticity.html" class="permalink">¶</a><p id="p-2019">Elasticity of demand is a concept from economics that looks at relative rate of change rather than rate of change.  We want to look at how we express this as a variant of the derivative.</p>
 <p id="p-2020">The law of demand states we increase demand by lowering price and lower demand by raising price.  The naive rate of change in that case would be the change in quantity with respect to price.  However that rate of change is not particularly useful.  If I am told that I can sell 100 more units if I lower the price by $1 a unit, I don’t know if I should lower the price.  I would definitely want to lower the price if I sell cars for an average price of $20,000 and typically sell 200 cars a year.  I would not want to lower the price if I sell gasoline at $4.00 a gallon and sell 5,000,000 gallons a year.</p>
-<article class="assemblage-like" id="assemblage-35"><p id="p-2021">Rather than looking at the derivative of quantity with respect to price, or the rate of change with respect to price, we want to look at the relative rate of change with respect to price, or the <dfn class="terminology">Elasticity of Demand</dfn>.</p></article><p id="p-2022">If a small change in price causes a big change in demand, the demand is elastic.  In that case, I generally want to lower the price and get a lot more customers.  If I need to make a big change in price to get a small change in demand, the demand is inelastic.  With inelastic demand I can raise revenue by raising price.  Thus, elasticity of demand gives us a tool for maximizing revenue.  We can look at this issue is either the discrete case (arc elasticity) or the continuous case (point elasticity).</p>
+<article class="assemblage assemblage-like" id="assemblage-35"><p id="p-2021">Rather than looking at the derivative of quantity with respect to price, or the rate of change with respect to price, we want to look at the relative rate of change with respect to price, or the <dfn class="terminology">Elasticity of Demand</dfn>.</p></article><p id="p-2022">If a small change in price causes a big change in demand, the demand is elastic.  In that case, I generally want to lower the price and get a lot more customers.  If I need to make a big change in price to get a small change in demand, the demand is inelastic.  With inelastic demand I can raise revenue by raising price.  Thus, elasticity of demand gives us a tool for maximizing revenue.  We can look at this issue is either the discrete case (arc elasticity) or the continuous case (point elasticity).</p>
 <p id="p-2023"><dfn class="terminology">Point Elasticity</dfn></p>
 <p id="p-2024">To understand elasticity we look at the simple case when the demand price function is linear.  In that case, we can use geometry to understand the problem.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec5-3-1.png" style="width: 100%; height: auto;" alt=""></div></div></div>
@@ -162,13 +166,13 @@ var js_version = 0.11;
 <p id="p-2026">If the special case where the price and quantity are both 1, the revenue rectangle is a square and we can simply look at the slope of the demand function. In that case, when the demand curve is flatter than a slope of minus 1, increasing the quantity increases the area because quantity increases faster than price decreases.  Similarly, when the demand curve is steeper than a slope of minus 1, increasing the quantity causes the price to decrease even faster, so the area of the rectangle decreases.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec5-3-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2027">We note that the slope of the normalized demand curve is almost always negative.  It is thus convenient to talk about the negative of the slope of the normalized demand price curve.</p>
-<article class="assemblage-like" id="assemblage-36"><p id="p-2028">We refer to that quantity as <dfn class="terminology">Elasticity of Demand</dfn>.</p></article><p id="p-2029">If the elasticity is greater than 1, a small relative change in the price goes with a large relative change in the quantity.  We would expect high elasticity in products that can easily be substituted.  The demand for gasoline at one gas station, when there are 2 other gas stations at the same intersection, would be highly elastic.</p>
-<article class="assemblage-like" id="assemblage-37"><p id="p-2030">When demand is elastic \((E \gt 1)\text{,}\) we raise revenue by lowering price.</p></article><p id="p-2031">We would expect low elasticity in products that are essential for which there is no reasonable substitute.  Wedding rings and lifesaving medicine would have highly inelastic demand.</p>
-<article class="assemblage-like" id="assemblage-38"><p id="p-2032">When the demand is inelastic (E \(\lt\) 1), we increase revenue by increasing price.</p></article><p id="p-2033">A relatively large change in price will produce a relatively small change in demand. Revenue will be at a maximum when elasticity is 1.  This condition is referred to as unit elasticity.</p>
+<article class="assemblage assemblage-like" id="assemblage-36"><p id="p-2028">We refer to that quantity as <dfn class="terminology">Elasticity of Demand</dfn>.</p></article><p id="p-2029">If the elasticity is greater than 1, a small relative change in the price goes with a large relative change in the quantity.  We would expect high elasticity in products that can easily be substituted.  The demand for gasoline at one gas station, when there are 2 other gas stations at the same intersection, would be highly elastic.</p>
+<article class="assemblage assemblage-like" id="assemblage-37"><p id="p-2030">When demand is elastic \((E \gt 1)\text{,}\) we raise revenue by lowering price.</p></article><p id="p-2031">We would expect low elasticity in products that are essential for which there is no reasonable substitute.  Wedding rings and lifesaving medicine would have highly inelastic demand.</p>
+<article class="assemblage assemblage-like" id="assemblage-38"><p id="p-2032">When the demand is inelastic (E \(\lt\) 1), we increase revenue by increasing price.</p></article><p id="p-2033">A relatively large change in price will produce a relatively small change in demand. Revenue will be at a maximum when elasticity is 1.  This condition is referred to as unit elasticity.</p>
 <p id="p-2034">Note that we have usually described price as a function of quantity and in the definition of elasticity we use the derivative obtained from making quantity a function of price.  From related rates, we know that these derivatives are reciprocals of each other.</p>
-<article class="example-like" id="example-78"><a data-knowl="" class="id-ref" data-refid="hk-example-78"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.3.1</span>. <span class="title">Point elasticity.</span>
-</h6></a></article><div id="hk-example-78" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2035">The demand price function for widgets is given in terms of quantity (q).</p>
+<article class="example example-like" id="example-78"><a data-knowl="" class="id-ref original" data-refid="hk-example-78"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Point elasticity.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-78"><article class="example example-like"><p id="p-2035">The demand price function for widgets is given in terms of quantity (q).</p>
 <div class="displaymath">
 \begin{equation*}
 P(q)=20-q/100.
@@ -240,9 +244,9 @@ E=\frac{-\Delta quantity}{\Delta price}*\frac{average\ price}{average\ quantity}
 =-\frac{quantity_2-quantity_1}{price_2-price_1} *\frac{(price_1+price_2)/2}{(quantity_1+quantiy_2)/2}
 \end{equation*}
 </div>
-<article class="assemblage-like" id="assemblage-39"><p id="p-2052"><dfn class="terminology">Arc Elasticity</dfn>:  \(E=-\frac{quantity_2-quantity_1}{price_2-price_1} *\frac{price_1+price_2}{quantity_1+quantiy_2}\)</p></article><article class="example-like" id="example-79"><a data-knowl="" class="id-ref" data-refid="hk-example-79"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.3.2</span>. <span class="title">Elasticity from two points.</span>
-</h6></a></article><div id="hk-example-79" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2053">Two quantity-price points for gizmos are (5000, 20) and (5200, 18).  What is the arc elasticity between the two points?  Which price produces higher revenue?</p>
+<article class="assemblage assemblage-like" id="assemblage-39"><p id="p-2052"><dfn class="terminology">Arc Elasticity</dfn>:  \(E=-\frac{quantity_2-quantity_1}{price_2-price_1} *\frac{price_1+price_2}{quantity_1+quantiy_2}\)</p></article><article class="example example-like" id="example-79"><a data-knowl="" class="id-ref original" data-refid="hk-example-79"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Elasticity from two points.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-79"><article class="example example-like"><p id="p-2053">Two quantity-price points for gizmos are (5000, 20) and (5200, 18).  What is the arc elasticity between the two points?  Which price produces higher revenue?</p>
 <p id="p-2054"><dfn class="terminology">Solution</dfn>:  The formula for arc elasticity is:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -257,11 +261,11 @@ E=-\frac{5200-5000}{18-20}*\frac{20+18}{5000+5200} =-\frac{200}{-2}*\frac{38}{10
 <p id="p-2055">The market for gizmos is inelastic, as a price drop of about 10% only increases the market by about 4%.  To increase revenue, I should charge the higher price.</p></article></div>
 <p id="p-2056">Checking my work by computing the revenue at the two points, the first point, with the higher price and lower quantity produces $100,000, while the second point, with a lower price and higher quantity produces $93,600 in revenue.</p>
 <p id="p-2057">We can use elasticity to approximate change in revenue form a change in price.</p>
-<article class="example-like" id="example-80"><a data-knowl="" class="id-ref" data-refid="hk-example-80"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.3.3</span>. <span class="title">Elasticity in terms of per cent change.</span>
-</h6></a></article><div id="hk-example-80" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2058">Example 3: The short-term elasticity for gadgets is 0.6.  What is the percentage change in revenue if the price is raised by 5%?</p>
+<article class="example example-like" id="example-80"><a data-knowl="" class="id-ref original" data-refid="hk-example-80"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Elasticity in terms of per cent change.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-80"><article class="example example-like"><p id="p-2058">Example 3: The short-term elasticity for gadgets is 0.6.  What is the percentage change in revenue if the price is raised by 5%?</p>
 <p id="p-2059">Solution 3: An alternate formula for elasticity is:</p>
-<article class="assemblage-like" id="assemblage-40"><div class="displaymath" id="p-2060">
+<article class="assemblage assemblage-like" id="assemblage-40"><div class="displaymath" id="p-2060">
 \begin{equation*}
 E=-\frac{\% change\ in\ quantity}
 {\% change\ in\ price}
@@ -284,7 +288,7 @@ NewRevenue=NewPrice*NewQuantiy
 </div>
 <p id="p-2062">Thus raising the price by 5% will raise revenue by 1.85%.</p></article></div>
 <section class="exercises" id="exercises-set-sec-5-3"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: Elasticity Problems</span>
+<span class="type">Exercises</span> <span class="codenumber">5.3.1</span> <span class="title">Exercises: Elasticity Problems</span>
 </h3>
 <a href="sec-5-3-Elasticity.html#exercises-set-sec-5-3" class="permalink">¶</a><p id="p-2063">For problems 1-6, for the given demand-price function and quantity:</p>
 <ul class="disc">
@@ -293,14 +297,14 @@ NewRevenue=NewPrice*NewQuantiy
 <li id="li-577"><p id="p-2066">State which pricing strategy, raising, lowering, or holding steady on prices, increases revenue.</p></li>
 <li id="li-578"><p id="p-2067">Find the price and quantity that maximizes profit.</p></li>
 </ul>
-<article class="exercise-like" id="exercise-364"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<article class="exercise exercise-like" id="exercise-364"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 price=30-\frac{quantity}{50};\quad quantity=300.
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-183" id="solution-183"><span class="type">Solution</span></a><div id="hk-solution-183" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-183" id="solution-183"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-183"><div class="solution solution-like"><ul class="disc">
 <li id="li-579"><div class="displaymath">
 \begin{equation*}
 price=30-\frac{300}{50}=30-6=24
@@ -339,17 +343,17 @@ price=30-\frac{quantity}{50},\qquad price(750=30-\frac{750}{50}=30-15=15
 <p id="p-2072">Hence we have a maximum revenue when \(quantity=750\) and \(price=\)$15. (The actual maximum revenue is \(revenue=quantity*price=750*15=\)$11,250.)</p>
 </li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-365"><h6 class="heading"><span class="codenumber">2.</span></h6>\(price=40-\frac{quantity}{75};\quad quantity=1600.\)</article><article class="exercise-like" id="exercise-366"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-365"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>\(price=40-\frac{quantity}{75};\quad quantity=1600.\)</article><article class="exercise exercise-like" id="exercise-366"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 price=50-\frac{quantity}{100};\quad quantity=2500.
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-184" id="solution-184"><span class="type">Solution</span></a><div id="hk-solution-184" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-184" id="solution-184"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-184"><div class="solution solution-like"><ul class="disc">
 <li id="li-583"><div class="displaymath">
 \begin{equation*}
-price=50-\frac{q}{100}=50-\frac{2500}{100}=50-25=$25
+price=50-\frac{q}{100}=50-\frac{2500}{100}=50-25=\$25
 \end{equation*}
 </div></li>
 <li id="li-584"><div class="displaymath">
@@ -358,19 +362,19 @@ E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} = \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} = 
 \end{equation*}
 </div></li>
 <li id="li-585"><p id="p-2073">When \(E = 1\) we have unit elasticity and the revenue is at a maximum. Hence we want to leave the price as is.</p></li>
-<li id="li-586"><p id="p-2074">The maximum revenue occurs when \(E = 1\text{,}\) so we want \(q = 2500\) and \(P = $25\text{.}\)</p></li>
+<li id="li-586"><p id="p-2074">The maximum revenue occurs when \(E = 1\text{,}\) so we want \(q = 2500\) and \(P = \$25\text{.}\)</p></li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-367"><h6 class="heading"><span class="codenumber">4.</span></h6>\(price=30*(0.9)^{\frac{quantity}{100} };\quad quantity=400.\)</article><article class="exercise-like" id="exercise-368"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-367"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>\(price=30*(0.9)^{\frac{quantity}{100} };\quad quantity=400.\)</article><article class="exercise exercise-like" id="exercise-368"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <div class="displaymath">
 \begin{equation*}
 price=20*(0.95)^{\frac{quantity}{50} };\quad quantity=800.
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-185" id="solution-185"><span class="type">Solution</span></a><div id="hk-solution-185" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-185" id="solution-185"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-185"><div class="solution solution-like"><ul class="disc">
 <li id="li-587"><div class="displaymath">
 \begin{equation*}
-price=20*(.95)^{(800/50)}=$8.80
+price=20*(.95)^{(800/50)}=\$8.80
 \end{equation*}
 </div></li>
 <li id="li-588">
@@ -412,18 +416,18 @@ E=\frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0}
 =-\frac{50}{q ln(0.95)}
 \end{equation*}
 </div>
-<p id="p-2077">And hence \(\ln(.95)  q= -50\text{,}\) so \(q= -50/\ln(.95)\approx 975\text{.}\) When \(q=975\text{,}\) we have that \(price=20*(.95)^{(975/50) }=$7.36\text{.}\)</p>
+<p id="p-2077">And hence \(\ln(.95)  q= -50\text{,}\) so \(q= -50/\ln(.95)\approx 975\text{.}\) When \(q=975\text{,}\) we have that \(price=20*(.95)^{(975/50) }=\$7.36\text{.}\)</p>
 </li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-369"><h6 class="heading"><span class="codenumber">6.</span></h6>\(price=40*(0.8)^{\frac{quantity}{50} };\quad quantity=300.\)</article><p id="p-2078">For problems 7-10, for the given demand-quantity points:</p>
+</div></article><article class="exercise exercise-like" id="exercise-369"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>\(price=40*(0.8)^{\frac{quantity}{50} };\quad quantity=300.\)</article><p id="p-2078">For problems 7-10, for the given demand-quantity points:</p>
 <ul class="disc">
 <li id="li-591"><p id="p-2079">Find the elasticity for the given pair of points.</p></li>
 <li id="li-592"><p id="p-2080">State which price-point, increases revenue.</p></li>
 </ul>
-<article class="exercise-like" id="exercise-370"><h6 class="heading"><span class="codenumber">7.</span></h6>
+<article class="exercise exercise-like" id="exercise-370"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-2081">First price-quantity point = ($50,1000) Second price-quantity point = ($51,900).</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-186" id="solution-186"><span class="type">Solution</span></a><div id="hk-solution-186" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-186" id="solution-186"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-186"><div class="solution solution-like"><ul class="disc">
 <li id="li-593">
 <div class="displaymath">
 \begin{equation*}
@@ -438,13 +442,13 @@ E=-\frac{(q_2-q_1 )}{(p_2-p_1 )}
 \end{equation*}
 </div>
 </li>
-<li id="li-594"><p id="p-2082">\(E\gt 1\text{,}\) So the market is elastic and we should choose the lower price. \(($50, 1000)\)</p></li>
+<li id="li-594"><p id="p-2082">\(E\gt 1\text{,}\) So the market is elastic and we should choose the lower price. \((\$50, 1000)\)</p></li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-371"><h6 class="heading"><span class="codenumber">8.</span></h6>
-<p id="p-2083">First price-quantity point = ($5.00,387) Second price-quantity point = ($4.95,410).</p></article><article class="exercise-like" id="exercise-372"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-371"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-2083">First price-quantity point = ($5.00,387) Second price-quantity point = ($4.95,410).</p></article><article class="exercise exercise-like" id="exercise-372"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-2084">First price-quantity point = ($1.99,2500) Second price-quantity point = ($2.01,2385).</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-187" id="solution-187"><span class="type">Solution</span></a><div id="hk-solution-187" class="hidden-content tex2jax_ignore"><div class="solution"><ul class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-187" id="solution-187"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-187"><div class="solution solution-like"><ul class="disc">
 <li id="li-595">
 <div class="displaymath">
 \begin{equation*}
@@ -459,22 +463,22 @@ E=-\frac{(q_2-q_1 )}{(p_2-p_1 )}
 \end{equation*}
 </div>
 </li>
-<li id="li-596"><p id="p-2085">\(E\gt 1\text{,}\) So the market is elastic and we should choose the lower price. \(($1.99, 2500)\)</p></li>
+<li id="li-596"><p id="p-2085">\(E\gt 1\text{,}\) So the market is elastic and we should choose the lower price. \((\$1.99, 2500)\)</p></li>
 </ul></div></div>
-</div></article><article class="exercise-like" id="exercise-373"><h6 class="heading"><span class="codenumber">10.</span></h6>
-<p id="p-2086">First price-quantity point = ($783,455) Second price-quantity point = ($792,442).</p></article><article class="exercise-like" id="exercise-374"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-373"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-2086">First price-quantity point = ($783,455) Second price-quantity point = ($792,442).</p></article><article class="exercise exercise-like" id="exercise-374"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-2087">List 3 items where you would expect the demand price to be elastic and 3 items where you would expect the demand price to be inelastic.  Explain why you have put each item into its category.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-188" id="solution-188"><span class="type">Solution</span></a><div id="hk-solution-188" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-188" id="solution-188"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-188"><div class="solution solution-like">
 <p id="p-2088">Hint:</p>
 <p id="p-2089">Elastic (\(E \gt 1\)) The book mentions an elastic market points to something that can be easily substituted and where revenue goes up when prices go down. Examples are a particular cut of meet and for instance a brand of clothes. If there is a sale we would choose the cheaper item. What else falls into this category?</p>
 <p id="p-2090">Inelastic (\(E \lt 1\)) This is something where an increase in price would not decrease revenue. One situation would be items that are not easily substituted. For example wedding rings or life saving medication. What else falls into this category?</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-375"><h6 class="heading"><span class="codenumber">12.</span></h6>
-<p id="p-2091">Give reasons why a vendor might set a price that does not maximize revenues.</p></article><article class="exercise-like" id="exercise-376"><h6 class="heading"><span class="codenumber">13.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-375"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-2091">Give reasons why a vendor might set a price that does not maximize revenues.</p></article><article class="exercise exercise-like" id="exercise-376"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
 <p id="p-2092">If the short-term elasticity for widgets is 2.5 and the price is raised by 10%, find the percent change in quantity and revenue.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-189" id="solution-189"><span class="type">Solution</span></a><div id="hk-solution-189" class="hidden-content tex2jax_ignore"><div class="solution">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-189" id="solution-189"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-189"><div class="solution solution-like">
 <div class="displaymath">
 \begin{equation*}
 E=-\frac{\text{percent change in quantity}}
@@ -486,10 +490,10 @@ E=-\frac{\text{percent change in quantity}}
 <p id="p-2094">And the new revenue=(1.10 old price)(0.75 old quantity)=.8250 old price.</p>
 <p id="p-2095">Hence we have a -17.5$ change in revenue.</p>
 </div></div>
-</div></article><article class="exercise-like" id="exercise-377"><h6 class="heading"><span class="codenumber">14.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-377"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
 <p id="p-2096">If the short-term elasticity for thingamabobs is 0.8 and the price is raised by 10%, find the percent change in quantity and revenue.</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

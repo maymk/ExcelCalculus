@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-23T13:08:28-05:00    *-->
+<!--*    on 2020-01-19T10:07:16-06:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,19 +41,23 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.11/pretext.js"></script><script src="https://pretextbook.org/js/0.11/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.11;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -155,13 +159,13 @@ var js_version = 0.11;
 <a href="sec-7-2-FundamentalTheoremCalculius.html" class="permalink">¶</a><p id="p-2619"><a class="external" href="./Examples/Section-7-2-Examples.xlsx" target="_blank">Link to worksheets used in this section</a></p>
 <p id="p-2620">In the last section we defined the definite integral, \(\int_a^b f(t)dt\text{,}\) the signed area under the curve \(y= f(t)\) from \(t=a\) to \(t=b\text{,}\) as the limit of the area found by approximating the region with thinner and thinner rectangles.  We also saw that we can easily find a reasonable approximation to the area using Excel to find such a sum with a fairly large number of rectangles.</p>
 <p id="p-2621">In the trivial case where we have a constant function \(f(t)=c\) we can find the area of the area with a simple formula, \(\int_a^bc dt=c(b-a)=cb-ca\text{.}\) If we define an area function, \(F(x)\text{,}\) as the area under the curve \(y=f(t)\) from \(t=0\) to \(t=x\text{,}\) then the area function in this case is  \(F(x)=c*x\text{.}\)  We would like to be able to evaluate more integrals with a process like this, where we have a simple area function.</p>
-<article class="remark-like" id="remark-1"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">7.2.1</span>. <span class="title">Note on variables used.</span>
+<article class="remark remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Note on variables used.</span>
 </h6>
 <p id="p-2622">We shifted the independent variable from \(t\) for the function \(f\) to \(x\) for the function \(F\) because we have two independent variables in our discussion and we want to keep them separate to avoid confusion.  We will consider \(f\) as a function of \(t\text{,}\) and want to find the area under the graph of \(f(t)\text{.}\)  We will consider \(F\) as a function of \(x\text{,}\) and understand it as the area under the curve \(y=f(t)\) from some starting point \(t=a\) to \(t=x\text{.}\)</p></article><p id="p-2623">We start by exploring cases where we can justify an area function without using calculus.  We will then look at some cases where we can experimentally verify the area function with Excel.  Finally we will give the general rule for the area function, the Fundamental Theorem of Calculus, and will give some justification.</p>
-<article class="example-like" id="example-104"><a data-knowl="" class="id-ref" data-refid="hk-example-104"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.2</span>. <span class="title">Area function for constant by geometry.</span>
-</h6></a></article><div id="hk-example-104" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2624">Let \(f(t)=c\text{.}\)  For a constant function, \(f(t)=c\text{,}\) the area under the curve will be the area of a rectangle of height \(c\) and width \(b-a\text{.}\)  The obvious area function is \(F(x)=c*x\text{.}\)  Then</p>
+<article class="example example-like" id="example-104"><a data-knowl="" class="id-ref original" data-refid="hk-example-104"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Area function for constant by geometry.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-104"><article class="example example-like"><p id="p-2624">Let \(f(t)=c\text{.}\)  For a constant function, \(f(t)=c\text{,}\) the area under the curve will be the area of a rectangle of height \(c\) and width \(b-a\text{.}\)  The obvious area function is \(F(x)=c*x\text{.}\)  Then</p>
 <div class="displaymath">
 \begin{equation*}
 \int_a^b c dt=F(b)-F(a)=c*b-c*a=c(b-a).
@@ -169,9 +173,9 @@ var js_version = 0.11;
 </div>
 <p id="p-2625">It is worth noting that this formula gives "signed area."  If c or b-a is negative, the "area" is negative.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-1.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
-<article class="example-like" id="example-105"><a data-knowl="" class="id-ref" data-refid="hk-example-105"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.3</span>. <span class="title">Area function for linear function by geometry.</span>
-</h6></a></article><div id="hk-example-105" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2626">Let \(f(t) = c*t\text{.}\)  For a linear function, \(f(t) = c*t\text{,}\) the area under the curve from 0 to \(b\) will be the area of a triangle of height \(c*b\) and width \(b\text{.}\)</p>
+<article class="example example-like" id="example-105"><a data-knowl="" class="id-ref original" data-refid="hk-example-105"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Area function for linear function by geometry.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-105"><article class="example example-like"><p id="p-2626">Let \(f(t) = c*t\text{.}\)  For a linear function, \(f(t) = c*t\text{,}\) the area under the curve from 0 to \(b\) will be the area of a triangle of height \(c*b\) and width \(b\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-2.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2627">The obvious area function is \(F(x)=c*x^2/2\text{.}\)  If \(a\) is also nonzero, the area is the difference of the areas of two triangles.</p>
 <div class="displaymath">
@@ -180,21 +184,21 @@ var js_version = 0.11;
 \frac{c*b^2}{2}-\frac{c*a^2}{2}=\frac{c (b^2-a^2 )}{2}.
 \end{equation*}
 </div></article></div>
-<article class="remark-like" id="remark-2"><h6 class="heading">
-<span class="type">Remark</span> <span class="codenumber">7.2.4</span>. <span class="title">A note on versions of Riemann sum used.</span>
+<article class="remark remark-like" id="remark-2"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">A note on versions of Riemann sum used.</span>
 </h6>
 <p id="p-2628">As we consider finding area with Excel and Riemann sums, rather than use a right-hand rule for the rectangles, we are going to use a midpoint rule where we find the area of rectangles evaluated at the middle of each interval.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-3.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2629">The right-hand rule uses an easier formula, so we used it first.  For the ith rectangle we evaluate at \(x_i=a+i\Delta x\text{.}\)  For the midpoint formula, we evaluate at the midpoint of the interval, at \(mid_i=a+i\Delta x-\Delta x/2\text{.}\)  As the picture suggests, the midpoint formula gives a better approximation.  The right-hand rule always overestimates an increasing function.  The midpoint rule is exact for linear functions where the midpoint is the average value.</p></article><p id="p-2630">In both of the examples we have examined the area function has the original function as its derivative.  We would like to use Excel to test a few more cases. In the worksheets we set up in the last section, SumArea is the area function we are looking for.  We will plot the area function and use a best-fit curve to find the equation of the area function.</p>
-<article class="example-like" id="example-106"><a data-knowl="" class="id-ref" data-refid="hk-example-106"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.5</span>. <span class="title">Best fitting area function for a linear function.</span>
-</h6></a></article><div id="hk-example-106" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2631">Repeat the last example, finding the area under \(f(x)=6x\text{,}\) with Excel.  With a linear function we have use the following to produce an area function.</p>
+<article class="example example-like" id="example-106"><a data-knowl="" class="id-ref original" data-refid="hk-example-106"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Best fitting area function for a linear function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-106"><article class="example example-like"><p id="p-2631">Repeat the last example, finding the area under \(f(x)=6x\text{,}\) with Excel.  With a linear function we have use the following to produce an area function.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-4.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2632">Column C has our list of \(t\) values in the center of each interval.  Column D has the value of \(f(t)\) evaluated at those points.  The area of the rectangle is the height \(f(mid_n)\) times the width, Interval width.  SumArea is our running area function.  When we plot the area function we have something that seems to be quadratic with leading coefficient \(c/2\) and very small linear and constant coefficients.  In fact the linear and constant coefficients are zero up to a rounding factor for numbers of the size we are using.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-5.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div> a <p id="p-2633">This matches the result we had solving the problem with geometry.  However, we can repeat the process with Excel and use functions of higher order.</p>
-<article class="example-like" id="example-107"><a data-knowl="" class="id-ref" data-refid="hk-example-107"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.6</span>. <span class="title">Best fitting area function for a quadratic function.</span>
-</h6></a></article><div id="hk-example-107" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2634">Find the area function when \(f(t) = 6t^2\text{.}\)</p>
+<article class="example example-like" id="example-107"><a data-knowl="" class="id-ref original" data-refid="hk-example-107"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Best fitting area function for a quadratic function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-107"><article class="example example-like"><p id="p-2634">Find the area function when \(f(t) = 6t^2\text{.}\)</p>
 <p id="p-2635">For this problem we essentially repeat the work of the previous example with a quadratic function for \(f(t)\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-6.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2636">When we plot the area function we get a very good fit with a cubic function.  Once again, allowing for the way best-fit curves may return small random values for coefficients that should be zero, we see that if \(f(t) =c*t^2\text{,}\) then the related area function is</p>
@@ -204,16 +208,16 @@ F(x)=c*t^3/3\text{.}
 \end{equation*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-7.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
-<article class="example-like" id="example-108"><a data-knowl="" class="id-ref" data-refid="hk-example-108"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.7</span>. <span class="title">Best fitting area function for a cubic function.</span>
-</h6></a></article><div id="hk-example-108" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2637">Find the area when \(f(x)=6 x^3\text{.}\)</p>
+<article class="example example-like" id="example-108"><a data-knowl="" class="id-ref original" data-refid="hk-example-108"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Best fitting area function for a cubic function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-108"><article class="example example-like"><p id="p-2637">Find the area when \(f(x)=6 x^3\text{.}\)</p>
 <p id="p-2638">Once again, we can use Excel to produce an area function.  The area function seems to be \(F(x)=1.5 x^4\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-8.png" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
 <p id="p-2639">In all the examples above we note that the area function, \(F(x)\text{,}\)  has \(f(x)\text{,}\) the curve we are finding the area under, as its derivative.  Thus, in these cases, the area is an anti-derivative of \(f(x)\text{.}\)  This observation generalizes to the Fundamental Theorem of Calculus, which has two versions:</p>
-<article class="assemblage-like" id="assemblage-49"><p id="p-2640"><article class="theorem-like" id="theorem-1"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">7.2.8</span>. <span class="title">Fundamental Theorem of Calculus (first version).</span>
-</h6>Let \(f(x)\) be a continuous function on the interval \([a, b]\text{.}\)  On that interval define an area function by \(F(x)=\int_a^x f(t)  dt\text{.}\) Then \(\frac{d}{dx} F(x)=f(x)\text{.}\)</article></p></article><article class="assemblage-like" id="assemblage-50"><p id="p-2641"><article class="theorem-like" id="theorem-2"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">7.2.9</span>. <span class="title">Fundamental Theorem of Calculus (second version).</span>
+<article class="assemblage assemblage-like" id="assemblage-49"><p id="p-2640"><article class="theorem theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental Theorem of Calculus (first version).</span>
+</h6>Let \(f(x)\) be a continuous function on the interval \([a, b]\text{.}\)  On that interval define an area function by \(F(x)=\int_a^x f(t)  dt\text{.}\) Then \(\frac{d}{dx} F(x)=f(x)\text{.}\)</article></p></article><article class="assemblage assemblage-like" id="assemblage-50"><p id="p-2641"><article class="theorem theorem-like" id="theorem-2"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental Theorem of Calculus (second version).</span>
 </h6>Let \(f(x)\) be a continuous function on the interval \([a, b]\text{.}\)  Suppose \(F(x)\) is any continuous,  differentiable function with \(\frac{d}{dx} F(x)=f(x)\text{.}\)  Then \(\int_a^b f(t) dt=F(b)-F(a)\text{.}\)</article></p></article><p id="p-2642">In practice we use the second version of the fundamental theorem to evaluate definite integrals.  We find a function \(F(x)\) whose derivative is the integrand \(f(x)\) and then evaluate \(F(x)\) at the endpoints. It is easier to prove or justify the first version of the fundamental theorem.  The basic argument notes that is \(F(x)=\int_a^xf(t) \ dt\text{,}\) then formally</p>
 <div class="displaymath">
 \begin{equation*}
@@ -223,9 +227,9 @@ F(x)=c*t^3/3\text{.}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-9.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2643">But if \(h\) is small, \(F(x+h)-F(x)\) is approximately the area of a rectangle of height \(f(x)\) and with \(h\text{,}\) so the \(F'(x) = f(x)\text{.}\)  We then note that any two anti-derivatives of a function differ by a constant.</p>
-<article class="example-like" id="example-109"><a data-knowl="" class="id-ref" data-refid="hk-example-109"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.10</span>. <span class="title">Redoing an old area problem by the  FTC.</span>
-</h6></a></article><div id="hk-example-109" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2644">In <a data-knowl="./knowl/area-parabola-down.html" title="Example 7.1.2: Approximating an Area with a Riemann Sum">example 7.1.2</a> in the previous section, we used Riemann sums with 100 and 1000 intervals to approximate the area under \(y = x*(4-x)\) with \(x\) between 0 and 4.  Find the area using the fundamental theorem of calculus,</p>
+<article class="example example-like" id="example-109"><a data-knowl="" class="id-ref original" data-refid="hk-example-109"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Redoing an old area problem by the  FTC.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-109"><article class="example example-like"><p id="p-2644">In <a class="xref" data-knowl="./knowl/area-parabola-down.html" title="Example 7.1.2: Approximating an Area with a Riemann Sum">example 7.1.2</a> in the previous section, we used Riemann sums with 100 and 1000 intervals to approximate the area under \(y = x*(4-x)\) with \(x\) between 0 and 4.  Find the area using the fundamental theorem of calculus,</p>
 <p id="p-2645">We rewrite the curve as \(f(x) = 4x – x^2\) and note that one anti-derivative of \(f(x)\) is \(F(x) = 2 x^2 - x^3/3\text{.}\)  Then</p>
 <div class="displaymath">
 \begin{equation*}
@@ -233,9 +237,9 @@ F(x)=c*t^3/3\text{.}
 \end{equation*}
 </div></article></div>
 <p id="p-2646">To get the same answer to 4 decimal places, we needed to use 1000 intervals with Riemann sums.  Clearly, it is easier to solve this problem with the fundamental theorem of calculus than to make an approximation with that many intervals.</p>
-<article class="example-like" id="example-110"><a data-knowl="" class="id-ref" data-refid="hk-example-110"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.11</span>. <span class="title">Verifying an antiderivative to find area.</span>
-</h6></a></article><div id="hk-example-110" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2647">Let \(f(x)=x^2 e^{-x}\text{.}\)  We are told \(F(x)=(x^2+2 x+2) (-e^{-x})\)  is an anti-derivative of \(f(x)\text{.}\)  Verify the anti-derivative and find the area under the curve with \(x\) between 0 and 2.</p>
+<article class="example example-like" id="example-110"><a data-knowl="" class="id-ref original" data-refid="hk-example-110"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Verifying an antiderivative to find area.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-110"><article class="example example-like"><p id="p-2647">Let \(f(x)=x^2 e^{-x}\text{.}\)  We are told \(F(x)=(x^2+2 x+2) (-e^{-x})\)  is an anti-derivative of \(f(x)\text{.}\)  Verify the anti-derivative and find the area under the curve with \(x\) between 0 and 2.</p>
 <p id="p-2648">Using the product rule,</p>
 <div class="displaymath">
 \begin{equation*}
@@ -249,9 +253,9 @@ F(2) – F(0) = 10(-e^{-2}) – 2(e^{0}) = -2 – 10/e^2 = -3.3534
 \end{equation*}
 </div></article></div>
 <p id="p-2650">We also want to revisit our first three examples in light of the fundamental theorem if calculus.  In all of those examples we used Excel to find a best fitting curve for an area function.  We can now check our work by taking the derivative, adjusting parameters as needed to find an anti-derivative.  For constant and linear functions we have already done the adjusting because we could find the area function from geometry.</p>
-<article class="example-like" id="example-111"><a data-knowl="" class="id-ref" data-refid="hk-example-111"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.12</span>. <span class="title">Using the FTC to guess and check area under a quadratic.</span>
-</h6></a></article><div id="hk-example-111" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2651">Example 3a: Find the area function when \(f(t) = 6t^2\text{.}\)</p>
+<article class="example example-like" id="example-111"><a data-knowl="" class="id-ref original" data-refid="hk-example-111"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Using the FTC to guess and check area under a quadratic.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-111"><article class="example example-like"><p id="p-2651">Example 3a: Find the area function when \(f(t) = 6t^2\text{.}\)</p>
 <p id="p-2652">We have already used Excel to find a best fitting curve.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-10.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2653">We are thus suspicious that the anti-derivative should be a cubic polynomial.  We need</p>
@@ -261,15 +265,15 @@ F(2) – F(0) = 10(-e^{-2}) – 2(e^{0}) = -2 – 10/e^2 = -3.3534
 \end{equation*}
 </div>
 <p id="p-2654">Setting coefficients equal for each power, we see \(a = 2\) and \(b = c = 0\text{.}\)  Thus our area function has the form \(F(t) = 2 t^3 + d\text{.}\)  Since \(F(0)\) is the area of a region between \(t = 0\) and \(t = 0\text{,}\) we conclude \(d = 0\) and our area function is \(F(t) = 2 t^3\text{.}\)</p></article></div>
-<article class="example-like" id="example-112"><a data-knowl="" class="id-ref" data-refid="hk-example-112"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">7.2.13</span>. <span class="title">Verifying the best fitting function for area under a cubic function.</span>
-</h6></a></article><div id="hk-example-112" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-2655">Find the area when \(f(x) = 6 x^3\text{.}\)</p>
+<article class="example example-like" id="example-112"><a data-knowl="" class="id-ref original" data-refid="hk-example-112"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Verifying the best fitting function for area under a cubic function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-112"><article class="example example-like"><p id="p-2655">Find the area when \(f(x) = 6 x^3\text{.}\)</p>
 <p id="p-2656">Using Excel we guessed the area function \(F(x) = 1.5 x^4\text{.}\)  We can now verify that the derivative of \(F(x)\) is \(f(x)\text{,}\) so we have found an anti-derivative.</p></article></div>
 <p id="p-2657">It is worth noting that using the fundamental theorem to evaluate integrals requires us to be able to find an anti-derivative of a function.  Finding an anti-derivative may be quite hard or even an impossible task.  The method we have just used is often referred to as the “guess and check” method of finding anti-derivatives.  We will look at methods of finding anti-derivatives in the next several sections.</p>
 <section class="exercises" id="exercises-set-sec-7-2"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises: The Fundamental Theorem of Calculus Problems</span>
+<span class="type">Exercises</span> <span class="codenumber">7.2.1</span> <span class="title">Exercises: The Fundamental Theorem of Calculus Problems</span>
 </h3>
-<a href="sec-7-2-FundamentalTheoremCalculius.html#exercises-set-sec-7-2" class="permalink">¶</a><article class="exercise-like" id="exercise-435"><h6 class="heading"><span class="codenumber">1.</span></h6>
+<a href="sec-7-2-FundamentalTheoremCalculius.html#exercises-set-sec-7-2" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-435"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-2658">Let \(f(x) = 4 x + 5\text{.}\)  We are told that \(F(x) = 2 x^2 + 5 x + 7\) is an anti-derivative.</p>
 <ol class="lower-alpha">
 <li id="li-710"><p id="p-2659">Verify that \(f(x)\) is a derivative of \(F(x)\text{.}\)</p></li>
@@ -277,7 +281,7 @@ F(2) – F(0) = 10(-e^{-2}) – 2(e^{0}) = -2 – 10/e^2 = -3.3534
 <li id="li-712"><p id="p-2661">Approximate \(\int_1^5 f(x)\ dx\text{,}\) using Riemann sums and 100 intervals.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-220" id="solution-220"><span class="type">Solution</span></a><div id="hk-solution-220" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-220" id="solution-220"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-220"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-713"><div class="displaymath">
 \begin{equation*}
 F' (x)=\frac{d}{dx}  (2 x^2+ 5 x + 7)=4x+5     
@@ -293,13 +297,13 @@ F' (x)=\frac{d}{dx}  (2 x^2+ 5 x + 7)=4x+5
 <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-sol1a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-436"><h6 class="heading"><span class="codenumber">2.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-436"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-2663">Let \(f(x) = 6 x^2 + 3\text{.}\)  We are told that \(F(x) = 2 x^3 + 3 x - 2\) is an anti-derivative.</p>
 <ol class="lower-alpha">
 <li id="li-716"><p id="p-2664">Verify that \(f(x)\) is a derivative of \(F(x)\text{.}\)</p></li>
 <li id="li-717"><p id="p-2665">Use the fundamental theorem of calculus to evaluate \(\int_{-2}^4 f(x)\  dx\text{.}\)</p></li>
 <li id="li-718"><p id="p-2666">Approximate \(\int_{-2}^4 f(x)\ dx\text{,}\) using Riemann sums and 100 intervals.</p></li>
-</ol></article><article class="exercise-like" id="exercise-437"><h6 class="heading"><span class="codenumber">3.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-437"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-2667">Let \(f(x) = 5/x\text{.}\)  We are told that \(F(x) = \ln(x^5) + 9\) is an anti-derivative.</p>
 <ol class="lower-alpha">
 <li id="li-719"><p id="p-2668">Verify that \(f(x)\) is a derivative of \(F(x)\text{.}\)</p></li>
@@ -307,7 +311,7 @@ F' (x)=\frac{d}{dx}  (2 x^2+ 5 x + 7)=4x+5
 <li id="li-721"><p id="p-2670">Approximate \(\int_1^{20} f(x)\ dx\text{,}\) using Riemann sums and 200 intervals.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-221" id="solution-221"><span class="type">Solution</span></a><div id="hk-solution-221" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-221" id="solution-221"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-221"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-722">
 <div class="displaymath">
 \begin{equation*}
@@ -331,13 +335,13 @@ F' (x)=\frac{d}{dx} [\ln(x^5 )+ 9]=\frac{d}{dx} [5\ln(x)+ 9]=5\frac{1}{x}+ 0=\fr
 <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-sol3a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-438"><h6 class="heading"><span class="codenumber">4.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-438"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-2673">Let \(f(x) = (2 x +3)^4\text{.}\)  We are told that \(F(x) = 0.1 (2 x + 3)^5\) is an anti-derivative.</p>
 <ol class="lower-alpha">
 <li id="li-725"><p id="p-2674">Verify that \(f(x)\) is a derivative of \(F(x)\text{.}\)</p></li>
 <li id="li-726"><p id="p-2675">Use the fundamental theorem of calculus to evaluate \(\int_{-1}^1 f(x)\ dx\text{.}\)</p></li>
 <li id="li-727"><p id="p-2676">Approximate \(\int_{-1}^1 f(x)\ dx,\) using Riemann sums and 100 intervals.</p></li>
-</ol></article><article class="exercise-like" id="exercise-439"><h6 class="heading"><span class="codenumber">5.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-439"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-2677">Let \(f(x) = x exp(-0.05 x)\text{.}\)  We are told that \(F(x) = -20 (x+20) \exp(-0.05x)+3\) is an anti-derivative.</p>
 <ol class="lower-alpha">
 <li id="li-728"><p id="p-2678">Verify that \(f(x)\) is a derivative of \(F(x)\text{.}\)</p></li>
@@ -345,7 +349,7 @@ F' (x)=\frac{d}{dx} [\ln(x^5 )+ 9]=\frac{d}{dx} [5\ln(x)+ 9]=5\frac{1}{x}+ 0=\fr
 <li id="li-730"><p id="p-2680">Approximate \(\int_0^{10} f(x)\ dx\text{,}\) using Riemann sums and 100 intervals.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-222" id="solution-222"><span class="type">Solution</span></a><div id="hk-solution-222" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-222" id="solution-222"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-222"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-731">
 <div class="displaymath">
 \begin{equation*}
@@ -383,22 +387,22 @@ F'(x)=\frac{d}{dx}  [-20(x+20)  e^{-0.05x}+3]
 <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-sol5a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-440"><h6 class="heading"><span class="codenumber">6.</span></h6>
-<p id="p-2682">Explain why, if \(F(x)\) is an anti-derivative of \(f(x)\text{,}\) then \(F(x) + 7\) is also an anti-derivative of \(f(x)\text{.}\)</p></article><article class="exercise-like" id="exercise-441"><h6 class="heading"><span class="codenumber">7.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-440"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-2682">Explain why, if \(F(x)\) is an anti-derivative of \(f(x)\text{,}\) then \(F(x) + 7\) is also an anti-derivative of \(f(x)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-441"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
 <p id="p-2683">Using an area function from Riemann sums and best fitting curves we have guessed that a quadratic function will have a cubic anti-derivative.</p>
 <ol class="lower-alpha">
 <li id="li-734"><p id="p-2684">Find an anti-derivative of \(f(x)=-x^2+6x-2\)</p></li>
 <li id="li-735">
 <p id="p-2685">Use the fundamental theorem of calculus to evaluate</p>
 <ul class="disc">
-<li id="li-736">\(\int_0^3 f(x)\ dx\)</li>
-<li id="li-737">\(\int_{-2}^4 (x)\ dx\)</li>
+<li id="li-736">\(\displaystyle \int_0^3 f(x)\ dx\)</li>
+<li id="li-737">\(\displaystyle \int_{-2}^4 (x)\ dx\)</li>
 </ul>
-<p>.</p>
+<p data-braille="continuation">.</p>
 </li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-223" id="solution-223"><span class="type">Solution</span></a><div id="hk-solution-223" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-223" id="solution-223"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-223"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-738">
 <p id="p-2686">The anti-derivative should be a cubic, so something of the form</p>
 <div class="displaymath">
@@ -444,22 +448,22 @@ F(x)=ax^3+bx^2+cx+d=-1/3 x^3+3x^2-2x
 </div>
 </li>
 </ul>
-<p>.</p>
+<p data-braille="continuation">.</p>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-442"><h6 class="heading"><span class="codenumber">8.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-442"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-2694">Using an area function from Riemann sums and best fitting curves we have guessed that a cubic function will have a fourth degree anti-derivative.</p>
 <ol class="lower-alpha">
 <li id="li-742"><p id="p-2695">Find an anti-derivative of \(f(x)=x^3+9x^2+7x-3\text{.}\)</p></li>
 <li id="li-743"><p id="p-2696">Use the fundamental theorem of calculus to evaluate \(\int_1^5 f(x)\ dx\text{.}\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-443"><h6 class="heading"><span class="codenumber">9.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-443"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
 <p id="p-2697">I am interested in finding an anti-derivative for \(f(x)=e^{2x}\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-744"><p id="p-2698">Using Excel and 100 subintervals of \(0 \le  x \le  2\text{,}\) compute an approximate area function for \(f(x)\text{.}\)  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
 <li id="li-745"><p id="p-2699">Based on your best fitting curve, use guess and check to find the anti-derivative.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-224" id="solution-224"><span class="type">Solution</span></a><div id="hk-solution-224" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-224" id="solution-224"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-224"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-746">
 <p id="p-2700">A quick computation gives the total area:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-sol9a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
@@ -491,19 +495,19 @@ F(x)=1/2  e^2x+B
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-sol9b.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 </li>
 </ol></div></div>
-</div></article><article class="exercise-like" id="exercise-444"><h6 class="heading"><span class="codenumber">10.</span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-444"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
 <p id="p-2709">I am interested in finding an anti-derivative for \(f(x)=e^{-5x}\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-748"><p id="p-2710">Using Excel and 100 subintervals of \(0 \le  x \le  2\text{,}\) compute an approximate area function for \(f(x)\text{.}\)  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
 <li id="li-749"><p id="p-2711">Based on your best fitting curve, use guess and check to find the anti-derivative.</p></li>
-</ol></article><article class="exercise-like" id="exercise-445"><h6 class="heading"><span class="codenumber">11.</span></h6>
+</ol></article><article class="exercise exercise-like" id="exercise-445"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
 <p id="p-2712">I am interested in finding an anti-derivative for \(f(x)=1/x\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-750"><p id="p-2713">Using Excel and 100 subintervals of \(1 \le  x \le  5\text{,}\) compute an approximate area function for \(f(x)\text{.}\)  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
 <li id="li-751"><p id="p-2714">Based on your best fitting curve, use guess and check to find the anti-derivative.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref" data-refid="hk-solution-225" id="solution-225"><span class="type">Solution</span></a><div id="hk-solution-225" class="hidden-content tex2jax_ignore"><div class="solution"><ol class="lower-alpha">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-225" id="solution-225"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-225"><div class="solution solution-like"><ol class="lower-alpha">
 <li id="li-752">
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sec7-2-sol11a.png" style="width: 100%; height: auto;" alt=""></div></div></div>
 <p id="p-2715">The cumulative function looks like a logarithmic function.</p>
@@ -530,6 +534,6 @@ F'(x)=\frac{d}{dx}  \ln(x)+\frac{d}{dx} constant=\frac{1}{x}
 </div></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.11/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>
