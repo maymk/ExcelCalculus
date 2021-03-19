@@ -1,0 +1,2352 @@
+         <chapter xml:id="chap-6-FunctionsSeveralVariables">
+            <title>Functions of Several Variables</title>
+            
+<introduction>
+<p>From a formal point of view, the first 5 chapters of this text have been concerned with functions of one variable.  More realistically, we have been looking at functions of several variables all along.  If we consider the formula for finding how much is in a bank account in the future, we have the formula:</p>
+
+<me>FutureAmount=InitialDeposit*\left(1+\frac{rate}{ppy}\right)^{years*ppy}</me>
+
+<p>where ppy is the number of periods per year, indicating how often we compound the interest.  From a simple point of view, the future amount is a function of 4 variables, the initial deposit, annual rate, periods per year, and number of years.  To consider this as a function of a single variable, we fixed 3 of the 4 variables as constants for a particular problem.  In this chapter we want to address the more realistic situation where we treat more than one quantity as a variable at a time.  This approach has the added advantage that most real world functions of interest have more than one variable.
+Before we look at functions of several variables, we want to create a list of tasks we have learned to accomplish with functions of one variable:</p>
+
+<ol label="(1)">
+<li><p> Evaluate the function at a particular point with Excel.</p></li>
+<li><p> Make a table of values at a series of points with Excel.</p></li>
+<li><p> Make a reasonable graph from a table of values.</p></li>
+<li><p> Zoom in on a graph until it looks like a straight line.</p></li>
+<li><p> Find the slope of the tangent line.</p></li>
+<li><p> Give a formula for the tangent line at a point.</p></li>
+<li><p> Identify the places where the tangent line is flat.</p></li>
+<li><p> Find local extrema for the function.</p></li>
+<li><p> Find global extrema for the function.</p></li>
+<li><p> Learn applications of the derivative.</p></li>
+</ol>
+
+<p>We would like to look at how to extend these tasks to functions of several variables.  Most of this chapter simply notes how to modify the rules we learned for functions of a single variable to the multivariable case.</p>
+</introduction>
+
+         <section xml:id="sec-6-1-EvaluatingFunctionsSeveralVariables">
+            <title>Evaluating and Graphing Functions of Several Variables</title>
+
+          <p><url href="./Examples/Section-6-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p>
+When we were evaluating functions of a single variable we had to replace the variable with a cell reference.  We do the same for functions of several variables.  We simply have to use several cell references.</p>
+
+<example><title>Bank balances</title>
+<p> Find the amount of money I will have in the bank in 10 years if I deposit $1000 and the bank pays 5% interest, compounded quarterly.  Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.</p>
+
+<p>Solution: We use the formula for future value of a single deposit.</p>
+
+<me>FutureAmount=InitialDeposit*\left(1+
+\frac{rate}{ppy}\right)^{years*ppy}</me>
+
+<p>Rather than typing the numbers into the formula, we place them in separate cells, so we can easily change the values for any of the 4 variables.</p>
+
+                <image width="40%" source="images/sec-6-1-1.png">
+                </image>
+                <image width="40%" source="images/sec-6-1-2.png">
+                </image>
+
+<p>At the end of 10 years, we have $1,643.62 in the bank.  By simply changing values in the worksheet, I find that compounding the interest annually reduces the final amount on 10 years to $1.628.89, while compounding weekly increases the final amount to $1,648.33.</p>
+</example>
+
+<p>In this example we have as many as four variables. We could vary: the initial deposit, the rate, the number of periods per year and the interest rate. 
+In previous chapters we have a variable (say q) and the function (such as profit) that depends on <m>q</m>. Such a function might be written as something like <m>profit(q)= -3 q^2+500q-1000</m>.</p>
+<p>If we simplify the notation a little bit in this example so that we have </p>
+<me>FA(d,r,p,y)=d*\left(1+\frac{r}{p}\right)^{(y*p)}</me>
+<p>Where FA is the future amount, and this is a function of four variables d (deposit), r (interest rate), p (number of payments), and y (number of years).</p>
+
+<example><title>Demand price from 2 points</title><p> Find the revenue for 500 widgets if I know that the demand price for 100 widgets is $20, the demand price for 200 widgets is $18.75, and that the demand price is a linear function.  Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.</p>
+
+<p><term>Solution</term>: To make our worksheet easier to read, we use named cells.  We first have to find an equation for the demand price formula.  We compute a slope and intercept for this line from the points (100, 20) and (200, 18.75).  Once we have this function, we find that the demand price is $15 when quantity is 500.  We then compute revenue as price times quantity.</p> 
+
+                <image width="60%" source="images/sec-6-1-3.png">
+                </image>
+                <image width="40%" source="images/sec-6-1-4.png">
+                </image>
+
+<p>In this problem, revenue is a function of 5 variables: Demand1, Demand2, Price1, Price2, and NewDemand.</p>
+</example>
+
+<p>The next task to consider is making a table of values for a function of several variables.  Since our screens have 2 dimensions, we first look at the case when we allow two values to change.  When we made a table for a single variable, we had to use both absolute and relative cell reference to distinguish between constant values used for all entries and variables that changed in each case.  With functions of two variables our table will have rows where one variable is held constant and columns where the other is held constant.  We note that quick filling a formula with the reference $A5 will keep the column, A constant but allow the row to change.  Similarly with the reference A$5 the column can change, but the row is constant.</p>
+
+<example><title>Building a table with two variables</title><p> I want to produce a table that shows how much I need to put in the bank to have $100,000 at some point in the future.  I will assume that interest is compounded annually.  I want interest rate and number of years to be treated as variables with interest rate ranging from 5% to 6% and the length of time to vary from 5 to 40 years.</p>
+
+
+<p><term>Solution</term>: We use the formula for present value of a single deposit.  Since the interest is compounded annually, the formula simplifies.</p>
+
+<assemblage>
+<p><me>PresentAmount=\frac{FutureAmount}{(1+rate)^{years}}</me></p>
+</assemblage>
+
+<p>As we build the table, the future amount will be a constant, so it needs to be given as an absolute reference.  The number of years will be down the left side of the table and will be constant across a row, so its reference should have a dollar sign before the letter.  The interest rate will be listed across the top of the table, so its reference should have a dollar sign before the number.</p>
+
+
+                <image width="80%" source="images/sec-6-1-5.png">
+                </image>
+
+<p>This lets us build the table we desire.  From the complete table, we see that we can have $100,000 in the bank in 40 years by making a deposit of $9,722.22 at 6% interest.  In contrast if we only earn 5% interest and can only keep the money in the bank for 15 years, we need to start with $48,101.71.</p>
+
+                <image width="70%" source="images/sec-6-1-6.png">
+                </image>
+</example>
+
+<p>Similarly, we might want to produce a table that shows the monthly payment on a mortgage where both the annual interest rate and the number of years are treated as variables.  Such a chart would be useful in deciding how big a mortgage a person can afford with different kinds of mortgages.</p>
+
+<example><title>Mortgage payments</title><p> I want to produce a table that shows the monthly payment on a $100,000 mortgage with a range of interest rates and lengths of the mortgage.</p>
+
+<p><term>Solution</term>: We use the PMT command to find the monthly payment.</p>
+
+                <image width="80%" source="images/sec-6-1-7.png">
+                </image>
+
+<p>We can see that the monthly payment is $421.60 for a 30-year fixed rate mortgage at 3% compounded monthly.  For a 10-year mortgage at 6% the payment increases to $1,110.21.</p>
+
+                <image width="70%" source="images/sec-6-1-8.png">
+                </image>
+</example>
+
+<p>After we build a table for a function we would also like to see a graph of the function.  Excel’s abilities to graph surfaces in not one of the program’s strong points.  Nevertheless, it is useful to be “able to see the big picture” by looking at a graph.  We will also note how to draw a graph of a surface with Wolfram Alpha.</p>
+
+<p>When we looked at models of price, quantity, cost, revenue, and profit, we made the simplifying assumption that a company only produces one product.  We want to consider what happens with two products.</p>
+
+<example><title>Table and graph</title><p> I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
+<me>PriceGizmos=10-QuantityGizmos/50</me>
+
+<me>PriceWidgets=20-QuantityWidgets/40</me>
+
+<p>Produce a table and a graph for revenue as a function of the quantity of gizmos and widgets produced.</p>
+
+<p>Solution:  We need to start by producing a formula for revenue.  To shorten the equations we will abbreviate the terms or use initials.  We need formulas for revenue for each of our products:</p>
+
+<me>RevG=PriceG*QG=\left(10-\frac{QG}{50}\right)QG=10QG-\frac{QG^2}{50}.</me>
+
+<me>RevW=PriceW*QW=\left(20-\frac{QW}{40}\right)QW=20QW-\frac{QW^2}{40}.</me>
+
+<p>Putting the equations together gives an equation for revenue.</p>
+
+<me>Rev=RevG+RevW=10QG-\frac{QG^2}{50}+20QW-\frac{QW^2}{40}.</me>
+
+<p>Next we build a build a table for the function as we have done above.</p>
+
+                <image width="80%" source="images/sec-6-1-9.png">
+                </image>
+
+<p>	Finally, we would like to see a graph of the function.  We notice that the 3D plots in Excel have a number of drawbacks.  The plots do not label the input variables.  These first plots also don’t tell us what values of the variables correspond to particular points on the graph.  Some of these drawbacks can be overcome, but only with more work than we wish to expend in this course.  We will only add one non-intuitive option to make the graphs work better.  </p>
+                <image width="100%" source="images/sec-6-1-10.png">
+                </image>
+
+<p>We will move the names of the variables out of the upper left corner of the chart and into the row above and to the side of the data.  We leave the corner cell blank.  This will let us see the values of the variables in the graphs.
+In the table, we select the data we would like to graph.  In this example we select from cells B4 through M12.  Finally we select a chart to insert.  The charts we are interested in are surface charts.  The types of interest are 3-D Surface, Wireframe 3-D, and contour.  Each of these chart types highlights some useful information.</p>
+
+<p>The 3-D Surface gives a fast picture.  It is useful in seeing local minimums and maximums.</p>
+
+                <image width="60%" source="images/sec-6-1-11.png">
+                </image>
+
+<p>The Wireframe 3-D chart emphasizes that we can build a reasonable picture from the curves obtained by treating either x or y as a constant.  It lets us understand a function of 2 variables by putting together a collection of several functions of one variable.  This point of view will be useful when we try to take derivatives.</p>
+
+                <image width="80%" source="images/sec-6-1-12.png">
+                </image>
+
+<p>The Contour chart emphasizes the level curves. The rate of change will be fastest in a direction perpendicular to the level curves.</p>
+
+                <image width="60%" source="images/sec-6-1-13.png">
+                </image>
+ 
+<p>Another alternative for seeing a graph is to use Wolfram Alpha.  Unfortunately variable names in Alpha seem to be limited to a single letter, or a letter followed by a digit.  Thus we change the formula to one using the names g and w.</p>
+ 
+                <image width="80%" source="images/sec-6-1-14.png">
+                </image>
+</example>
+
+<p>The techniques of this section let us look at functions of two variables.  In the next section we explore techniques for understanding functions of several variables by treating some of the variables as constants.</p>
+
+
+<exercises xml:id="exercises-set-sec-6-1">
+	<title>Exercises: Evaluating and Graphing Functions of Several Variables Problems</title>
+
+<exercisegroup><introduction><p>
+For exercises 1-9, set up an Excel notebook, and evaluate the given function of several variables at the indicated values.  The workbook should be set up so that the input values can be changed and the formula will re-compute with the new values.</p>
+</introduction>
+
+<exercise ><statement><p> Evaluate the function <m>f(x,y)=x^2+3xy+4y^2</m>, when <m>x=4</m>, and <m>y=-2</m>.</p></statement><solution>
+<p>Setting this up so that the values of <m>x</m> and <m>y</m> can be easily changed we define <m>x</m> and <m>y</m> in separate cells and then enter the function that computes <m>f(x,y)</m></p>
+
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <image source="images/sec6-1-sol1a.png"/>
+                    <image source="images/sec6-1-sol1b.png"/>
+                </sidebyside>
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <p>Excel commands  and general setup</p>
+                    <p>Excel output</p>
+                </sidebyside>
+</solution></exercise>
+
+<exercise ><statement><p> Evaluate the function <m>f(x,y,z)=x^2+3xy+4y^3+5xyz</m>, when <m>x=3</m>, <m>y=5</m>, and <m>z=7</m>.</p></statement></exercise>
+
+<exercise ><statement><p> Express cost as a function of quantity, initial cost, and per-unit cost, when the initial cost is $2,000, the per-unit cost is $25, and the quantity is 75.</p></statement><solution>
+<p>The function we would have is </p>
+<me>Cost=Initial\ cost+per\ unit\ cost*quantity</me>
+<p>We can set this up as a general Excel worksheet that allows us to vary all three givens.
+</p>
+
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <image source="images/sec6-1-sol3a.png"/>
+                    <image source="images/sec6-1-sol3b.png"/>
+                </sidebyside>
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <p>Excel commands  and general setup</p>
+                    <p>Excel output</p>
+                </sidebyside>
+</solution></exercise>
+
+<exercise ><statement><p> Express revenue as a function of two quantity demand-price pairs and quantity, assuming that demand price is a linear function, where the quantity demand-price pairs are <m>(0, \$20)</m> and <m>(100, \$18)</m> and the quantity is 300.  (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)
+</p></statement></exercise>
+
+<exercise ><statement><p> Express revenue as a function of two quantity demand-price pairs and quantity, assuming that demand price is an exponential function, where the quantity price pairs are <m>(0, \$20)</m> and <m>(100, \$18)</m> and the quantity is 300.  (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)</p></statement><solution>
+<p>To get the price equation we can solve the system of equations we get by evaluating the exponential function <m>P=P_0  e^{kq}</m> at the two given points:</p>
+<me>(0,20)  \text{ gives us }   20=P_0  e^{(k*0)}</me>
+<me>(100,18)  \text{ gives us }   18=P_0  e^{(k*100)}</me>
+<p>Then <m>P_0=20</m> (from the first equation) , and 
+<m>18=P_0  e^{(k*100)}</m>  implies <m>18=20 e^{(k*100)}</m>  so that <m>e^{(k*100)}=18/20</m></p>
+<p>Hence <m>100*k=\ln(18/20)</m>.    
+Solving for <m>k</m>: </p><me>k=1/100\ln(18/20)\approx -0.0011</me>
+<p>Alternatively we can use Excel. Remember that if we have only two points we need to add one of the pairs twice so that Excel can graph the points correctly in a scatter plot.</p>
+                <image width="90%" source="images/sec6-1-sol5a.png">
+                </image>
+<p>
+In Excel we have the Price equation as</p>
+<me>P=20 e^{(-0.001 q)}</me>
+<p>
+The difference between the symbolic and numerical answers is a matter of how many decimals / significant digits we choose to keep.</p>
+<p>
+The simplest answer would be to treat Price as a function of quantity. But this is a section about multivariable functions. So what if we wanted a more general setting where we were given the following:</p>
+<ul>
+<li><p>Two points <m>(0,P_0)</m> and <m>(q_1,P_1)</m></p></li>
+<li><p>A quantity <m>Q</m></p></li>
+</ul>
+
+
+<p>The Price function would be </p>
+<me>P=P_0  e^{\left(\frac{1}{q_1} \ln\left(\frac{P_1}{P_0}\right) q\right)}</me>
+
+<p>In Excel we could set up a table that would allow us to change <m>P_0</m>, <m>P_1</m>, <m>q_1</m>  and <m>q</m></p>
+<me>revenue(P_0,P_1,q_1,q)=q*P_0  e^{\left(\frac{1}{q_1} \ln\left(\frac{P_1}{P_0}\right) q\right)}</me>
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <image source="images/sec6-1-sol5b.png"/>
+                    <image source="images/sec6-1-sol5c.png"/>
+                </sidebyside>
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <p>Excel commands  and general setup</p>
+                    <p>Excel output</p>
+                </sidebyside>
+</solution></exercise>
+
+<exercise ><statement><p> Express profit as a function of two quantity demand-price pairs, quantity, initial cost, and per-unit cost, assuming that demand price is a linear function, where the quantity demand-price pairs are <m>(100, \$30)</m> and <m>(200, \$28)</m>, the quantity is 300, the initial cost is $3000, and the per-unit cost is $8.  (You may find it useful to have intermediate computations that find the cost and revenue.)</p></statement></exercise>
+
+<exercise ><statement><p> Express the future value of a deposit as a function of the initial deposit, the annual interest rate, the number of years the deposit is held, and the number of times per year that the interest is compounded, where the deposit of $10,000 is held for 20 years at 3% interest, compounded monthly.</p></statement><solution>
+<me>FutureAmount=InitialDeposit*\left(1+\frac{rate}{ppy}\right)^{years*ppy}</me>
+
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <image source="images/sec6-1-sol7a.png"/>
+                    <image source="images/sec6-1-sol7b.png"/>
+                </sidebyside>
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <p>Excel commands  and general setup</p>
+                    <p>Excel output</p>
+                </sidebyside>
+<p>For the rate, you should either make sure the cell is formatted as a percentage. Or you can just enter the decimal 0.03. The display formula allows you to check that the number is formatted correctly. We do want Excel to use the value of 0.03 in the formula, not 3.</p>
+</solution></exercise>
+
+<exercise ><statement><p> Express the future value of a regular series of deposits as a function of the periodic deposit amount, the annual interest rate, the number of years the deposits accumulate, and the number of times per year that the deposits are made, where the deposit of $200 is deposited weekly for 20 years at 3% interest, compounded weekly.</p></statement></exercise>
+
+<exercise ><statement><p> Express the current value of a bond as a function of the final value, the annual interest rate, and the number of years the bond is held, where the final value of the bond is $10,000, held for 15 years at 3.5% interest, compounded monthly.</p></statement><solution>
+<me>InitialDeposit=FutureAmount*\left(1+\frac{rate}{ppy}\right)^{-years*ppy}</me>
+
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <image source="images/sec6-1-sol9a.png"/>
+                    <image source="images/sec6-1-sol9b.png"/>
+                </sidebyside>
+                <sidebyside widths="50% 30%" valigns="middle top">
+                    <p>Excel commands  and general setup</p>
+                    <p>Excel output</p>
+                </sidebyside>
+                <p>So, to have $10,000 after 15 years we need to invest $5,920.08 now.</p>
+</solution></exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><p>For exercises 10-17, set up an Excel notebook to produce a table for the given function as a function of the two specified variables and the other parameters. The workbook should be set up so that the input values can be changed and the formula will recompute with the new values.</p>
+</introduction>
+
+<exercise ><statement><p> Create a table for the function <m>f(x,y)=3x^2+xy+5y^2</m>, with <m>x</m> ranging from –10 to 10, and <m>y</m> ranging from -5 to 15.</p></statement></exercise>
+
+<exercise ><statement><p> Create a table for the function <m>f(x,y,z)=xyz+x^2 y-y^2+5z</m>, with <m>x</m> ranging from –10 to 10, and <m>y</m> ranging from -5 to 15, with <m>z=2</m>.</p></statement><solution>
+<p>We need different types of absolute references. If the <m>x</m> values are entered in column A, and the <m>y</m> values are entered in row 4, and <m>z</m> is stored in Cell B2:</p>
+<ul>
+<li><p> When using <m>x</m>, we want to fix the column reference.</p></li>
+<li><p> When using <m>y</m>, we want to fix the row reference.</p></li>
+<li><p> When using z we want to fix the cell reference.</p></li>
+</ul>
+
+                <image width="90%" source="images/sec6-1-sol11a.png">
+                </image>
+
+<p>In table form we get:</p>
+
+                <image width="100%" source="images/sec6-1-sol11b.png">
+                </image>
+
+<p>We can always check our work by double clicking a value in the table. This will highlight the calls called upon to compute the entry. Note that this will check if you are calling on the right <m>x</m>, <m>y</m> and <m>z</m>. To check that the formula is correct we recommend the Show Formula feature.
+</p></solution></exercise>
+
+<exercise ><statement><p> Create a table that expresses cost as a function of quantity, and per-unit cost, with initial cost as a parameter, when the initial cost is $3,000, the per-unit cost ranges from $20 to $40 by $2, and the quantity ranges from 50 to 100 by 5.</p></statement></exercise>
+
+<exercise ><statement><p> Create a table that expresses the future value of a deposit as a function of the annual interest rate and the number of years the deposit is held, with the amount of the initial deposit and the number of times per year that the interest is compounded being treated as parameters, where the interest on a deposit of $10,000 is compounded quarterly, and the deposit is held for 20 to 40 years at interest rates ranging from 3% to 5%.</p></statement><solution>
+<p>We will enter the deposit and the times the interest is compounded (ppy) as fixed parameters. The years run from 20 to 40, and the interest rate from 3% to 5%.
+We have enough space on one sheet to do the years in increments of 1. The interest is done in increments of 0.25%. This is something not uncommon in the banking world.
+</p>
+
+                <image width="90%" source="images/sec6-1-sol13a.png">
+                </image>
+
+                <image width="100%" source="images/sec6-1-sol13b.png">
+                </image>
+
+<p>How much detail should you give? Imagine working at a bank. What would be a good spreadsheet to share with a colleague, boss, or costumer? It should be adequately labeled and it should be easy to read.
+</p></solution></exercise>
+
+<exercise ><statement><p> Create a table that expresses the future value of a regular series of deposits as a function of the annual interest rate and the number of years the deposit accumulate, with the amount of the deposits and the number of times per year that the interest is compounded being treated as parameters, where a deposit of $2,000 is made monthly, and the deposits accumulate for 20 to 40 years at interest rates ranging from 3% to 5%.</p></statement></exercise>
+
+<exercise ><statement><p> Create a table that expresses the current value of a bond as a function of the number of years the bond is held and the interest rate, where the final value of the bond is $10,000, the number of years the bond is held runs from 5 to 40 and the interest rate runs from 2% to 6%.</p></statement><solution>
+<p>The entries in the cell look like this
+</p>
+
+                <image width="90%" source="images/sec6-1-sol15a.png">
+                </image>
+
+                <image width="100%" source="images/sec6-1-sol15b.png">
+                </image>
+
+<p>e can easily read off what our initial investment needs to be if we want to earn $10,000.
+</p></solution></exercise>
+
+<exercise ><statement><p> Create a table that expresses revenue as a function of the quantity of widgets and gizmos sold as both quantities range from 0 to 1000, where the demand price functions are:</p>
+<me>PriceGizmo=50-\frac{QuantityGizmo}{40}-\frac{QuantiyWidget}{300}</me>
+
+<me>PriceWidget=40-\frac{QuantityGizmo}{400}-\frac{QuantiyWidget}{50}</me>
+</statement></exercise>
+
+
+<exercise ><statement><p> Create a table that expresses revenue as a function of the quantity of widgets and gizmos sold as both quantities range from 0 to 1000, where the demand price functions are:</p>
+<me>PriceGizmo=60(0.9)^{QuantityGizmo/100}-\frac{QuantiyWidget}{200}</me>
+
+<me>PriceWidget=40(0.85)^{QuantityWidget/100}-\frac{QuantityGizmo}{100}</me>
+</statement><solution>
+<p>Let <m>x</m> be Gizmo, and <m>x</m> be Widget, then</p>
+<me>PriceX=60(0.9)^{\frac{x}{100}}-\frac{y}{200}</me>
+<me>PriceY  =40(0.85)^{\frac{y}{100}}-\frac{x}{100} </me>
+<me>Revenue=x PriceX+y Pricey</me>
+<me>revenue=x 60(0.9)^{\frac{x}{100}}-\frac{y}{200}+y 
+40(0.85)^{\frac{y}{100}}-\frac{x}{100}</me>
+                <image width="100%" source="images/sec6-1-sol17a.png">
+                </image>
+
+                 <image width="90%" source="images/sec6-1-sol17b.png">
+                </image>
+</solution></exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><p>For exercises 18-25, use either Excel or WolframAlpha to produce a graph of the function described in exercises 10-17 respectively.</p>
+</introduction></exercisegroup>
+
+
+</exercises>
+        </section>
+ 
+         <section xml:id="sec-6-2-PartialDerivatives">
+            <title>Wire Frames, Partial Derivatives, and Tangent Planes</title>
+
+          <p><url href="./Examples/Section-6-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p>
+A standard technique in mathematics courses is to try to break a complicated problem into smaller and easier problems.  For functions of several variables this can be done by looking at the variables one at a time, and treating the other variables as constants.  Then we are back to considering functions of a single variable.  We start by returning to Example 5 from the previous section, and seeing what information can be obtained by looking at one variable at a time.</p>
+
+<example><title>Optimizing Revenue with Two Products</title><p> I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
+
+<me>PriceGizmos=10-\frac{QuantityGizmos}{50}=10-\frac{QG}{50}</me>
+
+<me>PriceWidgets=20-\frac{QuantityWidgets}{40}=20-\frac{QW}{40}</me>
+
+<p>This gives me the following revenue function:</p>
+
+<me>Revenue(QG,QW)=10QG-\frac{QG^2}{50}+20QW-\frac{QW^2}{40}.</me>
+
+
+<p>Look at the functions of one variable obtained by treating either QG or QW as a constant.  Use this information to find where we maximize revenue.</p>
+
+<p>Solution:  In terms of the last example, we want to start with a table and a wire frame chart.</p>
+
+                <image width="60%" source="images/sec-6-2-1.png">
+                </image>
+
+                <image width="60%" source="images/sec-6-2-2.png">
+                </image>
+
+<p>The wires are obtained by intersecting the graph of the function with a plane where QW or QG is held constant.</p>
+
+                <image width="50%" source="images/sec-6-2-3.png">
+                </image>
+ 
+<p>Thus, when we treat either QW or QG as a constant we effectively are looking at one of the wires of the wire frame.  To illustrate this, we will look at the wires corresponding to <m>QW=400</m> and <m>QG=300</m>. When <m>QG=300</m>, our revenue function simplifies to </p>
+
+<me>\begin{aligned}  Revenue(300,QW)
+\amp =3000-1800+20QW-\frac{QW^2}{40}\\ 
+\amp =1200+20QW-\frac{QW^2}{40}.\end{aligned}</me>
+
+<p>Thus, the wire corresponding to <m>QG=300</m> is a parabola that bends down.</p>
+
+                <image width="50%" source="images/sec-6-2-4.png">
+                </image>
+
+<p>To find the vertex of the parabola, we take the derivative of our function of QW and set it equal to zero.</p>
+
+<me>\frac{d}{d\ QW} Revenue(300,QW)=20-\frac{QW}{20}.</me>
+
+<p>This derivative is zero when <m>QW=400</m>.  That is the only possible place on this wire where we can have a maximum.</p>
+
+<p>Similarly, when <m>QW=400</m>, </p>
+
+<me>Revenue(QG,400)=10QG-\frac{QG^2}{50}+4000,</me>
+
+<me>\frac{d}{d\ QG} Revenue(QG,400)=10-\frac{QG}{25}.</me>
+
+<p>This derivative is zero when <m>QG=250</m>.  That is the only possible place on this wire where we can have a maximum.</p>
+
+<p>Putting the information together, the maximum must occur at (250,400).  Putting these values back in the original equation gives a maximum of $5250 for the revenue function.</p>
+</example>
+
+<p><term>Partial Derivatives</term></p>
+
+<p>The procedure we used in the first example of replacing one variable with a constant and then taking the derivative of the resulting single variable function is a bit cumbersome.  We can simplify the process by taking the derivative of the original function with respect to one variable while treating the other variables as constants.  This is referred to as taking a partial derivative.  There is also a change in notation.  The familiar derivative of <m>f</m> with respect to <m>x</m> uses the symbol <m>\frac{d}{dx} f</m>  while the partial derivative with respect to <m>x</m> uses the symbol <m>\frac{\partial }{\partial x} f</m>, or <m>f_x</m>.  Similarly, the partial derivative with respect to <m>y</m> uses the symbol<m> \frac{\partial }{\partial y} f</m>, or <m>f_y</m>.</p>
+
+
+<example><title>Finding and Interpreting Partial Derivatives</title>
+<p>Find the partial derivatives of <m>f(x,y)=x^2+ 2xy+3y^2-4x-3y</m> at  <m>(x,y)=(3.5,-0.5)</m>.  Explain what the partial derivatives mean in terms of the graph.  </p>
+
+<p>Solution:  It is useful to look at a picture with the graph, the two curves obtained by keeping <m>x=3.5</m> and <m>y=1.5</m>, and the tangent lines to those curves.</p>
+
+                <image width="60%" source="images/sec-6-2-5.png">
+                </image> 
+
+<p>We also want to look at the slices corresponding keeping <m>x=-3.5</m> and <m>y=.5</m>.</p>
+
+                <image width="40%" source="images/sec-6-2-6.png">
+                </image>
+                <image width="40%" source="images/sec-6-2-7.png">
+                </image>
+
+<p>The yellow curve is obtained by fixing <m>y</m> and letting <m>x</m> vary.  The blue curve is obtained by fixing <m>y</m> and letting <m>x</m> vary.  We now take the partial derivatives with respect to both variables.</p>
+
+<me>\frac{\partial }{\partial x} f(x,y)=2x+ 2y+0-4-0=2x+2y-4.</me>
+
+<me>\frac{\partial }{\partial x} f(3.5,-0.5)=7- 1-4=2.</me>
+
+<me>\frac{\partial }{\partial y} f(x,y)=0+2x+6y+0-3=2x+6y-3.</me>
+
+<me>\frac{\partial }{\partial y} f(3.5,-0.5)=7-3-3=1.</me>
+
+<p>The partial derivatives give the slopes of the purple and red lines above.  At the point <m>(3.5,-0.5)</m>, the (yellow) curves obtained by treating y as a constant and letting <m>x</m> vary has a (magenta) tangent line with a slope of <m>2</m>, the value <m>\frac{\partial }{\partial x} f(3.5,-0.5)</m>.   At the point <m>(3.5,-0.5)</m>, the (blue) curves obtained by treating <m>x</m> as a constant and letting <m>y</m> vary has a (red) tangent line with a slope of 1, the value <m>\frac{\partial }{\partial y} f(3.5,-0.5)</m>.  </p>
+</example>
+
+<p><term>Tangent Planes and Linear Approximation</term></p>
+
+<p>For functions of one variable, we had two main uses of the derivative.  One was to identify candidate points for maxima and minima.  We will look at critical points and extrema in the next section.  The other use of the derivative was to produce a linear approximation or tangent line.  We can generalize the tangent line for one variable to a tangent plane for two variables.  For a function <m>f(x)</m>, we used the value of the point, <m>(x_0,f(x_0))</m> and the slope <m>f(x_0)</m> to get the equation of the tangent line approximation near <m>x_0</m>.</p>
+
+<assemblage><p><term>Tangent line</term>:</p>
+<p><me>     Linear f(x)=f' (x_0 )(x-x_0 )+f(x_0 ).</me></p>
+</assemblage>
+
+<p>For a function, <m>f(x,y)</m>, of two variables, we simply use partials for the slopes.</p>
+
+<assemblage><p><term>Tangent Plane</term>:</p> 
+<p><me>Linear f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0)+f(x_0,y_0 ).</me></p>
+</assemblage>
+
+<example><title>Approximating with a Tangent Plane</title>
+<p>The general Cobb-Douglas production function determines the Production (P), in terms of the variables Labor (L) and Capital (C):</p>
+
+<me>Production(Labor,Capital)=c Labor^{\alpha}  Capital^{\beta},</me>
+
+<p>or using short-hand notation:</p>
+
+<me>P(L,C)=c L^{\alpha}  C^\beta,</me>
+
+<p>where <m>c</m>, <m>\alpha</m>, and <m>\beta</m> are constants.  For our widget factory, this becomes</p>
+
+<me>Production(Labor,Capital)=10 L^{0.75}  C^{0.25}</me>
+
+<p>with labor production and capital in the appropriate units.  Find <m>Production(81,16)</m>.  Use a linear approximation to estimate <m>Production(85,14)</m>.</p>
+
+<p>Solution:  We answer the first question by substituting the values into the equation.</p>
+
+<me>Production(81,16)=10*81^{0.75}*16^{0.25}=10*27*2=540.</me>
+
+<p>To produce the tangent plane we take the partial derivatives and evaluate them at our base point.</p>
+
+<me>Production_{Labor} (Labor,Capital)=10*.75 Labor^{-0.25}  Capital^{0.25}</me>
+<me>Production_{Labor} (81,16)=10*.75 (1/3) *2=5</me>
+<me>Production_{Capital} (Labor,Capital)=10*{0.25} Labor^{0.75 }  Capital^{-0.75}</me>
+<me>Production_{Capital} (81,16)=10*.25 *27 (1/8)=8.4375</me>
+
+<p>This gives us our tangent plane.</p>
+
+<me>Production(Labor,Capital)\approx5(Labor-81)+8.4375(Capital-16)+540.</me>
+
+<p>Substituting in values gives our estimate.</p>
+
+<me>Production(85,14)\approx 5(85-81)+8.4375(14-16)+540=543.125.</me>
+</example>
+
+<p>In the case of the last example, evaluating the linear approximation was nicer than evaluating the function directly because the 4th roots of 16 and 81 are whole numbers, while the 4th roots of 85 and 14 are harder to compute.  For real world functions, evaluating functions may involve a substantial investment of time and money, depending on the nature of the function.</p>
+
+<p><term>Linear Approximations of Functions of More than Two Variables</term></p>
+
+<p>In this section we have focused on functions of 2 variables since their graphs are surfaces in 3 dimensions, which is a familiar concept.  For real world functions, we are often concerned with functions of many variables.  The concept of partial derivative easily extends, with one variable and multiple parameters.  Finding the linear approximation also extends without difficulty.  We simply have a linear term for each variable.  
+</p>
+
+<exercises xml:id="exercises-set-sec-6-2">
+	<title>Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</title>
+
+<exercisegroup><introduction>
+<p>For exercises 1-7, for the given functions and points <m>P_1</m> and <m>P_2</m>:</p>
+<ol label="(a)">
+<li><p> Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p></li>
+<li><p> Find the partial derivatives of the original function.</p></li>
+<li><p> Evaluate the partial derivatives at <m>P_1</m>.</p></li>
+<li><p> Give the equation of the tangent plane through <m>P_1</m>.</p></li>
+<li><p> The approximation at <m>P_2</m> obtained from the tangent plane.</p></li>
+</ol>
+</introduction>
+
+<exercise ><statement><p>The function is <m>f(x,y)=x^2+3xy+4y^2</m>, <m>P_1=(4,2)</m>, and <m>P_2=(3,2.5)</m>.
+</p></statement><solution>
+<ol label="(a)">
+<li><p> Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p>
+<me>f(4,y)=16+12y+4y^2</me>
+<me>f(x,2)=x^2+6x+16</me>
+</li>
+<li><p> Find the partial derivatives of the original function.</p>
+<me>f_x  (x,y)=2x+3y</me>
+<me>f_y  (x,y)=3x+8y</me>
+</li>
+<li><p> Evaluate the partial derivatives at <m>P_1</m>.</p>
+<me>f_x  (4,2)=8+6=14</me>
+<me>f_y  (4,2)=12+16=28</me>
+</li>
+<li><p> Give the equation of the tangent plane through <m>P_1</m>.</p>
+<p>We need <m>f(4,2)=16+24+16=56</m> for the equation of the tangent plane.</p>
+<me>Linear\ f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0 )+f(x_0,y_0 ).</me>
+<me>Linear\ f(x,y)=14(x-4)+28(y-2)+56</me>
+</li>
+<li><p> The approximation at <m>P_2</m> obtained from the tangent plane.</p>
+<me>Linear\ f(3,2.5)=14(3-4)+28(2.5-2)+56</me>
+<me>= -14+14+56=56</me>
+</li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p>The function is <m>f(x,y)=(x+3y)/(x^2+y^2 )</m>, <m>P_1=(2,3)</m>, and <m>P_2=(3,2.5)</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p>The function is <m>f(x,y)=(x^2)(x+2^y)</m>, <m>P_1=(3,-1)</m>, and <m>P_2=(3,0)</m>.
+</p></statement><solution>
+<ol label="(a)">
+<li><p> Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p>
+<me>f(3,y)=9(3+2^y)</me>
+<me>f(x,-1)=(x^2 )(x+2^{-1} )= x^3+\frac{1}{2} x^2</me>
+</li>
+<li><p> Find the partial derivatives of the original function.</p>
+<me>f_x  (x,y)=(2x)(x+2^y )+(x^2 )(1+0 )  \text{ (product rule)}</me>
+<me>= 2x^2+2x 2^y+x^2=3x^2+(2x)2^y</me>
+<me>f_y  (x,y)=\frac{\partial}{\partial y} (x^2 )(x+2^y ) \quad (\text{ Take partial derivative wrt }y.)</me>
+<me>=\frac{\partial}{\partial y}(x^3+x^2 2^y ) \qquad\text{ (Simplify the expression.)}</me>
+<me>= x^2 2^y  \ln(2)  \qquad
+(x \text{ is treated as a constant so the }x^3\text{ term drops out.)}</me>
+</li>
+<li><p> Evaluate the partial derivatives at <m>P_1</m>.</p>
+<me>f_x  (3,-1)=27+(6) 2^{-1}=27+3=30</me>
+<me>f_y  (3,-1))= 9*\frac{1}{2}  \ln(2)=\frac{9}{2} \ln(2)</me>
+</li>
+<li><p> Give the equation of the tangent plane through <m>P_1</m>.</p>
+<p>We need <m>f(3,-1)=9*\frac{7}{2}=\frac{63}{2}</m> for the equation of the tangent plane</p>
+<me>Linear\ f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0 )+f(x_0,y_0 ).</me>
+<me>Linear\ f(x ,y)=30 (x-3)+\frac{9}{2}  \ln(2) (y+1)+\frac{63}{2}</me>
+</li>
+<li><p> The approximation at <m>P_2</m> obtained from the tangent plane.</p>
+<me>Linear\ f(3,0)=30* (0)+\frac{9}{2} \ln(2) *(1)+\frac{63}{2}=\frac{9}{2}  \ln(2)+\frac{63}{2}</me></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p>The function is the revenue function for selling widgets and gizmos with demand price functions</p>
+
+<me>PriceGizmos=30-\frac{QuantityGizmos}{50}-\frac{QuantityWidgets}{300}</me>
+
+<me>PriceWidgets=20-\frac{QuantityWidgets}{40}-\frac{QuantityGizmos}{500}</me>
+
+<p>and, <m>P_1=(QuanityGizmos,QuantityWidgets)=(1000,500)</m>, and <m>P_2=(1050,575)</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p>The function is the revenue function for selling widgets and gizmos with demand price functions</p>
+
+<me>PriceGizmos=30(0.95)^{(QuantityGizmos/100)}-\frac{QuantityWidgets}{300}</me>
+
+<me>PriceWidgets=20(0.9)^{(QuantityWidgets/150)}-\frac{QuantityGizmos}{250}</me>
+
+<p>and, <m>P_1=(QuanityGizmos,QuantityWidgets)=(800,400)</m>, and <m>P_2=(750,425)</m>.
+</p></statement><solution>
+<p>For the sake of notation we will use the following abbreviations:</p>
+<me>PG=30(0.95)^{\left(\frac{QG}{100}\right)}-\frac{QW}{300}.</me>
+
+<me>PW=20(0.9)^{\left(\frac{QW}{150}\right)} -\frac{QG}{250}</me>
+<p>and, <m>P_1=(QG,QW)=(800,400)</m>, and <m>P_2=(750,425)</m>.</p> 
+
+<p>We need to find the Revenue function to solve the problem:</p>
+<me>Revenue (QG,QW)=QG*PG+QW*PW</me>
+<me>=QG\left[30(0.95)^{\left(\frac{QG}{100}\right)}-\frac{QW}{300}\right]
++QW\left[20(0.9)^{\left(\frac{QW}{150}\right)}-\frac{QG}{250}\right]</me>
+<me>Revenue(QG,QW)=</me>
+<me>30 QG (0.95)^{\left(\frac{QG}{100}\right)}-\frac{QG *QW}{5×6×10}+20 QW (0.9)^{\left(\frac{QW}{150}\right)}-\frac{QG *QW}{5×5×10}</me>
+<me>= 30 QG (0.95)^{\left(\frac{QG}{100}\right)}+20 QW (0.9)^{\left(\frac{QW}{150}\right)}-\frac{11 QG*QW}{1500}</me>
+
+<ol label="(a)">
+<li><p> Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p>
+<me>Revenue(800,QW)= 24,000 (0.95)^8+20 QW (0.9)^{\left(\frac{QW}{150}\right)}-\frac{88 QW}{15}</me>
+
+<p>This function gives us information about the revenue in terns of Widgets near a production level of 400 widgets and 800 gizmos. We can use Wolfram Alpha to graph this. Assuming there are 800 gizmos the widget influence on the revenue looks like this</p>
+                <image width="60%" source="images/sec6-2-sol5a.png">
+                </image>
+
+<p>The slope is about <m>m = 4</m>.</p> 
+
+<me>Revenue(QG,400)= 30 QG (0.95)^{\left(\frac{QG}{100}\right)}
++8,000 (0.9)^{\left(\frac{40}{15} \right)}-\frac{44 QG }{15}</me>
+<p>The revenue generated by the gizmos assuming the number of widgets = 400 and the number of gizmos is near 800 gives the following picture</p>
+                <image width="70%" source="images/sec6-2-sol5b.png">
+                </image>
+
+<p>The slope is about <m>m=8</m>.</p>
+</li>
+<li><p> Find the partial derivatives of the original function.</p>
+<p>In part a we saw that the revenue function seems to be growing faster for the gizmo variable, then for the widget variable. To get more information we can compute the partial derivatives (b) and then evaluate them at <m>P_1</m> (c).</p>
+
+<me>Revenue_{QG}  (QG,QW)</me>
+<me>=  \frac{\partial}{\partial QG} 30 QG (0.95)^{\left(\frac{QG}{100}\right)}
++\frac{\partial}{\partial QG} 20 QW (0.9)^{\left(\frac{QW}{150} \right)}
+-\frac{\partial}{\partial QG}  \frac{11*QG*QW}{1500}</me>  
+
+<me>= \left[
+30 (0.95)^{\left(\frac{QG}{100}\right)}
++30 QG (0.95)^{\left(\frac{QG}{100}\right)} 
+\frac{\ln(0.95)}{150}\right]
++0
+-  \frac{11*QW}{1500}</me> 
+<p>
+Note that the first part requires a product rule and then a chain rule to deal with the exponential part of the formula.</p>
+<me>Revenue_{QW}  (QG,QW)</me>
+<me>=  \frac{\partial}{\partial QW} 30 QG (0.95)^{\left(\frac{QG}{100}\right)}
++\frac{\partial}{\partial QW} 20 QW (0.9)^{\left(\frac{QW}{150} \right)}
+-\frac{\partial}{\partial QW}  \frac{11*QG*QW}{1500}</me>  
+
+<me>= 0+\left[20 (0.9)^{\left(\frac{QW}{150}\right)}
++20 QW (0.9)^{\left(\frac{QW}{150}\right)} 
+\frac{\ln(0.9)}{150}\right]
+-  \frac{11*QG}{1500}</me> 
+</li>
+<li><p> Evaluate the partial derivatives at <m>P_1</m>.</p>
+<me>Revenue_{QG}  (800, 400)</me>
+<me>= \left[
+30 (0.95)^{\left(\frac{800}{100}\right)}
++24000 (0.95)^{\left(\frac{800}{100}\right)} 
+\frac{\ln(0.95)}{150}\right]
+-  \frac{8800}{1500}\approx 8.80231</me> 
+<me>Revenue_{QW}  (800, 400)</me>
+<me>= \left[20 (0.9)^{\left(\frac{400}{150}\right)}
++20 QW (0.9)^{\left(\frac{400}{150}\right)} 
+\frac{\ln(0.9)}{150}\right]
+-  \frac{4400}{1500}\approx 4.99164</me> 
+<p>The estimates we observed in part a were fairly close to the actual rates of change.</p>
+</li>
+<li><p> Give the equation of the tangent plane through <m>P_1</m>.</p>
+<me>Linear\ Rev(QG,QW)=
+Rev_{QG} (QG_0,QW_0 )(QG-QG_0 )</me>
+<me>+Rev_{QW} (QG_0,QW_0 )(QW-QW_0 )
++Rev(QG_0,QW_0 ).</me>
+<p>We need to find <m>Rev(800,400)</m>. Using Wolfram Alpha (or calculator) we get </p>
+<me>Rev(800,400)=19,615.88</me>
+<me>Linear\ Rev(QG,QW)=8.80(QG-800)+4.99(QW-400)+19,615.88.</me>
+</li>
+<li><p> The approximation at <m>P_2</m> obtained from the tangent plane.</p>
+<p>The estimated revenue when <m>P_2=(750,425)</m> is given by</p>
+<me>Linear\ Rev(750,425)=8.80(-50)+4.99(25)+19,615.88=19,300.63</me>
+<p>In this case the change in production would result in a loss in revenue.
+This is mainly due to the impact of the lower production in gizmos.</p>
+</li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p>The function is the Cobb-Douglas production function in a widget factory,  </p>
+
+<me>Production(Labor,Capital)=10 Labor^{0.8}  Capital^{0.2}</me>
+
+<p>where labor is in workers, capital equipment is in units of $20,000, and production is in units of 200 widgets produced per month.  In the <m>(Labor,Capital)</m> plane, let <m>P_1=(100,30)</m>, and <m>P_2=(110,25)</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p>The function is the Cobb-Douglas production function in a country, </p> 
+
+<me>Production(Labor,Capital)=10 Labor^{0.74}Capital^{0.26}</me>
+
+<p>where labor is in millions of workers, capital equipment is in units of billions of dollars, and production is in units of billions of dollars per year.  In the <m>(Labor,Capital)</m> plane, let <m>P_1=(300,30)</m>, and <m>P_2=(310,32)</m>.
+</p></statement><solution>
+<ol label="(a)">
+<li><p> Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p>
+<me>Production(300,C)=10 300^{0.74}  C^{0.26}=680.879 C^{0.26}  </me>
+<me>Production(L,30)=10 L^{0.74}  30^{0.26}=24.2132 L^{0.74} </me>
+<p>Hence both cross sections are exponential function.</p>
+</li>
+<li><p> Find the partial derivatives of the original function.</p>
+<me>Production_L  (L,C)=\frac{\partial}{\partial L} 10 L^{0.74}  C^{0.26}</me>   
+<me>\text{(Take the partial derivative wrt }L\text{; Treat }C\text{ as a constant.)}</me>
+<me>=10 (0.74) L^{-0.26}  C^{0.26}</me>
+<p>Then we  have </p>
+<me> Production_L  (L,C)=\frac{7.4 C^{0.26}}{L^{0.26}}</me>   
+
+<me>Production_C  (L,C)=\frac{\partial}{\partial C} 10 L^{0.74}  C^{0.26}</me>   
+<me>\text{(Take the partial derivative wrt }C\text{; Treat }L\text{ as a constant.)}</me>
+<me>=10 L^{0.74} (0.26) C^{-0.74}</me>  
+<p>Then we  have that </p>
+<me>Production_C  (L,C)=(2.6 \frac{L^{0.74}}{C^{0.74}}</me> 
+</li>
+<li><p> Evaluate the partial derivatives at <m>P_1</m>.</p>
+<me> Production_L  (300, 30)=\frac{7.4 30^{0.26}}{300^{0.26}}
+\approx 4.07</me>   
+<me>Production_C  (300, 30)=(2.6 \frac{300^{0.74}}{30^{0.74}}
+\approx 14.29</me> 
+</li>
+<li><p> Give the equation of the tangent plane through <m>P_1</m>.</p>
+<me>Production(300,30)=10*30^{0.74}  30^{0.26}\approx 1648.62</me>
+<me>Lin\ Prod(L,C)</me>
+<me>=Prod_L (L_0,C_0 )(L-L_0 )+Prod_C (L_0,C_0 )(C-C_0 )+Prod(L_0,C_0 )</me>
+<me>=4.07(L-300)+14.29(C-30)+1648.62.</me>
+</li>
+<li><p> The approximation at <m>P_2</m> obtained from the tangent plane.</p>
+<me>Lin Prod(310, 32)   =4.07(310-300)+14.29(32-30)+1648.62=1717.9.</me>
+<p>
+So as both <m>L</m> and <m>C</m> increase, so does the production. Specifically increasing <m>L</m> by 10 million workers and <m>C</m> by 2 billion dollars would give an estimated increase in production of 1717.9-1648.62=69.28 billions of dollars worth of units.</p>
+</li>
+</ol>
+</solution></exercise>
+</exercisegroup>
+
+<exercisegroup><introduction>
+<p>For exercises 8-11, for the given functions and points <m>P_1</m> and <m>P_2</m>:</p>
+<ol label="(a)">
+<li><p> Give the 3 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p></li>
+<li><p> Find the partial derivatives of the original function.</p></li>
+<li><p> Evaluate the partial derivatives at <m>P_1</m>.</p></li>
+<li><p> Give the equation of the linear approximating function through <m>P_1</m>.</p></li>
+<li><p> The approximation at <m>P_2</m> obtained from the function in d.</p></li>
+</ol>
+</introduction>
+
+<exercise ><statement><p>The function is <m>f(x,y,z)=x^2+3xy+4y^2+2z^2+5xz</m>, <m>P_1=(4,2,1)</m>, and <m>P_2=(3,2.5,2)</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p>The function is <m>f(x,y,z)=(x+3y-2z)/(x^2+y^2+z^2 )</m>, <m>P_1=(2,3,-1)</m>, and <m>P_2=(3,2.5,0)</m>.
+</p></statement><solution>
+<ol label="(a)">
+<li><p> Give the 3 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p>
+<me>f(x,3,-1)=\frac{x+9+2}{x^2+9+1}=\frac{x+11}{x^2+10}</me>
+<me>f(2,y,-1)=\frac{2+3y+2}{4+y^2+1}=\frac{3y+4}{y^2+5}</me>
+<me>f(2,3,z)=\frac{2+9-2z}{4+9+z^2 }=\frac{11-2z}{13+z^2 }</me>
+</li>
+<li><p> Find the partial derivatives of the original function.</p>
+<me>f_x  (x,y,z) =\frac{(1)(x^2+y^2+z^2 )-(x+3y-2z)(2x)}{(x^2+y^2+z^2 )^2} </me>  
+<me>=\frac{(x^2+y^2+z^2 )-(2x^2+6xy-4xz)}{(x^2+y^2+z^2 )^2 }  </me>
+<me>=\frac{(-x^2+y^2+z^2-6xy+4xz)}{(x^2+y^2+z^2 )^2} </me>
+
+<me>f_y  (x,y,z)=\frac{(3)(x^2+y^2+z^2 )-(x+3y-2z)(2y)}{(x^2+y^2+z^2 )^2 } </me>
+<me>=\frac{(3x^2+3y^2+3z^2 )-(2xy+6y^2-4yz)}{(x^2+y^2+z^2 )^2}  </me>
+<me>=\frac{3x^2-3y^2+3z^2-2xy+4yz}{(x^2+y^2+z^2 )^2}  </me>
+
+<me>f_z  (x,y,z)=\frac{(-2)(x^2+y^2+z^2 )-(x+3y-2z)(2z)}{(x^2+y^2+z^2 )^2}</me>
+<me>=\frac{(-2x^2-2y^2-2z^2 )-(2xz+6yz-4z^2 )}{(x^2+y^2+z^2 )^2}  </me>
+<me>=\frac{-2x^2-2y^2+2z^2-2xz-6yz}{(x^2+y^2+z^2 )^2}  </me>
+</li>
+<li><p> Evaluate the partial derivatives at <m>P_1</m>.</p>
+<me>f_x (2,3,-1)=\frac{(-4+9+1-36-8)}{(4+9+1)^2} = -\frac{38}{196}= -\frac{19}{98}</me>
+<me>f_y (2,3,-1) =\frac{12-27+3-12-12}{196} =-\frac{-36}{196} =-\frac{-9}{49}</me>
+<me>f_z (2,3,-1)=\frac{-8-18+2+4+18}{196}= -\frac{2}{196}=-\frac{1}{98}</me>
+</li>
+<li><p> Give the equation of the linear approximating function through <m>P_1</m>.</p>
+<me>Linear f(x,y,z) 
+= f(2,3,-1)+f_x  (2,3,-1)  (x-2)</me>
+<me>+f_y  (2,3,-1)(y-3)+f_z  (2,3,-1)(z+1)</me>
+<me>=  \frac{13}{14}-\frac{19}{98}  (x-2)-\frac{9}{49} (y-3)-\frac{1}{98}(z+1)</me>
+</li>
+<li><p> The approximation at <m>P_2</m> obtained from the function in d.</p>
+<me>Linear f(3,2.5,0)=  \frac{13}{14}-\frac{19}{98}  (1)-\frac{9}{49} \left(-\frac{1}{2}\right)-\frac{1}{98} (1)</me>
+<me>=\frac{13*7}{14*7}+\frac{-19+9-1}{98}=
+\frac{91-11}{98}=\frac{80}{98}=\frac{40}{49}</me>
+</li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p>The function is <m>f(x,y,z)=(x^2 z)(x+2^y+z^3)</m> <m>P_1=(3,-1,1)</m>, and 
+<m>P_2=(2,0,1)</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p>The function is the revenue function for selling widgets, gizmos, and gadgets with demand price functions
+
+<me>PriceGizmos=30-\frac{QuantityGizmos}{50}-\frac{QuantityWidgets}{300}-\frac{QuantityGadgets}{500}</me>
+
+<me>PriceWidgets=20-\frac{QuantityWidgets}{40}-\frac{QuantityGizmos}{500}-\frac{QuantityGadgets}{400}</me>
+
+<me>PriceGagets=40-\frac{QuantityWidgets}{45}-\frac{QuantityGizmos}{600}-\frac{QuantityGadgets}{300}</me>
+
+
+and in <m>(QuanityGizmos,QuantityWidgets,QuantityGadgets)</m> space, <m>P_1=(1000,500,700)</m>, and <m>P_2=(1050,575,625)</m>.
+
+</p></statement><solution>
+<p> We can do the entire problem in terms of gadgets, gizmos and widgets, but for notation sake we will replace them (alphabetically) as follows:</p>
+<me>x=gadgets,\quad y=gizmos,\quad z=widgets.</me>
+<p>We need the revenue function and we have the price functions, so we have that </p>
+<me>Revenue=R(x,y,z)= x Price_x+y Price_y+z Price_z</me>
+<me>=x \left(40-\frac{z}{45}-\frac{y}{600}-\frac{x}{300}\right)
++y\left(30-\frac{y}{50}-\frac{z}{300}-\frac{x}{500}\right)</me>
+<me>+z\left(20-\frac{z}{40}-\frac{y}{500}-\frac{x}{400}\right)</me>
+<me>=  -\frac{x^2}{300}-\frac{11 x y}{3000}-\frac{89 x z}{3600}+40 x-\frac{y^2}{50}-\frac{2 y z}{375}+30 y-\frac{z^2}{40}+20 z</me>
+<p>(Note: the last step /simplification was done in Wolfram Alpha)</p>
+
+<ol label="(a)">
+<li><p> Give the 3 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p>
+<me>R(x,500,700)= \frac{1}{900}  (-3 x^2+18775 x+8895000)</me>
+<me>R(1000,y,700)= \frac{1}{450}  (-9 y^2+10170 y+9500000)</me>
+<me>R(1000,500,z)= \frac{1}{360}  (-9 z^2-2660 z+16140000)</me>
+<p>So the cross sectional function are all quadratic (parabolas) that open downwards. </p>
+</li>
+<li><p> Find the partial derivatives of the original function.</p>
+<p>Finding the partial derivatives when dealing with three variables is very similar to the procedure we use when we have two variables. We treat the other variables as constants.</p>
+<me>R_x  (x,y,z)=  -\frac{x}{150}-\frac{11  y}{3000}-\frac{89  z}{3600}+40 </me>
+
+<me>R_y  (x,y,z)=  -\frac{11 x }{3000}-\frac{y}{25}-\frac{2  z}{375}+30 </me>
+
+<me>R_z  (x,y,z)=  -\frac{89 x }{3600}-\frac{2 y}{375}-\frac{z}{20}+20 </me>
+</li>
+<li><p> Evaluate the partial derivatives at <m>P_1</m>.</p>
+<me>R_x  (1000,500,700)=  -\frac{1000}{150}-\frac{5500}{3000}-\frac{89  (700)}{3600}+40=\frac{511}{36}</me>
+
+<me>R_y  (1000,500,700)=  -\frac{11000 }{3000}-\frac{500}{25}-\frac{1400}{375}+30=\frac{13}{5}</me>
+
+<me>R_z  (1000,500,700)=  -\frac{89000 }{3600}-\frac{1000 }{375}-\frac{700}{20}+20=-\frac{76}{18}</me>
+</li>
+<li><p> Give the equation of the linear approximating function through <m>P_1</m>.</p>
+<me>R(1000,500,700)=\frac{246700}{9}</me>  
+<p>Then the linear approximation is given by </p>
+<me>Linear\ Revenue(x,y,z)= R(1000,500,700)</me>
+<me>+R_x  (1000,500,700)  (x-1000)
++  R_y  (1000,500,700)(y-500)</me>
+<me>+  R_x  (1000,500,700)(z-700) </me> 
+
+<me>=  \frac{246700}{9}+\frac{511}{36} (x-1000)+\frac{13}{5} (y-500)-\frac{763}{18}(z-700)</me>
+</li>
+<li><p> The approximation at <m>P_2</m> obtained from the function in d.</p>
+<me>Linear\ Revenue(1050,575,625)</me>
+<me>=  \frac{246700}{9}+\frac{511}{36} (50)+\frac{13}{5} (75)-\frac{763}{18} (-75)
+=31,495  </me>                                         
+</li>
+</ol>
+</solution></exercise>
+</exercisegroup>
+ 
+</exercises> 
+        </section>
+ 
+         <section xml:id="sec-6-3-CriticalPointsExtrema">
+            <title>Critical Points and Extrema</title>
+
+          <p><url href="./Examples/Section-6-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p>
+With functions of one variable we were interested in places where the derivative is zero, since they made candidate points for the maximum or minimum of a function.  If the derivative is not zero, we have a direction that is downhill and moving a little in that direction gives a lower value of the function.  Similarly, with functions of two variables we can only find a minimum or maximum for a function if both partial derivatives are 0 at the same time.  Such points are called critical points.  </p>
+
+<assemblage><p>
+The point <m>(a,b)</m> is a <term>critical point</term> for the multivariable function <m>f(x,y)</m>,
+if both partial derivatives are 0 at the same time.</p>
+<p>
+In other words </p>
+<p><me>\frac{\partial }{\partial x} f(x,y)|_{x=a,y=b}=0</me></p>
+<p> and </p>
+<p><me>\frac{\partial }{\partial y} f(x,y)|_{x=a,y=b}=0</me></p>
+</assemblage>
+
+<example><title>Finding a Local Minimum of a Function</title>
+<p>Use the partial derivatives of <m>f(x,y)=x^2+ 2xy+3y^2-4x-3y</m> to find the minimum of the graph. </p> 
+
+<p><term>Critical Point by Algebra</term>:  In the previous section, we already computed</p>
+
+<me>\frac{\partial }{\partial x} f(x,y)=2x+2y-4</me>
+
+<me>\frac{\partial }{\partial y} f(x,y)=2x+6y-3.</me>
+
+<p>We need to find the places where both partial derivatives are 0.  With this simple system, I can solve this system algebraically and find the only critical point is <m>(9/4, -1/4)</m>.  </p>
+
+<me>0=2x+2y-4</me>
+
+<me>0=2x+6y-3</me>
+<p>Subtract the equations to eliminate <m>x</m>.</p>
+<me>0=0-4y-1</me>
+<p>Solve for <m>y</m>.</p>
+<me>4y=-1</me>
+
+<me>y=-1/4</me>
+<p>Substitute back and solve for <m>x</m>.</p>
+<me>0=2x+2(-1/4)-4</me>
+
+<me>2x=9/2</me>
+
+<me>x=9/4</me>
+
+
+<p><term>Critical Point by Solver</term>: However, if the partials are more complicated, I will want to find the critical points another way.  I can find the point with Solver.</p>
+
+                <image width="50%" source="images/sec-6-3-1.png">
+                </image>
+
+<p>To get solver to set both partials to 0 at the same time, I ask it to solve for <m>f_y=0</m>, while setting <m>f_x=0</m> as a constraint.  Make sure to uncheck the box that makes unconstrained variables non-negative.</p>
+
+                <image width="80%" source="images/sec-6-3-2.png">
+                </image>
+\
+<p>This finds our critical point within our error tolerance.</p>
+
+                <image width="40%" source="images/sec-6-3-3.png">
+                </image>
+
+<p><term>Critical Point by CAS</term>: We can also use Wolfram|Alpha to find the solution to our system of equations.</p>
+
+                <image width="80%" source="images/sec-6-3-4.png">
+                </image>
+
+<p><term>Determining the Critical Point is a Minimum</term> We thus get a critical point at (9/4,-1/4) with any of the three methods of solving for both partial derivatives being zero at the same time.
+Once we have a critical point we want to determine if it is a maximum, minimum, or something else.  The easiest way is to look at the graph near the critical point.</p>
+
+                <image width="100%" source="images/sec-6-3-5.png">
+                </image>
+
+<p>It is clear from the graph that this critical point is a local minimum.</p>
+</example>
+
+<p>It is easy to see that <m>f(x,y)=x^2+y^2</m> has a critical point at <m>(0,0)</m> and that that point is a minimum for the function.  Similarly, <m>f(x,y)=-x^2-y^2</m> has a critical point at <m>(0,0)</m> and that that point is a maximum for the function. For some functions, like <m>f(x,y)=x^2-y^2</m>, which has a critical point at <m>(0,0)</m>, we can have a maximum in one direction and a minimum in another direction.  Such a point is called a <term>saddle point</term>.  We note that we can have a saddle point even if the <m>x</m> and <m>y</m> slice curves both indicate a minimum.</p>
+
+<example><title>A Saddle Point at a Minimum on Both Axes</title><p> Show that <m>f(x,y)=x^2-3xy+y^2</m> has a critical point at <m>(0,0)</m>, which is a minimum of both slice curves, but is not a local minimum.</p>
+
+<p>Solution:  We look at the two partial derivatives, and notice they are both zero at the origin.</p>
+
+<me>\frac{\partial }{\partial x} f(x,y)=2x-3y</me>
+
+<me>\frac{\partial }{\partial x} f(x,y)=-3x+2y.</me>
+
+<p>We then see that both slice curves are parabolas that bend up, with a minimum at 0.</p>
+
+<me>f(x,0)=x^2</me>
+
+<me>f(0,y)=y^2.</me>
+
+<p>However if we take the slice with <m>x=y</m>, we get a parabola bending down, so we don’t have a minimum.</p>
+
+<me>f(x,-x)=x^2-3x x+x^2=-x^2.</me>
+
+<p>Looking at the graph, we see that this graph does not have a minimum. </p> 
+
+                <image width="100%" source="images/sec-6-3-6.png">
+                </image>
+ </example>
+
+<p>With only first derivatives, we can just find the critical points.  To check if a critical point is maximum, a minimum, or a saddle point, using only the first derivative, the best method is to look at a graph to determine the kind of critical point.  For some applications we want to categorize the critical points symbolically. </p>
+
+
+<p><term>Second Partial Derivatives</term></p>
+
+<p>With functions of one variable we used the second derivative to test if a critical point was a maximum or minimum.  In the two variable case we need to define the second derivatives and use them to define the discriminant of a function to test if a critical point is a minimum, maximum, or saddle point.  We first need to define second partial derivatives.</p>
+
+<assemblage><p><term>Second partials</term>:</p>
+<p><me> f_{ab}=(f_a )_b=\frac{\partial}{\partial b}(\frac{\partial}{\partial a} f).</me></p></assemblage>
+
+<p>Note that <m>f_{xx}</m> is simply the old second derivative of the curve <m>f(x,y_0)</m> and <m>f_{yy}</m> is simply the old second derivative of the curve <m>f(x_0,y)</m>.  For curves with continuous second partial derivatives, the mixed partials, <m>f_{yx}</m> and <m>f_{xy}</m> are the same.</p>
+
+<example><title>Finding Second Partial Derivatives</title>
+<p>Find the second partial derivatives of</p> 
+<me>f(x,y)=x^2+ 3xy+5y^3-7x-11y. </me> 
+
+<p>Solution:  We start by computing the first partial derivatives.</p>
+
+<me>f_x=\frac{\partial}{\partial x} f(x,y)=2x+3y-7</me>
+
+<me>f_y=\frac{\partial}{\partial y} f(x,y)=3x+15y^2-11.</me>
+<p>Then we compute the second partial derivatives.</p>
+
+<me>f_{xx}=\frac{\partial}{\partial x} f_x=2</me>
+
+<me>f_{xy}=\frac{\partial}{\partial y} f_x=3</me>
+
+<me>f_{yx}=\frac{\partial}{\partial x} f_y=3</me>
+
+<me>f_{yy}=\frac{\partial}{\partial y} f_y=30y</me>
+
+<p>As expected, the mixed partials are the same.</p>
+</example>
+
+<p><term>Using the Discriminant to Test Critical Points</term></p>
+
+<p>To test if a critical point is a maximum, minimum, or saddle point we compute the discriminant of the function.</p>
+
+<assemblage><p><term>Discriminant</term>:</p>
+<p><me> D(f(x,y))=f_{xx} f_{yy}-f_{xy}^2.</me></p>
+</assemblage>
+
+<example><title>Finding the Discriminant of a Function</title>
+<p>Find the discriminant of </p>
+<me>f(x,y)=x^2+ 3xy+5y^3-7x-11y.  </me>
+
+<p>Solution:  We have already computed the second partial derivatives.</p>
+
+<me>f_xx=2,\quad f_xy=3,\quad   f_yy=30y.</me>  
+<p>Substituting into the formula</p>
+
+<me>D=(2)(30y)-3^2=60y-9.</me>
+</example>
+
+<assemblage><p><term>Discriminant test</term>: Let <m>(a,b)</m>  be a critical point of <m>f(x,y)</m>.</p>
+<p>If <m>D(a,b)>0</m> and <m>f_{xx} (a,b)>0</m> then <m>(a,b)</m> is a local minimum of <m>f(x,y)</m>. </p>
+
+<p>If <m>D(a,b)>0 </m> and <m>f_{xx} (a,b)\lt 0</m> then <m>(a,b)</m> is a local maximum of <m>f(x,y)</m>.</p>
+
+<p>If <m>D(a,b)\lt 0</m> then <m>(a,b)</m> is a saddle point of <m>f(x,y)</m>.</p>
+
+<p>If <m>D(a,b)=0</m> we do not have enough information to classify the point.</p></assemblage>
+
+<example><title>Using the Discriminant to Classify Critical Points</title>
+<p>Based on the information given, classify each of the following points as a local maximum, local minimum, saddle point, not a critical point, or not enough information to classify. </p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>p</cell>                   
+<cell><m>{f_x}</m></cell>
+<cell><m>{f_y}</m></cell>
+<cell><m>f_{xx}</m></cell>
+<cell><m>f_{xy}</m></cell>
+<cell><m>f_{yy}</m></cell>
+</row>                    
+<row bottom="minor">
+<cell>A</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+</row>                    
+<row bottom="minor">
+<cell>B</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>3</cell>
+<cell>2</cell>
+<cell>4</cell>
+</row>                    
+<row bottom="minor">
+<cell>C</cell>
+<cell>1</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>3</cell>
+</row>                    
+<row bottom="minor">
+<cell>D</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>0</cell>
+</row>                    
+<row bottom="minor">
+<cell>E</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>-1</cell>
+<cell>2</cell>
+<cell>3</cell>
+</row>                    
+<row bottom="minor">
+<cell>F</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>-3</cell>
+<cell>1</cell>
+<cell>-2</cell>
+</row>                    
+<row bottom="minor">
+<cell>G</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>3</cell>
+<cell>3</cell>
+<cell>3</cell>
+</row>                    
+                </tabular>
+
+<p>Solution:  We need to compute the discriminant and apply the test.</p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>p</cell>
+<cell><m>f_x</m></cell>
+<cell><m>f_y</m></cell>
+<cell><m>f_{xx}</m></cell>
+<cell><m>f_{xy}</m></cell>
+<cell><m>f_{yy}</m></cell>
+<cell>Discriminant</cell>
+<cell>Classification</cell>
+</row>                    
+<row bottom="minor">
+<cell>A</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>0</cell>
+<cell>Not enough information</cell>
+</row>                    
+<row bottom="minor">
+<cell>B</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>3</cell>
+<cell>2</cell>
+<cell>4</cell>
+<cell>8</cell>
+<cell>Not a critical point</cell>
+</row>                    
+<row bottom="minor">
+<cell>C</cell>
+<cell>1</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>3</cell>
+<cell>-4</cell>
+<cell>Not a critical point</cell>
+</row>                    
+<row bottom="minor">
+<cell>D</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>0</cell>
+<cell>-4</cell>
+<cell>Saddle point</cell>
+</row>                    
+<row bottom="minor">
+<cell>E</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>-1</cell>
+<cell>2</cell>
+<cell>3</cell>
+<cell>-7</cell>
+<cell>Saddle point</cell>
+</row>                    
+<row bottom="minor">
+<cell>F</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>-3</cell>
+<cell>1</cell>
+<cell>-2</cell>
+<cell>5</cell>
+<cell>Maximum</cell>
+</row>                    
+<row bottom="minor">
+<cell>G</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>3</cell>
+<cell>3</cell>
+<cell>3</cell>
+<cell>0</cell>
+<cell>Not enough information</cell>
+</row>                    
+                </tabular>
+</example>
+
+<example><title>Finding and Classifying Critical Points</title>
+<p>Let <m>f(x,y)=x^3-3x+y^3-3y^2</m>.  Find the critical points and classify them using the discriminant. </p>
+
+<p>Solution:  We start by computing the first partial derivatives.</p>
+
+<me>f_x=3x^2-3=3(x-1)(x+1)</me>
+
+<me>f_y=3y^2-6y=3(y-2)(y).</me>
+
+<p>Then we compute the second partial derivatives and the discriminant.</p>
+
+<me>f_{xx}=6x,\quad f_{xy}=0,\quad f_{yy}=6y-6,\quad D=(6x)(6y-6)-0^2=36xy-36x.</me>
+
+<p>We have critical points when both first partials are 0, so at <m>(1,2)</m>, <m>(-1,2)</m>, <m>(1,0)</m>, and <m>(-1,0)</m>.</p>
+<p>At <m>(1,2)</m>, both <m>D</m> and <m>f_{xx}</m> are positive, so we have a local minimum.</p>
+<p>At <m>(-1,2)</m> and <m>(1,0)</m>, <m>D</m> is negative, so we have a saddle point.</p>
+<p>At (<m>(-1,0)</m>, <m>D</m> is positive and <m>f_{xx}</m> is negative,
+so we have a local maximum.</p>
+</example>
+
+<exercises xml:id="exercises-set-sec-3-3">
+	<title>Exercises: Critical Points and Extrema Problems</title>
+
+<p>
+For exercises 1-6, for the given functions and region:</p>
+<ul>
+<li><p>Find the partial derivatives of the original function.</p></li>
+<li><p>Find any critical points in the region.</p></li>
+<li><p>Produce a small graph around any critical point.</p></li>
+<li><p>Determine if the critical points are maxima, minima, or saddle points.</p></li>
+</ul>
+
+<exercise ><statement><p> The function is <m>f(x,y)=x^2+2xy+4y^2+5x-6y</m>, for the region 
+<m>-10\le x\le 10</m>, and <m>-10\le y\le 10</m>.
+</p></statement><solution>
+<ul>
+<li>
+<me>f_x  (x,y)=2x+2y+5</me>
+<me>f_y  (x,y)=2x+8y-6</me>
+</li>
+<li><p>Set the partial derivatives equal to 0 and solve for <m>x</m> and <m>y</m>.</p>
+<me>f_x  (x,y)=2x+2y+5=0</me>
+<me>f_y  (x,y)=2x+8y-6=0</me>
+<p>We can use either the method of substitution (solve for <m>x</m> or <m>y</m> in one equation and substitute into the other and solve), or method by elimination (multiply both equations by carefully chosen numbers and ass/subtract the equations from each other.)</p>
+<p>We will demonstrate method of elimination:</p>
+<me>-1×(2x+2y+5=0)           gives-2x-2y-5=0</me>
+<me>1×(2x+8y-6=0)          gives  2x+8y-6=0</me>
+<p>Adding the two equations gives <m>6y-11=0</m>.  
+  Hence  <m>y=  11/6</m>.</p>
+<p>Pick one of the equations to solve for x (it does not matter which one)</p>
+<me>2x+2y+5=0  \quad \text{and }y=  11/6</me>
+<p>Implies that   <m>2x+2(11/6)+5=0</m>  so <m>x=  (2(11/6)+5)/(-2)=-13/3</m>.</p>
+<p>We can also solve this system of equations using Wolfram Alpha</p>
+
+                <image width="40%" source="images/sec6-3-sol1a.png">
+                </image>
+</li>
+<li><p>
+The command in Wolfram Alpha is</p>
+                 <image width="60%" source="images/sec6-3-sol1b.png">
+                </image>
+ 
+<p>It is worth looking at both the 3D Plot and the Contour Plot</p>
+                <sidebyside widths="45% 45%" valigns="middle top">
+                    <image source="images/sec6-3-sol1c.png"/>
+                    <image source="images/sec6-3-sol1d.png"/>
+                </sidebyside>
+                <sidebyside widths="45% 45%" valigns="middle top">
+                    <p>3D Plot</p>
+                    <p>Contour Plot</p>
+                </sidebyside>
+</li>
+<li>
+<p>The 3D plot suggests a minimum, and this is confirmed by the contour plot which shows they typical view of a local minimum. </p>
+
+<p>As an alternative we can find the discriminant.</p>
+<me>f_{xx}  (x,y)=2</me>
+<me>f_{xy}  (x,y)=2</me>
+<me>f_{yy}  (x,y)=8</me>
+
+<me>D=f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2=2*8-2^2=12>0</me>
+<p>Since <m> D\gt 0</m> and <m>f_{xx}  (x,y)\gt 0</m> we have a local minimum.</p>
+</li>
+</ul>
+</solution></exercise>
+
+<exercise ><statement><p> The function is <m>f(x,y)=x^2+7xy+2y^2+4x-3y</m>, for the region 
+<m>-10\le x\le 10</m>, and <m>-10\le y\le 10</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> The function is <m>f(x,y)=-x^2+2xy-4y^2+8x-11y</m>, for the region 
+<m>-10\le x\le 10</m>, and <m>-10\le y\le 10</m>.
+</p></statement><solution>
+<ul>
+<li>
+<me>f_x  (x,y)=-2x+2y+8</me>
+<me>f_y  (x,y)=2x-8y-11</me>
+</li>
+
+<li><p>Set the partial derivatives equal to 0 and solve for <m>x</m> and <m>y</m>.</p>
+<me>f_x  (x,y)=-2x+2y+8=0</me>
+<me>f_y  (x,y)=2x-8y-11=0</me>
+<p>Adding the equations <m>-6y-3=0</m>, and so <m>y=-1/2</m>.</p>
+<p>Substituting in the first equation give <m>-2x+7=0</m>, and so <m>x=7/2</m>.</p>
+
+<p>Hence we have a critical points at <m>(7/2,-1/2)</m>.</p>
+</li>
+
+<li><p>
+For <m>(x,y)= (2,1)</m></p>
+                <image width="60%" source="images/sec6-3-sol3a.png">
+                </image>
+ 
+                <sidebyside widths="45% 45%" valigns="middle top">
+                    <image source="images/sec6-3-sol3b.png"/>
+                    <image source="images/sec6-3-sol3c.png"/>
+                </sidebyside>
+</li>
+<li>
+<p>From the picture we conclude that the critical point is a maximum. </p>
+
+<p>As an alternative we can find the discriminant.</p>
+<me>f_{xx}  (x,y)=-2</me>
+<me>f_{xy}  (x,y)=2</me>
+<me>f_{yy}  (x,y)=-8</me>
+
+<me>D=f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2=2*8-2^2=12\gt 0</me>
+<p>Since <m> D\gt 0</m> and <m>f_{xx}  (x,y)\lt 0</m> we have a local maximum.</p>
+</li>
+</ul>
+</solution></exercise>
+
+<exercise ><statement><p> The function is <m>f(x,y)=x^3-12x+y^3-3y</m>, for the region 
+<m>-10\le x\le 10</m>, and <m>-10\le y\le 10</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p> The function is the revenue function for selling widgets and gizmos with demand price functions</p>
+
+<me>PriceGizmos=25-\frac{QuantityGizmos}{50}-\frac{QuantityWidgets}{200}</me>
+
+<me>PriceWidgets=30-\frac{QuantityWidgets}{45}-\frac{QuantityGizmos}{300}</me>
+
+<p>for the region <m>0\le QuantityWidgets\le 1500</m>, and 
+<m>0\le QuantityGizmos\le 1500</m>.
+
+</p></statement><solution>
+<p>To solve this problem we will rename Gizmos <m>x</m> and Widgets <m>y</m>. This will make using Wolfram Alpha slightly easier, and symbol manipulation a tad more straight forward.</p>
+
+<me>PriceX=25-\frac{x}{50}-\frac{y}{200}</me>
+<me>PriceY=30-\frac{y}{45}-\frac{x}{300}</me>
+
+<me>Revenue (x,y)=x*PriceX+y *PriceY</me>
+<me>=x \left[25-\frac{x}{50}-\frac{y}{200}\right]
++y\left[30-\frac{y}{45}-\frac{x}{300}\right]</me>
+<me>= \frac{-36x^2-15xy+45000x-40y^2+54000y}{1800} </me>
+<ul>
+<li>
+<me>Revenue_x (x,y)
+= \frac{-24x-5y+1000}{600} </me>
+<me>Revenue_y (x,y)
+= \frac{-3x-16y+10800}{360} </me></li>
+<li><p>Using WolframALpha, the critical point is at <m>(62000/123, 23800/41)  \approx (504, 580.5)</m></p>
+                <image width="50%" source="images/sec6-3-sol5a.png">
+                </image>
+</li>
+<li><p>Using WolframAlpha we get:</p>
+                <image width="60%" source="images/sec6-3-sol5b.png">
+                </image>
+                <image width="40%" source="images/sec6-3-sol5c.png">
+                </image>
+</li>
+<li><p>From the picture we conclude that the critical point is a maximum. </p>
+
+<p>As an alternative we can find the discriminant.</p>
+<me>f_{xx}  (x,y)=-\frac{1}{25}</me>
+<me>f_{xy}  (x,y)=-\frac{1}{120}</me>
+<me>f_{yy}  (x,y)=-\frac{4}{25}</me>
+
+<me>D=f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2 \gt 0</me>
+<p>Since <m> D\gt 0</m> and <m>f_{xx}  (x,y)\lt 0</m> we have a local maximum.</p>
+</li>
+</ul>
+</solution></exercise>
+
+<exercise ><statement><p> The function is the revenue function for selling widgets and gizmos with demand price functions</p>
+
+<me>PriceGizmos=30(0.9)^{(QuantityGizmos/150) }-\frac{QuantityWidgets}{250}</me>
+
+<me>PriceWidgets=20(0.97)^{(QuantityWidgets/50) }-\frac{QuantityGizmos}{350}</me>
+
+<p>for the region <m>0\le QuantityWidgets\le 1500</m>, and 
+<m>0\le QuantityGizmos\le 1500</m>.  (Warning: There are several critical points.)
+</p></statement></exercise>
+
+<exercise ><statement><p> Based on the information given, classify each of the following points as a local maximum, local minimum, saddle point, not a critical point, or not enough information to classify. </p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>p</cell>
+<cell><m>f_x</m></cell>
+<cell><m>f_y</m></cell>
+<cell><m>f_{xx}</m></cell>
+<cell><m>f_{xy}</m></cell>
+<cell><m>f_{yy}</m></cell>
+</row>                    
+<row bottom="minor">
+<cell>A</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>3</cell>
+<cell>4</cell>
+<cell>5</cell>
+</row>                    
+<row bottom="minor">
+<cell>B</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+</row>                    
+<row bottom="minor">
+<cell>C</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>5</cell>
+<cell>3</cell>
+</row>                    
+<row bottom="minor">
+<cell>D</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>2</cell>
+<cell>2</cell>
+</row>                    
+<row bottom="minor">
+<cell>E</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>3</cell>
+</row>                    
+<row bottom="minor">
+<cell>F</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>0</cell>
+</row>                    
+<row bottom="minor">
+<cell>G</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>-1</cell>
+<cell>0</cell>
+</row>                    
+                </tabular>
+</statement><solution>
+<p>Add a column for D and classify.</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>p</cell>
+<cell><m>f_x</m></cell>
+<cell><m>f_y</m></cell>
+<cell><m>f_{xx}</m></cell>
+<cell><m>f_{xy}</m></cell>
+<cell><m>f_{yy}</m></cell>
+<cell><m>D</m></cell>
+<cell>Classification</cell>
+</row>                    
+<row bottom="minor">
+<cell>A</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>3</cell>
+<cell>4</cell>
+<cell>5</cell>
+<cell>-1</cell>
+<cell>Not Critical</cell>
+</row>                    
+<row bottom="minor">
+<cell>B</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>Not Enough Info</cell>
+</row>                    
+<row bottom="minor">
+<cell>C</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>5</cell>
+<cell>3</cell>
+<cell>-19</cell>
+<cell>Not Critical</cell>
+</row>                    
+<row bottom="minor">
+<cell>D</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>2</cell>
+<cell>2</cell>
+<cell>0</cell>
+<cell>Not Enough Info</cell>
+</row>                    
+<row bottom="minor">
+<cell>E</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>3</cell>
+<cell>-1</cell>
+<cell>Saddle Point</cell>
+</row>                    
+<row bottom="minor">
+<cell>F</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>Not Enough Info</cell>
+</row>                    
+<row bottom="minor">
+<cell>G</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>-1</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>Not Enough Info</cell>
+</row>                    
+                </tabular>
+
+</solution></exercise>
+
+<exercise ><statement><p> Based on the information given, classify each of the following points as a local maximum, local minimum, saddle point, not a critical point, or not enough information to classify. </p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>p</cell>
+<cell><m>f_x</m></cell>
+<cell><m>f_y</m></cell>
+<cell><m>f_{xx}</m></cell>
+<cell><m>f_{xy}</m></cell>
+<cell><m>f_{yy}</m></cell>
+</row>                    
+<row bottom="minor">
+<cell>A</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>3</cell>
+<cell>4</cell>
+<cell>5</cell>
+</row>                    
+<row bottom="minor">
+<cell>B</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+</row>                    
+<row bottom="minor">
+<cell>C</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>5</cell>
+<cell>3</cell>
+</row>                    
+<row bottom="minor">
+<cell>D</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>2</cell>
+<cell>2</cell>
+</row>                    
+<row bottom="minor">
+<cell>E</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>2</cell>
+<cell>3</cell>
+</row>                    
+<row bottom="minor">
+<cell>F</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>1</cell>
+<cell>0</cell>
+</row>                    
+<row bottom="minor">
+<cell>G</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>0</cell>
+<cell>-1</cell>
+<cell>0</cell>
+</row>                    
+                </tabular>
+</statement></exercise>
+
+
+
+
+<exercise ><statement><p> Using polynomials of the form <m>f(x,y)=ax^3+bx^4+cy^3+dy^4</m>, produce a function that has a critical point at <m>(0, 0)</m>, of each type. </p>
+<ol label="(1)">
+<li><p>A local maximum.</p></li>
+<li><p>A local minimum.</p></li>
+<li><p>A saddle point where the function f(x,0)  has a local maximum and f(0,y)  has a local minimum.</p></li>
+<li><p>A saddle point where the function f(x,0)  and f(0,y)  both have inflection points.</p></li>
+</ol>
+</statement><solution>
+<p>It helps to consider the question with only one variable.</p>
+<p><m>f(x)=ax^3</m> has an inflection point at <m>x=0</m> and neither a max nor a minimum.</p>
+<p><m>f(x)=ax^4</m> has minimum at <m>x=0</m> if <m>a\gt 0</m> and a maximum if <m>a\lt 0</m>.</p>
+<p>Since all terms are of degree at least three, all second partial derivatives are zero at the origin, so the discriminant test fails.</p>
+<ol label="(1)">
+<li><p>A local maximum: <m>(x,y) = -x^4-y^4</m>.  Both <m>x^4</m> and <m>y^4</m> are nonnegative, so the function is negative everywhere except at the origin where it is 0.</p></li>
+<li><p>A local minimum: <m>f(x,y)= x^4+y^4</m>.  Both <m>x^4</m> and <m>y^4</m> are nonnegative, so the function is positive everywhere except at the origin where it is 0.</p></li>
+<li><p>A saddle point where the function <m>f(x,0)</m>  has a local maximum and <m>f(0,y)</m>  has a local minimum: <m>(x,y)= -x^4+y^4</m>. </p></li>
+<li><p>A saddle point where the function <m>f(x,0)</m>  and <m>f(0,y)</m>  both have inflection points: <m>f(x,y)= x^3+y^3</m></p></li>
+</ol>
+
+</solution></exercise>
+
+
+</exercises>
+        </section>
+ 
+         <section xml:id="sec-6-4-OptimizationBestFitCurves">
+            <title>Optimization and Best Fitting Curves</title>
+
+          <p><url href="./Examples/Section-6-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+            <p>
+In the last section we looked at using the partial derivatives to find the maximum or minimum of a function in several variables.  This is an extension of the optimization problems we did with functions of a single variable.  It is worthwhile to take another look at best fitting curves or trendlines, a process Excel has been doing throughout the course and see that it is a particular example of optimization.  This will let us to best fitting curves that use models other than the ones used by the trendline command.</p>
+
+<p><term>Definition of Best Fitting Curve</term></p>
+
+<p>Before we can find the curve that is best fitting to a set of data, we need to understand how “best fitting” is defined.  We start with the simplest nontrivial example.  We consider a data set of 3 points, <m>{(1,0),(3,5),(6,5)}</m> and a line that we will use to predict the y-value given the x-value, <m>predicted(x)=x/2 +1</m>.  We want to determine how well the line matches that data.  For each point, <m>(x_0,y_0)</m>, in the set we start by finding the corresponding point, <m>(x_0,predicted(x_0 ))</m>, on the line.  This gives us a set of predicted points, <m>{(1,1.5),(3,2.5),(6,4)}</m>.</p>
+
+                <image width="80%" source="images/sec-6-4-1.png">
+                </image>
+
+<p>For each point we now compute the difference between the actual y-values and the predicted y-values.  Our errors are the lengths of the brown segments in the picture, in this case <m>{3/2,3/2,1}</m>.  Finally we add the squares of the errors, <m>9/4+9/4+1=11/2</m>.  </p>
+
+<p>The best fitting line is defined to be the line that that minimizes the sum of the squares of the error.  If we are trying to fit the data with a different model we want to choose the equation from that model that minimizes the sum of the squares of the error.  </p>
+
+<p>Now that we have a definition we want to look at fitting a line to a simple data set in three ways.  We will start with the data set of three points:
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>x</cell>
+<cell>2</cell>
+<cell>4</cell>
+<cell>8</cell>
+</row>                    
+<row bottom="minor">
+<cell>y</cell>
+<cell>1</cell>
+<cell>15</cell>
+<cell>15</cell>
+</row>                    
+                </tabular>
+
+We want to start with the familiar method, using the trendline command from a graph.  Then we want to use solver to minimize the sum of squared errors.  Finally we want to look at the function for sum of squared errors to see how we find the line using partial derivatives.  After we have looked at all three approaches for this first example we will consider more complicated examples. </p>
+
+<example><title>Finding a Best-Fit Curve with Trendline</title>
+<p>Use the trendline command to find the best fitting line for the data:</p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>x</cell>
+<cell>2</cell>
+<cell>4</cell>
+<cell>8</cell>
+</row>                    
+<row bottom="minor">
+<cell>y</cell>
+<cell>1</cell>
+<cell>15</cell>
+<cell>15</cell>
+</row>                    
+                </tabular>
+
+
+<p>Solution:  We start by making a table adding a scatterplot and adding a trendline to the graph.  We remember to select the option to make the formula visible.  The trendline command tells us the slope should be 2 and the intercept should be 1.</p>
+
+                <image width="80%" source="images/sec-6-4-2.png">
+                </image>
+</example> 
+
+<example><title>Finding a Best-Fit Curve with the Definition and Solver</title>
+
+<p>Use solver and the definition of best fitting to find the best fitting line for the data:</p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>x</cell>
+<cell>2</cell>
+<cell>4</cell>
+<cell>8</cell>
+</row>                    
+<row bottom="minor">
+<cell>y</cell>
+<cell>1</cell>
+<cell>15</cell>
+<cell>15</cell>
+</row>                    
+                </tabular>
+
+<p>Solution:  To use solver we need to add the predicting equation.  We start with a randomly chosen slope and intercept for our prediction line.  Our table has a PredictedY column, which gives the value that would be on the line with our slope and intercept.  We add in the error, which is the difference between the predicted y and the actual y, and the square of the error.  We then take the sum of the squares of the errors.</p>
+
+                <image width="70%" source="images/sec-6-4-3.png">
+                </image>
+
+<p>Our use of Solver is similar to when we were looking for a minimum of a function of one variable.  We need to designate the cell with the value we want to minimize.  We select the button to minimize.  We now designate two cells that represent variables we can change. </p>
+
+                <image width="80%" source="images/sec-6-4-4.png">
+                </image>
+
+<p>Solver produces the same answer.  The best fitting line is </p>
+
+<me>y=2x+1.</me>
+</example>
+
+<example><title>Finding a Best-Fit Curve with the Definition and Calculus</title>
+<p> Use calculus, partial derivatives, and the definition of best fitting to find the best fitting line for the data:</p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>x</cell>
+<cell>2</cell>
+<cell>4</cell>
+<cell>8</cell>
+</row>                    
+<row bottom="minor">
+<cell>y</cell>
+<cell>1</cell>
+<cell>15</cell>
+<cell>15</cell>
+</row>                    
+                </tabular>
+
+<p>Solution:  Before we can use partial derivatives to find a best fitting line, we need a function whose derivatives we are taking.  We start with the chart we produced when we were using solver.  This gives a formula for the squared error at each point in terms of the slope and intercept of the line.</p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Point</cell>
+<cell>x</cell>
+<cell>y</cell>
+<cell>Predicted-y</cell>
+<cell><m>error</m></cell>
+<cell><m>error^2</m></cell>
+</row>                    
+<row bottom="minor">
+<cell><m>P1</m></cell>
+<cell><m>2</m></cell>
+<cell><m>1</m></cell>
+<cell><m>m*2+b</m></cell>
+<cell><m>m*2+b-1</m></cell>
+<cell><m>(m*2+b-1)^2</m></cell>
+</row>                    
+<row bottom="minor">
+<cell>P2</cell>
+<cell>4</cell>
+<cell>15</cell>
+<cell>m*4+b</cell>
+<cell>m*4+b-15</cell>
+<cell>(m*4+b-15)</cell>
+</row>                    
+<row bottom="minor">
+<cell>P3</cell>
+<cell>8</cell>
+<cell>15</cell>
+<cell>m*8+b</cell>
+<cell>m*8+b-15</cell>
+<cell><m>(m*8+b-15)^2</m></cell>
+</row>                    
+                </tabular>
+
+
+<p>We can expand the error squared term and add up those values.  After a straightforward but tedious computation, we see that we are trying to minimize</p>
+
+<me>SumErrorSq(m,b)=84m^2+28mb+3b^2-62b-364m+451.</me>
+
+<p>We take the partial derivative of this function with respect to the slope <m>m</m> and the intercept <m>b</m>.</p>
+<me>SumErrorSq_m (m,b)=168m+28b-364.</me>
+
+<me>SumErrorSq_b (m,b)=28m+6b-62.</me>
+
+<p>Setting the two partials to zero and solving we see the partials are both zero when <m>m=2</m> and <m>b=1</m>.  One again, this method produces the same best fitting line.</p>
+</example>
+
+<p>We can use the same methods with a larger problem.</p>
+
+<example><title>Use the Solver Method on a larger Data Set</title>
+<p>The table below gives census data for a collection of 10 states.  Find the best fitting line to predict 2010 population based on 2000 population.</p>
+
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell></cell>
+<cell>Pop 2000</cell>
+<cell>Pop 2010</cell>
+</row>                    
+<row bottom="minor">
+<cell>Wyoming</cell>
+<cell>493,782</cell>
+<cell>563,62</cell>
+</row>                    
+<row bottom="minor">
+<cell>Delaware</cell>
+<cell>783,600</cell>
+<cell>897,934</cell>
+</row>                    
+<row bottom="minor">
+<cell>Maine</cell>
+<cell>1,274,923</cell>
+<cell>1,328,361</cell>
+</row>                    
+<row bottom="minor">
+<cell>Nevada</cell>
+<cell>1,998,257</cell>
+<cell>2,700,551</cell>
+</row>                    
+<row bottom="minor">
+<cell>Iowa</cell>
+<cell>2,926,324</cell>
+<cell>3,046,355</cell>
+</row>                    
+<row bottom="minor">
+<cell>Kentucky</cell>
+<cell>4,041,769</cell>
+<cell>4,339,367</cell>
+</row>                    
+<row bottom="minor">
+<cell>Arizona</cell>
+<cell>5,130,632</cell>
+<cell>6,392,017</cell>
+</row>                    
+<row bottom="minor">
+<cell>Washington</cell>
+<cell>5,894,121</cell>
+<cell>6,724,540</cell>
+</row>                    
+<row bottom="minor">
+<cell>New Jersey</cell>
+<cell>8,414,350</cell>
+<cell>8,791,894</cell>
+</row>                    
+<row bottom="minor">
+<cell>California</cell>
+<cell>33,871,648</cell>
+<cell>37,253,956</cell>
+</row>                    
+                </tabular>
+
+
+
+<p>Solution:  We set up a spreadsheet in the same way we set it up in the last example.  For an initial slope we will start with 1.1 for 10% growth.  For a starting point we will guess an intercept of 0.  As we did in the last example, the predicted population in 2010 is the slope times the population in 2000 plus the intercept.  We add extra columns for the predicted population, the error between the prediction and the actual population, the square of the error.  At the bottom of the last column, we add the squared errors.  This gives the value we want to minimize.</p>
+
+                <image width="80%" source="images/sec-6-4-5.png">
+                </image>
+
+<p>When we use solver, the best fitting line is </p>
+
+<me>2010population=1.096*2000population+98,154.</me>
+</example>
+
+<p>The advantage of using the sum of squares definition is that we can find a best fitting curve using a model not supported by Excel.  For example if we have money invested with interest, but a portion of the capital kept available as cash without earning interest, we are looking for a curve of the form:</p>
+
+<me>TotalValue(time)=CashAmount+DepositAmount*rate^{time}.</me>
+
+<p>The trendline command does not let us choose such a model to find a best fitting curve.  It is straightforward using the best fit construction.</p>
+
+<example><title>Finding a Best-Fit Curve for a Nonstandard Model Equation</title>
+<p>We are given the following data on the value of a portfolio over time:</p>
+
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Year</cell>
+<cell>Amount</cell>
+</row>                    
+<row bottom="minor">
+<cell>0</cell>
+<cell>$10,000</cell>
+</row>                    
+<row bottom="minor">
+<cell>2</cell>
+<cell>$10,920</cell>
+</row>                    
+<row bottom="minor">
+<cell>5</cell>
+<cell>$12,490</cell>
+</row>                    
+<row bottom="minor">
+<cell>8</cell>
+<cell>$14,300</cell>
+</row>                    
+<row bottom="minor">
+<cell>9</cell>
+<cell>$14,960</cell>
+</row>                    
+<row bottom="minor">
+<cell>12</cell>
+<cell>$17,169</cell>
+</row>                    
+<row bottom="minor">
+<cell>14</cell>
+<cell>$18,820</cell>
+</row>                    
+<row bottom="minor">
+<cell>17</cell>
+<cell>$21,630</cell>
+</row>                    
+<row bottom="minor">
+<cell>19</cell>
+<cell>$23,740</cell>
+</row>                    
+<row bottom="minor">
+<cell>20</cell>
+<cell>$24,880</cell>
+</row>                    
+                </tabular>
+
+
+<p>We think the investor put some money in a secure account that does not give interest (a coffee can) and the rest of the money in an account that bore interest (an investment account).  Find the amount deposited in each account and the interest rate of the investment account.</p>
+
+<p>Solution:  We set this up much like we did for the linear model, except of model equation is now</p>
+
+<me>TotalValue(time)=CashAmount+DepositAmount*rate^{time}.</me>
+
+                <image width="80%" source="images/sec-6-4-6.png">
+                </image>
+
+<p>We then use Solver to minimize cell E26, by changing cells B20:B22.  Our solution indicates that CashAmount=$997.76, DepositAmount=$9,005.51, and 
+rate=1.05.</p>
+</example>
+
+<p>When we use this technique with other mathematical models, the only change is in the formula used for the predicted y value.  </p>
+
+<example><title>Finding a Best-Fit Logistic Curve</title>
+<p>We are managing a wood harvesting business.  The number of trees available in a plot is modeled as constrained growth.  That means we expect it to be modeled by a logistic equation.</p>
+
+<me>AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )</me>
+
+
+<p>We have the following information.  Find the best fitting curve.</p>
+
+
+                 <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Time</cell>
+<cell>Trees</cell>
+</row>                    
+<row bottom="minor">
+<cell>0</cell>
+<cell>150</cell>
+</row>                    
+<row bottom="minor">
+<cell>5</cell>
+<cell>400</cell>
+</row>                    
+<row bottom="minor">
+<cell>10</cell>
+<cell>1030</cell>
+</row>                    
+<row bottom="minor">
+<cell>20</cell>
+<cell>5300</cell>
+</row>                    
+<row bottom="minor">
+<cell>30</cell>
+<cell>12020</cell>
+</row>                    
+<row bottom="minor">
+<cell>40</cell>
+<cell>14510</cell>
+</row>                    
+                </tabular>
+
+
+<p>Solution:  We set this up much like we did for the linear model, but using the logistic model.</p>
+
+
+
+<p>We then use Solver to minimize cell E12, by changing cells B1:B3.  Our solution indicates that Capacity=14996, C=99.93, and 
+rate=0.200.</p>
+
+                <image width="80%" source="images/sec-6-4-7.png">
+                </image>
+</example>
+
+<p><term>Strengths and weaknesses of the three methods of fitting curves:
+</term></p>
+
+<p>We have examined three methods for finding a best fitting curve.  From chapter 1, we reviewed the method of plotting points and adding a trendline.  Using the sum of least squared error definition of best fit we looked at creating an error function and using Solver to minimize the error.  We also looked at using partial derivatives to find critical points of the error function.  It is worthwhile to look at some of the strengths and weaknesses of each method.</p>
+
+<p>
+The method of graphing points and using the trendline command has the advantage of being the simplest method when it works.  The biggest disadvantage of this method is that it only works with a small collection of mathematical models.  (We can use this method if our desired equation is linear, <m>y=mx+b</m>, logarithmic, <m>y=a \log(x)+b</m>, polynomial of degree no more than 6, power, <m>y=ax^b</m>, or exponential, <m>y=ae^bx</m>.)  As we have seen in this section, it is not hard to find situations where some other model should be used.  This method also has the disadvantage of simply giving an answer without showing intermediate steps that might provide other useful information.</p>
+
+<p>
+The method of using partial derivatives has the advantage of being mathematically clear.  It shows us what is going on when we find a best fitting curve.  However, in all but the simplest cases, this method has the disadvantage of involving a daunting flood of computations.  This method is good for informing us about how the method works, but not a method we want to use in practice for most realistic problems.</p>
+
+<p>
+The middle method, using Solver is a hybrid of the other two methods.  We start by deciding on the mathematical model that should fit our situation.  As we saw, the method is straightforward to adapt to any kind of equation.  It is straightforward to explicitly build our error function.  This method also has the advantage of making the error attributed to each point visible.  We can see if another curve is almost as good as the solution we find.  </p>
+
+<p>
+The disadvantages of the Solver method are the standard disadvantages of using Solver to find a minimum.  Recall that Solver simply finds a local minimum from a starting point.  Since solver uses numerical methods it looks for places where the partial derivatives are within our tolerance bounds of zero.  We cannot expect Solver to give an answer that is more precise than the tolerance bounds.
+With all of the methods we should be aware that we need enough points to get a reasonable fit of the curve.  Intuitively a small change in any point should not cause a big change in the curve.</p>
+
+<p>
+ As a general rule, we will use the trendline command when it works with the kind of equation we have decided to use as our model.
+</p> 
+
+<exercises xml:id="exercises-set-sec-6-4">
+	<title>Exercises: Optimization and Best Fitting Curves Problems</title>
+
+<p>
+For exercises 1-4, for the given data sets:</p>
+<ol label="(1)">
+<li><p>Plot the points and add a linear trendline.  Show the equation of the line.</p></li>
+<li><p>Create a spreadsheet to compare the data to a linear function.</p></li>
+<li><p>Add error to your spreadsheet.  Find the best fitting line, using Solver.</p></li>
+<li><p>Explicitly find the sum of squared errors function as a quadratic function of the slope m, and the intercept b.</p></li>
+<li><p>Find the values of m and b that minimize the error function by taking partial derivatives and setting them equal to 0.</p></li>
+</ol>
+
+
+<exercise ><statement><p> The given points are:
+</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>x</cell>
+<cell>-2</cell>
+<cell>0</cell>
+<cell>6</cell>
+</row>                    
+<row bottom="minor">
+<cell>y</cell>
+<cell>-7</cell>
+<cell>5</cell>
+<cell>15</cell>
+</row>                    
+                </tabular>
+</statement>
+<solution>
+<p>With trendlines we get the best fitting line:</p>
+                 <image width="60%" source="images/sec6-4-sol1a.png">
+                </image>
+
+<p>The line that gives us the best fitting curve is <m>y=2.5 x+1</m>.</p>
+<p>Using the least square error method we have the following values.</p>
+<p>We can set the information up as rows or as columns. Using the rows form the initial problem we have</p>
+                <image width="80%" source="images/sec6-4-sol1b.png">
+                </image>
+ 
+<p>Next we use Solver to minimize the sum of the errors</p>
+                <image width="100%" source="images/sec6-4-sol1c.png">
+                </image>
+ 
+<p>We started with <m>m=2</m> and <m>b=5</m> (somewhat arbitrary choices)</p>
+<p>We unchecked the constraint that the variables should be non-negative (<m>m</m> and/or <m>b</m> could theoretically be negative)</p>
+                <image width="60%" source="images/sec6-4-sol1d.png">
+                </image>
+
+<p>The least square method gives us the function <m>y=2.5x+1</m></p>
+
+<p>(Comment: this shows that the least squares method gives the same answer as the trendline method. The Least Square method is a more general technique however and can be used in cases where the trendlines are not sufficient. )</p>
+</solution></exercise>
+
+<exercise ><statement><p> The given points are:
+</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>x</cell>
+<cell>-2</cell>
+<cell>0</cell>
+<cell>6</cell>
+</row>                    
+<row bottom="minor">
+<cell>y</cell>
+<cell>24</cell>
+<cell>10</cell>
+<cell>20</cell>
+</row>                    
+                </tabular>
+</statement></exercise>
+
+<exercise ><statement><p> The given points are:
+</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>x</cell>
+<cell>-3</cell>
+<cell>-1</cell>
+<cell>1</cell>
+<cell>3</cell>
+</row>                    
+<row bottom="minor">
+<cell>y</cell>
+<cell>-2</cell>
+<cell>6</cell>
+<cell>10</cell>
+<cell>10</cell>
+</row>                    
+                </tabular>
+</statement><solution>
+                <image width="60%" source="images/sec6-4-sol3a.png">
+                </image>
+<p>We would define <m>m</m> and <m>b</m> and use these to create </p>
+<me>predicted\ y=mx+b</me>
+<p>If we had not done the trendline, the question would be: what should the initial values for <m>m</m> and</p>
+<p>The data ranges from <m>(-3,-2)</m> to <m>(3,10)</m> which suggests a slope of <m>m\approx (10-(-2))/(3-(-3) )=12/6=2</m>. </p>
+<p>Looking at the data near the <m>y</m>-axis suggests an initial guess of <m>b\approx 7.5</m>.</p>
+<p>So we would start with an Excel sheet like this:</p>
+                <image width="100%" source="images/sec6-4-sol3b.png">
+                </image>
+
+                <image width="100%" source="images/sec6-4-sol3c.png">
+                </image>
+<p>Setting up Solver as shown above we get <m>m = 2</m> and <m>b = 6</m>.</p>
+</solution></exercise>
+
+<exercise ><statement><p> The given points are:
+</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>x</cell>
+<cell>-2</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>4</cell>
+</row>                    
+<row bottom="minor">
+<cell>y</cell>
+<cell>-7</cell>
+<cell>5</cell>
+<cell>11</cell>
+<cell>11</cell>
+</row>                    
+                </tabular>
+</statement></exercise>
+
+<p>For exercises 5-8, find the curve of the indicated type that gives the best fit for the data.</p>
+
+
+<exercise ><statement><p> Sally has money invested in a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is:</p>
+ 
+<me>Amount(time)=InitialAmount* rate^{time}</me>
+<p>With the data:</p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Time</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>5</cell>
+<cell>10</cell>
+<cell>15</cell>
+<cell>20</cell>
+</row>                    
+<row bottom="minor">
+<cell>Amount</cell>
+<cell>$5000</cell>
+<cell>$5600</cell>
+<cell>$6700</cell>
+<cell>$9000</cell>
+<cell>$12000</cell>
+<cell>$16000</cell>
+</row>                    
+  
+                </tabular>
+<p>Find the best fitting curve of the given model.
+</p></statement><solution>
+<p>A scatter plot of the data will help us find some good initial guesses for the initial amount and the rate.</p>
+                <image width="60%" source="images/sec6-4-sol5a.png">
+                </image>
+
+
+<p>The <m>y</m>-intercept is about $5000. This occurs when time = 0, so the initial guess for the initial amount will be 5,000. The graph is an increasing function, so we know rate  <m>\gt 1</m>. </p>
+<p>Choosing rate = 1 will cause problems (the base of an exponential function should not be 1). Assuming this is a reasonable investment problem we will assume 5$ growth, so <m>r = 1.05</m></p>
+
+<p>The initial set-up looks like this. We have included a graph of the data given versus the predicted numbers. The initial guesses are not bad, but clearly we can do better.</p>
+
+                <image width="100%" source="images/sec6-4-sol5b.png">
+                </image>
+<p>After using Solver we determine that the best model function for our data is as follows:</p>
+                <image width="100%" source="images/sec6-4-sol5c.png">
+                </image>
+<me>Amount(time)=5,013.11* (1.06)^{time}</me>
+
+<p>Notice that the data is now indistinguishable from the model function in the graph.</p>
+
+<p>Remark: If we use Trendlines to find a exponential function that fits the data, we would get <m>y=5001 e^{0.0583*time}</m></p>
+<p>The least square error analysis shows that this is not as good of an approximation as the one we just found using Solver! The least squares error for the trendline is approximately 30% greater than for the value we found using Solver.</p>
+
+</solution></exercise>
+
+<exercise ><statement><p> Fred has put some of his money in a cash account that pays no interest and the rest of his money a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is</p>
+
+<me>Amount(time)=CashAmount+InvestmentAmount*rate^{time}</me>
+
+<p>With the data:</p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Time</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>5</cell>
+<cell>10</cell>
+<cell>15</cell>
+<cell>20</cell>
+</row>                    
+<row bottom="minor">
+<cell>Amount</cell>
+<cell>$10000</cell>
+<cell>$11000</cell>
+<cell>$14000</cell>
+<cell>$19000</cell>
+<cell>$27000</cell>
+<cell>$39000</cell>
+</row>                    
+  
+                </tabular>
+
+<p>Find the best fitting curve of the given model.
+</p></statement></exercise>
+
+<exercise ><statement><p> Mary has put some of her money in an investment that pays simple and the rest of her money a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is</p>
+
+<me>Amount(time)=Amount1+Return1*time+Amount2*rate2^{time}</me>
+
+<p>With the data:</p>
+
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Time</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>5</cell>
+<cell>10</cell>
+<cell>15</cell>
+<cell>20</cell>
+<cell>30</cell>
+<cell>40</cell>
+</row>                    
+<row bottom="minor">
+<cell>Amount</cell>
+<cell>$10000</cell>
+<cell>$11300</cell>
+<cell>$13500</cell>
+<cell>$18300</cell>
+<cell>$24700</cell>
+<cell>$33500</cell>
+<cell>$62600</cell>
+<cell>$118800</cell>
+</row>                    
+  
+                </tabular>
+
+<p>Find the best fitting curve of the given model.
+</p></statement><solution>
+<p>The function we are looking for has a linear component (Amount1+Return1*time), and an exponential component. There is no trendline that would do this for us.</p>
+<p>What do we know about these values?</p>
+<ul>
+<li><p>We have $10,000 at the very beginning and this is split into two different investments, so Amount 1 + Amount 2 = $10,000. </p></li>
+<li><p>What is Return 1? It should be the return on the first part of the investment. So it should be some amount we receive on an investment of at most $10,000. A first guess would be that the value is in the hundreds of dollars, but maybe close to $150 or $200?</p></li>
+<li><p>The rate is our final parameter. This is the growth due to interests. We will start with a guess of <m>rate = 1.05</m>.</p></li>
+</ul>
+<p>The Excel commands used to generate the table are as follows:</p>
+                <image width="100%" source="images/sec6-4-sol7a.png">
+                </image>
+<p>It is worth graphing both the actual data and the predicted data to see if we are setting the problem up correctly.</p>
+                <image width="100%" source="images/sec6-4-sol7b.png">
+                </image>
+<p>The general shape of the predicted values graph seems fine. The values are off, but Solver will be able to reduce the error.</p>
+                <image width="100%" source="images/sec6-4-sol7c.png">
+                </image>
+<p>The solution is:</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Amount 1</cell>
+<cell>3317.59</cell>
+</row>                    
+<row bottom="minor">
+<cell>return 1</cell>
+<cell>163.19</cell>
+</row>                    
+<row bottom="minor">
+<cell>rate </cell>
+<cell>1.07</cell>
+</row>                    
+                </tabular>
+
+<p>Hence <m>Amount 2 = 10,000 – 3,317.59 = 6,682.41</m>, and we have that</p>
+<me>Amount(time)=\$3,317.59+\$163.19*time+\$6,682.41* (1.07)^{time}</me>
+
+<p>In Excel the data and the predicted values now line up very nicely.</p>
+
+
+
+</solution></exercise>
+
+<exercise ><statement><p> John has divided his money between two accounts.  They both compound their returns, but they pay different rates.  Thus, the formula that models the investment is:</p>
+<me>Amount(time)=Amount1*rate1^{time}+Amount2*rate2^{time}</me>
+
+<p>With the data:</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Time</cell>
+<cell>0</cell>
+<cell>2</cell>
+<cell>5</cell>
+<cell>10</cell>
+<cell>15</cell>
+<cell>20</cell>
+<cell>30</cell>
+<cell>40</cell>
+</row>                    
+<row bottom="minor">
+<cell>Amount</cell>
+<cell>$10000</cell>
+<cell>$11500</cell>
+<cell>$14000</cell>
+<cell>$20000</cell>
+<cell>$29000</cell>
+<cell>$41500</cell>
+<cell>$87000</cell>
+<cell>$183500</cell>
+</row>                    
+                </tabular>
+<p>Find the best fitting curve of the given model.
+</p></statement></exercise>
+
+</exercises>
+        </section>
+ 
+ 
+        </chapter>
+        

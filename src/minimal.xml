@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2015 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+
+<!-- To process this file do                                                                      -->
+<!--                                                                                              -->
+<!-- (1) LaTeX/PDF:                                                                               -->
+<!--     xsltproc mathbook/xsl/mathbook-latex.xsl minimal.xml                                     -->
+<!--     pdflatex minimal.tex                                                                     -->
+<!--     xelatex minimal.tex                                                                      -->
+<!--                                                                                              -->
+<!-- (2) HTML:                                                                                    -->
+<!--     xsltproc mathbook/xsl/mathbook-html.xsl minimal.xml                                      -->
+<!--     <browswer>  minimal.html                                                                 -->
+<!--                                                                                              -->
+<!-- (3) SageMathCloud worksheet (parameter causes a single file for output)                      -->
+<!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
+<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-smc.xsl minimal.xml          -->
+<!--     <SageMathCloud> minimal.sagews                                                           -->
+<!--                                                                                              -->
+<!-- (4) Sage doctesting                                                                          -->
+<!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
+<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-sage-doctest.xsl minimal.xml -->
+<!--     <read further instructions in> minimal.py                                                -->
+
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">            
+
+    <docinfo>
+        <author>
+            <personname>Mike May, S.J.</personname>
+            <department>Department of Mathematics and Statistics</department>
+            <!-- Use "break" tag anywhere for forced line break -->
+            <institution>Saint Louis University
+               St. Louis, MO, USA</institution>
+            <email>maymk@slu.edu</email>
+        </author>
+        <macros>
+        \newcommand{\doubler}[1]{2#1}
+        </macros>
+    </docinfo>
+
+    <book xml:id="MyExample"> 
+        <title>Business Calculus with Excel</title>
+
+        <frontmatter>
+            <title>Frontmatter</title>
+
+            <titlepage>
+                <author>
+                    <personname>Mike May, S.J.</personname>
+                    <institution>Saint Louis UNiversity</institution>
+                </author>
+                <date><today /></date>
+            </titlepage>
+
+            <abstract>
+                <p>An attempt to build a chapter.</p>
+            </abstract>
+
+        </frontmatter>
+
+        <introduction>
+            <p>This is an attempt to convert my book on business calculus to MATH XML format</p>
+        </introduction>
+
+
+         <chapter xml:id="chap-1-MinExample"><title>First Chapter of Minimal Example</title>
+         <section xml:id="section-textual">
+            <title>Section 1.1 Linear Functions and models</title>
+
+            <p>Section 1.1 Linear Functions and models</p> 
+
+<p>text of first section</p>
+
+
+<exercises xml:id="exercises-set-sec-1-1">
+	<title>Exercises 1.1 Linear Functions and models</title>
+
+<!--
+<exercisegroup>
+<introduction>
+-->
+<p>For problems 1-6, given two points in the <m>(q,p)</m> plane and a value <m>q_0</m>:</p>
+<ol>
+	<li><p>Find the slope of the line determined by the points.</p></li>
+	<li><p>Give the equation of the line determined by the points.</p></li>
+	<li><p>Give the value of <m>p</m> predicted for <m>q_0</m> by the line.</p></li>
+</ol>
+<!--
+</introduction>
+-->
+
+<exercise ><statement><p> 
+Points <m>(2,5)</m> and <m>(6,17)</m>, with <m>q_0=4</m>.
+</p></statement>
+<hint><p>Find the slope and use the point-slope form</p></hint>
+<solution>
+
+<ol>
+	<li><p>First find the slope: <m>m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{17-5}{6-2}=\frac{12}{4}=3</m></p></li>
+
+<li><p>Next we find the equation of the line. There are several ways to do this and two methods are outlined below.</p>
+
+<ul> 
+<li><p>Method 1: use the point-slope equation: <m>p-p_0=m (q-q_0)</m>.
+We can choose either one of the points, so in this case we will find the line using the point <m>(q_0,p_0 )=(2,5)</m>. This gives the equation
+<m>p-5=3 (q-2)</m>.</p>
+<p>Rewrite this as <m>p=3q-1</m></p></li> 
+<li><p>Method 2: use the slope- intercept equation <m>p=m q+b</m>.
+Use <m>(q,p)=(2,5)</m> and <m>m = 3</m> and solve for <m>b</m>:
+<m>5=3 (2)+b</m>.
+And solving for <m>b</m> we have that <m>b= -1</m>, and hence <m>p=3q-1</m></p></li></ul>
+</li>
+
+<li><p>Evaluate at the given point.  <m>p(4)=3*4-1=11</m></p></li>
+</ol>
+</solution>
+</exercise>
+<exercise ><statement><p> Points <m>(5,7)</m> and <m>(10,7)</m>, with <m>q_0=20</m>.
+</p></statement>
+</exercise>
+<exercise ><statement><p> Points <m>(20,10)</m> and <m>(40,5)</m>, with <m>q_0=12</m>.
+</p>
+</statement>
+<solution>
+<p>Just as in problem 1 we find the slope and then find the equation of the line.</p>
+<ol><li>
+<p>First find the slope: <m>m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{5-10}{40-20}=-\frac{5}{20}=-\frac{1}{4}</m></p></li>
+<li><p>Using <m>p=m (q-q_0)+p_0</m> with <m>(q_0,p_0 )=(20, 10)</m> and <m>m = -\frac{1}{4}</m>, we get <m>p=-\frac{1}{4}(q-20)+10</m>.  Solving for <m>p</m> we get <m>p =-\frac{1}{4}q+15</m></p></li>
+<li><p>Evaluate at the given point.  <m>p(12)=-\frac{1}{4}(12)+15=12</m></p></li>
+</ol>
+</solution>
+</exercise>
+<exercise ><statement><p> Points <m>(5,62)</m> and <m>(115,783)</m>, with <m>q_0=415</m>.
+</p></statement></exercise>
+<exercise ><statement><p> Points <m>(273,578)</m> and <m>(412,6)</m>, with <m>q_0=309</m>.
+</p></statement>
+<solution>
+<p>Just as in problem 1 we find the slope and then find the equation of the line.</p>
+<ol><li>
+<p>First find the slope: <m>m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{578-6}{273-412}=-\frac{5}{20}=-\frac{572}{139}</m></p></li>
+<li><p>Using <m>p=m (q-q_0)+p_0</m> with <m>(q_0,p_0 )=(412, 6)</m> and <m>m = -\frac{572}{139}</m>, we get <m>p=-\frac{572}{139}(q-412)+6</m>.  (We can combine the constant terms – the <m>6</m> and the <m>-\frac{572}{139}*(-412)</m>, but leaving the equation in this form is acceptable.)</p></li>
+<li><p>Evaluate at the given point.  <m>p(309)=-\frac{572}{139}(309-412)+6
+=-\frac{572}{139}(-103)+6=429\frac{119}{139}</m></p></li>
+</ol>
+</solution>
+</exercise>
+<exercise ><statement><p> Points <m>(509,17)</m> and <m>(211,132)</m>, with <m>q_0=4</m>.
+</p></statement></exercise>
+<!--
+</exercisegroup>
+-->
+<exercise><p>Fred</p></exercise>
+
+
+</exercises>
+
+        </section>
+
+        <section xml:id="section-interesting">
+            <title>A Bit More Interesting</title>
+
+            <p>The previous section (<xref ref="section-textual" autoname="yes"/>) was a bit boring.</p>
+
+            <p>This paragraph has some inline math, a Diophantine equation, <m>x^2 + \doubler{y^2} = z^2</m>.  And some display math about infinite series: <me>\sum_{n=1}^\infty\,\frac{1}{n^2} = \frac{\pi^2}{6}.</me>  Look at the XML source to see how <latex /> macros are employed universally across all possible output formats.</p>
+        </section>
+
+        <section xml:id="section-computation">
+            <title>Computation</title>
+
+            <p>The following is a chunk of Sage code.  Your output format will dictate what you see next.  In print, you will see expected output.  In HTML you will have an executable, and editable, Sage Cell to work with.  In a SageMathCloud worksheet, you will be able to execute and edit the code with all the other features of SageMathCloud.  Note that if you include the expected output in your source, then you can test the example to verify that the behavior of Sage has not changed.</p> 
+
+            <sage>
+                <input>
+                A = matrix(4,5, srange(20))
+                A.rref()
+                </input>
+                <output>
+                [ 1  0 -1 -2 -3]
+                [ 0  1  2  3  4]
+                [ 0  0  0  0  0]
+                [ 0  0  0  0  0]
+                </output>
+            </sage>
+        </section>
+        </chapter>
+        
+<xi:include href="./backmatter.xml" />   
+
+   </book> 
+
+</mathbook>
