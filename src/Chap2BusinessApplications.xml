@@ -3,8 +3,8 @@
          <section xml:id="sec-2-1-MarketEquilibriumProblems">
             <title>Market Equilibrium Problems</title>
 
-          <p><url href="./Examples/Section-2-1-Examples-unworked.xlsx">Link to unworked set of worksheets used in this section</url></p>
-          <p><url href="./Examples/Section-2-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="../Examples/Section-2-1-Examples-unworked.xlsx">Link to unworked set of worksheets used in this section</url></p>
+          <p><url href="../Examples/Section-2-1-Examples.xlsx">Link to worksheets used in this section</url></p>
 <p>
 	As we mentioned in the previous chapter, many functions are locally linear, so if we restrict the domain the function will appear linear.  Thus we often start with linear models when trying to understand a situation.  In this section we look at the concepts of supply and demand and market equilibrium.  For our examples in this section we will assume that the functions are linear in the range we care about.</p>
 
@@ -39,7 +39,7 @@ slope\  of\ demand\ curve=\frac{change\ in\ price}{change\ in\ quantity\ demande
 <li><p>The standard economic theory says that a free and open market will naturally settle on the equilibrium price.</p></li>
 </ul></p></assemblage>
 
-                 <image width="60%" source="images/sec2-1-1.png">
+                 <image width="60%" source="../images/sec2-1-1.png">
                 </image>
 
 <example><title>Starting With Formulas</title>
@@ -58,14 +58,14 @@ slope\  of\ demand\ curve=\frac{change\ in\ price}{change\ in\ quantity\ demande
 
 </p><p><term>Solution b</term>: While we can do this example by hand, we also want to use it to set up a solution with Excel, since we may want help on problems where the numbers are not as nice.  Our plan is to use Goal Seek to find the intersection.  We need a cell where we can solve the problem by forcing the cell to have a value of zero.
 
-                <image width="50%" source="images/sec2-1-2.png">
+                <image width="50%" source="../images/sec2-1-2.png">
                 </image>
  
 
 
 </p><p>When cell D2 is zero, the supply price will be the same as the demand price.  We now invoke Goal Seek.
 
-                <image width="60%" source="images/sec2-1-3.png">
+                <image width="60%" source="../images/sec2-1-3.png">
                 </image>
  
 
@@ -81,7 +81,7 @@ slope\  of\ demand\ curve=\frac{change\ in\ price}{change\ in\ quantity\ demande
 
 </p><p><term>Solution</term>: We start by making a chart for the values given. We add a scatterplot so that we can see the values.
 
-                 <image width="80%" source="images/sec2-1-4.png">
+                 <image width="80%" source="../images/sec2-1-4.png">
                 </image>
   
  
@@ -89,7 +89,7 @@ slope\  of\ demand\ curve=\frac{change\ in\ price}{change\ in\ quantity\ demande
 
 </p><p>Next we add linear trendlines for both the supply and demand.  We select the option to show the equations.
 
-                <image width="80%" source="images/sec2-1-5.png">
+                <image width="80%" source="../images/sec2-1-5.png">
                 </image>
  
  
@@ -104,14 +104,14 @@ slope\  of\ demand\ curve=\frac{change\ in\ price}{change\ in\ quantity\ demande
 
 <p>We set up columns for the projected supply and demand curves.  We also add a column for the difference so that we can use Goal seek to find the equilibrium point.
 
-                <image width="80%" source="images/sec2-1-6.png">
+                <image width="80%" source="../images/sec2-1-6.png">
                 </image>
  
  
 
 It is then straightforward to see that the equilibrium quantity is 666.67 and the equilibrium price is $13.33.</p>
 
-                <image width="80%" source="images/sec2-1-7.png">
+                <image width="80%" source="../images/sec2-1-7.png">
                 </image>
 </example>
  
@@ -142,7 +142,7 @@ It is then straightforward to see that the equilibrium quantity is 666.67 and th
 
 </p><p><term>Solution</term>: We start by putting the data into a spreadsheet and finding the best fitting lines.  We select the option to show the equations in the chart.
 
-                <image width="80%" source="images/sec2-1-8.png">
+                <image width="80%" source="../images/sec2-1-8.png">
                 </image>
 
 
@@ -154,7 +154,7 @@ It is then straightforward to see that the equilibrium quantity is 666.67 and th
 
 <p>We add columns for the projected supply and demand prices, using the equations obtained from the best fitting lines.  We also add a column, and compute the difference of the supply and demand functions. We can now use goal seek to solve the problem.
 
-                <image width="60%" source="images/sec2-1-9.png">
+                <image width="60%" source="../images/sec2-1-9.png">
                 </image>
  
  
@@ -162,7 +162,7 @@ It is then straightforward to see that the equilibrium quantity is 666.67 and th
 
 </p><p>We now use Goal Seek to find the equilibrium point.
 
-                <image width="80%" source="images/sec2-1-10.png">
+                <image width="80%" source="../images/sec2-1-10.png">
                 </image>
  
 
@@ -170,7 +170,7 @@ It is then straightforward to see that the equilibrium quantity is 666.67 and th
 
 </p><p>At equilibrium we sell 956 gizmos at $6.50.  To find sales at $6.40 and $6.60, we use Goal Seek to get those values at both supply and demand prices.
 
-                <image width="50%" source="images/sec2-1-11.png">
+                <image width="50%" source="../images/sec2-1-11.png">
                 </image>
  
  
@@ -196,11 +196,11 @@ For problems 1-4, given the equations of the supply and demand curves:</p>
 <ol label="(a)">
 <li><p>  
                 <sidebyside widths="50% 35%" valigns="middle top">
-                    <image source="images/sec2-1-sol1a.png"/>
+                    <image source="../images/sec2-1-sol1a.png"/>
                     <p>Entries in the cells before quick fill</p>
                 </sidebyside>
                 <sidebyside widths="65% 35%" valigns="middle top">
-                    <image source="images/sec2-1-sol1b.png"/>
+                    <image source="../images/sec2-1-sol1b.png"/>
                     <p>Table with quantities ranging from 0 to 10</p>
                 </sidebyside>
 
@@ -223,11 +223,11 @@ From the table we see that at <m>q_0=6</m> the supply price is $28 and the deman
 <ol>
 <li>
 <p>The initial entries:
-                <image width="60%" source="images/sec2-1-sol3a.png">
+                <image width="60%" source="../images/sec2-1-sol3a.png">
                 </image>
 
 Initial attempt at the data includes the quantity 6000 (to answer part a)
-                <image width="80%" source="images/sec2-1-sol3b.png">
+                <image width="80%" source="../images/sec2-1-sol3b.png">
                 </image>
   
 When <m>q = 6000</m> we have that the supply price is $1357.30 and the demand price is $3408.90</p>
@@ -236,13 +236,13 @@ When <m>q = 6000</m> we have that the supply price is $1357.30 and the demand pr
 <li><p> The market equilibrium is outside the range that we tested. The graph indicates that the equilibrium (the intersection point) is to the right of the values we checked.
 Let’s redo the table with <m>q</m> between 0 and 20,000. The increments are a matter of preference. In this example we will use steps of 4000. 
 The graph shows that the intersection point is somewhere between <m>q = 12,000</m> and <m>16,000</m>.  The table shows it’s close to <m>q = 16,000</m>.</p> 
-                <image width="80%" source="images/sec2-1-sol3c.png">
+                <image width="80%" source="../images/sec2-1-sol3c.png">
                 </image>
 
 <p>We use Goal Seek to determine the actual equilibrium point.</p>
 
                 <sidebyside widths="25% 70%" valigns="middle top">
-                    <image source="images/sec2-1-sol3d.png"/>
+                    <image source="../images/sec2-1-sol3d.png"/>
 <p>Goal Seek shows that the equilibrium point is at <m>q = 15770</m> with a price of $3311.20</p>
                 </sidebyside>
                 
@@ -308,12 +308,12 @@ The graph shows that the intersection point is somewhere between <m>q = 12,000</
 <li><p>
 We start by using trendlines to find the linear model functions.</p><p>
 Once we have the function we create a second table using the functions instead of the initial data. The equations were edited to indicate which one is the supply and which one is the demand function.</p>
-                <image width="90%" source="images/sec2-1-sol7a.png">
+                <image width="90%" source="../images/sec2-1-sol7a.png">
                 </image>
 </li>
 <li><p> 
  The second table will be set up to give us the supply, demand and the supply – demand so we can use Goal Seek to find the market equilibrium.
-                <image width="60%" source="images/sec2-1-sol7b.png">
+                <image width="60%" source="../images/sec2-1-sol7b.png">
                 </image>
   
 The market equilibrium occurs at <m>q = 80</m> with a price of $18. (No Goal Seek required in this case.)</p></li>
@@ -352,7 +352,7 @@ The market equilibrium occurs at <m>q = 80</m> with a price of $18. (No Goal See
  </statement>
 <solution>
 <ol><li>
-                <image width="100%" source="images/sec2-1-sol9a.png">
+                <image width="100%" source="../images/sec2-1-sol9a.png">
                 </image>
             <p>  The supply and demand functions are:</p>
 <me>supply\  price (q)= 0.0006 q+4.9045</me>
@@ -417,21 +417,21 @@ The market equilibrium occurs at <m>q = 80</m> with a price of $18. (No Goal See
 <solution>
 <ol>
 <li><p>For this problem the trendlines are truly models and will find the best fit curve.</p>
-                <image width="100%" source="images/sec2-1-sol11a.png">
+                <image width="100%" source="../images/sec2-1-sol11a.png">
                 </image>
 
  
 <p> To be able to use Goal Seek we do need a table generated by formulas, so we use the trendline equations:</p>
 <me>supply\ price=0.0012 x+7.773</me>
 <me>demand\ price= -0.0005 x+22.506</me> 
-                <image width="100%" source="images/sec2-1-sol11b.png">
+                <image width="100%" source="../images/sec2-1-sol11b.png">
                 </image>
 </li>
  
 <li><p> The market equilibrium takes place at <m>q = 8666.5</m> with a price of $ 18.17</p></li>
 
 <li><p> The projected prices are</p>
-                <image width="100%" source="images/sec2-1-sol11c.png">
+                <image width="100%" source="../images/sec2-1-sol11c.png">
                 </image>
  </li>
  </ol>
@@ -462,9 +462,9 @@ The market equilibrium occurs at <m>q = 80</m> with a price of $18. (No Goal See
          <section xml:id="sec-2-2-ModelingRevenueCostProfit">
             <title>Modeling Revenue, Costs, and Profit</title>
 
-          <p><url href="./Examples/Section-2-2-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
+          <p><url href="../Examples/Section-2-2-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
 
-          <p><url href="./Examples/Section-2-2-Examples.xlsx">Link to worksheets used in this section.</url></p>
+          <p><url href="../Examples/Section-2-2-Examples.xlsx">Link to worksheets used in this section.</url></p>
 
             <p>
 In the last section we looked at the economic model for supply and demand.  We were particularly interested in the point of market equilibrium.  In this section we will look at the model for revenue, cost and profit.  As with the previous section we will begin with assumptions that make as many things as possible linear.</p>
@@ -482,12 +482,12 @@ In the last section we looked at the economic model for supply and demand.  We w
 <p>If the demand price is a linear function, then revenue is a quadratic function.</p>
 <p>We previously noted that a linear demand price function has a negative slope. We should note the two limiting cases. If the slope of the demand curve is 0, the consumers have a fixed price they will pay for however much of the product is available.  In this case the demand curve is a constant, so the revenue curve will be linear.  This is referred to as a perfectly elastic market.  The other limiting case is where the demand is for a fixed amount no matter what the price.  In this case the demand curve is a vertical line and is not a function, so the revenue curve also fails to be a function of quantity. </p>
 
-                <image width="60%" source="images/sec2-2-1.png">
+                <image width="60%" source="../images/sec2-2-1.png">
                 </image>
 
 <p>Obviously, we don’t expect to find the limiting cases in the real world.  In real world cases the revenue function has a negative coefficient for the quadratic term and is a downward facing parabola.</p>
 
-                <image width="60%" source="images/sec2-2-2.png">
+                <image width="60%" source="../images/sec2-2-2.png">
                 </image>
  
 
@@ -501,13 +501,13 @@ In the last section we looked at the economic model for supply and demand.  We w
 
 <p><term>Solution</term>: We set up a chart in Excel with revenue defined as <m>supply\ price * quantity</m>.</p>  
 
-                 <image width="60%" source="images/sec2-2-3.png">
+                 <image width="60%" source="../images/sec2-2-3.png">
                 </image>
   
 
 <p>When we graph we note that the scales are quite different for price and revenue.  Thus we want to use secondary axes to capture the scale of both price and revenue.  We can also put different labels on the two vertical axes.</p>
 
-                <image width="60%" source="images/sec2-2-4.png">
+                <image width="60%" source="../images/sec2-2-4.png">
                 </image>
 </example> 
 
@@ -523,7 +523,7 @@ In the last section we looked at the economic model for supply and demand.  We w
 <li><p>Thus <term>costs= fixed costs + unit costs*quantity</term>.</p></li>
 </ul></p></assemblage>
 
-                <image width="60%" source="images/sec2-2-5.png">
+                <image width="60%" source="../images/sec2-2-5.png">
                 </image>
 
 <example><title>Finding Linear Cost</title><p> We can set up a small gizmo manufacturing shop for $6,000. The raw materials for producing gizmos cost $14 per unit.  Find the cost function for gizmo production.  Find the cost of producing 2500 gizmos.</p>
@@ -546,7 +546,7 @@ In the last section we looked at the economic model for supply and demand.  We w
 
 <p>For our simple examples where cost is linear and revenue is quadratic, we expect the profit function to also be quadratic, and facing down.  We will obviously be interested in the spots where the profit function either crosses the axis or reaches a maximum.</p>
 
-                <image width="60%" source="images/sec2-2-6.png">
+                <image width="60%" source="../images/sec2-2-6.png">
                 </image>
  
 <p><url href="https://youtu.be/pgLZENVOjLo">Link to video of the next two examples.</url></p>
@@ -572,7 +572,7 @@ In the last section we looked at the economic model for supply and demand.  We w
 
 <p>We then use Excel to make a chart of values and a graph.</p>
 
-                <image width="60%" source="images/sec2-2-7.png">
+                <image width="60%" source="../images/sec2-2-7.png">
                 </image>
 </example>
 
@@ -587,7 +587,7 @@ The point at which revenues equal expenses (cost) is called the <term>break-even
 
 <p><term>Solution</term>: We look at the chart from the previous example.</p>
 
-                <image width="60%" source="images/sec2-2-8.png">
+                <image width="60%" source="../images/sec2-2-8.png">
                 </image>
  
  
@@ -623,7 +623,7 @@ Assuming that price and cost are well modeled by linear equations, find the brea
 Solution</term>: We put the data into Excel and ask for best fitting lines.
 </p>
 
-                <image width="80%" source="images/sec2-2-9.png">
+                <image width="80%" source="../images/sec2-2-9.png">
                 </image>
  
 
@@ -641,7 +641,7 @@ We can do that by setting the price at $16.05.  The second break-even point is a
 While we will have gained market share, we will no longer be making a profit.
 </p>
 
-                <image width="80%" source="images/sec2-2-10.png">
+                <image width="80%" source="../images/sec2-2-10.png">
                 </image>
 </example>
 
@@ -681,7 +681,7 @@ We face the same tasks.  Assuming that price and cost are well modeled by linear
 Solution</term>: We put the data into Excel and ask for best fitting lines.
 </p>
 
-                 <image width="80%" source="images/sec2-2-11.png">
+                 <image width="80%" source="../images/sec2-2-11.png">
                 </image>
  
 
@@ -697,7 +697,7 @@ projective revenues and profit.  We then use Goal Seek to find places where the
 projected profit is 0.  The first break-even point goes from 1.83 million at price of $16.05 to 1.82 million at a price of $1602.
 The second break even point goes from 14.15 million units at a price to $6.45 to 13.75 million at a price of $6.48.
 </p>
-                <image width="90%" source="images/sec2-2-12.png">
+                <image width="90%" source="../images/sec2-2-12.png">
                 </image>
 
 <p>The solution is to right click (Command click on a mac) on the label and select "Format Trendline Label".  
@@ -706,12 +706,12 @@ Then change category from general to number, and choose 10 decimal places.  This
 
 <me>cost= 5.02506 q+ 20161700</me>
 
-                <image width="40%" source="images/sec2-2-13.png">
+                <image width="40%" source="../images/sec2-2-13.png">
                 </image>
             
             
 <p>  We then go through the same process at get our original answers back </p>       
-                <image width="90%" source="images/sec2-2-14.png">
+                <image width="90%" source="../images/sec2-2-14.png">
                 </image>
              
 </example>
@@ -748,7 +748,7 @@ Then change category from general to number, and choose 10 decimal places.  This
 </li>
 <li><p> Find all break-even points.</p>
 <p>Solve <m>Profit=-2 q^2+17q-10=0</m>. We can do this with Excel or with Wolfram. The break even points are <m>q = 0.6</m> and <m>q = 7.9</m></p>
-                <image width="80%" source="images/sec2-2-sol1a.png">
+                <image width="80%" source="../images/sec2-2-sol1a.png">
                 </image>
 
  
@@ -756,19 +756,19 @@ Then change category from general to number, and choose 10 decimal places.  This
 <li><p> Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p>
 <p>If we had done the whole problem in Excel it would look like this:</p>
                 <sidebyside widths="50% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol1b.png"/>
+                    <image source="../images/sec2-2-sol1b.png"/>
                     <p>Entries in the cells before quick fill</p>
                 </sidebyside>
 <sidebyside widths="65% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol1c.png"/>
+                    <image source="../images/sec2-2-sol1c.png"/>
                     <p>The table with <m>q</m> between 0 and 8</p>
 </sidebyside>
 <sidebyside widths="65% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol1d.png"/>
+                    <image source="../images/sec2-2-sol1d.png"/>
                     <p>Goal Seek gives break even points at 
                       <m>q = 0.64</m> and <m>q = 7.86</m></p>
 </sidebyside>
-                <image width="80%" source="images/sec2-2-sol1e.png">
+                <image width="80%" source="../images/sec2-2-sol1e.png">
                 </image>
   
 <p>The graph produced in Excel. To create the labels: double click on one of the break-even points, go to <q>Chart Layout</q>, go to <q>Data Labels</q>. In this example we chose the <q>x-value</q>.  Both break-even points were labeled to show where they are and what the values are in this problem.
@@ -791,11 +791,11 @@ ind the revenue and profit functions.
 </li>
 <li><p> Evaluate cost, demand price, revenue, and profit at <m>q_0</m>.</p>
                 <sidebyside widths="50% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol3a.png"/>
+                    <image source="../images/sec2-2-sol3a.png"/>
                     <p>Entries in the cells before quick fill</p>
                 </sidebyside>
 <sidebyside widths="65% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol3b.png"/>
+                    <image source="../images/sec2-2-sol3b.png"/>
                     <p>Table plus extra column for the value 
 <m>q = 59</m></p>
 </sidebyside>
@@ -804,7 +804,7 @@ ind the revenue and profit functions.
 </li>
 <li><p> Find all break-even points.</p>
 <sidebyside widths="65% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol3c.png"/>
+                    <image source="../images/sec2-2-sol3c.png"/>
                     <p>Table plus extra column for the value <m>q = 59</m></p>
 </sidebyside>
 
@@ -813,7 +813,7 @@ ind the revenue and profit functions.
 </li>
 <li><p> Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p>
 <p></p>
-                <image width="80%" source="images/sec2-2-sol3d.png">
+                <image width="80%" source="../images/sec2-2-sol3d.png">
                 </image>
   
 <p>The graph produced in Excel. To create the labels: double click on one of the break-even points, go to <q>Chart Layout</q>, go to <q>Data Labels</q>. In this example we chose the <q>x-value</q>.  Both break-even points were labeled to show where they are and what the values are in this problem.
@@ -838,7 +838,7 @@ ind the revenue and profit functions.
 <solution>
 <ol label="(a)">
 <li><p>If the table only has 2 data points, Excel can get confused wether the data is in rows or columns.  We duplicated one column to get the data plotted correctly.
-                <image width="100%" source="images/sec2-2-sol5a.png">
+                <image width="100%" source="../images/sec2-2-sol5a.png">
                 </image>
   Identify the fixed and variable costs.</p>
 <p><m>Fixed\ cost = \$150</m>, and the <m>variable cost =\$3</m> (per unit)</p></li>
@@ -857,16 +857,16 @@ ind the revenue and profit functions.
 <li><p> Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p>
 <p></p>
                 <sidebyside widths="50% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol5b.png"/>
+                    <image source="../images/sec2-2-sol5b.png"/>
                     <p>Entries in the cells before quick fill</p>
                 </sidebyside>
 <sidebyside widths="65% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol5c.png"/>
+                    <image source="../images/sec2-2-sol5c.png"/>
                     <p>Table plus extra columns for the brek even points 
 </p>
 </sidebyside>
 
-                <image width="80%" source="images/sec2-2-sol5d.png">
+                <image width="80%" source="../images/sec2-2-sol5d.png">
                 </image>
   
 <p>The graph produced in Excel. To create the labels: double click on one of the break-even points, go to <q>Chart Layout</q>, go to <q>Data Labels</q>. In this example we chose the <q>x-value</q>.  Both break-even points were labeled to show where they are and what the values are in this problem.
@@ -909,7 +909,7 @@ ind the revenue and profit functions.
 <me>Cost=0.3121 x-169.35</me>   
 <me>Demand\ Price= 5*(10)^{-5}  x+1.356</me> 
 
-                <image width="90%" source="images/sec2-2-sol7a.png">
+                <image width="90%" source="../images/sec2-2-sol7a.png">
                 </image>
  
 <p> Given the demand price and the cost we create a table using the formulas and we also include a row for the <m>revenue =( demand\ price * quantity)</m> and <m>profit =(revenue – cost)</m></p>
@@ -928,13 +928,13 @@ ind the revenue and profit functions.
 <p>At <m>q = 75</m> we have that cost = - $146, demand price = $1.35, revenue = $101.42, and profit = $247</p></li>
 <li><p> Find all break-even points.</p>
 <p>Re-compute profit for a different range of quantities and we get</p>
-                <image width="90%" source="images/sec2-2-sol7b.png">
+                <image width="90%" source="../images/sec2-2-sol7b.png">
                 </image>
  
 <p>Goal Seek using the quantity of 20000 as the basis gives a break-even point at <m>q= 21,039</m>. The other place where the profit is 0 occurs for <m>q = -161</m>.</p>
 </li>
 <li><p> Graph the profit function over a domain that includes both break-even points.  Add a textbox and label to identify the first break-even point.</p>
-                <image width="90%" source="images/sec2-2-sol7c.png">
+                <image width="90%" source="../images/sec2-2-sol7c.png">
                 </image>
  
 <p>The profit function shows the break-even points close to 0 (-161) and near 20,000 (21,039)</p>
@@ -968,15 +968,15 @@ ind the revenue and profit functions.
 <me>(p-15)= -0.02 (q-250)</me>
 <me>p=15 -0.02 (q-250)</me>
                 <sidebyside widths="50% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol9a.png"/>
+                    <image source="../images/sec2-2-sol9a.png"/>
                     <p>Entries in the cells before quick fill</p>
                 </sidebyside>
 <sidebyside widths="65% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol9b.png"/>
+                    <image source="../images/sec2-2-sol9b.png"/>
                     <p>Values after quick fill</p>
 </sidebyside>
 <sidebyside widths="65% 35%" valigns="middle top">
-                    <image source="images/sec2-2-sol9c.png"/>
+                    <image source="../images/sec2-2-sol9c.png"/>
                     <p>Identified the break-even points using Goal Seek</p>
 </sidebyside>
 
@@ -1037,14 +1037,14 @@ For problems 10-12, given the cost and demand data:</p>
 </li>
 <li><p> Find the revenue and profit functions and evaluate them at the extra given value.</p>
 <p>Creating a table with the cost and demand functions we get</p>
-                <image width="90%" source="images/sec2-2-sol11a.png">
+                <image width="90%" source="../images/sec2-2-sol11a.png">
                 </image>
  
 <p>We see that when quantity is 7500 the revenue is $140,670, and the profit is $30, 240.50.</p>
 </li>
 <li><p> Find the break-even points.</p>
 <p>Note that these values are not usefull for finding the break-even points. To find those we will start quantity <m>q</m> at 0 and go up to 20,000</p>
-                <image width="90%" source="images/sec2-2-sol11b.png">
+                <image width="90%" source="../images/sec2-2-sol11b.png">
                 </image>
  
 
@@ -1078,7 +1078,7 @@ For problems 10-12, given the cost and demand data:</p>
          <section xml:id="sec-2-3-NonlinearFunctions">
             <title>Nonlinear Functions</title>
 
-          <p><url href="./Examples/Section-2-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="../Examples/Section-2-3-Examples.xlsx">Link to worksheets used in this section</url></p>
             <p>
             For most of this chapter we have restricted ourselves to functions that were either linear functions or polynomial functions where they are built from the interaction of linear functions.  While this makes the economic models easier to understand, it is pretty clear that the situations we care about are often better described by more complicated functions.  Suppliers of gasoline have a finite amount they can deliver regardless of the price.  That leads to a very nonlinear supply function.  It is worthwhile to review how we would enter other functions in a spreadsheet. </p> 
 
@@ -1150,7 +1150,7 @@ For problems 10-12, given the cost and demand data:</p>
 
 <me>Supply\ Price(quantity)=200*(1.2)^{(quantity/100)}</me>
 
-                <image width="90%" source="images/sec2-3-1.png">
+                <image width="90%" source="../images/sec2-3-1.png">
                 </image>
 
 <p>We see that the equilibrium price is at $554.64.  At that price the supply and demand will both be 559.45.</p>
@@ -1175,7 +1175,7 @@ For problems 10-12, given the cost and demand data:</p>
 
 <p><term>Solution</term>:  I start by finding best-fit curves of for cost and price.</p>
 
-                 <image width="80%" source="images/sec2-3-2.png">
+                 <image width="80%" source="../images/sec2-3-2.png">
                 </image>
  
 <p>Thus we have:</p>
@@ -1192,7 +1192,7 @@ For problems 10-12, given the cost and demand data:</p>
 
 <p>Finally, we load these equations back into Excel and use Goal Seek to find the break-even points.  Looking at projected profit on the chart we see a sign change near 1000, so we suspect a break-even point there.  We also note that profit seems to be going up until q is about 300, so I test for a break-even point for small values of q.</p>
 
-                <image width="80%" source="images/sec2-3-3.png">
+                <image width="80%" source="../images/sec2-3-3.png">
                 </image>
  
 <p>We see we have break-even points when q is 12.74 and 996.28.</p>
@@ -1254,7 +1254,7 @@ For problems 10-12, given the cost and demand data:</p>
 <p>The functions ROUND, ROUNDUP, and ROUNDDOWN are all used for rounding.  They have a second argument that specifies the number off digits to which we are rounding.  It should be noted that Excel understands up and down as away form zero for negative numbers.  Thus it will round -1.5 up to -2.
 The CEILING and FLOOR functions also do rounding, but with some different features.  Instead of specifying the number of digits in the answer, these functions round to a multiple of the second argument.  As expected, CEILING rounds to the next higher multiple, and FLOOR rounds to the next lower multiple.</p>
 
-                <image width="80%" source="images/sec2-3-4.png">
+                <image width="80%" source="../images/sec2-3-4.png">
                 </image>           
 <p><url href="https://youtu.be/dH_2jZZygYw">Link to video of this example</url></p>
 
@@ -1264,12 +1264,12 @@ The CEILING and FLOOR functions also do rounding, but with some different featur
 
 <p><term>Solution</term>:  To make the worksheet easier to follow, we break costs into three pieces, fixed costs labor costs, and materials costs.  The fixed coasts are constant, and the labor costs are linear.  For the materials costs we need to use the CEILING function to round the number of widgets up to the next even 100, then divide by 100 to obtain the number of blocks of raw material we want to buy.</p>
 
-               <image width="80%" source="images/sec2-3-5.png">
+               <image width="80%" source="../images/sec2-3-5.png">
                 </image>
 
 <p>When we look at the numbers we see that the total cost of producing 998 widgets is $26,986 and the cost of producing 1009 widgets is $28,063.  When we look at the unit costs, we expect the cost per unit to generally go down as we produce more, since the fixed costs are distributed over more units.  However the per unit cost is $27.04 when we produce 998 widgets, but that goes up to $28.81 when we make 1009 widgets, since we had to buy another block of raw material.</p>
 
-                <image width="60%" source="images/sec2-3-6.png">
+                <image width="60%" source="../images/sec2-3-6.png">
                 </image>
            </example>
 
@@ -1286,12 +1286,12 @@ The CEILING and FLOOR functions also do rounding, but with some different featur
 
 <p><term>Solution</term>:  In setting up the worksheet, I will separate regular pay from overtime pay.  The regular pay is the base rate times the hours worked, unless the employee worked more than 40 hours, in which case it is the base rate times 40.  Overtime pay is the base pay times 1.5 times the number of overtime hours.  Since overtime cannot be negative we use the maximum of 0 and hours worked minus 40.</p>
 
-                <image width="80%" source="images/sec2-3-7.png">
+                <image width="80%" source="../images/sec2-3-7.png">
                 </image>
 
 <p>Looking at the computed values, the employees are owed $280, $387, $445, $418, and $525, respectively.</p>
  
-                <image width="50%" source="images/sec2-3-8.png">
+                <image width="50%" source="../images/sec2-3-8.png">
                 </image>
 </example>
 
@@ -1312,14 +1312,14 @@ The CEILING and FLOOR functions also do rounding, but with some different featur
 
 <p><term>Solution</term>:  We would like to find the place where the two curves cross.  However when we look at a graph of the two functions we see that they never meet.</p>
 
-                <image width="60%" source="images/sec2-3-9.png">
+                <image width="60%" source="../images/sec2-3-9.png">
                 </image>
 
 <p>It is clear from the graph that the market should reach equilibrium at a quantity of 2, but it is not clear what the equilibrium price should be.  We need to do some reasoning about the behavior described by the equations.  From our formula, the supply price for 2 widgets is $2.  However if we look at the supply prices of 2+h for small values of h, we see that the limit of the supply price from above is $4.  In practical terms the suppliers will produce 2 widgets for any price from $2 to $4.  If we offer $2, they are also willing to produce 2 widgets.  If we offer a price of $3.95, they are still only willing to produce 2 widgets.  The suppliers will be thus willing to produce 2 widgets at a price of $3.  The equilibrium price is 3.</p>
 
 <p>If we want to look at the graph in Excel, it is useful to plot points very close to the discontinuity on both sides.  For this problem, we might look at both 2 and 2.0001.</p>
 
-                <image width="80%" source="images/sec2-3-10.png">
+                <image width="80%" source="../images/sec2-3-10.png">
                 </image>
 </example>
 
@@ -1341,11 +1341,11 @@ For problems 1-5, given the equations of the supply and demand curves:</p>
 <exercise ><statement><p> Given <m>supply\ price=20*(1.1)^{(q/10)}</m> and <m>demand\ price=50*(0.95)^{(q/10)}</m>, with <m>q_0=10</m>.</p></statement>
 <solution>
                 <sidebyside widths="60% 15%" valigns="middle top">
-                    <image source="images/sec2-3-sol1a.png"/>
+                    <image source="../images/sec2-3-sol1a.png"/>
                     <p>Formulas</p>
                 </sidebyside>
 <sidebyside widths="80% 15%" valigns="middle top">
-                    <image source="images/sec2-3-sol1b.png"/>
+                    <image source="../images/sec2-3-sol1b.png"/>
                     <p>Table </p>
 </sidebyside>
 <ol label="(a)">
@@ -1361,15 +1361,15 @@ For problems 1-5, given the equations of the supply and demand curves:</p>
 <exercise ><statement><p> Given <m>p_s=5 \ln(q+10)</m> and <m>p_d=1000/(q+10)-2</m>, with <m>q_0=40</m>.</p></statement>
 <solution>
                 <sidebyside widths="60% 15%" valigns="middle top">
-                    <image source="images/sec2-3-sol3a.png"/>
+                    <image source="../images/sec2-3-sol3a.png"/>
                     <p>Formulas</p>
                 </sidebyside>
 <sidebyside widths="80% 15%" valigns="middle top">
-                    <image source="images/sec2-3-sol3b.png"/>
+                    <image source="../images/sec2-3-sol3b.png"/>
                     <p>Table </p>
 </sidebyside>
 <sidebyside widths="80% 15%" valigns="middle top">
-                    <image source="images/sec2-3-sol3c.png"/>
+                    <image source="../images/sec2-3-sol3c.png"/>
                     <p>Goal Seek near <m>q=40</m> </p>
 </sidebyside>
 <ol label="(a)">
@@ -1394,7 +1394,7 @@ supply\ price(q)=\begin{cases}
 </statement>
 <solution>
 <p>For this problem our supply price function changes at <m>q = 50</m>. This is indicated in the table by a thin blue column</p>
-                <image width="80%" source="images/sec2-3-sol5a.png">
+                <image width="80%" source="../images/sec2-3-sol5a.png">
                 </image>
  <ol label="(a)">
 <li><p>At <m>q_0=40</m>, supply = $29.28, and demand = $40.73</p></li>
@@ -1453,7 +1453,7 @@ and the assumption that supply price and demand price are both exponential.</p>
 and the assumption that supply price is linear and demand price is exponential.</p>
 </statement>
 <solution>
-                <image width="80%" source="images/sec2-3-sol7a.png">
+                <image width="80%" source="../images/sec2-3-sol7a.png">
                 </image>
 <ol label="(a)">
 <li><p>Using the trendline feature from Excel we get that</p>
@@ -1466,15 +1466,15 @@ and the assumption that supply price is linear and demand price is exponential.<
 </li>
 </ol>
                 <sidebyside widths="40% 15%" valigns="middle top">
-                    <image source="images/sec2-3-sol7b.png"/>
+                    <image source="../images/sec2-3-sol7b.png"/>
                     <p>Formulas entered</p>
                 </sidebyside>
 <sidebyside widths="78% 20%" valigns="middle top">
-                    <image source="images/sec2-3-sol7c.png"/>
+                    <image source="../images/sec2-3-sol7c.png"/>
                     <p>Finding all valuers with these formulas.  The yellow ones are the ones we are looking for.</p>
 </sidebyside>
 <sidebyside widths="78% 20%" valigns="middle top">
-                    <image source="images/sec2-3-sol7d.png"/>
+                    <image source="../images/sec2-3-sol7d.png"/>
                     <p>Using Goal Seek to find the equilibrium values in column E</p>
 </sidebyside>
 </solution></exercise>
@@ -1522,11 +1522,11 @@ f(x)=\begin{cases}
 The Excel command is =IF(A2 &lt; =50, LN(2*A2),200*EXP(-A2/10))</p>
 </li>
 <li><p>The chart is produced by the following code.</p>
-                <image width="60%" source="images/sec2-3-sol9a.png">
+                <image width="60%" source="../images/sec2-3-sol9a.png">
                 </image>
 </li>
 <li><p>The graph will look as follows. Note that the function is not defined at 0</p>
-                <image width="80%" source="images/sec2-3-sol9b.png">
+                <image width="80%" source="../images/sec2-3-sol9b.png">
                 </image>
 </li>
 <li>
@@ -1547,7 +1547,7 @@ f(x)=\begin{cases}
 <li><p>
 The function is =MAX(2*A2,5) </p></li>
 <li>  <p>
-                <image width="60%" source="images/sec2-3-sol11a.png">
+                <image width="60%" source="../images/sec2-3-sol11a.png">
                 </image>
 </p>
 </li>
@@ -1582,7 +1582,7 @@ Cost=\begin{cases}
 <ol label="(a)">
 <li><p>The Excel command is =IF(A2 &lt; 10, 10*A2, IF(A2 &lt; 50, 90+9*(A2-9),450+8*(A2-49)))</p></li>
 <li>  
-                <image width="90%" source="images/sec2-3-sol13a.png">
+                <image width="90%" source="../images/sec2-3-sol13a.png">
                 </image> 
 
 </li>
@@ -1602,7 +1602,7 @@ Cost=\begin{cases}
 <ol label="(a)">
 <li><p>The Excel command is =5*CEILING(A2,0.5)</p></li>
 <li>  
-                <image width="90%" source="images/sec2-3-sol15a.png">
+                <image width="90%" source="../images/sec2-3-sol15a.png">
                 </image>
 
 
@@ -1645,7 +1645,7 @@ Cost=\begin{cases}
 </li>
 <li><p>The first break-even point was found using Goal Seek and occurs when <m>q = 7.4</m>.</p></li>
 <li>
-                <image width="90%" source="images/sec2-3-sol17a.png">
+                <image width="90%" source="../images/sec2-3-sol17a.png">
                 </image>
 </li>
 </ol>
@@ -1666,12 +1666,12 @@ Cost=\begin{cases}
 <me>Profit=q*47(0.96)^{q/11}+2(\frac{q}{1000})^2-17q-1234</me></li>
 <li>
 <p>Using Excel we get</p>
-                <image width="90%" source="images/sec2-3-sol19a.png">
+                <image width="90%" source="../images/sec2-3-sol19a.png">
                 </image>
 </li>
 <li><p>Using <m>q = 60</m> as the basis, using Goal Seek gives the value of our first break-even point as being 59.75.</p></li>
 <li>
-                <image width="90%" source="images/sec2-3-sol19b.png">
+                <image width="90%" source="../images/sec2-3-sol19b.png">
                 </image>
        </li>
 </ol>
@@ -1725,23 +1725,23 @@ Cost=\begin{cases}
 <me>Revenue=x*199.78e^{(-0.0003x)}</me>
 <me>Profit=x*199.78e^{(-0.0003x)}-(-0.0009x^2  + 99.864x + 10050)</me></li>
 <li><p>Recreate the table, but now with the functions we found:
-                <image width="70%" source="images/sec2-3-sol21a.png">
+                <image width="70%" source="../images/sec2-3-sol21a.png">
                 </image>
 We can add another column to find the values of the respective functions when <m>q_0=300</m>.</p>
 <p>Demand price = $ 182.59, cost = $39,928.20, revenue = $54,775.55 and profit = $14,847.35
 </p>
 </li>
 <li><p>The initial table does not include the break-even points,
-                <image width="70%" source="images/sec2-3-sol21b.png">
+                <image width="70%" source="../images/sec2-3-sol21b.png">
                 </image>
 
  So we redo the table starting with q=0 and taking steps of 400. Goal Seek on the quantity q =0 reveals the first break even point to be at q = 107.27
-                <image width="80%" source="images/sec2-3-sol21c.png">
+                <image width="80%" source="../images/sec2-3-sol21c.png">
                 </image>
  
 </p></li>
 <li>
-                <image width="90%" source="images/sec2-3-sol21d.png">
+                <image width="90%" source="../images/sec2-3-sol21d.png">
                 </image>
             </li>
 </ol>
@@ -1797,7 +1797,7 @@ q*100-q^2/10-50q-3000&amp;q \le 50\\
 <p>Goal Seek shows it’s at <m>q=72.5</m>.
 </p></li>
 <li>
-                <image width="90%" source="images/sec2-3-sol23a.png">
+                <image width="90%" source="../images/sec2-3-sol23a.png">
                 </image>
            </li>
 </ol>

@@ -14,11 +14,11 @@
 </ul>
 
 <p>For this example we would get:</p>
-                <image width="80%" source="images/sec7-0-1.png">
+                <image width="80%" source="../images/sec7-0-1.png">
                 </image>
 
 <p>We would like to relate this data to the original graph of the marginal cost. When we consider this graph we see that the estimated cost actually corresponds to the area underneath the Marginal Cost function MC(x).</p>
-                <image width="60%" source="images/sec7-0-2.png">
+                <image width="60%" source="../images/sec7-0-2.png">
                 </image>
   
 <p>In other words, the cost function is the accumulation of the derivative (the marginal cost). Graphically, the cost function corresponds to the area underneath the marginal cost function.</p>
@@ -29,7 +29,7 @@
          <section xml:id="sec-7-1-RiemannSums">
             <title>Approximating Definite Integrals as Sums</title>
 
-<p><url href="./Examples/Section-7-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p><url href="../Examples/Section-7-1-Examples.xlsx">Link to worksheets used in this section</url></p>
 <p> 
 The standard approach to accumulation is to reduce the problem to an area problem.  If we let f(t) be a velocity function, then the area under the y=f(t) curve between a starting value of t=a and a stopping value of t=b is the distance traveled in that time period.  In the easiest case, the velocity is constant and we use the simple formula</p>
 
@@ -40,7 +40,7 @@ The standard approach to accumulation is to reduce the problem to an area proble
 
 <p>This problem is easy to do without any calculus.  If we graph the velocity function</p>
 
-                <image width="60%" source="images/sec7-1-1.png">
+                <image width="60%" source="../images/sec7-1-1.png">
                 </image>
 
 <p>we find the area of the rectangle by taking base times height and noting <m>60*(3-0.5)=150</m>.  Note that we do the same computation if I ask how much I earn over a period of 2.5 years if I make $60K a year, or how much oil is produced in 2 and a half hours form an oil well that produces 60 barrels of oil an hour.</p></example>
@@ -51,37 +51,37 @@ The standard approach to accumulation is to reduce the problem to an area proble
 
 <p>between x=0 and x=4.</p>
 
-                <image width="60%" source="images/sec7-1-2.png">
+                <image width="60%" source="../images/sec7-1-2.png">
                 </image>
 
 <p>We no longer have a nice formula from geometry for the area.  Thus we start making approximations.  The easiest approximation is to note that the area has to be less than the area of the 4 by 4 rectangle we can draw around the region.</p>
 
-                 <image width="60%" source="images/sec7-1-3.png">
+                 <image width="60%" source="../images/sec7-1-3.png">
                 </image>
 
 <p>We can improve our estimate by dividing the interval [0, 4] into 4 equal subintervals and then taking the combined area of the 4 rectangles we need to contain the region.  This reduces our upper estimate from 16 to 14.</p>
 
-                <image width="60%" source="images/sec7-1-4.png">
+                <image width="60%" source="../images/sec7-1-4.png">
                 </image>
 
 <p>Similarly we could get a better estimate by looking at 8 subintervals and seeing that the area under the parabola is no more than 12.5</p>
 
-                 <image width="60%" source="images/sec7-1-5.png">
+                 <image width="60%" source="../images/sec7-1-5.png">
                 </image>
  
 <p>If we continue the process with 100 subintervals, our estimate is down to 10.83.  From the picture, it looks like a fairly good estimate.</p>
 
-                <image width="60%" source="images/sec7-1-6.png">
+                <image width="60%" source="../images/sec7-1-6.png">
                 </image>
 
 <p>While this process would be very long and tedious by hand, the process of finding the area of each of 100 rectangles and adding the areas is rather easy in Excel.  Before going to Excel, we want to make a small adjustment in our method.  The method we used always gives an overestimate.  It also requires that we know where the function reaches a maximum on each subinterval.  It will be easier if we estimate area by always taking the height of the rectangle at the right end of the subinterval.  With 4 subintervals this gives an estimate of 10 for our area.</p>
 
-                 <image width="60%" source="images/sec7-1-7.png">
+                 <image width="60%" source="../images/sec7-1-7.png">
                 </image>
 
 <p>When we increase the number of subintervals to 100, we once again get a fairly good estimate of the area.  From the picture, it is hard to see difference between the area defined by the curve and the area defined by the rectangles.</p>
 
-                 <image width="60%" source="images/sec7-1-8.png">
+                 <image width="60%" source="../images/sec7-1-8.png">
                 </image>
 
 <example xml:id="area-parabola-down"><title>Approximating an Area with a Riemann Sum</title>
@@ -90,17 +90,17 @@ The standard approach to accumulation is to reduce the problem to an area proble
 
 <p>We will approximate the area with 100 rectangles.  We set up a worksheet to find the area of the first rectangle.</p>
 
-                <image width="70%" source="images/sec7-1-9.png">
+                <image width="70%" source="../images/sec7-1-9.png">
                 </image>
 
 <p>Following our standard practice, we set up the question and answer in labeled areas at the top of the worksheet.  The width of a subinterval is the width of the whole interval divided by the number of subintervals.  The column <m>x_n</m> is for the x value at the right side of the n-th subinterval.   The value of <m>x_n</m> is the starting point plus n times the width of a subinterval.  We then evaluate the function at <m>x_n</m>.  The area of the n-th rectangle is the height, or <m>f(x_n)</m>, times the width of the subinterval.  The last column is the total area for the first n rectangles.  The area for 100 rectangles is our area estimate.</p>
 <p>To find the area we quick fill our worksheet.</p>
 
-                <image width="50%" source="images/sec7-1-10.png">
+                <image width="50%" source="../images/sec7-1-10.png">
                 </image>
 
 <p>For a more accurate estimate we divide into smaller rectangles.</p>
-                <image width="50%" source="images/sec7-1-11.png">
+                <image width="50%" source="../images/sec7-1-11.png">
                 </image>
 </example>
 
@@ -125,7 +125,7 @@ The present value of that revenue stream is the area of the region under the cur
 
 <p>Although the data in the question for this example is quite different from the previous example, the setup for the worksheet to evaluate the Riemann sum is the same.</p>
 
-                <image width="80%" source="images/sec7-1-12.png">
+                <image width="80%" source="../images/sec7-1-12.png">
                 </image>
 
 <p>With 500 intervals we estimate the present value of the revenue stream to be worth $2.3222 Billion.  If we had only used 100 intervals, the estimate would have been for $2.318 Billion, while 1000 intervals gives an estimate of $2.3232 Billion.
@@ -139,12 +139,12 @@ The present value of that revenue stream is the area of the region under the cur
 <exercise ><statement><p> Let <m>f(x) = 4 x + 5</m>.  Estimate the area under <m>f(x)</m> on the interval <m>0 \le  x \lt 7</m> using 100 rectangles and a right hand rule.
 </p></statement><solution>
 <p>The Excel commands are:</p>
-                <image width="100%" source="images/sec7-1-sol1a.png">
+                <image width="100%" source="../images/sec7-1-sol1a.png">
                 </image>
 <p>The answer is given as follows. Note that in this screen grab the center part of the sidebyside was hidden so that the image is a reasonable size</p>
 
 <p>The area is approximately 133.98</p>
-                <image width="60%" source="images/sec7-1-sol1b.png">
+                <image width="60%" source="../images/sec7-1-sol1b.png">
                 </image>
 </solution></exercise>
 
@@ -154,10 +154,10 @@ The present value of that revenue stream is the area of the region under the cur
 <exercise ><statement><p> Let <m>f(x) = x^2  + 3 x + 1</m>.  Estimate the area on the interval <m>-10\le  x \lt -2</m> under <m>f(x)</m> using 200 rectangles and a right hand rule.
 </p></statement><solution>
 <p>The set-up is very similar to the one in problem 1.</p>
-                <image width="100%" source="images/sec7-1-sol3a.png">
+                <image width="100%" source="../images/sec7-1-sol3a.png">
                 </image>
 <p>The area underneath the curve is approximately 193.228 according to the Excel computation.</p>
-                <image width="60%" source="images/sec7-1-sol3b.png">
+                <image width="60%" source="../images/sec7-1-sol3b.png">
                 </image>
 </solution></exercise>
 
@@ -166,7 +166,7 @@ The present value of that revenue stream is the area of the region under the cur
 
 <exercise ><statement><p>  Let <m>f(x) = 3 \ln(x)</m>.  Estimate the area under <m>f(x)</m> on the interval <m>1 \le  x \lt 10</m> using 50 rectangles and a right hand rule.
 </p></statement><solution>
-                <image width="50%" source="images/sec7-1-sol5a.png">
+                <image width="50%" source="../images/sec7-1-sol5a.png">
                 </image>
 <p>A set-up similar to the one in problems 1 and 3 gives us an approximation for the area of  42.69.</p>
 </solution></exercise>
@@ -176,7 +176,7 @@ The present value of that revenue stream is the area of the region under the cur
 
 <exercise ><statement><p> Let <m>f(x) = (5 x + 3) \exp(-0.7 x)</m>.  Estimate the area under <m>f(x)</m> on the interval <m>0 \le  x \lt 5</m> using 100 rectangles and a right hand rule.
 </p></statement><solution>
-                <image width="60%" source="images/sec7-1-sol7a.png">
+                <image width="60%" source="../images/sec7-1-sol7a.png">
                 </image>
 <p>The area underneath the curve is approximately 12.92</p>
 </solution></exercise>
@@ -254,10 +254,10 @@ Then <m>\frac{N}{13.5}\gt 1,000,000</m>, and hence <m>N\gt 13,500,000</m>.
 <ol label="(a)">
 <li><p> Estimate the total sales in the first year.</p>
 <p>The total sales would be the sum of the sales each month. This is the same as a right hand sum of the function <m>Sales(t)= 500*2^{.08 t}</m> on the interval [0,12] with 12 subdivisions. The Excel commands are as follows (quick fill down to complete the Excel table)</p>
-                <image width="80%" source="images/sec7-1-sol11a.png">
+                <image width="80%" source="../images/sec7-1-sol11a.png">
                 </image>
 <p>Results:</p>
-                <image width="50%" source="images/sec7-1-sol11b.png">
+                <image width="50%" source="../images/sec7-1-sol11b.png">
                 </image>
 
  
@@ -266,13 +266,13 @@ Then <m>\frac{N}{13.5}\gt 1,000,000</m>, and hence <m>N\gt 13,500,000</m>.
 <li><p> Estimate the total sales in the fourth year.</p>
 <p>We need to adjust the computation so that the sales added correspond to the sales of the fourth year only. This would be from month 36 to 48.
 We can just adjust the values in the EXCEL table above!</p>
-                <image width="50%" source="images/sec7-1-sol11c.png">
+                <image width="50%" source="../images/sec7-1-sol11c.png">
                 </image>
 <p>So the total sales in the fourth year are $64,503.12</p>
 </li>
 <li><p> Estimate the total sales over the first 5 years.</p>
 <p>This will be a much larger range. We will add the sales for the first 5 years. In other words: the first 60 months. Note that this means we want to change <m>N</m> to 60 (we want to do the computation for each month) The rows from 13 to 65 have been hidden from views to create a smaller size image for this solution manual:</p>
-                 <image width="70%" source="images/sec7-1-sol11d.png">
+                 <image width="70%" source="../images/sec7-1-sol11d.png">
                 </image>
  
 <p>The total sales for the first 5 years is $248,947.41</p>
@@ -298,7 +298,7 @@ We can just adjust the values in the EXCEL table above!</p>
          <section xml:id="sec-7-2-FundamentalTheoremCalculius">
             <title>The Fundamental Theorem of Calculus</title>
 
-<p><url href="./Examples/Section-7-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p><url href="../Examples/Section-7-2-Examples.xlsx">Link to worksheets used in this section</url></p>
 
 <p>
 In the last section we defined the definite integral, <m>\int_a^b f(t)dt</m>, the signed area under the curve <m>y= f(t)</m> from <m>t=a</m> to <m>t=b</m>, as the limit of the area found by approximating the region with thinner and thinner rectangles.  We also saw that we can easily find a reasonable approximation to the area using Excel to find such a sum with a fairly large number of rectangles.  </p>
@@ -320,7 +320,7 @@ Let <m>f(t)=c</m>.  For a constant function, <m>f(t)=c</m>, the area under the c
 <p>
 It is worth noting that this formula gives "signed area."  If c or b-a is negative, the "area" is negative.</p>
 
-                <image width="60%" source="images/sec7-2-1.png">
+                <image width="60%" source="../images/sec7-2-1.png">
                 </image>
 </example>
 
@@ -328,7 +328,7 @@ It is worth noting that this formula gives "signed area."  If c or b-a is negati
 <p>
 Let <m>f(t) = c*t</m>.  For a linear function, <m>f(t) = c*t</m>, the area under the curve from 0 to <m>b</m> will be the area of a triangle of height <m>c*b</m> and width <m>b</m>. </p> 
  
-                <image width="60%" source="images/sec7-2-2.png">
+                <image width="60%" source="../images/sec7-2-2.png">
                 </image>
 
 <p>
@@ -341,7 +341,7 @@ The obvious area function is <m>F(x)=c*x^2/2</m>.  If <m>a</m> is also nonzero, 
 <p>
  As we consider finding area with Excel and Riemann sums, rather than use a right-hand rule for the rectangles, we are going to use a midpoint rule where we find the area of rectangles evaluated at the middle of each interval.  </p>
 
-                <image width="60%" source="images/sec7-2-3.png">
+                <image width="60%" source="../images/sec7-2-3.png">
                 </image>
  
 <p>
@@ -355,13 +355,13 @@ In both of the examples we have examined the area function has the original func
 <p>
 Repeat the last example, finding the area under <m>f(x)=6x</m>, with Excel.  With a linear function we have use the following to produce an area function.</p>
 
-                 <image width="90%" source="images/sec7-2-4.png">
+                 <image width="90%" source="../images/sec7-2-4.png">
                 </image>
 
 <p>
 Column C has our list of <m>t</m> values in the center of each interval.  Column D has the value of <m>f(t)</m> evaluated at those points.  The area of the rectangle is the height <m>f(mid_n)</m> times the width, Interval width.  SumArea is our running area function.  When we plot the area function we have something that seems to be quadratic with leading coefficient <m>c/2</m> and very small linear and constant coefficients.  In fact the linear and constant coefficients are zero up to a rounding factor for numbers of the size we are using.</p>
 
-                 <image width="80%" source="images/sec7-2-5.png">
+                 <image width="80%" source="../images/sec7-2-5.png">
                 </image>
  </example>
 a 
@@ -375,14 +375,14 @@ Find the area function when <m>f(t) = 6t^2</m>.</p>
 <p>
 For this problem we essentially repeat the work of the previous example with a quadratic function for <m>f(t)</m>.</p>
 
-                <image width="90%" source="images/sec7-2-6.png">
+                <image width="90%" source="../images/sec7-2-6.png">
                 </image>
 
 <p>
 When we plot the area function we get a very good fit with a cubic function.  Once again, allowing for the way best-fit curves may return small random values for coefficients that should be zero, we see that if <m>f(t) =c*t^2</m>, then the related area function is </p>
 <me>F(x)=c*t^3/3</me>.
 
-                <image width="100%" source="images/sec7-2-7.png">
+                <image width="100%" source="../images/sec7-2-7.png">
                 </image>
 </example>
 
@@ -393,7 +393,7 @@ When we plot the area function we get a very good fit with a cubic function.  On
 <p>
 Once again, we can use Excel to produce an area function.  The area function seems to be <m>F(x)=1.5 x^4</m>.</p>
 
-                <image width="100%" source="images/sec7-2-8.png">
+                <image width="100%" source="../images/sec7-2-8.png">
                 </image>
 </example>
 
@@ -418,7 +418,7 @@ It is easier to prove or justify the first version of the fundamental theorem.  
 <me>\frac{d}{dx} F(x)=\lim_{h\to 0}
 \frac{(F(x+h)-F(x))}{h}.</me>
 
-                <image width="70%" source="images/sec7-2-9.png">
+                <image width="70%" source="../images/sec7-2-9.png">
                 </image>
 
 <p>
@@ -461,7 +461,7 @@ Example 3a: Find the area function when <m>f(t) = 6t^2</m>.</p>
 We have already used Excel to find a best fitting curve.
 </p>
  
-                <image width="100%" source="images/sec7-2-10.png">
+                <image width="100%" source="../images/sec7-2-10.png">
                 </image>
 
 <p>
@@ -499,7 +499,7 @@ It is worth noting that using the fundamental theorem to evaluate integrals requ
 <li><me>F' (x)=\frac{d}{dx}  (2 x^2+ 5 x + 7)=4x+5     </me></li>
 <li><me>\int_1^5 f(x) dx=F(5)-F(1)= 82-14=68</me></li>
 <li><p> The midpoint sum gives us an approximation of 68.</p>
-                <image width="50%" source="images/sec7-2-sol1a.png">
+                <image width="50%" source="../images/sec7-2-sol1a.png">
                 </image>
 </li>
 </ol>
@@ -527,7 +527,7 @@ It is worth noting that using the fundamental theorem to evaluate integrals requ
 </li>
 <li><me>\int_1^{20}\frac{5}{x} dx=F(20)-F(1)=\ln(20^5 )+9-(\ln(1)+9)=ln(20^5) =14.98</me></li>
 <li><p> The midpoint sum with N = 200 gives an approximation of 14.978</p>
-                <image width="50%" source="images/sec7-2-sol3a.png">
+                <image width="50%" source="../images/sec7-2-sol3a.png">
                 </image>
 </li>
 </ol>
@@ -559,7 +559,7 @@ It is worth noting that using the fundamental theorem to evaluate integrals requ
 <li><me>\int_0^{10}x e^{-0.05 x} dx=F(10)-F(0)=-360.92-(-397)=36.08></me>
 </li><li>
 <p> The midpoint sum with N = 100 gives an approximation of 38.06</p>
-                <image width="50%" source="images/sec7-2-sol5a.png">
+                <image width="50%" source="../images/sec7-2-sol5a.png">
                 </image>
 </li>
 </ol>
@@ -616,7 +616,7 @@ It is worth noting that using the fundamental theorem to evaluate integrals requ
 </statement><solution>
 <ol label="(a)">
 <li><p>A quick computation gives the total area:</p>
-                <image width="100%" source="images/sec7-2-sol9a.png">
+                <image width="100%" source="../images/sec7-2-sol9a.png">
                 </image>
 <p>The area under the curve is approx. 26.8.</p>
 <p>The area under the curve looks like an exponential curve.</p>
@@ -631,7 +631,7 @@ It is worth noting that using the fundamental theorem to evaluate integrals requ
 <p>Hence A=0.5 and we may choose B to be any constant we want. Then</p>
 <me>F(x)=1/2  e^2x+B  </me>
 <p>That shows us where the problem is in our estimate.  Excel’s best fitting routine does not allow for constants in exponential functions.  Since <m>F(0)=.5+B</m>, and <m>Area(0)=0</m>, we need to add .5 to the area to get a good best fit curve.  Then the best fit line works.</p>
-                <image width="100%" source="images/sec7-2-sol9b.png">
+                <image width="100%" source="../images/sec7-2-sol9b.png">
                 </image>
             </li>
 </ol>
@@ -654,14 +654,14 @@ It is worth noting that using the fundamental theorem to evaluate integrals requ
 </statement><solution>
 <ol label="(a)">
 <li> 
-                <image width="100%" source="images/sec7-2-sol11a.png">
+                <image width="100%" source="../images/sec7-2-sol11a.png">
                 </image>
 
 <p>The cumulative function looks like a logarithmic function.</p>
 
 <p>The Trendline approximation gives the equation <m>y = 0.9913ln(x) + 0.0167</m>.</p> 
 <p>We can make the fit better when we realize that we are evaluating at the midpoint of each interval but taking the are to the end of the interval.  We want to look at an adjusted x at the right side of each interval.</p>
-                <image width="100%" source="images/sec7-2-sol11b.png">
+                <image width="100%" source="../images/sec7-2-sol11b.png">
                 </image>
 <me>F(x) = ln(x) </me>
 </li>
@@ -833,7 +833,7 @@ This formula requires a bit more work.  We start with the formula <m>\frac{d}{dx
 
 <p>The total production for 5 years will be the definite integral of the production function for the first 60 months.  We first use Excel to find a best fitting exponential function.</p>
  
-                <image width="80%" source="images/sec7-3-1.png">
+                <image width="80%" source="../images/sec7-3-1.png">
                 </image>
  
 <p>The production function (P) in terms of the number of months (x) is given by</p>
@@ -892,7 +892,7 @@ This formula requires a bit more work.  We start with the formula <m>\frac{d}{dx
 
 <p>I start by finding a best fitting line to the data. </p> 
 
-                <image width="80%" source="images/sec7-3-2.png">
+                <image width="80%" source="../images/sec7-3-2.png">
                 </image>
 
 <p>Excel tells me the marginal profit function is</p>
@@ -1426,81 +1426,81 @@ In section 7.1 we looked at approximating definite integrals with a Riemann sum 
 <p>
 We start with Wolfram|Alpha, available at (http://www.wolframalpha.com>.  We can give Wolfram|Alpha the question we want solved in plain English.  In our case we would like to find the antiderivative of <m>x^n</m> with respect to <m>x</m>.</p>
  
-                <image width="70%" source="images/sec7-5-1.png">
+                <image width="70%" source="../images/sec7-5-1.png">
                 </image>
 
 <p>
 The Alpha provides an answer.</p>
 
-                <image width="70%" source="images/sec7-5-2.png">
+                <image width="70%" source="../images/sec7-5-2.png">
                 </image>
  
 <p>
 Note that the response tells us the question the Wolfram|Alpha is answering.  That helps us check that we have been properly understood.  We may find it useful to give a formula without the extra words.</p>
 
-                <image width="70%" source="images/sec7-5-3.png">
+                <image width="70%" source="../images/sec7-5-3.png">
                 </image>
 
 <p>
 The interface is fairly robust.  It understands the convention that the variable for math problems is typically <m>x</m>, so it will generally guess that x is our variable if we don't specify the variable with respect to which we are integrating.</p>
  
-                 <image width="70%" source="images/sec7-5-4.png">
+                 <image width="70%" source="../images/sec7-5-4.png">
                 </image>
 
 <p>
 It is worth noting that Wolfram|Alpha is connected with Mathematica, so it will understand questions in Mathematica syntax.  On the right side to the screen there is a link for related links.  In particular, there will be a link for the related command in Mathematica.</p>
 
-                <image width="50%" source="images/sec7-5-5.png">
+                <image width="50%" source="../images/sec7-5-5.png">
                 </image>
  
 <p>
 Following that link gives more information on the syntax of the Mathematica command.  We generally don't need to know the syntax, but it is useful if we want to use specific options.</p>
 
-                <image width="60%" source="images/sec7-5-6.png">
+                <image width="60%" source="../images/sec7-5-6.png">
                 </image>
  
 <p>
 We should note that Wolfram|Alpha will easily find antiderivatives that we would find very hard to do or beyond the scope of this class.</p>
  
-                <image width="80%" source="images/sec7-5-7.png">
+                <image width="80%" source="../images/sec7-5-7.png">
                 </image>
 
 <p>
 The output also has a link for showing steps on complicated problems.</p>
 
-                <image width="80%" source="images/sec7-5-8.png">
+                <image width="80%" source="../images/sec7-5-8.png">
                 </image>
 
 <p>
 The show steps link only works on the paid version of Alpha.  However we can find other tools by searching for integral calculator.  Such a search reveals symbolab, 
 ( https://www.symbolab.com/solver/definite-integral-calculator>, which we also used in chapter 4.</p>
  
-                <image width="90%" source="images/sec7-5-9.png">
+                <image width="90%" source="../images/sec7-5-9.png">
                 </image>
  
 <p>
 In chapter 4, we found a derivative calculator.  Similarly we can find an integral calculator (http://www.integral-calculator.com/>  that will show steps.
 For problems of at the level of difficulty we have been doing, Wolfram|Alpha also produces plots of the integral.</p>
 
-                <image width="90%" source="images/sec7-5-10.png">
+                <image width="90%" source="../images/sec7-5-10.png">
                 </image>
 
 <p>
 <term>Definite integrals</term> - One of the reasons we wanted to find antiderivatives was to be able to use them to evaluate definite integrals.  We can ask Wolfram|Alpha for the definite integral directly.  In that case, Wolfram|Alpha will give the numeric answer and will also produce the relevant graph.  (Symbolab will also do definite integrals.)</p>
 
-                <image width="90%" source="images/sec7-5-11.png">
+                <image width="90%" source="../images/sec7-5-11.png">
                 </image>
 
 <p>
 This is particularly useful when finding the antiderivative is beyond the scope of this course.  Consider for example if we want to find the area under a portion of a curve that has the shape of a normal curve.</p>
  
-                <image width="90%" source="images/sec7-5-12.png">
+                <image width="90%" source="../images/sec7-5-12.png">
                 </image>
   
 <p>
 Another example when we can easily set up integrals we cannot solve by hand occurs when we are trying to find the current value of a revenue stream.  A value, <m>V</m>, that we get <m>t</m> years in the future, has a present value of <m>V exp(-r t)</m> where <m>r</m> is an investment return rate.  Thus the current value of a revenue stream, <m>V(t)</m>, from time <m>a</m> to time <m>b</m>, is <m>\int_a^b V(t)*e^{(-r*t)} dt</m>.  However we only have a rule for finding the antiderivative when <m>V(t)</m> is either a constant or exponential function.  With a CAS program it is straightforward to compute such integrals for a broad range of value stream functions.</p>
 
-                <image width="80%" source="images/sec7-5-13.png">
+                <image width="80%" source="../images/sec7-5-13.png">
                 </image>
 
 <p>
@@ -1519,18 +1519,18 @@ In business situations, we are rarely asked to simply find an integral.  Instead
 <p>
 We can do this by putting together things we have already done.  First we use Wolfram|Alpha to find an antiderivative.</p>
  
-                <image width="70%" source="images/sec7-5-14.png">
+                <image width="70%" source="../images/sec7-5-14.png">
                 </image>
 
 <p>
 Thus we know <m>P(q)=\frac{1q^3}{3}+\frac{5q^2}{2}+50q+C</m> for some constant <m>C</m>.  We also know <m>P(5)=0</m>.  We now plug the function, without the <m>C</m>, into Excel and evaluate at <m>q=5</m>.  </p>
 
-                <image width="70%" source="images/sec7-5-15.png">
+                <image width="70%" source="../images/sec7-5-15.png">
                 </image>
 
 <p>
 We make C the negative of our answer and modify our function accordingly.  We now use solver to maximize the function. </p>
-                <image width="70%" source="images/sec7-5-16.png">
+                <image width="70%" source="../images/sec7-5-16.png">
                 </image>
 
 <p>
@@ -1544,15 +1544,15 @@ Thus the maximum profit is $145.83, and it occurs when <m>q=10</m>.</p>
 <p>
 We can also do this with Wolfram|Alpha setting up the boundary value problem.  We give the alpha bot the derivative we want integrated and the fixed value of the original function.  (Notice that the answer does not include a +C, since we have computed a particular constant.)</p>
 
-                 <image width="70%" source="images/sec7-5-17.png">
+                 <image width="70%" source="../images/sec7-5-17.png">
                 </image>
-                <image width="70%" source="images/sec7-5-18.png">
+                <image width="70%" source="../images/sec7-5-18.png">
                 </image>
 
 <p>
 We then ask Alpha to maximize the function.</p>
  
-                <image width="90%" source="images/sec7-5-19.png">
+                <image width="90%" source="../images/sec7-5-19.png">
                 </image>
 <p>
 This gives the same answer of $145.83.</p>
@@ -1568,7 +1568,7 @@ This first example could easily have been done by hand.  We can repeat the proce
 <p>
 In structure, this example is very similar to the first example.  However, where in the first example, the function would have been easy to do by hand, in this case, the problem is very hard to do by hand.  We use Wolfram/Alpha to find the antiderivative.</p>
 
-                <image width="70%" source="images/sec7-5-20.png">
+                <image width="70%" source="../images/sec7-5-20.png">
                 </image>
  
 <me>P(q) = exp(-q/10)*(-10*q^2-200*q-2000)-q^2/20+C.</me>
@@ -1576,13 +1576,13 @@ In structure, this example is very similar to the first example.  However, where
 <p>
 We then use Excel to find <m>C</m>, noting that if we use <m>P(q)</m> without the <m>C</m>, then <m>C</m> is the value of <m>–P(5) = 1972.474</m>.</p>
 
-                <image width="70%" source="images/sec7-5-21.png">
+                <image width="70%" source="../images/sec7-5-21.png">
                 </image>
 
 <p>
 We plug in 5 and note <m>P(5) = 0 = C-1972.474</m>, thus <m>C = 1972.474</m>.  We use solver to maximize and find the maximum profit of $1675.17 occurs at <m>q=64.72775</m>.</p>
 
-                <image width="90%" source="images/sec7-5-22.png">
+                <image width="90%" source="../images/sec7-5-22.png">
                 </image>
 </example>
 
@@ -1600,9 +1600,9 @@ We approximate the current value with the integral </p>
 <p>
 What we really want is the Riemann sum with one interval per day.  Over 10 years we have 3652 days.</p>
  
-                <image width="70%" source="images/sec7-5-23.png">
+                <image width="70%" source="../images/sec7-5-23.png">
                 </image>
-                 <image width="70%" source="images/sec7-5-24.png">
+                 <image width="70%" source="../images/sec7-5-24.png">
                 </image>
  
 <p>
@@ -1720,7 +1720,7 @@ Our marginal cost function is <m>MC(q)=10q \ln(q)</m> and the startup costs are 
          <section xml:id="sec-7-6-NormalDistribution">
             <title>The Normal Distribution: An extended numeric example</title>
 
-<p><url href="./Examples/Section-7-6-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p><url href="../Examples/Section-7-6-Examples.xlsx">Link to worksheets used in this section</url></p>
 
 <p>
 We want to look at an extended example where we realistically want to find a definite integral, but need to use numerical methods rather than solving for the antiderivative and using the fundamental theorem of calculus.
@@ -1747,7 +1747,7 @@ where sigma, <m>\sigma</m>, and mu, <m>\mu</m>, are respectively the standard de
 Thus, when I note that the adult men in the United States have a height distribution that is normal with a mean of 70 inches and a standard deviation of 3 inches, the distribution is</p>
 <me>f(x)=\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^2}\right)</me>
 
-                <image width="50%" source="images/sec7-6-1.png">
+                <image width="50%" source="../images/sec7-6-1.png">
                 </image>
 
 <p>
@@ -1782,12 +1782,12 @@ Since I have a population of 100,000 and am interested in the men who are betwee
 
 <p><term>Solution 1, using Excel and Riemann Sums</term>:  I want to set up a spreadsheet to find the area under the curve.  Since I think I may do this for several problems, I want to set up the worksheet as a template that I can simply fill in.  It will make my life easier if I recast the problem in terms of standard deviations.   My potential market is <m>100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx</m>.   I am ready to set up a Riemann sum worksheet as we did in section 7.1</p>
 
-                <image width="80%" source="images/sec7-6-2.png">
+                <image width="80%" source="../images/sec7-6-2.png">
                 </image>
 
 <p>In cells F3 through F5 we convert the lower bound, upper bound, and del x to standard deviations.  We recall that we get better accuracy by evaluating the rectangles with a midpoint.  The midpoint of the nth rectangle is (n-0.5)*del x above the lower bound.  As we did in previous sections, we use the offset command to bring our answer into the top region.  When we look at the numbers we see that the potential market is 25,249.</p>
 
-                <image width="50%" source="images/sec7-6-3.png">
+                <image width="50%" source="../images/sec7-6-3.png">
                 </image>
 
 <p><term>Solution 1a, using Excel Statistics Commands</term>:  By this point in the course you should expect that if we claim a computation is important and done by business many times, that there is an Excel command to do the computation.</p>
@@ -1807,13 +1807,13 @@ Where <m>x</m>, mean, and standard deviation have the obvious meanings.  The cum
 <p>
 (If you are using older versions of Excel, the syntax of the command is a little different.  Check the appropriate help page if you are using an older version of Excel.)  With these commands, our spreadsheet is noticeably simpler.</p>
 
-                <image width="70%" source="images/sec7-6-4.png">
+                <image width="70%" source="../images/sec7-6-4.png">
                 </image>
  
 <p>
 When we look at the values, we get a target population of 25,249.  This agrees with our estimate to 5 significant figures.</p>
 
-                <image width="50%" source="images/sec7-6-5.png">
+                <image width="50%" source="../images/sec7-6-5.png">
                 </image>
 
 <p>
@@ -1829,7 +1829,7 @@ When we look at the values, we get a target population of 25,249.  This agrees w
 
 <p>We get our familiar answer of 25,249.</p>
 
-                <image width="60%" source="images/sec7-6-6.png">
+                <image width="60%" source="../images/sec7-6-6.png">
                 </image>
 
 <p>When we compute a target population, we sometimes want to include the tail of the distribution.  We might, for example be concerned with all women who are 5 feet tall or less.  This sets up an integral over an infinite interval, which we can’t do as a Riemann sum.  The first workaround notes that the tails are very small.  If all humans who have ever lived are normally distributed, less than 1 is more than 7 standard deviations from the mean.  Taking the integral down to -7 will practically be the same as integrating down to <m>-\infty</m>.  The second workaround uses the symmetry of the normal distribution.</p>  
@@ -1844,7 +1844,7 @@ When we look at the values, we get a target population of 25,249.  This agrees w
 
 <p><term>Solution</term>: Using Excel and Riemann Sums:  One advantage of having set up the first exercise well, it the Riemann sum problem is now a matter of changing the parameters and subtracting from 0.5 before multiplying by the market size.</p>
 
-                <image width="50%" source="images/sec7-6-7.png">
+                <image width="50%" source="../images/sec7-6-7.png">
                 </image>
 
 <p>We notice that since we are finding the area under the standardized normal distribution from 0 to a negative number, we get a negative area.  Our potential market is composed of 3,645 women.</p>
@@ -1853,7 +1853,7 @@ When we look at the values, we get a target population of 25,249.  This agrees w
 
 NORM.S.DIST(right hand limit, cumulative).
 
-                <image width="60%" source="images/sec7-6-8.png">
+                <image width="60%" source="../images/sec7-6-8.png">
                 </image>
 
 <p>Once again, we get a potential market of 3,645 women.</p>
@@ -1866,7 +1866,7 @@ NORM.S.DIST(right hand limit, cumulative).
 
 <p><term>Solution</term>:  I want the portion of the population between size 6.5 and 7.5.   I fit it into my worksheet for Riemann sums.</p>
 
-                <image width="50%" source="images/sec7-6-7.png">
+                <image width="50%" source="../images/sec7-6-7.png">
                 </image>
  \
 <p>Of the 1000 pairs of shoes, 211 should be size 7.</p>
@@ -1953,9 +1953,9 @@ NORM.S.DIST(right hand limit, cumulative).
 <p>The desired syntax is</p>
 <p>Population size * (NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) - 
 NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) )</p>
-                 <image width="80%" source="images/sec7-6-sol7a.png">
+                 <image width="80%" source="../images/sec7-6-sol7a.png">
                 </image>
-                 <image width="40%" source="images/sec7-6-sol7b.png">
+                 <image width="40%" source="../images/sec7-6-sol7b.png">
                 </image>
 
 </solution></exercise>
@@ -1970,9 +1970,9 @@ NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) )</p>
 <p>The desired syntax is</p>
 <p>Population size * (NORM.DIST(High value, Mean, Standard Deviation, TRUE) - 
 NORM.DIST(Low value, Mean, Standard Deviation, TRUE) )</p>
-                <image width="80%" source="images/sec7-6-sol9a.png">
+                <image width="80%" source="../images/sec7-6-sol9a.png">
                 </image>
-                <image width="40%" source="images/sec7-6-sol9b.png">
+                <image width="40%" source="../images/sec7-6-sol9b.png">
                 </image>
 <p>With a million people, the high IQ should be between 170 and 180.</p>
 </solution></exercise>
@@ -2005,7 +2005,7 @@ NORM.DIST(Low value, Mean, Standard Deviation, TRUE) )</p>
           <section xml:id="sec-7-7-InvestmentDepreciation">
             <title>Applications of the integral: Investment and depreciation</title>
 
-<p><url href="./Examples/Section-7-7-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p><url href="../Examples/Section-7-7-Examples.xlsx">Link to worksheets used in this section</url></p>
 
 <p>
 Having looked at several ways to evaluate definite integrals, we return to practical problems that we can solve be evaluating an integral.  We will break our applications in this section into two groups.  Problems in the first group reduce to accumulation over time, and are analogous to finding the area under a curve, or finding a definite integral.  Problems in the second group ask you to find a specific anti-derivative of a function.  They are called boundary value problems.</p> 
@@ -2027,7 +2027,7 @@ To set the problem up for calculus, we use a 24-hour clock to put time on a numb
 <p>
 gallons of fuel.</p> 
  
-                <image width="70%" source="images/sec7-7-1.png">
+                <image width="70%" source="../images/sec7-7-1.png">
                 </image>
 </example>
 
@@ -2052,7 +2052,7 @@ Find the increase in cost as production goes from 50,000 to 80,000.</p>
 <p>
 The change in cost of production is $3,450,000.</p> 
 
-                <image width="50%" source="images/sec7-7-2.png">
+                <image width="50%" source="../images/sec7-7-2.png">
                 </image>
 </example>
 
@@ -2068,7 +2068,7 @@ An oil well in Texas initially produces oil at a rate of 2 million barrels of oi
 <p>
 Over 5 years, the well will produce 6.846 million barrels of oil.</p> 
 
-                <image width="40%" source="images/sec7-7-3.png">
+                <image width="40%" source="../images/sec7-7-3.png">
                 </image>
 </example>
 
@@ -2079,13 +2079,13 @@ Your company is interested in acquiring a revenue stream that is currently produ
 <p>
 <term>Solution</term>: To find the total income we would want to integrate <m>(50+5t)</m> as <m>t</m> goes from 0 to 10.  To find the current value we must discount the income based in when we receive it.  Thus we want to integrate <m>(50+5t) e^{-0.06t}</m> as <m>t</m> goes from 0 to 10.  We set up the integral <m>\int_0^{10} (50+5t) e^{-0.06t}  dt</m>.  Since we do not know how to find the anti-derivative for this function, we find the area either with Excel and Riemann sums, or with Wolfram Alpha.  </p> 
 
-                <image width="80%" source="images/sec7-7-4.png">
+                <image width="80%" source="../images/sec7-7-4.png">
                 </image>
 
 <p>
 With either method, we find that the present value of the revenue stream to be $545,298.</p> 
 
-                <image width="50%" source="images/sec7-7-5.png">
+                <image width="50%" source="../images/sec7-7-5.png">
                 </image>
 </example>
 
@@ -2177,7 +2177,7 @@ Integrating the first equation gives</p>
 <p>
 Thus, straight-line depreciation gives a value function, which is a straight line.  We now plug in known values to find the constants.  We plug in for <m>time = 0</m> to see <m>C = 18,000</m>.  We plug in for <m>time = 5</m> to see <m>k = 3.600</m>.  This gives us the same equation using calculus as we obtained using algebra.  The book value of the equipment at 3.5 years is $5,400 with this method of depreciation.</p> 
 
-                <image width="60%" source="images/sec7-7-6.png">
+                <image width="60%" source="../images/sec7-7-6.png">
                 </image>
 </example>
 
@@ -2210,7 +2210,7 @@ At 3.5 years the value will be 	</p>
 <p>
 The book value at 3.5 years is $1,620 with this method of depreciation.</p> 
 
-                <image width="50%" source="images/sec7-7-7.png">
+                <image width="50%" source="../images/sec7-7-7.png">
                 </image>
 </example>
 
@@ -2240,7 +2240,7 @@ or</p>
 <p>
 Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book value is <m>100,000*(0.6)^{3.}5 = \$16,731</m>.</p> 
 
-                <image width="60%" source="images/sec7-7-8.png">
+                <image width="60%" source="../images/sec7-7-8.png">
                 </image>
 </example>
 
@@ -2267,7 +2267,7 @@ Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book
 <exercise ><statement><p>  The daily sales projections for a fad item are: </p>
 <me>Daily\ Sales(t)=100 t^2 e^{-t/5}</me>
 <p>Find the estimated total sales over the first 100 days.</p></statement><solution>
-                <image width="80%" source="images/sec7-7-sol3a.png">
+                <image width="80%" source="../images/sec7-7-sol3a.png">
                 </image>
 <p>We expect sales of about 25000 units.</p>
 </solution></exercise>
@@ -2277,7 +2277,7 @@ Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book
 <p>Find the estimated total sales over the first 200 days.</p></statement></exercise>
 
 <exercise ><statement><p>  The production from an oil well starts at a rate of 10,000 barrels per year and declines exponentially at a rate of 10% per year.  How much is produced in 6 years?</p></statement><solution>
-                <image width="80%" source="images/sec7-7-sol5a.png">
+                <image width="80%" source="../images/sec7-7-sol5a.png">
                 </image>
 <p>We expect 44,472 barrels of oil over the 6 years.</p>
 </solution></exercise>
@@ -2285,7 +2285,7 @@ Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book
 <exercise ><statement><p>  An oil well is producing 15,000 barrels per year.  The rate of production is continuously declining at a rate of 10% per year.  The well will be capped as unproductive when it produces 3,000 barrels per year.  How much will it produce before being capped?</p></statement></exercise>
 
 <exercise ><statement><p>  A stream of revenue produces at a rate of $40,000 per year.  We assume that the risk free investment rate is 3% per year.  What is the current value of the revenue stream over 20 years?</p></statement><solution>
-                <image width="80%" source="images/sec7-7-sol7a.png">
+                <image width="80%" source="../images/sec7-7-sol7a.png">
                 </image>
 <p>We evaluate the revenue stram to be worth $603,982.</p>
 </solution></exercise>
@@ -2300,7 +2300,7 @@ Since 3.5 is less than 4.5 years, the equipment is still depreciating.  Its book
          <section xml:id="sec-7-8-BusinessApplicationsIntegral">
             <title>Economics Applications of the Integral</title>
 
-<p><url href="./Examples/Section-7-8-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p><url href="../Examples/Section-7-8-Examples.xlsx">Link to worksheets used in this section</url></p>
 
 <p>
 We have looked at the definite integral as the signed area under a curve.  This lets us compute total profit, or revenue, or cost, from the related marginal functions.  We have looked at a number of applications where this was interpreted as an accumulation over time, including total production of an oil well and present value of a revenue stream.  For some applications we want to look at the area between two curves. For example, considering profit as the area between the cost and revenue curves.</p>
@@ -2312,14 +2312,14 @@ In this section we will look at more applications from finance and economics whe
 
 <p>When we looked at supply and demand curves we found an equilibrium point where the amount being offered for sale was equal to the amount people wanted to buy.  </p>
 
-                 <image width="50%" source="images/sec7-8-1.png">
+                 <image width="50%" source="../images/sec7-8-1.png">
                 </image>
 
 <p>However, in that model, there were people who were willing to sell for less than the equilibrium price and people who were willing to buy for more than the equilibrium price.  These people got an exceptionally good deal in the transaction.  We would like to measure that benefit, since we can think of it as the extra profit the suppliers and buyers make on the transaction.  We note that each side will have an incentive to maximize that benefit.</p>
 
 <p>Focus first on the consumer side.  The area under the demand function, from 0 to the quantity sold, measures the consumers’ willingness to spend.  The area in the rectangle with that same base and height equal to the sale price measures the actual consumer expenditure.  The difference between the two is a quantity we will call <term>consumer surplus</term>.</p>
 
-                <image width="50%" source="images/sec7-8-2.png">
+                <image width="50%" source="../images/sec7-8-2.png">
                 </image>
 
 <p>In calculus terms:</p>
@@ -2334,7 +2334,7 @@ In this section we will look at more applications from finance and economics whe
 
 <p>In a similar manner, we can focus on the producer side. The area under the supply function, from 0 to the quantity sold, measures the producers’ need for revenue.  The area in the rectangle with that same base and height equal to the sale price measures the actual producer revenue.  The difference between the two is a quantity we will call <term>producer surplus</term>.</p>
 
-                 <image width="50%" source="images/sec7-8-3.png">
+                 <image width="50%" source="../images/sec7-8-3.png">
                 </image>
  
 <p>In calculus terms:</p>
@@ -2382,9 +2382,9 @@ To find the maximum producer surplus, we need to turn the endpoint into a variab
 
 <p><term>Solution</term>: We load the supply and demand price functions into excel and use Goal Seek to find an equilibrium price.  Rounding to the nearest unit for quantity and cent for price, we have an equilibrium price of $10.45 for a quantity of 222 shirts.</p>
 
-                 <image width="40%" source="images/sec7-8-4.png">
+                 <image width="40%" source="../images/sec7-8-4.png">
                 </image>
-                 <image width="40%" source="images/sec7-8-5.png">
+                 <image width="40%" source="../images/sec7-8-5.png">
                 </image>
 
 <p>We then substitute these values into the equations for consumer and producer surplus.</p>
@@ -2398,20 +2398,20 @@ To find the maximum producer surplus, we need to turn the endpoint into a variab
 
 <p>To evaluate these integrals we either use a Riemann sum approximation, like the one found on the example worksheet, or use Wolfram Alpha.  In either case, rounded to the nearest dollar, we have a consumer surplus of $372 and a producer surplus of $191.</p>
 
-                 <image width="40%" source="images/sec7-8-6.png">
+                 <image width="40%" source="../images/sec7-8-6.png">
                 </image>
-                 <image width="40%" source="images/sec7-8-7.png">
+                 <image width="40%" source="../images/sec7-8-7.png">
                 </image>
 </example>
 
 <p>The sum of the consumer surplus and the producer surplus is referred to as the <term>total social gain</term>.   As we looked at consumers' surplus, we assumed that the sales were determined by supply and the price-quantity point was on the supply curve.  Similarly, when looking at producers' surplus we assume price is set by demand and the price-quantity point was on the demand curve.  If both sides are made up of many individuals acting independently, the price-quantity point is the equilibrium point, which is on both curves.  Selling at that point also maximizes the total social gain.</p>
 
-                <image width="60%" source="images/sec7-8-8.png">
+                <image width="60%" source="../images/sec7-8-8.png">
                 </image>
 <p> 
 If however, either the producers or consumers can organize and act as a unit, they can form a cartel and limit the amount sold.  If the producers form a cartel, they can lower production and raise the price.</p>
 
-                <image width="60%" source="images/sec7-8-9.png">
+                <image width="60%" source="../images/sec7-8-9.png">
                 </image>
 
 <p>As we can see from the picture, this always lowers the total social gain.  However for some reduction of quantity the producers’ surplus is increased.  In the equation for producer surplus the price <m>p_s</m> is <m>demand\ function (q_s)</m> rather than <m>supply\ function (q_s)</m>.  If the quantity goes down too far the producer surplus will also go down.</p>
@@ -2427,32 +2427,32 @@ If however, either the producers or consumers can organize and act as a unit, th
 <p>
 <term>Solution</term>: The formulas involved for supply and demand are the same ones we used in example 2.  With a slight modification if the worksheet from that example we can set it to compute the Riemann sums approximating the surpluses.  In particular, we use the demand function for finding the height of producer surplus.  (See cell D7.)</p>
 
-                <image width="80%" source="images/sec7-8-10.png">
+                <image width="80%" source="../images/sec7-8-10.png">
                 </image>
 
 <p>
 If we only want to sell 200 shirts, we can raise the price to from $10.45 to $10.50.  The producer surplus rises from $191 to $199.  However the consumer surplus falls from $372 to $362.</p>
  
-                 <image width="50%" source="images/sec7-8-11.png">
+                 <image width="50%" source="../images/sec7-8-11.png">
                 </image>
 
 <p>
 If we only want to sell 50 shirts, we can raise the price from$10.45 to $11.92.  The producer surplus falls from $191 to $174.  The consumer surplus falls from $372 to $230.</p>
  
-                <image width="50%" source="images/sec7-8-12.png">
+                <image width="50%" source="../images/sec7-8-12.png">
                 </image>
  
 <p>
 We can use solver to maximize the Producer surplus by varying the quantity.  A quantity of 140 maximizes the producer surplus at $210, but is doing that the total social gain is down to $537 from $563.</p>
  
-                <image width="50%" source="images/sec7-8-13.png">
+                <image width="50%" source="../images/sec7-8-13.png">
                 </image>
 </example>
 
 <p>
 Similarly, if the consumers form a cartel, they can artificially reduce the demand.  Since they will then pay the supply price the total social gain will be decreased, but the consumers’ surplus may be increased.  In this case the consumer surplus is the integral of the difference between the demand function and the supply price of the quantity that will be sold.</p>
 
-                <image width="60%" source="images/sec7-8-14.png">
+                <image width="60%" source="../images/sec7-8-14.png">
                 </image>
   
 <p>
@@ -2474,7 +2474,7 @@ We can make a few more observations.  The population as a whole has the entire i
 <p>
 If we had perfect equity, our Lorenz function would be <m>L(x)=x</m>.  Any Lorenz curve we find for a real population will be below this curve.  The Gini index (or Gini coefficient) measures the percentage that a real Lorenz curve is below the ideal curve.</p>
 
-                <image width="50%" source="images/sec7-8-15.png">
+                <image width="50%" source="../images/sec7-8-15.png">
                 </image>
 
 <p>
@@ -2520,13 +2520,13 @@ In practice, the Gini index is an application where a numeric approximation of a
 <p>
 <term>Solution</term>:  We recall that the area of a trapezoid is (width)(average height).  We put the data into a spreadsheet.</p>
 
-                <image width="60%" source="images/sec7-8-16.png">
+                <image width="60%" source="../images/sec7-8-16.png">
                 </image>
 
 <p>
 Then we evaluate the formulas.</p>
 
-                <image width="60%" source="images/sec7-8-17.png">
+                <image width="60%" source="../images/sec7-8-17.png">
                 </image>
 
 <p>
@@ -2723,7 +2723,7 @@ The two curve intersect at the point of market equilibrium,
                 </tabular>
 <p>Compute an approximation of the Gini index.</p></statement>
 <solution><p>We approximate the area by using straight lines between the given point and using trapezoids for the area of section.  We then need to multiply by 2, since we want the percentage below the diagonal line, and multiply by 100 to go from percentile to percents.</p>
-                <image width="60%" source="images/sec7-8-sol13a.png">
+                <image width="60%" source="../images/sec7-8-sol13a.png">
                 </image>
 <p> The Gini index is approximately 57.</p>
 </solution></exercise>
