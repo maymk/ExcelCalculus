@@ -75,7 +75,7 @@
 <li><p>The student is either majoring in business, or will use mathematics in a business setting.</p></li>
 </ul>
 
-<p>This text tries to follow the recommendations of the CAFTY reports.</p>
+<p>This text tries to follow the recommendations of the CRAFTY reports.</p>
 
 <p>
 The MAA curriculum guide (2004) notes that many of our current math courses were designed in the last century in response to the needs of physics and engineering. One might caricaturize a standard textbook for business calculus, often called brief calculus as a watered down version of a three-semester course in calculus that was designed for physics or math majors. Since it is trying to cover more topics in less time, the main emphasis is skill in symbolic manipulation. The standard text for a one semester survey of calculus is also used for both business and the life sciences. To allow for broad marketing the text is technology agnostic, follows the arrangement of a course for majors, and uses the notational conventions of mathematics.</p>
@@ -161,8 +161,8 @@ Let us know iof a few additional optional topics would better suit your needs.
 
 
 	<preface><title>Notes for Students</title>
-<p>This text written to mike life better for business students taking calculus.  
-You should be able to see connections between this couse and your business courses.  
+<p>This text has been written to make life better for business students taking calculus.  
+You should be able to see connections between this course and your business courses.  
 While it uses Excel, it does not assume that you are familiar with it.  
 The excel worksheets used in the text are available for you to use and see the underlying code.
 We are in the process of making them available in both the worked version, so you can see what was done,
@@ -177,8 +177,8 @@ Mathematicians have worked for millenia to develop techniques for fast symbol ma
 That means the same skills can be used in many contexts.
 In a business setting you want to make work products that you can come back to months or years later.
 You also want your work to be understood by others. 
-When practical, we use longer variabel names and break steps apart in Excel.  
-This makes the materail easier to read.  It also means that studnets make fewer mistakes with long formulas.</p>
+When practical, we use longer variable names and break steps apart in Excel.  
+This makes the material easier to read.  It also means that students make fewer mistakes with long formulas.</p>
 <p>Excel has special functions for almost any financial calculation you can think of.  
 For the most part, we will not use the advanced formulas.
 When your job is to work with a specific formula every day for months, it will make sense to learn the special formulas.

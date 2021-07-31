@@ -9,7 +9,7 @@ In the last chapter we approximated derivatives by using a balanced difference q
          <section xml:id="sec-4-1-ElementaryDerivatives">
             <title>Elementary Derivatives</title>
 
-          <p><url href="../Examples/Section-4-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-4-1-Examples.xlsx">Link to worksheets used in this section</url></p>
           
 
 <p> We start by recalling the formal definition, with a slight adjustment in notation to match the standard conventions:</p>
@@ -163,7 +163,7 @@ In the last chapter we approximated derivatives by using a balanced difference q
 
 <p>It suffices to show that <m> \left(lim_{h\to0}\frac{e^h-1}{h}\right) =1</m>.  This can be done by starting with a formal definition of <m>e</m>.  For this class it can also be done by using Excel to evaluate the expression for smaller and smaller values of h.</p>
 
-                <image width="60%" source="../images/sec4-1-1.png">
+                <image width="60%" source="images/sec4-1-1.png">
                 </image>
 
 <p>It seems clear that <m> \left(lim_{h\to0}\frac{e^h-1}{h}\right) =1</m>.  </p>
@@ -227,7 +227,7 @@ In the last chapter we approximated derivatives by using a balanced difference q
 
 <p><term>Solution</term>: We start by noticing that <m>y=e^x</m> and <m>y=\ln(x)</m> are inverse functions.  That means their graphs can be obtained by reflecting across the line <m>y=x</m>.</p>
 
-                <image width="80%" source="../images/sec4-1-2.png">
+                <image width="80%" source="images/sec4-1-2.png">
                 </image>
 
 <p>The slope of the tangent line at <m>(a,e^a)</m> is <m>e^a</m> by the exponential rule. Symmetry tells us the slope of the line tangent to <m>y=\ln(x)</m> at <m>(e^a,a)</m>   is <m>1⁄e^a</m>.  Letting <m>b=e^a</m>, the slope of the line tangent to <m>y=\ln(x)</m> at <m>(b,\ln(b))</m> is <m>1⁄b</m>.   Thus <m>\frac{d}{dx}(\ln(x))=1/x</m>.  </p>
@@ -579,7 +579,7 @@ f'(x)=\left(\frac{6x^2+100}{x^3+3}\right)'
 </me>
 </subsection>
 
-<exercises xml:id="exercises-set-sec-3-2">
+<exercises xml:id="exercises-set-sec-4-2">
 	<title>Exercises: Derivative Rules for Combinations of Functions Problems</title>
 
 
@@ -674,11 +674,10 @@ Use the rules from the last two sections to find the derivatives of the followin
 
 <exercise ><statement><p>   <m>m(x)=\frac{\ln(x)1.04^x}{3x^2+7}</m>.
 </p></statement><solution>
-<p>Quotient Rule:</p>
-<me>m'(x)=\frac{(\ln(x))' (1.04x )-(\ln(x) ) (1.04^x)'}{(3x^2+7)^2}</me>
-<me>=\frac{\frac{1}{x}(1.04^x )-(\ln(x) )(\ln(1.04) 1.04^x)}{(3x^2+7)^2} </me>
-<me>=\frac{(1.04^x )-x(\ln(x) )(\ln(1.04) 1.04^x)}{x(3x^2+7)^2 }</me>
-<me>=\frac{(1.04^x )[1-x(\ln(x) )  \ln(1.04) ]}{x(3x^2+7)^2 }.</me>
+<p>Quotient Rule with embedded Product Rule:</p>
+<me>m'(x)=\frac{(\ln(x)(1.04^x ))'(3x^2+7) -(\ln(x) (1.04^x))(3x^2+7)'}{(3x^2+7)^2}</me>
+<me>=\frac{(\ln(x)'(1.04^x )+\ln(x)(1.04^x )')(3x^2+7) -(\ln(x)  (1.04^x))(3x^2+7)'}{(3x^2+7)^2} </me>
+<me>=\frac{(\frac{1}{x}(1.04^x )+\ln(x)\ln(1.04)(1.04^x ))(3x^2+7) -(\ln(x) (1.04^x))(6x)}{(3x^2+7)^2} </me>
 
 </solution></exercise>
 
@@ -1087,7 +1086,7 @@ and <m>g(x)=b x+d</m>, with <m>b=g'(x_0 )</m>.</p>
 
 <p><term>Solution</term>:  When you call the website, you get an input bar much as you would with your favorite search engine. </p>
 
-                <image width="70%" source="../images/sec4-4-1.png">
+                <image width="70%" source="images/sec4-4-1.png">
                 </image>
 
 <p>The interface for Wolfram|Alpha is rather robust.  We can ask the question in plain English.  In our case we would like to find the derivative of x^3+5x+7 with respect to x.  Some of the ways of asking that question are:</p>
@@ -1105,14 +1104,14 @@ and <m>g(x)=b x+d</m>, with <m>b=g'(x_0 )</m>.</p>
 
 <p>For all of these, the website provides the same answer.</p>
 
-                <image width="90%" source="../images/sec4-4-2.png">
+                <image width="90%" source="images/sec4-4-2.png">
                 </image>
  </example>
  
 <p>Note that the response tells us the question that Wolfram|Alpha is answering.  This helps us check that we have been properly understood.  </p>
 <p>It is worthwhile to note that Wolfram|Alpha has an option to show step-by-step solutions.</p>
 
-                 <image width="70%" source="../images/sec4-4-3.png">
+                 <image width="70%" source="images/sec4-4-3.png">
                 </image>
  
 <p>Wolfram|Alpha understands the convention that the variable for math problems is typically x. If we don't specify the variable with respect to which we are differentiating, it will guess that x is our variable. Other letters are treated as constants unless we use function notation with parentheses. Thus we can use Wolfram|Alpha to check our differentiation rules.</p>
@@ -1120,7 +1119,7 @@ and <m>g(x)=b x+d</m>, with <m>b=g'(x_0 )</m>.</p>
 <example><title>Recalling the quotient rule</title><p>  Use Wolfram|Alpha to recall the quotient rule.</p>
 
 <p><term>Solution</term>:</p>
-                 <image width="70%" source="../images/sec4-4-4.png">
+                 <image width="70%" source="images/sec4-4-4.png">
                 </image>
 </example>
 
@@ -1138,7 +1137,7 @@ and <m>g(x)=b x+d</m>, with <m>b=g'(x_0 )</m>.</p>
 
 <p>We want to evaluate the derivative with respect to q when q=1000.</p>
 
-                <image width="90%" source="../images/sec4-4-5.png">
+                <image width="90%" source="images/sec4-4-5.png">
                 </image>
 
 <p>Thus, when quantity=1000, increasing production by 1 widget increases cost by $12.</p>
@@ -1160,14 +1159,14 @@ and <m>g(x)=b x+d</m>, with <m>b=g'(x_0 )</m>.</p>
 
 <p>When looking for a maximum, we always start by looking at a graph of the function in question.</p>
 
-                <image width="80%" source="../images/sec4-4-6.png">
+                <image width="80%" source="images/sec4-4-6.png">
                 </image>
 
 <p>From the graph, it is clear that we have a single maximum for the profit function and it occurs near q=200.  To find this point, we want to take the derivative and set it equal to zero, or we want to use the solve command on the derivative.  We enter the command</p>
 
 <p>solve(derivative 100q/(1+.01q)-(2000+10q+.001q^2 ) with respect to q)</p>
  
-                <image width="80%" source="../images/sec4-4-7.png">
+                <image width="80%" source="images/sec4-4-7.png">
                 </image>
  
 <p>We need to do a bit of interpretation since Wolfram|Alpha is using numerical methods with complex numbers.  In particular, the answers have a zero imaginary part.  We are also looking for a positive number.  Thus, we conclude profit is maximized at 209.8 widgets.</p>
@@ -1176,7 +1175,7 @@ and <m>g(x)=b x+d</m>, with <m>b=g'(x_0 )</m>.</p>
 <p>In looking at free software on the web for taking derivatives we started with Wolfram|Alpha because we can use it throughout the book when Excel does not solve our needs.  It is also supported by the company that produces Mathematica®, so it should stay available for the foreseeable future.  Another useful source are the solvers from Symbolab  <url href="https://www.symbolab.com/solver">https://www.symbolab.com/solver</url>.
 Symbolab has a collection of solvers for the topics in this course.</p>
 
-                 <image width="70%" source="../images/sec4-4-8.png">
+                 <image width="70%" source="images/sec4-4-8.png">
                 </image>
  
 <p>It also has a section that lets you do drill and practice with the techniques we have learned.  Like WolframAlpha, it gives the option of step-by-step solutions.  I find the site a bit more user friendly for math students.</p>
@@ -1184,12 +1183,12 @@ Symbolab has a collection of solvers for the topics in this course.</p>
 <p>For individual problems we may want to use other software.  For finding derivatives, a quick web search found <url href="http://www.derivative-calculator.net/"> http://www.derivative-calculator.net/</url>
  which is nicer if you are simply checking your work.  As with Wolfram|Alpha, the derivative calculator shows you the problem in math form so you can check your syntax.</p>
  
-                <image width="90%" source="../images/sec4-4-9.png">
+                <image width="90%" source="images/sec4-4-9.png">
                 </image>
 
 <p>However, the show steps formatting is nicer since hovering over one step shows the change for that step in the next line.</p>
 
-                <image width="70%" source="../images/sec4-4-10.png">
+                <image width="70%" source="images/sec4-4-10.png">
                 </image>
 
 <p>You may find other websites for doing derivatives as well.</p>
@@ -1205,7 +1204,7 @@ For 1-12, find the derivative of the given function</p>
  
 <exercise ><statement><p> <m>f(x)=x \ln(x)</m>
 </p></statement><solution>
-                <image width="40%" source="../images/sec4-4-sol1a.png">
+                <image width="40%" source="images/sec4-4-sol1a.png">
                 </image>
 <p>So  <m>f' (x)= \ln(x)+1</m>.</p>
 </solution></exercise>
@@ -1215,7 +1214,7 @@ For 1-12, find the derivative of the given function</p>
 
 <exercise ><statement><p> <m>h(t)=t^2 e^{-0.06t}</m>
 </p></statement><solution>
-                <image width="40%" source="../images/sec4-4-sol3a.png">
+                <image width="40%" source="images/sec4-4-sol3a.png">
                 </image>
 <p>Wolfram returns several forms (they differ by some simple algebra). We can choose the one that has the form we find most useful. In this case we could choose for instance:</p>
 <me>h' (t)=e^{-0.06t} (2t-0.06 t)^2</me>
@@ -1228,7 +1227,7 @@ For 1-12, find the derivative of the given function</p>
 
 <exercise ><statement><p> <m>m(x)=\ln(\ln(\ln(x^2+3)))</m>
 </p></statement><solution>
-                <image width="50%" source="../images/sec4-4-sol5a.png">
+                <image width="50%" source="images/sec4-4-sol5a.png">
                 </image>
 <p>
 Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the common log of x would be <c>log(10,x)</c>. To stick with our notation we would say</p>
@@ -1242,7 +1241,7 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 <exercise ><statement><p> <m>price=10-\frac{quantity}{100} -\frac{quantity^2}{10000}</m>
 </p></statement><solution>
 <p>Wolfram does not work well with whole word variables. Edit the equation (you can do this in Wolfram) and let <m>Price = P(q)</m> and <m>quantity = q</m>. This gives the following derivative:</p>
-                <image width="50%" source="../images/sec4-4-sol7a.png">
+                <image width="50%" source="images/sec4-4-sol7a.png">
                 </image>
 </solution></exercise>
 
@@ -1252,7 +1251,7 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 
 <exercise ><statement><p> <m>SupplyPrice=10*1.04^{(quantity/100)}</m>
 </p></statement><solution>
-                <image width="50%" source="../images/sec4-4-sol9a.png">
+                <image width="50%" source="images/sec4-4-sol9a.png">
                 </image>
 <p>Going back to the original notation we have</p>
 <me>SupplyPrice'(q) = 0.00392207 (1.04)^{q/100}</me>
@@ -1264,7 +1263,7 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 
 <exercise ><statement><p> <m>k(x)=f(x)*g(x)*h(x)</m>
 </p></statement><solution>
-                <image width="50%" source="../images/sec4-4-sol11a.png">
+                <image width="50%" source="images/sec4-4-sol11a.png">
                 </image>
 <me>k'(x)=g(x) h(x) f'(x) + f(x) h(x) g'(x) + f(x) g(x) h'(x) </me>
 </solution></exercise>
@@ -1277,7 +1276,7 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 
 <exercise ><statement><p> <m>f(t)=t^2 e^{(-0.06t)}</m> at <m>t=10</m>.
 </p></statement><solution>
-                 <image width="40%" source="../images/sec4-4-sol13a.png">
+                 <image width="40%" source="images/sec4-4-sol13a.png">
                 </image>
 <me>f' (10)=7.68336</me>
 </solution></exercise>
@@ -1287,7 +1286,7 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 
 <exercise ><statement><p> <m>h(q)=(\ln(q+5) )*(1.07^q)</m> at <m>q=8</m>.
 </p></statement><solution>
-                <image width="50%" source="../images/sec4-4-sol15a.png">
+                <image width="50%" source="images/sec4-4-sol15a.png">
                 </image>
  </solution></exercise>
 
@@ -1297,7 +1296,7 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 <exercise ><statement><p> <m>SupplyPrice=20*(1.09)^{(quantity/100)}</m> at <m>quantity=300</m>.
 </p></statement><solution>
 <p>Rewriting the function as <m>P(q)=20*(1.09)^{(q/100)}</m> we get</p>
-                <image width="70%" source="../images/sec4-4-sol17a.png">
+                <image width="70%" source="images/sec4-4-sol17a.png">
                 </image>
 </solution></exercise>
 
@@ -1306,7 +1305,7 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 
 <exercise ><statement><p> <m>h(x)=f(g(x))</m> at <m>x=4</m>.
 </p></statement><solution>
-                <image width="40%" source="../images/sec4-4-sol19a.png">
+                <image width="40%" source="images/sec4-4-sol19a.png">
                 </image>
 </solution></exercise>
 
@@ -1320,10 +1319,10 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 </p></statement><solution>
 <p>We find the critical point by solving: 
 <m>Solve (derivative of q*100*(.9)^q)= 0</m></p>
-                <image width="40%" source="../images/sec4-4-sol21a.png">
+                <image width="40%" source="images/sec4-4-sol21a.png">
                 </image>
 <p>Then we plot the original function. We want to know if <m>q = 9.49122</m> is a max, min or neither. So graph over the interval [1,20]</p>
-                <image width="50%" source="../images/sec4-4-sol21b.png">
+                <image width="50%" source="images/sec4-4-sol21b.png">
                 </image>
 \<p>So the function has a local maximum at <m>q = 9.49122</m></p>
 </solution></exercise>
@@ -1334,10 +1333,10 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 <exercise ><statement><p> <m>revenue=20*quantity-(quantity^2)/100</m>.
 </p></statement><solution>
 <p>Wolfram shows that the critical point is at <m>q = 1000</m></p> 
-               <image width="40%" source="../images/sec4-4-sol23a.png">
+               <image width="40%" source="images/sec4-4-sol23a.png">
                 </image>
 <p>Graph the original function from 0 to 2000 shows the critical point is a maximum.</p>
-                <image width="60%" source="../images/sec4-4-sol23b.png">
+                <image width="60%" source="images/sec4-4-sol23b.png">
                 </image>
 </solution></exercise>
 
@@ -1347,13 +1346,13 @@ Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.  the commo
 <exercise ><statement><p> <m>profit=quantity*20*(0.95)^{(quantity/100) }-(1000+10*quantity)</m>
 </p></statement><solution>
 <p>We set the derivative equal to 0. The general answer is complicated but the real valued answer is what we are looking for</p>
-                <image width="70%" source="../images/sec4-4-sol25a.png">
+                <image width="70%" source="images/sec4-4-sol25a.png">
                 </image>
 <p>So the critical point is at <m>q = 613.965</m>.</p>
 
 <p>We want to graph over some interval that contains <m>q = 613.965</m>.
 Big pictures are usually nice, so let’s choose the interval [0,1500]</p>
-                <image width="60%" source="../images/sec4-4-sol25b.png">
+                <image width="60%" source="images/sec4-4-sol25b.png">
                 </image>
 <p>The function has a (local) maximum at the critical point.</p>
 </solution></exercise>
@@ -1370,9 +1369,9 @@ For an intuitive definition of the derivative, we talked about zooming in on the
 
 <p>We say that a graph is concave up if the line between two points is above the graph, or alternatively if the first derivative is increasing.  (In finance, such a curve is said to be convex.)  Similarly, we say that a graph is concave down if the line between two points is below the graph, or alternatively if the first derivative is decreasing.  (In finance, such a curve is said to be concave.)  </p>
 
-                <image width="40%" source="../images/sec4-5-1.png">
+                <image width="40%" source="images/sec4-5-1.png">
                 </image>
-                <image width="40%" source="../images/sec4-5-2.png">
+                <image width="40%" source="images/sec4-5-2.png">
                 </image>
 
 <p>In determining is a curve is concave up or concave down, we want to take the second derivative of a function, or the derivative of the derivative.</p>
@@ -1478,12 +1477,12 @@ For an intuitive definition of the derivative, we talked about zooming in on the
 
 <p>With Symbolab</p>
  
-                <image width="80%" source="../images/sec4-5-3.png">
+                <image width="80%" source="images/sec4-5-3.png">
                 </image>
 
 <p>With WolframAlpha</p>
 
-                <image width="80%" source="../images/sec4-5-4.png">
+                <image width="80%" source="images/sec4-5-4.png">
                 </image>
 
 <p>Second derivative in finance</p>
@@ -1577,12 +1576,12 @@ For 1-9:</p>
 </introduction>
 
 <exercise ><statement><p>
-                <image width="50%" source="../images/sec4-5-e1.png">
+                <image width="50%" source="images/sec4-5-e1.png">
                 </image>
 </p></statement></exercise>
 
 <exercise ><statement><p>
-                <image width="50%" source="../images/sec4-5-e2.png">
+                <image width="50%" source="images/sec4-5-e2.png">
                 </image>
 </p></statement><solution>
 <p>Note that local maximums of a function must correspond to zeroes of its derivative.  The original function is F (green).   Its derivative is D (Purple).  The second derivative is E (black).</p>
@@ -1590,12 +1589,12 @@ For 1-9:</p>
 </solution></exercise>
 
 <exercise ><statement><p>
-                <image width="50%" source="../images/sec4-5-e3.png">
+                <image width="50%" source="images/sec4-5-e3.png">
                 </image>
 </p></statement></exercise>
 
 <exercise ><statement><p>
-                <image width="50%" source="../images/sec4-5-e4.png">
+                <image width="50%" source="images/sec4-5-e4.png">
                 </image>
 </p></statement><solution><p>
 Looking at the middle segment of the curves, the green curve is a downward facing parabola, whose derivative is a line with a negative slope like the purples curve, whose derivative is a negative constant like the black line. </p>

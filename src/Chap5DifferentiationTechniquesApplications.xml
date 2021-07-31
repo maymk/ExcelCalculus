@@ -147,17 +147,17 @@
 
 <p>As with regular differentiation, we can use online computer algebra systems to do implicit differentiation.  The easiest way to do this is with a web search for implicit differentiation calculator.</p>
 
-                <image width="100%" source="../images/sec5-1-1.png">
+                <image width="100%" source="images/sec5-1-1.png">
                 </image>
  
 <p>The first option we are given is a widget interface for WolframAlpha.  It easily lets us do the first example in this section.</p>
  
-                <image width="70%" source="../images/sec5-1-2.png">
+                <image width="70%" source="images/sec5-1-2.png">
                 </image>
 
 <p>The second option from the search takes us to a calculator from Symbolab.  It will easily do the second example from this section.</p>
 
-                <image width="100%" source="../images/sec5-1-3.png">
+                <image width="100%" source="images/sec5-1-3.png">
                 </image>
 
 <p>You should notice that the Symbolab calculator lets you use other variables and has an easy option for showing step by step solutions.</p>
@@ -647,7 +647,7 @@ If a small change in price causes a big change in demand, the demand is elastic.
 <p>
 To understand elasticity we look at the simple case when the demand price function is linear.  In that case, we can use geometry to understand the problem.  </p>
 
-                <image width="60%" source="../images/sec5-3-1.png">
+                <image width="60%" source="images/sec5-3-1.png">
                 </image>
 
 <p>
@@ -657,7 +657,7 @@ If <m>(Q_0,P(Q_0 ))</m> is a point for a given price <m>P(Q_0)</m> and quantity 
 If the special case where the price and quantity are both 1, the revenue rectangle is a square and we can simply look at the slope of the demand function. In that case, when the demand curve is flatter than a slope of minus 1, increasing the quantity increases the area because quantity increases faster than price decreases.  Similarly, when the demand curve is steeper than a slope of minus 1, increasing the quantity causes the price to decrease even faster, so the area of the rectangle decreases. </p> 
 
 
-                <image width="60%" source="../images/sec5-3-2.png">
+                <image width="60%" source="images/sec5-3-2.png">
                 </image>
 
 <p>We note that the slope of the normalized demand curve is almost always negative.  It is thus convenient to talk about the negative of the slope of the normalized demand price curve.  </p>
@@ -755,7 +755,7 @@ We would expect low elasticity in products that are essential for which there is
 <p>For arc elasticity we have two quantity-price points <m>(quantity_1,price_1)</m> and <m>(quantity_2,price_2)</m>.  We want to adapt our formula for elastic to the discrete case.  We can think of the derivative,  <m>\frac{d Q}{d Q}</m>, as the ratio of small changes in quantity and price.  The best value for price and quantity is the average value from the two points.  
 </p> 
 
-                <image width="70%" source="../images/sec5-3-3.png">
+                <image width="70%" source="images/sec5-3-3.png">
                 </image>
 
 

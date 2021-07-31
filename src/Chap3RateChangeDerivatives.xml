@@ -8,7 +8,7 @@
          <section xml:id="sec-3-1-MarginalFunctions">
             <title>Marginal Functions and Difference Quotients</title>
 
-          <p><url href="../Examples/Section-3-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-3-1-Examples.xlsx">Link to worksheets used in this section</url></p>
 
 <p> There are a number of industries where it is common for people to pay significantly different prices for the same product from the same vender.  (Airline tickets, symphony seats, and doughnuts at different times of the day come to mind.)  The reason is generally not favoritism or an irrational vender, but an analysis that looks at the change in costs and profits for making an additional sale.  Flying a plane with 51 passengers does not cost much more than flying the same plane with 50 passengers.  The same is true when playing a symphony.  Selling an extra doughnut at half price, just before closing when you would have to throw the doughnut out adds to the profit.  In all of these cases, we are less concerned with total revenues and profits and more concerned with how things change with one more sale.</p>
 <p>
@@ -29,6 +29,7 @@ In finance and economics this issue is dealt with using marginal functions. </p>
 It is noteworthy that the three examples mentioned are all cases where the cost of producing the goods has already been set, the goods cannot be saved and sold later, and any change in revenue adds to the profit.</p>
 
 <example><title>Marginal functions for widgets</title>
+<p><url href="https://youtu.be/ieyBmPqUBE4">Link to video of this example</url></p>
 <p>
   For my widget company I have determined that the cost and demand price functions are:</p>
 
@@ -46,18 +47,18 @@ To set up the problem I recall that we assume we are selling at the demand price
 
 <p>I set up my worksheet to compute these values.</p>
 
-                <image width="70%" source="../images/sec3-1-1.png">
+                <image width="70%" source="images/sec3-1-1.png">
                 </image>
 
 
 <p>I then create additional columns for the marginal functions.</p>
 
-                <image width="70%" source="../images/sec3-1-2.png">
+                <image width="70%" source="images/sec3-1-2.png">
                 </image>
 
 <p>Now we simply go back to values and see the values.</p>
 
-                <image width="70%" source="../images/sec3-1-3.png">
+                <image width="70%" source="images/sec3-1-3.png">
                 </image>
                 
 <me>Marginal Cost(11)=Cost(11)-Cost(10)=85.1-80=5.1.</me>
@@ -75,27 +76,29 @@ Notice that the marginal value of producing the 1st widget is not on the spreads
 <p>Many questions in business can be translated into making some function as big or small as possible, depending on whether we think the value is good or bad.  It is thus often useful to see a graph of both the function of interest and the related marginal function on the same graph.</p>
 
 <example><title>Profit and Marginal Profit Together</title>
+<p><url href="https://youtu.be/P-Y47M9eONI">Link to video of this example</url></p>
 <p>  The function <m>Profit(q)=-q^2/20+100q-1000 </m> expresses the profit at my gadget factory.  Plot both profit and marginal profit together to estimate both the maximum profit at the factory as well as the quantity I should produce to get that profit.</p>
 
 <p>In setting up the spreadsheet, there are some details to notice.</p>
 
-                <image width="70%" source="../images/sec3-1-4.png">
+                <image width="70%" source="images/sec3-1-4.png">
                 </image>
 
 <p>Since Excel does negation before powers, I need parentheses so <m>–(q^2)</m> is evaluated correctly.  Since I suspect I will have to look at a large range of numbers to find the maximum, I put Profit(q) and Profit(q+1) as separate columns.  This keeps my marginal operation in a single row and allows computation of Marginal Profit without evaluating for every value of q.  We now look at the graph with both Profit and Marginal Profit.  To make the graph easier to read, a secondary axis is used for profit.  This allows us to see where Marginal Profit crosses the axis.</p>
 
-                <image width="70%" source="../images/sec3-1-5.png">
+                <image width="70%" source="images/sec3-1-5.png">
                 </image>
 
 <p>We see that profit reaches a maximum where marginal profit is zero.  This occurs approximately when q is approximately 1000.  In that case the profit is about $50,000.  Looking back at the numbers in the spreadsheet, we see that the maximum profit is closer to $49,000.</p>
 
-                <image width="50%" source="../images/sec3-1-6.png">
+                <image width="50%" source="images/sec3-1-6.png">
                 </image>
 </example>
 
 <p>The more realistic situation for us to face is one where we are given a collection of data points.  In that situation we need to first find a best fitting curve and use it to make predicted values.  Then we can find the marginal function of interest and do our comparison.</p>
 
 <example><title>Marginal Profit from Data</title>
+<p><url href="https://youtu.be/Vk-lG9Lysgo">Link to video of this example</url></p>
 <p>  I have the following data on profit and production level for widgets.</p>
                 <tabular top="major" halign="center">
 <row bottom="minor">
@@ -119,17 +122,17 @@ Notice that the marginal value of producing the 1st widget is not on the spreads
 
 <p>I put the data into a spreadsheet and find a best fitting curve to produce a formula.  Looking at the data, I will assume that profit is a quadratic function of the amount produced.</p>
 
-                 <image width="70%" source="../images/sec3-1-7.png">
+                 <image width="70%" source="images/sec3-1-7.png">
                 </image>
  
 <p>With the formula from the trendline I can add a column for Predicted Profit(x).  The obvious adjustment produces Predicted Profit(x+1).  It is then easy to compute the value of Marginal Profit(x+1).</p>
 
-                <image width="100%" source="../images/sec3-1-8.png">
+                <image width="100%" source="images/sec3-1-8.png">
                 </image>
 
 <p>Looking at the graph, the maximum is close to <m>x=80</m>.  I simply add some rows with appropriate values of x to get the desired answer.</p>
 
-                 <image width="50%" source="../images/sec3-1-9.png">
+                 <image width="50%" source="images/sec3-1-9.png">
                 </image>
 
 <p>When <m>x = 80</m>, the Marginal Profit turns negative.  The maximum profit is $23,492.96, obtained by producing 80 widgets.</p>
@@ -144,14 +147,15 @@ Notice that the marginal value of producing the 1st widget is not on the spreads
 <p>There are a number of situations where we want to look at average rate of change for a period of some other change in the variable.  We may have production in thousands or millions of units.  If we are looking at monthly or quarterly financial records, we may want to look at the average rate of change over a year to take into account the seasonal variation of production.</p>
 
 <example><title>Rate of Change when denominator is not 1</title>
+<p><url href="https://youtu.be/KZ8qy3Q4GWk">Link to video of this example</url></p>
 <p> We have the following monthly sales data on gizmos.</p>
 
-                <image width="80%" source="../images/sec3-1-10.png">
+                <image width="80%" source="images/sec3-1-10.png">
                 </image>
 
 <p>We want to find the rate of change of monthly sales. If we look at a graph of the sales data</p>
 
-                <image width="60%" source="../images/sec3-1-11.png">
+                <image width="60%" source="images/sec3-1-11.png">
                 </image>
  
 <p>I can see that sales are trending upwards, but there is a seasonal variation added in.  Excel will not do a good job of modeling this function with a trendline.  Thus, I want to find a rate of change over a period of 12 months to eliminate the seasonal variation.  To find the most recent trend I use the most recent data with a time period of 12 months.</p>
@@ -164,17 +168,17 @@ Notice that the marginal value of producing the 1st widget is not on the spreads
 </p>
 
 <p><term>An Excel Trick for Difference Quotients</term></p>
-
+<p><url href="https://youtu.be/N50HlMfvYSc">Link to video of this example</url></p>
 <p>When creating marginal functions or other difference quotients, we often want the computations kept in one row, particularly if we want to graph the function and the marginal function together.  A careful arrangement of the columns and the use of quick fill will make our life easier.</p>
 
 <p> Suppose my revenue function is <m>rev(q)=-0.2q^2+20q-5</m> and I want to compute marginal revenue.  Then <m>rev(q+1)=-0.2(q+1)^2+20(q+1)-5</m>.  Experience shows that students will often make a typing mistake in the second formula, often forgetting parentheses somewhere of forgetting to change one of the copies of <m>q</m> to <m>q+1</m>.</p>
 
-                <image width="60%" source="../images/sec3-1-12.png">
+                <image width="60%" source="images/sec3-1-12.png">
                 </image>
  
 <p>One solution is to add an extra column for <m>q+1</m> next to the column for <m>q</m>.  Then the formula for <m>rev(q+1)</m> is obtained by quick filling form the formula for <m>rev(q)</m>.</p>
 
-                <image width="60%" source="../images/sec3-1-13.png">
+                <image width="60%" source="images/sec3-1-13.png">
                 </image>
 
 
@@ -233,12 +237,12 @@ For problems 7-12:</p>
 <ol label="(a)">
 <li><p> Recall that <m>Marginal\ Cost(q+1)=Cost(q+1)-Cost(q)</m></p>
 <p>The entries in the cells should be</p>
-                <image width="60%" source="../images/sec3-1-sol7a.png">
+                <image width="60%" source="images/sec3-1-sol7a.png">
                 </image>
 <p>(See part b for some of the values)
 </p></li>
 <li><p> Partial table and the graphs:</p>
-                <image width="100%" source="../images/sec3-1-sol7b.png">
+                <image width="100%" source="images/sec3-1-sol7b.png">
                 </image>
 </li>
 <li><p> The table and the graph indicate that the marginal function is a constant (23 to be precise)</p></li>
@@ -255,12 +259,12 @@ For problems 7-12:</p>
 <ol label="(a)">
 <li><p> Recall that <m>Marginal\ Revenue(q+1)=Revenue(q+1)-Revenue(q)</m></p>
 <p>The entries in the cells should be</p>
-                <image width="60%" source="../images/sec3-1-sol9a.png">
+                <image width="60%" source="images/sec3-1-sol9a.png">
                 </image>
 <p>(See part b for some of the values)
 </p></li>
 <li><p> Partial table and the graphs:</p>
-                 <image width="80%" source="../images/sec3-1-sol9b.png">
+                 <image width="80%" source="images/sec3-1-sol9b.png">
                 </image>
 </li>
 <li><p> The table and the graph indicate that the marginal function is a line.</p></li>
@@ -278,12 +282,12 @@ For problems 7-12:</p>
 <ol label="(a)">
 <li><p> Recall that <m>Marginal\ Cost(q+1)=Cost(q+1)-Cost(q)</m></p>
 <p>The entries in the cells should be</p>
-                <image width="90%" source="../images/sec3-1-sol11a.png">
+                <image width="90%" source="images/sec3-1-sol11a.png">
                 </image>
 <p>(See part b for some of the values)
 </p></li>
 <li><p> Partial table and the graphs:</p>
-                <image width="80%" source="../images/sec3-1-sol11b.png">
+                <image width="80%" source="images/sec3-1-sol11b.png">
                 </image>
 </li>
 <li><p> The table and the graph indicate that the marginal function is a quadratic function.</p></li>
@@ -330,10 +334,10 @@ For problems 13-16 you are given data for a function.</p>
 <li><p> The best fitting curve is:   <m>y = -0.0297x2 + 8.26x + 227.96</m></p></li>
 <li><p> If  <m>Marginal\ Profit(x+1)=Profit(x+1)-Profit(x)</m>, then
  can set this up in Excel by finding: <m>q, Profit (q), Profit(q-1)</m> and <m>Marginal\ Profit (q)</m></p>
-                 <image width="80%" source="../images/sec3-1-sol13a.png">
+                 <image width="80%" source="images/sec3-1-sol13a.png">
                 </image>
  <p>The chart was created and the marginal profit was plotted using the secondary axis.</p>
-                <image width="80%" source="../images/sec3-1-sol13b.png">
+                <image width="80%" source="images/sec3-1-sol13b.png">
                 </image>
 
 </li>
@@ -386,14 +390,14 @@ For problems 13-16 you are given data for a function.</p>
 </statement><solution>
 <ol label="(a)">
 <li> 
-                <image width="60%" source="../images/sec3-1-sol15a.png">
+                <image width="60%" source="images/sec3-1-sol15a.png">
                 </image>
  
 <me>Resale\ Value(x)=9836e^{-0.068x}</me></li>
 <li><p> Using the following Excel commands</p>
-                <image width="80%" source="../images/sec3-1-sol15b.png">
+                <image width="80%" source="images/sec3-1-sol15b.png">
                 </image>
-                <image width="80%" source="../images/sec3-1-sol15c.png">
+                <image width="80%" source="images/sec3-1-sol15c.png">
                 </image>
 </li>
 <li><p> Marginal Resale Value seems to be an exponential function</p></li>
@@ -426,7 +430,7 @@ For problems 13-16 you are given data for a function.</p>
 <me>revenue(t)=300+5t+30 \sin(t/6*pi()).</me>
 <p>Plot the revenue and marginal revenue.  Explain why marginal revenue is not a good indicator of growth.  Plot average rate of change over a 12-month span and explain why it is a better measure of growth.
 </p></statement><solution>
-                <image width="90%" source="../images/sec3-1-sol17a.png">
+                <image width="90%" source="images/sec3-1-sol17a.png">
                 </image>
 <p>Marginal Revenue is the change in revenue each month. This gives us some idea of what is happening each month, but does not give a very clear picture of overall trends.
 </p>
@@ -456,7 +460,7 @@ The overall growth over an entire year gives a better indication of trends. And 
          <section xml:id="sec-3-2-NumericDerivativesLimits">
             <title>Numeric Derivatives and Limits</title>
 
-          <p><url href="../Examples/Section-3-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-3-2-Examples.xlsx">Link to worksheets used in this section</url></p>
             <p>In the previous section, we looked at marginal functions, the difference between f(x+1) and f(x).  For functions that are only defined at integer values, this is the obvious way to define a rate of change.  However for functions that are defined on an interval, we would like to use the information at values closer to our value of x.</p>
 <p>Intuitively, we would like to be able to zoom in on the graph of f(x) at a point until the graph looks like a straight line, then pick two points on that line, and find the slope as the rise over the run.  The rate of change is then the slope of the line we have found.  If we could zoom arbitrarily far, this process would give an instantaneous rate of change, or the derivative of the function at that point.</p>   
 
@@ -478,17 +482,17 @@ f'(x_0 )=\lim_{(del\ x\to 0)}\frac{f(x_0+del\ x)-f(x_0)}{del\ x}.
 <p><term>Solution A</term>: We start with our intuitive notion.  We want to look at the graph of <m>f(x)</m>, zoomed in far enough that the graph looks like a straight line.  I set up a worksheet to look at the graph of <m>(x)=x^2</m> near <m>x_0=1</m>.  Since I want to be able to zoom in. I set up the graph so that it plots points that are multiples of <m>del\ x</m> from <m>x=x_0</m>.  I also want to plot the line connecting the points <m>(x_0,f(x_0))</m> and <m>(x_0,f(x_0+del\ x))</m> and notice that the slope of the secant line between them is <me>\frac{f(x_0+del\ x)-f(x_0 )}{del\ x}.</me> </p> 
 <p>For this example <m>x_0=1</m>. If <m>del\ x=1</m>, we can see that the function and the secant line are clearly distinct.</p>  
 
-                <image width="70%" source="../images/sec3-2-1.png">
+                <image width="70%" source="images/sec3-2-1.png">
                 </image>
 
 <p>The worksheet is designed to make it easy to change the value of <m>del\ x</m>.</p>
 
-                <image width="70%" source="../images/sec3-2-2.png">
+                <image width="70%" source="images/sec3-2-2.png">
                 </image>
 
 <p>As we can see, if we let <m>del\ x=1</m>, the slope is 3, but we have not zoomed in far enough for the graph of f(x) to look like a straight line.  Letting <m>del\ x=0.01</m>, the slope is 2.01, and the graphs of the function and secant line seem to be the same.</p>
 
-                <image width="70%" source="../images/sec3-2-3.png">
+                <image width="70%" source="images/sec3-2-3.png">
                 </image>
 
 <p> With some experimentation, taking both positive and negative values of <m>del\ x</m>, we get the following table of values:</p>
@@ -535,19 +539,19 @@ f'(x_0 )=\lim_{(del\ x\to 0)}\frac{f(x_0+del\ x)-f(x_0)}{del\ x}.
 
 <p><term>Solution B</term>: The method of the first solution takes too much work and requires us to reset a worksheet and keep track of the slope as we try a number of values for <m>del\ x</m>.  We would like to create a worksheet that simply shows the values of the slope of the secant line for values of <m>del\ x</m> and takes the value that this approaches.  We can set up a worksheet where each line takes <m>del\ x</m> from the previous line and divides by 10.</p>
 
-                <image width="70%" source="../images/sec3-2-4.png">
+                <image width="70%" source="images/sec3-2-4.png">
                 </image>
 
 <p>We get the same value whether we start <m>del\ x</m> at 1 or -1.  Once again, we find <m>f'(1)=2</m>.</p>
 
 <p><term>Solution C</term>: This method of finding the derivative still has a number of difficulties.  In the example above, the exact answer we want (in this case 2) did not show up in any of our computations.  We also find that if we make <m>del\ x</m> too small, we run into a problem called round off error.  If the next chapter we will look at methods that compute derivatives symbolically, but for this chapter we want an easy method of approximation.  We will use the approximation technique that is used by most graphing calculators when they compute the derivative.  They use a <q>balanced difference quotient</q> where we find the slope of the secant line between points <m>del\ x</m> before and after the point we are interested in. As the picture below shows, compared to either the right secant or the left secant, for most functions the balanced secant is closer to being parallel to the tangent line.</p>
 
-                <image width="70%" source="../images/sec3-2-5.png">
+                <image width="70%" source="images/sec3-2-5.png">
                 </image>
 
 <p>We will use the default on calculators, that is we will use <m>del\ x = 0.001</m>.</p>
 
-                <image width="70%" source="../images/sec3-2-6.png">
+                <image width="70%" source="images/sec3-2-6.png">
                 </image>
 
 <p>
@@ -566,19 +570,19 @@ For our example this gives our familiar result that <m>f'(1)=2</m>.</p>
 
 <p>We should note that the calculator rule is an approximation technique, rather than a definition.  It will give a misleading answer for functions that do not approximate a straight line in a window that is 0.002 wide.  In this course, the approximation will only cause a problem with functions that have corners or cusps, like the functions <m>f(x)=|x|</m> and <m>f(x)=x^{(2/3)}</m> at <m>x=0</m>.  The main advantage of the using the calculator rule is that it is straightforward enough to compute to allow us to plot a function and its derivative on a single graph.  This allows us to compare the graph of the function with the graph of the derivative.</p>
 
-<p><url href="https://youtu.be/AXSJ1UwTSfk">Link to video of this example and the next example.</url></p>
+<p><url href="https://youtu.be/F_9rbxTwCXA">Link to video of this example and the next example.</url></p>
 <example><title>A Function and its Derivative</title>
 
 <p> Compare the graph of <m>f(x)=x^2-2 x+1</m> and the graph of its derivative, using separate axes for the two graphs.  What features of the graph of <m>f(x)</m> can be located by using the graph of <m>f'(x)</m>?</p>
 
 <p><term>Solution</term>: Since this problem will serve as a template for a question we will look at many times, it is worthwhile to look at it in detail.  We start by setting up a workbook that will have the structure we need to compute a chart of values for <m>f(x)</m> and <m>f'(x)</m>.</p>
 
-                <image width="70%" source="../images/sec3-2-7.png">
+                <image width="70%" source="images/sec3-2-7.png">
                 </image>
 
 <p>The picture above gives the minimal amount we need to type in.  The rest will be done with quick filling.  The entry of cell B1 gives the formula for the function.  In cell D5 we evaluate the function using the first value of x from cell A5.  We have two values of x in cells A5 and A6 so that we can quick fill to get a list of x values.  We use absolute references for <m>del\ x</m>, so it will not change on quick fills.  We then fill cells E5 and F5 from cell D5, then fill row 6 from row 5, then fill the rest of the chart from rows 5 and 6.</p>
 
-                <image width="90%" source="../images/sec3-2-8.png">
+                <image width="90%" source="images/sec3-2-8.png">
                 </image>
 
 <p>It is then a straightforward task to plot the two curves.  We notice that the graph of the function is a parabola.  If the derivative is negative, the graph of <m>f(x)</m> is decreasing.  If the derivative is positive, the graph of the function <m>f(x)</m> is increasing.  The graph of <m>f(x)</m> reaches its minimum at the vertex, which is also where <m>f'(x)=0</m>.  We also notice that the derivative of this parabola seems to be a straight line.</p>
@@ -591,7 +595,7 @@ For our example this gives our familiar result that <m>f'(1)=2</m>.</p>
 
 <p><term>Solution</term>: The setup for this example is very similar to the last problem.</p>
 
-                <image width="100%" source="../images/sec3-2-9.png">
+                <image width="100%" source="images/sec3-2-9.png">
                 </image>
 
 <p>This time we notice three places where the derivative seems to be zero, when x is near -5, 0, and 5.  We use goal seek on the derivative and find that the derivative is zero when <m>x=-4.648</m>, 0, or 4.648.  Looking at the graph of f(x) at those points, we see that <m>f(x)</m> has a maximum when <m>x=-4.648</m>, and a minimum when <m>x=-4.648</m>.  When <m>x=0</m>, <m>f(x)</m> is neither a maximum nor a minimum.</p>
@@ -605,7 +609,7 @@ For our example this gives our familiar result that <m>f'(1)=2</m>.</p>
 
 <p><term>Solution</term>: The setup for this example is very similar to the last problem.  We simply change the function.  This involves changing the formulas in cells B1 and D5, then using quick copy to change the formulas for the cells in columns D through F.</p>
 
-                <image width="100%" source="../images/sec3-2-10.png">
+                <image width="100%" source="images/sec3-2-10.png">
                 </image>
 
 <p>Once we have points for the derivative we add a trendline using a linear model.  We set the options to show both the formula for the trendline and the value of <m>R^2</m>.  The fact that <m>R^2=1</m>, indicates the trendline we found exactly fits the data.  In the workbook connected to this section there is a page for Example 6B.  It uses parameters for the coefficients on a quadratic formula, so that you can explore the derivative of a general quadratic function.</p>
@@ -645,8 +649,8 @@ For our example this gives our familiar result that <m>f'(1)=2</m>.</p>
 </introduction>
 <solution><p>Comment: For problems 1-10 it makes sense to set up the table once with parameters that can be easily changed between problems.</p>
                 <sidebyside widths="52% 30%" valigns="middle top">
-                    <image source="../images/sec3-2-sol0a.png"/>
-                    <image source="../images/sec3-2-sol0b.png"/>
+                    <image source="images/sec3-2-sol0a.png"/>
+                    <image source="images/sec3-2-sol0b.png"/>
                 </sidebyside>
                 <sidebyside widths="50% 35%" valigns="middle top">
                     <p>Excel Commands</p>
@@ -661,7 +665,7 @@ Excel Commands	Excel output
 </p></statement><solution>
 <ol label="(a)">
 <li><p> Using Slope= (B14-B4)/(10*B1) we get the following</p>
-                <image width="90%" source="../images/sec3-2-sol1a.png">
+                <image width="90%" source="images/sec3-2-sol1a.png">
                 </image>
  
 <p>So the slope for this choice of delx is 4.</p>
@@ -669,9 +673,9 @@ Excel Commands	Excel output
 </p></li>
 <li><p>You can either change delx and record each of the slopes in the Excel sheet above, or we can set up another table that records the slopes for us. We prefer the second method because the table of values allows us to inspect the pattern more easily.</p>
 <p>Excel commands for the table:</p>
-                <image width="90%" source="../images/sec3-2-sol1b.png">
+                <image width="90%" source="images/sec3-2-sol1b.png">
                 </image>
-                <image width="90%" source="../images/sec3-2-sol1b.png">
+                <image width="90%" source="images/sec3-2-sol1b.png">
                 </image>
 <p>The limit is 4.
 </p></li>
@@ -690,7 +694,7 @@ Excel Commands	Excel output
 <exercise ><statement><p> Use <m>f(x)=5(x-2)^2</m> at <m>x=3.5</m>.</p></statement><solution>
 <ol label="(a)">
 <li> 
-                <image width="90%" source="../images/sec3-2-sol3a.png">
+                <image width="90%" source="images/sec3-2-sol3a.png">
                 </image>           
 <p>The slope of the secant line is 15.</p>
 </li>
@@ -711,7 +715,7 @@ So the derivative is 15 and the marginal function is 20 at this point.
 </p></statement><solution>
 <ol label="(a)">
 <li>  
-                <image width="90%" source="../images/sec3-2-sol5a.png">
+                <image width="90%" source="images/sec3-2-sol5a.png">
                 </image>
 <p>The slope of the secant line is 7.</p>
 </li>
@@ -731,7 +735,7 @@ So the derivative is 7 and the marginal function is 7 at this point.
 </p></statement><solution>
 <ol label="(a)">
 <li>  
-                <image width="90%" source="../images/sec3-2-sol7a.png">
+                <image width="90%" source="images/sec3-2-sol7a.png">
                 </image>
 <p>The slope of the secant line is 14.78.</p>
 </li>
@@ -750,7 +754,7 @@ Comment: Notice the very large difference between the derivative and the margina
 </p></statement><solution>
 <ol label="(a)">
 <li>  
-                <image width="90%" source="../images/sec3-2-sol9a.png">
+                <image width="90%" source="images/sec3-2-sol9a.png">
                 </image>
 <p>The slope of the secant line is 0.2.</p>
 </li>
@@ -779,7 +783,7 @@ Comment: Notice the very large difference between the derivative and the margina
 <solution>
 <ol label="(a)">
 <li>
-                <image width="60%" source="../images/sec3-2-sol11a.png">
+                <image width="60%" source="images/sec3-2-sol11a.png">
                 </image>
 </li>
 <li><p> The derivative seems to be zero at <m>x=-1.15</m> and at <m>x=1.15</m>.</p></li>
@@ -795,7 +799,7 @@ Comment: Notice the very large difference between the derivative and the margina
 <solution>
 <ol label="(a)">
 <li>
-                <image width="60%" source="../images/sec3-2-sol13a.png">
+                <image width="60%" source="images/sec3-2-sol13a.png">
                 </image>
 </li>
 <li><p>  The derivative seems to be 0 when <m>x=0</m> and <m>x=5.25</m>.</p></li>
@@ -811,7 +815,7 @@ Comment: Notice the very large difference between the derivative and the margina
 <solution>
 <ol label="(a)">
 <li>
-                <image width="60%" source="../images/sec3-2-sol15a.png">
+                <image width="60%" source="images/sec3-2-sol15a.png">
                 </image>
 </li>
 <li><p>  It looks like the derivative is 0 at <m>x=-0.707</m> and at <m>x-0.707</m>.</p></li>
@@ -827,7 +831,7 @@ Comment: Notice the very large difference between the derivative and the margina
 <solution>
 <ol label="(a)">
 <li>
-                <image width="60%" source="../images/sec3-2-sol17a.png">
+                <image width="60%" source="images/sec3-2-sol17a.png">
                 </image>
 </li>
 <li><p>  The derivative is always 0 for this function.</p></li>
@@ -851,7 +855,7 @@ Comment: Notice the very large difference between the derivative and the margina
 </p></statement><solution>
 <ol label="(a)">
 <li><p> 
-                <image width="60%" source="../images/sec3-2-sol19a.png">
+                <image width="60%" source="images/sec3-2-sol19a.png">
                 </image>
              </p></li>
 <li><p>  The derivative looks like a polynomial of order 2. It is a parabola.</p></li>
@@ -868,7 +872,7 @@ Comment: Notice the very large difference between the derivative and the margina
 </p></statement><solution>
 <ol label="(a)">
 <li><p> 
-                <image width="60%" source="../images/sec3-2-sol21a.png">
+                <image width="60%" source="images/sec3-2-sol21a.png">
                 </image>
             </p></li>
 <li><p>  The derivative looks like an exponential function.</p></li>
@@ -889,21 +893,21 @@ Comment: Notice the very large difference between the derivative and the margina
          <section xml:id="sec-3-3-LocalLinearity">
             <title>Local Linearity</title>
 
-          <p><url href="../Examples/Section-3-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-3-3-Examples.xlsx">Link to worksheets used in this section</url></p>
 <p>The last two sections examined rate of change in both the discrete and continuous case.  The first application for rate of change at a point is to make projections for values of the function close to that point. We want to find the equation of a linear function that can be used to approximate our function.  This is straightforward using the point-slope version of a linear equation.</p>
 <p>
 For the discrete case, given a function <m>y=f(x)</m>, where we know value of, <m>mf(a+1)</m>, the marginal change in <m>f(x)</m> to get to <m>x=a+1</m>, then our discrete linear approximation has the form</p>
 
 <assemblage><p><me>discrete\ linear\ f_a (x)=f(a)+mf(a+1)*(x-a).</me></p></assemblage>
 
-                <image width="60%" source="../images/sec3-3-1.png">
+                <image width="60%" source="images/sec3-3-1.png">
                 </image>
 
 <p>In the differentiable case, given a function <m>y=f(x)</m>, where we know value of, <m>f'(a)</m>, the derivative of <m>f(x)</m> at <m>x=a</m>, then our linear approximation has the form</p>
 
 <assemblage><p><me>linear\ f_a (x)=f(a)+f'(a)*(x-a).</me></p></assemblage>
 
-                <image width="60%" source="../images/sec3-3-2.png">
+                <image width="60%" source="images/sec3-3-2.png">
                 </image>
 
 <p>The two formulas are almost the same.  The discrete case uses the slope of a secant line obtained by looking at points where the x values differ by 1.  In the differentiable case we look at the slope of the tangent line.  One of the reasons for looking at the linear approximation of a function is that linear functions are easy to evaluate.</p>
@@ -931,10 +935,10 @@ For the discrete case, given a function <m>y=f(x)</m>, where we know value of, <
 
 <p><term>Solution</term>:  We first use Excel to find the value of the function and its derivative at 100.  For the derivative we use the calculator approximation.</p>
 
-                <image width="80%" source="../images/sec3-3-3.png">
+                <image width="80%" source="images/sec3-3-3.png">
                 </image>
 
-                <image width="80%" source="../images/sec3-3-4.png">
+                <image width="80%" source="images/sec3-3-4.png">
                 </image>
 
 <p>Thus the linear approximation is</p> 
@@ -945,10 +949,10 @@ f(100)+f'(100)(x-100) \\
 
 <p>We can set up the worksheet to compute the approximation and to give us the error, both as a number and as a percentage of the correct answer.</p>
  
-                <image width="70%" source="../images/sec3-3-5.png">
+                <image width="70%" source="images/sec3-3-5.png">
                 </image>
             
-                <image width="60%" source="../images/sec3-3-6.png">
+                <image width="60%" source="images/sec3-3-6.png">
                 </image>
 
 
@@ -961,7 +965,7 @@ f(100)+f'(100)(x-100) \\
 
 <p><term>Solution</term>:  Once again, we use Excel to find the value of the function and its derivative at 400.  For the derivative we use the calculator approximation.</p>
 
-                <image width="70%" source="../images/sec3-3-7.png">
+                <image width="70%" source="images/sec3-3-7.png">
                 </image>
 
 <p>Thus the linear approximation is</p> 
@@ -971,7 +975,7 @@ f(400)+f'(400)(x-400) \\
 \amp =.25+(-0.000625)(x-400). \end{aligned}</me></p>
 
 
-                <image width="60%" source="../images/sec3-3-8.png">
+                <image width="60%" source="images/sec3-3-8.png">
                 </image>
 
 
@@ -984,7 +988,7 @@ f(400)+f'(400)(x-400) \\
 
 <p><term>Solution</term>:  Once again, we use Excel to find the value of the function and its derivative at 0.  For the derivative we use the calculator approximation.</p>
 
-                <image width="80%" source="../images/sec3-3-9.png">
+                <image width="80%" source="images/sec3-3-9.png">
                 </image>
 
 <p>Thus the linear approximation is </p>
@@ -998,13 +1002,13 @@ f(0)+f'(0)(r-0)\\
 <p>This is much easier to compute than the exponential function.  However when we check accuracy we find that it is not very accurate for other integer values.
 </p>
 
-                <image width="60%" source="../images/sec3-3-10.png">
+                <image width="60%" source="images/sec3-3-10.png">
                 </image>
 
 <p>That brings us back to the last part of the question, which asks for a domain where the approximation is good enough to use.  The phrase <q>good enough to use</q> will depend on the setting, but we will be happy with an estimate that is within 1%.  Since we are going to use this for interest rates, we are interested in positive rates.  </p>
 <p>We modify the worksheet to allow a step size, <m>del\ x</m>, to be used.  Then we experiment with step sized till we get a domain where the error is under 1%.</p>
 
-                <image width="60%" source="../images/sec3-3-11.png">
+                <image width="60%" source="images/sec3-3-11.png">
                 </image>
 
 <p>We see that <m>\exp(r)\approx 1+r</m> for <m>0\le r\lt 0.15</m>. This gives us an approximation we can use for rates of up to 15%.</p>
@@ -1120,7 +1124,7 @@ For problems 1-5, for the given function and value for <m>x_0</m>:</p>
 <li><p>Give a rule for the linear approximation for a general value of r.</p></li>
 <li><p>How accurate is the linear approximation for square and cube roots of 1.1, obtained at <m>x_1=0.1</m>.</p></li>
 </ol></statement><solution>
-                <image width="60%" source="../images/sec3-3-sol11a.png">
+                <image width="60%" source="images/sec3-3-sol11a.png">
                 </image>
 
 <ol label="(a)">
@@ -1136,7 +1140,7 @@ For problems 1-5, for the given function and value for <m>x_0</m>:</p>
          <section xml:id="sec-3-4-Optimization">
             <title>Optimization</title>
 
-          <p><url href="../Examples/Section-3-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-3-4-Examples.xlsx">Link to worksheets used in this section</url></p>
             <p>In Section 3.2 we noticed that the high and low points of the graph of a function often coincided with a point where the derivative of the function was 0.  In a business setting, we are often concerned with finding the maximum and minimum values of a function, because one or the other will be a best, or optimum value.  We typically want to maximize functions like profit, utility, revenue, and market share.  We typically want to minimize functions like cost and liability.  We will use the same basic process to optimize, whether the extremum we are finding is a maximum and minimum.</p>
             
 <p>Recall, we said that the derivative can be thought of as the slope of the apparent line, obtained by zooming in on the graph of a function.  Clearly, we cannot have an extremum at an interior point of the domain if the derivative is nonzero, because we could go either higher or lower by moving a little to the right or left.  Thus we can only have extrema at a critical point, a place when the derivative is zero or undefined, or at an endpoint where we cannot go both left and right.  This gives us a small list of candidate points for the optimum value.</p>
@@ -1158,12 +1162,12 @@ For problems 1-5, for the given function and value for <m>x_0</m>:</p>
 
 <p><term>Solution B</term>:  We want to set up the problem to be able to graph the profit function and its derivative on the same graph.  We will us the calculator approximation of the derivative.  As we did in the last section, we set up a worksheet with columns for, <m>q</m>, <m>q+.001</m>, <m>q-0.001</m>, <m>p(q)</m>, <m>p(q+.001)</m>, <m>p(q-0.001)</m>, and <m>p'(q)</m>.  This allows most of the worksheet to be filled in with quick fill.</p>
 
-                <image width="100%" source="../images/sec3-4-1.png">
+                <image width="100%" source="images/sec3-4-1.png">
                 </image>
 
 <p>We then look at the values, and compare the table to a graph.  We find the same three candidate points and the same maximum and minimum values.</p>
 
-                <image width="80%" source="../images/sec3-4-2.png">
+                <image width="80%" source="images/sec3-4-2.png">
                 </image>
 </example>
 
@@ -1182,12 +1186,12 @@ For problems 1-5, for the given function and value for <m>x_0</m>:</p>
 
 <p><term>Solution</term>:  The spreadsheet is set up like it was in the first example, but with the function changed.</p>
 
-                <image width="100%" source="../images/sec3-4-3.png">
+                <image width="100%" source="images/sec3-4-3.png">
                 </image>
 
 <p>Looking at the graph and the chart we expect to find local minima at the endpoints, and the maximum when q is close to 50.  We use goal seek to find where the derivative is zero.  As we see below, Goal Seek does not find a point where the derivative is zero.  Instead it finds a point where the derivative is <q>close enough</q> to zero.  By default, <q>close enough</q> is understood by Excel as being within 0.001.</p>
 
-                 <image width="70%" source="../images/sec3-4-4.png">
+                 <image width="70%" source="images/sec3-4-4.png">
                 </image>
 
 <p>If the default definition of <q>close enough</q> is good enough for our purposes, then the maximum profit of $166,727 occurs when we sell 51,998 pints of oil.  (In fact, selling 2 more pints of oil will yield an extra 0.01 cents.)  The minimum profit occurs when we sell no product, in which case we have a loss of $30,000.</p>
@@ -1197,7 +1201,7 @@ For problems 1-5, for the given function and value for <m>x_0</m>:</p>
 
 <p>Throughout the section we have looked for places where the derivative is zero when looking for extrema.  We have not paid any attention to how we decide if the point we find is a local maximum or a local minimum.  There are several approaches we could use.  Since we are computing the derivative we could note that a local maximum is a place where the function goes from increasing to decreasing, so the derivative goes from positive to negative.  (Similarly, a local minimum is at a place where the derivative goes from positive to negative.)  There is also a test that looks at the derivative of the derivative.  Those tests will be more useful in the next chapter when we are finding a formula for the derivative by symbolic means.  However, with the numeric technique we are using, the easiest test is that a local maximum is greater than or equal to points a little bit to both the left and right.  We simply plug in points a little bit to each side to test.  Since a change in q of 0.001 makes the graph look like a flat straight line, we change q by 0.01.</p>
 
-                <image width="50%" source="../images/sec3-4-5.png">
+                <image width="50%" source="images/sec3-4-5.png">
                 </image>
 
 <p>As expected, profit goes down as we move away from our expected maximum.</p>
@@ -1215,7 +1219,7 @@ For problems 1-5, for the given function and value for <m>x_0</m>:</p>
 
 <p><term>Solution</term>: We set up the problem as before, using goal seek on the derivative to find critical points, and checking the ends of the interval.</p>
 
-                <image width="70%" source="../images/sec3-4-6.png">
+                <image width="70%" source="images/sec3-4-6.png">
                 </image>
  
 <p>We have three candidates for the extrema, the two endpoints and the critical point at 162.5.  However by looking at the points to the side of the critical point, we see it is a local minimum.  We also see, that of our 3 candidate points, the one that gives the maximum profit is the right endpoint, when quantity is 300.</p>
@@ -1229,7 +1233,7 @@ For problems 1-5, for the given function and value for <m>x_0</m>:</p>
 
 <p>I am manufacturing goop, a liquid that needs to be put in cans.  We will use cans that have a standard cylindrical shape.  Find the height and radius of a 1 liter can that uses a minimal amount of metal surface.</p>
 
-                <image width="50%" source="../images/sec3-4-7.png">
+                <image width="50%" source="images/sec3-4-7.png">
                 </image>
 
 <p><term>Solution</term>: Using basic geometry we recall the formulas for the volume and surface area of a cylinder. </p>
@@ -1246,7 +1250,7 @@ For problems 1-5, for the given function and value for <m>x_0</m>:</p>
 
 <p>Since we now have area as a function of the single variable radius we can take a derivative to find the critical point, then find the optimal shape.</p>
 
-                <image width="90%" source="../images/sec3-4-8.png">
+                <image width="90%" source="images/sec3-4-8.png">
                 </image>
 
 <p>Solving for where the derivative of area is zero, we find the radius of the can should be 0.5419 deciliters.  We plug that value back into the formula for height in terms of radius and see that the height should be 1.083854 deciliters.  To understand the shape of the can we see that the height is twice the radius, or the same thing as the diameter of the can.  The can is optimally shaped when it is the shape of a large paint can.</p>
@@ -1287,12 +1291,12 @@ find it.</p>
 
 <me>profit(q)=-1.002 q^2+477.22 q=6720.9.</me>
 
-                <image width="70%" source="../images/sec3-4-9.png">
+                <image width="70%" source="images/sec3-4-9.png">
                 </image>
 
 <p>I now set up the table for special values with goal seek.  I use starting points of 20 and 450 for the break even points and 250 for the maximum.  To find break even points, I Goal Seek on the profit function.  To find the maximum point, I Goal Seek on the derivative of the profit function.</p>
 
-                 <image width="70%" source="../images/sec3-4-10.png">
+                 <image width="70%" source="images/sec3-4-10.png">
                 </image>
 
 <p>Rounding to the nearest whole number in each case, my break even points are for selling 15 and 460 widgets.  My maximum profit of $50,032 occurs when I sell 238 widgets.</p>
@@ -1309,7 +1313,7 @@ find it.</p>
 
 <p>I create a spreadsheet that calculates the cost and its derivative over the first 10 years.</p>
 
-                <image width="70%" source="../images/sec3-4-11.png">
+                <image width="70%" source="images/sec3-4-11.png">
                 </image>
 
 <p>Looking at the data, the minimal annual cost is obtained by keeping the press between 5.5 and 6.0 years.  Using Goal seek on the derivative, I find the minimal annual cost of $3,964.10 is obtained by keeping the press for 5.77 years.
@@ -1342,7 +1346,7 @@ For problems 1-10, for the given function and domain:</p>
 
 <ol label="(a)">
 <li>  
-                <image width="80%" source="../images/sec3-4-sol1a.png">
+                <image width="80%" source="images/sec3-4-sol1a.png">
                 </image>
 <p>The table is truncated at <m>x = 25</m>, but the rest was used to create the graph.</p></li>
 <li><p>We can do a Goalseek to find the critical point: set <m>f'(x)=0</m>.</p>
@@ -1388,7 +1392,7 @@ For problems 1-10, for the given function and domain:</p>
 </p></statement><solution>
 <ol label="(a)">
 <li>  
-                <image width="80%" source="../images/sec3-4-sol3a.png">
+                <image width="80%" source="images/sec3-4-sol3a.png">
                 </image>
 </li>
 <li><p>The place where <m>f'(x)=0</m> is at <m>x = 1.73</m></p>
@@ -1433,7 +1437,7 @@ For problems 1-10, for the given function and domain:</p>
 </p></statement><solution>
 <ol label="(a)">
 <li>  
-                <image width="80%" source="../images/sec3-4-sol5a.png">
+                <image width="80%" source="images/sec3-4-sol5a.png">
                 </image>
 </li>
 <li><p>The derivative is never zero</p>
@@ -1454,7 +1458,7 @@ For problems 1-10, for the given function and domain:</p>
 </p></statement><solution>
 <ol label="(a)">
 <li>  
-                <image width="80%" source="../images/sec3-4-sol7a.png">
+                <image width="80%" source="images/sec3-4-sol7a.png">
                 </image>
 </li>
 <li><p>The place where <m>f'(x)=0</m> is at <m>x = 52.95</m></p>
@@ -1499,7 +1503,7 @@ For problems 1-10, for the given function and domain:</p>
 </p></statement><solution>
 <ol label="(a)">
 <li> 
-                <image width="80%" source="../images/sec3-4-sol9a.png">
+                <image width="80%" source="images/sec3-4-sol9a.png">
                 </image>
 </li>
 <li><p>The place where <m>f'(x)=0</m> is at <m>x = 4.47</m></p>
@@ -1562,7 +1566,7 @@ For problems 1-10, for the given function and domain:</p>
 <me> q \lt 600</me>
 </li>
 <li><p> We find profit and the derivative of the profit function to determine where the derivative is 0. Below is the graph of <m>Profit, Profit'</m> and we did GoalSeek to find the critical point (x=290).  We should also consider endpoints, but the vertex is clearly above 0.
-                <image width="80%" source="../images/sec3-4-sol11a.png">
+                <image width="80%" source="images/sec3-4-sol11a.png">
                 </image>
 </p></li>
 <li><p> The profit is maximized at 290 and the maximum profit is $34,550</p></li>
@@ -1577,7 +1581,7 @@ For problems 1-10, for the given function and domain:</p>
 <me>=q*100/(1+.01q)- (1000+2q+.0001q^2</me> )
 <p>Assuming that the price should be a positive number does not help us in this problem. We can check, but all we get is that <m>q \gt -100</m>, but <m>q</m> should be positive.</p>
 <p>If domain restrictions are not obvious or the algebra is challenging we can resort to trial and error.  The small coefficients (.0001 for instance) do suggest we have fairly large values for <m>q</m>.</p>
-                <image width="80%" source="../images/sec3-4-sol13a.png">
+                <image width="80%" source="images/sec3-4-sol13a.png">
                 </image>
 <p>Using <m>0\lt q\lt 1000</m>, we see that there is a maximum near <m>q = 600</m>.
 Goal Seek shows that the critical point is at <m>q = 588</m> gadgets.
@@ -1590,7 +1594,7 @@ The maximum profit is $6336.</p>
 <exercise ><statement><p> Suppose the cost function for your operation is <m>Cost(q)=10000+10q+20000/(1+.1q)</m>. Find the quantity that minimizes price.
 </p></statement><solution>
 <p>The function is interesting in that the minimum cost is not easily see on the graph.</p>
-                <image width="80%" source="../images/sec3-4-sol15a.png">
+                <image width="80%" source="images/sec3-4-sol15a.png">
                 </image>
 <p>
 The function is graphed for <m>0\le q\le 150</m> in steps of 10. The cost function almost looks as though it is leveling out and reaching an asymptote.
@@ -1607,7 +1611,7 @@ An inspection of the table shows that this is not true. The derivative goes from
 <p>In this instance the Annual Expense function is</p>
 <me>AnnualExpense(t)=600/t+50*t^1=600/t+50t</me>
 <p>Note that the function is not defined when <m>t = 0</m>. So we will graph the function and the derivative for <m>1 \le t \le 10</m>. The property should be held for 3.5 years.</p>
-                <image width="80%" source="../images/sec3-4-sol17a.png">
+                <image width="80%" source="images/sec3-4-sol17a.png">
                 </image>
  
 </solution></exercise>
@@ -1623,7 +1627,7 @@ Repeat the assumptions from the problem above.  Assume for carpet cleaners that 
 Find the month that maximizes sales.
 </p></statement><solution>
 <p>If we are minimizing according to month, we will graph the function for <m>1 \le t \le 12</m></p>
-                <image width="80%" source="../images/sec3-4-sol19a.png">
+                <image width="80%" source="images/sec3-4-sol19a.png">
                 </image>
 <p>GoalSeek does not improve our estimate, and we see that the maximum sales must occur when <m>t = 4</m>. The derivative is (close to) 0 there and this means our sales are maximized in April (assuming 1 represents January). </p>  
 </solution></exercise>
@@ -1657,57 +1661,58 @@ Find the month that maximizes sales.
          <section xml:id="sec-3-5-IntroductionSolver">
             <title>An Introduction to Solver</title>
 
-          <p><url href="../Examples/Section-3-5-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-3-5-Examples.xlsx">Link to worksheets used in this section</url></p>
             <p>	We should expect, whenever we look at an operation that is used a lot in the business world, that Excel will have a fairly simple command to achieve the result.  In section 1.5 we introduced Goal Seek, a tool that is part of Excel, and that can be used to solve an equation for a root from a given starting point.  In the last section, we noted that one can find candidates for a local maximum or minimum of a function by finding the derivative and using Goal Seek to find where the derivative is 0.  In this section we introduce Solver, an Add-In to Excel.  It is easiest to think of solver as a more powerful version of Goal Seek.  It will be easiest to walk through the use of Solver while working an example.</p>
 
 <example><title>Use Solver to gather information about the graph</title>
+<p><url href="https://youtu.be/vBGPmtXB_VY">Link to video of this example</url></p>
 <p>Let <m>f(x)=9 x-x^2+7</m> on the interval <m>-1\le x \le 14</m>.</p>
 
 <p><term>Solution</term>:  As always, we start by using simpler tools.  In this case it is useful to have Excel sketch a graph and to use information we gathered in prior course.  From the form of the function we know the graph is a parabola that points downwards.</p>
 
-                <image width="70%" source="../images/sec3-5-1.png">
+                <image width="70%" source="images/sec3-5-1.png">
                 </image>
 
 <p>Looking at the chart and the picture we see that the vertex is close to <m>x=4.5</m>.  We also see that the x-intercepts are close to <m>x=-0.5</m> and <m>x=9.5</m>. </p>
 
 <p>Next, we want to make sure that Solver is installed.  It should be on the Analysis section of the Data tab.</p>
 
-                <image width="30%" source="../images/sec3-5-2.png">
+                <image width="30%" source="images/sec3-5-2.png">
                 </image>
  
 <p>If you don’t find it there, you should go to the online help for Excel, and look for help on Solver.  Under the topic <q>Define and solve a problem by using Solver</q>, select first <q>Define and solve a problem</q>, then <q>If you don’t see Solver under Analysis on the Data tab</q>.  </p>
 <p>We first want to use Solver to find a root.  Using the same approach we used with Goal seek, we would like cell B5 to be set equal to 0 by changing the value of Call A5.  (As we have set up the problem, we could use solver starting with any of the cells that give a value for f(x).  I chose the one that has f(x) closest to the desired result.)</p>
 
-                <image width="70%" source="../images/sec3-5-3.png">
+                <image width="70%" source="images/sec3-5-3.png">
                 </image>
 
 <p>Solver finds a solution with <m>x=-0.72015</m>.  We are given a dialog box that asks if we want to keep the solver solution or restore our original value.</p>
 
-                <image width="70%" source="../images/sec3-5-4.png">
+                <image width="70%" source="images/sec3-5-4.png">
                 </image>
 
 <p>As with Goal Seek, if we use Solver again, starting with x closer to 9, we will find a solution <m>x=9.72015</m>.</p>
 
 <p>However, the reason we introduce Solver, is that it can do things would be more difficult with Goal Seek.  From the graph, and our knowledge or parabolas, we know the graph has a single maximum.  To find the maximum with Goal Seek, we need to realize that the maximum occurs when the derivative is 0, define the numerical derivative, then set the derivative equal to 0.  With Solver, we simply ask it to find the maximum.  It finds the vertex at <m>x=4.5</m>.</p>
 
-                <image width="70%" source="../images/sec3-5-5.png">
+                <image width="70%" source="images/sec3-5-5.png">
                 </image>
 
 <p>We also would like to be able to find a minimum.  From the picture, we know that a downward pointing parabola has no absolute minimum.  However, in business, we are typically concerned with functions defined on a finite domain.  For this problem, consider only the interval <m>0\le x\le 15</m>.  We want the minimum to appear in cell B7, so we want to constrain cell A7.  If we start Solver, then hit the add button, we get a dialog box to enter the first constraint, that A7<m>\ge </m>0.</p>
 
-                 <image width="40%" source="../images/sec3-5-6.png">
+                 <image width="40%" source="images/sec3-5-6.png">
                 </image>
 
 <p>In a similar manner, we add the constraint that A7 15 and ask solver for a minimum.</p>
 
-                <image width="70%" source="../images/sec3-5-7.png">
+                <image width="70%" source="images/sec3-5-7.png">
                 </image>
 
 <p>Since we started the search for the minimum at x=0.5, Solver finds the minimum at x=0.  This is a <q>local minimum</q>.  Any x value in the interval that is close by gives a higher value for the function.</p>
 
 <p>We would also like to find the minimum at the other end of the interval.  To do that it is useful to know a bit of the mathematics behind what solver is doing.  Solver uses derivatives from the starting point to decide on the direction it should look and how far it should go to find the next guess for its answer.  This is a modification of a technique called Newton’s method.  In terms of our picture, depending on whether we tell it to find a maximum, minimum, or specified value, Solver tries to slide up or down the graph until it finds a good candidate, which it gives us as a solution.  It is actually looking for the first local maximum or minimum it gets to.  It does not look for other candidates.  So if we started at x=0.5 it will slide to the left to find an answer.  To find the minimum at the other end of the interval we need a starting point where the graph is already sloping down to the right. Starting at x=8 should work.  We set up solver.</p>
 
-                <image width="70%" source="../images/sec3-5-8.png">
+                <image width="70%" source="images/sec3-5-8.png">
                 </image>
 
 <p>Solver finds that the curve had a minimum at x=15 with f(x)=-83.</p>
@@ -1717,26 +1722,26 @@ Find the month that maximizes sales.
 
 
 <example><title> A deceptive graph</title><p>  Use solver to gather information, on the interval <m>0\le x\le 15</m>, on the graph of <m>f(x)=(x^3-4x^2+4x+3) e^{(-x/2)}</m>.</p>
-
+<p><url href="https://youtu.be/80rgSBoubTk">Link to video of this example</url></p>
 <p><term>Solution</term>:  As always, start by looking at a graph.</p>
 
-                <image width="70%" source="../images/sec3-5-9.png">
+                <image width="70%" source="images/sec3-5-9.png">
                 </image>
 
 <p>From the graph I expect the function has no roots on the interval.  It has local minimums near 0, 2.5, and 10.  It has local maximums near 0.5, and 8.  I will need to add constraints to find the local minimums at the boundaries.  To make my worksheet easy to read I add two extra columns for the x and y values of interesting point, and fill in guesses.</p>
 
-                <image width="100%" source="../images/sec3-5-10.png">
+                <image width="100%" source="images/sec3-5-10.png">
                 </image>
 
 <p>After I use Solver, I find the local minimums occur at 0, 2.326, and 10, and the local maximums occur at 0.29115 and 7.3827.  The maximum value for the function in the interval is 5.409 and the minimum is 1.0149.  We verify that the endpoints, <m>x=0</m> and <m>x=10</m>, are both local minimums.</p>
 
-                 <image width="100%" source="../images/sec3-5-11.png">
+                 <image width="100%" source="images/sec3-5-11.png">
                 </image>
 
 
 <p>This function can be used to illustrate a limitation of our method.  If we had graphed the functions at intervals at intervals of size 1 rather than 0.5, we get a different picture.</p>
 
-                <image width="100%" source="../images/sec3-5-12.png">
+                <image width="100%" source="images/sec3-5-12.png">
                 </image>
 
 <p>In that case, we miss the local maximum at 0.29 and confuse the left endpoint as a local maximum.  Since Solver does not use the picture, it will not be misled by it.  This example points out that while the graph is useful for guidance, we need to verify that we have not been misled by not graphing with enough resolution. </p></example>
@@ -1744,7 +1749,9 @@ Find the month that maximizes sales.
 <p><term>Warning</term>: In example 2 we saw that relying on the graph could deceive us.  The flip side is an example where relying on Solver can deceive us. We mentioned earlier that Solver uses a variant of Newton’s method to find values.  In rough terms, it repeatedly finds the linear approximation and slides up or down that line to the desired answer.  If we start close to the answer, this is a very effective method of finding a numerical solution.  However it is easy to construct problems where this leads to a blind alley or to the wrong answer.  In particular, the method has great difficulty with problems where the function is not differentiable or where it has several bends.  Consider the following example.
 </p>
 
-<example><title>Deceiving Solver</title><p> Use solver to gather information, on the interval <m>-2\le x\le 2</m>, on the graph of </p>
+<example><title>Deceiving Solver</title>
+<p><url href="https://youtu.be/Bc9CGnk9X8I">Link to video of this example</url></p>
+<p> Use solver to gather information, on the interval <m>-2\le x\le 2</m>, on the graph of </p>
 <me>f(x)=\begin{cases}
 -5x-3&amp; x\lt 0\\
 4(x-1)^2 &amp;x \gt 0\\
@@ -1752,14 +1759,14 @@ Find the month that maximizes sales.
 
 <p><term>Solution</term>:  As always, start by looking at a graph.  We use the IF function to produce cases.</p>
 
-                <image width="70%" source="../images/sec3-5-13.png">
+                <image width="70%" source="images/sec3-5-13.png">
                 </image>
 
 <p>It is pretty easy to see that the function reaches a maximum of 7 at <m>x=-2</m>, and has a root at <m>x=-0.6</m>.  On this interval the function does not have a minimum, but it gets close to -3 when <m>x</m> approaches 0 from the negative side.  If we start at <m>x=0.5</m> and try sliding up or down the curve, we are going in the wrong direction to find the root or minimum.  To find the maximum we also need to go down before we can go up to the maximum.</p>
 
 <p>When we look at solver, we get the wrong but expected results.  The function not only fails to be differentiable at <m>x=0</m>, it has a jump there.  Solver finds the nearest local maximum and minimum.  For the root, it tells us it can’t find a feasible solution.</p>
  
-                <image width="70%" source="../images/sec3-5-14.png">
+                <image width="70%" source="images/sec3-5-14.png">
                 </image>
 </example>
 
@@ -1771,6 +1778,7 @@ Find the month that maximizes sales.
 <p>There is another feature of Solver that we will come back to later in the course.  Goal Seek asked which cell should be changed to reach our desired goal.  Solver allows us to specify a number of cells that we can change.  This means it will work with functions of several variables.  This will allow us to shed some light on one of the <q>black boxes</q> we used earlier in this course, the ability of Excel to find a trendline, or best fitting curve to a set of data.</p>
 
 <example><title>Use solver to find a best fitting line to a data set</title>
+<p><url href="https://youtu.be/EAMhm1ALbv0">Link to video of this example</url></p>
 <p>Find a best fitting line to the following data</p>
 
                  <tabular top="major" halign="center">
@@ -1792,12 +1800,12 @@ Find the month that maximizes sales.
 
 <p><term>Solution</term>:  As we mentioned in section 1.4, when we are asked to find a best fitting line, we are asked to create a predicting function <m>prediction(x)=A x+B</m>, with <m>A</m> and <m>B</m> chosen to minimize the sum of the squares of the error between the actual values and the predicted values.  We build a worksheet that finds the sum of squared errors.  We start with our variables, A and B, set at 5.</p>
 
-                 <image width="70%" source="../images/sec3-5-15.png">
+                 <image width="70%" source="images/sec3-5-15.png">
                 </image>
   
 <p>We ask Solver to minimize D11 by changing B2 and B3.  For comparison we ask for the best fitting Trendline using the scatterplot.</p>
 
-                <image width="80%" source="../images/sec3-5-15.png">
+                <image width="80%" source="images/sec3-5-15.png">
                 </image>
 
 <p>We see that we get the same answers, subject to rounding rules.</p>
@@ -1824,12 +1832,12 @@ In exercises 1-7 you are given a function and an interval it is defined over:</p
 </p></statement><solution>
 <ol label="(a)">
 <li>  
-                <image width="70%" source="../images/sec3-5-sol1a.png">
+                <image width="70%" source="images/sec3-5-sol1a.png">
                 </image>
 </li>
 <li><p>We can read off the roots from the table <m>f(x)=0</m> at <m>x = 1</m> and at <m>x = 9</m></p></li>
 <li><p>Use Solver to find the minimum.</p>
-                <image width="50%" source="../images/sec3-5-sol1b.png">
+                <image width="50%" source="images/sec3-5-sol1b.png">
                 </image>
 <p>Solver indicates that the minimum value of the function is -16 and the minimum takes place at <m>x = 5</m>.</p>
 <p>We have local maximums at the endpoints <m>(0, 9)</m> and <m>(10,9)</m>.</p></li>
@@ -1848,7 +1856,7 @@ In exercises 1-7 you are given a function and an interval it is defined over:</p
 </p></statement><solution>
 <ol label="(a)">
 <li> 
-                <image width="70%" source="../images/sec3-5-sol3a.png">
+                <image width="70%" source="images/sec3-5-sol3a.png">
                 </image>
 </li>
 <li><p>This function does not have any roots on the interval <m>0\le x \le 100</m>. </p></li>
@@ -1874,7 +1882,7 @@ The revenue function, <m>revenue(q)=(500-3q)(q)</m>, on the interval <m>0\le q\l
 </p></statement><solution>
 <ol label="(a)">
 <li>  
-                <image width="70%" source="../images/sec3-5-sol5a.png">
+                <image width="70%" source="images/sec3-5-sol5a.png">
                 </image>
 </li>
 <li><p>There are 2 roots: one near <m>q = 0</m>, and the other near <m>q = 160</m>. Using Solver we find the roots are at <m>q = 1.24</m> and <m>q = 161.43</m>.
@@ -1938,7 +1946,7 @@ First we need to use Trendlines to find the equation of the function. Use polyno
 
 <ol label="(a)">
 <li>   
-                <image width="70%" source="../images/sec3-5-sol7a.png">
+                <image width="70%" source="images/sec3-5-sol7a.png">
                 </image>
 </li>
 <li><p>There are no roots on the interval [0,16].
@@ -1977,7 +1985,7 @@ on the interval <m>0\le x\le 10</m>.
 <ol label="(a)"><li><p>Inserting an empty row will allow us to see the break in the graph where we switch from the linear part to the quadratic part of the function.
 The functions have been included for clarity. 
 </p>
-                <image width="90%" source="../images/sec3-5-sol9a.png">
+                <image width="90%" source="images/sec3-5-sol9a.png">
                 </image>
 
 </li>
@@ -1991,7 +1999,7 @@ The functions have been included for clarity.
 </ul>
 <p>The two pieces do meet at <m>x = 5</m>, but we cannot see just where the line ends up.</p>
 <p>So start with <m>x = 4</m> on Solver, find the maximum on the interval [4,5] and compare that to the value on the other branch of the graph.</p>
-                <image width="90%" source="../images/sec3-5-sol9b.png">
+                <image width="90%" source="images/sec3-5-sol9b.png">
                 </image>
  
 <p>Solver returns a value of 10 at <m>x = 5</m>.</p>

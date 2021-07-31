@@ -28,11 +28,12 @@ Before we look at functions of several variables, we want to create a list of ta
          <section xml:id="sec-6-1-EvaluatingFunctionsSeveralVariables">
             <title>Evaluating and Graphing Functions of Several Variables</title>
 
-          <p><url href="../Examples/Section-6-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-6-1-Examples.xlsx">Link to worksheets used in this section</url></p>
 <p>
 When we were evaluating functions of a single variable we had to replace the variable with a cell reference.  We do the same for functions of several variables.  We simply have to use several cell references.</p>
 
 <example><title>Bank balances</title>
+<p><url href="https://youtu.be/JY8lnC5VvFY">Link to video of this example</url></p>
 <p> Find the amount of money I will have in the bank in 10 years if I deposit $1000 and the bank pays 5% interest, compounded quarterly.  Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.</p>
 
 <p>Solution: We use the formula for future value of a single deposit.</p>
@@ -42,9 +43,9 @@ When we were evaluating functions of a single variable we had to replace the var
 
 <p>Rather than typing the numbers into the formula, we place them in separate cells, so we can easily change the values for any of the 4 variables.</p>
 
-                <image width="40%" source="../images/sec-6-1-1.png">
+                <image width="40%" source="images/sec-6-1-1.png">
                 </image>
-                <image width="40%" source="../images/sec-6-1-2.png">
+                <image width="40%" source="images/sec-6-1-2.png">
                 </image>
 
 <p>At the end of 10 years, we have $1,643.62 in the bank.  By simply changing values in the worksheet, I find that compounding the interest annually reduces the final amount on 10 years to $1.628.89, while compounding weekly increases the final amount to $1,648.33.</p>
@@ -56,13 +57,15 @@ In previous chapters we have a variable (say q) and the function (such as profit
 <me>FA(d,r,p,y)=d*\left(1+\frac{r}{p}\right)^{(y*p)}</me>
 <p>Where FA is the future amount, and this is a function of four variables d (deposit), r (interest rate), p (number of payments), and y (number of years).</p>
 
-<example><title>Demand price from 2 points</title><p> Find the revenue for 500 widgets if I know that the demand price for 100 widgets is $20, the demand price for 200 widgets is $18.75, and that the demand price is a linear function.  Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.</p>
+<example><title>Demand price from 2 points</title>
+<p><url href="https://youtu.be/9gUk3C5kizM">Link to video of this example</url></p>
+<p> Find the revenue for 500 widgets if I know that the demand price for 100 widgets is $20, the demand price for 200 widgets is $18.75, and that the demand price is a linear function.  Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.</p>
 
 <p><term>Solution</term>: To make our worksheet easier to read, we use named cells.  We first have to find an equation for the demand price formula.  We compute a slope and intercept for this line from the points (100, 20) and (200, 18.75).  Once we have this function, we find that the demand price is $15 when quantity is 500.  We then compute revenue as price times quantity.</p> 
 
-                <image width="60%" source="../images/sec-6-1-3.png">
+                <image width="60%" source="images/sec-6-1-3.png">
                 </image>
-                <image width="40%" source="../images/sec-6-1-4.png">
+                <image width="40%" source="images/sec-6-1-4.png">
                 </image>
 
 <p>In this problem, revenue is a function of 5 variables: Demand1, Demand2, Price1, Price2, and NewDemand.</p>
@@ -70,7 +73,9 @@ In previous chapters we have a variable (say q) and the function (such as profit
 
 <p>The next task to consider is making a table of values for a function of several variables.  Since our screens have 2 dimensions, we first look at the case when we allow two values to change.  When we made a table for a single variable, we had to use both absolute and relative cell reference to distinguish between constant values used for all entries and variables that changed in each case.  With functions of two variables our table will have rows where one variable is held constant and columns where the other is held constant.  We note that quick filling a formula with the reference $A5 will keep the column, A constant but allow the row to change.  Similarly with the reference A$5 the column can change, but the row is constant.</p>
 
-<example><title>Building a table with two variables</title><p> I want to produce a table that shows how much I need to put in the bank to have $100,000 at some point in the future.  I will assume that interest is compounded annually.  I want interest rate and number of years to be treated as variables with interest rate ranging from 5% to 6% and the length of time to vary from 5 to 40 years.</p>
+<example><title>Building a table with two variables</title>
+<p><url href="https://youtu.be/TwY2oKUKo7I">Link to video of this example</url></p>
+<p> I want to produce a table that shows how much I need to put in the bank to have $100,000 at some point in the future.  I will assume that interest is compounded annually.  I want interest rate and number of years to be treated as variables with interest rate ranging from 5% to 6% and the length of time to vary from 5 to 40 years.</p>
 
 
 <p><term>Solution</term>: We use the formula for present value of a single deposit.  Since the interest is compounded annually, the formula simplifies.</p>
@@ -82,27 +87,29 @@ In previous chapters we have a variable (say q) and the function (such as profit
 <p>As we build the table, the future amount will be a constant, so it needs to be given as an absolute reference.  The number of years will be down the left side of the table and will be constant across a row, so its reference should have a dollar sign before the letter.  The interest rate will be listed across the top of the table, so its reference should have a dollar sign before the number.</p>
 
 
-                <image width="80%" source="../images/sec-6-1-5.png">
+                <image width="80%" source="images/sec-6-1-5.png">
                 </image>
 
 <p>This lets us build the table we desire.  From the complete table, we see that we can have $100,000 in the bank in 40 years by making a deposit of $9,722.22 at 6% interest.  In contrast if we only earn 5% interest and can only keep the money in the bank for 15 years, we need to start with $48,101.71.</p>
 
-                <image width="70%" source="../images/sec-6-1-6.png">
+                <image width="70%" source="images/sec-6-1-6.png">
                 </image>
 </example>
 
 <p>Similarly, we might want to produce a table that shows the monthly payment on a mortgage where both the annual interest rate and the number of years are treated as variables.  Such a chart would be useful in deciding how big a mortgage a person can afford with different kinds of mortgages.</p>
 
-<example><title>Mortgage payments</title><p> I want to produce a table that shows the monthly payment on a $100,000 mortgage with a range of interest rates and lengths of the mortgage.</p>
+<example><title>Mortgage payments</title>
+<p><url href="https://youtu.be/SgewfMtKNDM">Link to video of this example</url></p>
+<p> I want to produce a table that shows the monthly payment on a $100,000 mortgage with a range of interest rates and lengths of the mortgage.</p>
 
 <p><term>Solution</term>: We use the PMT command to find the monthly payment.</p>
 
-                <image width="80%" source="../images/sec-6-1-7.png">
+                <image width="80%" source="images/sec-6-1-7.png">
                 </image>
 
 <p>We can see that the monthly payment is $421.60 for a 30-year fixed rate mortgage at 3% compounded monthly.  For a 10-year mortgage at 6% the payment increases to $1,110.21.</p>
 
-                <image width="70%" source="../images/sec-6-1-8.png">
+                <image width="70%" source="images/sec-6-1-8.png">
                 </image>
 </example>
 
@@ -110,7 +117,9 @@ In previous chapters we have a variable (say q) and the function (such as profit
 
 <p>When we looked at models of price, quantity, cost, revenue, and profit, we made the simplifying assumption that a company only produces one product.  We want to consider what happens with two products.</p>
 
-<example><title>Table and graph</title><p> I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
+<example><title>Table and graph</title>
+<p><url href="https://youtu.be/MmoLoUI-Ob4">Link to video of this example</url></p>
+<p> I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
 <me>PriceGizmos=10-QuantityGizmos/50</me>
 
 <me>PriceWidgets=20-QuantityWidgets/40</me>
@@ -129,11 +138,11 @@ In previous chapters we have a variable (say q) and the function (such as profit
 
 <p>Next we build a build a table for the function as we have done above.</p>
 
-                <image width="80%" source="../images/sec-6-1-9.png">
+                <image width="80%" source="images/sec-6-1-9.png">
                 </image>
 
 <p>	Finally, we would like to see a graph of the function.  We notice that the 3D plots in Excel have a number of drawbacks.  The plots do not label the input variables.  These first plots also don’t tell us what values of the variables correspond to particular points on the graph.  Some of these drawbacks can be overcome, but only with more work than we wish to expend in this course.  We will only add one non-intuitive option to make the graphs work better.  </p>
-                <image width="100%" source="../images/sec-6-1-10.png">
+                <image width="100%" source="images/sec-6-1-10.png">
                 </image>
 
 <p>We will move the names of the variables out of the upper left corner of the chart and into the row above and to the side of the data.  We leave the corner cell blank.  This will let us see the values of the variables in the graphs.
@@ -141,22 +150,22 @@ In the table, we select the data we would like to graph.  In this example we sel
 
 <p>The 3-D Surface gives a fast picture.  It is useful in seeing local minimums and maximums.</p>
 
-                <image width="60%" source="../images/sec-6-1-11.png">
+                <image width="60%" source="images/sec-6-1-11.png">
                 </image>
 
 <p>The Wireframe 3-D chart emphasizes that we can build a reasonable picture from the curves obtained by treating either x or y as a constant.  It lets us understand a function of 2 variables by putting together a collection of several functions of one variable.  This point of view will be useful when we try to take derivatives.</p>
 
-                <image width="80%" source="../images/sec-6-1-12.png">
+                <image width="80%" source="images/sec-6-1-12.png">
                 </image>
 
 <p>The Contour chart emphasizes the level curves. The rate of change will be fastest in a direction perpendicular to the level curves.</p>
 
-                <image width="60%" source="../images/sec-6-1-13.png">
+                <image width="60%" source="images/sec-6-1-13.png">
                 </image>
  
 <p>Another alternative for seeing a graph is to use Wolfram Alpha.  Unfortunately variable names in Alpha seem to be limited to a single letter, or a letter followed by a digit.  Thus we change the formula to one using the names g and w.</p>
  
-                <image width="80%" source="../images/sec-6-1-14.png">
+                <image width="80%" source="images/sec-6-1-14.png">
                 </image>
 </example>
 
@@ -174,8 +183,8 @@ For exercises 1-9, set up an Excel notebook, and evaluate the given function of 
 <p>Setting this up so that the values of <m>x</m> and <m>y</m> can be easily changed we define <m>x</m> and <m>y</m> in separate cells and then enter the function that computes <m>f(x,y)</m></p>
 
                 <sidebyside widths="50% 30%" valigns="middle top">
-                    <image source="../images/sec6-1-sol1a.png"/>
-                    <image source="../images/sec6-1-sol1b.png"/>
+                    <image source="images/sec6-1-sol1a.png"/>
+                    <image source="images/sec6-1-sol1b.png"/>
                 </sidebyside>
                 <sidebyside widths="50% 30%" valigns="middle top">
                     <p>Excel commands  and general setup</p>
@@ -192,8 +201,8 @@ For exercises 1-9, set up an Excel notebook, and evaluate the given function of 
 </p>
 
                 <sidebyside widths="50% 30%" valigns="middle top">
-                    <image source="../images/sec6-1-sol3a.png"/>
-                    <image source="../images/sec6-1-sol3b.png"/>
+                    <image source="images/sec6-1-sol3a.png"/>
+                    <image source="images/sec6-1-sol3b.png"/>
                 </sidebyside>
                 <sidebyside widths="50% 30%" valigns="middle top">
                     <p>Excel commands  and general setup</p>
@@ -213,7 +222,7 @@ For exercises 1-9, set up an Excel notebook, and evaluate the given function of 
 <p>Hence <m>100*k=\ln(18/20)</m>.    
 Solving for <m>k</m>: </p><me>k=1/100\ln(18/20)\approx -0.0011</me>
 <p>Alternatively we can use Excel. Remember that if we have only two points we need to add one of the pairs twice so that Excel can graph the points correctly in a scatter plot.</p>
-                <image width="90%" source="../images/sec6-1-sol5a.png">
+                <image width="90%" source="images/sec6-1-sol5a.png">
                 </image>
 <p>
 In Excel we have the Price equation as</p>
@@ -234,8 +243,8 @@ The simplest answer would be to treat Price as a function of quantity. But this 
 <p>In Excel we could set up a table that would allow us to change <m>P_0</m>, <m>P_1</m>, <m>q_1</m>  and <m>q</m></p>
 <me>revenue(P_0,P_1,q_1,q)=q*P_0  e^{\left(\frac{1}{q_1} \ln\left(\frac{P_1}{P_0}\right) q\right)}</me>
                 <sidebyside widths="50% 30%" valigns="middle top">
-                    <image source="../images/sec6-1-sol5b.png"/>
-                    <image source="../images/sec6-1-sol5c.png"/>
+                    <image source="images/sec6-1-sol5b.png"/>
+                    <image source="images/sec6-1-sol5c.png"/>
                 </sidebyside>
                 <sidebyside widths="50% 30%" valigns="middle top">
                     <p>Excel commands  and general setup</p>
@@ -249,8 +258,8 @@ The simplest answer would be to treat Price as a function of quantity. But this 
 <me>FutureAmount=InitialDeposit*\left(1+\frac{rate}{ppy}\right)^{years*ppy}</me>
 
                 <sidebyside widths="50% 30%" valigns="middle top">
-                    <image source="../images/sec6-1-sol7a.png"/>
-                    <image source="../images/sec6-1-sol7b.png"/>
+                    <image source="images/sec6-1-sol7a.png"/>
+                    <image source="images/sec6-1-sol7b.png"/>
                 </sidebyside>
                 <sidebyside widths="50% 30%" valigns="middle top">
                     <p>Excel commands  and general setup</p>
@@ -265,8 +274,8 @@ The simplest answer would be to treat Price as a function of quantity. But this 
 <me>InitialDeposit=FutureAmount*\left(1+\frac{rate}{ppy}\right)^{-years*ppy}</me>
 
                 <sidebyside widths="50% 30%" valigns="middle top">
-                    <image source="../images/sec6-1-sol9a.png"/>
-                    <image source="../images/sec6-1-sol9b.png"/>
+                    <image source="images/sec6-1-sol9a.png"/>
+                    <image source="images/sec6-1-sol9b.png"/>
                 </sidebyside>
                 <sidebyside widths="50% 30%" valigns="middle top">
                     <p>Excel commands  and general setup</p>
@@ -289,12 +298,12 @@ The simplest answer would be to treat Price as a function of quantity. But this 
 <li><p> When using z we want to fix the cell reference.</p></li>
 </ul>
 
-                <image width="90%" source="../images/sec6-1-sol11a.png">
+                <image width="90%" source="images/sec6-1-sol11a.png">
                 </image>
 
 <p>In table form we get:</p>
 
-                <image width="100%" source="../images/sec6-1-sol11b.png">
+                <image width="100%" source="images/sec6-1-sol11b.png">
                 </image>
 
 <p>We can always check our work by double clicking a value in the table. This will highlight the calls called upon to compute the entry. Note that this will check if you are calling on the right <m>x</m>, <m>y</m> and <m>z</m>. To check that the formula is correct we recommend the Show Formula feature.
@@ -307,10 +316,10 @@ The simplest answer would be to treat Price as a function of quantity. But this 
 We have enough space on one sheet to do the years in increments of 1. The interest is done in increments of 0.25%. This is something not uncommon in the banking world.
 </p>
 
-                <image width="90%" source="../images/sec6-1-sol13a.png">
+                <image width="90%" source="images/sec6-1-sol13a.png">
                 </image>
 
-                <image width="100%" source="../images/sec6-1-sol13b.png">
+                <image width="100%" source="images/sec6-1-sol13b.png">
                 </image>
 
 <p>How much detail should you give? Imagine working at a bank. What would be a good spreadsheet to share with a colleague, boss, or costumer? It should be adequately labeled and it should be easy to read.
@@ -322,10 +331,10 @@ We have enough space on one sheet to do the years in increments of 1. The intere
 <p>The entries in the cell look like this
 </p>
 
-                <image width="90%" source="../images/sec6-1-sol15a.png">
+                <image width="90%" source="images/sec6-1-sol15a.png">
                 </image>
 
-                <image width="100%" source="../images/sec6-1-sol15b.png">
+                <image width="100%" source="images/sec6-1-sol15b.png">
                 </image>
 
 <p>e can easily read off what our initial investment needs to be if we want to earn $10,000.
@@ -349,10 +358,10 @@ We have enough space on one sheet to do the years in increments of 1. The intere
 <me>Revenue=x PriceX+y Pricey</me>
 <me>revenue=x 60(0.9)^{\frac{x}{100}}-\frac{y}{200}+y 
 40(0.85)^{\frac{y}{100}}-\frac{x}{100}</me>
-                <image width="100%" source="../images/sec6-1-sol17a.png">
+                <image width="100%" source="images/sec6-1-sol17a.png">
                 </image>
 
-                 <image width="90%" source="../images/sec6-1-sol17b.png">
+                 <image width="90%" source="images/sec6-1-sol17b.png">
                 </image>
 </solution></exercise>
 </exercisegroup>
@@ -367,11 +376,13 @@ We have enough space on one sheet to do the years in increments of 1. The intere
          <section xml:id="sec-6-2-PartialDerivatives">
             <title>Wire Frames, Partial Derivatives, and Tangent Planes</title>
 
-          <p><url href="../Examples/Section-6-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-6-2-Examples.xlsx">Link to worksheets used in this section</url></p>
 <p>
 A standard technique in mathematics courses is to try to break a complicated problem into smaller and easier problems.  For functions of several variables this can be done by looking at the variables one at a time, and treating the other variables as constants.  Then we are back to considering functions of a single variable.  We start by returning to Example 5 from the previous section, and seeing what information can be obtained by looking at one variable at a time.</p>
 
-<example><title>Optimizing Revenue with Two Products</title><p> I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
+<example><title>Optimizing Revenue with Two Products</title>
+<p><url href="https://youtu.be/ibcRFnM6fn8">Link to video of this example</url></p>
+<p> I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:</p>
 
 <me>PriceGizmos=10-\frac{QuantityGizmos}{50}=10-\frac{QG}{50}</me>
 
@@ -386,15 +397,15 @@ A standard technique in mathematics courses is to try to break a complicated pro
 
 <p>Solution:  In terms of the last example, we want to start with a table and a wire frame chart.</p>
 
-                <image width="60%" source="../images/sec-6-2-1.png">
+                <image width="60%" source="images/sec-6-2-1.png">
                 </image>
 
-                <image width="60%" source="../images/sec-6-2-2.png">
+                <image width="60%" source="images/sec-6-2-2.png">
                 </image>
 
 <p>The wires are obtained by intersecting the graph of the function with a plane where QW or QG is held constant.</p>
 
-                <image width="50%" source="../images/sec-6-2-3.png">
+                <image width="50%" source="images/sec-6-2-3.png">
                 </image>
  
 <p>Thus, when we treat either QW or QG as a constant we effectively are looking at one of the wires of the wire frame.  To illustrate this, we will look at the wires corresponding to <m>QW=400</m> and <m>QG=300</m>. When <m>QG=300</m>, our revenue function simplifies to </p>
@@ -403,11 +414,23 @@ A standard technique in mathematics courses is to try to break a complicated pro
 \amp =3000-1800+20QW-\frac{QW^2}{40}\\ 
 \amp =1200+20QW-\frac{QW^2}{40}.\end{aligned}</me>
 
+
 <p>Thus, the wire corresponding to <m>QG=300</m> is a parabola that bends down.</p>
+<p> The interactive below shows how the wireframe is built from cuves defined by cut planes.</p>
 
-                <image width="50%" source="../images/sec-6-2-4.png">
+               <figure>
+                    <caption>Wire mesh</caption>
+                    <interactive xml:id="geogebra-wire-mesh" platform="geogebra" width="80%" aspect="5:8">
+                        <slate xml:id="upper-sum" surface="geogebra" material="xzf3xzzm" aspect="5:8" >
+                                                    setCoordSystem(-200, 1200, -1000, 5500);                       
+                        </slate>
+                     </interactive>
+                </figure>
+
+
+                <image width="50%" source="images/sec-6-2-4.png">
                 </image>
-
+ 
 <p>To find the vertex of the parabola, we take the derivative of our function of QW and set it equal to zero.</p>
 
 <me>\frac{d}{d\ QW} Revenue(300,QW)=20-\frac{QW}{20}.</me>
@@ -435,14 +458,14 @@ A standard technique in mathematics courses is to try to break a complicated pro
 
 <p>Solution:  It is useful to look at a picture with the graph, the two curves obtained by keeping <m>x=3.5</m> and <m>y=1.5</m>, and the tangent lines to those curves.</p>
 
-                <image width="60%" source="../images/sec-6-2-5.png">
+                <image width="60%" source="images/sec-6-2-5.png">
                 </image> 
 
 <p>We also want to look at the slices corresponding keeping <m>x=-3.5</m> and <m>y=.5</m>.</p>
 
-                <image width="40%" source="../images/sec-6-2-6.png">
+                <image width="40%" source="images/sec-6-2-6.png">
                 </image>
-                <image width="40%" source="../images/sec-6-2-7.png">
+                <image width="40%" source="images/sec-6-2-7.png">
                 </image>
 
 <p>The yellow curve is obtained by fixing <m>y</m> and letting <m>x</m> vary.  The blue curve is obtained by fixing <m>y</m> and letting <m>x</m> vary.  We now take the partial derivatives with respect to both variables.</p>
@@ -623,7 +646,7 @@ A standard technique in mathematics courses is to try to break a complicated pro
 <me>Revenue(800,QW)= 24,000 (0.95)^8+20 QW (0.9)^{\left(\frac{QW}{150}\right)}-\frac{88 QW}{15}</me>
 
 <p>This function gives us information about the revenue in terns of Widgets near a production level of 400 widgets and 800 gizmos. We can use Wolfram Alpha to graph this. Assuming there are 800 gizmos the widget influence on the revenue looks like this</p>
-                <image width="60%" source="../images/sec6-2-sol5a.png">
+                <image width="60%" source="images/sec6-2-sol5a.png">
                 </image>
 
 <p>The slope is about <m>m = 4</m>.</p> 
@@ -631,7 +654,7 @@ A standard technique in mathematics courses is to try to break a complicated pro
 <me>Revenue(QG,400)= 30 QG (0.95)^{\left(\frac{QG}{100}\right)}
 +8,000 (0.9)^{\left(\frac{40}{15} \right)}-\frac{44 QG }{15}</me>
 <p>The revenue generated by the gizmos assuming the number of widgets = 400 and the number of gizmos is near 800 gives the following picture</p>
-                <image width="70%" source="../images/sec6-2-sol5b.png">
+                <image width="70%" source="images/sec6-2-sol5b.png">
                 </image>
 
 <p>The slope is about <m>m=8</m>.</p>
@@ -874,7 +897,7 @@ and in <m>(QuanityGizmos,QuantityWidgets,QuantityGadgets)</m> space, <m>P_1=(100
          <section xml:id="sec-6-3-CriticalPointsExtrema">
             <title>Critical Points and Extrema</title>
 
-          <p><url href="../Examples/Section-6-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-6-3-Examples.xlsx">Link to worksheets used in this section</url></p>
 <p>
 With functions of one variable we were interested in places where the derivative is zero, since they made candidate points for the maximum or minimum of a function.  If the derivative is not zero, we have a direction that is downhill and moving a little in that direction gives a lower value of the function.  Similarly, with functions of two variables we can only find a minimum or maximum for a function if both partial derivatives are 0 at the same time.  Such points are called critical points.  </p>
 
@@ -889,6 +912,7 @@ In other words </p>
 </assemblage>
 
 <example><title>Finding a Local Minimum of a Function</title>
+<p><url href="https://youtu.be/nZdaPjC0VWQ">Link to video of this example</url></p>
 <p>Use the partial derivatives of <m>f(x,y)=x^2+ 2xy+3y^2-4x-3y</m> to find the minimum of the graph. </p> 
 
 <p><term>Critical Point by Algebra</term>:  In the previous section, we already computed</p>
@@ -918,28 +942,28 @@ In other words </p>
 
 <p><term>Critical Point by Solver</term>: However, if the partials are more complicated, I will want to find the critical points another way.  I can find the point with Solver.</p>
 
-                <image width="50%" source="../images/sec-6-3-1.png">
+                <image width="50%" source="images/sec-6-3-1.png">
                 </image>
 
 <p>To get solver to set both partials to 0 at the same time, I ask it to solve for <m>f_y=0</m>, while setting <m>f_x=0</m> as a constraint.  Make sure to uncheck the box that makes unconstrained variables non-negative.</p>
 
-                <image width="80%" source="../images/sec-6-3-2.png">
+                <image width="80%" source="images/sec-6-3-2.png">
                 </image>
 \
 <p>This finds our critical point within our error tolerance.</p>
 
-                <image width="40%" source="../images/sec-6-3-3.png">
+                <image width="40%" source="images/sec-6-3-3.png">
                 </image>
 
 <p><term>Critical Point by CAS</term>: We can also use Wolfram|Alpha to find the solution to our system of equations.</p>
 
-                <image width="80%" source="../images/sec-6-3-4.png">
+                <image width="80%" source="images/sec-6-3-4.png">
                 </image>
 
 <p><term>Determining the Critical Point is a Minimum</term> We thus get a critical point at (9/4,-1/4) with any of the three methods of solving for both partial derivatives being zero at the same time.
 Once we have a critical point we want to determine if it is a maximum, minimum, or something else.  The easiest way is to look at the graph near the critical point.</p>
 
-                <image width="100%" source="../images/sec-6-3-5.png">
+                <image width="100%" source="images/sec-6-3-5.png">
                 </image>
 
 <p>It is clear from the graph that this critical point is a local minimum.</p>
@@ -947,7 +971,9 @@ Once we have a critical point we want to determine if it is a maximum, minimum, 
 
 <p>It is easy to see that <m>f(x,y)=x^2+y^2</m> has a critical point at <m>(0,0)</m> and that that point is a minimum for the function.  Similarly, <m>f(x,y)=-x^2-y^2</m> has a critical point at <m>(0,0)</m> and that that point is a maximum for the function. For some functions, like <m>f(x,y)=x^2-y^2</m>, which has a critical point at <m>(0,0)</m>, we can have a maximum in one direction and a minimum in another direction.  Such a point is called a <term>saddle point</term>.  We note that we can have a saddle point even if the <m>x</m> and <m>y</m> slice curves both indicate a minimum.</p>
 
-<example><title>A Saddle Point at a Minimum on Both Axes</title><p> Show that <m>f(x,y)=x^2-3xy+y^2</m> has a critical point at <m>(0,0)</m>, which is a minimum of both slice curves, but is not a local minimum.</p>
+<example><title>A Saddle Point at a Minimum on Both Axes</title>
+<p><url href="https://youtu.be/ThmQTWWOvYw">Link to video of this example</url></p>
+<p> Show that <m>f(x,y)=x^2-3xy+y^2</m> has a critical point at <m>(0,0)</m>, which is a minimum of both slice curves, but is not a local minimum.</p>
 
 <p>Solution:  We look at the two partial derivatives, and notice they are both zero at the origin.</p>
 
@@ -967,7 +993,7 @@ Once we have a critical point we want to determine if it is a maximum, minimum, 
 
 <p>Looking at the graph, we see that this graph does not have a minimum. </p> 
 
-                <image width="100%" source="../images/sec-6-3-6.png">
+                <image width="100%" source="images/sec-6-3-6.png">
                 </image>
  </example>
 
@@ -1210,7 +1236,7 @@ Once we have a critical point we want to determine if it is a maximum, minimum, 
 so we have a local maximum.</p>
 </example>
 
-<exercises xml:id="exercises-set-sec-3-3">
+<exercises xml:id="exercises-set-sec-6-3">
 	<title>Exercises: Critical Points and Extrema Problems</title>
 
 <p>
@@ -1244,18 +1270,18 @@ For exercises 1-6, for the given functions and region:</p>
 <p>Implies that   <m>2x+2(11/6)+5=0</m>  so <m>x=  (2(11/6)+5)/(-2)=-13/3</m>.</p>
 <p>We can also solve this system of equations using Wolfram Alpha</p>
 
-                <image width="40%" source="../images/sec6-3-sol1a.png">
+                <image width="40%" source="images/sec6-3-sol1a.png">
                 </image>
 </li>
 <li><p>
 The command in Wolfram Alpha is</p>
-                 <image width="60%" source="../images/sec6-3-sol1b.png">
+                 <image width="60%" source="images/sec6-3-sol1b.png">
                 </image>
  
 <p>It is worth looking at both the 3D Plot and the Contour Plot</p>
                 <sidebyside widths="45% 45%" valigns="middle top">
-                    <image source="../images/sec6-3-sol1c.png"/>
-                    <image source="../images/sec6-3-sol1d.png"/>
+                    <image source="images/sec6-3-sol1c.png"/>
+                    <image source="images/sec6-3-sol1d.png"/>
                 </sidebyside>
                 <sidebyside widths="45% 45%" valigns="middle top">
                     <p>3D Plot</p>
@@ -1300,12 +1326,12 @@ The command in Wolfram Alpha is</p>
 
 <li><p>
 For <m>(x,y)= (2,1)</m></p>
-                <image width="60%" source="../images/sec6-3-sol3a.png">
+                <image width="60%" source="images/sec6-3-sol3a.png">
                 </image>
  
                 <sidebyside widths="45% 45%" valigns="middle top">
-                    <image source="../images/sec6-3-sol3b.png"/>
-                    <image source="../images/sec6-3-sol3c.png"/>
+                    <image source="images/sec6-3-sol3b.png"/>
+                    <image source="images/sec6-3-sol3c.png"/>
                 </sidebyside>
 </li>
 <li>
@@ -1352,13 +1378,13 @@ For <m>(x,y)= (2,1)</m></p>
 <me>Revenue_y (x,y)
 = \frac{-3x-16y+10800}{360} </me></li>
 <li><p>Using WolframALpha, the critical point is at <m>(62000/123, 23800/41)  \approx (504, 580.5)</m></p>
-                <image width="50%" source="../images/sec6-3-sol5a.png">
+                <image width="50%" source="images/sec6-3-sol5a.png">
                 </image>
 </li>
 <li><p>Using WolframAlpha we get:</p>
-                <image width="60%" source="../images/sec6-3-sol5b.png">
+                <image width="60%" source="images/sec6-3-sol5b.png">
                 </image>
-                <image width="40%" source="../images/sec6-3-sol5c.png">
+                <image width="40%" source="images/sec6-3-sol5c.png">
                 </image>
 </li>
 <li><p>From the picture we conclude that the critical point is a maximum. </p>
@@ -1640,7 +1666,7 @@ For <m>(x,y)= (2,1)</m></p>
          <section xml:id="sec-6-4-OptimizationBestFitCurves">
             <title>Optimization and Best Fitting Curves</title>
 
-          <p><url href="../Examples/Section-6-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+          <p><url href="Examples/Section-6-4-Examples.xlsx">Link to worksheets used in this section</url></p>
             <p>
 In the last section we looked at using the partial derivatives to find the maximum or minimum of a function in several variables.  This is an extension of the optimization problems we did with functions of a single variable.  It is worthwhile to take another look at best fitting curves or trendlines, a process Excel has been doing throughout the course and see that it is a particular example of optimization.  This will let us to best fitting curves that use models other than the ones used by the trendline command.</p>
 
@@ -1648,7 +1674,7 @@ In the last section we looked at using the partial derivatives to find the maxim
 
 <p>Before we can find the curve that is best fitting to a set of data, we need to understand how “best fitting” is defined.  We start with the simplest nontrivial example.  We consider a data set of 3 points, <m>{(1,0),(3,5),(6,5)}</m> and a line that we will use to predict the y-value given the x-value, <m>predicted(x)=x/2 +1</m>.  We want to determine how well the line matches that data.  For each point, <m>(x_0,y_0)</m>, in the set we start by finding the corresponding point, <m>(x_0,predicted(x_0 ))</m>, on the line.  This gives us a set of predicted points, <m>{(1,1.5),(3,2.5),(6,4)}</m>.</p>
 
-                <image width="80%" source="../images/sec-6-4-1.png">
+                <image width="80%" source="images/sec-6-4-1.png">
                 </image>
 
 <p>For each point we now compute the difference between the actual y-values and the predicted y-values.  Our errors are the lengths of the brown segments in the picture, in this case <m>{3/2,3/2,1}</m>.  Finally we add the squares of the errors, <m>9/4+9/4+1=11/2</m>.  </p>
@@ -1673,6 +1699,8 @@ In the last section we looked at using the partial derivatives to find the maxim
 
 We want to start with the familiar method, using the trendline command from a graph.  Then we want to use solver to minimize the sum of squared errors.  Finally we want to look at the function for sum of squared errors to see how we find the line using partial derivatives.  After we have looked at all three approaches for this first example we will consider more complicated examples. </p>
 
+<p><url href="https://youtu.be/oBFOOrFfN1I">Link to video of the first two examples</url></p>
+
 <example><title>Finding a Best-Fit Curve with Trendline</title>
 <p>Use the trendline command to find the best fitting line for the data:</p>
 
@@ -1694,7 +1722,7 @@ We want to start with the familiar method, using the trendline command from a gr
 
 <p>Solution:  We start by making a table adding a scatterplot and adding a trendline to the graph.  We remember to select the option to make the formula visible.  The trendline command tells us the slope should be 2 and the intercept should be 1.</p>
 
-                <image width="80%" source="../images/sec-6-4-2.png">
+                <image width="80%" source="images/sec-6-4-2.png">
                 </image>
 </example> 
 
@@ -1719,12 +1747,12 @@ We want to start with the familiar method, using the trendline command from a gr
 
 <p>Solution:  To use solver we need to add the predicting equation.  We start with a randomly chosen slope and intercept for our prediction line.  Our table has a PredictedY column, which gives the value that would be on the line with our slope and intercept.  We add in the error, which is the difference between the predicted y and the actual y, and the square of the error.  We then take the sum of the squares of the errors.</p>
 
-                <image width="70%" source="../images/sec-6-4-3.png">
+                <image width="70%" source="images/sec-6-4-3.png">
                 </image>
 
 <p>Our use of Solver is similar to when we were looking for a minimum of a function of one variable.  We need to designate the cell with the value we want to minimize.  We select the button to minimize.  We now designate two cells that represent variables we can change. </p>
 
-                <image width="80%" source="../images/sec-6-4-4.png">
+                <image width="80%" source="images/sec-6-4-4.png">
                 </image>
 
 <p>Solver produces the same answer.  The best fitting line is </p>
@@ -1803,6 +1831,8 @@ We want to start with the familiar method, using the trendline command from a gr
 <p>We can use the same methods with a larger problem.</p>
 
 <example><title>Use the Solver Method on a larger Data Set</title>
+
+<p><url href="https://youtu.be/SArudnSafCE">Link to video of this example</url></p>
 <p>The table below gives census data for a collection of 10 states.  Find the best fitting line to predict 2010 population based on 2000 population.</p>
 
 
@@ -1868,7 +1898,7 @@ We want to start with the familiar method, using the trendline command from a gr
 
 <p>Solution:  We set up a spreadsheet in the same way we set it up in the last example.  For an initial slope we will start with 1.1 for 10% growth.  For a starting point we will guess an intercept of 0.  As we did in the last example, the predicted population in 2010 is the slope times the population in 2000 plus the intercept.  We add extra columns for the predicted population, the error between the prediction and the actual population, the square of the error.  At the bottom of the last column, we add the squared errors.  This gives the value we want to minimize.</p>
 
-                <image width="80%" source="../images/sec-6-4-5.png">
+                <image width="80%" source="images/sec-6-4-5.png">
                 </image>
 
 <p>When we use solver, the best fitting line is </p>
@@ -1883,6 +1913,7 @@ We want to start with the familiar method, using the trendline command from a gr
 <p>The trendline command does not let us choose such a model to find a best fitting curve.  It is straightforward using the best fit construction.</p>
 
 <example><title>Finding a Best-Fit Curve for a Nonstandard Model Equation</title>
+<p><url href="https://youtu.be/OzLKA8GnUiE">Link to video of this example</url></p>
 <p>We are given the following data on the value of a portfolio over time:</p>
 
 
@@ -1940,7 +1971,7 @@ We want to start with the familiar method, using the trendline command from a gr
 
 <me>TotalValue(time)=CashAmount+DepositAmount*rate^{time}.</me>
 
-                <image width="80%" source="../images/sec-6-4-6.png">
+                <image width="80%" source="images/sec-6-4-6.png">
                 </image>
 
 <p>We then use Solver to minimize cell E26, by changing cells B20:B22.  Our solution indicates that CashAmount=$997.76, DepositAmount=$9,005.51, and 
@@ -1950,6 +1981,7 @@ rate=1.05.</p>
 <p>When we use this technique with other mathematical models, the only change is in the formula used for the predicted y value.  </p>
 
 <example><title>Finding a Best-Fit Logistic Curve</title>
+<p><url href="https://youtu.be/6JNwHvtAJjA">Link to video of this example</url></p>
 <p>We are managing a wood harvesting business.  The number of trees available in a plot is modeled as constrained growth.  That means we expect it to be modeled by a logistic equation.</p>
 
 <me>AvailableTrees(time)=Capacity/(1+C*e^((-rate*time)) )</me>
@@ -1997,7 +2029,7 @@ rate=1.05.</p>
 <p>We then use Solver to minimize cell E12, by changing cells B1:B3.  Our solution indicates that Capacity=14996, C=99.93, and 
 rate=0.200.</p>
 
-                <image width="80%" source="../images/sec-6-4-7.png">
+                <image width="80%" source="images/sec-6-4-7.png">
                 </image>
 </example>
 
@@ -2007,7 +2039,7 @@ rate=0.200.</p>
 <p>We have examined three methods for finding a best fitting curve.  From chapter 1, we reviewed the method of plotting points and adding a trendline.  Using the sum of least squared error definition of best fit we looked at creating an error function and using Solver to minimize the error.  We also looked at using partial derivatives to find critical points of the error function.  It is worthwhile to look at some of the strengths and weaknesses of each method.</p>
 
 <p>
-The method of graphing points and using the trendline command has the advantage of being the simplest method when it works.  The biggest disadvantage of this method is that it only works with a small collection of mathematical models.  (We can use this method if our desired equation is linear, <m>y=mx+b</m>, logarithmic, <m>y=a \log(x)+b</m>, polynomial of degree no more than 6, power, <m>y=ax^b</m>, or exponential, <m>y=ae^bx</m>.)  As we have seen in this section, it is not hard to find situations where some other model should be used.  This method also has the disadvantage of simply giving an answer without showing intermediate steps that might provide other useful information.</p>
+The method of graphing points and using the trendline command has the advantage of being the simplest method when it works.  The biggest disadvantage of this method is that it only works with a small collection of mathematical models.  (We can use this method if our desired equation is linear, <m>y=mx+b</m>, logarithmic, <m>y=a \log(x)+b</m>, polynomial of degree no more than 6, power, <m>y=ax^b</m>, or exponential, <m>y=ae^{bx}</m>.)  As we have seen in this section, it is not hard to find situations where some other model should be used.  This method also has the disadvantage of simply giving an answer without showing intermediate steps that might provide other useful information.</p>
 
 <p>
 The method of using partial derivatives has the advantage of being mathematically clear.  It shows us what is going on when we find a best fitting curve.  However, in all but the simplest cases, this method has the disadvantage of involving a daunting flood of computations.  This method is good for informing us about how the method works, but not a method we want to use in practice for most realistic problems.</p>
@@ -2056,22 +2088,22 @@ For exercises 1-4, for the given data sets:</p>
 </statement>
 <solution>
 <p>With trendlines we get the best fitting line:</p>
-                 <image width="60%" source="../images/sec6-4-sol1a.png">
+                 <image width="60%" source="images/sec6-4-sol1a.png">
                 </image>
 
 <p>The line that gives us the best fitting curve is <m>y=2.5 x+1</m>.</p>
 <p>Using the least square error method we have the following values.</p>
 <p>We can set the information up as rows or as columns. Using the rows form the initial problem we have</p>
-                <image width="80%" source="../images/sec6-4-sol1b.png">
+                <image width="80%" source="images/sec6-4-sol1b.png">
                 </image>
  
 <p>Next we use Solver to minimize the sum of the errors</p>
-                <image width="100%" source="../images/sec6-4-sol1c.png">
+                <image width="100%" source="images/sec6-4-sol1c.png">
                 </image>
  
 <p>We started with <m>m=2</m> and <m>b=5</m> (somewhat arbitrary choices)</p>
 <p>We unchecked the constraint that the variables should be non-negative (<m>m</m> and/or <m>b</m> could theoretically be negative)</p>
-                <image width="60%" source="../images/sec6-4-sol1d.png">
+                <image width="60%" source="images/sec6-4-sol1d.png">
                 </image>
 
 <p>The least square method gives us the function <m>y=2.5x+1</m></p>
@@ -2116,7 +2148,7 @@ For exercises 1-4, for the given data sets:</p>
 </row>                    
                 </tabular>
 </statement><solution>
-                <image width="60%" source="../images/sec6-4-sol3a.png">
+                <image width="60%" source="images/sec6-4-sol3a.png">
                 </image>
 <p>We would define <m>m</m> and <m>b</m> and use these to create </p>
 <me>predicted\ y=mx+b</me>
@@ -2124,10 +2156,10 @@ For exercises 1-4, for the given data sets:</p>
 <p>The data ranges from <m>(-3,-2)</m> to <m>(3,10)</m> which suggests a slope of <m>m\approx (10-(-2))/(3-(-3) )=12/6=2</m>. </p>
 <p>Looking at the data near the <m>y</m>-axis suggests an initial guess of <m>b\approx 7.5</m>.</p>
 <p>So we would start with an Excel sheet like this:</p>
-                <image width="100%" source="../images/sec6-4-sol3b.png">
+                <image width="100%" source="images/sec6-4-sol3b.png">
                 </image>
 
-                <image width="100%" source="../images/sec6-4-sol3c.png">
+                <image width="100%" source="images/sec6-4-sol3c.png">
                 </image>
 <p>Setting up Solver as shown above we get <m>m = 2</m> and <m>b = 6</m>.</p>
 </solution></exercise>
@@ -2184,7 +2216,7 @@ For exercises 1-4, for the given data sets:</p>
 <p>Find the best fitting curve of the given model.
 </p></statement><solution>
 <p>A scatter plot of the data will help us find some good initial guesses for the initial amount and the rate.</p>
-                <image width="60%" source="../images/sec6-4-sol5a.png">
+                <image width="60%" source="images/sec6-4-sol5a.png">
                 </image>
 
 
@@ -2193,10 +2225,10 @@ For exercises 1-4, for the given data sets:</p>
 
 <p>The initial set-up looks like this. We have included a graph of the data given versus the predicted numbers. The initial guesses are not bad, but clearly we can do better.</p>
 
-                <image width="100%" source="../images/sec6-4-sol5b.png">
+                <image width="100%" source="images/sec6-4-sol5b.png">
                 </image>
 <p>After using Solver we determine that the best model function for our data is as follows:</p>
-                <image width="100%" source="../images/sec6-4-sol5c.png">
+                <image width="100%" source="images/sec6-4-sol5c.png">
                 </image>
 <me>Amount(time)=5,013.11* (1.06)^{time}</me>
 
@@ -2280,13 +2312,13 @@ For exercises 1-4, for the given data sets:</p>
 <li><p>The rate is our final parameter. This is the growth due to interests. We will start with a guess of <m>rate = 1.05</m>.</p></li>
 </ul>
 <p>The Excel commands used to generate the table are as follows:</p>
-                <image width="100%" source="../images/sec6-4-sol7a.png">
+                <image width="100%" source="images/sec6-4-sol7a.png">
                 </image>
 <p>It is worth graphing both the actual data and the predicted data to see if we are setting the problem up correctly.</p>
-                <image width="100%" source="../images/sec6-4-sol7b.png">
+                <image width="100%" source="images/sec6-4-sol7b.png">
                 </image>
 <p>The general shape of the predicted values graph seems fine. The values are off, but Solver will be able to reduce the error.</p>
-                <image width="100%" source="../images/sec6-4-sol7c.png">
+                <image width="100%" source="images/sec6-4-sol7c.png">
                 </image>
 <p>The solution is:</p>
                 <tabular top="major" halign="center">
@@ -2350,3 +2382,5 @@ For exercises 1-4, for the given data sets:</p>
  
         </chapter>
         
+<!--                            setCoordSystem(-200, 1200, -1000, 5500);
+-->
