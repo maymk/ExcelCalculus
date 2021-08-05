@@ -416,7 +416,7 @@ A standard technique in mathematics courses is to try to break a complicated pro
 
 
 <p>Thus, the wire corresponding to <m>QG=300</m> is a parabola that bends down.</p>
-<p> The interactive below shows how the wireframe is built from cuves defined by cut planes.</p>
+<p> The interactive below shows how the wireframe is built from cuves defined by slice curves defined by cut planes..</p>
 
                <figure>
                     <caption>Wire mesh</caption>

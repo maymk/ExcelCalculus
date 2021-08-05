@@ -61,7 +61,13 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <xi:include href="./Chap6FunctionsSeveralVariables.xml" />   
 <xi:include href="./Chap7Integration.xml" />   
 -->
+<xi:include href="./Chap1FunctionsGraphsExcel.xml" />  
+<xi:include href="./Chap2BusinessApplications.xml" />   
+<xi:include href="./Chap3RateChangeDerivatives.xml" />   
+<xi:include href="./Chap4SymbolicDifferentiation.xml" />  
+<xi:include href="./Chap5DifferentiationTechniquesApplications.xml" />   
 <xi:include href="./Chap6FunctionsSeveralVariables.xml" />   
+<xi:include href="./Chap7Integration.xml" />   
 
 <!--
 <xi:include href="./backmatter.xml" />   

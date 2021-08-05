@@ -1,0 +1,2012 @@
+
+         <chapter xml:id="chap-1-FunctionsGraphsExcel">
+            <title>Functions Graphs and Excel</title>
+         <section xml:id="sec-1-1-LinearFunctionsAndModels">
+            <title>Linear Functions and models</title>
+
+            <p>Linear Functions and models</p> 
+
+<p>We will start this chapter with a review of linear functions. In business there are quite a few examples of linear equations. Examples include supply and demand functions. There are some standard concepts related to lines that we will review, including the slope. </p>
+
+<p>
+Following the conventions of microeconomics, we will often use the variables p and q, for price and quantity, rather than x and y.  We will also follow the conventions of economics in treating quantity as the independent variable.  (The q-axis will be the horizontal axis.  A fast web search for supply demand equilibrium will convince you this standard usage.)</p>
+
+
+<p><term>Equations of a line</term></p>
+<p>From prior courses such as college algebra you will remember that lines can be written in several different forms. If we are given the slope and the <m>y</m>-intercept, the slope-intercept will be the equation of choice. If we are given a point and a slope, it might be faster if we use the point-slope form for a line. </p>
+
+
+ <p>                   <assemblage xml:id="KindsOfLinearEquations">
+<sbsgroup  widths="40% 60%" >
+                    <sidebyside>
+            <p><m>y=m x+b</m></p>
+                        <p>the slope-intercept form of a line</p>
+              		</sidebyside>
+                    <sidebyside>
+            <p><m>y-y_0=m(x-x_0)</m></p>
+                        <p>the point-slope form of a line</p>
+              		</sidebyside>                    
+</sbsgroup>
+                    </assemblage></p>
+
+
+
+<p>In a business setting we are likely to use <m>q</m> instead of <m>x</m> and <m>p</m> instead of <m>y</m>. </p>
+<p>With this notation these standard equations of a line become:</p>
+
+                   <p><assemblage xml:id="PQLinearEquations">
+<sbsgroup  widths="40% 60%" >
+                    <sidebyside>
+            <p><m>p=mq+b</m></p>
+                        <p>the slope-intercept form of a line</p>
+              		</sidebyside>
+                    <sidebyside>
+            <p><m>p-p_0=m(q-q_0)</m></p>
+                        <p>the point-slope form of a line</p>
+              		</sidebyside>                    
+</sbsgroup>                
+                    </assemblage></p>
+         
+            <example><title>Supply and Demand Curves</title><p> Supply and demand equations are often modeled by linear equations. The supply function is a line with a positive slope, and the demand function is a line with a negative slope.</p>
+
+
+      <figure xml:id="Supply-Demand-Intersection"> 
+               <caption>The intersection of a supply and demand curve</caption> 
+                <image width="50%" source="images/sec1-1-SDcurves.png">
+                    <description>The intersection of a supply and demand curve</description>
+                </image>
+                </figure>
+
+<p>The vertical axis shows the price, the horizontal axis shows quantity. Both supply (S) and demand (D) are linear functions. In this diagram 'B' denotes a surplus of supply, and 'A' denotes a surplus of demand.</p></example>
+
+<p>
+
+
+Recall, that the slope of a line through the points <m>P_0=(q_0,p_0)</m> and <m>P_1=(q_1,p_1)</m> is given by</p>
+                    <assemblage xml:id="SlopeDef">
+            <p><me>m=\frac{rise}{run}=\frac{(p_1-p_0)}{(q_1-q_0 )}</me></p>
+                    </assemblage>
+
+<!--<figure xml:id="figure-function-derivative">
+                <caption>Derivative by zooming</caption> -->
+                <image width="50%" source="images/sec1-1-slope.png">
+                    <description>The intersection of a supply and demand curve</description>
+                </image>
+
+
+
+<p>There are two other forms of a line that are sometimes used. The general form of a line is a standard notation used in mathematics. The 2-point form of a line is very handy in those situations where we are not given a slope, but we are given information about two points that lie on the line.</p>
+
+                   <p><assemblage xml:id="TwoPtLinearEquations">
+<sbsgroup  widths="50% 50%" >
+                    <sidebyside>
+            <p><m>a x+b y+c=0</m></p>
+                        <p> The general form of a line</p>
+              		</sidebyside>
+                    <sidebyside>
+            <p><m>y-y_0=\frac{y_1-y_0}{x_1-x_0 }(x-x_0)</m></p>
+                        <p>The 2-point form of a line</p>
+              		</sidebyside>                    
+</sbsgroup>                
+                    </assemblage></p>
+<!--
+                    <assemblage xml:id="GeneralLinearEquations">
+                <tabular>
+                    <row>
+                        <cell><m>a x+b y+c=0</m></cell>
+                        <cell> The general form of a line</cell>
+                     </row>
+                    <row>
+                        <cell><m>y-y_0=(y_1-y_0)/(x_1-x_0 )(x-x_0)</m> </cell>
+                        <cell>The 2-point form of a line</cell>
+                    </row>
+                </tabular>
+                    </assemblage>
+-->
+ 
+
+
+<p>As above, in the setting of this course we may be using <m>p</m> (price) and <m>q</m> (quantity) as our variables. This would result in equations that look as follows:</p>
+
+                   <p><assemblage xml:id="pqTwoPtLinearEquations">
+<sbsgroup  widths="50% 50%" >
+                    <sidebyside>
+            <p><m>a q+b p+c=0</m></p>
+                        <p> The general form of a line</p>
+              		</sidebyside>
+                    <sidebyside>
+            <p><m>p-p_0=\frac{p_1-p_0}{q_1-q_0 }(q-q_0)</m></p>
+                        <p>The 2-point form of a line</p>
+              		</sidebyside>                    
+</sbsgroup>                
+                    </assemblage></p>
+<!--
+                <tabular>
+                    <row>
+                        <cell><m>a q+b p+c=0</m></cell>
+                        <cell> The general form of a line</cell>
+                     </row>
+                    <row>
+                        <cell><m>p-p_0=(p_1-p_0)/(q_1-q_0 )(q-q_0)</m> </cell>
+                        <cell>The 2-point form of a line</cell>
+                    </row>
+                </tabular>
+                    </assemblage>
+-->
+
+ 
+<example><title>Finding four versions of a line</title><p>
+ We find that we can sell 150 widgets a day if we sell them at $10.  If we raise the price to $15, we can only sell 110 widgets a day.  Assume that there is a linear relationship between price and quantity sold.  Find the equation of the line in all four forms.</p>
+
+<p>
+<term>Solution</term>:  Writing this using our variables p (price) and q (quantity of widgets) we see that when <m>p = 10</m>, <m>q = 150</m> and when <m>p = 15</m>, <m>q = 110</m>.  Points are (usually) given as <m>(q,p)</m>, so this means we have two point (150,10) and (110,15) on the line. 
+We always need to find the slope of the line, and in this case 
+<me>m=  \frac{5-10}{110-150}=  \frac{5}{-40}= \frac{-1}{8}</me>
+
+We are given two points, so the 2-point form of the line should be the easiest formula to find: 
+<me>p-p_0=\frac{p_1-p_0}{q_1-q_0 }(q-q_0)</me>
+
+We just found the slope and we just need to pick a point <m>(p_0,q_0)</m> to finish the problem. (Recall that <m>p</m> and <m>q</m> are the variables, so we want to leave those as they are.) In this case lets pick <m>(p_0,q_0)= (150,10)</m>. Then we get this simplified version, which is also the point-slope form of this line.
+<me>p-10=\frac{-1}{8}(q-150)</me>
+
+From here we can very easily find the slope intercept form by some straight-forward algebra:
+<m>p-10=\frac{-1}{8}(q-150)</m> implies that 
+<me>p=\frac{-1}{8} (q-150)+10=  \frac{-1}{8} q+  \frac{150}{8}+10=  \frac{-1}{8} q+\frac{230}{8}</me>
+</p>
+
+<p>
+And finally the general form will be another exercise in algebra. We clear the fractions and put everything on one side.
+
+<me>8p+q-230=0.</me></p>
+</example>
+
+<example><title>Finding a line from two points</title><p>  Suppose that a linear cost-quantity relationship exists in producing widgets.  There is a fixed cost of $400.  There is also a per-unit cost of $11.
+<ol label="(a)">
+	<li><p>Find the equation of the line.</p></li>
+	<li><p>Find the cost of making 200 widgets.</p></li>
+</ol></p>
+  
+
+<p><term>Solution</term>:</p>
+ <p> 1) We have one point of the form (quantity, cost) at (0, 400) from the fixed cost.  This point happens to be an intercept.  The slope of the line is <m>m=11/1=11</m>.  We will let <m>C</m> stand for Cost and <m>q</m> stand for quantity. The general formula for a line with these variables will have the form
+<me>C=m q+b.</me></p>
+<p>In this example <m>m = 11</m> and <m>b = 400</m>, hence the equation of the line is
+<me>C=11 q+400</me></p>
+<p>b) Using the equation form part a) we see that the cost of producing 200 widgets is
+<me>C=11 (200)+400=\$2,600</me>
+</p></example>
+
+<example><title>A nonlinear function</title><p>
+Example 4:  Sarah is paid $500 for working up to 40 hours per week.  For work beyond 40 hours per week she is paid $18/hour.
+<ol label="(a)">  
+	<li><p>Find the equation of the line.</p></li>
+	<li><p>How much is she paid if she works 56 hours in a week?</p></li>
+	<li><p>What is she paid for working 30 hours in a week?</p></li>
+</ol></p>
+
+<p><term>Solution</term>:</p>
+<p>	a) For this example we will use <q>designer variables</q>. The output will be Pay, and the input variable – the number of hours worked – will be hrs. We are told that Pay = 500 when hrs = 40. The slope of the line work beyond 40 hours is <m>m=18</m>.  Another way to think of this is to say that there is a fixed Pay of $500 and a variable Pay for any hours in excess of 40: i.e. (hrs - 40). Thus, the equation of the line, according to the point-slope form is </p>
+                    <assemblage xml:id="PayEquations">
+<p><me>Pay=variable\  pay+Fixed\  pay.</me></p>
+                    </assemblage>
+
+
+<p><me>Pay=m(hrs-40)+500=18*(hrs-40)+500.</me></p>
+
+<p>b) The pay for working 56 hours is 18(56-40)+500=$788.</p>
+<p>c) The pay for working 30 hours is $500.  This is a trick question part of the problem.  From the text of the problem, the linear model only works for overtime, with a flat rate applying to less than 40 hours per week.
+Comment: The function should be written as a piecewise defined function.</p>
+                
+<p>This question is all about the function <m>f</m> defined by <me>Pay=\begin{cases}
+500&amp;hrs\le 40\\
+18*(hrs-40)+500&amp;hrs>40\\
+\end{cases}</me></p> 
+</example>
+<p>It can be useful when writing reports to have variables that convey some meaning. We could have called <m>Pay</m> `<m>y</m>', and <m>hrs</m> `<m>x</m>', but using the much more easily interpreted variables named Pay and hrs helps when using the formulas.
+</p>
+
+<exercises xml:id="exercises-set-sec-1-1">
+	<title>Exercises 1.1 Linear Functions and models</title>
+
+<exercisegroup>
+<introduction>
+<p>For problems 1-6, given two points in the <m>(q,p)</m> plane and a value <m>q_0</m>:</p>
+<p><ol>
+	<li><p>Find the slope of the line determined by the points.</p></li>
+	<li><p>Give the equation of the line determined by the points.</p></li>
+	<li><p>Give the value of <m>p</m> predicted for <m>q_0</m> by the line.</p></li>
+</ol></p>
+
+</introduction>
+
+<exercise ><statement><p> 
+Points <m>(2,5)</m> and <m>(6,17)</m>, with <m>q_0=4</m>.
+</p>
+
+<!-- Copied code
+<p><ol>
+	<li><p>First find the slope: <m>m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{17-5}{6-2}=\frac{12}{4}=3</m>
+</p></li>
+
+<li><p>Next we find the equation of the line. There are several ways to do this and two methods are outlined below.</p>
+
+<p><ul> 
+<li><p>Method 1: use the point-slope equation: <m>p-p_0=m (q-q_0)</m>.
+We can choose either one of the points, so in this case we will find the line using the point <m>(q_0,p_0 )=(2,5)</m>. This gives the equation
+<m>p-5=3 (q-2)</m>.</p>
+<p>Rewrite this as <m>p=3q-1</m></p></li> 
+<li><p>Method 2: use the slope- intercept equation <m>p=m q+b</m>.
+Use <m>(q,p)=(2,5)</m> and <m>m = 3</m> and solve for <m>b</m>:
+<m>5=3 (2)+b</m>.
+And solving for <m>b</m> we have that <m>b= -1</m>, and hence <m>p=3q-1</m></p></li></ul></p>
+</li>
+
+<li><p>Evaluate at the given point.  <m>p(4)=3*4-1=11</m></p></li>
+</ol></p>
+End of copied code -->
+
+</statement>
+<hint><p>Find the slope and use the point-slope form</p></hint>
+<solution>
+
+<p><ol>
+	<li><p>First find the slope: <m>m=  \frac{text{change in }p}{text{change in }q}
+=  \frac{17-5}{6-2}=\frac{12}{4}=3</m>
+</p></li>
+
+<li><p>Next we find the equation of the line. There are several ways to do this and two methods are outlined below.</p>
+
+<p><ul> 
+<li><p>Method 1: use the point-slope equation: <m>p-p_0=m (q-q_0)</m>.
+We can choose either one of the points, so in this case we will find the line using the point <m>(q_0,p_0 )=(2,5)</m>. This gives the equation
+<m>p-5=3 (q-2)</m>.</p>
+<p>Rewrite this as <m>p=3q-1</m></p></li> 
+<li><p>Method 2: use the slope- intercept equation <m>p=m q+b</m>.
+Use <m>(q,p)=(2,5)</m> and <m>m = 3</m> and solve for <m>b</m>:
+<m>5=3 (2)+b</m>.
+And solving for <m>b</m> we have that <m>b= -1</m>, and hence <m>p=3q-1</m></p></li></ul></p>
+</li>
+
+<li><p>Evaluate at the given point.  <m>p(4)=3*4-1=11</m></p></li>
+</ol></p>
+</solution>
+</exercise>
+<exercise ><statement><p> Points <m>(5,7)</m> and <m>(10,7)</m>, with <m>q_0=20</m>.
+</p></statement>
+</exercise>
+<exercise ><statement><p> Points <m>(20,10)</m> and <m>(40,5)</m>, with <m>q_0=12</m>.
+</p>
+</statement>
+<solution>
+<p>Just as in problem 1 we find the slope and then find the equation of the line.</p>
+<p><ol><li>
+<p>First find the slope: <m>m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{5-10}{40-20}=-\frac{5}{20}=-\frac{1}{4}</m></p></li>
+<li><p>Using <m>p=m (q-q_0)+p_0</m> with <m>(q_0,p_0 )=(20, 10)</m> and <m>m = -\frac{1}{4}</m>, we get <m>p=-\frac{1}{4}(q-20)+10</m>.  Solving for <m>p</m> we get <m>p =-\frac{1}{4}q+15</m></p></li>
+<li><p>Evaluate at the given point.  <m>p(12)=-\frac{1}{4}(12)+15=12</m></p></li>
+</ol></p>
+</solution>
+</exercise>
+<exercise ><statement><p> Points <m>(5,62)</m> and <m>(115,783)</m>, with <m>q_0=415</m>.
+</p></statement></exercise>
+<exercise ><statement><p> Points <m>(273,578)</m> and <m>(412,6)</m>, with <m>q_0=309</m>.
+</p></statement>
+<solution>
+<p>Just as in problem 1 we find the slope and then find the equation of the line.</p>
+<p><ol><li>
+<p>First find the slope: <m>m=  \frac{\text{change in }p}{\text{change in }q}
+=  \frac{578-6}{273-412}=-\frac{5}{20}=-\frac{572}{139}</m></p></li>
+<li><p>Using <m>p=m (q-q_0)+p_0</m> with <m>(q_0,p_0 )=(412, 6)</m> and <m>m = -\frac{572}{139}</m>, we get <m>p=-\frac{572}{139}(q-412)+6</m>.  (We can combine the constant terms – the <m>6</m> and the <m>-\frac{572}{139}*(-412)</m>, but leaving the equation in this form is acceptable.)</p></li>
+<li><p>Evaluate at the given point.  <m>p(309)=-\frac{572}{139}(309-412)+6
+=-\frac{572}{139}(-103)+6=429\frac{119}{139}</m></p></li>
+</ol></p>
+</solution>
+</exercise>
+<exercise ><statement><p> Points <m>(509,17)</m> and <m>(211,132)</m>, with <m>q_0=4</m>.
+</p></statement></exercise>
+</exercisegroup>
+
+<exercisegroup>
+<introduction>
+<p>For problems 7-12, start with the information given:</p>
+<p><ol>
+	<li><p>Give the equation of the line determined by that information.</p></li>
+	<li><p>Using the line, give the predicted value of <m>p</m> for the given <m>q_0</m>.</p></li>
+	<li><p>Give the value of <m>q</m> for which the predicted value of <m>p</m> is <m>0</m>.</p></li>
+</ol></p>
+</introduction>
+
+<exercise ><statement><p> A slope of <m>3</m>, passing through <m>(6,3)</m>, with <m>q_0=4</m>.
+</p></statement>
+<solution>
+<p><ol><li>
+<p>Using <m>p=m q+b</m>, we get <m>3=3 (6)+b</m>, so <m>b= -15</m> and the equation of the line is <m>p=3 q-15</m></p></li>
+<li><p>If <m>q_0=4</m>, then <m>p=3 q-15=3(4)-15= -3</m></p></li>
+<li><p>	The predicted value of <m>p</m> is <m>0</m>, when <m>0=3 q-15</m>. Solving for <m>q</m> we get <m>q=5</m>.
+[Comment: in part a) we could have used the point-slope for as well.]
+</p></li>
+</ol></p>
+</solution>
+</exercise>
+<exercise ><statement><p> A slope of <m>-2</m>, passing through <m>(2,-5)</m>, with <m>q_0=3</m>.
+</p></statement></exercise>
+<exercise ><statement><p> A slope of <m>12.7</m>, passing through <m>(22,183)</m>, with <m>q_0=46</m>.
+</p></statement>
+<solution>
+<p><ol><li>
+<p>	Using <m>p=m (q-q_0 )+p_0</m>   we get <m>p=12.7 (q-22)+183</m>.                         </p></li>
+<li><p>When <m>q_0=46</m>, we get that <m>p=12.7 (46-22)+183=12.7(24)+183</m>. And hence <m>p=487.8</m></p></li>
+<li><p>The predicted value of <m>p</m> is <m>0</m>, when <m>0=183+12.7 (q-22)</m>. Solving for <m>q</m> we get: <m>12.7 (q-22)= -183</m> This implies <m>(q-22)= \frac{-183}{12.7}</m></p> 
+<me>q=22 -\frac{183}{12.7}=7.59</me>
+
+</li>
+</ol></p>
+</solution>
+</exercise>
+<exercise ><statement><p> A slope of <m>-0.23</m>, passing through <m>(7.6,19.7)</m>, with <m>q_0=59.6</m>.
+</p></statement></exercise>
+<exercise ><statement><p> A slope of 0, passing through <m>(12.3,9.8)</m>, with <m>q_0=74</m>.
+</p></statement>
+<solution>
+<ol><li>
+<p>	Using <m>p=m (q-q_0 )+p_0</m>   we get <m>p=0 (q-12.3)+9.8</m> or <m>p=9.8</m>.                         
+</p></li>
+<li><p>When <m>q_0=74</m>, we get that <m>p=9.8</m>. (This is a constant function, and the output is going to be <m>9.8</m> no matter what value of <m>q</m> we plug in.)</p></li>
+<li><p>The predicted value of <m>p</m> is never  <m>0</m>, because the predicted value of p is always 9.8.</p> 
+</li>
+</ol>
+</solution>
+</exercise>
+<exercise ><statement><p> A slope that is undefined, passing through <m>(6,3)</m>, explaining why part b would not make sense.
+</p></statement></exercise>
+</exercisegroup>
+
+<exercisegroup>
+<introduction>
+<p>For problems 13-18, start with the equation given:</p>
+<p><ol>
+	<li><p>Give the slope of the line or say that the slope is undefined.</p></li>
+	<li><p>Give the intercepts of the line with the axes.</p></li>
+	<li><p>Give two points that are on the line but not on the axes.</p></li>
+</ol></p>
+</introduction>
+
+<exercise ><statement><p> <m>3 p+2 q=6</m>.
+</p></statement>
+<solution><p><ol>
+<li><p>Solve for <m>p</m> so we can read off the slope more easily:  <m>p= -2/3 q+2</m>.
+Hence the slope is <m>m= -2/3</m>
+</p></li>
+<li><p>To get the <m>p</m>-intercept we set <m>q=0</m>, so that <m>3 p=6</m>, and we get <m>p=2</m>
+To get the <m>q</m>-intercept we set <m>p=0</m>, so that <m>2q=6</m>, and we get <m>q=3</m>
+</p></li>
+<li><p>We can pick any two values for <m>q</m> (except <m>0</m> and <m>3</m> because those are intercepts), so arbitrarily pick some values: say <m>q=1</m> and <m>q=-1</m>.
+If <m>q=1</m>, then <m>3 p+2=6</m>, and hence  <m>p=4/3</m> so the point would be <m>(q,p)=(1,4/3)</m>
+If <m>q=-1</m>, then <m>3 p-2=6</m>, and hence  <m>p=8/3</m> so the point would be <m>(q,p)=(-1,8/3  )</m>
+</p></li>
+</ol></p></solution>
+</exercise>
+<exercise ><statement><p> <m>7 p-4 q+14=0</m>.
+</p></statement></exercise>
+<exercise ><statement><p> <m>y=5</m>.
+</p></statement>
+<solution><ol>
+<li><p>The slope is <m>0</m>
+</p></li>
+<li><p>The y-intercept is <m>y = 5</m>. There is no <m>x</m>-intercept
+</p></li>
+<li><p>No matter what <m>x</m> we choose the <m>y</m> value will always be <m>5</m>. So we can pick any two values of <m>x</m> (not <m>0</m> to avoid the intercept). For instance <m>(x,y)=(-20,5)</m>, <m>(x,y)=(-2,5)</m>, <m>(x,y)=(7,5)</m>, etc are all points on the line.</p></li>
+</ol></solution>
+</exercise>
+<exercise ><statement><p> <m>x=3</m>.
+</p></statement></exercise>
+
+<exercise ><statement><p>
+ <m>y=4(x-3)+9</m>.
+</p></statement>
+<solution><ol>
+<li><p>The slope is <m>4</m>
+</p></li>
+<li><p>To get the <m>y</m>-intercept we set <m>y=0</m>, so that <m>y=4(-3)+9=-3</m>,</p>
+<p>To get the <m>x</m>-intercept we set <m>y=0</m>, so that <m>0=4(x-3)+9</m>.  Solve for <m>x</m> and we get <m>x-3=-\frac{9}{4}</m> and <m>x=3-\frac{9}{4}=\frac{3}{4}</m>
+</p></li>
+<li><p>Avoiding the intercepts we can choose <m>x</m> to be any number other than <m>x = 0</m> and <m>x=3/4</m>.  We may look for nice values of <m>x</m> that make the arithmetic come out nice: for example choose <m>x=3</m> and <m>x=4</m>. 
+When <m>x=3</m>, <m>y=9</m>, and we get the point <m>(x,y)=(3,9)</m>.
+When <m>x=4</m>, <m>y=13</m>, and we get the point <m>(x,y)=(4,13)</m>.
+
+</p></li>
+</ol></solution>
+</exercise>
+
+<exercise ><statement><p>
+ <m>112 p+257 q=4783</m>.
+</p></statement></exercise>
+</exercisegroup>
+
+<exercise ><statement><p>
+ Suppose that the relationship between price and quantity of widgets sold is linear.  When the price is $23, we can sell 4783 widgets.  If we raise the price to $27, we can only sell 4295 widgets.  Find the equation of the line.
+</p></statement>
+<solution><p>The information tells us we have two points: <m>(q,p)=(4783,23)</m>  and <m>(q,p)=(4295,27)</m>. (Note that in business the quantity <m>q</m> is usually the input and price <m>p</m> is usually the output.)</p>
+<p>Next we need the slope: <m>m=  (27-23)/(4295-4783)=4/(-488)=-1/122</m></p>
+<p>Using <m>p-p_0=m (q-q_0 )</m>   we get <m>p-23=-1/122  (q-4783)</m>.
+We can rewrite the latter as <m>p=23-1/122  (q-4783)</m>.
+</p></solution></exercise>
+
+<exercise ><statement><p>
+ Suppose that the relationship between price and quantity of gizmo kits we can buy is linear.  When the price is $15, we can buy 6000 gizmo kits.  If we lower the price we will pay to $13, we can only buy 4500 kits.  Find the equation of the line.
+</p></statement></exercise>
+</exercises>
+
+        </section>
+
+        <section xml:id="sec-1-2-FunctionsBusinessSetting">
+            <title>Functions in the Business setting</title>
+
+          <p><url href="Examples/Section-1-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+<p>
+
+	Not all functions we encounter in a business setting are linear. There are several other families of functions we should (re-) familiarize ourselves with. These models include:<ul>
+<li>	Quadratic functions</li>
+<li>	Exponential functions</li>
+<li>	Logistic functions</li>
+<li>	Normal distribution functions</li>
+<li>	Sinusoidal functions</li></ul></p>
+
+<p><term>Quadratic Functions</term></p>
+	
+<p><term>Quadratic functions</term> should be very familiar from previous mathematics courses. They are of the form <m>y=a x^2+b x+c</m>. These are our standard parabolas.</p>
+<p>In business we encounter quadratic equations when we study revenue and profit functions. Recall from your economics course that:
+<me>Revenue=price*quantity=p*q</me>
+In some of the models we will investigate later in the course price will be a linear function. We will assume <m>Price=m q+b</m>. This implies that 
+<me>Revenue=(m q+b)*q=m q^2+b q</me>
+If <m>m > 0</m>, then the revenue function will look like a parabola that opens up. If <m>m \lt 0,</m> then the revenue function will look like a parabola that opens down.
+</p>
+
+               <caption>A quadratic function</caption> 
+                <image width="50%" source="images/sec1-2-QuadraticFunctions.png" xml:id="qudraticFunctions">
+                    <description>The intersection revenue and demand price</description>
+                </image>
+
+<p>For a quadratic model we are often very interested in the coordinates of the vertex, and any possible zeros. For the general equation <m>y=a x^2+b x+c</m> the sign of the coefficient of <m>x^2</m>, <m>a</m>, will determine if we have a maximum or a minimum. If <m>a</m> is positive, the parabola opens up and the vertex will be a minimum. If <m>a</m> is negative, the parabola opens down and the vertex will be a maximum.</p>
+<p>
+Recall that we can find the zeros of a quadratic by using the quadratic equation.
+<me>roots\ or\ zeroes  =  
+\frac{-b\pm\sqrt{b^2-4ac}}{2a}</me>
+From this equation we see that the vertex must be located at <m>x= -b/(2a.)</m>. The discriminant (the term underneath the radical sign determines if there are 0, 1, or 2 roots.</p> 
+<ul>
+<li><p>If <m>b^2-4ac>0</m>, then there are 2 roots.</p></li>
+<li><p>If <m>b^2-4ac=0</m>, then there is 1 root (the vertex will touch the axis)</p></li>
+<li><p>If <m>b^2-4ac\lt 0</m>, then there are no roots. This means the entire graph must lie above the <m>x</m>-axis (<m>a > 0</m>) or below the <m>x</m>-axis (<m>a \lt 0</m>).</p></li> </ul>
+
+<p>
+Sometimes we may need more general polynomials in a model, with an equation of the form <m>f(x)=a_n x^n+\cdots+a_1 x+a_0</m>.  In such cases we remember that the number of turning points of the graph can be no more than <m>n-1</m>.</p> 
+
+<p><term>Exponential functions</term></p>
+
+<p>The <term>exponential model</term>, with an equation of the form <m>f(t)=p*e^t</m>. Sometimes the exponential function <m>e^t</m> is denoted by <m>exp(t)</m>. Excel will use this format, so it is worth looking at the notation in this case. 
+<m>f(t)=p*e^{rt}</m> can also be written as  <m>f(t)=p*exp(r t)</m></p>
+
+<p>Math books (and Excel) like using a base of <m>e</m> because it makes the mathematics easier when we do calculus, so the equation is written as <m>f(t)=p*e^{rt}</m> or <m>f(t)=p*exp(r t)</m>. However, in real world applications we tend to use <m>A=pR^t</m> and make the equation <m>f(t)=p*R^t</m>.  (The reader is warned that <m>R=e^r</m> and both <m>R</m> and <m>r</m> are referred to as the <term>rate</term>.  You will have to use the context to tell them apart.)</p>
+
+<p>Exponential functions are used for proportional growth or decay.  In business, compound interest is given as an exponential function. In particular, if <m>P</m> is the principal and <m>r</m> is the interest rate "compounded continuously" (expressed as a decimal), then the amount <m>A</m> after time <m>t</m> is given by <m>A=P e^rt</m>. The relationship (in general) between a <term>future value</term> (FV) and the <term>present value</term> (PV) given an interest rate <m>r</m> per period, with <m>t</m> being the number of compounding periods is given by:</p>
+                    <assemblage xml:id="FutureValueDef">
+            <p><me>Future Value: FV=PV*(1+r)^t</me></p>
+                    </assemblage>
+
+<p>It is also useful in determining a fair value today of a promised future payout. The sign of the rate will determine if the graph turns up or down.</p>
+
+<p>When modeling real world behavior, we often know some special features of the problem. For instance, we may know that our present value is $2,000 and that we would like the future value to be $10,000 after 10 years. The question would be what function would describe such a model? A method commonly used to solve such a problem is to plug in the values we are given and see if we can determine what the remaining quantities should be. We know that <m>FV=PV*(1+r)^t</m>. The extra information tells us PV = 2000, and when t = 10 we know that <m>FV=2000*(1+r)^{10}=10,000</m>.
+This is enough information to solve for r. Dividing both sides by 2000 shows that <m>(1+r)^{10}=5</m>. To solve this equation we need rules of exponents. We obtain: 
+<m>1+r=5^{1⁄10}</m>, and hence <m>r= 5^{1/10}-1= 0.1746</m>. This means that to obtain such a growth we would need a rate of growth of about 17.46%. The function modeling that growth would be <m>FV=2000*(1.1746)^t</m>.
+In general we can set up equations and solve for the unknown quantities. 
+</p>
+
+
+
+<p><term>Logistic Functions</term></p>
+
+<p>
+The exponential model assumes growth without end.  That is impossible in most business situations.  Instead there is typically a point where the market is saturated.  The alternative model says that the rate of change is proportional both to the current quantity and to the distance from the theoretical maximum value.  This is called logistic growth.  A typical formula for <term>logistic growth</term> given an interest rate <m>r</m>, market saturation point <m>M</m>, and constant a depending on the problem is</p>
+<me>f(x)=  \frac{M}{1+a e^{-rx}} </me>
+<p>In Excel we would write this function as: f(x)=M/(1+a exp(-r x)). Using Excel it is fairly easy to create a table and graph a logistic function.</p>
+
+                <image width="50%" source="images/sec1-2-LogisticFunction.png">
+                    <description>Graph of a logistic function</description>
+                </image>
+
+ 
+
+<p><term>Sinusoidal Functions</term></p>
+
+<p>The <term>sinusoidal model</term> is for data that repeats on a natural cycle.  Typical examples would include need for heating oil, electricity for air conditioning, and sales for seasonal items such as Christmas.  The typical equation is
+</p><me>f(x)=M+A*sin(2\pi*(x-shift)/period),</me><p>
+where the mean <m>M</m> is the average value, the amplitude <m>A</m> is the distance from the mean to the maximum, the period is the length of time till the cycle repeats, and the shift is where we start the cycle for <m>x=0</m>.  
+With an appropriate shift we can interchange the sine and cosine functions.  (The functions <m>sin(x)</m> and <m>cos(x)</m> arise from trigonometry.)  In this course, we will not focus on trigonometric functions and their properties.  We are only concerned with having a periodic function for seasonal variations.</p>
+
+                <image width="50%" source="images/sec1-2-SinCurve.png">
+                    <description>The intersection revenue and demand price</description>
+                </image>
+
+<p><term>Normal Distribution Functions</term></p>
+
+<p>The <term>normal distribution</term> or <term>bell curve</term> is used because many populations follow a normal distribution on many scales.  The equation</p>
+<me>f(x)=a e^{-\left(\frac{(x-m)}{s}\right)^2} </me><p>
+looks a bit intimidating, but we will be able to use the power of a spreadsheet to easily handle it. </p>
+<p>In retail, there are several examples of items that follow a normal distribution. In a store selling shoes for women for instance, we would expect to see that some sizes are more prevalent than others. This would be a factor in determining what sizes to have in stock, and at what quantities. 
+The typical scenario in which we will be using this curve model is one where we ask what range of sizes do we need to cover for the population in an area to be large enough to justify a specialty store.</p>
+
+                <image width="50%" source="images/sec1-2-NormalCurve.png">
+                    <description>A normal curve</description>
+                </image>
+
+<p>The normal distribution function has certain interesting features. The graph shows a maximum value. The maximum occurs when <m>x = m</m>. And when <m>x = m</m>, we know that </p>
+<me>f(x)=a e^{\left(\frac{-(m-m)}{s}\right)^2}=a e^0=a*1=a,</me><p> hence the maximum value is <m>a</m>.</p>
+
+<p>There are a few more models that will show up from time to time and are worth mentioning.</p>
+
+
+
+<p>
+<term>Inversely Proportional Functions</term></p>
+
+
+<p>If we see the phrase that two quantities are inversely proportional, it means that <m>f(x)</m> is a constant times <m>1/x</m>.  We might expect to use such a model when a fixed amount of money will be spent to acquire all of a given product.  Thus we may see it used to describe price as a function of supply.</p>
+
+                <image width="50%" source="images/sec1-2-InverseCurve.png">
+                    <description>An inversely proportional function</description>
+                </image>
+
+<p>
+<term>Logarithmic Functions</term></p>
+
+<p>The <term>logarithmic model</term> looks at equations of the form <m>f(x)=a*\ln (x)+b</m> or <m>f(x)=a*\ln (Bx)</m>.  This model shows up in two ways.  It can be obtained as the accumulation of a quantity that is inversely proportional to our variable.  It also shows up as the inverse of the exponential model.  (If <m>y</m> is described as an exponential function of <m>x</m>, then <m>x</m> is a logarithmic function of <m>y</m>.)</p>
+
+                <image width="50%" source="images/sec1-2-LogCurve.png">
+                    <description>A logarithmic function graph</description>
+                </image>
+
+<exercises xml:id="exercises-set-sec-1-2">
+	<title>Exercises  Functions in the Business Setting</title>
+	
+	
+	
+<p>For each model, some features of the graph are listed.  Describe how to change each feature by changing the parameters of the model.  (E.g., With the linear model, 
+<m>f(x)=a x+b</m>, the parameters are <m>a</m> and <m>b</m>.  The place where the line intercepts the 
+<m>x</m>-axis is <m>–b/a</m>, so any <m>x</m>-intercept can be produced with <m>a=-1</m> and <m>b</m> equal to the desired value.)</p>
+
+
+<exercise ><statement><p> For a linear model, <m>f(x)=a x+b</m>, how do I get a graph with 
+<ol label="(a)">  
+	<li><p>A positive <m>y</m>-intercept?</p></li>
+	<li><p>A negative slope?</p></li>
+</ol>
+</p></statement>
+<solution><ol>
+<li><p>How to obtain a positive <m>y</m>-intercept. - The <m>y</m>-intercept is determined by <m>b</m>, so we just let <m>b\gt 0</m>.</p></li>
+<li><p>How to obtain a negative slope. - The slope is determined by <m>a</m> in the formula above, so we let <m>a\lt 0</m> </p></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p> Suppose we are working with a quadratic model, <m>f(x)=a x^2+b x+c</m>
+<ol label="(a)">  
+	<li><p>How do we get a graph, that points down? (i.e. a graph that has a maximum)?</p></li>
+	<li><p>How will we know if the graph of the function intercepts the <m>x</m>-axis at two positive values?</p></li>
+</ol>
+</p></statement></exercise>
+
+<exercise ><statement><p> For a quadratic model, <m>f(x)=a x^2+b x+c</m>, How do I get a graph where the vertex has <m>x=5</m>?
+</p></statement>
+<solution>
+<p>Quadratics are parabolas and the zeros (if they exist) are at <m>x=  \frac{-b\pm \sqrt{b^2-4ac}}{2a}</m>.</p> 
+<p>The vertex is always located at <m>x=  \frac{-b}{2a}</m>. So if the vertex is to be at <m>x = 5</m> we need to make sure <m>\frac{-b}{2a}=5</m>. 
+There are many ways to do this (there are infinitely many different parabolas with their vertex located at x = 5). One possible solution would be to let <m>b = -10</m> and <m>a = 1</m>.
+</p></solution>
+</exercise>
+
+<exercise ><statement><p> For a polynomial model, <m>f(x)=a_n x^n+\cdots+a_1 x+a_0</m>, how do I get a graph that goes up at both ends?
+</p></statement></exercise>
+
+<exercise ><statement><p> For an exponential model, <m>f(x)=P*\exp(r x)</m>, how do I get a graph with <m>f(0)=100</m>, that goes to zero as x gets large?
+</p></statement>
+<solution>
+<ul>
+<li><p><m>f(0)=P*\exp(0)= P</m>, so if  <m>f(0)=100</m> we know that <m>P=100</m>.</p></li> 
+<li><p>If <m>f</m> goes to 0 as <m>x</m> gets large it must be an exponential decay function which means that the coefficient <m>r</m> must be negative.</p></li>
+</ul>
+</solution>
+</exercise>
+
+<exercise ><statement><p> For an exponential model, <m>f(x)=P*\exp(-r x)+b</m>, how do I get a graph where <m>f(x)</m> goes to 10 as <m>x</m> gets large, <m>f(0)=1</m>, and <m>f(10)</m> is at least <m>9</m>?
+</p></statement></exercise>
+
+<exercise ><statement><p> For a logistic growth model, 
+<m>f(x)=\frac{M}{1+a \exp(-r*t)}</m>, how do I get a graph where <m>f(x)</m> goes to <m>10</m> as <m>x</m> gets large, <m>f(0)=1</m>, and <m>f(10)</m> is at least <m>9</m>?</p></statement>
+<solution>
+<p>We have several conditions here that need to be met. We use them to find our parameters one at a time.</p>
+<ul>
+<li><p><m>f(x)</m> goes to <m>10</m> as <m>x</m> gets large. If  <m>-r\gt 0</m>, then 
+<m>a\exp(-r*x)</m> gets very large as <m>x</m> gets large which would send <m>f</m> down to <m>0</m>, but <m>f</m> goes to <m>10.</m> So we know that <m>-r\lt 0</m>.</p> 
+<p>When <m>-r\lt 0</m>, <m>\exp(-r*x)</m> goes to <m>0</m> for large <m>x</m>. So the whole equation must go to <m>M</m>. Hence <m>M=10</m></p></li>
+<li><p><m>f(0)=1</m>. When <m>x = 0</m> we get <m>f(x)=M/(1+a \exp(0) )=M/(1+a)=10/(1+a)=1</m>, Hence <m>a = 9</m></p></li>
+<li><p><m>f(10)</m> is at least <m>9</m>. With <m>M = 10</m> and  <m>a = 9</m> we have that 
+<m>f(10)=10/(1+9 \exp(-r*10) )\gt 9</m>
+This implies that <m>1+9 \exp(-r*10)\lt 10/9</m> and hence <m>\exp(-r*10)\lt 1/81</m>
+This means that  <m>r\gt -1/10  \ln(1/81)= 0.44</m></p></li>
+</ul> 
+</solution>
+</exercise>
+
+<exercise ><statement><p> For a sinusoidal model, <m>f(x)=M+A \sin(2\pi(x+shift)/period)</m>, based on seasonal change through the year, if <m>x</m> is measured in months, what value should period have?
+</p></statement>
+</exercise>
+
+<exercise ><statement><p> For a normal model, 
+<m>f(x)=a \exp\left(-\left(\frac{x-m}{s}\right)^2\right)</m>, how do I produce a graph with a high point at <m>(7, 20)</m>, and the value of <m>f(4)</m> between 1 and 2?  (You need to use trial and error on this problem.)
+</p></statement>
+<solution>
+<ul>
+<li><p>The high point of the graph occurs when <m>\frac{x-m}{s}=0</m>. This happens at <m>x = 7</m>, so this means that <m>m = 7</m> as well. </p></li>
+<li><p>Once we know that <m>m = 7</m>, then 
+<m>f(7)=a \exp\left(-\left(\frac{7-7}{s}\right)^2 \right)=a \exp(0)=a</m> But <m>f(7)=20</m>, so <m>a = 20</m>.  This means that 
+<m>f(x)=20 \exp\left(-\left(\frac{x-7}{s}\right)^2\right)</m>.</p></li>
+<li><p>If the value of <m>f(4)</m> is between <m>1</m> and <m>2</m>, 
+<m>f(4)=20 \exp\left(-\left(\frac{4-7}{s}\right)^2\right)</m> is between <m>1</m> and <m>2</m>. We can solve for <m>s</m>
+<me>1\lt 20 \exp\left(-\left(\frac{4-7}{s}\right)^2\right)\lt 2</me>
+<me>1/20\lt \exp\left(-\left(\frac{4-7}{s}\right)^2\right)\lt 1/10</me>
+<me>\ln (1/20)\lt \left(-\left(\frac{4-7}{s}\right)^2\right)\lt \ln (1/10)</me>
+<me>\ln (1/20)\lt \frac{-9}{s^2}\lt \ln (1/10)</me>
+ and hence 
+<me>2.3026\lt \frac{9}{s^2} \lt 2.996</me>
+So  <m>s^2\gt \frac{9}{2.996}</m> and  <m>s^2\lt\frac{9}{2.3026} </m>. Hence <m>1.734\lt s\lt 1.977</m>.
+</p></li></ul>
+</solution>
+</exercise>
+
+<exercise ><statement><p> For a normal model, 
+<m>f(x)=a \exp\left(-\left(\frac{x-m}{s}\right)^2\right)</m>, how do I produce a graph with a high point at <m>(7, 20)</m>, and the value of <m>f(1)</m> between 1 and 2?  (You need to use trial and error on this problem.)
+</p></statement>
+</exercise>
+
+<exercise ><statement><p> For the power model, <m>f(x)=a x^b</m>, how do I produce a graph with <m>f(1)=5</m> and <m>f(3)=1</m>?</p></statement>
+<solution>
+<p><m>f(1)=5</m> means that <m>a 1^b=a=5</m>.</p>
+<p><m>f(3)=1</m> means that <m>a x^b=5*3^b=1</m> hence <m>3^b=0.2</m> and hence 
+<m>\ln(3^b )=\ln(0.2)</m>.</p>
+<p>So <m>b \ln(3)=\ln(0.2)</m> which implies that <m>b=\ln(0.2)/\ln(3) \approx -1.465</m>.</p>
+</solution>
+</exercise>
+
+
+<exercise ><statement><p> For the inversely proportional model, <m>f(x)=a/x</m>, how do I produce a graph with <m>f(1) \lt 0</m> and <m>f(3)=-5?</m></p></statement></exercise>
+
+
+<exercise ><statement><p> For the logarithmic model, <m>f(x)=a \ln(x)</m> how do I produce a graph with <m>f(e)=3</m>?</p></statement>
+<solution>
+<p><m>f(e)=a \ln(e)=a (1)= a</m>, hence <m>a = 3</m></p>
+</solution>
+</exercise>
+
+<p>Exercises 14-21) For each situation, explain which model you would use for each situation (linear, quadratic, etc.).  Be sure to explicitly mention what you are using as the free variable (the equivalent of x), what you are using as the dependent variable (the equivalent of y), and why that model makes sense in the given situation.</p>
+
+<exercise ><statement><p> The cost of producing an amount of a product is the sum of the fixed costs, like warehouse rent, and the variable costs, like labor and materials, which we can assume to be the same for each unit produced.
+</p></statement></exercise>
+
+<exercise ><statement><p> When looking at revenue, we can assume that sales will be linear function of the price of the object.
+</p></statement>
+<solution>
+<p>Using a linear model we get  <m>sales=m *price+b</m>.</p>
+<p>Price is the free variable (the input) and sales is the dependent variable (the output)
+</p>
+</solution>
+</exercise>
+
+<exercise ><statement><p> The amount I expect to be able to withdraw from an account at a future date, assuming that interest is compounded continuously and is fixed.
+</p></statement></exercise>
+
+<exercise ><statement><p> The amount of time it takes an investment to double assuming a fixed interest rate.
+</p></statement>
+<solution>
+<p>The Future value is given by <m>FV=PV*(1+r)^t</m></p>
+<p>Here the Future value (<m>FV</m>) will be the input (it will be <m>2*PV</m>) and the output will be the time <m>t</m>. 
+</p>
+</solution>
+</exercise>
+
+<exercise ><statement><p> The amount of electricity needed for air conditioners in a Washington, D.C. at various times of the year.
+</p></statement></exercise>
+
+<exercise ><statement><p> The amount of metal needed to build a fuel tank as a function of the amount of fuel to be stored.
+</p></statement>
+<solution>
+<p>Volume is 3-dimensional and the metal would be related to the surface area – which is 2-dimensional – so the formula would be something like:</p>
+<me>Amount\ of\ metal=K*(Volume)^{3/2}</me>
+<p><m>Volume</m> is the input, the <m>K</m> is some constant and <m>Amount\ of\ Metal</m> is the output.
+</p>
+</solution>
+</exercise>
+
+<exercise ><statement><p> The total length of booms needed to contain an oil spill as a function of the size of the spill.
+</p></statement></exercise>
+
+<exercise ><statement><p> The monthly sales of a hot new electronic device in a country.</p></statement>
+<solution>
+<p>Sales will likely increase a lot initially, but then level out. So a logistic equation may be a reasonable model.</p>
+<me>f(x)=  M/(1+a e^{-rx} )</me>
+</solution>
+</exercise>
+
+
+<exercise ><statement><p> The distribution of sales of pairs of pants by leg length.</p></statement></exercise>
+
+</exercises>
+
+        </section>
+
+        <section xml:id="sec-1-3-IntroExcelSpreadsheets">
+            <title>Introduction to Excel Spreadsheets</title>
+
+          <p><url href="Examples/Section-1-3-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+          <p><url href="Examples/Section-1-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+          
+<p>This book will rely heavily upon the use of Excel, since it is the standard mathematical tool used in the business world.  (More precisely, the spreadsheet is the standard tool, and Excel is currently the de facto standard brand.  Most of this text can easily be used with other spreadsheets.) However, we do not assume that the student has worked with Excel previously. Throughout the course we will introduce those features of Excel we need to do mathematics and model the business problems we encounter.
+</p>
+<p>
+While introducing Excel, we will also introduce rules of “Good Excel practice.”  In a business environment, spreadsheets should be written so that someone else can easily understand the worksheet, and maintain it for future use. You should assume those same standards when submitting work in Excel.
+</p>
+
+<p>This section is meant as an introduction to several standard features of Excel we will use often. These include:
+</p>
+<ul>
+<li><p>
+<term>Basic Arithmetic</term> such as add, subtract, multiply etc.
+</p></li> 
+<li><p>
+<term>Show formulas</term>: allows us to check if the formulas in the cells are what they should be.
+</p></li> 
+<li><p>
+<term>Quick fill</term>: this feature takes a pattern and fills it across a column or a row.
+</p></li> 
+<li><p>
+<term>Relative and Absolute Reference</term>: when do we refer to a fixed cell and when does the reference depend on our place in the spreadsheet? 
+</p></li> 
+<li><p>
+<term>SUM()</term>: Adding a large number of cells can be efficiently done with this feature.
+</p></li>
+</ul>
+<p>
+<term>Basic Arithmetic, show formulas and quick fill.</term></p>
+
+<p><url href="https://youtu.be/x3l0gz5APk0">Link to video of this example</url></p>
+
+<p>We start with an example that covers basic arithmetic.  Assume we are given the following worksheet:
+</p>
+                <image width="50%" source="images/sec1-3-1BasicData.png">
+                </image>
+
+<p>From data we would like to compute the figures for the quarter (add the three months), the monthly profit (revenues-cost), and the monthly unit costs (costs/ units sold).</p>
+<p>
+With the formula ribbon, we go to show and select <term>Show Formulas</term>.  Since we want the worksheet to be readable by others, we add labels for the quantities we are computing, and in each cell we enter the formula for the quantity.   The formula bar tells us which cell has been selected and the formula for that cell.   It is generally easier to edit a formula by using the formula bar.</p>
+<p>In this example, we have used several different ways of writing the formula.  In cells E2, B6, and B7 we simply typed in the equation like we would on a calculator.  Thus the profit for January is Revenues – Costs, or 3600-2700.  Since we want Excel to compute this value, we put an equals sign at the start of the formula. </p>
+<p> 
+In cells E3, C6 and C7, instead of typing the values, we use a reference to the cell where the value is kept.  This allows us to change the raw data and have Excel automatically recompute the quantities that were derived from those numbers.</p>
+
+<p>
+In cells E4 and E5 we use Excel's sum command.  In Cell E4, we are taking the sum of the values in the cells from B4 through D4.  We will come back to commands in Excel later in the section.</p>
+
+                <image width="80%" source="images/sec1-3-2ShowFormulas.png">
+                </image>
+ 
+<p>If we unselect <term>Show Formulas</term>, we see the values that Excel computes.</p>
+ 
+                <image width="80%" source="images/sec1-3-3UnshowFormulas.png">
+                </image>
+
+<p>We want to finish our assignment by computing the Profit and Per Unit Costs for March and for the Quarter.  However, we would prefer not to type any more formulas.  (Typing in four more cells is not so bad, but we can imagine being told to do this for several years of data.)  We will use a process called Quick Fill, that tells Excel to repeat the same formula, with the cell references appropriately modified.</p>
+<p>
+To do the quick fill, we select the cells we want copied.
+</p>
+
+                <image width="80%" source="images/sec1-3-4.png">
+                </image>
+ 
+<p>
+We can move the cursor until the cell(s) show the fill handle. This will change the symbol in the corner of the cell to a thin dark '+'.</p>
+
+                <image width="20%" source="images/sec1-3-5.png">
+                </image>
+
+<p> 
+We then drag the little blue box at the lower left corner of the box of selected cells.  Excel automatically fills in the new values.</p>
+
+                <image width="80%" source="images/sec1-3-6FebSums.png">
+                </image>
+\ 
+<p>
+We look back at the formulas and see that Excel has produced formulas where cells are in the same relative position.  Profit is the value from the cell 4 rows higher minus the value of the cell three rows higher.</p>
+
+                <image width="80%" source="images/sec1-3-7MoreSums.png">
+                </image>
+
+<p>
+There is a last detail to fix in our report.  The quantities in profit and Per Unit Cost are in money, so we want them formatted correctly.  (They should start with a dollar sign, have a decimal point, and stop at two decimal places or cents.)  We do this by selecting the cells and then formatting the cells as currency.</p>
+ 
+                <image width="80%" source="images/sec1-3-8.png">
+                </image>
+<p>
+If we use the quick fill on a pair of numbers, Excel produces an arithmetic sequence.  A pair of cells containing 1 then 4 becomes the start of a sequence 1, 4, 7, 10,  … .</p>
+
+<p><term>
+Absolute and Relative Cell References</term></p>
+
+<p><url href="https://youtu.be/32VufLury4g">Link to video of this example</url></p>
+
+<p>
+One of the reasons that spreadsheets are so useful for doing mathematics in a business setting is that businesses often do a relatively simple computation for a large number of cases.  That means we should pay attention to formulas with cell references and the process of copying a formula from one case to another.  In the example above, all of the values change from one month to the next.  It is not hard to imagine a calculation where some values remain the same for many cases.  Thus we want to look at the idea of absolute and relative cell references.  This is a very important topic and an Excel feature we will be using for the rest of the term.</p>
+<p>
+Consider the following example: Your rich uncle Fred decided to give you 10 shares of Google stock (GOOG) on January first 2009, with the option of receiving instead the same value in either Microsoft (MSFT) or Apple stock (AAPL). You would like to see the monthly change in value of the portfolios over a three-year period.</p>
+<p>
+We start by going to finance.yahoo.com and collecting the monthly prices of the stocks, downloading the answers into a spreadsheet.  When we look up historical prices from yahoo, we are interested in the adjusted closing price.  (They adjust the price to account care of splits and dividends.)  That produces a spreadsheet like the one below.
+</p>
+ 
+                <image width="80%" source="images/sec1-3-9SharePrices.png">
+                </image>
+
+<p>
+Next we want to compute the number of shares for each stock.  This is 10 times the closing price of Google divided by the closing price of the stock we selected.
+</p>
+ 
+                <image width="80%" source="images/sec1-3-10ShareAjustments.png">
+                </image>
+
+<p>In the formula for the number of shares of MSFT, we used $B$3 for the initial price of GOOG.  This is an absolute cell reference.  When we copy the formula from cell C1 to cell D1, the new formula is =10*$B$3/D3.  This formula in cell D1 asks for 10 times the value in cell B3, divided by the value in the 2 rows below the cell of the formula.  </p>
+<assemblage>
+<p><term>Absolute references</term> refer to a particular column and/or row.  The dollar sign '$' is used to fix the reference.</p>
+<p>
+<term>Relative references</term> refer to the cell the same distance away from the cell containing the formula.</p>
+</assemblage>
+<p>
+We continue our example by computing the change in value of our GOOG portfolio in the first month.  That will be the share price at the beginning of the next month minus the share price at the beginning of the month, times the number of shares.  For January 2009, for GOOG this becomes =(B4-B3)*B$1.</p>
+
+                <image width="90%" source="images/sec1-3-11.png">
+                </image>
+ 
+<p>Since we have properly used relative and absolute references, we can now copy this formula to complete the chart, and Excel will modify the formula appropriately.</p>
+ 
+                <image width="80%" source="images/sec1-3-12.png">
+                </image>
+
+<p>We note that the rows and columns can be independently made absolute or relative.  Thus if we are looking at a formula in cell A1, and see a reference to B2 it means the cell one below and to the right of the location of the formula.  If we see $B2 it means the cell in column B that is one row down from the formula.  If we see B$2 it means the cell in row two that is one column to the right of the formula.</p>
+<p>
+When we convert back to see the values, we see that an original investment of $3,385.30 would have made a profit of $3,073.70 in GOOG stock, $2,128.02 in MSFT stock and $11,826.60 in AAPL stock.  Once again we use the SUM function and a cell range to add the values in the column.  We also use the split screen icons in the scroll bars to be able to see the correct rows and columns.</p>
+
+                <image width="80%" source="images/sec1-3-13.png">
+                </image>
+            
+<p><term>Note</term>: Excel can also make references across multiple pages of a workbook, but we will not need that capability for htis course.</p>
+
+<p><term>Named Cell References</term></p>
+<p>An alternative to using absolute references in formulas is to name the cells. </p> 
+                    <assemblage >
+<p>By default, Excel names each cell by its row and column.  We can use the name cell in the upper left corner of the Excel sheet to change the name from the letter/number format into a descriptive name.</p>
+                    </assemblage>
+
+<p>
+The more descriptive name can be useful when constructing and documenting the process we are using for our computations.  Consider the previous example with the rich uncle.  In cells B1, C1, and D1, we had the number of shares of Google, Microsoft, and Apple we could have had in the portfolio.  Better names for those cells would then be SharesGOOG, SharesMSFT, and SharesAAPL.  We can name a cell by editing the name box at the left side of the formula bar.</p>
+ 
+                <image width="40%" source="images/sec1-3-14.png">
+                </image>
+
+<p>We can then use the names in formulas.  In general, the formulas with nicely named variables are easier to read.
+</p>
+
+                <image width="80%" source="images/sec1-3-15.png">
+                </image>
+ 
+<p><term>
+Getting Help
+</term></p>
+
+<p>One of the ways that doing mathematics with a program like Excel differs from working with a calculator is that computer programs have help features.  It is worthwhile pointing out two that come with Excel.  We illustrate both with the SUM function we have used a number of times.</p>
+<p>
+When we call Help from the top menu, we are given a pop up window for Excel Help.  It has a number of topics listed by default.  It also has a bar for searching topics.</p>
+ 
+                <image width="80%" source="images/sec1-3-16.png">
+                </image>
+
+<p>We type the name of the command we are looking for and we are given a page of help for that command.</p>
+ 
+                <image width="80%" source="images/sec1-3-17.png">
+                </image>
+
+<p>
+A second kind of help is the formula builder from the formula ribbon.  It gives a more concise help when you do not remember the exact syntax of a command.</p>
+ 
+                <image width="80%" source="images/sec1-3-18.png">
+                </image>
+
+<p>A third source of help is simply to do a web search for excel help.  To find how to do a computation with an exponential functions you can search for “Excel formulas exponential.”</p>
+
+<p><term>
+Other Details</term></p>
+
+<p>Excel is a rich and complex tool.  We will be looking at more features as we go through the course.  There are several that are worth pointing out explicitly at this point.</p>
+
+<ul>
+
+<li><p>For ordinary arithmetic, Excel uses the standard symbols of +, -, *, /, and ^ for plus, minus, times, divided by, and raising to a power.
+</p></li>
+<li><p>We can also use the SUM, PRODUCT, QUOTIENT, and POWER commands for ordinary arithmetic.
+</p></li>
+<li><p>The order of operations used by Excel differs from the traditional order of operations when it comes to taking powers of negative numbers.  The problem is illustrated in evaluating  <m>-3^2</m>, which has a negative sign and an exponentiation. In all math classes you have taken this is interpreted as <m>-(3^2)</m> or <m>-9</m>, with exponentiation done first.  In Excel, this is interpreted as <m>(-3)^2</m> or 9, with negation done first.  When in doubt, use parenthesis to make the order of operations explicit.
+</p></li>
+<li><p>Excel also has the other mathematical functions you have used before.  The functions for square root, log base 10, log base e, and e to the power of, are respectively, SQRT, LOG, LN, and EXP.
+</p></li>
+<li><p>The value of e is represented by EXP(1). 
+</p></li>
+<li><p>Excel has a number of very useful operations on collections of numbers.  We start with easy ones where the name is self explanatory, like SUM, AVERAGE, COUNT, MIN, and MAX.
+</p></li>
+</ul>
+
+<exercises xml:id="exercises-set-sec-1-3">
+	<title>Exercises Introduction to Excel Spreadsheets</title>
+
+
+<exercise ><statement><p>  Produce a spreadsheet where the first 100 rows are used.  The cell in row n and column A should have value n.  The cell in row n and column B should have value 2*n.  You should be able to do this by typing in the value of 4 cells and using quick fill.
+</p></statement>
+<solution>
+
+<p>The formulas entered should look like this:</p>
+                <image width="80%" source="images/sec1-3-sol1a.png">
+                </image>
+<p>Once we quickfill and have the regular view (not showing the formulas)</p>
+                <image width="50%" source="images/sec1-3-sol1b.png">
+                </image>
+<ul>
+<li><p>The actual spreadsheet has 100 rows.</p></li>
+<li><p>Note that there is a small window that shows how far the quickfill has gone.</p></li>
+<li><p>If you want to check the formulas used you go to the “Formula” menu and choose “Show formulas”. This feature is good for debugging any problem that may happen.</p></li>
+</ul>
+</solution>
+</exercise>
+
+<exercise ><statement><p>  Produce a spreadsheet where the first 100 rows are used.  Column A should contain the first 100 odd numbers.  Column B should contain multiples of 7 starting with 21.
+</p></statement>
+</exercise>
+
+<exercise ><statement><p>  Start with the worksheet given.  Complete the worksheet in such a way that if the values of x, y, and z are changed, the other values are automatically recomputed.
+                <image width="80%" source="images/sec1-3-e1.png">
+                </image>
+</p></statement>
+<solution>
+
+
+<p>We do not need to use absolute references in this case, but when we are computing something involving the <m>x</m>, <m>y</m> and <m>z</m> values we should refer to cells B1, B2, and B3 respectively.</p>
+                <image width="80%" source="images/sec1-3-sol3b.png">
+                </image>
+
+
+
+<p>The spreadsheet should have entries as shown above.</p>
+
+</solution>
+</exercise>
+ 
+
+
+<exercise ><statement><p>  Produce a spreadsheet where the first 101 rows are used.  Row 1 should be used for labels. Column A should contain integers from 1 to 100.  Columns B through F should contain the squares, cubes, square roots, logs base 10 and natural logs of the entries in columns A.
+</p></statement>
+</exercise>
+
+<exercise ><statement><p>  Start with the spreadsheet section below.
+                <image width="60%" source="images/sec1-3-e2.png">
+                </image>
+ 
+	If column E is copied and pasted into column G, give both the formula and value for each non-empty cell in column G.
+</p></statement>
+<solution>
+<p>Any entry that is absolute (with a $) will be fixed. The relative references (without the $) will change all the Bs to Ds because we moved over 2 columns.</p>
+ 
+<p>Formulas
+                <image width="80%" source="images/sec1-3-sol5a.png">
+                </image>
+</p>
+<p>Entries
+                <image width="80%" source="images/sec1-3-sol5b.png">
+                </image>
+</p> 
+
+</solution>
+</exercise>
+
+<exercise ><statement><p>  We would like to really understand what happens when we use quick fill. </p>
+<ol label="(A)">
+<li><p>
+ Let's consider the entries =A1, =$A1, =A$1, and =$A$1 in row 2.  Do quick fill below to fill in 3 more rows and see what happens. Clearly in the first row these cells all now point to cell A1 and the value returned is 1. After the first row we get a mixture of values. Why?</p>
+                <image width="80%" source="images/sec1-3-e3.png">
+                </image>
+</li>
+<li><p>
+ Next, we can set up the values in column D. Do quick fill to fill in the 3 columns to the right? Explain the pattern of values we see.
+                <image width="80%" source="images/sec1-3-e4.png">
+                </image>
+</p></li>
+</ol></statement></exercise>
+ 
+<exercise ><statement><p>  Complete the spreadsheet section below so that columns A through C are complete for numbers 1 to 100.  (The value for a should be a random number generated by the formula in cell E1.)
+
+                <image width="60%" source="images/sec1-3-e5.png">
+                </image>
+</p></statement>
+<solution>
+<p>The random number will differ from person to person, but the Excel entries are as follows. Note that we need to use an absolute reference for the value of a !</p>
+ 
+<p>Formulas
+                <image width="80%" source="images/sec1-3-sol7a.png">
+                </image>
+</p>
+<p>The entry in C2 could also have been given as =A2^2+$E$1.</p>
+<p>Just E$1 will work as well. We are filling down so we really need to fix the row in this case.</p>
+<p>In this version the random number settled on -6 (yours is likely different) and the first part of the table looks as follows. The actual answer has all 100 rows completed.
+
+                <image width="80%" source="images/sec1-3-sol7b.png">
+                </image>
+</p> 
+
+</solution>
+
+</exercise>
+
+<exercise ><statement><p>  Using the help functions to check syntax, write a formula for cell B2, that looks at the value for cell A2, and if it is negative, returns the square of it, and if positive returns its square root.
+</p></statement></exercise>
+
+
+<exercise ><statement><p> Using your favorite source on the web create a spreadsheet that has the closing price of your favorite stock on the first day of the month for the past 5 years.  Compute the change in adjusted stock price for each month and identify which month had the greatest increase.  
+(<url href="http://finance.yahoo.com/">http://finance.yahoo.com/</url>) is one source for such data.)
+</p></statement>
+<solution>
+<p>For example if we type in Coca-Cola we get to <q>The Coca-Cola Company (KO)</q></p>
+<p>From the menu on the left choose “Historical Prices” and pull the monthly data from the past 5 years. Then scroll down and download to spreadsheet.</p>
+<p>Using the Adjusted close we compute the change:
+                <image width="80%" source="images/sec1-3-sol9a.png">
+                </image>
+</p>
+ 
+<p>The above partial table shows what the table should look like.</p>
+<p>Using the MAX function for this data the biggest change is $3.39.</p>
+<p>Finding the month can be done by inspection as this point (there are more sophisticated ways to do this, but that requires rather advanced Excel commands). In this instance the greatest change took place in December 2013.</p>
+
+</solution></exercise>
+
+<exercise ><statement><p> Using your favorite source on the web create a spreadsheet that has the closing price of your favorite stock on the first day of the month for the past 5 years.  Compute the percentage change in adjusted stock price for each month and identify which month had the greatest increase.  
+</p></statement></exercise>
+
+<exercise ><statement><p> Create a spreadsheet showing the Consumer Price Index by month from 1930-2010.  (Good sources are 
+<url href="http://inflationdata.com/">http://inflationdata.com/</url> 
+ and <url href="http://www.bls.gov/cpi/">http://www.bls.gov/cpi/</url> at the Bureau of Labor Statistics.)  Compute the percentage change between January and July for each year.  Which year had the greatest percentage change in the first half of the year?
+</p></statement></exercise>
+
+
+
+</exercises>
+        </section>
+
+        <section xml:id="sec-1-4-GraphingFunctionsExcel">
+            <title>Graphing functions with Excel</title>
+
+          <p><url href="Examples/Section-1-4-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+          <p><url href="Examples/Section-1-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+<p>
+One area where Excel is different from a graphing calculator is in producing the graph of a function that has been defined by a formula.  It is not difficult, but it is not as straight forward as with a calculator. It is a skill worth developing however.  When we are given a formula as part of a problem, we will want to easily see a graph of the function. </p> 
+<p>
+We will walk through the process for producing graphs for three examples of increasing complexity.  For the first example we have a specific function and specific range in mind, say <m>y=x^2-6 x</m> over <m>-10 \le x \le 10</m>.  For the second example, we would like to use parameters in the formula, for example, <m>y = a x^2 + b x + c</m>, with specified values of a, b, and c, and have the ability to easily change the values of the parameters and see the graph.  For the third example we would also like to have the ability to change the domain, graphing over <m>xLow \le x \le xHigh</m>, where <m>xLow</m> and <m>xHigh</m> can easily be changed.</p>
+
+<example><title>A basic graph</title>
+
+<p><url href="https://youtu.be/0zuJMZN1UoA">Link to video of this example</url></p>
+<p> graphing <m>y=x^2-6 x</m> over <m>-10 \le x \le 10</m>.</p>
+
+                <image width="80%" source="images/sec1-4-1.png">
+                </image>
+ 
+<p>
+We start by producing a column for x and one for f(x).  In the column for x we start with values -10 and -9, so that we can complete the column with a quick fill.  Similarly, we start the f(x) columns in the first cell with the "x" replaced by the appropriate cell reference.  In this case the formula for f(x) is in cell B15 and x is in cell A15.</p>
+<p>
+We then use quick fill and quick copy to fill out the table.</p>
+ 
+                <image width="60%" source="images/sec1-4-2.png">
+                </image>
+<p>
+With the values of the cells filled in we highlight the cells we want to graph (A14 through B35) and add a scatter plot for the highlighted values.
+</p>
+                <image width="80%" source="images/sec1-4-3.png">
+                </image>
+ 
+<p>
+(The location of the scatterplot will be a bit different with Macs.  The scatterplot is in the Charts ribbon, under other, on Macs.)  This gives the desired graph.</p>
+
+                <image width="80%" source="images/sec1-4-4.png">
+                </image>
+ </example> 
+
+
+<example><title>A graph with parameters</title>
+<p><url href="https://youtu.be/PFjsfVqDorE">Link to video of this example</url></p>
+<p> – graphing <m>y=x^2-6 x</m> as an example of 
+<m>y = a x^2 + b x + c</m> over the domain <m>-10 \le x \le 10</m>.</p>
+
+<p>For the second example, we want the same graph, but we want the ability to easily convert the graph of our first quadratic into a different quadratic function.  The solution is to consider a, b, and c to be parameters that we can change.</p>
+
+<p>Toward the top of the worksheet, we put the labels <m>a</m>, <m>b</m>, and <m>c</m>, and give values for those parameters.  In this case the values of <m>a</m>, <m>b</m>, and <m>c</m> are in cells B9, B10, and B11 respectively.</p>
+
+<p>Now we set up the problem in the same way we did above except that we are using absolute references for <m>a</m>, <m>b</m>, and <m>c</m>, and relative references for <m>x</m>.
+</p>
+                <image width="80%" source="images/sec1-4-5.png">
+                </image>
+ 
+
+<p>Now, we once again do a quick fill to complete the table, and then add a scatterplot.</p>
+                <image width="80%" source="images/sec1-4-6.png">
+                </image>
+ 
+
+<p>The difference with this second example is that if I now want to look at the graph of <m>y = -x^2 + 3 x + 10</m>, I simply change the values of the parameters <m>a</m>, <m>b</m>, and <m>c</m>.</p>
+
+                <image width="80%" source="images/sec1-4-7.png">
+                </image>
+</example>
+
+<example><title>Controlling the viewing window</title>
+<p><url href="https://youtu.be/KMc0wWSgdIo">Link to video of this example</url></p>
+<p> graphing <m>y=x^2 - 6 x</m> as an example of <m>y = a x^2 + b x + c</m> over the domain <m>-10 \le x \le 10</m>, but with the ability to easily change the domain of the graph.</p>
+
+<p>Often, when we graph, we will want to change the domain of the graph.  Most easily, I may want to zoom in on a particular region to get a better view of some interesting feature.  I may want to look closely at several different regions.</p>
+
+<p>To do this we will again plot 21 points, but we want to have control of the starting point and the change in x between the first and second points.  First we add labels and values for x-start and x-step.  Then we need a bit of care in defining the values of x.  The first value of x (cell A18) is the value of x-start.  Every other value of x is defined as the previous value of x plus the value of x-step.</p>
+
+                <image width="80%" source="images/sec1-4-8.png">
+                </image>
+ 
+
+<p>In this case I want a better look at the vertex of the parabola.  I decide I want to see the graph for <m>0 \le x \le 5</m>.  My value for x-start is 0.  My value for x-step is one twentieth of the distance from 0 to 5, or <m>(5-0)/20 = 0.25</m>.  I plug those values in and see the graph.</p>
+                <image width="80%" source="images/sec1-4-9.png">
+                </image>
+ </example>
+
+<p><term>Graphing more than one function</term></p>
+
+<p><url href="https://youtu.be/gMIn78ufX0g">Link to video of this example</url></p>
+
+<p>We would also like to put two or more graphs together.  For our examples, we will want to use the functions <m>f(x) = x – 3</m>, <m>g(x) = (x^2 – x)/10</m>, and <m>h(x) = x^3 – x</m>.  We start by using the procedure given above to make a chart of values for the three functions.</p>
+
+                <image width="60%" source="images/sec1-4-10.png">
+                </image>
+ 
+
+<p>We then simply select the cells for <m>x</m> and the functions we want graphed together and produce a scatterplot as before.  (To graph <m>g(x)</m> and <m>h(x)</m> together, we want to select the columns for <m>x</m>, <m>g(x)</m>, and <m>h(x)</m>.)</p>
+
+                <image width="80%" source="images/sec1-4-11.png">
+                </image>
+ 
+
+<p>One problem with the graph of <m>g(x)</m> and <m>h(x)</m> together is that the functions have different orders of magnitude, so we do not see that <m>y = g(x)</m> is a parabola.  One remedy is to use a secondary axis for the graph of <m>h(x)</m>.  (Simply double click on one of the points for <m>h(x)</m>, and select secondary axis from the axes tab.)</p>
+
+                <image width="80%" source="images/sec1-4-12.png">
+                </image>
+
+
+<p><term>Formatting a chart</term></p>
+<p>
+Excel has a lot of ways to add formatting to a graph or chart, many more than we want to be concerned with at this point.  We simply point out a few and leave it to the reader to explore how this should be used for a good visual presentation.  If you click once on the chart to select it, the Chart tab in the home ribbon, adds sub-tabs for layout and format.  With Chart Title, you can add a title to the chart, then edit it.  The Axes icon allows you to add titles for the axes.  If you select a data point form <m>g(x)</m>, you can then use the Data Labels icon to add values next to the points.  The chart with these annotations is given below.  The rule of thumb to follow is to add enough annotations for a reader to be able to easily understand what is happening in the chart.</p>
+
+                <image width="80%" source="images/sec1-4-13.png">
+                </image>
+
+
+<p>It is also worthwhile to note that you can manually set the y-range of a graph by double clicking on the axis and setting the values.  This is particularly useful of the function has a vertical asymptote.</p>
+
+<p><term>Online graphing tools: Wolfram Alpha</term></p>
+
+<p>Throughout this book, we are limiting ourselves to mathematical tools that the student can reasonably expect to find in a generic work environment.  That is one of the reasons for focusing on using spreadsheets and Excel.  A second reason is that we will spend a significant amount of time on functions defined by data points, where we then try to construct a formula.  However when we are starting with a formula, there are easier ways to produce a graph.  The simplest is to use the free website, Wolfram Alpha.  For example to obtain a graph of the functions <m>f(x) = x^2 – 3 x</m>, as <m>x</m> ranges from <m>-5</m> to <m>5</m>, we simply type “plot x^2 – 3 x for x from -5 to 5” and obtain:</p>
+
+                <image width="80%" source="images/sec1-4-14.png">
+                </image>
+ 
+
+<p>We will return to Wolfram Alpha from time to time, when we have nice formulas to manipulate. </p>
+
+<exercises xml:id="exercises-set-sec-1-4">
+	<title>Exercises 1.4 Graphing functions with Excel</title>
+
+<exercise ><statement><p> Produce a worksheet that with a graph of the function <m>f(x) = x^2 - 5 x</m>, with <m>x</m> going from -10 to 10 by 1.
+</p></statement>
+<solution>
+<p>The entry in cell B2 is <c>=A2^2-5*A2</c>; remember to use quickfill to complete the table</p>
+                <image width="80%" source="images/sec1-4-sol1a.png">
+                </image>
+</solution>
+</exercise>
+
+<exercise ><statement><p> Produce a worksheet that with a graph of the function 
+<m>g(x) = (x^2 - 5 x)/(x^2 + 7 x + 10)</m>, with <m>x</m> going from -10 to 10 by 1.  Explain why the graph is inaccurate.  (Pay attention to places where there should be asymptotes.)</p>
+<p>2* - Extra credit) – Fix the graph from problem 2 by adjusting the set of x-values used.
+</p></statement></exercise>
+
+<exercise ><statement><p> Produce a worksheet with a graph of <m>h(x) = x^3 + a x^2 + b x + c</m> for <m>x</m> from -10 to 10, where the values of <m>a</m>, <m>b</m>, and <m>c</m> can be changed and the graph will update automatically.  For initial values, use <m>a = -2</m>, <m>b = 1</m>, and <m>c = -11</m>.
+</p></statement>
+<solution>
+<p>The entry in B5 should be <c>=A5^3+$B$1*A5^2+$B$2*A5+$B$3</c>. Note that the references to <m>a</m>, <m>b</m> and <m>c</m> are absolute references.</p>
+                <image width="100%" source="images/sec1-4-sol3a.png">
+                </image>
+</solution>
+</exercise>
+
+<exercise ><statement><p> Produce a worksheet with a graph of <m>k(x) = (x^2 + a x + b)/( x + c)</m> for x from -10 to 10, where the values of <m>a</m>, <m>b</m>, and <m>c</m> can be changed and the graph will update automatically.  For initial values, use <m>a = -5</m>, <m>b = 2</m>, and <m>c = -11</m>.
+</p></statement>
+</exercise>
+
+<exercise ><statement><p> Produce a worksheet with a graph of <m>h(x) = x^3 -2 x^2 +  x -11</m> for <m>x</m> going from a to b, where the values of <m>a</m> and <m>b</m> can be changed and the graph will update automatically.  For initial values, use <m>a = -5</m> and <m>b = 5</m>.
+</p></statement>
+<solution>
+<p>
+The entries are <m>a</m> and <m>b</m>, and the step size. We assume here that we are using 10 points to create a graph.</p> 
+                <image width="100%" source="images/sec1-4-sol5a.png">
+                </image>
+  
+<p>The data and the graph looks as follows, and changing <m>a</m> and <m>b</m> allows us to quickly find several different graphs of the same function.
+</p>
+                <image width="100%" source="images/sec1-4-sol5b.png">
+                </image>
+</solution>
+</exercise>
+
+<exercise ><statement><p> Produce a worksheet with a graph of <m>k(x) = (x^2 -5 x + 2)/( x -11)</m> for <m>x</m> going from <m>a</m> to <m>b</m>, where the values of a and b can be changed and the graph will update automatically.  For initial values, use <m>a = -5</m> and <m>b = 5</m>.
+</p></statement>
+</exercise>
+
+<exercise ><statement><p> (Writing assignment) Write a report of 2 pages or less on the graph of the function
+<m>f(x) = (x^2 + 7 x + 10)/(x^2 - 3 x +2)</m>.  The report should be in Word (or other word processor) format with at least 2 graphs that illustrate different features by looking at different viewing windows.
+</p></statement>
+</exercise>
+
+<exercise ><statement><p> Produce a worksheet with graphs of <m>f(x) = 2 x + 5</m> and <m>g(x) = x^3 – 9 x</m>, for x going from -10 to 10.  Use secondary axes so that both graphs use the full plotting window.
+</p></statement>
+</exercise>
+
+<exercise ><statement><p> Produce a worksheet with graphs of <m>h(x) = (x^3 – 9 x)/(x^2 + 3 x + 35/16)</m> and <m>k(x) = 2 x^2 + 5</m>, for x going from -10 to 10.  Use secondary axes so that both graphs use the full plotting window.  Adjust the range of <m>y</m> values used to make the graph reasonable.
+</p></statement>
+<solution>
+<p>The entries should look like this:</p>
+                <image width="100%" source="images/sec1-4-sol9a.png">
+                </image>
+ <p>Using secondary axes we are able to show the important feature of each of the graphs.</p>
+                <image width="100%" source="images/sec1-4-sol9b.png">
+                </image>
+</solution>
+</exercise>
+
+<exercise ><statement><p> Produce a worksheet with graphs of <m>f(x) = 2 x + 3</m> and <m>g(x) = -2 x +5</m>, for <m>x</m> going from -10 to 10.  Add a title to the chart.  Do something interesting with the fonts or other options and explain what you did.
+</p></statement>
+</exercise>
+
+<exercise ><statement><p> Use Wolfram Alpha to produce a graph of <m>f(x) = x^3 - 16 x</m>, for <m>x</m> going from -5 to 5.  Use your favorite screen capture software and paste the result into an Excel worksheet.
+</p></statement>
+<solution><p>
+Using Wolfram, the command and the resulting graph look like this:</p>
+                <image width="100%" source="images/sec1-4-sol11a.png">
+                </image>
+</solution>
+</exercise>
+
+ 
+</exercises>
+        </section>
+
+        <section xml:id="sec-1-5-IntroBestFitCurves">
+            <title>Using Excel to find best-fit curves</title>
+
+          <p><url href="Examples/Section-1-5-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+          <p><url href="Examples/Section-1-5-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+<p><term>Overview</term></p>
+
+<p>In the sections 1.1 and 1.2 we looked at useful mathematical models and formulas that we anticipate seeing repeatedly in the business environment.  If we are given equations that model the processes we are interested in, then this approach works. What happens though if we are not given equations? Many important functions in business are quite often defined by data.  Examples include past sales, material costs, and consumer demand. </p>  
+
+<p>If we are given a data set, we can find a best fitting curve.  A straightforward approach is to assume that the data represents the output of a nice formula. In real life applications we will often see that so-called noise can complicate the situation.  (For example, if I am looking at sales at a fast food restaurant, our model will have noise from traffic jams and bad weather outside.) For the purpose of this course we will assume that the data will be reasonably nice, although some noise may be evident. The problem of producing a best fitting curve to data can be broken into two pieces: </p>
+<ol>
+<li><p>We need to decide what kind of curve, or what model we want to use. </p></li> 
+<li><p>We want to be able to set the parameters (the constants) in the model to give the best fit.</p></li> 
+</ol>
+
+<p>Coming up with a theoretical reason why we want to use a particular model in a given case forms the content of a large number of your business courses, both courses you have already taken and courses you are yet to take.  The models that come up repeatedly in the theoretical courses are given names and used without redoing the theoretical foundation for the model.  (This is why we introduced the normal distribution and the logistic growth function, neither of which looks like a simple equation.)  In this course, we will be happy with simple heuristic arguments on which model to choose.
+</p><p>The second half of the problem is deciding how to choose the parameters to give the curve that does the best job of fitting the data.  A moment of reflection shows deciding on the correct definition of “best fitting” is a nontrivial task beyond the scope of this course.  For the time being we will accept the standard definition 
+</p>
+<assemblage><p>The <term>best fitting curve</term> minimizes the sum of the squares of the differences between the measured and predicted values. 
+</p></assemblage>
+<p>We will come back to that definition later in the course, when we know more calculus, but for now we simply note that it is the standard definition, and is used by Excel.  Instead, we will focus on using Excel to produce a best fitting curve of the appropriate model. Excel has a preprogrammed feature that will find the best fitting equation for a data set for a select number of functions:</p>
+<ul>
+<li><p>Linear model</p></li>
+<li><p>Exponential model</p></li>
+<li><p>Polynomial model</p></li>
+<li><p>Logarithmic model</p></li>
+<li><p>Power model</p></li>
+</ul>
+
+<p>We will show how to find an equation for a data set, assuming we know what model would be the best one to represent the data.
+
+</p><p><term>Best fitting linear curves</term>
+
+<p><url href="https://youtu.be/ZI9hS12tHoc">Link to video of this example</url></p>
+
+</p><p>For a first example, we are running a widget factory and have the following data on employee performance:
+
+                 <image width="80%" source="images/sec1-5-1.png">
+                </image>
+
+</p><p>(A parenthetical note:  In economics, widget is a placeholder name for a generic manufactured device.  It is only in recent times that it has also become a small computer GUI unit.)
+</p><p>We would like a formula for widgets produced as a function of hours worked.  Since we can see two entries each, for 36, 43, and 44 hours worked, there cannot be a function that hits all our data exactly.  While we expect a linear function, we are not surprised if there is random noise, as a worker may take a break, or be particularly focused on a given day.  We start by creating a scatterplot for my data.
+
+                <image width="80%" source="images/sec1-5-2.png">
+                </image>
+ 
+</p><p>We right click (control-click on a mac) on one of the data points and we get a contextual menu.  We select <term>Add Trendline</term>.
+
+                <image width="80%" source="images/sec1-5-3.png">
+                </image>
+
+</p><p>When adding a trend line, we need to select from a number of options.  The first option concerns the mathematical model we want to choose.  Given that we suspect the number of widget produced will be roughly proportional to the hours worked, we want to use a linear model, so we make that choice.  Under options, we want to display the equation on the chart.
+
+                <image width="80%" source="images/sec1-5-4.png">
+                </image>
+
+</p><p>We have added a linear trend line to the graph and can also see the equation for the line.  We could use that equation to plan how many hours we want our workers on the job based on the number of widgets we expect to sell.
+
+                <image width="80%" source="images/sec1-5-5.png">
+                </image>
+ 
+</p><p>Having found a best fitting line, I want to copy the equation back into my spreadsheet and to be able to compare the values in my data with the projections from my equation.  You should notice that the equation Excel produces in the chart is written in standard mathematical notation, while the corresponding equation in cell B3 is in Excel notation.  (In Excel notation we need a symbol for multiplication rather than simply putting a number and variable together.  In Excel notation, we also use a cell reference, B1, rather than a variable, x.)
+
+                <image width="80%" source="images/sec1-5-6.png">
+                </image>
+
+</p><p><term>Checking and improving our equations</term>
+
+<p><url href="https://youtu.be/wAy0kfdToTA">Link to video of this example</url></p>
+</p><p> When finding the best fitting curve to data we have gathered, we need to pay attention to the model we have chosen and to the range to which we want to apply it.  In our example, the linear fit looks pretty good.  However we should be careful about using it on too wide a domain.  According to our model, a worker who works no hours produces 12.52 widgets a week, which is obviously silly.  In the other direction it predicts that a worker who worked 168 (= 7 x 24) hours a week would produce almost 970 widgets, instead of predicting a collapse from exhaustion.
+</p><p>The other issue is the choice of a model.  We chose a linear model.  An argument could easily be made for a proportional model.  (A worker who works no hours produces no widgets.)  We can switch to the proportional model by setting the y-intercept to 0 in options for the trend line.  Then the equation is  
+<me>(Widgets Produced) = 6.00026*(Hour Worked)</me>
+instead of our original equation of 
+<me>(Widgets Produced) = 5.6975*(Hours Worked)+12.54.</me>
+
+                <image width="80%" source="images/sec1-5-7.png">
+                </image>
+
+</p><p>We should also be careful about trying to get a better fit by using an inappropriate model.  In our case, we can get a better fit by allowing the curve to be a 6th degree polynomial.  However the resulting equation does not make sense.  It predicts that a worker will produce about quarter million widgets with a 1-hour work week, and -1500 widgets with a 55-hour work week.
+
+                <image width="80%" source="images/sec1-5-8.png">
+                </image>
+
+</p><p><term>Fitting the Consumer Price Index (CPI) to a best fitting curve;</term> an extended example
+
+<p><url href="https://youtu.be/1hxc1bOOS68">Link to video of this example</url></p>
+
+</p><p>For our second example, we will look at the consumer price index and try and fit it to a model.  This example will illustrate several issues we need to keep in mind when building models.  We obtained data for the consumer price index from <url href="http://inflationdata.com/inflation/Consumer_Price_Index/HistoricalCPI.aspx">http://inflationdata.com/inflation/Consumer_Price_Index/HistoricalCPI.aspx</url>.  
+
+</p><p>The data from 1960 to 2011 is in the worksheet Section1-5-Examples.xlsx.
+
+                <image width="80%" source="images/sec1-5-9.png">
+                </image>
+
+</p><p>Since we expect prices to rise as a percentage of the current prices, we expect the CPI to be modeled by an exponential curve.  We start by selecting the data, producing a scatterplot, and adding a best fitting curve using an exponential model.  We will always select the option to show the equation on the chart.
+
+                <image width="80%" source="images/sec1-5-10.png">
+                </image>
+
+</p><p>This first attempt gives an exponential formula, but it is unsatisfactory for a number of reasons.</p>
+<ul>  
+<li><p>That constant only shows one significant digit, which is not enough to make meaningful predictions.</p></li>
+<li><p>The font size is too small to easily read off the resulting equations.</p></li>
+<li><p>The constant coefficient is ridiculously small because it gives the projected value of the index in the year 0. Another way of thinking about this is that the values we are evaluating this exponential function at run in the thousands!.</p></li>
+<li><p>The graph does not look like a very good fit.  The plot of the numbers actually looks as though it represents three different graphs.</p></li>
+</ul>
+
+<p>We will work through the problems one at a time.
+
+</p><p>The first problem is that the equation Excel has given us does not have enough significant digits to make useful predictions.  We want to right click on the equation, select “Format Trendline Label”.  We are given a dialog box that lets us make formatting options.  Since the lead coefficient is so small, we want the numbers formatted in Scientific notation.  We choose 4 digits beyond the decimal point in that notation.  
+
+                <image width="80%" source="images/sec1-5-11.png">
+                </image>
+ 
+</p><p>This gives us a better equation.  It should be noted that our pictures in this book use the font option in the formatting to use a larger sized font.
+
+                <image width="80%" source="images/sec1-5-12.png">
+                </image>
+
+</p><p>The next issue to deal with is adjusting the year.  Looking at the raw data, the CPI was 100 sometime in 1983.  Thus we simply add an extra column to our spreadsheet where the adjusted year is the current year minus 1983.  In our graph, we also adjust the labels so a reader can still understand our chart.
+
+                <image width="80%" source="images/sec1-5-13.png">
+                </image>
+
+<p><url href="https://youtu.be/5W3OvF8VNEs">Link to video of this example</url></p>
+</p><p>Now we want to look at the more serious question, the one that says the model does not fit very well.  Looking at our data, the inflation rate seems to fall into roughly 3 blocks, the years before 1973, the years from 1973-1983, and the years after 1983.  We would want to go back to our economics classes and find an argument that says this division of years is reasonable.  Using the same menu that lets us add a trend line, we can edit the source data.  We want to restrict to the years after 1983.  In our case, that means restricting to rows 1 to 30.
+
+                <image width="80%" source="images/sec1-5-14.png">
+                </image>
+
+</p><p>This breaks the data into two pieces.  The first piece is the period from 1983 till 2011.  As we see, the exponential model fits quite well in that case.
+ 
+                 <image width="80%" source="images/sec1-5-15.png">
+                </image>
+
+</p><p>The second piece is the period from 1973 till 1982.  Once again, the exponential model fits quite well over that period.  Notice that the exponent is quite different in the two periods.</p>
+
+                <image width="80%" source="images/sec1-5-16.png">
+                </image>
+
+<p>The obvious question that arises is to figure out what happened in 1983 that caused the economic model to shift.  That question is beyond the scope of this course.</p>
+
+<exercises xml:id="exercises-set-sec-1-5">
+	<title>Exercises: Using Excel to find best fit curves</title>
+
+
+<exercise ><statement><p>  We have the following data on widget production:
+</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Month</cell><cell>Jan</cell><cell>Feb</cell>
+<cell>Mar</cell><cell>Apr</cell><cell>May</cell>
+</row>                    
+<row bottom="medium">
+<cell>Production</cell><cell>16,597</cell><cell>30,687</cell>
+<cell>48,441</cell><cell>55,751</cell><cell>79,606</cell></row>
+                </tabular>
+<ol label="(a)">
+<li><p> Find the best fitting linear function for the data.</p></li>
+<li><p> Give the production value that function predicts for May.</p></li>
+<li><p> Give the production value that function predicts for July.</p></li>
+</ol></statement>
+<solution>
+<ol label="(a)">
+<li><p> Create a scatter plot for the data. Then use the menu to go to Chart – Chart layout – Trendlines. Find the linear approximation and under options choose to display the function.
+                <image width="100%" source="images/sec1-5-sol1a.png">
+                </image>
+ 
+Excel automatically changes the months into numerical values.</p>
+<p>The best linear function for the data is y = 15108x + 891.8
+</p></li>
+<li><p> Create a new table using the function to determine the predicted production levels.
+                <image width="100%" source="images/sec1-5-sol1b.png">
+                </image>
+
+Excel needs x to be a number, so we need to insert a row and provide the appropriate numerical values: 1 for Jan, 2 for Feb, etc.</p>
+<p>The predicted production for May is 76,432
+</p></li>
+<li><p> To find the production level for July we enter <c>x = 7</c> in the table and compute the output.</p>
+<p>
+The linear model predicts a production of 106, 648 for the month of July.
+
+</p></li>
+</ol>
+</solution></exercise>
+
+<exercise ><statement><p>  We have the following data on gizmo sales:
+</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Month</cell><cell>Jan</cell><cell>Mar</cell>
+<cell>Apr</cell><cell>July</cell><cell>Aug</cell>
+</row>                    
+<row bottom="medium">
+<cell>Units sold</cell><cell>1.505</cell><cell>9,042</cell>
+<cell>13,018</cell><cell>21,873</cell><cell>22,636</cell></row>
+                </tabular>
+<ol label="(a)">
+<li><p> Find the best fitting linear function for the data.</p></li>
+<li><p> Extend the chart to give the projected sales for each month from January through September.  (You need to add a row for predicted sales, and also add a number of columns for missing months.)</p></li>
+</ol></statement></exercise>
+
+
+
+<exercise ><statement><p>  We have the following data on gadget revenue:
+</p>
+<tabular top="major" halign="center"><row bottom="minor">
+<cell>Units sold</cell><cell>3,000</cell><cell>5,000</cell>
+<cell>7,000</cell><cell>9,000</cell><cell>11,000</cell>
+</row>                    
+<row bottom="medium">
+<cell>Revenue</cell><cell>16,161</cell><cell>24,783</cell>
+<cell>34,484</cell><cell>38,014</cell><cell>33,030</cell></row>
+                </tabular>
+<ol label="(a)">
+<li><p> Find the best fitting linear function for the data.</p></li>
+<li><p> Find the best fitting quadratic function for the data.</p></li>
+<li><p> The data fits a quadratic function better than a linear function.  With a quadratic model we do not maximize revenue by selling as many units as possible.  Explain why this is reasonable in the real world.</p></li>
+<li><p> Project the revenue for selling 15,000 units with both linear and quadratic models.</p></li>
+</ol></statement>
+<solution>
+<ol label="(a)">
+<li><p> We can do scatterplots and use the linear trendline find the models we need.
+                <image width="100%" source="images/sec1-5-sol3a.png">
+                </image>
+
+The linear model is <m>y = 2.3485x + 12855</m>
+</p></li>
+<li><p> We can do scatterplots and use the polynomial trendline of degree 2 to find the model we need.  (See the second image in part (a).)</p>
+<p>The quadratic (polynomial of degree 2) model is <m>y = -0.0006x^2 + 10.694x – 11586</m></p>
+<p>The graphs show that the quadratic equation is the better model and follows the data more closely.
+</p></li>
+<li><p> The revenue function is given by price * quantity. If we offer more units the price will eventually go down. If the price goes down faster than the number of new items sold, the revenue will at some point go back down.</p></li>
+<li><p> Plug <m>x = 15000</m> into <m>y = 2.3485x + 12855</m> and we get $48,082.50 for the linear model.</p>
+<p>Plug <m>x = 15000</m> into <m>y =-0.0006x^2 + 10.694x – 11586</m>, and we get $13, 824 for the quadratic model. </p>
+<p>[You can use Excel, a calculator or Wolfram Alpha to do these last computations.]
+</p></li>
+</ol></solution></exercise>
+
+<exercise ><statement><p>  In building water tanks, design considerations indicate the weight of the dry tank should be roughly a power function of the capacity.  I am interested in building a larger tank than I have before. I have the following data between capacity and weight:
+</p>
+<tabular top="major" halign="center"><row bottom="minor">
+<cell>Gallons</cell><cell>1,000</cell><cell>5,000</cell>
+<cell>7,000</cell><cell>9,000</cell><cell>17,000</cell>
+</row>                    
+<row bottom="medium">
+<cell>Weight</cell><cell>103</cell><cell>878</cell>
+<cell>1,339</cell><cell>1,927</cell><cell>4,496</cell></row>
+                </tabular>
+<ol label="(a)">
+<li><p> Find the best fitting power function for the data.</p></li>
+<li><p> Use your power function to estimate the weight of a tank that holds 40,000 gallons.</p></li>
+<li><p> Find the best fitting linear function for the data.</p></li>
+<li><p> Use your linear function to estimate the weight of a tank that holds 40,000 gallons.</p></li>
+<li><p> Visually, both curves seem to fit the data quite well, yet they make noticeable different predictions for the weight of a larger tank.  Which prediction would you use.  Justify your answer.</p></li>
+</ol></statement></exercise>
+
+<exercise ><statement><p>  I am looking at sales figures for a new product, the gizmo.  The sales figures seem to be growing at an exponential rate.
+</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Month</cell>
+<cell>Jan</cell><cell>Apr</cell>
+<cell>July</cell><cell>Oct</cell><cell>Jan</cell>
+</row>                    
+<row bottom="medium">
+<cell>Units sold</cell><cell>1082</cell><cell>1680</cell>
+<cell>2662</cell><cell>3783</cell><cell>6430</cell></row>
+                </tabular>
+<ol label="(a)">
+<li><p> Find the best fitting exponential function for the data.</p></li>
+<li><p> Using your function, predict sales for the July after the data was collected.</p></li>
+</ol></statement>
+<solution>
+<ol label="(a)">
+<li><p> Using the scatterplot and the trendline from the Chart menu, we choose Exponential Trendline and display the function. Note that we do need to change the months to the appropriate numerical value. Excel would just replace them by consecutive numbers.
+                <image width="100%" source="images/sec1-5-sol5a.png">
+                </image>
+The best fitting exponential curve given by Trendlines is <m>y = 934.78e^{0.1459x}</m>  
+</p></li>
+<li><p> To find the predicted units sold for July we would need <m>x = 19</m>
+                <image width="100%" source="images/sec1-5-sol5b.png">
+                </image>
+Using Excel we see that the predicted number of units sold is 14,949.
+
+</p></li>
+</ol></solution></exercise>
+
+<p>Excel has a limited set of models that can be used for trend lines to automatically fit curves to data.  In later sections we will look at how to we can use calculus to find best fitting curves for other models.  Until we develop those techniques, we can make a guess at parameters that will make curves fit.  
+</p>
+
+<exercise ><statement><p>  The unit sales of widgets can be expected to follow a logistic model, with rapid growth of sales, but with eventual saturation of the market so that there is a cap on the market.  In such a case the sales should be modeled by a logistic equation, of the form
+<m>sales(time)=MarketCap/(1+adjustment*exp(-rate*time)).</m>
+We have the following data on sales:</p>
+<tabular top="major" halign="center"><row bottom="minor">
+<cell>time(years)</cell><cell>0</cell><cell>2</cell>
+<cell>4</cell><cell>6</cell><cell>8</cell>
+</row>                    
+<row bottom="medium">  
+<cell>sales</cell><cell>1000</cell><cell>5610</cell>
+<cell>14,845</cell><cell>19,095</cell><cell>19,870</cell></row>
+                </tabular>
+<p>Find values of the parameters MarketCap, adjustment, and rate to reasonably fit the data.
+</p></statement></exercise>
+
+<exercise ><statement><p>  The unit sales of an article of clothes for adults can be expected to follow the model of a normal distribution.  In such a case the sales should be modeled by a normal equation, of the form
+<me>sales(size)=MaxPerSize*exp\left(-\left(\left(\frac{size-Mean}{StandardDeviation}\right)^2\right)\right).</me>.
+(Note we need an extra set of parenthesis to keep the order of operations correct.)  We have the following data on sales:</p>
+<tabular top="major" halign="center"><row bottom="minor">
+<cell>size</cell><cell>7</cell><cell>8</cell>
+<cell>9</cell><cell>10</cell><cell>11</cell><cell>12</cell>
+</row>                    
+<row bottom="medium">
+<cell>Weight</cell><cell>360</cell><cell>3,390</cell>
+<cell>12,820</cell><cell>20,000</cell><cell>12,826</cell><cell>3,375</cell></row>
+                </tabular>
+<p>Find values of the parameters MaxPerSize, Mean, and StandardDeviation to reasonably fit the data.
+</p></statement>
+<solution>
+<p>The initial plot shows that the distribution is normal:
+                <image width="100%" source="images/sec1-5-sol7a.png">
+                </image>
+
+The maximum is at <m>x = 10</m>. This suggests that <m>Mean = 10</m>.</p>
+<p>If we use 
+<m>Sales (x)= MaxPerSize*e^{-\left(\left(\frac{x-10}{STDev}\right)^2 \right)}</m>, then if <m>x = 10</m> we have <m>Sales (10)= MaxPerSize</m>, and so <m>MaxPerSize = 20,000</m>, hence we have that</p>
+<me>Sales (x)= 20,000*e^{-\left(\left(\frac{x-10}{STDev}\right)^2 \right)}</me>
+<p>Let <m>x = 11</m>, then <m>12825= 20,000*e^{\left(\left(\frac{-1}{STDev}\right)^2 \right)}</m>.</p>
+<p> Hence <m>e^{\frac{-1}{STDev^2}}=frac{12825}{2000}.  Then</m>
+<m>\frac{-}{STDev^2}=\ln\left(frac{12825}{20000}\right)</m></p>
+<p>So <m>STDev= \sqrt{(-1/\ln(12825/20000  ) )}=1.5002</m> so <m>STDev= 1.5002</m></p>
+
+<p>Comment: We will develop some methods to solve problems such as this using Excel in a section called Best Fit Curves (Chapter 6)</p>
+
+
+</solution>
+</exercise>
+
+<exercise ><statement><p>  The populations of the states can be found online for both the 2000 and 2010 censuses.  (A good site is 
+<url href="http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population">http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population</url>
+.)
+
+</p>
+<ol label="(a)">
+<li><p> Explain why one would guess the 2010 population of a state is roughly a linear function of the 2000 population of the state.</p></li>
+<li><p> Download the 2000 and 2010 populations of the 50 states.  Produce a scatterplot that has the 2010 population as a function of the 2000 population.  Find the equation of a best fitting curve for the data.</p></li>
+<li><p> Explain what the y-intercept means in terms of people moving to or away from states with large populations.</p></li>
+</ol> 
+</statement></exercise>
+
+<exercise ><statement><p>  The tax revenues of the states can be found online.  (A good site is the census bureau at 
+<url href="http://www.census.gov/govs/state/">http://www.census.gov/govs/state/</url>
+.)
+</p><ol label="(a)">
+<li><p> Explain why one would guess the 2010 tax revenue of a state is roughly a linear function of the 2010 population of the state.</p></li>
+<li><p> For 10 states, produce a scatterplot that has the 2010 tax revenue as a function of the 2010 population.  Find the equation of a best fitting curve for the data.</p></li>
+<li><p> Explain what the y-intercept means in terms of the relationship of the size of the state and the tax burden per person.</p></li>
+</ol> 
+</statement></exercise>
+
+<p><term>Projects:</term></p>
+
+<exercise ><statement><p>  Find the data for the consumer price index and the Dow Jones Industrial average at the start of the year for the past 50 years.  Over that time, what is the best linear relationship between the two indices?  To make your equation easier to understand, scale the indices so they both start at 100 on the same day.
+</p></statement></exercise>
+
+<exercise ><statement><p>  Pick your two favorite stocks and chart their prices on the opening days for a period of 30 years.  How well are their prices modeled as a linear model of each other?  See if you can find two stocks that seem to be inversely proportional to each other.
+</p></statement></exercise>
+</exercises>
+
+        </section>
+
+
+        <section xml:id="sec-1-6-GoalSeek">
+            <title>Finding Numerical Solutions with Goal Seek</title>
+
+
+          <p><url href="Examples/Section-1-6-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
+          <p><url href="Examples/Section-1-6-Examples.xlsx">Link to worksheets used in this section</url></p>
+<p>
+
+In previous sections we looked at deciding on a model to use for numerical data, and finding the best fitting curve of that model for our data.  Once we have completed those phases of the process, we have reduced our data to an equation.  At that point we want to use the equation to answer some question.  Sometimes that question will reduce to solving an equation, as when we have an equation for profit as a function of sales and we want to know when the business will break even.  At other times we want to know what input gives a desired output.  (E.g., How much do I need to sell to make $100,000 in commission?)
+</p><p>
+We can obviously use all the algebraic techniques we developed in previous courses to solve our problem symbolically.  However, Excel gives us two tools to use to solve problems numerically, Goal Seek and Solver.  In this section we will explore Goal Seek, the simpler of these tools.
+</p>
+<assemblage><p><ul>
+<li><p>We will use Goal Seek if we know what the desired output of an equation is, and would like to know when that output is achieved. </p></li>
+<li><p>We need to have an equation to work with and we can only solve for one kind of input (variable).</p></li>
+<li><p>Goal Seek is located under the What-If analysis menu.</p></li>
+</ul></p></assemblage>
+<p>
+<term>A linear example</term>
+<p><url href="https://youtu.be/KPmpUjuI9gA">Link to video of this example</url></p>
+
+</p><p>
+As with all new techniques in a math class, we start with a very simple example that you can easily solve by methods you learned in previous courses.  Suppose we have the function f(x) = 3 x + 5, and I want to find the value of x where f(x) = 40.  I start by setting up a worksheet with x and f(x) as columns.  I also need to start with a guessed value, which can be any number.  I will start by guessing a value of 5.  (I will enter that value twice so we can see before and after.)
+
+                <image width="80%" source="images/sec1-6-1.png">
+                </image>
+
+</p><p>
+I then go to the data tab and under the What-If analysis menu choose Goal Seek.  In the Goal Seek dialog, I want to change B3, to f(x), to 40 by changing A3, or x.  I then select OK.
+
+                <image width="80%" source="images/sec1-6-2.png">
+                </image>
+
+</p><p>
+Excel finds the value and asks if it is OK to replace the initial guess with that value.  In this case, Excel found the value of 11.66666667 or 35/3, which we could also have found by simple algebra.
+
+                <image width="80%" source="images/sec1-6-3.png">
+                </image>
+
+</p><p>
+<term>A quadratic example and concern with precision</term>
+</p><p>
+
+We move on to a quadratic example.  We let <m>f(x)=x^2</m> and want to find <m>f(x)=2</m>.  The set up is similar, with an appropriate change in the equation.  However when I use Goal Seek, I don't get quite the correct answer.
+
+                <image width="80%" source="images/sec1-6-4.png">
+                </image>
+
+</p><p>
+Instead of finding a value with <m>x^2 = 2</m>, I found a value with <m>x^2 = 1.99999495</m>.  
+<assemblage><p>
+<ul>
+<li><p>We note that Excel is not solving the problem algebraically, but is finding a numerical approximation within a preset tolerance. </p></li> 
+<li><p>It is actually finding an x such that f(x) is within 0.001 of 2.  </p></li>
+</ul></p></assemblage>
+For most of our work, that is close enough.  Sometimes however we may want more precision.  (Our units may be millions of dollars.)  In that case, we can improve the precision with a work around.  We add another cell with a formula whose value is a large number, say <m>10^6</m>, times the error.  We then use Goal Seek to make that value close to zero.  We effectively reduce our error tolerance by a factor of our large number.  Applying this to our example gives:
+
+                <image width="80%" source="images/sec1-6-5.png">
+                </image>
+
+</p><p>
+This has computed the value of the square root of 2 to 10 digits.
+
+</p><p>
+More realistic examples: finding the intersection of two curves, or equivalently finding where two functions are equal to one another.
+
+</p>
+<p><url href="https://youtu.be/bA5ECNm_nvA">Link to video of this example</url></p>
+<p>
+In economics, there are the concepts of supply and demand prices, the prices that will produce a specified supply or demand.  (We will look at this problem in more depth in the next chapter.)  Suppose we are told the formula for the supply and demand prices of a product are:
+<me>Supply\  Price (q) = ln(50 + 1000 q) + q</me>
+<me>Demand\  Price (q) = 1000*exp(-0.02*q)</me>
+We want to find the quantity where supply and demand prices are equal.  We first do a fast graph to get an understanding of what is going on.
+
+                <image width="80%" source="images/sec1-6-6.png">
+                </image>
+
+</p><p>
+We can see that the curves cross when q is somewhere between 100 and 110.  To make this a Goal Seek problem we add an extra column for the difference between supply and demand, and look for where that is zero.
+ 
+                <image width="80%" source="images/sec1-6-7.png">
+                </image>
+
+</p><p>
+We see that equilibrium occurs when q is 106.725.  We could have found this algebraically by solving the equation
+<me>0 = 1000*exp(-0.02*q) – (ln(50 + 1000*q) + q),</me>
+but that is not an easy problem.</p>
+<p>Our last example for Goal Seek looks at financial computations.</p>
+
+<p><url href="https://youtu.be/pJdAEO1qEao">Link to video of this example</url></p>
+<p>  Assume you have decided to open a retirement account when you get out of college.  You decide that you will start by contributing $2,000 at the beginning of each year, with that amount increasing by $100 each year, assuming a 5% annual interest rate.  The relevant formulas are:
+<me>Ending\ Balance = Beginning\ Balance + deposits + Interest\ Earned</me>
+<me>Interest\ Earned = (Beginning\ Balance + Deposits) * Interest\ Rate</me>
+<me>Beginning\ Balance = previous\ year's\ ending\ balance.</me>
+It becomes easy to set up a spreadsheet to compute the balance at the end of 40 years.
+
+                <image width="80%" source="images/sec1-6-8.png">
+                </image>
+
+</p><p>
+(We will look at this example in greater detail in a later chapter.  For now, note that this example is in the Excel notebook for this section.)  We can see that we have a bit more than $420,000 after 40 years.
+ 
+                <image width="80%" source="images/sec1-6-9.png">
+                </image>           
+
+</p><p>
+With Goal Seek it is easy to ask the question of how we need to change the problem to have a balance of $500,000 after 40 years, either by changing the initial deposit, or the rate at which deposits are increasing, or the expected yield.  We see that we need a yield of 5.74% to have $500,000 ready for retirement.
+
+                <image width="80%" source="images/sec1-6-10.png">
+                </image>
+
+</p><p>
+It is worthwhile to note that in this case our final balance is the result of a 120-step computation with our input variable.  Goal Seek finds a solution without us having to reduce that 120-step computation to a single long formula.
+
+
+
+
+</p><p>
+<term>Looking under the hood and understanding Goal Seek's limitations</term>
+
+</p><p>
+As with any tool we use, it is wise to have some understanding of the method used by Goal Seek.  That will help us understand when it is giving us an answer different from the one we were expecting, or even gives us an answer that is wrong.
+</p>
+<p><url href="https://youtu.be/vIfIFoM1GA0">Link to video of this example</url></p>
+<p>
+Goal Seek uses Newton's Method, a technique based on Calculus, to find solutions.  The heart of the method is based on the fact that, at least for most functions nice enough to show up in a course like this, when you zoom in far enough on a graph you will get something that looks like a straight line.  The line we find that way is called the tangent line.  (Finding the slope of the tangent line, or the instantaneous rate of change, is one of the main goals of calculus, and is given the name of finding the derivative.)  If we start with a guessed solution, we can produce a tangent line, find the point where the tangent line reaches the desired value, and take the point's x-coordinate as our next guess.  Repeating this process usually converges to a solution.
+
+                <image width="80%" source="images/sec1-6-11.png">
+                </image>
+
+</p><p>
+If we use the spreadsheet to illustrate Newton's method for our example, finding the solution for <m>x^2 = 2</m> starting with a guess of <m>x = 1</m>, we see that it converges in 5 iterations.  (At this point, we are simply illustrating how Goal Seek works.  You are not yet expected to be able to replicate the process.  You will learn how to find the slope of the tangent in later chapters.)
+
+                <image width="80%" source="images/sec1-6-12.png">
+                </image>
+ 
+</p>
+<p>
+As mentioned earlier, the reason for looking under the hood of Goal Seek is to understand when it gives us an unexpected answer.  A simplified description of the method used is that it heads down to where it expects to find a solution and repeats the process until it is within 0.001 of the desired answer.  There are several easy ways for this method to cause problems.</p>
+<p><url href="https://youtu.be/zIIm0H1t8Vs">Link to video of this example</url></p>
+
+<p>The first difficulty is that Goal Seek may not give you the answer you are looking for if there are multiple answers.  The function <m>f(x) = x^3 – x</m> has three roots, x = -1, 0, 1.  If we give Goal Seek a starting point of x=.55, it will give the solution of x=0.
+
+                <image width="80%" source="images/sec1-6-13.png">
+                </image>
+  
+</p><p>
+As a general rule, Goal Seek will get to the correct answer if there are no big curves between the guess and the answer.
+Another difficulty arises if you ask Goal Seek a question for which there is no answer.  The easy case is when there is no answer and we don't even get close.  We could ask it to find an x with <m>x^2+1=0</m>.  Since we know that all squares are non-negative, this does not have an answer.  Goal Seek will tell us that, but it will make some pretty wild guesses.
+
+                 <image width="80%" source="images/sec1-6-14.png">
+                </image>
+
+</p><p>
+In this case Goal Seek will run for a fixed number of iterations and tell us it “may not have found a solution.”  In that case it will tell us where it ended and give us the choice of accepting that point, or cancelling and going back to where we started.  If there is no solution and one of our intermediate points was close to a point with a flat tangent line, we may wind up anywhere.</p>
+
+<p>The more challenging case arises when there is no answer, but we get close.  We can ask Goal Seek to find an x with <m>1/x^4 = 0</m>.  Clearly this problem has no answer.  However, if we start with a guess of x = 1, we get an answer of x = 6.14798.  That is because <m>1/6.14798^4</m> is within our tolerance of 0.  In both of these cases we see that when we use Goal Seek we should also look at the graph of the function in question to make sure we are asking a reasonable question.
+
+                <image width="80%" source="images/sec1-6-15.png">
+                </image>
+
+</p><p>
+A variant of these problems occasionally shows up.  If we start with a carefully rigged problem we can set the algorithm of Goal Seek into a loop.  If we start with the function <m>f(x) = x^3 – 50*x</m> with an initial guess of x=1, and ask Goal Seek to find when f(x) = 500,  Goal Seek will not find an answer.  In this case we could look at a graph and make an initial guess of 6, and then get a correct answer.  Once again, with a numerical method, it pays to try some cases and make sure that our guess is close to a reasonable answer.  If f(x) is a continuous function, this means finding a value of x where f(x) is too low and another value where f(x) is too high.
+
+</p><p>
+While Excel is a powerful tool, we should always ask if there is an easier way to do a problem.  Most of the examples we looked at in this section boil down to finding a solution to <m>f(x)=0</m> where <m>f(x)</m> is a simple equation.  We can solve such problems more quickly with Wolfram Alpha.
+
+                 <image width="80%" source="images/sec1-6-16.png">
+                </image>
+
+</p><p>
+As noted above, Goal Seek is most useful for problems with lots of steps where we would have difficulty reducing the problem to a single equation.</p>
+
+
+
+<exercises  xml:id="exercises-set-sec-1-6">
+<title> Finding Numerical Solutions with Goal Seek</title>
+
+<p>
+Use Goal Seek to find where the given equation has the desired value.</p>
+<exercise ><statement><p> Let <m>f(x) = -2 x^2 + 20 x + 7</m>.  Find an <m>x</m> so that <m>f(x) = 50</m>.
+</p></statement>
+<solution><p>
+                <image width="100%" source="images/sec1-6-sol1a.png">
+                </image>
+Wolfram detects two solutions.</p>
+</solution></exercise >
+<exercise ><statement><p> Let <m>f(x) = -x^2 + 4 x + 5</m>.  Find an <m>x</m> so that <m>f(x) = -5</m>.
+</p></statement></exercise >
+<exercise ><statement><p> Let <m>f(x) = 5 x + 7/x</m>.  Find an <m>x</m> so that <m>f(x) = 20</m>.
+</p></statement>
+<solution>
+<p> 
+                <image width="60%" source="images/sec1-6-sol3a.png">
+                </image>
+</p>
+</solution></exercise >
+<exercise ><statement><p> Let <m>f(x) = 10 \exp(x/10)</m>.  Find an <m>x</m> so that <m>f(x) = 1000</m>.
+</p></statement></exercise >
+<exercise ><statement><p> Let <m>f(x) = \ln(x+5) + 7</m>.  Find an <m>x</m> so that <m>f(x) = 5</m>.
+</p></statement>
+<solution>
+<p> 
+                <image width="100%" source="images/sec1-6-sol5a.png">
+                </image>
+Note that next to the solution there is a button for <q>Approximate form</q></p>
+<p>We can use that to get a decimal approximation:
+                <image width="100%" source="images/sec1-6-sol5b.png">
+                </image>
+
+Note that we can get more digits if we want or return to the exact answer
+</p>
+</solution></exercise >
+<exercise ><statement><p> Let <m>f(x) = 1000*(1/2)^{(x/7)}</m>.  Find an <m>x</m> so that <m>f(x) = 50</m>.</p></statement></exercise >
+
+<p>Use Goal Seek to find the indicated number of points where the curves intersect</p>
+
+<exercise ><statement><p> Find an intersection point of <m>f(x) = 5 x + 7</m> and <m>g(x) = 40 – 2 x</m>.
+</p></statement>
+<solution><p>
+Finding the intersection point means we are setting the two equations equal to one another. Wolfram will include a plot of the solution as well as the numerical answer
+                <image width="100%" source="images/sec1-6-sol7a.png">
+                </image>
+  
+Wolfram tells us that <m>x=\frac{33}{7}</m>. We can plug that into one of the equations and get </p>
+<me>y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}</me>
+<p>So the intersection point is <m>(x,y)=(\frac{33}{7}  ,\frac{214}{7})</m></p>
+
+</solution></exercise >
+<exercise ><statement><p> Find an intersection point of <m>f(x) = 5 x</m>  and <m>g(x) = 9 x / 7</m>.
+</p></statement>
+</exercise >
+<exercise ><statement><p> Find an intersection point of <m>f(t) = \exp(-0.05 t)*(3 t + 5)</m> and <m>g(t) = t/10</m>.
+</p></statement>
+<solution><p>
+                <image width="100%" source="images/sec1-6-sol9a.png">
+                </image>
+Wolfram finds two intersections: one at <m>t\approx-1.71925</m> and the other at <m>t\approx68.5047</m></p>
+<p>Using the function <m>g(t)=t/10</m> we get the two intersection points at
+<m>(-1.71925,-.171925)</m> and <m>(68.5047,6.85047)</m>
+</p></solution></exercise >
+<exercise ><statement><p> Find an intersection point of <m>f(t) = 20 \ln(100 t + 854)</m> and <m>g(t) = 0.02 t</m>.
+</p></statement></exercise >
+<exercise ><statement><p> Find both intersection points of <m>f(x) = 7 + 10 x – x^2</m> and <m>g(x) = 0</m>.
+</p></statement>
+<solution><p>
+                <image width="60%" source="images/sec1-6-sol11a.png">
+                </image>
+The <m>y</m>-coordinates must be 0. If we use the approximate form of the solution we get
+<m>(-0.65685,0)</m> and <m>(10.657,0)</m>.
+</p>
+
+
+</solution></exercise >
+<exercise ><statement><p> Find both intersection points of <m>f(x) = 15 x + 200/x</m> and <m>g(x) = 20 + 25 x</m>.
+
+</p></statement></exercise >
+<exercise ><statement><p> We have reason to believe that the profit function for widget manufacturing is modeled by a quadratic equation.  We have the following data for sales and profits.</p>
+                <tabular top="major" halign="center">
+<row bottom="minor">
+<cell>Sales</cell><cell>100</cell><cell>250</cell>
+<cell>350</cell><cell>500</cell><cell>600</cell>
+</row>                    
+<row bottom="medium">
+<cell>Profit</cell><cell>$8,462</cell><cell>$18,378</cell>
+<cell>$22,455</cell><cell>$24,400</cell><cell>$23,747</cell></row>
+                </tabular>
+
+<ol>
+<li><p> Find the best fitting curve for the data.</p></li>
+<li><p> Find the two break-even point, or amount of sales that yield a profit of $0.
+</p></li>
+</ol></statement>
+<solution>
+<ol>
+<li><p> Using Excel we find the best fitting polynomial of order 2:
+                <image width="60%" source="images/sec1-6-sol13a.png">
+                </image>
+ 
+<m>y = -0.1006x2 + 100.66x - 555.65</m>
+</p></li>
+<li><p> Using Wolfram we then find where the profit is 0. Using the approximate form of the solution is preferable in this case because we want to know at what Sales we have 0 profit (the break-even points)
+                <image width="60%" source="images/sec1-6-sol13b.png">
+                </image>
+ 
+The break-even points are at sales of 5.55 and 995.05.
+</p></li>
+</ol></solution>
+</exercise >
+
+<exercise ><statement><p> A certain bank will give a $75 bonus on a new account with a deposit of $1000, and then pays 5% interest compounded continuously.  A second investment opportunity will pay $100 per year. </p>
+<ol> 
+<li><p> Which opportunity pays more in the first year?</p></li>
+<li><p> For what period of time do the two opportunities offer the same return?</p></li>
+<li><p> What is the payout from the two opportunities for a 30-year investment?</p></li>
+<li><p> What is the second period of time when the two opportunities offer the same return?</p></li>
+</ol>
+</statement></exercise >
+
+<exercise ><statement><p> Let <m>f(x) = (10 x-1) *\exp(-x) + 2</m>.</p>
+<ol> 
+<li><p> Find a solution with Goal Seek starting with x=1.</p></li>
+<li><p> What happens when Goal Seek tries to find a solution starting at <m>x=2</m>?</p></li>
+<li><p> Explain why, from the graph of <m>f(x)</m>, we should expect this problem.</p></li>
+</ol></statement>
+<solution><ol> 
+<li><p> The entry in cell B2 is <c>=(10*A2-1)*EXP(-A2)+2</c></p>
+<p>In the screen grab the values of <m>f</m> for <m>x = 1</m> and <m>x = 2</m> are given, and below it the result for the GoalSeek procedure are given.
+                <image width="50%" source="images/sec1-6-sol15a.png">
+                </image>
+ 
+For <m>x = 1</m> as the starting point GoalSeek find a zero at <m>x\approx-0.0839</m>
+</p></li>
+<li><p> Starting at <m>x = 2</m> GoalSeek does not find a zero at all. If we run GoalSeek a second time, now starting with the value at <m>x = 53.02</m> we zoom in on the first zero!</p></li>
+<li><p> Using Wolfram, we see a fairly complicated solution, but we are also shown that there is one real solution. </p>
+                <image width="80%" source="images/sec1-6-sol15b.png">
+                </image>
+<p>Looking at the graph we see that there is clearly only one solution to the equation
+  <m>(10 x-1) *\exp(-x) + 2 = 0</m></p>
+<p>If we start Goalseek at <m>x = 2</m>, the graph is sloping down to the right, which is why Goalseek approximates the zero to be at about <m> = 53</m>. The graph looks to be asymptotically approaching the <m>x</m>-axis. In this case Wolfram would have given the correct answer a bit more easily. 
+</p></li>
+</ol>
+</solution></exercise >
+
+<exercise ><statement><p> Let <m>f(x) = x^2*\exp(-(x^2))</m>.</p>
+<ol> 
+<li><p> Find a solution with Goal Seek, starting with <m>x=.5</m>.  Does this represent an actual solution?</p></li>
+<li><p> Find a solution with Goal Seek, starting with <m>x=2</m>.  Does this represent an actual solution?</p></li>
+</ol></statement></exercise >
+</exercises>
+        </section>
+</chapter>
+

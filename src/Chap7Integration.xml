@@ -81,7 +81,7 @@ The standard approach to accumulation is to reduce the problem to an area proble
                <figure>
                     <caption>GeoGebra: Upper sum approximation</caption>
                     <interactive xml:id="geogebra-upper-sum" platform="geogebra" width="75%" aspect="1:1">
-                        <slate xml:id="upper-sum" surface="geogebra" material="aydvqybh" aspect="1:1">
+                        <slate xml:id="ggb-upper-sum" surface="geogebra" material="aydvqybh" aspect="1:1">
                             setAxisSteps(1, 1, 1, 1);
                             setCoordSystem(-1, 5, -1, 5);
                             enableShiftDragZoom(false);
@@ -388,7 +388,7 @@ Column C has our list of <m>t</m> values in the center of each interval.  Column
 This matches the result we had solving the problem with geometry.  However, we can repeat the process with Excel and use functions of higher order.</p>
 
 <example><title>Best fitting area function for a quadratic function</title>
-<p><url href="https://youtu.be/8j5_ara-niQ">Link to video of this example</url></p>
+<p><url href="https://youtu.be/LD6coDN7Hm8">Link to video of this example</url></p>
 <p>
 Find the area function when <m>f(t) = 6t^2</m>.</p>
 
@@ -1783,6 +1783,7 @@ In calculus terms,  <m>CDFf(x)</m>, the <term>Cumulative Distribution Function</
 You will notice the techniques we have for anti-differentiation will not work with the normal distribution.  In fact, the normal distribution has no closed form anti-derivative using the functions we are familiar with.  Thus we need to use numeric methods.</p>
 
 <example><title>Tall men in an area</title>
+<p><url href="https://youtu.be/NItxIRjOmZkI">Link to video of this example</url></p>
 <p>In the United States, the height of men follows a normal distribution with a mean of 70 inches (5' 10") and a standard deviation of 3 inches.  I want to set up a specialty shop for men who are at least 6’ tall, but no more than 7' tall.  In an area with 100,000 adult men, how big is my potential market?</p>
 
 <p>
@@ -1856,8 +1857,9 @@ When we look at the values, we get a target population of 25,249.  This agrees w
 
 <me>\int_{-\infty}^a SND(x)dx=\int_{-\infty}^0 SND(x)dx+\int_0^a SND(x)dx=.5+\int_0^a SND(x)dx.</me>
 </example>
+<example><title>Finding short women</title>
+<p><url href="https://youtu.be/t4XABMbHO4k">Link to video of this example</url></p>
 
-<example><title>Finding tall women</title>
 <p>In the United States, the height of women follows a normal distribution with a mean of 64 inches (5' 4") and a standard deviation of 2.75 inches.  I want to set up a specialty shop for women who are no more than 5' tall.  In an area with 500,000 adult women, how big is my potential market?</p>
 
 <p><term>Solution</term>: Set up.  Using the reasoning as above, I want to estimate my market if it is 50% of the population plus the percentage between 0 and (-4/2.75) standard deviations below the mean. </p>
@@ -1882,6 +1884,7 @@ NORM.S.DIST(right hand limit, cumulative).
 <p>While the normal distribution spreads a population over the real numbers, most objects come in discrete sizes.  Depending on the kind of shoes, the sizes are either whole or half numbers.  You can’t buy a shoe of size 8.764.  The normal procedure is to divide the population at the middle between the sizes.</p>
 
 <example><title>Women's shoes</title>
+<p><url href="https://youtu.be/QI-BKnONrRE">Link to video of this example</url></p>
 <p>In the United States, the shoe sizes of women follows a normal distribution with a mean of 8 and a standard deviation of 1.5.  I want to order 1000 pairs of shoes.  If the shoes are only available in full sizes, how many pairs should I order of size 7?</p>
 
 <p><term>Solution</term>:  I want the portion of the population between size 6.5 and 7.5.   I fit it into my worksheet for Riemann sums.</p>
@@ -1901,13 +1904,13 @@ NORM.S.DIST(right hand limit, cumulative).
 
 
 <exercise ><statement><p> Assume that women’s shoe sizes are normally distributed with a mean of 8 and a standard deviation of 1.5.  A particular style of shoes in available in full and half sizes.  I plan to make 10,000 pairs of this style.</p>
-<ol label="(a)">>
+<ol label="(a)">
 <li><p> Express, as an integral, the number of pairs I should make of size 9.</p></li>
 <li><p> How many pairs of size 9 shoes should I make?</p></li>
 <li><p> How do your answers change if the shoes are only to be made in full sizes?</p></li>
 </ol>
 </statement><solution>
-<ol label="(a)">>
+<ol label="(a)">
 <li><me>\hbox{pairs size 9}=10000\int_{8.75}^{9.25}
 \frac{1}{1.5\sqrt{2\pi}}e^{\left({\frac{-(x-9)^2}{2*1.5^2}}\right)}\ dx
 </me></li>
