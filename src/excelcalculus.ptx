@@ -50,9 +50,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
   <docinfo>
     <macros>
-      \newcommand{\Volume}{\text{Volume}}
-      \newcommand{\xLow}{\text{xLow}}
-      \newcommand{\xHigh}{\text{xHigh}}
+      \newcommand{\Volume}{\mathrm{Volume}}
+      \newcommand{\xLow}{\mathrm{xLow}}
+      \newcommand{\xHigh}{\mathrm{xHigh}}
       \newcommand{\Mcost}{\operatorname{Marginal Cost}}
       \newcommand{\cost}{\operatorname{Cost}}
       \newcommand{\Mrev}{\operatorname{Marginal Revenue}}
@@ -67,65 +67,65 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
       \newcommand{\marginal}{\operatorname{Marginal}\,}
       \newcommand{\linear}{\operatorname{Linear}\,}
       \newcommand{\abs}[1]{\left\lvert #1\right\rvert}
-      \newcommand{\quantity}{\text{Quantity}}
+      \newcommand{\quantity}{\mathrm{Quantity}}
       \newcommand{\AnnualCost}{\operatorname{Annual Cost}}
       \newcommand{\AnnualExpense}{\operatorname{Annual Expense}}
-      \newcommand{\RepairFactor}{\text{Repair Factor}}
+      \newcommand{\RepairFactor}{\mathrm{Repair Factor}}
       \newcommand{\Sales}{\operatorname{Sales}}
       \newcommand{\prediction}{\operatorname{prediction}}
       \newcommand{\FutureValue}{\operatorname{Future Value}}
       \newcommand{\demand}{\operatorname{Demand}}
       \newcommand{\val}{\operatorname{Value}}
-      \newcommand{\raw}{\text{raw}}
+      \newcommand{\raw}{\mathrm{raw}}
       \newcommand{\gizmos}{\operatorname{gizmos}}
-      \newcommand{\intermediate}{\text{intermediate}}
+      \newcommand{\intermediate}{\mathrm{intermediate}}
       \newcommand{\tax}{\operatorname{tax}}
       \newcommand{\FaceValue}{\operatorname{Face Value}}
-      \newcommand{\rate}{\text{rate}}
-      \newcommand{\years}{\text{years}}
+      \newcommand{\rate}{\mathrm{rate}}
+      \newcommand{\years}{\mathrm{years}}
       \newcommand{\expense}{\operatorname{expense}}
       \newcommand{\FutureAmount}{\operatorname{FutureAmount}}
-      \newcommand{\InitialDeposit}{\text{InitialDeposit}}
-      \newcommand{\ppy}{\text{ppy}}
+      \newcommand{\InitialDeposit}{\mathrm{InitialDeposit}}
+      \newcommand{\ppy}{\mathrm{ppy}}
       \newcommand{\PresentAmount}{\operatorname{PresentAmount}}
-      \newcommand{\PriceGizmo}{\text{PriceGizmos}}
-      \newcommand{\QuantityGizmo}{\text{QuantityGizmos}}
-      \newcommand{\QuantityGadget}{\text{QuantityGadgets}}
-      \newcommand{\QuantityWidget}{\text{QuantityWidgets}}
-      \newcommand{\PriceWidget}{\text{PriceWidgets}}
-      \newcommand{\PriceGadget}{\text{PriceGadgets}}
-      \newcommand{\QW}{\text{QW}}
-      \newcommand{\QG}{\text{QG}}
-      \newcommand{\PW}{\text{PW}}
-      \newcommand{\PG}{\text{PG}}
+      \newcommand{\PriceGizmo}{\mathrm{PriceGizmos}}
+      \newcommand{\QuantityGizmo}{\mathrm{QuantityGizmos}}
+      \newcommand{\QuantityGadget}{\mathrm{QuantityGadgets}}
+      \newcommand{\QuantityWidget}{\mathrm{QuantityWidgets}}
+      \newcommand{\PriceWidget}{\mathrm{PriceWidgets}}
+      \newcommand{\PriceGadget}{\mathrm{PriceGadgets}}
+      \newcommand{\QW}{\mathrm{QW}}
+      \newcommand{\QG}{\mathrm{QG}}
+      \newcommand{\PW}{\mathrm{PW}}
+      \newcommand{\PG}{\mathrm{PG}}
       \newcommand{\Production}{\operatorname{Production}}
-      \newcommand{\Labor}{\text{Labor}}
-      \newcommand{\Capital}{\text{Capital}}
+      \newcommand{\Labor}{\mathrm{Labor}}
+      \newcommand{\Capital}{\mathrm{Capital}}
       \newcommand{\Linear}{\operatorname{Linear}\,}
-      \newcommand{\PriceX}{\text{PriceX}}
-      \newcommand{\PriceY}{\text{PriceY}}
+      \newcommand{\PriceX}{\mathrm{PriceX}}
+      \newcommand{\PriceY}{\mathrm{PriceY}}
       \newcommand{\predicted}{\operatorname{predicted}}
-      \newcommand{\Time}{\text{time}}
+      \newcommand{\Time}{\mathrm{time}}
       \newcommand{\TotalAmount}{\operatorname{TotalAmount}}
       \newcommand{\TotalValue}{\operatorname{TotalValue}}
-      \newcommand{\CashAmount}{\text{CashAmount}}
-      \newcommand{\DepositAmount}{\text{DepositAmount}}
+      \newcommand{\CashAmount}{\mathrm{CashAmount}}
+      \newcommand{\DepositAmount}{\mathrm{DepositAmount}}
       \newcommand{\AvailableTrees}{\operatorname{AvailableTrees}}
-      \newcommand{\Capacity}{\text{Capacity}}
+      \newcommand{\Capacity}{\mathrm{Capacity}}
       \newcommand{\Amount}{\operatorname{Amount}}
-      \newcommand{\InitialAmount}{\text{InitialAmount}}
-      \newcommand{\InvestmentAmount}{\text{InvestmentAmount}}
+      \newcommand{\InitialAmount}{\mathrm{InitialAmount}}
+      \newcommand{\InvestmentAmount}{\mathrm{InvestmentAmount}}
       \newcommand{\Return}{\operatorname{Return}}
-      \newcommand{\SD}{\text{SD}}
+      \newcommand{\SD}{\mathrm{SD}}
       \newcommand{\Antideriv}{\operatorname{Antideriv}}
       \newcommand{\MC}{\operatorname{MC}}
       \newcommand{\MP}{\operatorname{MP}}
       \newcommand{\MR}{\operatorname{MR}}
       \newcommand{\CDFf}{\operatorname{CDFf}}
       \newcommand{\Principal}{\operatorname{Principal}}
-      \newcommand{\ProducerSurplus}{\text{ProducerSurplus}}
-      \newcommand{\ConsumerSurplus}{\text{ConsumerSurplus}}
-      \newcommand{\TotalSocialGain}{\text{TotalSocialGain}}
+      \newcommand{\ProducerSurplus}{\mathrm{ProducerSurplus}}
+      \newcommand{\ConsumerSurplus}{\mathrm{ConsumerSurplus}}
+      \newcommand{\TotalSocialGain}{\mathrm{TotalSocialGain}}
       \newcommand{\Elasticity}{\operatorname{Elasticity}}
     </macros>
   </docinfo>
