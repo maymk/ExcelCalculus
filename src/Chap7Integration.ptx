@@ -45,7 +45,7 @@
     <title>Approximating Definite Integrals as Sums</title>
 
     <p>
-      <url href="Examples/Section-7-1-Examples.xlsx">Link to worksheets used in this section</url>
+      <url href="external/Examples/Section-7-1-Examples.xlsx">Link to worksheets used in this section</url>
     </p>
 
     <p>
@@ -539,7 +539,7 @@
  <section xml:id="sec-7-2-FundamentalTheoremCalculus">
     <title>The Fundamental Theorem of Calculus</title>
 
-    <p><url href="Examples/Section-7-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-7-2-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <p>
       In the last section we defined the definite integral, <m>\int_a^b f(t)dt</m>,
@@ -3230,7 +3230,7 @@
   <section xml:id="sec-7-6-NormalDistribution">
     <title>The Normal Distribution: An extended numeric example</title>
     <introduction>
-      <p><url href="Examples/Section-7-6-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-7-6-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
         We want to look at an extended example where we realistically want to find a definite integral,
@@ -3821,7 +3821,7 @@
   <section xml:id="sec-7-7-InvestmentDepreciation">
     <title>Applications of the integral: Investment and depreciation</title>
     <introduction>
-      <p><url href="Examples/Section-7-7-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-7-7-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
         Having looked at several ways to evaluate definite integrals,
@@ -4296,7 +4296,7 @@
   <section xml:id="sec-7-8-BusinessApplicationsIntegral">
     <title>Economics Applications of the Integral</title>
     <introduction>
-      <p><url href="Examples/Section-7-8-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-7-8-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
         We have looked at the definite integral as the signed area under a curve.

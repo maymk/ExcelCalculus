@@ -730,7 +730,7 @@
   <section xml:id="sec-1-2-FunctionsBusinessSetting">
     <title>Functions in the Business setting</title>
     <introduction>
-      <p><url href="Examples/Section-1-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-1-2-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
          Not all functions we encounter in a business setting are linear.
@@ -1320,8 +1320,8 @@
   <section xml:id="sec-1-3-IntroExcelSpreadsheets">
     <title>Introduction to Excel Spreadsheets</title>
     <introduction>
-      <p><url href="Examples/Section-1-3-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
-      <p><url href="Examples/Section-1-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-1-3-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-1-3-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
         This book will rely heavily upon the use of Excel, since it is the standard mathematical tool used in the business world.
@@ -1902,8 +1902,8 @@
   <section xml:id="sec-1-4-GraphingFunctionsExcel">
     <title>Graphing functions with Excel</title>
 
-    <p><url href="Examples/Section-1-4-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
-    <p><url href="Examples/Section-1-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-4-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-4-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <p>
       One area where Excel is different from a graphing calculator is in producing the graph of a function that has been defined by a formula.
@@ -2270,8 +2270,8 @@
   <section xml:id="sec-1-5-IntroBestFitCurves">
     <title>Using Excel to find best-fit curves</title>
 
-    <p><url href="Examples/Section-1-5-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
-    <p><url href="Examples/Section-1-5-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-5-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-5-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <paragraphs>
       <title>Overview</title>
@@ -2468,7 +2468,7 @@
       </p>
 
       <p>
-        The data from 1960 to 2011 is in the worksheet <url href="Examples/Section-1-5-Examples.xlsx">Section-1-5-Examples.xlsx</url>.
+        The data from 1960 to 2011 is in the worksheet <url href="external/Examples/Section-1-5-Examples.xlsx">Section-1-5-Examples.xlsx</url>.
       </p>
 
           <image width="80%" source="images/sec1-5-9.png"/>
@@ -3013,8 +3013,8 @@
     <title>Finding Numerical Solutions with Goal Seek</title>
 
 
-    <p><url href="Examples/Section-1-6-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
-    <p><url href="Examples/Section-1-6-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-6-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-6-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <p>
       In previous sections we looked at deciding on a model to use for numerical data,

@@ -43,7 +43,7 @@
   <section xml:id="sec-6-1-EvaluatingFunctionsSeveralVariables">
     <title>Evaluating and Graphing Functions of Several Variables</title>
 
-    <p><url href="Examples/Section-6-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-6-1-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <p>
       When we were evaluating functions of a single variable we had to replace the variable with a cell reference.
@@ -753,7 +753,7 @@
     <title>Wire Frames, Partial Derivatives, and Tangent Planes</title>
 
     <introduction>
-      <p><url href="Examples/Section-6-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-6-2-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
         A standard technique in mathematics courses is to try to break a complicated problem into smaller and easier problems.
@@ -1645,7 +1645,7 @@
     <subsection>
       <title>Critical Points</title>
 
-      <p><url href="Examples/Section-6-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-6-3-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
         With functions of one variable we were interested in places where the derivative is zero,
@@ -2694,7 +2694,7 @@
   <section xml:id="sec-6-4-OptimizationBestFitCurves">
     <title>Optimization and Best Fitting Curves</title>
 
-    <p><url href="Examples/Section-6-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-6-4-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <p>
       In the last section we looked at using the partial derivatives to find the maximum or minimum of a function in several variables.
