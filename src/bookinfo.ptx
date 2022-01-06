@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <!--********************************************************************
 Copyright 2015 Robert A. Beezer
 
@@ -28,9 +27,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
     <!-- the other option is "long" which will produce an -->
     <!-- entire front matter section with more headings   -->
-    <author-biographies length="short" />
+    <author-biographies length="short"/>
 
-    <brandlogo url="http://abstract.pugetsound.edu" source="images/cover_aata_2014.png" />
+    <brandlogo url="http://abstract.pugetsound.edu" source="images/cover_aata_2014.png"/>
 
     <!-- Prefix to enhance Sage notebook contents -->
     <initialism>AATA</initialism>

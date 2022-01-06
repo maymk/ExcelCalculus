@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file started as part of the book                 -->
+<!--                                               -->
+<!--   Abstract Algebra: Theory and Applications   -->
+<!--                                               -->
+<!-- Copyright (C) 1997-2017  Thomas W. Judson     -->
+<!-- See the file COPYING for copying conditions.  -->
+<backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
+  <!-- <solutions divisional="answer solution" admit="odd"> -->
+  <solutions divisional="answer solution">
+    <title>Answers to Odd Exercises</title>
+  </solutions>
+</backmatter>

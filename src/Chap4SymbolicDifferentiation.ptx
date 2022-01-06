@@ -1,0 +1,3215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chap-4-SymbolicDIfferentiation">
+  <title>Symbolic Differentiation</title>
+
+  <introduction>
+    <p>
+      In the last chapter we approximated derivatives by using a balanced difference quotient.
+      For most functions that gave an easy approximation without any rules other than the conceptual
+      understanding that we obtained the derivative by zooming in far enough for the graph to look like a straight line.
+      When we looked at the derivative at many points we found that for polynomials of degree 2 or less,
+      the derivative seems to be a polynomial of one degree lower.
+      In this chapter we explore rules for symbolic differentiation.
+      This lets us move from a function defined by a formula to its derivative defined by a formula
+      without going through the work of finding best fitting curves.
+      It also will work with a many functions where Excel will not have the appropriate choice available if we want to fit a curve.
+    </p>
+  </introduction>
+
+
+  <section xml:id="sec-4-1-ElementaryDerivatives">
+    <title>Elementary Derivatives</title>
+    <subsection>
+      <title>Definition and Notation</title>
+      <p><url href="Examples/Section-4-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+      <p>
+        We start by recalling the formal definition,
+        with a slight adjustment in notation to match the standard conventions:
+      </p>
+
+      <definition>
+        <title>Derivative</title>
+        <statement>
+          <p>
+            For a function <m>f(x)</m>, the instantaneous rate of change of <m>f(x)</m>,
+            or the <term>derivative</term> of <m>f(x)</m>, denoted as <m>f'(x)</m>,
+            is defined as
+            <me>
+              f'(x )=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+            </me>.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        We also want to recall some alternate notations we may use.
+      </p>
+
+      <assemblage>
+        <p>
+          Notation:  Let <m>y=f(x)</m>.
+        </p>
+
+        <p>
+  	      The derivative of <m>f(x)</m>  is denoted as <m>f'(x)</m> or  <m>\frac{d}{dx} f(x) </m>or <m>dy/dx</m>.
+        </p>
+
+        <p>
+  	      The derivative at <m>x=x_0</m> is denoted as <m>f'(x_0 )</m> or <m>\frac{dy}{dx}|_{x=x_0}</m>.
+        </p>
+  	  </assemblage>
+
+      <p>
+        As is typical in mathematics, when there are several forms,
+        we use the one that makes the most sense in the case on which we are working.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of monomials</title>
+
+      <p>
+        Our first rule for symbolic differentiation gives the derivative of a monomial.
+      </p>
+
+      <claim>
+        <title>Monomial rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=a x^n</m>, then <m>f'(x)=n*a*x^{n-1}</m>.
+          </p>
+        </statement>
+      </claim>
+
+      <p>
+        This rule is a generalization of the rule we found in section 3.2 using trendlines.
+        There we noticed that the derivative is linear whenever the function is quadratic.
+        The rule is valid for all values of n, not just for positive whole numbers.
+        We can now find derivatives for expressions that can be converted into this form.
+      </p>
+
+      <example>
+        <title>Derivatives of monomials</title>
+        <statement>
+          <p>
+            Using our first rule of symbolic differentiation, find the derivatives of the following functions:
+            <ol label="(a)">
+              <li><m> f(x)=3 x</m></li>
+              <li><m>g(x)=5 x^2</m></li>
+              <li><m>h(x)=7x^{25}</m></li>
+              <li><m>j(x)=6 \sqrt{x}</m></li>
+              <li><m>k(x)=\frac{4}{x^3} </m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our rule:
+            <ol label="(a)">
+              <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (3 x^1)=1*3 x^0=3.</m></li>
+              <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (5 x^2 )=2*5 x^1=10 x.</m></li>
+              <li><m> \frac{d}{dx} h(x)=\frac{d}{dx} (7x^{25})=25*7 x^24=175x^{24}.</m></li>
+              <li><m> \frac{d}{dx} j(x)=\frac{d}{dx}  (6 \sqrt{x})=\frac{d}{dx}  (6x^{1/2} )=1/2*6x^{-1/2}=3x^{-1/2}</m></li>
+              <li><m> \frac{d}{dx}  k(x)=\frac{d}{dx}  \frac{4 }{x^3 }=d/dx (4 x^{(-3)} )=-3*4 x^{-4}=-12 x^{-4}</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        For parts (d) and (e), we converted roots and fractions so they looked like monomials
+        with negative or fractional exponents and applied our rule.
+      </p>
+
+      <p>
+        Probably the most convincing demonstration of the truth of this rule is for us to use
+        Excel and the techniques of the last chapter to find a function,
+        its numeric and symbolic derivatives and see that the symbolic and numeric derivatives are the same up to round off error.
+        We would also like to see how the symbolic derivative can be derived from the formal definition of derivative in simple cases.
+      </p>
+
+      <example>
+        <title>Derivatives of linear functions</title>
+        <statement>
+          <p>
+            From the formal definition of derivative, if <m>f(x)=a x+b</m>, then show <m>f'(x)=a</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)+b)-(a x+b)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a x+a h+b)-(a x+b)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{ah}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}a=a</mrow>
+            </md>.
+          </p>
+
+          <p>
+            The last step is justified by noting that as <m>h</m> gets very small the value of <m>a</m> simply stays <m>a</m>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        We want to look at a quadratic function, since we will need to take a limit in that case.
+      </p>
+
+      <example>
+        <title>A quadratic derivative</title>
+        <statement>
+          <p>
+            From the formal definition of derivative, if <m>f(x)=a x^2</m>,
+            then show <m>f'(x)=2 a x</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)^2)-(a x^2)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a x^2+2 a h x +a h^2)-(a x^2)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{2 a h x +a h^2}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}(2ax+ah)=2ax</mrow>
+            </md>.
+          </p>
+
+          <p>
+            The last step is justified by noting that as <m>h</m> gets very small the value of <m>ah</m> also gets very small.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        We can modify this last example to find a formula for the derivative of
+        <m>f(x)=x^n</m> for any positive integer <m>n</m>.  We recall that
+        <me>
+          (x+h)^n=x^n+n x^{(n-1)}h+\text{ terms involving } h^2
+        </me>.
+      </p>
+
+      <p>We are ready to generalize.</p>
+
+      <example>
+        <title>Derivative of power function</title>
+        <statement>
+          <p>
+            From the formal definition of derivative, if <m>f(x)=a x^n</m>,
+            then show <m>f'(x)=n a x^{(n-1)}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)^n)-(a x^n)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (x^n+n x^{n-1}h + \text{ terms involving }  h^2)-(a x^n)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (n x^{n-1}h + \text{ terms involving }  h^2)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}(a (n x^{n-1} + \text{ terms involving }  h)</mrow>
+              <mrow>\amp =anx^{n-1}</mrow>
+            </md>.
+          </p>
+
+          <p>
+            The last step is justified by noting that as <m>h</m> gets very small,
+            the value of <m>h</m> times a polynomial in <m>h</m> also gets very small.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of Exponential Functions</title>
+
+      <claim>
+        <title>Exponential Rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=a*e^x</m>, then <m>f'(x)=a*e^x</m>.
+          </p>
+        </statement>
+      </claim>
+
+      <p>
+        The elegance of this rule is part of the reason why mathematicians and math books like base <m>e</m> for exponential functions.
+        However we more typically want to use exponential functions based on a rate of growth or decay.
+      </p>
+
+      <claim>
+        <title>General Exponential Rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=b*a^x</m>, then <m>f'(x)=b*\ln(a)*a^x</m>.
+          </p>
+        </statement>
+      </claim>
+
+      <example>
+        <title>Exponential examples</title>
+        <statement>
+          <p>
+            Using the exponential rules of symbolic differentiation, find the derivatives of the following functions:
+            <ol label="(a)">
+              <li><m> f(x)=2 e^x</m></li>
+              <li><m> g(x)=\pi e^x</m></li>
+              <li><m> h(x)=7*2^x</m></li>
+              <li><m> j(x)=5*(1.06)^x</m></li>
+              <li><m> k(x)=9*(0.97)^x</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our rule:
+            <ol label="(a)">
+              <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (2 e^x)=2 e^x.</m></li>
+              <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (\pi e^x )=\pi e^x.</m></li>
+              <li><m> \frac{d}{dx} h(x)=\frac{d}{dx} (7*2^x )=7*\ln(2)*2^x</m></li>
+              <li><m> \frac{d}{dx} j(x)=\frac{d}{dx}  (5*(1.06)^x) =5*\ln(1.06)*(1.06)^x </m></li>
+              <li><m> \frac{d}{dx}  k(x)=\frac{d}{dx}  (9*(0.97)^x) =9*\ln(0.97)*(0.97)^x </m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        In some ways, the most convincing argument for these rules is to use Excel to plot the function,
+        its numeric derivative and its symbolic derivative for a variety of values
+        and see that the numeric and symbolic derivatives are the same up to rounding error.
+        We would also like to make an argument from the formal definition of the derivative.
+      </p>
+
+      <example>
+        <title>Justification of first exponential rule</title>
+        <statement>
+          <p>
+            From the formal definition of derivative show that if <m>f(x)=e^x</m>, then <m>f'(x)=e^x</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{e^{(x+h)}-e^x}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{e^x(e^h-1)}{h}</mrow>
+              <mrow>\amp=e^x\left(\lim_{h\to0}\frac{e^h-1}{h}\right)</mrow>
+            </md>.
+          </p>
+
+          <p>
+            It suffices to show that <m>\lim_{h\to0}\frac{e^h-1}{h} =1</m>.
+            This can be done by starting with a formal definition of <m>e</m>.
+            For this class it can also be done by using Excel to evaluate the expression for smaller and smaller values of <m>h</m>.
+          </p>
+
+          <image width="60%" source="images/sec4-1-1.png"/>
+
+          <p>
+            It seems clear that <m>\lim_{h\to0}\frac{e^h-1}{h} =1</m>.
+          </p>
+        </solution>
+      </example>
+
+      <example>
+        <title>Justification of second exponential rule</title>
+        <statement>
+          <p>
+            From the formal definition of derivative, if <m>f(x)=a^x</m>, then show <m>f'(x)=\ln(a)*a^x</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We start by mimicking the last problem.  At a key step we will recall that <m>a^x=e^{x \ln(a)}</m>.
+            We also want to note that
+            <me>
+              \left(\lim_{h\ln(a) \to0}\frac{e^{h\ln(a)}-1}{h\ln(a)}\right) = \left(\lim_{h\to0}\frac{e^h-1}{h}\right) =1
+            </me>.
+          </p>
+
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{a^{(x+h)}-a^x}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{a^x(a^h-1)}{h}</mrow>
+              <mrow>\amp =(a^x)\left(\lim_{h\to0}\frac{a^h-1}{h}\right)</mrow>
+              <mrow>\amp =(a^x)\left(\lim_{h\to0}(\ln(a))\frac{e^{h\ln(a)}-1}{h\ln(a)}\right)</mrow>
+              <mrow>\amp =(a^x\ln(a))\left(\lim_{h\ln(a)\to0}\frac{e^{h\ln(a)}-1}{h\ln(a)}\right)</mrow>
+              <mrow>\amp =(a^x\ln(a))\left(\lim_{h\to0}\frac{e^{h}-1}{h}\right)</mrow>
+              <mrow>\amp =a^x\ln(a)</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        We are most likely to see exponential functions in the context of continuously compounding interest.
+      </p>
+
+      <example>
+        <title>Computing future rate of change</title>
+        <statement>
+          <p>
+            If I have a dollar in the bank at an effective annual interest rate of 6%,
+            compounded continuously, at what rate is the principal increasing after ten years?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We know <m>f(x)=(1.06)^x</m>.  Thus <m>f'(x)=\ln(1.06)(1.06)^x</m>.
+            We evaluate this at 10 years and get <m>f'(10)=\ln(1.06)(1.06)^{10}=.10435074</m>.
+            Thus after 10 years, I am earning a little more than 10 cents a year.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of Logarithmic Functions</title>
+
+      <p>
+        For a last rule for this section we want to find the derivative of <m>f(x)=a \ln(x)</m>.
+      </p>
+
+      <claim>
+        <title>Logarithmic Rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=a \ln(x)</m>, then <m>f'(x)=a/x</m>.
+          </p>
+        </statement>
+      </claim>
+
+      <example>
+        <title>Derivatives of logarithmic functions</title>
+        <statement>
+          <p>
+            Using the logarithmic rule of symbolic differentiation, find the derivatives of the following functions:
+            <ol label="(a)">
+              <li><m> f(x)=2 \ln(x)</m></li>
+              <li><m> g(x)=3 \ln(x^2)</m></li>
+              <li><m> h(x)=5 \ln(1/x)</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our rule:
+            <ol label="(a)">
+              <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (2 \ln(x))=2/x.</m></li>
+              <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (3 \ln(x^2))= \frac{d}{dx}  (3*2\ln(x))=6/x.</m></li>
+              <li><m> \frac{d}{dx} h(x)=\frac{d}{dx}  (5 \ln(1/x))= \frac{d}{dx}  (-1*5\ln(x))=-5/x.</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        Our argument for this derivative rule will be more geometric.
+      </p>
+
+      <example>
+        <title>Justification of logarithmic rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=\ln(x)</m>, then show <m>f'(x)=1/x</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We start by noticing that <m>y=e^x</m> and <m>y=\ln(x)</m> are inverse functions.
+            That means their graphs can be obtained by reflecting across the line <m>y=x</m>.
+          </p>
+
+          <image width="80%" source="images/sec4-1-2.png"/>
+
+          <p>
+            The slope of the tangent line at <m>(a,e^a)</m> is <m>e^a</m> by the exponential rule.
+            Symmetry tells us the slope of the line tangent to <m>y=\ln(x)</m> at <m>(e^a,a)</m>   is <m>1/e^a</m>.
+            Letting <m>b=e^a</m>, the slope of the line tangent to <m>y=\ln(x)</m> at <m>(b,\ln(b))</m> is <m>1/b</m>.
+            Thus <m>\frac{d}{dx}(\ln(x))=1/x</m>.
+          </p>
+        </solution>
+      </example>
+
+      <example>
+        <title>Slope of a tangent line</title>
+        <statement>
+          <p>
+            Find the slope of the line tangent to <m>y=\ln(x)</m> at <m>x=10</m>.
+            Compare your answer to the estimate given by the approximation techniques of the last chapter.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since <m>f(x)=\ln(x)</m>, <m>f'(10) =1/10=0.1</m>.
+            When I use Excel to compute <m>(f(10.001)-f(9.999))/.002</m> I get <m>0.1000000003</m>.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <exercises xml:id="exercises-set-sec-4-1">
+      <title>Exercises: Elementary Derivatives Problems</title>
+      <exercisegroup>
+        <introduction>
+          <p>
+            In the following exercises, use the symbolic rules to find the derivative of the function.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=x^5</m>
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <me>f(x)=5x^4</me>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> g(x)=7/x^3</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=3\sqrt{(x^7)}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>Rewrite <m>h(x)=3x^{7/2}</m>. Then,
+            <me> h'(x)=\frac{21}{2}(x^{5/2})</me>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=2x^{\pi}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> k(x)=17</m>
+            </p>
+          </statement>
+          <answer>
+            <p><m>k'(x)=0</m></p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=9x^{-5}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=x^2 \sqrt{x}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>Rewrite <m>f(x)=x^{5/2}</m>. Then
+            <me> f'(x)=\frac{5}{2}x^{3/2} </me>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> g(x)=\ln(x)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h(x)=e^x</m>
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>h'(x)=e^x</m>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> k(x)=5^x</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> m(x)=1.03^x</m>
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>m'(x)=1.03^x\ln(1.03)</m>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> n(x)=(0.9)^x</m>
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the following exercises, use the symbolic rules to find the derivative at the specified point.
+            Use Excel to find the numeric approximation using the <q>calculator formula.</q>
+            To how many digits do the two methods agree?
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=x^2</m>.  Evaluate at <m>x=2</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>f'(x)=2x</m>, so <m>f'(2)=4</m>.
+              The numeric derivative agrees to 12 decimal digits.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> g(x)=5x</m>.  Evaluate at <m>x=7</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h(x)=1.06^x</m>.  Evaluate at <m>x=10</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>h'(x)=\ln(1.06)(1.06)^x</m>.  So <m>h'(10)=\ln(1.06)(1.06)^{10}\   (\approx 0.104)</m>.
+              The numeric derivative agrees to 10 decimal digits.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=e^x</m>.  Evaluate at <m>x=5</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> k(x)=\ln(x)</m>.  Evaluate at <m>x=100</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>k'(x)=1/x</m>.   So <m>k'(100)=0.01</m>. The numeric derivative agrees to 13 decimal digits.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> m(x)=3/x</m>.  Evaluate at <m>x=\pi</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Find tangent lines to the given curves at the indicated points.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=3x^4</m>.  At <m>x=1</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>We need a point: if <m>x =1</m> then <m>y=f(1)=3</m>.</p>
+            <p>We need a slope: <m>f'(x)=12 x^3</m>.   Hence <m>m=f'(1)=12</m>.</p>
+            <p>Find the line: <m>y-y_0=m(x-x_0 )</m>,  so <m>y-3=12(x-1)</m>.</p>
+            <p>
+              Comments
+              <ul>
+                <li><p>We can rewrite the tangent line as <m>y=12x-9</m></p></li>
+                <li>
+                  <p>
+                    We could have used the slope intercept version of the line to solve the problem as well.
+                    Then <m>y=mx-b</m>. We know <m>m = 12</m>,
+                    and we can solve for <m>b</m> by letting <m>x = 1</m> and <m>y = 3</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> g(x)=a x</m>.  At <m>x=b</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h(x)=1.05^x</m>.  At <m>x=20</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>We need a point: if <m>x =20</m> then <m>y=h(20)=(1.05)^20\approx 2.6533</m>.</p>
+            <p>We need a slope: <m>h'(x)=\ln(1.05) (1.05)^x</m>.</p>
+            <p>Hence <m>m=\ln(1.05) (1.05)^{20}=0.12945</m></p>
+            <p>Find the line: <m>y-y_0=m(x-x_0 )</m>,  so <m>y-2.6533=0.12945(x-20)</m>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=e^x</m>.  At <m>x=1</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>
+
+
+  <section xml:id="sec-4-2DerivativesCombinationFunctions">
+    <title>Derivative Rules for Combinations of Functions</title>
+    <introduction>
+      <p>
+	      In the last section we learned rules to symbolically differentiate some elementary functions.
+        To summarize, we have established 4 rules.
+      </p>
+
+      <assemblage>
+        <title>Elementary Formulas</title>
+        <p> If f<m>(x)=x^n</m>, then <m>f'(x)=n*x^{(n-1)}</m>, for any real number <m>n</m>.</p>
+        <p> If <m>f(x)=e^x</m>, then <m>f'(x)=e^x</m>.</p>
+        <p> If <m>f(x)=a^x</m>, then <m>f'(x)=a^x \ln(a)</m>.</p>
+        <p> If <m>f(x)=\ln(x)</m>, then <m>f'(x)= 1/x</m>.</p>
+      </assemblage>
+
+      <p>
+        However, we do not yet have a rule for taking the derivative of a function as simple as <m>f(x)=x+2</m>.
+        Rather than producing rules for each kind of function,
+        we wish to discover how to differentiate functions obtained by arithmetic on functions we already know how to differentiate.
+        This would let us differentiate functions like
+        <m>f(x)=5 x^3+3x^2+1</m>, or <m>g(x)=(x+2) 1.03^x</m>, or <m>F(x)= \ln(x)/(x+3)</m>,
+        which are built up from our elementary functions.  We want rules for multiplying a known function by a constant,
+        for adding or subtracting two known functions, and for multiplying or dividing two known functions.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Derivatives of scalar products</title>
+
+      <p>
+        We start by differentiating a constant times a function.
+      </p>
+
+      <claim>
+        <title>Scalar multiple rule</title>
+        <statement>
+          <p>
+            The derivative of <m>c*f(x)</m> is <m>c*f'(x)</m>.
+            In other words,
+            <me>
+              [c*f(x)]'=c*f'(x)
+            </me>.
+          </p>
+        </statement>
+      </claim>
+
+      <example>
+        <title>Derivatives of constants times standard functions</title>
+        <statement>
+          <p>
+            Find the derivatives of the following functions:
+            <ol label="(a)">
+              <li><m> f(x)=2e^x</m></li>
+              <li><m> g(x)=500(1.05)^x</m></li>
+              <li><m> h(x)=\ln(x^7)</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our rule:
+            <ol label="(a)">
+              <li><m> f'(x)=2[e^x ]'=2e^x.</m></li>
+              <li><m> g'(x)=500[(1.05)^x ]'=500(1.05)^x \ln(1.05).</m></li>
+              <li><m> h'(x)=[\ln(x^7)]'=[7 \ln(x)]'=7[\ln(x)]'=7/x.</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of sums and differences</title>
+
+      <p>
+        Next we want to look at the sum or difference of two functions.
+      </p>
+
+      <claim>
+        <title>Sum and difference rule</title>
+        <statement>
+          <p>
+            The derivative of <m>f(x)\pm g(x)</m> is <m>f'(x)\pm g'(x)</m>.
+            In other words,
+            <me>[f(x)\pm g(x)]'=f'(x)\pm g'(x)</me>.
+          </p>
+        </statement>
+      </claim>
+
+      <example>
+        <title>Derivatives of sums and differences of standard functions</title>
+        <statement>
+          <p>
+            Find the derivatives of the following functions:
+            <ol label="(a)">
+              <li><m> f(x)=5x^3+3x^2-7</m></li>
+              <li><m> g(x)=100e^x-1000(1.03)^x</m></li>
+              <li><m> h(x)=5\sqrt{x}+2/\sqrt{x}-7x^{-3}</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our rule:
+            <ol label="(a)">
+              <li><m>  f'(x)=[5x^3 ]'+[3x^2 ]'-[7]'=15x^2+6x-0.</m></li>
+              <li><m> g'(x)=100[e^x]'-1000(1.03)^x]'=100e^x-1000(1.03)^x  \ln(1.03).</m></li>
+              <li>
+                <p>
+                  <md>
+                    <mrow> h'(x)\amp =5[x^{1/2}]'+2[x^{-1/2}]'-7[x^{-3}]'</mrow>
+                    <mrow>\amp =5/2 x^{-1/2}-x^{-3/2}+21 x^{-4}</mrow>
+                    <mrow>\amp =\frac{5}{2\sqrt{x}}-\frac{1}{\sqrt{x^3}}+\frac{21}{x^4}</mrow>
+                  </md>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <paragraphs>
+        <title>Theory and justification</title>
+
+        <p>
+          The basic argument for all of our rules starts with local linearity.
+          Recall that if <m>f(x)</m> is differentiable at <m>x_0</m>,
+          then in a region around <m>x_0</m>, we can approximate <m>f(x)</m> by a linear function,
+          <m>f(x)\approx f'(x_0 )(x-x_0 )+f(x_0)</m>.
+          To find the derivative of a scalar product, sum, difference, product, or quotient of known functions,
+          we perform the appropriate actions on the linear approximations of those functions.
+          We then take the coefficient of the linear term of the result.
+        </p>
+
+        <p>
+          For our first rule we are differentiating a constant times a function.
+          Following the general method we look at how we multiply a constant times the linear approximation.
+          <me>
+            c*(f' (x_0 )(x-x_0 )+f(x_0 ))=(c f' (x_0 ))(x-x_0 )+(c f(x_0 ))
+          </me>.
+        </p>
+
+        <p>
+          Taking the coefficient of the linear term gives the scalar multiple rule,
+          the derivative of a constant times a functions is the constant times the derivative of the function.
+        </p>
+
+        <p>
+          Next we want to look at the sum or difference of two functions.
+          Following the general method we look at the sum or difference of the linear approximations.
+          <md>
+            <mrow>(f' (x_0 )(x-x_0 )+f(x_0 ))\amp \pm(g' (x_0 )(x-x_0 )+g(x_0 ))</mrow>
+            <mrow>\amp =( f' (x_0 )\pm g' (x_0 ))(x-x_0 )+(f(x_0 )±g(x_0 )) </mrow>
+          </md>.
+        </p>
+
+        <p>
+          Taking the coefficient of the linear term gives the sum or difference rule,
+          the derivative of a sum or difference of two functions is the sum or difference of the derivatives of the functions.
+        </p>
+      </paragraphs>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of products</title>
+
+      <p>We now turn our attention to the product of two functions.</p>
+
+      <claim>
+        <title>Product rule</title>
+        <statement>
+          <p>
+            The derivative of <m>f(x)* g(x)</m> is <m>f'(x)g(x)+f(x)g'(x)</m>.
+            In other words,
+            <me>
+              [f(x)*g(x)]'=f'(x)*g(x)+f(x)*g'(x)
+            </me>.
+          </p>
+        </statement>
+      </claim>
+
+      <p>
+        Warning: Note that the derivative of a product is not the product of the derivatives!
+      </p>
+
+      <p>
+        We start with an example that we can do by multiplying before taking the derivative.
+        This gives us a way to check that we have the rule correct.
+      </p>
+
+      <example>
+        <title>Simple derivative of a product</title>
+        <statement>
+          <p>
+            Let <m>f(x)=x</m> and <m>g(x)=x^2</m>.  Find the derivative of <m>f(x)*g(x)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Note that <m>f(x)*g(x)=x^3</m>.  Using our rule for monomials
+            <m>(f(x)*g(x))'=(x^3 )'=3x^2</m>.  Using the same rule we see <m>f'(x)=1</m>, and <m>g'(x)=2x</m>.
+            We can now evaluate using the product rule:
+            <md>
+              <mrow>(f(x)*g(x))' \amp = f'(x)*g(x)+f(x)*g'(x)</mrow>
+              <mrow>\amp = (1)*(x^2 )+(x)*(2x)= 3x^2</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        Both methods give the same answer.
+        Note that the product of the derivatives is <m>2x</m> which is NOT the derivative of the product.
+      </p>
+
+      <example>
+        <title>General derivatives of products</title>
+        <statement>
+          <p>
+            Find the derivatives of the following functions:
+            <ol label="(a)">
+              <li><m> f(x)=(6x+100)*(1.06)^x.</m></li>
+              <li><m> g(x)=\sqrt{x}  \ln(x).</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol label="(a)">
+              <li><m> f'(x)=(6)*(1.06)^x+(6x+100)*(1.06)^x \ln(1.06)</m></li>
+              <li><m> g'(x)=[\sqrt{x}]'\ln(x)+\sqrt{x}[\ln(x)]'= [1/(2\sqrt{x})]\ln(x)+\sqrt{x}[1/x].</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <paragraphs>
+        <title>Theory and justification</title>
+
+        <p>
+          Following the general rule we look at the linear term of the product of the linear approximations.
+          Consider the product of two linear expressions.
+          <me>
+            (a x+c)(b x+d)=a b x^2+(a d+b c)x+c d
+          </me>.
+        </p>
+
+        <p>
+          The coefficient of the linear term is <m>(a d+b c)</m>.  Thus, when we take the product
+          <me>
+            (f'(x_0)(x-x_0 )+f(x_0 ))*(g' (x_0 )(x-x_0)+g(x_0 ))
+          </me>,
+          the coefficient of the linear term is
+          <me>
+            f'(x_0 )g(x_0 )+f(x_0)g'(x_0)
+          </me>.
+        </p>
+      </paragraphs>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of quotients</title>
+
+      <p>
+        Finally, we turn our attention to the quotient of two functions.
+      </p>
+
+      <claim>
+        <title>Quotient rule</title>
+        <statement>
+          <p>
+            The derivative of <m>\frac{f(x)}{g(x)}</m> is <m>\frac{f'(x)g(x)-f(x)g'(x)}{(g(x))^2}</m>.
+            In other words,
+            <me>
+              \left[\frac{f(x)}{g(x)}\right]'=\frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x))^2}
+            </me>.
+          </p>
+        </statement>
+      </claim>
+
+      <p>
+        Warning: Once again, note that the derivative of a quotient is NOT the quotient of the derivatives!
+      </p>
+
+      <example>
+        <title>Simple derivative of a quotient</title>
+        <statement>
+          <p>
+            Let <m>f(x)=x^2</m> and <m>g(x)=x</m>.  Find the derivative of <m>f(x)/g(x)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Note that <m>f(x)/g(x)=x</m>.  Using our rule for monomials, <m>(f(x)*g(x))'=(x )'=1</m>.
+            Using the same rule we see <m>f'(x)=2x</m>, and <m>g'(x)=1</m>.
+            We can now evaluate using the quotient rule:
+            <md>
+              <mrow>(f(x)/g(x))' \amp = \frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x))^2}</mrow>
+              <mrow> \amp = \frac{(2x)*(x )-(x^2)*(1)}{x^2}=\frac{x^2}{x^2}=1</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        Both methods give the same answer.  Note that the quotient of the derivatives is <m>2x</m>,
+        which is not the same as the derivative of the quotient.
+      </p>
+
+      <example>
+        <title>General derivatives of quotients</title>
+        <statement>
+          <p>
+            Find the derivatives of the following functions:
+            <ol label="(a)">
+              <li><m> f(x)=((6x^2+100))/(x^3+x).</m></li>
+              <li><m> g(x)=(1.07)^x/(3x+5).</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol label="(a)">
+              <li><m>f'(x)=\left(\frac{6x^2+100}{x^3+3}\right)'=\frac{(12x)(x^3+3)-(6x^2+100)(3x^2+1)}{(x^3+2)^2}</m></li>
+              <li><m>g'(x)=\left(\frac{1.07^x}{3x+5}\right)'=\frac{(\ln(1.07)1.07^x)(3x+5)-(1.07^x)(3)}{(3x+5)^2}</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <paragraphs>
+        <title>Theory and justification</title>
+
+        <p>
+          Following the general method we look at the linear term of the quotient of the linear approximations.
+          However, we need to do an algebraic trick before we can find the linear term.
+          Consider the quotient of two linear expressions:
+          <me>
+            \frac{a+c x}{b+d x}=\frac{(a+c x)(b-d x)}{(b+d x)(b-d x)}=\frac{a b+(c b-a d)x-c d x^2}{b^2  -d^2 x^2}
+          </me>.
+        </p>
+
+        <p>
+          When <m>x</m> is small enough, we get a good approximation by ignoring the <m>x^2</m> term.
+          In that approximation, the coefficient of the linear term is <m>\frac{(c b-a d)}{b^2}</m>.
+          Thus, when we take the quotient,
+          <me>
+            \frac{f' (x_0 )(x-x_0 )+f(x_0 )}{g' (x_0 )(x-x_0 )+g(x_0 )}
+          </me>,
+          the coefficient of the linear term is
+          <me>
+            \frac{f'(x_0 )g(x_0 )-f(x_0)g'(x_0 )}{(g(x_0 ))^2}
+          </me>.
+        </p>
+      </paragraphs>
+    </subsection>
+
+    <exercises xml:id="exercises-set-sec-4-2">
+	    <title>Exercises: Derivative Rules for Combinations of Functions Problems</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Use the rules from the last two sections to find the derivatives of the following functions.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=3x^5+7x^4+5x+9</m>.
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>f'(x)=15x^4+28x^3+5.</m>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=10x^{123}+19x^{50}-5x^4-2x^{-7}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=2x+3\sqrt{x}-5\sqrt[3]{x}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Rewrite using exponential notation: <m>h(x)=2x+3x^{1/2}-5x^{1/3}</m> Then take the derivative:
+              <me>
+                h'(x)=2+\frac{3}{2} x^{-1/2}-\frac{5}{3} x^{-2/3}
+              </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=e^x+8^x+\pi^x-1.07^x</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=(x^3+5x^2-7)(x^2-3)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Product Rule:
+              <md>
+                <mrow>m'(x)\amp =(x^3+5x^2-7)'(x^2-3)+(x^3+5x^2-7) (x^2-3)'</mrow>
+                <mrow>\amp=(3x^2+10x)(x^2-3)+(x^3+5x^2-7)(2x)</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=(10x-9)(x^5+\sqrt{x})</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=e^x \ln(x)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Product Rule:
+              <me>
+                f'(x)=(e^x)' \ln(x)+e^x (\ln(x))'= e^x\ln(x)+e^x  \frac{1}{x}=e^x [\ln(x)+\frac{1}{x}]
+              </me>.
+            </p>
+            <p>
+              Note: the equation <m>f'(x)= e^x  \ln(x)+\frac{e^x}{x}</m> is also acceptable as a solution.
+            </p>
+            <p>
+              Factoring is sometimes done, but depends on the problem we are trying to solve and what we are trying to do with the derivative.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=1.07^x (10x-15)</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h(x)=(a x+b)(c x+d)(e x+f)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              If we have a product of 3 functions we take the derivative one at a time:
+              <md>
+                <mrow>h'(x)\amp =(a x+b)' (c x+d)(e x+f)+(a x+b) (c x+d)'  (e x+f)+(a x+b)(c x+d) (e x+f)'</mrow>
+                <mrow>\amp =a(c x+d)(e x+f)+(a x+b)c (e x+f)+(a x+b)(c x+d)e</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> k(x)=1.04^x e^x</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\frac{(x^2-5x)}{(x^2+3)}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Quotient Rule:
+              <md>
+                <mrow>m'(x)\amp =\frac{(x^2-5x)' (x^2+3)-(x^2-5x) (x^2+3)'}{(x^2+3)^2}</mrow>
+                <mrow>\amp =\frac{(2x+5)(x^2+3)-(x^2-5x)(2x)}{(x^2+3)^2}</mrow>
+              </md>.
+            </p>
+
+            <p>
+              We can simplify this :
+              <me>
+                m'(x)=\frac{2x^3+5x^2+6x+15-(2x^3-10x^2 )}{(x^2+3)^2} =\frac{-5x^2+6x+15}{(x^2+3)^2}
+              </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=\frac{(x^2-5x+3)}{e^x}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=\frac{ln(x))}{(2x+7)}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Quotient Rule:
+              <md>
+                <mrow>f'(x)\amp =\frac{(\ln(x))'(2x+7)-(\ln(x))(2x+7)'}{(2x+7)^2}</mrow>
+                <mrow>\amp =\frac{(1/x)(2x+7)-(\ln(x))(2)}{(2x+7)^2}</mrow>
+                <mrow>\amp =\frac{x}{x}\frac{ (1/x)(2x+7)-(\ln(x))(2)}{(2x+7)^2}</mrow>
+                <mrow>\amp = \frac{2x+7-2x \ln(x)}{x (2x+7)^2}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=\frac{(x^3+2x+9)}{1.07^x}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=\frac{(a x+b)}{(c x+d)}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Quotient Rule:
+              <md>
+                <mrow>h'(x)\amp =\frac{(a x+b)' (c x+d)-(a x+b) (c x+d)'}{(c x+d)^2}</mrow>
+                <mrow>\amp = \frac{a(c x+d)-(a x+b)c}{(c x+d)^2} =\frac{acx+ad-(ac x+bc)}{(c x+d)^2}</mrow>
+                <mrow>\amp =\frac{ad-bc}{(c x+d)^2}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=\frac{((3x+5)(x^2+7))}{(x^2+2x)}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\frac{\ln(x)1.04^x}{3x^2+7}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Quotient Rule with embedded Product Rule:
+              <md>
+                <mrow>m'(x)\amp =\frac{(\ln(x)(1.04^x ))'(3x^2+7) -(\ln(x) (1.04^x))(3x^2+7)'}{(3x^2+7)^2}</mrow>
+                <mrow>\amp =\frac{(\ln(x)'(1.04^x )+\ln(x)(1.04^x )')(3x^2+7) -(\ln(x)  (1.04^x))(3x^2+7)'}{(3x^2+7)^2} </mrow>
+                <mrow>\amp =\frac{(\frac{1}{x}(1.04^x )+\ln(x)\ln(1.04)(1.04^x ))(3x^2+7) -(\ln(x) (1.04^x))(6x)}{(3x^2+7)^2} </mrow>
+              </md>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\frac{1.06^x e^x}{1.08^x}</m>
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>For the following problems, use the following data to find the indicated derivative.</p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>x</cell>
+              <cell>0</cell><cell>1</cell><cell>2</cell><cell>3</cell>
+              <cell>4</cell><cell>5</cell><cell>6</cell><cell>7</cell>
+              <cell>8</cell><cell>9</cell>
+            </row>
+            <row bottom="minor">
+              <cell>f(x)</cell>
+              <cell>3</cell><cell>5</cell><cell>7</cell><cell>1</cell>
+              <cell>9</cell><cell>8</cell><cell>4</cell><cell>2</cell>
+              <cell>0</cell><cell>6</cell>
+            </row>
+            <row bottom="minor">
+              <cell>f'(x)</cell>
+              <cell>7</cell><cell>6</cell><cell>5</cell><cell>4</cell>
+              <cell>3</cell><cell>2</cell><cell>1</cell><cell>0</cell>
+              <cell>9</cell><cell>8</cell>
+            </row>
+            <row bottom="minor">
+              <cell>g(x)</cell>
+              <cell>8</cell><cell>4</cell><cell>0</cell><cell>6</cell>
+              <cell>2</cell><cell>9</cell><cell>5</cell><cell>1</cell>
+              <cell>7</cell><cell>3</cell>
+            </row>
+            <row bottom="minor">
+              <cell>g'(x)</cell>
+              <cell>6</cell><cell>8</cell><cell>4</cell><cell>2</cell>
+              <cell>0</cell><cell>7</cell><cell>9</cell><cell>3</cell>
+              <cell>5</cell><cell>1</cell>
+            </row>
+          </tabular>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(2)</m>, where <m>h(x)=f(x)*g(x)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>h' (x)\amp =f' (x)*g(x)+f(x)*g' (x)</mrow>
+                <mrow>h' (2)\amp =f' (2)*g(2)+f(2)*g' (2)</mrow>
+                <mrow>\amp =5*0+7*4=28</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h'(5)</m>, where <m>h(x)=f(x)-g(x)</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(7)</m>, where <m>h(x)=f(x)/g(x)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>h'(x)\amp =\frac{f' (x)g(x)-f(x) g' (x)}{(g(x))^2} </mrow>
+                <mrow>h' (7)\amp =\frac{f' (7)g(7)-f(7) g' (7)}{(g(7))^2}</mrow>
+                <mrow>\amp =\frac{0*1-2*3}{(1)^2} =-6</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(4)</m>, where <m>h(x)=g(x)/f(x)</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            The profit function at the widget factory is <m>\profit(q)=-q^2+300q-2500</m>. Find the maximum profit.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\profit (q)</m> is a downward opening parabola, so the maximum occurs where the derivative (slope of the tangent line) is 0.
+          </p>
+          <p>
+            Find the critical point: <m>\profit' (q)=-2q+300=0</m>, So <m>q = 150</m>.
+          </p>
+          <p>
+            The maximum profit is
+            <md>
+              <mrow>\profit(150)\amp =-150^2+300(150)-2500</mrow>
+              <mrow>\amp =-22,500+45,000-2500=20,000</mrow>
+            </md>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The demand function for a fad item is <m>\demand(t)=100t^2 (0.8)^t</m>, with <m>t</m> measured in months.  When is the demand the highest?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The cost function for gizmo production is <m>\cost(q)=3000+10q-0.02q^2</m>, for <m>q\leq 200</m>.
+            Find the equation of the line tangent to the cost function at <m>q=200</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            For the tangent line we need a point and a slope, and once we have those we find the equation of the line.
+          </p>
+          <p>
+            Point: When <m>q = 200</m>,
+            <md>
+              <mrow>\cost(200)\amp =3000+10(200)-.02(200)^2</mrow>
+              <mrow>=3000+2000-.02*40,000=4200</mrow>
+            </md>.
+          </p>
+          <p>Slope: <m>\frac{dcost}{dq}=10-.04q</m>, so at <m>q = 200</m> we have  <m>\frac{dcost}{dq}=10-.04(200)= 2</m>.</p>
+          <p>The line: <m>C-C_0=m(q-q_0)</m>.</p>
+          <p>So we have <m>C-4200=2(q-200)</m>, or in slope intercept form: <m>C=2q+3800</m>.</p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The formula for the current value of a particular revenue stream is
+            <m>\val(t)=.95^{-t} (3000+25t)</m>.  Find the equation of the line tangent to the cost function at <m>t=10</m>.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+  <section xml:id="sec-4-3-ChainRule">
+    <title>The Chain Rule</title>
+
+    <p>
+      In the last two sections we learned rules to symbolically differentiate some functions.
+      To summarize, we have established some elementary formulas and some arithmetic rules.
+    </p>
+
+    <assemblage>
+      <title>Elementary Formulas</title>
+      <p>If <m>f(x)=a</m>, then <m>f'(x)=0</m>.</p>
+      <p>If <m>f(x)=ax</m>, then <m>f'(x)=a</m>.</p>
+      <p>If <m>f(x)=a*x^n</m>, then <m>f(x)=a*n*x^{n-1}</m>, for any nonzero number n.</p>
+      <p>If <m>f(x)=e^x</m>, then <m>f'(x)=e^x</m>.</p>
+      <p>If <m>f(x)=a^x</m>, then <m>f'(x)=a^x \ln(a)</m>.</p>
+      <p>If <m>f(x)=\ln(x)</m>, then <m>f'(x)=1/x</m></p>
+    </assemblage>
+
+    <assemblage>
+      <title>Arithmetic derivative rules</title>
+
+      <p><term>Arithmetic derivative rules</term>:</p>
+
+      <p><term>Scalar multiple rule</term>:	The derivative of <m>c*f(x)</m> is <m>c*f'(x)</m>.</p>
+
+      <p><term>Sum and difference rule</term>: The derivative of <m>f(x)\pm g(x)</m> is <m>f'(x)\pm g'(x)</m>.</p>
+
+      <p><term>Product Rule</term>:	 The derivative of <m>f(x)g(x)</m> is <m>f' (x) g(x)+f(x)g'(x)</m>.</p>
+
+
+      <p><term>Quotient Rule</term>:  The derivative of <m>f(x)/g(x)</m> is
+      <m>\frac{f'(x)g(x)-f(x)g'(x)}{(g(x))^2} </m>.</p>
+    </assemblage>
+
+    <p>
+      The other way we traditionally build functions from simpler functions is by use of composition.
+      We want to be able to take derivatives of functions like <m>(2x+3)^{52}</m>, <m>\sqrt{(x^2 )+5x+7}</m>, and <m>1.06^{.2x}</m>.
+    </p>
+
+    <claim>
+      <title>Chain rule</title>
+      <statement>
+        <p>
+          The derivative of <m>f(g(x))</m> is <m>f'(g(x))g'(x)</m>. In other words,
+          <me>
+            \left[f(g(x))\right]'=f'(g(x))*g'(x)
+          </me>.
+        </p>
+      </statement>
+    </claim>
+
+    <example>
+      <title>Simple chain rule</title>
+      <statement>
+        <p>
+          Find the derivative of the following functions:
+          <ol label="(a)">
+            <li><m> f(p)=(p^3+2 p+5)^7.</m></li>
+            <li><m> g(q)=\sqrt{q^2+6}.</m></li>
+            <li><m> h(x)=e^{2 x+5}.</m></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol label="(a)">
+            <li>
+              <p>
+                We could do this problem by expanding it to a polynomial and using rules from the previous section,
+                but that is much too hard.  We can write <m>f(p)</m> as <m>g(h(p))</m> where <m>h(p)=p^3+2 p+5</m> and <m>g(p)=p^7</m>.
+                We use the rules from the previous section to compute <m>h'(p)=3 p^2+2</m> and <m>g'(p)=7p^6</m>.
+                Composing we get <m>g'(h(p))=7(p^3+2 p+5)^6</m>.  Thus
+                <me>
+                  f'(p)=g'(h(p))h'(p)=7(p^3+2 p+5)^6(3 p^2+2 )
+                </me>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                We can write <m>g(q)</m> as <m>f(h(q))</m> where <m>h(q)=q^2+6</m> and <m>f(q)=\sqrt{q}</m>.
+                We use the rules from the previous section to compute <m>h'(q)=2 q</m> and <m>f'(q)= 1/(2\sqrt{q})</m>.
+                Composing we get <m>f'(h(q))= 1/(2\sqrt{(q^2+6 )})</m>.  Thus
+                <me>
+                  g'(q)=f'(h(q)) h'(q)=(2 q)/(2\sqrt{(q^2+6 )})
+                </me>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                We can write <m>h(t)</m> as <m>f(g(t))</m> where <m>g(x)=2 t+5</m> and <m>f(x)=e^t</m>.
+                We use the rules from the previous section to compute <m>g'(t)=2</m>  and <m>f'(t)=e^t</m>.
+                Composing we get <m>f' (h(t))=   e^(2 t+5)</m>.  Thus
+                <me>
+                  g'(t)=f'(h(t)) h' (t)= 2 e^{2 t+5}
+                </me>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <paragraphs>
+      <title>Theory and justification</title>
+
+      <p>
+        As in the previous section, we will use local linearity to justify our derivative rule.
+      </p>
+      <p>
+        To simplify notation, we will let <m>g(x)=u=b x+d</m>.
+        We will be substituting <m>g(x)</m> into <m>f(x)</m> and so we will be using the functions
+        <m>f(u)=a u+c </m>, with  <m>a=f' (u)=f' (g(x_0 ))</m>
+        and <m>g(x)=b x+d</m>, with <m>b=g'(x_0 )</m>.
+      </p>
+      <p>
+        The composition of <m>f</m> and <m>g</m> can then be written as
+        <me>
+          f(g(x))=a (b x+d)+c=(a b) x+(a d+c)
+        </me>.
+      </p>
+
+      <p>
+        The coefficient of the linear term is the product of the coefficients of the two linear terms we began with.
+        Hence we find that <m>[f(g(x_0 ))]'=a b=f'(g(x_0 ))*g'(x_0)</m>.
+      </p>
+    </paragraphs>
+
+    <paragraphs>
+      <title>The Chain rule in other notation</title>
+
+      <p>
+        For the problems above, we used the prime notation, <m>f'(x)</m>, <m>f'(q)</m>, <m>f'(t)</m>, etc, for derivatives.
+        There is also a fractional notation for derivatives,
+        <m>\frac{df}{dx}</m>, <m>\frac{df}{dq}</m>, <m>\frac{df}{dt}</m> or <m>\frac{dy}{dx}</m>, <m>\frac{dp}{dq}</m>, <m>\frac{dq}{dt}</m>, <etc/> that is commonly used.
+        Intuitively, when we have zoomed in far enough for the graph of <m>f(x)</m> to look like a straight line,
+        then the derivative is the small unit of rise over the small unit of run.
+        With that notation the chain rule has a nice formulation where it reduces to the usual rules for multiplying fractions.
+      </p>
+
+      <assemblage>
+        <title>Chain Rule (fractional notation version)</title>
+
+        <p>
+          If <m>z=g(x)</m> and <m>y=f(z)</m> so <m>y=f(g(x))</m>, then
+          <me>
+            \frac{dy}{dx}=\frac{dy}{dz} \frac{dz}{dx} \text{ or } \frac{df}{dx}=\frac{df}{dg}  \frac{dg}{dx}
+          </me>.
+        </p>
+      </assemblage>
+    </paragraphs>
+
+    <example>
+      <title>Successive processes</title>
+      <statement>
+        <p>
+          We have two processes that need to be run in succession to produce gizmos.
+          The yields of the two processes are given by:
+          <me>
+            \operatorname{intermediate}(\raw)=-25+7.3 \raw+.2 \raw^2
+          </me>
+          <me>
+            \operatorname{gizmos}(\intermediate)=-5+12\intermediate
+          </me>.
+        </p>
+
+        <p>
+          Find the rate of production in terms of the amount of raw material.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We want to find the derivatives of the individual processes and then use the chain rule.
+          <me>
+            \frac{d\intermediate}{d\raw}=7.3 +.4 \raw
+          </me>
+          <me>
+            \frac{d\gizmos}{d\intermediate}=12
+          </me>.
+        </p>
+
+        <p>
+          Thus
+          <md>
+            <mrow>\frac{d\gizmos}{d\raw}\amp =\frac{d\gizmos}{d\intermediate}\frac{d\intermediate}{d\raw}</mrow>
+            <mrow>\amp =12*(7.3 +.4 \raw)=87.6+4.8 raw</mrow>
+          </md>.
+        </p>
+
+        <p>
+          The rate of production is a linear function of the amount of raw material used.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Chain rule with separate functions</title>
+      <statement>
+        <p>
+          Find <m>h'(x)</m> for <m>h(x)=f(g(x))</m> for the given <m>f(z)</m> and <m>g(x)</m>.
+        </p>
+        <p>
+          <ol label="(a)">
+            <li><p><m>f(z)=2z+7</m> and <m>g(x)=z=3 x+5</m>.</p></li>
+            <li><p><m>f(z)=z^3</m> and <m>g(x)=x^2+7</m>.</p></li>
+            <li><p><m>f(z)=e^z</m> and <m>g(x)=x^2+3</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol label="(a)">
+            <li><m>\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}=2*3=6.</m></li>
+            <li>
+              <p>
+                <m>\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}=3z^2*2x=3(x^2+7)^2*2x</m>.
+              </p>
+              <p>
+                (Notice that the two derivatives are in terms of different variables.  We need to convert to a single variable.)
+              </p>
+            </li>
+            <li><m>\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}=e^z*2x=e^{(x^2+3)}*2x.</m></li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      <alert>Warning for this method</alert>:
+    </p>
+    <p>
+      We tend to use x as the variable for almost all functions.
+      When we use the chain rule we need to remember that the input for the second function is the output from the first function.
+      It is safest to use separate variable for the two functions.
+    </p>
+
+    <p>
+      <alert>Special cases</alert>:
+    </p>
+
+    <p>
+      Two special cases of the chain rule come up so often, it is worth explicitly noting them.
+      <dl>
+        <li>
+          <title>The general power rule</title>
+          <p>
+            <m>[(f(x))^n ]'=n (f(x))^{n-1} f'(x)</m>.
+            This is simply the chain rule when the second function is a power.
+          </p>
+        </li>
+
+        <li>
+          <title>The chain rule with a linear function</title>
+          <p>
+            <m>[(f(a x+b))]'=(f'(a x+b))*a</m>
+          </p>
+        </li>
+      </dl>
+    </p>
+
+    <exercises xml:id="exercises-set-sec-4-3">
+	    <title>Exercises: The Chain Rule</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Find the derivatives of the following functions.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=(x^3+5 x+7)^4</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=x^3+5 x+7</m>, then <m>f(x)=(u)^4</m>, and
+              <me>
+                f'(x)=4u^3 du=4(x^3+5 x+7)^3  (3x^2+5)
+              </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=(x^2-6x+8)^{123}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=\sqrt{(5x^7+3x-2)}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let  <m>h(x)=\sqrt{5x^7+3x-2}=u^{1/2}</m>, with <m>u= 5x^7+3x-2</m>.
+              <me>
+                h'(x)=1/2 u^{-1/2} du=1/2  (5x^7+3x-2)^{-1/2}  (35x^6+3)
+              </me>.
+            </p>
+            <p>
+              Another way to think of the chain rule is that we need to take derivatives of the different functions that make up the composite function:
+              <md>
+                <mrow>h(x)\amp =\sqrt{5x^7+3x-2}=(5x^7+3x-2)^{1/2}</mrow>
+                <mrow>h'(x)\amp =\text{"derivative outside function"}*\text{"derivative inside function"}</mrow>
+                <mrow>\amp =[1/2  (5x^7+3x-2)^{-1/2}  ][(35x^6+3)]</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=\ln(e^x+5)</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\ln(\ln(\ln(x^2+3)))</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>m'(x)\amp =\frac{1}{\ln(\ln(x^2+3))} \frac{d}{dx} \ln(\ln(x^2+3) )</mrow>
+                <mrow>\amp =\frac{1}{\ln(\ln(x^2+3))}* \frac{1}{\ln(x^2+3)}*\frac{d}{dx}  \ln(x^2+3)</mrow>
+                <mrow>\amp =\frac{1}{\ln(\ln(x^2+3))}* \frac{1}{\ln(x^2+3)}*\frac{1}{x^2+3}*\frac{d}{dx}  (x^2+3)</mrow>
+                <mrow>\amp =\frac{1}{\ln(\ln(x^2+3))}* \frac{1}{\ln(x^2+3)}*\frac{1}{x^2+3}*2x</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=(((x^2+2)^2+3)^2+4)^2+5</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=e^{2x+3}</m>.
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>f'(x)=e^(2x+3)  (2)</m>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=(\ln(10x-15))^2</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=\ln((10x-15)^2)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>
+                h'(x)=\frac{1}{(10x-15)^2}[2(10x-15)]*10 =\frac{20}{10x-15}
+              </me>.
+            </p>
+            <p>
+              Hint:  It is easier to simplify <m>h(x)</m> to <m>2\ln(10x-15)</m> first.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=((\ln(x))(e^x))^3</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\ln(e^{(x^2+x)}+x)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>m'(x)\amp =\frac{1}{e^{(x^2+x)}+x} [e^{(x^2+x)}*(2x+1)+1]</mrow>
+                <mrow>\amp=\frac{(2x+1) e^{(x^2+x)}+1}{e^{(x^2+x)}+x}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=\left(\frac{x^2-5x+3}{e^x }\right)^5</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=\left(\frac{\ln(x)}{(2x+7)}\right)^4</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>f'(x)\amp=4\left(\frac{\ln(x)}{2x+7}\right)^3*\frac{d}{dx} \left(\frac{\ln(x)}{2x+7}\right)</mrow>
+                <mrow>\amp =4\left(\frac{\ln(x)}{2x+7}\right)^3*\frac{(\ln(x) )' (2x+7)-(\ln(x) ) (2x+7)'}{(2x+7)^2}</mrow>
+                <mrow>\amp =4\left(\frac{\ln(x)}{2x+7}\right)^3*\frac{\frac{1}{x} (2x+7)-(\ln(x) )(2)}{(2x+7)^2}</mrow>
+                <mrow>\amp =4\left(\frac{\ln(x)}{2x+7}\right)^3*\frac{ (2x+7)-(x\ln(x) )(2)}{x(2x+7)^2}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=\ln\left(\frac{x^3+2x+9}{1.07^x} \right)</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the following problems, use the following data to find the indicated derivative.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>x</cell>
+              <cell>0</cell><cell>1</cell><cell>2</cell><cell>3</cell>
+              <cell>4</cell><cell>5</cell><cell>6</cell><cell>7</cell>
+              <cell>8</cell><cell>9</cell>
+            </row>
+            <row bottom="minor">
+              <cell>f(x)</cell>
+              <cell>3</cell><cell>5</cell><cell>7</cell><cell>1</cell>
+              <cell>9</cell><cell>8</cell><cell>4</cell><cell>2</cell>
+              <cell>0</cell><cell>6</cell>
+            </row>
+            <row bottom="minor">
+              <cell>f'(x)</cell>
+              <cell>7</cell><cell>6</cell><cell>5</cell><cell>4</cell>
+              <cell>3</cell><cell>2</cell><cell>1</cell><cell>0</cell>
+              <cell>9</cell><cell>8</cell>
+            </row>
+            <row bottom="minor">
+              <cell>g(x)</cell>
+              <cell>8</cell><cell>4</cell><cell>0</cell><cell>6</cell>
+              <cell>2</cell><cell>9</cell><cell>5</cell><cell>1</cell>
+              <cell>7</cell><cell>3</cell>
+            </row>
+            <row bottom="minor">
+              <cell>g'(x)</cell>
+              <cell>6</cell><cell>8</cell><cell>4</cell><cell>2</cell>
+              <cell>0</cell><cell>7</cell><cell>9</cell><cell>3</cell>
+              <cell>5</cell><cell>1</cell>
+            </row>
+          </tabular>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(2)</m>, where <m>h(x)=f(g(x))</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>h'(x)\amp =f'(g(x)) g'(x)</mrow>
+                <mrow>h'(2)\amp =f'(g(2))  g' (2)</mrow>
+                <mrow>\amp =f' (0)*4 =7*4=28</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(5)</m>, where <m>h(x)=f(f(x))</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(7)</m>, where <m>h(x)=g(g(x))</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>h' (x)\amp =g' (g(x))  g' (x)</mrow>
+                <mrow>h' (7)\amp =g' (g(7))  g' (7)</mrow>
+                <mrow>\amp =g' (1)*3=8*3=24</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(4)</m>, where <m>h(x)=g(f(x))</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            The pretax profit function is <m>\profit(q)=-q^2+300q-2500</m> at the widget factory.
+            The tax function is <m>\tax(\profit)=0.4(\profit-1000)</m>.
+            Find the equation of the line tangent to the graph of after tax profits when <m>q=100</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>We will need a point and a slope to construct the tangent line.</p>
+          <p>Point: when <m>q=100</m>, we have <m>\profit(100)=-100^2+300(100)-2500=-10,000+30,000-2500=18,500</m></p>
+          <p>
+            Also <m>\tax(\profit)=0.4(\profit-1000),</m> gives
+            <me>
+              \tax(18,500)=0.4(18,500-1000)= 7,000
+            </me>.
+          </p>
+          <p>So the point is <m>q = 100</m>, <m>tax = 7,000</m>.</p>
+          <p>Slope: <m>\frac{d\tax}{dq}=  {d\tax}{d\profit}*\frac{d\profit}{dq}=(0.4)*(-2q+300)</m></p>
+          <p>So at <m>q =100</m> we have <m>m=\frac{d\tax}{dq}= 0.4*(-200+300)= 40</m>.</p>
+          <p>Tangent line: <m>\tax-\tax_0=m(q-q_0)</m></p>
+          <p>So <m>\tax=tax_0+m(q-q_0 )= 7000+40(q-100)</m></p>
+          <p>
+            In slope-intercept form we have
+            <me>\tax(q)=40q+3000</me>.
+          </p>
+          <p>
+            Note that here we have approximated a composite function by something much simpler.
+            Finding tax meant we had to first find the profit, and then plug that profit into the tax function.
+            Now, all we have to do is plug our value of <m>q</m> into the linear equation!
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The revenue function for gizmos is <m>\revenue(q)=.2q^2+500q</m>.
+            The commission cost to the sales force is <m>\operatorname{commissions}(\revenue)=0.1\revenue+\revenue^2/3,000,000</m>.
+            Find the equation of the tangent line to commissions as a  function of quantity, when  <m>q=1000</m>.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+
+
+  <section xml:id="sec-4-4-DIfferentiationComputerAlgebra">
+    <title>Differentiation Using Computer Algebra</title>
+
+    <p>
+      As we noted in <xref ref="chap-1-FunctionsGraphsExcel"/>,
+      in this book we are limiting ourselves to mathematical tools that the student can reasonably expect to find in a generic work environment.
+      That is one of the reasons for focusing on using spreadsheets and Excel.
+      However, we will also look at using free web tools, particularly as a means of doing symbolic manipulation.
+      Differentiation is one of those operations that can be done with free tools available on the web.
+      The student in this course will be expected to routinely do symbolic differentiation by hand.
+      However, it is good to be able to check your work.  We also want tools that will work reliably with messier problems.
+    </p>
+
+    <p>
+      In working with derivatives, we have looked at three basic problems:
+      <ul>
+        <li><p>	Given a function, find a formula for its derivative.  This corresponds to finding the marginal function.</p></li>
+        <li><p>	Given a function, find the value of the derivative at a particular point.  We do this when we want a rate of change at a particular point.</p></li>
+        <li><p>	Given a function, find where the derivative is 0.  We do this when we are trying to find minimum or maximum values of the function.</p></li>
+      </ul>
+    </p>
+
+    <p>
+      There are a number of websites that will take symbolic derivatives.  We start with Wolfram|Alpha, which is available at
+      <url href="http://www.wolframalpha.com">http://www.wolframalpha.com</url>.
+    </p>
+
+    <example>
+      <title>A simple derivative with Alpha</title>
+      <statement>
+        <p>
+          Use Wolfram|Alpha to find the derivative of <m>x^3+5x+7</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          When you call the website, you get an input bar much as you would with your favorite search engine.
+        </p>
+
+        <image width="70%" source="images/sec4-4-1.png"/>
+
+        <p>
+          The interface for Wolfram|Alpha is rather robust.  We can ask the question in plain English.
+          In our case we would like to find the derivative of <m>x^3+5x+7</m> with respect to <m>x</m>.
+          Some of the ways of asking that question are:
+          <ul>
+            <li><p>find the derivative of (x^3+5x+7)</p></li>
+            <li><p>find the derivative of (x^3+5x+7) with respect to x</p></li>
+            <li><p>derivative of (x^3+5x+7)</p></li>
+            <li><p>differentiate (x^3+5x+7) with respect to x</p></li>
+            <li><p>differentiate (x^3+5x+7)</p></li>
+            <li><p>D (x^3+5x+7)</p></li>
+            <li><p>d/dx (x^+5x+7)</p></li>
+            <li><p>(x^3+5x+7)'</p></li>
+          </ul>
+        </p>
+
+        <p>
+          For all of these, the website provides the same answer.
+        </p>
+
+        <image width="90%" source="images/sec4-4-2.png"/>
+      </solution>
+    </example>
+
+    <p>
+      Note that the response tells us the question that Wolfram|Alpha is answering.
+      This helps us check that we have been properly understood.
+    </p>
+
+    <p>
+      It is worthwhile to note that Wolfram|Alpha has an option to show step-by-step solutions.
+    </p>
+
+    <image width="70%" source="images/sec4-4-3.png"/>
+
+    <p>
+      Wolfram|Alpha understands the convention that the variable for math problems is typically <m>x</m>.
+      If we don't specify the variable with respect to which we are differentiating, it will guess that <m>x</m> is our variable.
+      Other letters are treated as constants unless we use function notation with parentheses.
+      Thus we can use Wolfram|Alpha to check our differentiation rules.
+    </p>
+
+    <example>
+      <title>Recalling the quotient rule</title>
+      <statement>
+        <p>Use Wolfram|Alpha to recall the quotient rule.</p>
+      </statement>
+      <solution>
+        <p>
+          See the image below.
+        </p>
+        <image width="70%" source="images/sec4-4-4.png"/>
+      </solution>
+    </example>
+
+    <p>
+      It should be noted that Wolfram|Alpha will not work with long variable names like Principal or MonthlyPayment.
+      We simply need to change variables to work with Wolfram|Alpha.
+    </p>
+
+    <example>
+      <title>Working with long variable names</title>
+      <statement>
+        <p>
+          The cost of widgets is given by:
+          <me>
+            \cost=2000+10*\quantity+.001*\quantity^2
+          </me>.
+        </p>
+
+        <p>
+          Find the rate of change of cost with respect to quantity when <m>\quantity=1000</m>.
+          (We are using the derivative to estimate the marginal cost.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since we will use Wolfram|Alpha, we want to convert the equation to use single letter variables:
+          <me>
+            c=2000+10*q+.001*q^2
+          </me>.
+          We can input this as <c>c=2000+10*q+.001*q^2</c>.
+        </p>
+
+        <p>
+          We want to evaluate the derivative with respect to <m>q</m> when <m>q=1000</m>.
+        </p>
+
+        <image width="90%" source="images/sec4-4-5.png"/>
+
+        <p>
+          Thus, when <m>\quantity=1000</m>, increasing production by 1 widget increases cost by $12.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The third basic derivative problem was to find a maximum or minimum.
+      For extrema problems, we want to find where the derivative is 0,
+      since the extrema can only occur at endpoints and critical points.
+    </p>
+
+    <example>
+      <title>Exploring a business example</title>
+      <statement>
+        <p>
+          The cost and demand price functions of widgets are given by:
+          <md>
+            <mrow>\cost\amp =2000+10*\quantity+.001*\quantity^2</mrow>
+            <mrow>\revenue\amp =\frac{100*\quantity}{1+.01*\quantity}</mrow>
+          </md>.
+        </p>
+
+        <p>Find the quantity that maximizes profit.</p>
+      </statement>
+      <solution>
+        <p>
+          We simplify variable names to <m>q, c, p</m>, and <m>r</m> for quantity, cost, profit and revenue, respectively.
+          Our formula for profit is:
+          <me>
+            p=r-c=100q/(1+.01q)-(2000+10q+.001q^2 )
+          </me>.
+        </p>
+
+        <p>
+          When looking for a maximum, we always start by looking at a graph of the function in question.
+        </p>
+
+        <image width="80%" source="images/sec4-4-6.png"/>
+
+        <p>
+          From the graph, it is clear that we have a single maximum for the profit function and it occurs near <m>q=200</m>.
+          To find this point, we want to take the derivative and set it equal to zero,
+          or we want to use the solve command on the derivative.  We enter the command
+          <cd>
+            <cline>solve(derivative 100q/(1+.01q)-(2000+10q+.001q^2 ) with respect to q)</cline>
+          </cd>.
+        </p>
+
+        <image width="80%" source="images/sec4-4-7.png"/>
+
+        <p>
+          We need to do a bit of interpretation since Wolfram|Alpha is using numerical methods with complex numbers.
+          In particular, the answers have a zero imaginary part.  We are also looking for a positive number.
+          Thus, we conclude profit is maximized at 209.8 widgets.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      In looking at free software on the web for taking derivatives we started with Wolfram|Alpha because we can use it throughout the book when Excel does not solve our needs.
+      It is also supported by the company that produces Mathematica<registered/>, so it should stay available for the foreseeable future.
+      Another useful source are the solvers from Symbolab  <url href="https://www.symbolab.com/solver">https://www.symbolab.com/solver</url>.
+      Symbolab has a collection of solvers for the topics in this course.
+    </p>
+
+    <image width="70%" source="images/sec4-4-8.png"/>
+
+    <p>
+      It also has a section that lets you do drill and practice with the techniques we have learned.
+      Like Wolfram|Alpha, it gives the option of step-by-step solutions.
+      I find the site a bit more user friendly for math students.
+    </p>
+
+    <p>
+      For individual problems we may want to use other software.
+      For finding derivatives, a quick web search found <url href="http://www.derivative-calculator.net/"> http://www.derivative-calculator.net/</url>
+      which is nicer if you are simply checking your work.
+      As with Wolfram|Alpha, the derivative calculator shows you the problem in math form so you can check your syntax.
+    </p>
+
+    <image width="90%" source="images/sec4-4-9.png"/>
+
+    <p>
+      However, the show steps formatting is nicer since hovering over one step shows the change for that step in the next line.
+    </p>
+
+    <image width="70%" source="images/sec4-4-10.png"/>
+
+    <p>You may find other websites for doing derivatives as well.</p>
+
+    <exercises xml:id="exercises-set-sec-4-4">
+	     <title>Exercises: Differentiation Using Computer Algebra Problems</title>
+
+       <exercisegroup>
+         <introduction>
+           <p>
+             Find the derivative of the given function.
+           </p>
+         </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=x \ln(x)</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="40%" source="images/sec4-4-sol1a.png"/>
+            <p>So  <m>f' (x)= \ln(x)+1</m>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(t)=e^{.07t} (-t^2+3t+5)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(t)=t^2 e^{-0.06t}</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="40%" source="images/sec4-4-sol3a.png"/>
+
+            <p>
+              Wolfram returns several forms (they differ by some simple algebra).
+              We can choose the one that has the form we find most useful.
+              In this case we could choose for instance:
+              <me>h' (t)=e^{-0.06t} (2t-0.06 t)^2</me>.
+            </p>
+
+            <p>It’s a nice compact answer that avoids decimal approximations.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=(2x+5)^{37}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\ln(\ln(\ln(x^2+3)))</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="50%" source="images/sec4-4-sol5a.png"/>
+            <p>
+              Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.
+              The common log of x would be <c>log(10,x)</c>. To stick with our notation we would say
+              <me>m'(x)=\frac{2 x}{(x^2+3)ln(x^2+3)ln(ln(x^2+3))} </me>.
+            </p>
+
+            <p>
+              Note that Wolfram allows us to copy the text. Hover over the answer and under “A”  and you will find plaintext that can be copied.
+              This can be edited into a word document or an Excel document.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=\frac{e^x}{\ln(x^2+3)}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\price=10-\frac{\quantity}{100} -\frac{\quantity^2}{10000}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Wolfram does not work well with whole word variables.
+              Edit the equation (you can do this in Wolfram) and let
+              <m>\price = P(q)</m> and <m>quantity = q</m>. This gives the following derivative:
+            </p>
+
+            <image width="50%" source="images/sec4-4-sol7a.png"/>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=\quantity*\left(20*.9^{(\quantity/200)}\right)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice=10*1.04^{(\quantity/100)}</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="50%" source="images/sec4-4-sol9a.png"/>
+            <p>
+              Going back to the original notation we have
+              <me>SupplyPrice'(q) = 0.00392207 (1.04)^{q/100}</me>,
+              where <m>(1.04)^{0.01}=e^{0.000392207}</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\text{ConsumerSurplus}=10*(0.95)^{(\quantity/100)}-2*(1.07)^{(\quantity/100)}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=f(x)*g(x)*h(x)</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="50%" source="images/sec4-4-sol11a.png"/>
+
+            <p>
+              <me>k'(x)=g(x) h(x) f'(x) + f(x) h(x) g'(x) + f(x) g(x) h'(x) </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=f(f(f(x)))</m>
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Evaluate the definite derivative at the given point.</p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(t)=t^2 e^{(-0.06t)}</m> at <m>t=10</m>.
+            </p>
+          </statement>
+          <solution>
+           <image width="40%" source="images/sec4-4-sol13a.png"/>
+
+           <p>
+             <me>f' (10)=7.68336</me>.
+           </p>
+         </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+             <m>g(x)=x^2+6x+10</m> at <m>x=5</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+             <m>h(q)=(\ln(q+5) )*(1.07^q)</m> at <m>q=8</m>.
+            </p>
+          </statement>
+          <solution>
+            <image width="50%" source="images/sec4-4-sol15a.png"/>
+         </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+             <m>\Dprice=20*(0.95)^{(\quantity/100) }</m> at <m>\quantity=200</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice=20*(1.09)^{(\quantity/100)}</m> at <m>\quantity=300</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Rewriting the function as <m>P(q)=20*(1.09)^{(q/100)}</m> we get:
+            </p>
+
+            <image width="70%" source="images/sec4-4-sol17a.png"/>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=\quantity*(20-\quantity/500)</m> at <m>\quantity=2000</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=f(g(x))</m> at <m>x=4</m>.
+            </p>
+          </statement>
+          <solution>
+            <image width="40%" source="images/sec4-4-sol19a.png"/>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Find the critical points of the given function.  Identify each as a local minimum, local maximum, or neither.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=x^3-5x^2+7x-2</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>r(q)=q*100*(0.9)^q</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              We find the critical point by solving:
+              <c>Solve (derivative of q*100*(.9)^q)= 0</c>
+            </p>
+
+            <image width="40%" source="images/sec4-4-sol21a.png"/>
+
+            <p>
+              Then we plot the original function. We want to know if <m>q = 9.49122</m> is a max, min or neither.
+              So graph over the interval <m>[1,20]</m>:
+            </p>
+
+            <image width="50%" source="images/sec4-4-sol21b.png"/>
+
+            <p>So the function has a local maximum at <m>q = 9.49122</m></p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\text{TotalCost}=100000+5*\text{OrderSize}+4*10000/\text{OrderSize}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=20*\quantity-(\quantity^2)/100</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Wolfram shows that the critical point is at <m>q = 1000</m>.
+            </p>
+
+            <image width="40%" source="images/sec4-4-sol23a.png"/>
+
+            <p>
+              Graphing the original function from 0 to 2000 shows the critical point is a maximum.
+            </p>
+
+            <image width="60%" source="images/sec4-4-sol23b.png"/>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=\quantity*20*(0.95)^{(\quantity/100)}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\profit=\quantity*20*(0.95)^{(\quantity/100) }-(1000+10*\quantity)</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              We set the derivative equal to 0. The general answer is complicated but the real valued answer is what we are looking for.
+            </p>
+
+            <image width="70%" source="images/sec4-4-sol25a.png"/>
+
+            <p>So the critical point is at <m>q = 613.965</m>.</p>
+
+            <p>
+              We want to graph over some interval that contains <m>q = 613.965</m>.
+              Big pictures are usually nice, so let’s choose the interval <m>[0,1500]</m>.
+            </p>
+
+            <image width="60%" source="images/sec4-4-sol25b.png"/>
+
+            <p>The function has a (local) maximum at the critical point.</p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>
+
+
+  <section xml:id="sec-4-5-SecondDerivativeConcavity">
+    <title>The Second Derivative and Concavity</title>
+
+    <p>
+      For an intuitive definition of the derivative, we talked about zooming in on the graph until it looks like a straight line and taking the slope.
+      For concavity, we want to zoom out a bit, so the graph curves up or down from a line.
+    </p>
+
+    <p>
+      We say that a graph is concave up if the line between two points is above the graph,
+      or alternatively if the first derivative is increasing.  (In finance, such a curve is said to be convex.)
+      Similarly, we say that a graph is concave down if the line between two points is below the graph,
+      or alternatively if the first derivative is decreasing.  (In finance, such a curve is said to be concave.)
+    </p>
+
+    <sidebyside widths="40% 40%">
+      <image source="images/sec4-5-1.png"/>
+
+      <image source="images/sec4-5-2.png"/>
+    </sidebyside>
+
+    <p>
+      In determining is a curve is concave up or concave down,
+      we want to take the second derivative of a function, or the derivative of the derivative.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          For a function <m>f(x)</m>, the <term>second derivative</term> of <m>f(x)</m> or the derivative of <m>f'(x)</m>,
+          denoted as <m>f''(x)</m>,   is defined as
+          <me>
+            f''(x)=\frac{d}{dx}\left(\frac{d}{dx}\left( f(x)\right)\right)
+          </me>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      We also want to recall some alternate notations we may use.
+    </p>
+
+    <aside>
+      <p>
+        <alert>Notation</alert>:  Let <m>y=f(x)</m>.
+      </p>
+      <p>
+        The second derivative of <m>f(x)</m>  is denoted as <m>f''(x)</m> or
+        <m>\frac{d^2}{dx^2}f(x)</m> or <m>\frac{d^2y}{dx^2}</m>.
+      </p>
+
+      <p>
+        The second derivative at <m>x=x_0</m> is denoted as <m>f''(x_0 )</m> or
+        <m>\left.\frac{d^2y}{dx^2}\right|_{x=x_0}</m>.
+      </p>
+    </aside>
+
+    <p>
+      As we have noted before, when there are several forms, we use the one that makes the most sense in the case on which we are working.
+    </p>
+
+    <example>
+      <title>Finding second derivatives</title>
+      <statement>
+        <p>
+          Find the second derivative for each of the following functions:
+          <ol label="(a)">
+            <li><m>f(x)=3x^5+4x^2</m></li>
+            <li><m> g(x)=5 x^6+3x+9</m></li>
+            <li><m> h(x)=x e^{2x}</m></li>
+            <li><m> j(x)=6 \sqrt{x}+\frac{3}{x}</m></li>
+            <li><m> k(x)=\frac{\ln(x)}{x^3} </m></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using our rule:
+          <ol label="(a)">
+            <li><m>  f''(x)=\frac{d}{dx}(\frac{d}{dx}( 3x^5+4x^2 ))\frac{d}{dx} (15x^4+8x)=60x^3+8.</m></li>
+            <li><m>  g''(x)=\frac{d}{dx} (\frac{d}{dx}  (5 x^6+3x+9))=\frac{d}{dx} (30x^5+3)=150x^4.</m></li>
+            <li>
+              <m>\begin{aligned}  h'' (x)\amp =\frac{d}{dx} (\frac{d}{dx}  (x e^{2x} ))
+              =\frac{d}{dx} (e^{2x}+2xe^{2x} )\\
+              \amp =2e{^2}x+2e^{2x}+4xe^{2x}=4e^{2x}+4xe^2x.\end{aligned}</m>
+            </li>
+            <li>
+              <m>\begin{aligned}  j'' (x) \amp = \frac{d}{dx} (\frac{d}{dx}  (6 \sqrt{x}+3/x))=\frac{d}{dx} (\frac{d}{dx} (6x^{1/2}+3x^{-1} ))\\
+              \amp = \frac{d}{dx} (3x^{-1/2}-3x^{-2} )=-3/2 x^{-3/2}+6x^{-3}.\end{aligned}</m>
+            </li>
+            <li>
+              <m> \begin{aligned}   k'' (x) \amp = \frac{d}{dx} (\frac{d}{dx}  (\frac{\ln(x)}{x^3} ))=\frac{d}{dx} (\frac{(\frac{1}{x} x^3-3(x^2 )  ln(x))}{x^6 }\\
+                \amp = \frac{d}{dx} (\frac{(1-3 \ln(x))}{x^4 }
+                = \frac{(-\frac{3}{x} x^4-(1-3 \ln(x) )4x^3)}{x^8} \\
+                \amp =\frac{-3-(1-3 \ln(x) )4}{x^5} = \frac{-7+12\ln(x)}{x^5}.\end{aligned} </m>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <p>As the last problem shows, it is often useful to simplify between taking the first and second derivatives.</p>
+
+    <p>
+      If our function is the position of <m>x</m>, then the first derivative is the rate of change or the <term>velocity</term> of <m>f(x)</m>.
+      The second derivative is <term>acceleration</term> or how fast velocity changes.
+    </p>
+
+    <p>
+      Graphically, the first derivative gives the slope of the graph at a point.
+      The second derivative tells whether the curve is concave up or concave down at that point.
+      If the second derivative is positive at a point, the graph is bending upwards at that point.
+      Similarly if the second derivative is negative, the graph is concave down.
+      This is of particular interest at a critical point where the tangent line is flat and concavity tells us if we have a relative minimum or maximum.
+    </p>
+
+    <insight>
+      <title>Second derivative test of extrema</title>
+      <p>
+        Let <m>f(x)</m> be a function with <m>f'(x_0)=0</m>.
+        Then if <m>f''(x_0) \gt 0</m>, the function has a local minimum at <m>x=x_0</m>.
+        If <m>f''(x_0) \lt 0</m>, the function has a local maximum at <m>x=x_0</m>.
+        If <m>f''(x_0)=0</m>, the second derivative test fails.
+      </p>
+    </insight>
+
+    <example>
+      <title>Second derivative tests</title>
+      <statement>
+        <p>
+          For the designated function and point, determine if the graph has a local minimum, local maximum, or non-extreme point, or if the second derivative test fails.
+        </p>
+        <p>
+          <ol label="(a)">
+            <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=2</m></li>
+            <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=-2</m></li>
+            <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=4</m></li>
+            <li><m>g(x)=x^4,\qquad\qquad x_0=0</m></li>
+            <li><m>h(x)=x^5,\qquad\qquad x_0=0</m></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>Using our rule:
+          <ol label="(a)">
+            <li>
+              <p>
+                <m>f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6</m>x.
+              </p>
+
+              <p>
+                At <m>x_0=2</m>, we have <m>f'(x_0)=0</m> and <m>f''(x_0)=12</m>.
+                We are at a critical point, and the curve is concave up, so we have a local minimum.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6x</m>.
+              </p>
+
+              <p>
+                At <m>x_0=-2</m>, we have <m>f'(x_0)=0</m> and <m>f'' (x_0 )=-12</m>.
+                We are at a critical point and the curve is concave down, so we have a local maximum.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6x</m>.
+              </p>
+
+              <p>
+                At <m>x_0=4</m>, we have <m>f'(x_0)=36</m>.
+                The second derivative is positive, so the curve is concave up,
+                but since the derivative is not zero, this is not an extreme point.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>g(x)=x^4,\qquad\qquad g'(x)=4x^3,\qquad\qquad g''(x)=12x^2</m>.
+              </p>
+
+              <p>
+                At <m>x_0=0</m>, we have <m>g'(x_0)=0</m> and <m>g''(x_0)=0</m>,
+                so the second derivative test fails at this point.
+                (However if we look a the graph, we can see the curve is concave up everywhere,
+                and that this point is a local minimum.)
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>h(x)=x^5,\qquad\qquad h'(x)=5x^4,\qquad\qquad h''(x)=20x^3</m>.
+              </p>
+
+              <p>
+                At <m>x_0=0</m>, we have <m>h'(x_0)=0</m> and <m>h''(x_0)=0</m>,
+                so the second derivative test fails at this point.
+                (However if we look a the graph, we can see this point is neither a local minimum or a local maximum.
+                It is a place where the graph switches from being concave up to being concave down.
+                This is called an <term>inflection point</term>.)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <p>We will use the second derivative test for finding maximums and minimums in the next chapter.</p>
+
+    <paragraphs>
+      <title>Second derivative with CAS</title>
+
+      <p>We can find second derivatives with our favorite CAS programs.  </p>
+
+      <p>With Symbolab</p>
+
+      <image width="80%" source="images/sec4-5-3.png"/>
+
+      <p>With WolframAlpha</p>
+
+      <image width="80%" source="images/sec4-5-4.png"/>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Second derivative in finance</title>
+
+      <p>
+        The mathematical first and second derivatives are used in pricing various financial products and options that are also called derivatives.
+        The first derivative is used to give a value to whether the underlying product has a price that goes up or down.
+        It looks at the slope of the pricing curve.  The second derivative is used to give a value to the volatility of the underlying product.
+        It looks at how much the pricing curve bends.  We will return to these uses when we look at integrals.
+      </p>
+    </paragraphs>
+
+    <exercises xml:id="exercises-set-sec-4-5">
+      <title>Exercises: The Second Derivative and Concavity Problems</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            <ol label="(a)">
+              <li><p>Find the first and second derivatives of the given function.</p></li>
+              <li><p>Determine where the function is concave up and where it is concave down.</p></li>
+              <li><p>Find the critical points of the function.  Classify each as a local minimum, a local maximum, neither, or not a local extremum.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=(x-3)^2-4</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol label="(a)">
+                <li>
+                  <p>
+                    <me>f'(x)=2(x-3)</me>
+                    <me>f''(x)=2</me>
+                  </p>
+                </li>
+                <li><p>The second derivative is always positive, so the function is always concave up</p></li>
+                <li><p>There is one critical point at <m>x=3</m>.  It is a local minimum.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(t)=(x-3)(x-1)(x+4)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(t)=t^2 e^{-t}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol label="(a)">
+                <li>
+                  <p>
+                    <me>h' (t)=2te^{-t}-t^2 e^{-t}=(2-t)te^{-t}</me>
+                    <me>h'' (t)=(2-2t)e^{-t}-(2t-t^2)e^{-t}=(2-4t+t^2 ) e^{-t}</me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The function is concave down, where the second derivative is negative,
+                    that is for <m>2-\sqrt{2} \lt t \lt 2+\sqrt{2}</m>.
+                    It is concave up outside this region.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    There are critical points when the derivative is undefined or 0.
+                    The only critical points are when <m>t=0</m> and <m>t=2</m>.
+                    When <m>t=0</m>, <m>h''(t)\gt 0</m>, so we have a local minimum.
+                    When <m>t=2</m>, <m>h''(t)\lt 0</m>, so we have a local maximum.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=(x^2-9)^3</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\frac{x^2-4}{x^2-9}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol label="(a)">
+                <li>
+                  <p>
+                    <me>m' (x)=\frac{-10}{(x^2-9)^3}</me>
+                    <me>m'' (x)=\frac{30x^2+90}{(x^2-9)^3}</me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The function is concave down, where the second derivative is negative,
+                    which for our function is when the denominator is negative.
+                    The function <m>m(x)</m> is concave down when <m>-3 \lt x \lt 3</m>.
+                    It is concave up outside this region.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    There are critical points when <m>t</m> is 0 or 2.
+                    When <m>t=0</m>, <m>h''(t)\gt 0</m>, so we have a local minimum.
+                    When <m>t=2</m>, the second derivative is negative and we have a local maximum.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> \text{ConsumerSurplus}= 10*(0.95)^{\frac{\quantity}{100}}- 2*(1.07)^{\frac{\quantity}{100}}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\price= 10-\frac{\quantity}{100}- \frac{\quantity^2}{10000}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol label="(a)">
+                <li>
+                  <p>
+                    <me>price'=\frac{-1}{100}-\frac{quantity}{5000}</me>
+                    <me>price''=\frac{-1}{5000}</me>
+                  </p>
+                </li>
+                <li><p>The second derivative is always negative, to the function is always concave down.</p></li>
+                <li><p>There is one critical point at <m>quantity=-50</m>.  It is a local maximum.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=\quantity*\left(20*.9^{\left(\frac{\quantity}{200}\right)}\right)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice= 10*1.04^{\left(\frac{\quantity}{100}\right)}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol label="(a)">
+                <li>
+                  <p>
+                    <me>\Sprice'=\frac{\ln(104)}{10}*1.04^{(\quantity/100)} </me>
+                    <me>\Sprice''=\frac{\ln(104)^2}{1000}*1.04^{(quantity/100)}</me>
+                  </p>
+                </li>
+                <li><p>The second derivative is always positive, to the function is always concave up.</p></li>
+                <li><p>The first derivative is always positive.  There are no critical points.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Identify which curve is <m>f</m>, <m>f'</m>, and <m>f''</m>.</p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <image width="50%" source="images/sec4-5-e1.png"/>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <image width="50%" source="images/sec4-5-e2.png"/>
+          </statement>
+          <solution>
+            <p>
+              Note that local maximums of a function must correspond to zeroes of its derivative.
+              The original function is F (green).   Its derivative is D (Purple).
+              The second derivative is E (black).
+              <me>E(x) = D'(x)=F''(x)</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <image width="50%" source="images/sec4-5-e3.png"/>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <image width="50%" source="images/sec4-5-e4.png"/>
+          </statement>
+          <solution>
+            <p>
+              Looking at the middle segment of the curves, the green curve is a downward facing parabola,
+              whose derivative is a line with a negative slope like the purples curve,
+              whose derivative is a negative constant like the black line.
+              <me>F(x) = D'(x)=E''(x)</me>.
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the next set of problems, you need to know the formula for the price of a zero coupon bond given the face value,
+            the interest rate, and the time to maturity.  For such instruments we use the formula
+            <me>\cost=\frac{\FaceValue}{(1+\rate)^{\years}}</me>.
+            (Be aware that a rate of 4% is a rate of 0.04.)
+          </p>
+          <p>
+            For each problem give:
+            <ol label="(a)">
+              <li><p>The cost of the bond as described.</p></li>
+              <li><p>The first derivative of cost as a function of rate. (This measures risk of interest rate change.)</p></li>
+              <li><p>The second derivative of cost as a function of rate.  (This measures the value of an option on the bond.)</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              The face value of the bond is $1000.  The interest rate is currently 4%.  The bond matures in 10 years.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The face value of the bond is $1000.  The interest rate is currently 4%.  The bond matures in 30 years.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol label="(a)">
+                <li><me>\cost=\frac{1000}{(1.04)^{30}} =308.32</me></li>
+                <li>
+                  <p>
+                    <me>\cost(\rate)=\FaceValue(1+\rate)^{(-\years)}</me>
+                    <me>\cost(\rate)=-\years*\FaceValue(1+\rate)^{(-\years-1)}</me>
+                    <me>\cost'(.04)=-30*1000(1.04)^{-31}=-8993</me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <me>\cost''(\rate)=\years(1+\years)*\FaceValue(1+\rate)^{(-\years-2)}</me>
+                    <me>
+                      \cost(.04)=30(31)*1000(1.04)^{(-32)}=265103
+                    </me>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The face value of the bond is $1000.  The interest rate is currently 6%.  The bond matures in 10 years.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The face value of the bond is $1000.  The interest rate is currently 3%.  The bond matures in 20 years.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol label="(a)">
+                <li><me>\cost=\frac{1000}{(1.03)^{20}} =553.68</me></li>
+                <li>
+                  <p>
+                    <me>\cost(\rate)=\FaceValue(1+\rate)^{(-\years)}</me>
+                    <me>\cost(\rate)=-\years*\FaceValue(1+\rate)^{(-\years-1)}</me>
+                    <me>\cost'(.03)=-20*1000(1.03)^{-21}=-8000</me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <me>\cost''(\rate)=\years(1+\years)*\FaceValue(1+\rate)^{(-\years-2)}</me>
+                    <me>
+                      \cost(.03)=20(21)*1000(1.03)^{(-22)}=219914
+                    </me>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+    </exercises>
+  </section>
+</chapter>
