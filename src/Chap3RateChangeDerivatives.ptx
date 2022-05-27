@@ -368,7 +368,7 @@
         Suppose my revenue function is <m>\revenue(q)=-0.2q^2+20q-5</m> and I want to compute marginal revenue.
         Then <m>\revenue(q+1)=-0.2(q+1)^2+20(q+1)-5</m>.
         Experience shows that students will often make a typing mistake in the second formula,
-        often forgetting parentheses somewhere of forgetting to change one of the copies of <m>q</m> to <m>q+1</m>.
+        often forgetting parentheses somewhere or forgetting to change one of the copies of <m>q</m> to <m>q+1</m>.
       </p>
 
       <image width="60%" source="images/sec3-1-12.png"/>
@@ -382,7 +382,7 @@
 
       <p>
         This trick will be even more useful in the next section when we want to compute the values of <m>\revenue(q)</m>,
-        <m>\revenue(q+0.00)</m>, and <m>\revenue(q-0.001)</m>.
+        <m>\revenue(q+0.001)</m>, and <m>\revenue(q-0.001)</m>.
       </p>
     </subsection>
 
@@ -429,7 +429,7 @@
             The marginal cost would be given by
             <md>
               <mrow>\Mcost(30) \amp =\cost(30)-\cost(29)</mrow>
-              <mrow> \amp =2200-2193=7</mrow>
+              <mrow> \amp =310-303=7</mrow>
             </md>
           </p>
 
@@ -639,7 +639,7 @@
           <solution>
             <p>
               <ol label="(a)">
-                <li><p> The best fitting curve is:   <m>y = -0.0297x2 + 8.26x + 227.96</m></p></li>
+                <li><p> The best fitting curve is:   <m>y = -0.0297x^2 + 8.26x + 227.96</m></p></li>
                 <li>
                   <p>
                     If  <m>\Mprofit(x+1)=\profit(x+1)-\profit(x)</m>, then
@@ -1259,7 +1259,7 @@
                   </p>
                   <p>Excel commands for the table:</p>
                   <image width="90%" source="images/sec3-2-sol1b.png"/>
-                  <image width="90%" source="images/sec3-2-sol1b.png"/>
+                  <image width="90%" source="images/sec3-2-sol1c.png"/>
                   <p>The limit is 4.</p>
                 </li>
                 <li>
@@ -1509,7 +1509,7 @@
                   <li>
                     <image width="60%" source="images/sec3-2-sol15a.png"/>
                   </li>
-                  <li><p>  It looks like the derivative is 0 at <m>x=-0.707</m> and at <m>x-0.707</m>.</p></li>
+                  <li><p>  It looks like the derivative is 0 at <m>x=-0.707</m> and at <m>x=0.707</m>.</p></li>
                   <li><p> The first of those points is a local minimum.  The second point is a local maximum.</p></li>
                 </ol>
               </p>

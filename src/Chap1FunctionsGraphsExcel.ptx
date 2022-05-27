@@ -302,8 +302,8 @@
 
       <p>
         It can be useful when writing reports to have variables that convey some meaning.
-        We could have used <m>y</m> for <m>\operatorname{Pay}</m>, and <m>x</m> for <m>\text{hrs}</m>,
-        but using the much more easily interpreted variables named Pay and hrs helps when using the formulas.
+        We could have used <m>y</m> for <m>\operatorname{Pay}</m>, and <m>x</m> for <m>\operatorname{hrs}</m>,
+        but using the much more easily interpreted variables named Pay and hrs helps when reading the formulas.
       </p>
     </subsection>
 
@@ -673,7 +673,7 @@
               <ol>
                 <li><p>The slope is <m>4</m>
                 </p></li>
-                <li><p>To get the <m>y</m>-intercept we set <m>y=0</m>, so that <m>y=4(-3)+9=-3</m>,</p>
+                <li><p>To get the <m>y</m>-intercept we set <m>x=0</m>, so that <m>y=4(-3)+9=-3</m>,</p>
                 <p>To get the <m>x</m>-intercept we set <m>y=0</m>, so that <m>0=4(x-3)+9</m>.  Solve for <m>x</m> and we get <m>x-3=-\frac{9}{4}</m> and <m>x=3-\frac{9}{4}=\frac{3}{4}</m>
                 </p></li>
                 <li><p>Avoiding the intercepts we can choose <m>x</m> to be any number other than <m>x = 0</m> and <m>x=3/4</m>.  We may look for nice values of <m>x</m> that make the arithmetic come out nice: for example choose <m>x=3</m> and <m>x=4</m>.
