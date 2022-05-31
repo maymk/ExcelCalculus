@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<publication>
+
+    <!-- Relative path, relative to "main" source file -->
+    <!-- <source webwork-problems="../output/webwork-representations/webwork-representations.ptx"/> -->
+    <source>
+      <directories external="../assets" generated="../generated-assets"/>
+    </source>
+    <common>
+      <tableofcontents level="3"/>
+    </common>
+    <!-- HTML-Specific Options -->
+    <html>
+        <calculator model="geogebra-graphing"/>
+        <index-page ref="ExcelCalculus"/>
+        <video privacy="yes"/>
+        <!-- baseurl should not have a trailing slash -->
+        <baseurl href="https://opentext.uleth.ca/ExcelCalculus"/>
+        <knowl example="no"/>
+        <!-- <asymptote links="yes"/> -->
+    </html>
+    <!-- PDF-Specific Options -->
+    <latex print="yes" sides="two">
+      <!-- <asymptote links="yes"/> -->
+    </latex>
+</publication>
