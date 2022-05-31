@@ -394,7 +394,7 @@
         <exercise>
           <statement>
             <p>
-              <m>40*\price+7*\price*\quantity+\sqrt{\quantity}=2000</m>.	Find <m>\frac{d\price}{d\quantity}</m>.
+              <m>40*\price+7*\price*\quantity+\sqrt{\quantity}=2000</m>.	 Find <m>\frac{d\price}{d\quantity}</m>.
             </p>
           </statement>
           <solution>

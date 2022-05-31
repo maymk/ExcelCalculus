@@ -2074,7 +2074,7 @@
 
           <p>
             Thus our guess was off by a factor of 3 and the correct antiderivative is
-            <me>\frac{1}{3}*1\frac{1}{8} (3x+5)^8+C=\frac{1}{24} (3x+5)^8+C</me>.
+            <me>\frac{1}{3}*\frac{1}{8} (3x+5)^8+C=\frac{1}{24} (3x+5)^8+C</me>.
           </p>
         </solution>
       </example>
@@ -2273,7 +2273,7 @@
               <mrow>\int_{-2}^1 x e^{(x^2)}\,dx \amp =\frac{1}{2} \int_{-2}^1 e^{(x^2)}(2x\, dx) \quad \text{(Make } u \text{ and } du \text{explicit.)}</mrow>
               <mrow>\amp =\frac{1}{2} \int_{4}^{1}e^u\, du \quad \text{ (Do the substitution.)}</mrow>
               <mrow>\amp =\left.\frac{1}{2} e^u\right|_4^{1} \quad \text{ (Find the antiderivative.)}</mrow>
-              <mrow>\amp =\frac{1}{2} e^4.\amp \quad \text{ (Evaluate.)}</mrow>
+              <mrow>\amp =\frac{1}{2} (1-e^4).\amp \quad \text{ (Evaluate.)}</mrow>
             </md>.
           </p>
         </solution>
