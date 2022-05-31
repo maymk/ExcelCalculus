@@ -1,5 +1,3 @@
-*.html
-knowl
-*.tex
-*.pdf
-
+generated-assets/
+output/
+.error_schema.log
