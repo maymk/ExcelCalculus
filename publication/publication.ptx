@@ -17,7 +17,7 @@
         <index-page ref="ExcelCalculus"/>
         <video privacy="yes"/>
         <!-- baseurl should not have a trailing slash -->
-        <baseurl href="https://opentext.uleth.ca/ExcelCalculus"/>
+        <baseurl href="https://mathstat.slu.edu/~may/ExcelCalculus"/>
         <knowl example="no"/>
         <!-- <asymptote links="yes"/> -->
     </html>
