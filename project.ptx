@@ -17,12 +17,28 @@
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/latex</output-dir>
+      <xsl>style/ExcelCalculus-color.xsl</xsl>
     </target>
     <target name="pdf" pdf-method="pdflatex">
       <format>pdf</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/pdf</output-dir>
+      <xsl>style/ExcelCalculus-color.xsl</xsl>
+    </target>
+    <target name="latex-print">
+      <format>latex</format>
+      <source>source/main.ptx</source>
+      <publication>publication/publication-print.ptx</publication>
+      <output-dir>output/latex</output-dir>
+      <xsl>style/ExcelCalculus-print.xsl</xsl>
+    </target>
+    <target name="pdf" pdf-method="pdflatex">
+      <format>pdf</format>
+      <source>source/main.ptx</source>
+      <publication>publication/publication-print.ptx</publication>
+      <output-dir>output/pdf</output-dir>
+      <xsl>style/ExcelCalculus-print.xsl</xsl>
     </target>
     <target name="subset">
       <format>html</format>
