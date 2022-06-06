@@ -14,7 +14,7 @@
   <section xml:id="sec-3-1-MarginalFunctions">
     <title>Marginal Functions and Difference Quotients</title>
     <introduction>
-      <p><url href="external/Examples/Section-3-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-3-1-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-1-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
         There are a number of industries where it is common for people to pay significantly different prices for the same product from the same vendor.
@@ -92,7 +92,10 @@
 
       <example>
         <title>Marginal functions for widgets</title>
-        <p><url href="https://youtu.be/ieyBmPqUBE4">Link to video of this example</url></p>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="ieyBmPqUBE4"/>
+          </figure>
         <p>
           For my widget company I have determined that the cost and demand price functions are:
           <md>
@@ -787,7 +790,7 @@
         <statement>
           <p>
             Historical data for quarterly revenue reports for Microsoft can be found online.
-            (A good source is <url href="http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.aspx">http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.asp</url>.)
+            (A good source is <url href="http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.aspx" visual="http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.aspx">http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.asp</url>.)
             Plot 5 years of data.
           </p>
           <p>
@@ -804,7 +807,7 @@
   <section xml:id="sec-3-2-NumericDerivativesLimits">
     <title>Numeric Derivatives and Limits</title>
 
-    <p><url href="external/Examples/Section-3-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-3-2-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-2-Examples.xlsx">Link to worksheets used in this section</url></p>
     <p>
       In the previous section, we looked at marginal functions,
       the difference between <m>f(x+1)</m> and <m>f(x)</m>.
@@ -1624,7 +1627,7 @@
 
   <section xml:id="sec-3-3-LocalLinearity">
     <title>Local Linearity</title>
-    <p><url href="external/Examples/Section-3-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-3-3-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-3-Examples.xlsx">Link to worksheets used in this section</url></p>
     <p>
       The last two sections examined rate of change in both the discrete and continuous case.
       The first application for rate of change at a point is to make projections for values of the function close to that point.
@@ -2118,7 +2121,7 @@
   <section xml:id="sec-3-4-Optimization">
     <title>Optimization</title>
 
-    <p><url href="external/Examples/Section-3-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-3-4-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-4-Examples.xlsx">Link to worksheets used in this section</url></p>
     <p>
       In Section 3.2 we noticed that the high and low points of the graph of a function often coincided with a point where the derivative of the function was 0.
       In a business setting, we are often concerned with finding the maximum and minimum values of a function,
@@ -3058,7 +3061,7 @@
   <section xml:id="sec-3-5-IntroductionSolver">
     <title>An Introduction to Solver</title>
 
-    <p><url href="external/Examples/Section-3-5-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-3-5-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-5-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <p>
       We should expect, whenever we look at an operation that is used a lot in the business world,

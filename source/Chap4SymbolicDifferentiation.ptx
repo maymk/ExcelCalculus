@@ -21,7 +21,7 @@
     <title>Elementary Derivatives</title>
     <subsection>
       <title>Definition and Notation</title>
-      <p><url href="external/Examples/Section-4-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-4-1-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-4-1-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
         We start by recalling the formal definition,
@@ -2102,7 +2102,7 @@
 
     <p>
       There are a number of websites that will take symbolic derivatives.  We start with Wolfram|Alpha, which is available at
-      <url href="http://www.wolframalpha.com">http://www.wolframalpha.com</url>.
+      <url href="http://www.wolframalpha.com" visual="http://www.wolframalpha.com">http://www.wolframalpha.com</url>.
     </p>
 
     <example>
@@ -2271,7 +2271,7 @@
     <p>
       In looking at free software on the web for taking derivatives we started with Wolfram|Alpha because we can use it throughout the book when Excel does not solve our needs.
       It is also supported by the company that produces Mathematica<registered/>, so it should stay available for the foreseeable future.
-      Another useful source are the solvers from Symbolab  <url href="https://www.symbolab.com/solver">https://www.symbolab.com/solver</url>.
+      Another useful source are the solvers from Symbolab  <url href="https://www.symbolab.com/solver" visual="https://www.symbolab.com/solver">https://www.symbolab.com/solver</url>.
       Symbolab has a collection of solvers for the topics in this course.
     </p>
 
@@ -2285,7 +2285,7 @@
 
     <p>
       For individual problems we may want to use other software.
-      For finding derivatives, a quick web search found <url href="http://www.derivative-calculator.net/"> http://www.derivative-calculator.net/</url>
+      For finding derivatives, a quick web search found <url href="http://www.derivative-calculator.net/" visual="http://www.derivative-calculator.net/"> http://www.derivative-calculator.net/</url>
       which is nicer if you are simply checking your work.
       As with Wolfram|Alpha, the derivative calculator shows you the problem in math form so you can check your syntax.
     </p>
