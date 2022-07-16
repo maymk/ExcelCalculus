@@ -9,8 +9,14 @@
     <target name="html">
       <format>html</format>
       <source>source/main.ptx</source>
-      <publication>publication/publication.ptx</publication>
+      <publication>publication/publication.xml</publication>
       <output-dir>output/html</output-dir>
+    </target>
+    <target name="runestone">
+      <format>html</format>
+      <source>source/main.ptx</source>
+      <publication>publication-rs-academy.xml</publication>
+      <output-dir>published/ExcelCalculus</output-dir>
     </target>
     <target name="latex">
       <format>latex</format>
