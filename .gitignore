@@ -1,3 +1,6 @@
 generated-assets/
 output/
 .error_schema.log
+build/
+published/
+*~
