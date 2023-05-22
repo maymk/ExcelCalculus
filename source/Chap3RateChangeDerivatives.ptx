@@ -23,7 +23,7 @@
         but an analysis that looks at the change in costs and profits for making an additional sale.
         Flying a plane with 51 passengers does not cost much more than flying the same plane with 50 passengers.
         The same is true when playing a symphony.
-        Selling an extra doughnut at half price, just before closing when you would have to throw the doughnut out adds to the profit.
+        Selling an extra doughnut at half price, just before closing when you would have to throw the doughnut out, adds to the profit.
         In all of these cases, we are less concerned with total revenues and profits and more concerned with how things change with one more sale.
       </p>
 
@@ -97,7 +97,7 @@
             <video youtube="ieyBmPqUBE4"/>
           </figure>
         <p>
-          For my widget company I have determined that the cost and demand price functions are:
+          For my widget company, I have determined that the cost and demand price functions are:
           <md>
             <mrow>\cost(q) \amp =40+3q+q^2/10</mrow>
             <mrow>\Dprice(q) \amp =30-q/2</mrow>
@@ -110,7 +110,7 @@
         </p>
 
         <p>
-          To set up the problem I recall that we assume we are selling at the demand price,
+          To set up the problem, I recall that we assume we are selling at the demand price,
           the highest price consumers will pay and still have us sell all we produce.
           Thus the formulas for revenue and profit are:
         </p>
@@ -219,8 +219,8 @@
 
       <p>
         The more realistic situation for us to face is one where we are given a collection of data points.
-        In that situation we need to first find a best fitting curve and use it to make predicted values.
-        Then we can find the marginal function of interest and do our comparison.
+        In that situation, we need to first find a best fitting curve and use it to make predicted values.
+        Then, we can find the marginal function of interest and do our comparison.
       </p>
 
       <example>
@@ -265,7 +265,7 @@
           <image width="70%" source="images/sec3-1-7.png"/>
 
           <p>
-            With the formula from the trendline I can add a column for <m>\Pprofit(x)</m>.
+            With the formula from the trendline, I can add a column for <m>\Pprofit(x)</m>.
             The obvious adjustment produces <m>\Pprofit(x+1)</m>.
             It is then easy to compute the value of <m>\Mprofit(x+1)</m>.
           </p>
@@ -821,7 +821,7 @@
       at a point until the graph looks like a straight line, then pick two points on that line,
       and find the slope as the rise over the run.
       The rate of change is then the slope of the line we have found.
-      If we could zoom arbitrarily far, this process would give an instantaneous rate of change,
+      If we could zoom arbitrarily close, this process would give an instantaneous rate of change,
       or the derivative of the function at that point.
     </p>
 
@@ -868,11 +868,11 @@
         <p>
           We start with our intuitive notion.  We want to look at the graph of <m>f(x)</m>,
           zoomed in far enough that the graph looks like a straight line.
-          I set up a worksheet to look at the graph of <m>(x)=x^2</m> near <m>x_0=1</m>.
+          I set up a worksheet to look at the graph of <m>f(x)=x^2</m> near <m>x_0=1</m>.
           Since I want to be able to zoom in,
           I set up the graph so that it plots points that are multiples of <m>\Delta x</m> from <m>x=x_0</m>.
           I also want to plot the line connecting the points <m>(x_0,f(x_0))</m>
-          and <m>(x_0,f(x_0+\Delta x))</m> and notice that the slope of the secant line between them is
+          and <m>(x_0,f(x_0+\Delta x))</m> and notice that the slope of the line connecting these points, the secant line,  is
           <me>
             \frac{f(x_0+\Delta x)-f(x_0 )}{\Delta x}
           </me>.
@@ -944,7 +944,7 @@
 
         <p>
           It is clear that as <m>\Delta x</m> gets very small,
-          the slope of the tangent line gets closer and closer to 2.
+          the slope of the secant line gets closer and closer to 2.
           Thus <m>f'(1)=2</m>.
         </p>
       </solution>
@@ -1009,7 +1009,7 @@
     </definition>
 
     <p>
-      For the rest of this text, when we need to compute a numerical approximation to the derivative we will use the calculator approximation of the derivative.
+      For the rest of this text, when we need to compute a numerical approximation to the derivative, we will use the calculator approximation of the derivative.
     </p>
 
     <p>
@@ -1071,14 +1071,22 @@
 
     <p>
       Several of our observations from this example work in general.
-      Looking at a single point, the derivative of a function is the slope of the line tangent to the graph at that point.
-      The tangent line is a best linear approximation to the graph at a point.
-      Looking at the derivative at lots of points, the graph of a function is increasing when the derivative is positive,
+      </p>
+      <ul>
+      <li><p>      Looking at a single point, the derivative of a function is the slope of the line tangent to the graph at that point.
+      </p></li>
+      <li><p>       The tangent line is a best linear approximation to the graph at a point.
+      </p></li>
+      <li><p>      Looking at the derivative at lots of points, the graph of a function is increasing when the derivative is positive,
       and the graph of a function is decreasing when the derivative is negative.
-      For the graph to have a point that is locally a maximum or minimum,
+      </p></li>
+      <li><p>     For the graph to have a point that is locally a maximum or minimum,
       the derivative cannot be positive or negative,
       so the derivative must either be zero or undefined for the graph of the function to have a maximum or minimum.
-      Finding places where functions reach their highest and lowest values is an important activity in mathematics.
+      </p></li>
+      </ul>
+      <p>
+       Finding places where functions reach their highest and lowest values is an important activity in mathematics.
       We will look at these applications in more depth in upcoming sections.
       The reader is warned that we can have places where the derivative is zero but the function is still increasing or decreasing.
     </p>
@@ -1099,6 +1107,9 @@
 
         <image width="100%" source="images/sec3-2-9.png"/>
 
+       <p> Since the values of <m>f(x)</m> range between -500 and 1500, we note that <m>f(x)</m> is the blue graph and uses the axis in the center of the graph.
+       Similarly the values of <m>f'(x)</m> range between -500 and 2500, we note that <m>f'(x)</m> is the red graph and uses the axis on the side of the graph.</p>
+
         <p>
           This time we notice three places where the derivative seems to be zero,
           when <m>x</m> is near <m>-5</m>, <m>0</m>, and <m>5</m>.
@@ -1111,7 +1122,7 @@
     </example>
 
     <p>
-      In the next chapter we will look at ways to find the derivative of a function symbolically.
+      In the next chapter, we will look at ways to find the derivative of a function symbolically.
       We can already reason our way to symbolically finding the derivative of simple functions.
       If our function <m>f(x)</m> is constant or linear, then the graph of the function is its own tangent line,
       so the derivative is simply the slope of the graph.
@@ -1141,7 +1152,7 @@
         <image width="100%" source="images/sec3-2-10.png"/>
 
         <p>
-          Once we have points for the derivative we add a trendline using a linear model.
+          Once we have points for the derivative, we add a trendline using a linear model.
           We set the options to show both the formula for the trendline and the value of <m>R^2</m>.
           The fact that <m>R^2=1</m>, indicates the trendline we found exactly fits the data.
           In the workbook connected to this section there is a page for Example 6B.
@@ -1161,7 +1172,7 @@
         However, if you do a web search on <q>calculus marginal revenue</q>
         you will find that most calculus books treat the marginal function as simply another name for the derivative.
         While they are related, they are not the same thing.
-        In the next chapter we will find that it is often easier to produce a formula for the derivative of a function rather than the related marginal function,
+        In the next chapter, we will find that it is often easier to produce a formula for the derivative of a function rather than the related marginal function,
         which is why the derivative is used for the marginal function.
         However, in this text, we will stick to the correct definition of marginal functions.
       </p>
@@ -1725,7 +1736,7 @@
         <image width="80%" source="images/sec3-3-4.png"/>
 
         <p>
-          Thus the linear approximation is
+          Thus, the linear approximation is
           <md>
             <mrow>\linear f(x) \amp = f(100)+f'(100)(x-100)</mrow>
             <mrow>\amp =10+(0.05)(x-100)</mrow>
@@ -1820,7 +1831,7 @@
 
         <p>
           This is much easier to compute than the exponential function.
-          However when we check accuracy we find that it is not very accurate for other integer values.
+          However, when we check accuracy, we find that it is not very accurate for other integer values.
         </p>
 
         <image width="60%" source="images/sec3-3-10.png"/>
@@ -2307,13 +2318,13 @@
 
         <p>
           We have three candidates for the extrema, the two endpoints and the critical point at 162.5.
-          However by looking at the points to the side of the critical point, we see it is a local minimum.
+          However, by looking at the points to the side of the critical point, we see it is a local minimum.
           We also see, that of our 3 candidate points, the one that gives the maximum profit is the right endpoint,
           when quantity is 300.
         </p>
 
         <p>
-          For our first three examples we have been trying to find the minimum or maximum of a functions that has been given to us as a function of one variable.
+          For our first three examples we have been trying to find the minimum or maximum of one-variable functions.
           Sometimes we need to do a bit of work to get the function in that format.
         </p>
       </solution>
@@ -2349,7 +2360,7 @@
           I want to measure radius and height in decimeters so the units work correctly.
           In order to optimize, we need to reduce the problem to a single function of a single variable.
           We are told that the volume is 1, so we can solve for height as a function of radius,
-          then plug it into the equation for area.  Then area is a function of a single variable,
+          then plug it into the equation for area.  Then, area is a function of a single variable,
           radius, and we can find the critical points and check for a minimum.
         </p>
 
@@ -2402,7 +2413,7 @@
         </figure>
 
         <p>
-          For widget production and sales we have the following data on profit based on sales.
+          For widget production and sales, we have the following data on profit based on sales.
         </p>
 
         <tabular top="major" halign="center">
@@ -2446,8 +2457,8 @@
         <p>
           I now set up the table for special values with goal seek.
           I use starting points of 20 and 450 for the break even points and 250 for the maximum.
-          To find break even points, I Goal Seek on the profit function.
-          To find the maximum point, I Goal Seek on the derivative of the profit function.
+          To find break even points, I goal seek on the profit function.
+          To find the maximum point, I goal seek on the derivative of the profit function.
         </p>
 
         <image width="70%" source="images/sec3-4-10.png"/>
@@ -2616,7 +2627,7 @@
                 </li>
                 <li>
                   <p>The function has a local minimum at <m>(1.73, 1.61)</m>.</p>
-                  <p>The function has a local maximums at <m>(0, 12)</m> and <m>(10, 922</m>.</p>
+                  <p>The function has a local maximums at <m>(0, 12)</m> and <m>(10, 922)</m>.</p>
                 </li>
                 <li>
                   <p>To find the global maximum and minimum we check the endpoints and the critical points.</p>
@@ -3066,7 +3077,7 @@
     <p>
       We should expect, whenever we look at an operation that is used a lot in the business world,
       that Excel will have a fairly simple command to achieve the result.
-      In section 1.5 we introduced Goal Seek, a tool that is part of Excel,
+      In section 1.5, we introduced Goal Seek, a tool that is part of Excel,
       and that can be used to solve an equation for a root from a given starting point.
       In the last section, we noted that one can find candidates for a local maximum or minimum of a function by finding the derivative and using Goal Seek to find where the derivative is 0.
       In this section we introduce Solver, an Add-In to Excel.
@@ -3115,7 +3126,7 @@
 
         <p>
           We first want to use Solver to find a root.
-          Using the same approach we used with Goal seek, we would like cell <c>B5</c>
+          Using the same approach we used with Goal Seek, we would like cell <c>B5</c>
           to be set equal to 0 by changing the value of cell <c>A5</c>.
           (As we have set up the problem, we could use solver starting with any of the cells that give a value for <m>f(x)</m>.
           I chose the one that has <m>f(x)</m> closest to the desired result.)
@@ -3136,7 +3147,7 @@
         </p>
 
         <p>
-          However, the reason we introduce Solver, is that it can do things would be more difficult with Goal Seek.
+          We introduce Solver because it can do things would be more difficult with Goal Seek.
           From the graph, and our knowledge or parabolas, we know the graph has a single maximum.
           To find the maximum with Goal Seek, we need to realize that the maximum occurs when the derivative is 0,
           define the numerical derivative, then set the derivative equal to 0.
@@ -3175,9 +3186,9 @@
           In terms of our picture, depending on whether we tell it to find a maximum,
           minimum, or specified value, Solver tries to slide up or down the graph until it finds a good candidate,
           which it gives us as a solution.  It is actually looking for the first local maximum or minimum it gets to.
-          It does not look for other candidates.  So if we started at <m>x=0.5</m> it will slide to the left to find an answer.
-          To find the minimum at the other end of the interval we need a starting point where the graph is already sloping down to the right.
-          Starting at <m>x=8</m> should work.  We set up solver.
+          It does not look for other candidates.  So if we started at <m>x=0.5</m>, it will slide to the left to find an answer.
+          To find the minimum at the other end of the interval, we need a starting point where the graph is already sloping down to the right.
+          Starting at <m>x=8</m> should work.  We set up Solver.
         </p>
 
         <image width="70%" source="images/sec3-5-8.png"/>
@@ -3255,7 +3266,7 @@
       We mentioned earlier that Solver uses a variant of Newton’s method to find values.
       In rough terms, it repeatedly finds the linear approximation and slides up or down that line to the desired answer.
       If we start close to the answer, this is a very effective method of finding a numerical solution.
-      However it is easy to construct problems where this leads to a blind alley or to the wrong answer.
+      However, it is easy to construct problems where this leads to a blind alley or to the wrong answer.
       In particular, the method has great difficulty with problems where the function is not differentiable or where it has several bends.
       Consider the following example.
     </p>
@@ -3293,7 +3304,7 @@
 
         <p>
           When we look at solver, we get the wrong but expected results.
-          The function not only fails to be differentiable at <m>x=0</m>, it has a jump there.
+          The function not only fails to have a tangent line at <m>x=0</m>, it has a jump there.
           Solver finds the nearest local maximum and minimum.
           For the root, it tells us it can’t find a feasible solution.
         </p>
@@ -3352,10 +3363,10 @@
           <p>
             As we mentioned in <xref ref="sec-1-4-GraphingFunctionsExcel"/>,
             when we are asked to find a best fitting line,
-            we are asked to create a predicting function <m>\prediction(x)=A x+B</m>,
+            we are asked to create a predicting function <m>p(x)=A x+B</m>,
             with <m>A</m> and <m>B</m> chosen to minimize the sum of the squares of the error between the actual values and the predicted values.
             We build a worksheet that finds the sum of squared errors.
-            We start with our variables, A and B, set at 5.
+            We start with our variables, A and B, set at 5, an arbitrary initial guess.
           </p>
 
           <image width="70%" source="images/sec3-5-15.png"/>

@@ -90,7 +90,7 @@
     </example>
 
     <p>
-      In this example we have as many as four variables. We could vary:
+      In this example we have four variables. We could vary
       the initial deposit, the rate, the number of periods per year and the interest rate.
       In previous chapters we have a variable (say q) and the function (such as profit) that depends on <m>q</m>.
       Such a function might be written as something like <m>\profit(q)= -3 q^2+500q-1000</m>.
@@ -144,7 +144,7 @@
       When we made a table for a single variable, we had to use both absolute and relative cell reference
       to distinguish between constant values used for all entries and variables that changed in each case.
       With functions of two variables our table will have rows where one variable is held constant and columns where the other is held constant.
-      We note that quick filling a formula with the reference <c>$A5</c> will keep the column, A constant but allow the row to change.
+      We note that quick filling a formula with the reference <c>$A5</c> will keep the column, A, constant but allow the row to change.
       Similarly with the reference <c>A$5</c> the column can change, but the row is constant.
     </p>
 
@@ -249,7 +249,7 @@
         </figure>
 
         <p>
-          I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:
+          I have a company that produces two products, widgets and gizmos.  The two demand functions are:
           <md>
             <mrow>\text{PriceGizmo}\amp =10-\text{QuantityGizmo}/50</mrow>
             <mrow>\text{PriceWidget}\amp =20-\text{QuantityWidget}/40</mrow>
@@ -300,7 +300,7 @@
           We leave the corner cell blank.  This will let us see the values of the variables in the graphs.
           In the table, we select the data we would like to graph.
           In this example we select from cells <c>B4</c> through <c>M12</c>.
-          Finally we select a chart to insert.  The charts we are interested in are surface charts.
+          Finally, we select a chart to insert.  The charts we are interested in are surface charts.
           The types of interest are 3-D Surface, Wireframe 3-D, and contour.
           Each of these chart types highlights some useful information.
         </p>
@@ -779,7 +779,7 @@
           </figure>
 
           <p>
-            I have a company that produces 2 products, widgets and gizmos.  The two demand functions are:
+            I have a company that produces two products, widgets and gizmos.  The two demand functions are:
             <md>
               <mrow>\PriceGizmo\amp =10-\frac{\QuantityGizmo}{50}=10-\frac{\text{QG}}{50}</mrow>
               <mrow>\PriceWidget\amp =20-\frac{\QuantityWidget}{40}=20-\frac{\text{QW}}{40}</mrow>
@@ -1155,7 +1155,7 @@
                     Evaluate the partial derivatives at <m>P_1</m>.
                     <md>
                       <mrow>f_x  (3,-1) \amp = 27+(6) 2^{-1}=27+3=30</mrow>
-                      <mrow>f_y  (3,-1)) \amp =  9*\frac{1}{2}  \ln(2)=\frac{9}{2} \ln(2)</mrow>
+                      <mrow>f_y  (3,-1) \amp =  9*\frac{1}{2}  \ln(2)=\frac{9}{2} \ln(2)</mrow>
                     </md>.
                   </p>
                 </li>
@@ -1269,7 +1269,7 @@
                       <mrow>\revenue_{\QG}  (\QG,\QW) \amp =  \frac{\partial}{\partial \QG} 30 QG (0.95)^{\left(\frac{\QG}{100}\right)}</mrow>
                       <mrow> \amp \quad +\frac{\partial}{\partial \QG} 20 \QW (0.9)^{\left(\frac{\QW}{150} \right)}-\frac{\partial}{\partial \QG}  \frac{11*\QG*\QW}{1500}</mrow>
                       <mrow> \amp = \left[30 (0.95)^{\left(\frac{\QG}{100}\right)}\right.</mrow>
-                      <mrow> \amp  \quad \left.+ 30 \QG (0.95)^{\left(\frac{\QG}{100}\right)}\frac{\ln(0.95)}{150}\right]+0-  \frac{11*\QW}{1500}</mrow>
+                      <mrow> \amp  \quad \left.+ 30 \QG (0.95)^{\left(\frac{\QG}{100}\right)}\frac{\ln(0.95)}{100}\right]+0-  \frac{11*\QW}{1500}</mrow>
                     </md>.
                   </p>
 
@@ -1287,8 +1287,8 @@
                   <p>
                     Evaluate the partial derivatives at <m>P_1</m>.
                     <md>
-                      <mrow>\revenue_{\QG}  (800, 400) \amp = \left[30 (0.95)^{\left(\frac{800}{100}\right)}+24000 (0.95)^{\left(\frac{800}{100}\right)}\frac{\ln(0.95)}{150}\right]</mrow>
-                      <mrow> \amp -  \frac{8800}{1500}\approx 8.80231</mrow>
+                      <mrow>\revenue_{\QG}  (800, 400) \amp = \left[30 (0.95)^{\left(\frac{800}{100}\right)}+24000 (0.95)^{\left(\frac{800}{100}\right)}\frac{\ln(0.95)}{100}\right]</mrow>
+                      <mrow> \amp -  \frac{8800}{1500}\approx 5.86898</mrow>
                       <mrow>\revenue_{\QW}  (800, 400) \amp = \left[20 (0.9)^{\left(\frac{400}{150}\right)}+20 \QW (0.9)^{\left(\frac{400}{150}\right)}\frac{\ln(0.9)}{150}\right]</mrow>
                       <mrow>\amp \quad -  \frac{4400}{1500}\approx 4.99164</mrow>
                     </md>.
@@ -1310,7 +1310,7 @@
                     We need to find <m>\revenue(800,400)</m>. Using Wolfram Alpha (or calculator) we get
                     <md>
                       <mrow>\revenue(800,400) \amp = 19,615.88</mrow>
-                      <mrow>\Linear \revenue(\QG,\QW) \amp = 8.80(\QG-800)+4.99(\QW-400)+19,615.88</mrow>
+                      <mrow>\Linear \revenue(\QG,\QW) \amp = 5.86898(\QG-800)+4.99(\QW-400)+19,615.88</mrow>
                     </md>.
                   </p>
                 </li>
@@ -1322,7 +1322,7 @@
 
                   <p>
                     The estimated revenue when <m>P_2=(750,425)</m> is given by
-                    <me>\Linear \revenue(750,425)=8.80(-50)+4.99(25)+19,615.88=19,300.63</me>.
+                    <me>\Linear \revenue(750,425)=5.86898(-50)+4.99(25)+19,615.88=19,300.63</me>.
                   </p>
 
                   <p>
@@ -1364,7 +1364,7 @@
                   <p>
                     Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.
                     <md>
-                      <mrow>\Production(300,C) \amp = 10 300^{0.74}  C^{0.26}=680.879 C^{0.26}  </mrow>
+                      <mrow>\Production(300,C) \amp = 10*300^{0.74}  C^{0.26}=680.879 C^{0.26}  </mrow>
                       <mrow>\Production(L,30) \amp = 10 L^{0.74}  30^{0.26}=24.2132 L^{0.74} </mrow>
                     </md>.
                     Hence both cross sections are exponential function.
@@ -1393,7 +1393,7 @@
 
                   <p>
                     Then we  have that
-                    <me>\Production_C  (L,C)=(2.6 \frac{L^{0.74}}{C^{0.74}}</me>.
+                    <me>\Production_C  (L,C)=2.6 \frac{L^{0.74}}{C^{0.74}}</me>.
                   </p>
                 </li>
 
@@ -1402,7 +1402,7 @@
                     Evaluate the partial derivatives at <m>P_1</m>.
                     <md>
                       <mrow>\Production_L  (300, 30)\amp =\frac{7.4 30^{0.26}}{300^{0.26}} \approx 4.07</mrow>
-                      <mrow>\Production_C  (300, 30)\amp =(2.6 \frac{300^{0.74}}{30^{0.74}} \approx 14.29</mrow>
+                      <mrow>\Production_C  (300, 30)\amp =2.6 \frac{300^{0.74}}{30^{0.74}} \approx 14.29</mrow>
                     </md>.
                   </p>
                 </li>
@@ -1618,8 +1618,12 @@
                     <me>R(1000,500,700)=\frac{246700}{9}</me>.
                     Then the linear approximation is given by
                     <md>
-                      <mrow>\Linear\revenue(x,y,z) \amp = R(1000,500,700)+R_x  (1000,500,700)  (x-1000)+  R_y  (1000,500,700)(y-500)+  R_z  (1000,500,700)(z-700) </mrow>
-                      <mrow> \amp =  \frac{246700}{9}+\frac{511}{36} (x-1000)+\frac{13}{5} (y-500)-\frac{763}{18}(z-700)</mrow>
+                      <mrow>\Linear\revenue(x,y,z) \amp = R(1000,500,700)</mrow>
+                       <mrow> \amp+R_x  (1000,500,700)  (x-1000)</mrow>
+                      <mrow> \amp +  R_y  (1000,500,700)(y-500)</mrow>
+                       <mrow> \amp+  R_z  (1000,500,700)(z-700) </mrow>
+                      <mrow> \amp =  \frac{246700}{9}+\frac{511}{36} (x-1000)+\frac{13}{5} (y-500)</mrow>
+                       <mrow> \amp-\frac{763}{18}(z-700)</mrow>
                     </md>.
                   </p>
                 </li>
@@ -1628,7 +1632,8 @@
                   <p>
                     The approximation at <m>P_2</m> obtained from the function in d.
                     <me>
-                      \Linear\revenue(1050,575,625) =  \frac{246700}{9}+\frac{511}{36} (50)+\frac{13}{5} (75)-\frac{763}{18} (-75)=31,495
+                     <mrow>  \Linear\revenue(1050,575,625) =  \frac{246700}{9}+\frac{511}{36} (50)</mrow>
+                     <mrow> \amp +\frac{13}{5} (75)-\frac{763}{18} (-75)=31,495</mrow>
                     </me>.
                   </p>
                 </li>
@@ -1900,7 +1905,7 @@
         <solution>
           <p>
             We have already computed the second partial derivatives.
-            <me>f_xx=2,\quad f_xy=3,\quad   f_yy=30y</me>.
+            <me>f_{xx}=2,\quad f_{xy}=3,\quad   f_{yy}=30y</me>.
             Substituting into the formula,
             <me>D=(2)(30y)-3^2=60y-9</me>.
           </p>
@@ -2115,7 +2120,7 @@
           <p>We have critical points when both first partials are 0, so at <m>(1,2)</m>, <m>(-1,2)</m>, <m>(1,0)</m>, and <m>(-1,0)</m>.</p>
           <p>At <m>(1,2)</m>, both <m>D</m> and <m>f_{xx}</m> are positive, so we have a local minimum.</p>
           <p>At <m>(-1,2)</m> and <m>(1,0)</m>, <m>D</m> is negative, so we have a saddle point.</p>
-          <p>At (<m>(-1,0)</m>, <m>D</m> is positive and <m>f_{xx}</m> is negative, so we have a local maximum.</p>
+          <p>At <m>(-1,0)</m>, <m>D</m> is positive and <m>f_{xx}</m> is negative, so we have a local maximum.</p>
         </solution>
       </example>
     </subsection>
@@ -2165,7 +2170,7 @@
                   <p>
                     We can use either the method of substitution
                     (solve for <m>x</m> or <m>y</m> in one equation and substitute into the other and solve),
-                    or method by elimination (multiply both equations by carefully chosen numbers and ass/subtract the equations from each other.)
+                    or method by elimination (multiply both equations by carefully chosen numbers and add/subtract the equations from each other.)
                   </p>
 
                   <p>
@@ -2713,8 +2718,8 @@
         We start with the simplest nontrivial example.  We consider a data set of 3 points,
         <m>{(1,0),(3,5),(6,5)}</m> and a line that we will use to predict the y-value given the x-value,
         <m>\predicted(x)=x/2 +1</m>.  We want to determine how well the line matches that data.
-        For each point, <m>(x_0,y_0)</m>, in the set we start by finding the corresponding point,
-        <m>(x_0,\predicted(x_0 ))</m>, on the line.
+        For each point, <m>(x_i,y_i)</m>, in the set we start by finding the corresponding point,
+        <m>(x_i,\predicted(x_i ))</m>, on the line.
       </p>
 
       <p>
@@ -2731,7 +2736,7 @@
 
       <p>
         The best fitting line is defined to be the line that that minimizes the sum of the squares of the error.
-        If we are trying to fit the data with a different model we want to choose the equation from that model that minimizes the sum of the squares of the error.
+        If we are trying to fit the data with a different model, we want to choose the equation from that model that minimizes the sum of the squares of the error.
       </p>
     </assemblage>
 
@@ -2758,8 +2763,8 @@
     <p>
       We want to start with the familiar method, using the <c>trendline</c> command from a graph.
       Then we want to use solver to minimize the sum of squared errors.
-      Finally we want to look at the function for sum of squared errors to see how we find the line using partial derivatives.
-      After we have looked at all three approaches for this first example we will consider more complicated examples.
+      Finally, we want to look at the function for sum of squared errors to see how we find the line using partial derivatives.
+      After we have looked at all three approaches for this first example, we will consider more complicated examples.
     </p>
 
     <figure>
@@ -2821,7 +2826,7 @@
       </statement>
       <solution>
         <p>
-          To use solver we need to add the predicting equation.
+          We need to add the predicting equation to use solver .
           We start with a randomly chosen slope and intercept for our prediction line.
           Our table has a PredictedY column, which gives the value that would be on the line with our slope and intercept.
           We add in the error, which is the difference between the predicted y and the actual y, and the square of the error.
@@ -2833,6 +2838,7 @@
         <p>
           Our use of Solver is similar to when we were looking for a minimum of a function of one variable.
           We need to designate the cell with the value we want to minimize.  We select the button to minimize.
+          Recall that Solver selects the "Make unconstrained variables non-negative" and we want to uncheck that box.
           We now designate two cells that represent variables we can change.
         </p>
 
@@ -3029,7 +3035,7 @@
 
     <p>
       The advantage of using the sum of squares definition is that we can find a best fitting curve using a model not supported by Excel.
-      For example if we have money invested with interest,
+      For example, if we have money invested with interest,
       but a portion of the capital kept available as cash without earning interest,
       we are looking for a curve of the form:
       <me>\TotalValue(\Time)=\CashAmount+\DepositAmount*\rate^{\Time}</me>.
@@ -3137,7 +3143,7 @@
           We are managing a wood harvesting business.
           The number of trees available in a plot is modeled as constrained growth.
           That means we expect it to be modeled by a logistic equation.
-          <me>\AvailableTrees(\Time)=\Capacity/(1+C*e^((-\rate*\Time)) )</me>.
+          <me>\AvailableTrees(\Time)=\Capacity/(1+C*e^{(-\rate*\Time)}</me>.
         </p>
 
         <p>
@@ -3197,7 +3203,7 @@
       <p>
         We have examined three methods for finding a best fitting curve.
         From <xref ref="chap-1-FunctionsGraphsExcel"/>, we reviewed the method of plotting points and adding a trendline.
-        Using the sum of least squared error definition of best fit we looked at creating an error function and using Solver to minimize the error.
+        Using the sum of least squared error definition of best fit, we looked at creating an error function and using Solver to minimize the error.
         We also looked at using partial derivatives to find critical points of the error function.
         It is worthwhile to look at some of the strengths and weaknesses of each method.
       </p>
@@ -3221,7 +3227,7 @@
       </p>
 
       <p>
-        The middle method, using Solver is a hybrid of the other two methods.
+        The middle method, using Solver, is a hybrid of the other two methods.
         We start by deciding on the mathematical model that should fit our situation.
         As we saw, the method is straightforward to adapt to any kind of equation.
         It is straightforward to explicitly build our error function.
@@ -3235,7 +3241,7 @@
         Since solver uses numerical methods it looks for places where the partial derivatives are within our tolerance bounds of zero.
         We cannot expect Solver to give an answer that is more precise than the tolerance bounds.
         With all of the methods we should be aware that we need enough points to get a reasonable fit of the curve.
-        Intuitively a small change in any point should not cause a big change in the curve.
+        Intuitively, a small change in any point should not cause a big change in the curve.
       </p>
 
       <p>
@@ -3526,9 +3532,9 @@
         <exercise>
           <statement>
             <p>
-              Mary has put some of her money in an investment that pays simple and the rest of her money a single account that compounds the return back into the account.
+              Mary has put some of her money in an investment that pays simple interest and the rest of her money into a single account that compounds the return back into the account.
               Thus, the model we want to use for the amount is
-              <me>\Amount(\Time)=\Amount_1+\Return_1*\Time+\Amount_2*\rate_2^{\Time}</me>.
+              <me>\Amount(\Time)=\Amount_1+\Return_1*\Time+\Amount_2*{\rate_2}^{\Time}</me>.
             </p>
 
             <p>With the data:</p>

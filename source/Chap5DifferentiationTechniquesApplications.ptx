@@ -24,7 +24,7 @@
 
     <p>
       We recall that a circle is not actually the graph of a function.
-      It is however the combined graph of the two functions representing the top and bottom halves of the circle.
+      It is, however, the combined graph of the two functions representing the top and bottom halves of the circle.
     </p>
 
     <p>
@@ -69,7 +69,7 @@
           so we take its derivative and evaluate at <m>x=4</m>.
           <md>
             <mrow>f_1' (x)\amp =1/2 (25-x^2 )^{-1/2} (-2x)</mrow>
-            <mrow>f_1' (4)\amp =1/2 (25-4^2 )^{-1/2} (-4)=-4/3</mrow>
+            <mrow>f_1' (4)\amp =1/2 (25-4^2 )^{-1/2} (-8)=-4/3</mrow>
           </md>.
         </p>
 
@@ -82,11 +82,11 @@
         <title>Solution B</title>
         <p>
           To find the equation of a line we need a point and a slope.
-          We already have the point at <m>(4,3)</m>.  To find the slope we take the derivative of our equation.
+          We already have the point at <m>(4,3)</m>.  To find the slope, we take the derivative of our equation.
           Since we do not have y as a function of <m>x</m>, we simply note that its derivative is the placeholder <m>y'</m>.
           Recall that <m>\frac{d}{dx} x</m>, the derivative of <m>x</m> with respect to <m>x</m>, is simply 1.
           <md>
-            <mrow>\frac{d}{dx}(x^2+y^2)\amp =25)</mrow>
+            <mrow>\frac{d}{dx}(x^2+y^2\amp =25)</mrow>
             <mrow>\frac{d}{dx}(x^2)+\frac{d}{dx}(y^2)\amp =\frac{d}{dx}(25)</mrow>
             <mrow>2x \frac{d}{dx}(x)+2y \frac{d}{dx}(y)\amp =0</mrow>
             <mrow>2x+2y y'\amp =0</mrow>
@@ -95,7 +95,7 @@
 
         <p>
           We then solve for <m>y'</m> and substitute our point <m>(4,3)</m> in for <m>(x,y)</m>.
-          <me>y'=-\frac{2}{2y}=-\frac{x}{y}</me>.
+          <me>y'=-\frac{2x}{2y}=-\frac{x}{y}</me>.
         </p>
 
         <p>
@@ -163,8 +163,8 @@
           There is no easy method to solve this relation for either price or quantity as an explicit function of the other.
           Instead, we will implicitly differentiate.
           <md>
-            <mrow>\frac{d\ }{d\ q}\amp(5*p+3*(p*q)^1.5+2*q =2000)</mrow>
-            <mrow>5 \frac{d\ p}{d\ q}\amp+3*(1.5*p^.5*(d p)/(d q)*q^{1.5}+p^{1.5}*1.5*q^{.5} )+2 =0</mrow>
+            <mrow>\frac{d\ }{d\ q}\amp(5*p+3*(p*q)^{1.5+}2*q =2000)</mrow>
+            <mrow>5 \frac{d\ p}{d\ q}\amp+3*(1.5*p^{.5}*\frac{d p}{d q}*q^{1.5}+p^{1.5}*1.5*q^{.5} )+2 =0</mrow>
             <mrow>\frac{d\ p}{d\ q}\amp*(5+4.5*p^{.5}*q^{1.5} ) =-(2+4.5*p^{1.5}*q^{.5})</mrow>
             <mrow>\frac{d\ p}{d\ q}\amp =-\frac{(2+4.5*p^{1.5}*q^{.5})}{(5+4.5*p^{.5}*q^{1.5} ) }</mrow>
           </md>.
@@ -293,7 +293,7 @@
               Plunging ahead without noticing that:
               <md>
                 <mrow>\frac{d}{dx}  (2x+3y )\amp = \frac{d}{dx}  23</mrow>
-                <mrow>\text{Implies that }2+  \frac{dy}{dx}\amp =0</mrow>
+                <mrow>\text{Implies that }2+  3\frac{dy}{dx}\amp =0</mrow>
               </md>.
             </p>
 
@@ -407,7 +407,7 @@
               In other words we apply <m>\frac{d}{d\ q}</m> to both sides.
               <md>
                 <mrow>\frac{d}{d\ q}  [40p+7pq+q^{0.5} ]\amp =\frac{d}{d\ q} 2000</mrow>
-                <mrow>40 \frac{d\ p}{d\ q}+7[dp/dq  q+p]+0.5 q^{-0.5}\amp =0</mrow>
+                <mrow>40 \frac{d\ p}{d\ q}+7[\frac{dp}{dq}  q+p]+0.5 q^{-0.5}\amp =0</mrow>
                 <mrow>(40+7q)\frac{d\ p}{d\ q}+7p+0.5 q^{-0.5}\amp =0</mrow>
                 <mrow>\frac{d\ p}{d\ q}\amp =  \frac{-7p-0.5 q^{-0.5}}{40+7q}</mrow>
               </md>.
@@ -565,7 +565,7 @@
 
     <p>
       As we have seen, <m>\frac{dy}{dx}</m> is the instantaneous rate of change of <m>y</m> with respect to <m>x</m>.
-      In <xref ref="chap-4-SymbolicDIfferentiation"/> we learned techniques for finding
+      In <xref ref="chap-4-SymbolicDifferentiation"/> we learned techniques for finding
       <m>\frac{dy}{dx}</m> when <m>y</m> is defined as a function of <m>x</m>.
       In the last section we learned how to use implicit differentiation to find
       <m>\frac{dy}{dx}</m> when we were given an equation in <m>x</m> and <m>y</m>.
@@ -579,7 +579,7 @@
       <title>Change in revenue with respect to expense, doable two ways</title>
       <statement>
         <p>
-          We can buy widgets for $10.  The demand price of widgets is $20 minus 0.1 times the quantity to be sold.
+          We can buy widgets wholesale for $10 a widget.  In the. retail market, the demand price of widgets is $20 minus 0.1 times the quantity to be sold.
           Find the derivative of revenue with respect to expense.
         </p>
       </statement>
@@ -787,7 +787,7 @@
 
         <p>
           When <m>g=10</m>, <m>\frac{d w}{d s}  =(4-0.02*40)=3.2</m>,
-          and <m>\frac{d s}{d g}</m>.  We need to multiply the derivatives to cancel the <m>d s</m>.
+          and <m>\frac{d s}{d g}=3+0.2*10=5</m>.  We need to multiply the derivatives to cancel the <m>d s</m>.
           <me>\frac{dw}{dg}  =\frac{dw}{ds}*\frac{ds}{dg}=(3.2)(5)=16</me>.
         </p>
 
@@ -827,7 +827,7 @@
       </statement>
       <solution>
         <p>
-          We are gong to assume that both labor and capital are functions of time and the <m>Y</m> is a constant.
+          We are going to assume that both labor and capital are functions of time and the <m>Y</m> is a constant.
           We start by implicitly differentiating our equation with respect to time.
           <md>
             <mrow>\frac{d}{dt}(Y\amp =50L^{0.75} K^{0.25})</mrow>
@@ -839,7 +839,7 @@
           We now substitute in for the values of <m>K</m>, <m>L</m>, and
           <m>\frac{dK}{dt}</m>, which were given.
           <md>
-            <mrow>0\amp =50*(0.75*16^{-0.25}*\frac{d\ L}{(d\ t}*81^{0.25}+16^{0.75}*.25*81^{-0.75}*2)</mrow>
+            <mrow>0\amp =50*(0.75*16^{-0.25}*\frac{d\ L}{d\ t}*81^{0.25}+16^{0.75}*.25*81^{-0.75}*2)</mrow>
             <mrow>0\amp =3/4*1/2*\frac{dL}{dt}*3+8*1/4*1/27*2</mrow>
             <mrow>\frac{dL}{dt}\amp =-32/243\approx -0.1317</mrow>
           </md>.
@@ -1077,7 +1077,7 @@
           </p>
           <p>
             Hence at <m>q =100</m> we have that
-            <me>\frac{dR}{dE}={30-0.2(100)}{10}=\frac{10}{10}=1</me>.
+            <me>\frac{dR}{dE}=\frac{30-0.2(100)}{10}=\frac{10}{10}=1</me>.
           </p>
         </solution>
       </exercise>
@@ -1128,7 +1128,7 @@
             <md>
               <mrow>\frac{dp}{dr}\amp =50+0.02 r</mrow>
               <mrow>\frac{dg}{dp}\amp =4 -0.0002 p</mrow>
-              <mrow>\text{Then }\frac{dp}{dr}r\amp =\frac{dg}{dp}  \frac{dp}{dr}r=(4 -0.0002 p)  (50+0.02 r)</mrow>
+              <mrow>\text{Then }\frac{dg}{dr}\amp =\frac{dg}{dp}  \frac{dp}{dr}=(4 -0.0002 p)  (50+0.02 r)</mrow>
             </md>.
           </p>
 
@@ -1185,22 +1185,23 @@
               Take the derivative with respect to <m>t</m>:
               <md>
                 <mrow>\frac{d}{dt} 960\amp =5 \frac{d}{dt}[L^{0.25} K^{0.75}]</mrow>
-                <mrow>0\amp =5[\frac{d}{dt} (L{0.25}) K^{0.75}+L^{0.25} \frac{d}{dt} (K^{0.75}) ]  </mrow>
-                <mrow>0\amp =[0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}+L^{0.25} 0.75K^(-0.25) \frac{dK}{dt}]</mrow>
+                <mrow>0\amp =5[\frac{d}{dt} (L^{0.25}) K^{0.75}+L^{0.25} \frac{d}{dt} (K^{0.75}) ]  </mrow>
+                <mrow>0\amp =[\frac{d}{dt} (L^{0.25}) K^{0.75}+L^{0.25} \frac{d}{dt} (K^{0.75}) ]  </mrow>
+                <mrow>0\amp =[0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}+L^{0.25} 0.75K^{(-0.25)} \frac{dK}{dt}]</mrow>
               </md>.
             </p>
 
             <p>
               Solve for  <m>\frac{dL}{dt}</m>:
               <md>
-                <mrow>0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}\amp =-L^{0.25} 0.75K^(-0.25)  \frac{dK}{dt}</mrow>
-                <mrow>\frac{dL}{dt}\amp =\frac{-L^{0.25} 0.75K^(-0.25)}{ 0.25 L^{-0.75} K^{0.75}} \frac{dK}{dt}=-3\frac{L}{K}\frac{dK}{dt}</mrow>
+                <mrow>0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}\amp =-L^{0.25} 0.75K^{-0.25}  \frac{dK}{dt}</mrow>
+                <mrow>\frac{dL}{dt}\amp =\frac{-L^{0.25} 0.75K^{-0.25}}{ 0.25 L^{-0.75} K^{0.75}} \frac{dK}{dt}=-3\frac{L}{K}\frac{dK}{dt}</mrow>
               </md>.
             </p>
 
             <p>
               If <m>L=81</m>, <m>K=256</m>,  <m>\frac{dK}{dt}=5</m>, then we have
-              <m>\frac{dL}{dt}=-3  \frac{81}{256}5 \approx -4.75</m>.
+              <m>\frac{dL}{dt}=-3 *\frac{81}{256}*5 \approx -4.75</m>.
             </p>
           </solution>
         </exercise>
@@ -1282,8 +1283,8 @@
       <image width="60%" source="images/sec5-3-2.png"/>
 
       <p>
-        We note that the slope of the normalized demand curve is almost always negative.
-        It is thus convenient to talk about the negative of the slope of the normalized demand price curve.
+        We note that the slope of the demand curve is almost always negative.  We also note that we are reversing the normal roles, with price being the input and quantity the output.  We will
+        It is thus convenient to talk about the negative reciprocal of the slope of the normalized demand price curve.
       </p>
 
       <assemblage>
@@ -1424,7 +1425,7 @@
       <p>
         For arc elasticity we have two quantity-price points <m>(\quantity_1,\price_1)</m>
         and <m>(\quantity_2,\price_2)</m>.
-        We want to adapt our formula for elastic to the discrete case.
+        We want to adapt our formula for elasticity to the discrete case.
         We can think of the derivative,  <m>\frac{d Q}{d P}</m>,
         as the ratio of small changes in quantity and price.
         The best value for price and quantity is the average value from the two points.
@@ -1556,7 +1557,7 @@
                     First solve for <m>q</m>:
                     <me>q=1500-q \Longrightarrow     2q=1500 \Longrightarrow   q=750 </me>.
                     Next find the price:
-                    <me>\price=30-\frac{\quantity}{50},\qquad \price(750=30-\frac{750}{50}=30-15=15</me>.
+                    <me>\price=30-\frac{\quantity}{50},\qquad \price(750)=30-\frac{750}{50}=30-15=15</me>.
                   </p>
 
                   <p>

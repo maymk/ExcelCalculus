@@ -79,7 +79,7 @@
     </example>
 
     <p>
-      In a similar manner, if the function I am accumulating is linear,
+      In a similar manner, if the function I am accumulating is non-constant and linear,
       I can find area by using the area formula of a triangle, one half base time height.
     </p>
 
@@ -187,11 +187,11 @@
           Following our standard practice, we set up the question and answer in labeled areas at the top of the worksheet.
           The width of a subinterval is the width of the whole interval divided by the number of subintervals.
           The column <m>x_n</m> is for the x value at the right side of the n-th subinterval.
-          The value of <m>x_n</m> is the starting point plus n times the width of a subinterval.
-          We then evaluate the function at <m>x_n</m>.
+          We calculate the value of <m>x_n</m> by taking the starting point, <m>x_o</m>, and adding <m>n</m> times the width of a subinterval.
+          We then evaluate the function at <m>x_n</m>, which we label <m>f(x_n)</m>.
           The area of the n-th rectangle is the height, or <m>f(x_n)</m>, times the width of the subinterval.
           The last column is the total area for the first n rectangles.
-          The area for 100 rectangles is our area estimate.
+          The area for 100 rectangles is our area estimate.  Since we don't want to have to look all over for our answer, we bring the area up to cell D2 with the OFFSET command.  The command OFFSET(E6,B3,0) starts in cell E6, goes down B3 (the number of subintervals) rows, and goes over 0 columns.  In our case, it finds the value in cell E106 and puts it in cell E6.
         </p>
 
         <p>To find the area we quick fill our worksheet.</p>
@@ -205,8 +205,8 @@
     </example>
 
     <p>
-      While 100 subintervals will be close enough for most of the problems we are interested is,
-      the "area", or definite integral will be defined as the limit of this sum as the number of subintervals goes to infinity.
+      While 100 subintervals will be close enough for most of the problems we are interested in,
+      the "area", or definite integral, will be defined as the limit of this sum as the number of subintervals goes to infinity.  In other words, the definite integral is the area under the curve as the rectangles get infinitely thinner.  In math notation:
     </p>
 
     <assemblage>
@@ -545,11 +545,11 @@
       In the last section we defined the definite integral, <m>\int_a^b f(t)dt</m>,
       the signed area under the curve <m>y= f(t)</m> from <m>t=a</m> to <m>t=b</m>,
       as the limit of the area found by approximating the region with thinner and thinner rectangles.
-      We also saw that we can easily find a reasonable approximation to the area using Excel to find such a sum with a fairly large number of rectangles.
+      We also saw that we can easily find a reasonable approximation to the area using Excel by finding such a sum with a fairly large number of rectangles.
     </p>
 
     <p>
-      In the trivial case where we have a constant function <m>f(t)=c</m>
+      In the trivial case where we have a constant function <m>f(t)=c</m>,
       we can find the area of the area with a simple formula, <m>\int_a^b c\,dt=c(b-a)=cb-ca</m>.
       If we define an area function, <m>F(x)</m>, as the area under the curve <m>y=f(t)</m> from <m>t=0</m> to <m>t=x</m>,
       then the area function in this case is  <m>F(x)=c*x</m>.
@@ -663,9 +663,9 @@
           Column D has the value of <m>f(t)</m> evaluated at those points.
           The area of the rectangle is the height <m>f(mid_n)</m> times the width, <c>Interval width</c>.
           <c>SumArea</c> is our running area function.
-          When we plot the area function we have something that seems to be quadratic with leading coefficient
+          When we plot the area function, we have something that seems to be quadratic with leading coefficient
           <m>c/2</m> and very small linear and constant coefficients.
-          In fact the linear and constant coefficients are zero up to a rounding factor for numbers of the size we are using.
+          In fact, the linear and constant coefficients are zero up to a rounding factor for numbers of the size we are using.
         </p>
 
         <image width="80%" source="images/sec7-2-5.png"/>
@@ -730,7 +730,7 @@
     </example>
 
     <p>
-      In all the examples above we note that the area function, <m>F(x)</m>,
+      In all the examples above, we note that the area function, <m>F(x)</m>,
       has <m>f(x)</m>, the curve we are finding the area under, as its derivative.
       Thus, in these cases, the area is an anti-derivative of <m>f(x)</m>.
       This observation generalizes to the Fundamental Theorem of Calculus, which has two versions:
@@ -759,8 +759,9 @@
     </theorem>
 
     <p>
-      In practice we use the second version of the fundamental theorem to evaluate definite integrals.
-      We find a function <m>F(x)</m> whose derivative is the integrand <m>f(x)</m> and then evaluate <m> F(x)</m> at the endpoints.
+      In practice, we use the second version of the fundamental theorem to evaluate definite integrals.
+     Starting with a definite integral <m>\int_a^b f(t)\,dt</m>, we find a function <m>F(x)</m> whose derivative is <m>f(x)</m>, the integrand or function we are integrating,  and then evaluate <m> F(x)</m> at the endpoints.</p>
+     <p>
       It is easier to prove or justify the first version of the fundamental theorem.
       The basic argument notes that is <m>F(x)=\int_a^xf(t) \,dt</m>, then formally
       <me>\frac{d}{dx} F(x)=\lim_{h\to 0}\frac{(F(x+h)-F(x))}{h}</me>.
@@ -770,7 +771,7 @@
 
     <p>
       But if <m>h</m> is small, <m>F(x+h)-F(x)</m> is approximately the area of a rectangle of height
-      <m>f(x)</m> and with <m>h</m>, so then <m>F'(x) = f(x)</m>.
+      <m>f(x)</m> and width <m>h</m>, so then <m>F'(x) = f(x)</m>.
       We then note that any two anti-derivatives of a function differ by a constant.
     </p>
 
@@ -820,8 +821,8 @@
 
     <p>
       We also want to revisit our first three examples in light of the fundamental theorem if calculus.
-      In all of those examples we used Excel to find a best fitting curve for an area function.
-      We can now check our work by taking the derivative, adjusting parameters as needed to find an anti-derivative.
+      In all of those examples, we used Excel to find a best fitting curve for an area function.
+      We can now check our work by taking the derivative, adjusting parameters as needed, to find an anti-derivative.
       For constant and linear functions we have already done the adjusting because we could find the area function from geometry.
     </p>
 
@@ -1237,8 +1238,8 @@
     <p>
       We thus find it very useful to be able to systematically find an anti-derivative of a function.
       The standard notation is to use an integral sign without the limits of integration to denote the general anti-derivative.
-      Thus <m>\int_a^b f(t)dt</m> is referred to as the definite integral of <m>f(x)</m> from <m>a</m> to <m>b</m>,  and is a number.
-      In contrast, <m>\int f(x) dx</m> is the indefinite integral of <m>f(x)</m> and it is a function.
+      Thus, <m>\int_a^b f(t)dt</m> is referred to as the definite integral of <m>f(x)</m> from <m>a</m> to <m>b</m>,  and it is a number.
+      In contrast, <m>\int f(x) dx</m> is the indefinite integral of <m>f(x)</m>, and it is a function.
       We use indefinite integrals or anti-derivatives to evaluate definite integrals or areas.
     </p>
 
@@ -1273,9 +1274,9 @@
 
     <p>
       We start with the closest differentiation formula <m>\frac{d}{dx}   \ln (x)=1/x</m>.
-      In this case we need to note that natural logarithms are only defined positive numbers and we would like a formula that is true for positive and negative numbers.
+      In this case, we need to note that natural logarithms are only defined positive numbers and we would like a formula that is true for positive and negative numbers.
       We can do this with an appropriate use of absolute value bars.
-      Thus <m>\frac{d}{dx} (\ln(|x|)+C)=1/x</m>, and we have our second formula:
+      Thus, <m>\frac{d}{dx} (\ln(|x|)+C)=1/x</m>, and we have our second formula:
     </p>
 
     <assemblage><p><me>\int 1/x\, dx=\ln |x|+C</me>.</p></assemblage>
@@ -1422,6 +1423,7 @@
         <p>
           Since we can use any anti-derivative, we simplify by setting <m>C = 0</m> and choosing the anti-derivative  <m>F(x)=2x^3+2x</m>.
           <me>\int_1^3 6x^2+2\,dx=F(3)-F(1)=60-4=56</me>.
+          If we choose a different value for <m>C</m>, it cancels out when we subract the values at the endpoints.,
         </p>
       </solution>
     </example>
@@ -1642,7 +1644,7 @@
       A word of warning <mdash/> The anti-differentiation formulas we have produced only work for the functions given,
       allowing for changes in variables.  At this point the only way we have for finding
       <m>\int(3x+5)^2 dx</m> is expand the integrand getting  <m>\int(9x^2+30x+25)dx</m> before applying our rules.
-      In general the process of finding anti-derivatives symbolically is an art form that we only begin to work with in this course.
+      In general, the process of finding anti-derivatives symbolically is an art form that we only begin to work with in this course.
     </p>
 
     <exercises xml:id="exercises-set-sec-7-3">
@@ -1796,7 +1798,7 @@
             <p>
               <md>
                 <mrow>\int_{-10}^2 e^x+e  dx \amp =F(2)-F(-10)=e^2+2e-(e^{-10}-10 e)</mrow>
-                <mrow> \amp = e^2-\frac{1}{e^{10}} -8 e</mrow>
+                <mrow> \amp = e^2-\frac{1}{e^{10}} +12e</mrow>
               </md>.
             </p>
           </solution>
@@ -1880,7 +1882,7 @@
           <p>
             <md>
               <mrow>\text{Income}\amp =\int_0^{10}1000(0.95)^t\,  dt =\left.\frac{1000(0.95)^t)}{\ln(0.95)} \right|_{t=0}^{t=10}</mrow>
-              <mrow>\amp =\frac{1000(0.95)^{10}}{\ln(0.95)} -\frac{1000(0.95)^0)}{\ln(0.95)} </mrow>
+              <mrow>\amp =\frac{1000(0.95)^{10}}{\ln(0.95)} -\frac{1000(0.95)^0}{\ln(0.95)} </mrow>
               <mrow>\amp \approx -11672.81+19495.73=7822.91</mrow>
             </md>.
           </p>
@@ -1899,7 +1901,7 @@
       <exercise>
         <statement>
           <p>
-            After the first year, the rate of sales of a fad product are <m>\operatorname{sales}(t) = \frac{1000}{t}</m> with time in years.
+            After the first year, the rate of sales of a fad product are <m>\operatorname{sales}(t) = \frac{1000}|t|</m> with time in years.
             How many units are sold from the end of the first year to the end of the tenth year?
           </p>
         </statement>
@@ -2045,10 +2047,10 @@
 
     <introduction>
       <p>
-        At the end of the last section we warned that the symbolic integration techniques we have developed only work for problems that exactly fit our formulas.
+        At the end of the last section, we warned that the symbolic integration techniques we have developed only work for problems that exactly fit our formulas.
         When we tried integrating an exponential function where the exponent was a constant times <m>t</m>,
         we had to change the base to get a function with only <m>t</m> in the exponent.
-        We want to develop one more technique of integration, that of change of variables or substitution,
+        We want to develop one more technique of integration, called change of variables or substitution,
         to handle integrals that are pretty close to our stated rules.
         This technique is often called <m>u</m>-substitution and is related to the chain rule for differentiation.
       </p>
@@ -2066,7 +2068,7 @@
         <solution>
           <p>
             We could do this problem by rewriting the integrand as an explicit seventh degree polynomial and then using the power and sum rules,
-            but that is too much work.  Instead I will notice the integrand looks almost like a power,
+            but that is too much work.  Instead, I will notice the integrand looks almost like a power,
             and thus guess an answer of <m>\frac{1}{8} (3x+5)^8+C</m>.
             I then check by differentiating.  Using the chain rule,
             <me>\frac{d}{dx}  (\frac{1}{8} (3x+5)^8+C)=\frac{1}{8}*8(3x+5)^{8-1}*3=3(3x+5)^7</me>.
@@ -2091,7 +2093,7 @@
             As we did in the previous example, we first guess the antiderivative to be
             <m>\frac{1}{n+1} (ax+b)^{n+1}+C</m>. We then take the derivative of that expression and obtain <m>a(ax+b)^n</m>.
             This misses our integrand by a factor of <m>a</m>.
-            We adjust by that factor and find the antiderivative is <m>\frac{1}{a}  \frac{1}{n+1} (ax+b)^{n+1}+C</m>.
+            We adjust by that factor and find the antiderivative is <m>\frac{1}{a}  \frac{1}{(n+1)} (ax+b)^{n+1}+C</m>.
           </p>
         </solution>
       </example>
@@ -2118,8 +2120,8 @@
         We run into a problem if we try to extend this method with quadratic terms.
         If we start with <m>(x^2+5)^3</m> and guess an antiderivative of <m>\frac{1}{4} (x^2+5)^4</m>,
         when we differentiate we get <m>(x^2+5)^3 2x</m> and are off by a factor of <m>8x</m>.
-        However when we divide by that factor to get <m>\frac{(x^2+5)^4}{8x}</m> as a proposed antiderivative,
-        and then differentiate again we get
+        However, when we divide by that factor to get <m>\frac{(x^2+5)^4}{8x}</m> as a proposed antiderivative,
+        and then differentiate again, we get
         <me>\frac{4*2x(x^2+5)^3*8x-(x^2+5)^4*8}{8x}</me>,
         which is not what we want.  The key is to start by recalling the chain rule:
         <me>\frac{d}{dx}  (f(g(x)))=f'(g(x))g'(x)</me>.
@@ -2168,7 +2170,7 @@
           <p>
             The obvious candidate for <m>u</m> is <m>ax+b</m>.  Then <m>du=a \, dx</m>.  Hence
             <md>
-              <mrow>\int (ax+b)^n\, dx \amp =\frac{1}{a} \int (ax+b)^n  (a\, dx)  \quad \text{ (Make } u \text{ and } du \text{explicit.)}</mrow>
+              <mrow>\int (ax+b)^n\, dx \amp =\frac{1}{a} \int (ax+b)^n  (a\, dx)  \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
               <mrow>\amp =\frac{1}{a} \int (u)^n \, du \quad \text{ (Do the substitution.)}</mrow>
               <mrow>\amp =\frac{1}{a*(n+1)} (u)^{n+1}+C \quad \text{ (Find the integral in terms of } u.)</mrow>
               <mrow>\amp =\frac{1}{a*(n+1)} (ax+b)^{n+1}+C \quad \text{ (Substitute back.)}</mrow>
@@ -2183,15 +2185,15 @@
       </p>
 
       <example>
-        <title>Power of quadratic function with change of variables</title>
+        <title>Power of cubic function with change of variables</title>
         <statement>
           <p>Find <m>\int (2x^3+11)^7 x^2 dx</m>.</p>
         </statement>
         <solution>
           <p>
-            The obvious candidate for <m>u</m> is <m>2x^3+11</m>.  Then <m>du=6x^2d</m>x.  Thus
+            The obvious candidate for <m>u</m> is <m>2x^3+11</m>, since it is an expression taken to a large power.  Then <m>du=6x^2\, dx</m>.  Thus
             <md>
-              <mrow>\int (2x^3+11)^7 x^2\, dx \amp =\frac{1}{6} \int (2x^3+11)^7 (6x^2 \,dx) \quad \text{ (Make } u \text{ and } du \text{explicit.)}</mrow>
+              <mrow>\int (2x^3+11)^7 x^2\, dx \amp =\frac{1}{6} \int (2x^3+11)^7 (6x^2 \,dx) \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
               <mrow>\amp =\frac{1}{6} \int (u)^7 \, du \quad \text{ (Do the substitution.)}</mrow>
               <mrow>\amp =\frac{1}{6*8} (u)^8+C \quad \text{ (Find the integral in terms of } u.)</mrow>
               <mrow>\amp =\frac{1}{48} (2x^3+11)^8+C \quad \text{ (Substitute back.)}</mrow>
@@ -2227,10 +2229,11 @@
           <p>
             Solution 1: Convert everything to <m>u</m>.
             The obvious candidate for <m>u</m> is <m>2x+5</m>.  Then <m>du=2\, dx</m>.
-            For the lower endpoint, <m>x=1</m> becomes <m>u=7</m>.  For the upper endpoint
-            <m>x=3</m> becomes <m>u=11</m>.  Substituting,
+            For the lower endpoint, <m>x=1</m> becomes <m>u=2(1)+5=7</m>.  For the upper endpoint
+            <m>x=3</m> becomes <m>u=2(3)+5=11</m>.  Substituting,
             <md>
-              <mrow>\int_1^3 e^{2x+5}\, dx \amp =\frac{1}{2} \int_1^3 e^{2x+5} (2\,dx) \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
+              <mrow>\int_1^3 e^{2x+5}\, dx \amp =\left({\frac{1}{2}}) (2)\int_1^3 e^{2x+5} \,dx)\quad \text{ (Add needed factors.)}</mrow>
+              <mrow> \amp =\frac{1}{2} \int_1^3 e^{2x+5} (2\,dx) \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
               <mrow>\amp =\frac{1}{2} \int_{u=7}^{u=11}e^u \,du \quad \text{ (Do the substitution.)}</mrow>
               <mrow>\amp =\left.\frac{1}{2} e^u\right|_7^{11} \quad \text{ (Find the antiderivative.)}</mrow>
               <mrow>\amp =\frac{1}{2} e^{11}-\frac{1}{2} e^7. \quad \text{ (Evaluate.)}</mrow>
@@ -2262,13 +2265,13 @@
       <example>
         <title>A second definite integral with change of variables</title>
         <statement>
-          <p>Evaluate <m>\int_{-2}^1 x \exp(x^2)dx</m></p>
+          <p>Evaluate <m>\int_{-2}^1 x e^{(x^2)}dx</m></p>
         </statement>
         <solution>
           <p>
             (Convert everything to <m>u</m>.) The obvious candidate for <m>u</m> is <m>x^2</m>.
-            Then <m>du=2x\, dx</m>. For the lower endpoint, <m>x=-2</m> becomes <m>u=4</m>.
-            For the upper endpoint <m>x=1</m> becomes <m>u=1</m>. Substituting,
+            Then <m>du=2x\, dx</m>. For the lower endpoint, <m>x=-2</m> becomes <m>u=(-2)^2=4</m>.
+            For the upper endpoint <m>x=1</m> becomes <m>u=1^2=1</m>. Substituting,
             <md>
               <mrow>\int_{-2}^1 x e^{(x^2)}\,dx \amp =\frac{1}{2} \int_{-2}^1 e^{(x^2)}(2x\, dx) \quad \text{(Make } u \text{ and } du \text{explicit.)}</mrow>
               <mrow>\amp =\frac{1}{2} \int_{4}^{1}e^u\, du \quad \text{ (Do the substitution.)}</mrow>
@@ -2327,6 +2330,7 @@
               Let <m>u=x/5-2</m>.  Then <m>du=dx/5</m>.
               <md>
                 <mrow>\int (x/5-2)^{2/3}  dx\amp=5\int {u^{2/3}  du}</mrow>
+                <mrow>\amp=5\frac{u^{5/3}}{5/3}+c </mrow>
                 <mrow>\amp=3{u^{5/3}}+c </mrow>
                 <mrow>\amp= 3{(x/5-2)^{5/3}} +c</mrow>
               </md>.
@@ -2481,7 +2485,7 @@
             <p>
               Let <m>u=-0.05(t+1)</m>.  Then <m>du=-0.05dt</m>.
               <md>
-                <mrow>\int_0^5 e^{-0.05(t+1)} dt\amp=-frac{1}{0.05}\int_{u=-0.05}^{u=-0.3} e^u \,du</mrow>
+                <mrow>\int_0^5 e^{-0.05(t+1)} dt\amp=-\frac{1}{0.05}\int_{u=-0.05}^{u=-0.3} e^u \,du</mrow>
                 <mrow>\amp=\left.-20e^u\right|_{u=-0.05}^{u=-0.3}</mrow>
                 <mrow>\amp= -20 (e^{-0.3}-e^{-0.05})</mrow>
               </md>.
@@ -2653,7 +2657,7 @@
         we saw that the fundamental theorem of calculus lets us use an antiderivative or indefinite integral to evaluate a definite integral.
         In <xref first="sec-7-3-BasicAntidifferentiation" last="sec-7-4-ChangeVariables"/>
         we saw how to compute indefinite integrals by hand for a limited number of functions.
-        In this section we will look at how to use computer software at a web site to find antiderivatives.
+        In this section, we will look at how to use computer software at a web site to find antiderivatives.
       </p>
 
       <p>
@@ -2718,13 +2722,13 @@
         However we can find other tools by searching for integral calculator.
         Such a search reveals <term>Symbolab</term>,
         <url href="https://www.symbolab.com/solver/definite-integral-calculator" visual="https://www.symbolab.com/solver/definite-integral-calculator"/>,
-        which we also used in <xref ref="chap-4-SymbolicDIfferentiation"/>.
+        which we also used in <xref ref="chap-4-SymbolicDifferentiation"/>.
       </p>
 
       <image width="90%" source="images/sec7-5-9.png"/>
 
       <p>
-        In <xref ref="chap-4-SymbolicDIfferentiation"/>, we found a derivative calculator.
+        In <xref ref="chap-4-SymbolicDifferentiation"/>, we found a derivative calculator.
         Similarly we can find an integral calculator (<url href="http://www.integral-calculator.com/" visual="http://www.integral-calculator.com/"/>)  that will show steps.
         For problems of at the level of difficulty we have been doing, Wolfram|Alpha also produces plots of the integral.
       </p>
@@ -2800,12 +2804,17 @@
             We can do this by putting together things we have already done.
             First we use Wolfram|Alpha to find an antiderivative.
           </p>
-
-          <image width="70%" source="images/sec7-5-14.png"/>
-
+         <image width="70%" source="images/sec7-5-14.png"/>
+         
           <p>
             Thus we know <m>P(q)=\frac{1q^3}{3}+\frac{5q^2}{2}+50q+C</m> for some constant <m>C</m>.
-            We also know <m>P(5)=0</m>.  We now plug the function, without the <m>C</m>,
+            We also know <m>P(5)=0</m>.  
+            </p>
+            <p>Thus, <m>0=P(5)=\frac{5^3}{3}+\frac{5*5^2}{2}+50*5+C</m>, or
+            <m>--C=\frac{5^3}{3}+\frac{5*5^2}{2}+50*5</m>.
+            </p>
+            <p>
+            Using Excel, we now plug the function, without the <m>C</m>,
             into Excel and evaluate at <m>q=5</m>.
           </p>
 
@@ -2835,7 +2844,7 @@
         </statement>
         <solution>
           <p>
-            We can also do this with Wolfram|Alpha setting up the boundary value problem.
+            We can also do this with Wolfram|Alpha bysetting up the boundary value problem.
              We give the alpha bot the derivative we want integrated and the fixed value of the original function.
              (Notice that the answer does not include a <m>+C</m>, since we have computed a particular constant.)
            </p>
@@ -2932,7 +2941,7 @@
           <image width="70%" source="images/sec7-5-24.png"/>
 
           <p>
-            If we assume payments start at the beginning of the first day we would use the left endpoint method.
+            If we assume payments start at the beginning of the first day, we would use the left endpoint method.
           </p>
         </solution>
       </example>
@@ -3236,10 +3245,10 @@
         We want to look at an extended example where we realistically want to find a definite integral,
         but need to use numerical methods rather than solving for the antiderivative and using the fundamental theorem of calculus.
         Most students are familiar with the concept of a course that is graded on a curve.
-        Formally that means that there is a preset distribution of grades available in the class,
+        Formally, that means that there is a preset distribution of grades available in the class,
         with a certain percentage of the students getting an A, a certain percentage getting a B, and so forth.
         Most college students are also familiar with the ACT, SAT, or other standardized tests,
-        where the grades typically follow a normal or bell curve.
+        where the score typically follow a normal or "bell" curve.
         The result we pull from more advanced mathematics is that many phenomena such as height,
         weight, and hat size, also follow a bell curve.
         In a business setting, we are often concerned whether or not a portion of a market will be big enough to support a specialty store.
@@ -3862,7 +3871,7 @@
           <p>
             To set the problem up for calculus, we use a 24-hour clock to put time on a number line.
             We are accumulating <m>\text{FuelConsumption}(t)=2</m> from <m>t=8</m> to <m>t=18</m>.  We need
-            <me>\int_8^{18} 2 dt=|2t|_8^{18}=(2*18)-(2*8)=20</me>.
+            <me>\int_8^{18} 2 dt=2t|_8^{18}=(2*18)-(2*8)=20</me>.
             gallons of fuel.
           </p>
 
@@ -4173,7 +4182,7 @@
 
           <p>
             Since 3.5 is less than 4.5 years, the equipment is still depreciating.
-            Its book value is <m>100,000*(0.6)^{3.}5 = \$16,731</m>.
+            Its book value is <m>100,000*(0.6)^{3.5} = \$16,731</m>.
           </p>
 
           <image width="60%" source="images/sec7-7-8.png"/>
@@ -4702,7 +4711,7 @@
           </statement>
           <solution>
             <p>
-              The two curve intersect at the point of market equilibrium,
+              The two curves intersect at the point of market equilibrium,
               <m>\left({\frac{1000}{7},\frac{850}{7}}\right)</m>.
             </p>
 
@@ -4732,7 +4741,7 @@
           </statement>
           <solution>
             <p>
-              The two curve intersect at the point of market equilibrium,
+              The two curves intersect at the point of market equilibrium,
               <m>(109.31, 33.33)</m>.
             </p>
 
@@ -4740,7 +4749,7 @@
               <md>
                 <mrow>\ProducerSurplus\amp =\int_0^{109.31}(33.33)-\left({50(1-(0.99)^q)}\right)\,dx=1494.79</mrow>
                 <mrow>\ConsumerSurplus\amp =\int_0^{109.31}\left({100(0.99)^q}\right)-33.33)\,dx=2989.58</mrow>
-                <mrow>\TotalSocialGain=\ProducerSurplus+\ConsumerSurplus=4484.37</mrow>
+                <mrow>\TotalSocialGain\amp=\ProducerSurplus+\ConsumerSurplus=4484.37</mrow>
               </md>.
             </p>
           </solution>

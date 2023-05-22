@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="chap-4-SymbolicDIfferentiation">
+<chapter xml:id="chap-4-SymbolicDifferentiation">
   <title>Symbolic Differentiation</title>
 
   <introduction>
@@ -28,7 +28,7 @@
         with a slight adjustment in notation to match the standard conventions:
       </p>
 
-      <definition>
+      <definition xml:id="DefDerivative">
         <title>Derivative</title>
         <statement>
           <p>
@@ -73,7 +73,7 @@
         Our first rule for symbolic differentiation gives the derivative of a monomial.
       </p>
 
-      <claim>
+      <claim xml:id="DerivMonomialRule">
         <title>Monomial rule</title>
         <statement>
           <p>
@@ -103,15 +103,15 @@
             </ol>
           </p>
         </statement>
-        <solution>
+        <solution xml:id="ExampleMonomialDerivs">
           <p>
             Using our rule:
             <ol label="(a)">
               <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (3 x^1)=1*3 x^0=3.</m></li>
               <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (5 x^2 )=2*5 x^1=10 x.</m></li>
-              <li><m> \frac{d}{dx} h(x)=\frac{d}{dx} (7x^{25})=25*7 x^24=175x^{24}.</m></li>
-              <li><m> \frac{d}{dx} j(x)=\frac{d}{dx}  (6 \sqrt{x})=\frac{d}{dx}  (6x^{1/2} )=1/2*6x^{-1/2}=3x^{-1/2}</m></li>
-              <li><m> \frac{d}{dx}  k(x)=\frac{d}{dx}  \frac{4 }{x^3 }=d/dx (4 x^{(-3)} )=-3*4 x^{-4}=-12 x^{-4}</m></li>
+              <li><m> \frac{d}{dx} h(x)=\frac{d}{dx} (7x^{25})=25*7 x^{24}=175x^{24}.</m></li>
+              <li><m> \frac{d}{dx} j(x)=\frac{d}{dx}  (6 \sqrt{x})=\frac{d}{dx}  (6x^{1/2} )=1/2*6x^{-1/2}=3x^{-1/2}=\frac{3}{\sqrt{x}}</m></li>
+              <li><m> \frac{d}{dx}  k(x)=\frac{d}{dx}  \frac{4 }{x^3 }=d/dx (4 x^{(-3)} )=-3*4 x^{-4}=-12 x^{-4}=\frac{-12}{x^4}</m></li>
             </ol>
           </p>
         </solution>
@@ -136,14 +136,14 @@
             From the formal definition of derivative, if <m>f(x)=a x+b</m>, then show <m>f'(x)=a</m>.
           </p>
         </statement>
-        <solution>
+        <solution xml:id="ExampleLinearDerivs">
           <p>
             Using our definition:
             <md>
               <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
               <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)+b)-(a x+b)}{h}</mrow>
               <mrow>\amp =\lim_{h\to0}\frac{(a x+a h+b)-(a x+b)}{h}</mrow>
-              <mrow>\amp =\lim_{h\to0}\frac{ah}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{ah}{h}=\left({\lim_{h\to0}\frac{a}{1}}\right)\left({\lim_{h\to0}\frac{h}{h}}\right)</mrow>
               <mrow>\amp =\lim_{h\to0}a=a</mrow>
             </md>.
           </p>
@@ -166,14 +166,14 @@
             then show <m>f'(x)=2 a x</m>.
           </p>
         </statement>
-        <solution>
+        <solution  xml:id="ExampoleFormalQuadDerivs">
           <p>
             Using our definition:
             <md>
               <mrow>f'(x)\amp =lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
               <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)^2)-(a x^2)}{h}</mrow>
               <mrow>\amp =\lim_{h\to0}\frac{(a x^2+2 a h x +a h^2)-(a x^2)}{h}</mrow>
-              <mrow>\amp =\lim_{h\to0}\frac{2 a h x +a h^2}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{2 a h x +a h^2}{h} =\lim_{h\to0}\frac{h(2 a x +a h)}{h}</mrow>
               <mrow>\amp =\lim_{h\to0}(2ax+ah)=2ax</mrow>
             </md>.
           </p>
@@ -194,7 +194,7 @@
 
       <p>We are ready to generalize.</p>
 
-      <example>
+      <example  xml:id="PowerFunctionRule">
         <title>Derivative of power function</title>
         <statement>
           <p>
@@ -202,15 +202,15 @@
             then show <m>f'(x)=n a x^{(n-1)}</m>.
           </p>
         </statement>
-        <solution>
+        <solution xml:id="ProofPowerRule">
           <p>
             Using our definition:
             <md>
               <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
               <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)^n)-(a x^n)}{h}</mrow>
               <mrow>\amp =\lim_{h\to0}\frac{(a (x^n+n x^{n-1}h + \text{ terms involving }  h^2)-(a x^n)}{h}</mrow>
-              <mrow>\amp =\lim_{h\to0}\frac{(a (n x^{n-1}h + \text{ terms involving }  h^2)}{h}</mrow>
-              <mrow>\amp =\lim_{h\to0}(a (n x^{n-1} + \text{ terms involving }  h)</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{a (n x^{n-1}h + \text{ terms involving }  h^2)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}a (n x^{n-1} + \text{ terms involving }  h)</mrow>
               <mrow>\amp =anx^{n-1}</mrow>
             </md>.
           </p>
@@ -226,7 +226,7 @@
     <subsection>
       <title>Derivatives of Exponential Functions</title>
 
-      <claim>
+      <claim  xml:id="ExponentialRuleDeriv">
         <title>Exponential Rule</title>
         <statement>
           <p>
@@ -240,7 +240,7 @@
         However we more typically want to use exponential functions based on a rate of growth or decay.
       </p>
 
-      <claim>
+      <claim xml:id="GenExponRUleClaim">
         <title>General Exponential Rule</title>
         <statement>
           <p>
@@ -263,7 +263,7 @@
             </ol>
           </p>
         </statement>
-        <solution>
+        <solution xml:id="GenExponeExampleSol">
           <p>
             Using our rule:
             <ol label="(a)">
@@ -291,7 +291,7 @@
             From the formal definition of derivative show that if <m>f(x)=e^x</m>, then <m>f'(x)=e^x</m>.
           </p>
         </statement>
-        <solution>
+        <solution xml:id="proofExponRule">
           <p>
             Using our definition:
             <md>
@@ -316,16 +316,17 @@
         </solution>
       </example>
 
-      <example>
+      <example xml:id="JustifySecondExponDerivRule">
         <title>Justification of second exponential rule</title>
         <statement>
           <p>
             From the formal definition of derivative, if <m>f(x)=a^x</m>, then show <m>f'(x)=\ln(a)*a^x</m>.
           </p>
         </statement>
-        <solution>
+        <solution xml:id="ProofSecondExponDerivRUle">
           <p>
-            We start by mimicking the last problem.  At a key step we will recall that <m>a^x=e^{x \ln(a)}</m>.
+            We start by mimicking the last problem.  At a key step we will recall that by replacing <m>h</m> with <m>h \ln(a)</m> in our previous justification, we obtain
+            <m>a^x=\left({e^{\ln(a)}}\right)^x=e^{ \ln(a)x}=e^{ x\ln(a)}</m>.
             We also want to note that
             <me>
               \left(\lim_{h\ln(a) \to0}\frac{e^{h\ln(a)}-1}{h\ln(a)}\right) = \left(\lim_{h\to0}\frac{e^h-1}{h}\right) =1
@@ -352,7 +353,7 @@
         We are most likely to see exponential functions in the context of continuously compounding interest.
       </p>
 
-      <example>
+      <example xml:id="ExampleFutureRateOfChange">
         <title>Computing future rate of change</title>
         <statement>
           <p>
@@ -360,7 +361,7 @@
             compounded continuously, at what rate is the principal increasing after ten years?
           </p>
         </statement>
-        <solution>
+        <solution xml:id="ExampleFutureRateOfChangeSol">
           <p>
             We know <m>f(x)=(1.06)^x</m>.  Thus <m>f'(x)=\ln(1.06)(1.06)^x</m>.
             We evaluate this at 10 years and get <m>f'(10)=\ln(1.06)(1.06)^{10}=.10435074</m>.
@@ -377,7 +378,7 @@
         For a last rule for this section we want to find the derivative of <m>f(x)=a \ln(x)</m>.
       </p>
 
-      <claim>
+      <claim xml:id="DerivLogRule">
         <title>Logarithmic Rule</title>
         <statement>
           <p>
@@ -386,7 +387,7 @@
         </statement>
       </claim>
 
-      <example>
+      <example xml:id="ExampleDerivLorRule">
         <title>Derivatives of logarithmic functions</title>
         <statement>
           <p>
@@ -398,7 +399,7 @@
             </ol>
           </p>
         </statement>
-        <solution>
+        <solution xml:id="ExampleDerivLogRUleSols">
           <p>
             Using our rule:
             <ol label="(a)">
@@ -414,14 +415,14 @@
         Our argument for this derivative rule will be more geometric.
       </p>
 
-      <example>
+      <example xml:id="JustifyDerivLogRule">
         <title>Justification of logarithmic rule</title>
         <statement>
           <p>
             If <m>f(x)=\ln(x)</m>, then show <m>f'(x)=1/x</m>.
           </p>
         </statement>
-        <solution>
+        <solution xml:id="JustifyDerivLogRuleSol">
           <p>
             We start by noticing that <m>y=e^x</m> and <m>y=\ln(x)</m> are inverse functions.
             That means their graphs can be obtained by reflecting across the line <m>y=x</m>.
@@ -438,7 +439,7 @@
         </solution>
       </example>
 
-      <example>
+      <example xml:id="ExampleSlopeTanLine">
         <title>Slope of a tangent line</title>
         <statement>
           <p>
@@ -455,29 +456,29 @@
       </example>
     </subsection>
 
-    <exercises xml:id="exercises-set-sec-4-1">
+    <exercises xml:id="exercises-set-ElementaryDerivaitives">
       <title>Exercises: Elementary Derivatives Problems</title>
-      <exercisegroup>
+      <exercisegroup xml:id="exerciseGoup-1-ElementaryDerivaitives">
         <introduction>
           <p>
             In the following exercises, use the symbolic rules to find the derivative of the function.
           </p>
         </introduction>
 
-        <exercise>
+        <exercise xml:id="exercise-ElementaryDerivaitives1">
           <statement>
             <p>
               <m>f(x)=x^5</m>
             </p>
           </statement>
-          <answer>
+          <answer xml:id="exercise-ElementaryDerivaitives1Answer">
             <p>
               <me>f(x)=5x^4</me>
             </p>
           </answer>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exercise-ElementaryDerivaitives2">
           <statement>
             <p>
               <m> g(x)=7/x^3</m>
@@ -485,19 +486,19 @@
           </statement>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exercise-ElementaryDerivaitives3">
           <statement>
             <p>
               <m>h(x)=3\sqrt{(x^7)}</m>
             </p>
           </statement>
-          <solution>
+          <solution xml:id="exercise-ElementaryDerivaitives3Sol">
             <p>Rewrite <m>h(x)=3x^{7/2}</m>. Then,
-            <me> h'(x)=\frac{21}{2}(x^{5/2})</me>.</p>
+            <me> h'(x)=\frac{21}{2}(x^{5/2})=\frac{21}{2}\left({\sqrt{x^5}}\right)</me>.</p>
           </solution>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exercise-ElementaryDerivaitives4">
           <statement>
             <p>
               <m>f(x)=2x^{\pi}</m>
@@ -505,13 +506,13 @@
           </statement>
         </exercise>
 
-        <exercise>
+        <exercise xml:id="exercise-ElementaryDerivaitives5">
           <statement>
             <p>
               <m> k(x)=17</m>
             </p>
           </statement>
-          <answer>
+          <answer xml:id="exercise-ElementaryDerivaitives5Answer">
             <p><m>k'(x)=0</m></p>
           </answer>
         </exercise>
@@ -532,7 +533,7 @@
           </statement>
           <solution>
             <p>Rewrite <m>f(x)=x^{5/2}</m>. Then
-            <me> f'(x)=\frac{5}{2}x^{3/2} </me>.</p>
+            <me> f'(x)=\frac{5}{2}x^{3/2} =\frac{5}{2}\sqrt{x^3} </me>.</p>
           </solution>
         </exercise>
 
@@ -686,7 +687,7 @@
                 <li>
                   <p>
                     We could have used the slope intercept version of the line to solve the problem as well.
-                    Then <m>y=mx-b</m>. We know <m>m = 12</m>,
+                    Then <m>y=mx+b</m>. We know <m>m = 12</m>,
                     and we can solve for <m>b</m> by letting <m>x = 1</m> and <m>y = 3</m>.
                   </p>
                 </li>
@@ -710,7 +711,7 @@
             </p>
           </statement>
           <solution>
-            <p>We need a point: if <m>x =20</m> then <m>y=h(20)=(1.05)^20\approx 2.6533</m>.</p>
+            <p>We need a point: if <m>x =20</m> then <m>y=h(20)=(1.05)^{20}\approx 2.6533</m>.</p>
             <p>We need a slope: <m>h'(x)=\ln(1.05) (1.05)^x</m>.</p>
             <p>Hence <m>m=\ln(1.05) (1.05)^{20}=0.12945</m></p>
             <p>Find the line: <m>y-y_0=m(x-x_0 )</m>,  so <m>y-2.6533=0.12945(x-20)</m>.</p>
@@ -734,16 +735,18 @@
     <introduction>
       <p>
 	      In the last section we learned rules to symbolically differentiate some elementary functions.
-        To summarize, we have established 4 rules.
+        To summarize, we have established 5 rules.
       </p>
 
-      <assemblage>
-        <title>Elementary Formulas</title>
-        <p> If f<m>(x)=x^n</m>, then <m>f'(x)=n*x^{(n-1)}</m>, for any real number <m>n</m>.</p>
-        <p> If <m>f(x)=e^x</m>, then <m>f'(x)=e^x</m>.</p>
-        <p> If <m>f(x)=a^x</m>, then <m>f'(x)=a^x \ln(a)</m>.</p>
-        <p> If <m>f(x)=\ln(x)</m>, then <m>f'(x)= 1/x</m>.</p>
-      </assemblage>
+    <assemblage>
+      <title>Elementary Formulas</title>
+      <p>If <m>f(x)=a</m>, then <m>f'(x)=0</m>.</p>
+      <p>If <m>f(x)=ax</m>, then <m>f'(x)=a</m>.</p>
+      <p>If <m>f(x)=a*x^n</m>, then <m>f(x)=a*n*x^{n-1}</m>, for any nonzero number n.</p>
+      <p>If <m>f(x)=e^x</m>, then <m>f'(x)=e^x</m>.</p>
+      <p>If <m>f(x)=a^x</m>, then <m>f'(x)=a^x \ln(a)</m>.</p>
+      <p>If <m>f(x)=\ln(x)</m>, then <m>f'(x)=1/x</m></p>
+    </assemblage>
 
       <p>
         However, we do not yet have a rule for taking the derivative of a function as simple as <m>f(x)=x+2</m>.
@@ -836,7 +839,7 @@
             Using our rule:
             <ol label="(a)">
               <li><m>  f'(x)=[5x^3 ]'+[3x^2 ]'-[7]'=15x^2+6x-0.</m></li>
-              <li><m> g'(x)=100[e^x]'-1000(1.03)^x]'=100e^x-1000(1.03)^x  \ln(1.03).</m></li>
+              <li><m> g'(x)=100[e^x]'-[1000(1.03)^x]'=100e^x-1000(1.03)^x  \ln(1.03).</m></li>
               <li>
                 <p>
                   <md>
@@ -878,7 +881,7 @@
         </p>
 
         <p>
-          Next we want to look at the sum or difference of two functions.
+          Next, we want to look at the sum or difference of two functions.
           Following the general method we look at the sum or difference of the linear approximations.
           <md>
             <mrow>(f' (x_0 )(x-x_0 )+f(x_0 ))\amp \pm(g' (x_0 )(x-x_0 )+g(x_0 ))</mrow>
@@ -959,7 +962,10 @@
         <solution>
           <p>
             <ol label="(a)">
-              <li><m> f'(x)=(6)*(1.06)^x+(6x+100)*(1.06)^x \ln(1.06)</m></li>
+              <li><md>
+            <mrow> f'(x)\amp=(6x+100)'*(1.06)^x+(6x+100)*((1.06)^x)'</mrow>
+            <mrow>\amp =(6)*(1.06)^x+(6x+100)*(1.06)^x \ln(1.06) </mrow>
+          </md>.</li>
               <li><m> g'(x)=[\sqrt{x}]'\ln(x)+\sqrt{x}[\ln(x)]'= [1/(2\sqrt{x})]\ln(x)+\sqrt{x}[1/x].</m></li>
             </ol>
           </p>
@@ -1017,25 +1023,25 @@
       <example>
         <title>Simple derivative of a quotient</title>
         <statement>
-          <p>
-            Let <m>f(x)=x^2</m> and <m>g(x)=x</m>.  Find the derivative of <m>f(x)/g(x)</m>.
+          <p>For our first example we look at a case that we dane do without the quotient rule by simplifying first.  This lets us check our answer.  Let <m>f(x)=x^2</m> and <m>g(x)=x</m>.  Find the derivative of <m>f(x)/g(x)</m>.
           </p>
         </statement>
         <solution>
-          <p>
-            Note that <m>f(x)/g(x)=x</m>.  Using our rule for monomials, <m>(f(x)*g(x))'=(x )'=1</m>.
+          <p>We start by simplifying.  Note that <m>f(x)/g(x)=x</m>.  Using our rule for monomials, <m>(f(x)*g(x))'=(x )'=1</m>.</p>
+           <p>Now we use the quotient rule directly.  
             Using the same rule we see <m>f'(x)=2x</m>, and <m>g'(x)=1</m>.
-            We can now evaluate using the quotient rule:
+            Using the quotient rule:
             <md>
               <mrow>(f(x)/g(x))' \amp = \frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x))^2}</mrow>
               <mrow> \amp = \frac{(2x)*(x )-(x^2)*(1)}{x^2}=\frac{x^2}{x^2}=1</mrow>
             </md>.
           </p>
+          <p>Both methods give the same answer.</p>
         </solution>
       </example>
 
       <p>
-        Both methods give the same answer.  Note that the quotient of the derivatives is <m>2x</m>,
+        Note that the quotient of the derivatives is <m>2x</m>,
         which is not the same as the derivative of the quotient.
       </p>
 
@@ -1053,7 +1059,7 @@
         <solution>
           <p>
             <ol label="(a)">
-              <li><m>f'(x)=\left(\frac{6x^2+100}{x^3+3}\right)'=\frac{(12x)(x^3+3)-(6x^2+100)(3x^2+1)}{(x^3+2)^2}</m></li>
+              <li><m>f'(x)=\left(\frac{6x^2+100}{x^3+x}\right)'=\frac{(12x)(x^3+x)-(6x^2+100)(3x^2+1)}{(x^3+x)^2}</m></li>
               <li><m>g'(x)=\left(\frac{1.07^x}{3x+5}\right)'=\frac{(\ln(1.07)1.07^x)(3x+5)-(1.07^x)(3)}{(3x+5)^2}</m></li>
             </ol>
           </p>
@@ -1064,7 +1070,7 @@
         <title>Theory and justification</title>
 
         <p>
-          Following the general method we look at the linear term of the quotient of the linear approximations.
+          Following the general method, we look at the linear term of the quotient of the linear approximations.
           However, we need to do an algebraic trick before we can find the linear term.
           Consider the quotient of two linear expressions:
           <me>
@@ -1128,7 +1134,7 @@
             <p>
               Rewrite using exponential notation: <m>h(x)=2x+3x^{1/2}-5x^{1/3}</m> Then take the derivative:
               <me>
-                h'(x)=2+\frac{3}{2} x^{-1/2}-\frac{5}{3} x^{-2/3}
+                h'(x)=2+\frac{3}{2} x^{-1/2}-\frac{5}{3} x^{-2/3}=2+\frac{3}{2\sqrt{x}}-\frac{5}{3\sqrt[3]{x^2}}
               </me>.
             </p>
           </solution>
@@ -1205,9 +1211,10 @@
           </statement>
           <solution>
             <p>
-              If we have a product of 3 functions we take the derivative one at a time:
+              If we have a product of 3 functions we need to first consider 2 of the functions as a sigle function that includes a product.
               <md>
-                <mrow>h'(x)\amp =(a x+b)' (c x+d)(e x+f)+(a x+b) (c x+d)'  (e x+f)+(a x+b)(c x+d) (e x+f)'</mrow>
+                <mrow>h'(x)\amp =(a x+b)' ((c x+d)(e x+f))+(a x+b)( (c x+d) (e x+f))'</mrow>
+                <mrow>\amp =(a x+b)' (c x+d)(e x+f)+(a x+b) (c x+d)'  (e x+f)+(a x+b)(c x+d) (e x+f)'</mrow>
                 <mrow>\amp =a(c x+d)(e x+f)+(a x+b)c (e x+f)+(a x+b)(c x+d)e</mrow>
               </md>.
             </p>
@@ -1233,14 +1240,14 @@
               Quotient Rule:
               <md>
                 <mrow>m'(x)\amp =\frac{(x^2-5x)' (x^2+3)-(x^2-5x) (x^2+3)'}{(x^2+3)^2}</mrow>
-                <mrow>\amp =\frac{(2x+5)(x^2+3)-(x^2-5x)(2x)}{(x^2+3)^2}</mrow>
+                <mrow>\amp =\frac{(2x-5)(x^2+3)-(x^2-5x)(2x)}{(x^2+3)^2}</mrow>
               </md>.
             </p>
 
             <p>
               We can simplify this :
               <me>
-                m'(x)=\frac{2x^3+5x^2+6x+15-(2x^3-10x^2 )}{(x^2+3)^2} =\frac{-5x^2+6x+15}{(x^2+3)^2}
+                m'(x)=\frac{2x^3-5x^2+6x-15-(2x^3-10x^2 )}{(x^2+3)^2} =\frac{-15x^2+6x-15}{(x^2+3)^2}
               </me>.
             </p>
           </solution>
@@ -1310,7 +1317,7 @@
         <exercise>
           <statement>
             <p>
-              <m>m(x)=\frac{\ln(x)1.04^x}{3x^2+7}</m>.
+              <m>m(x)=\frac{\ln(x)(1.04^x)}{3x^2+7}</m>.
             </p>
           </statement>
           <solution>
@@ -1693,9 +1700,9 @@
         </p>
         <p>
           <ol label="(a)">
-            <li><p><m>f(z)=2z+7</m> and <m>g(x)=z=3 x+5</m>.</p></li>
-            <li><p><m>f(z)=z^3</m> and <m>g(x)=x^2+7</m>.</p></li>
-            <li><p><m>f(z)=e^z</m> and <m>g(x)=x^2+3</m>.</p></li>
+            <li><p><m>f(z)=2z+7</m> and <m>z=g(x)=3 x+5</m>.</p></li>
+            <li><p><m>f(z)=z^3</m> and <m>z=g(x)=x^2+7</m>.</p></li>
+            <li><p><m>f(z)=e^z</m> and <m>z=g(x)=x^2+3</m>.</p></li>
           </ol>
         </p>
       </statement>
@@ -2094,7 +2101,7 @@
     <p>
       In working with derivatives, we have looked at three basic problems:
       <ul>
-        <li><p>	Given a function, find a formula for its derivative.  This corresponds to finding the marginal function.</p></li>
+        <li><p>	Given a function, find a formula for its derivative.  A related question is finding the marginal function.</p></li>
         <li><p>	Given a function, find the value of the derivative at a particular point.  We do this when we want a rate of change at a particular point.</p></li>
         <li><p>	Given a function, find where the derivative is 0.  We do this when we are trying to find minimum or maximum values of the function.</p></li>
       </ul>
@@ -2120,8 +2127,8 @@
         <image width="70%" source="images/sec4-4-1.png"/>
 
         <p>
-          The interface for Wolfram|Alpha is rather robust.  We can ask the question in plain English.
-          In our case we would like to find the derivative of <m>x^3+5x+7</m> with respect to <m>x</m>.
+          The interface for Wolfram|Alpha is rather robust.  While Wolfram|Alpha lets you use a Math Input pallette, we can ask the question in plain English.
+          In our case, we would like to find the derivative of <m>x^3+5x+7</m> with respect to <m>x</m>.
           Some of the ways of asking that question are:
           <ul>
             <li><p>find the derivative of (x^3+5x+7)</p></li>
@@ -2130,7 +2137,7 @@
             <li><p>differentiate (x^3+5x+7) with respect to x</p></li>
             <li><p>differentiate (x^3+5x+7)</p></li>
             <li><p>D (x^3+5x+7)</p></li>
-            <li><p>d/dx (x^+5x+7)</p></li>
+            <li><p>d/dx (x^3+5x+7)</p></li>
             <li><p>(x^3+5x+7)'</p></li>
           </ul>
         </p>
@@ -2149,7 +2156,7 @@
     </p>
 
     <p>
-      It is worthwhile to note that Wolfram|Alpha has an option to show step-by-step solutions.
+      It is worthwhile to note that Wolfram|Alpha has an option to show step-by-step solutions with a paid subscription.  Alternatives can be found by searching for "symbolic derivative calculator".
     </p>
 
     <image width="70%" source="images/sec4-4-3.png"/>
@@ -2733,15 +2740,19 @@
             <li>
               <m>\begin{aligned}  h'' (x)\amp =\frac{d}{dx} (\frac{d}{dx}  (x e^{2x} ))
               =\frac{d}{dx} (e^{2x}+2xe^{2x} )\\
-              \amp =2e{^2}x+2e^{2x}+4xe^{2x}=4e^{2x}+4xe^2x.\end{aligned}</m>
+              \amp =2e^{2x}+2e^{2x}+4xe^{2x}=4e^{2x}+4xe^{2x}.\end{aligned}</m>
             </li>
             <li>
-              <m>\begin{aligned}  j'' (x) \amp = \frac{d}{dx} (\frac{d}{dx}  (6 \sqrt{x}+3/x))=\frac{d}{dx} (\frac{d}{dx} (6x^{1/2}+3x^{-1} ))\\
-              \amp = \frac{d}{dx} (3x^{-1/2}-3x^{-2} )=-3/2 x^{-3/2}+6x^{-3}.\end{aligned}</m>
+              <m>\begin{aligned}  j'' (x) \amp = \frac{d}{dx} (\frac{d}{dx}  (6 \sqrt{x}+3/x))
+              =\frac{d}{dx} (\frac{d}{dx} (6x^{1/2}+3x^{-1} ))\\
+              \amp = \frac{d}{dx} (3x^{-1/2}-3x^{-2} )=-3/2 x^{-3/2}+6x^{-3}\\
+              \amp = \frac{3}{2\sqrt{x^3}}+\frac{6}{\sqrt{x^3}}.\end{aligned}
+              </m>
             </li>
             <li>
-              <m> \begin{aligned}   k'' (x) \amp = \frac{d}{dx} (\frac{d}{dx}  (\frac{\ln(x)}{x^3} ))=\frac{d}{dx} (\frac{(\frac{1}{x} x^3-3(x^2 )  ln(x))}{x^6 }\\
-                \amp = \frac{d}{dx} (\frac{(1-3 \ln(x))}{x^4 }
+              <m> \begin{aligned}   k'' (x) \amp = \frac{d}{dx} \left({\frac{d}{dx}  \left({\frac{\ln(x)}{x^3} }\right)}\right)
+              =\frac{d}{dx} \left({\frac{(\frac{1}{x} x^3-3(x^2 )  ln(x))}{x^6 }}\right)\\
+                \amp = \frac{d}{dx} \left({\frac{(1-3 \ln(x))}{x^4 }}\right)
                 = \frac{(-\frac{3}{x} x^4-(1-3 \ln(x) )4x^3)}{x^8} \\
                 \amp =\frac{-3-(1-3 \ln(x) )4}{x^5} = \frac{-7+12\ln(x)}{x^5}.\end{aligned} </m>
             </li>
@@ -2761,7 +2772,7 @@
       Graphically, the first derivative gives the slope of the graph at a point.
       The second derivative tells whether the curve is concave up or concave down at that point.
       If the second derivative is positive at a point, the graph is bending upwards at that point.
-      Similarly if the second derivative is negative, the graph is concave down.
+      Similarly, if the second derivative is negative, the graph is concave down.
       This is of particular interest at a critical point where the tangent line is flat and concavity tells us if we have a relative minimum or maximum.
     </p>
 
@@ -2771,7 +2782,7 @@
         Let <m>f(x)</m> be a function with <m>f'(x_0)=0</m>.
         Then if <m>f''(x_0) \gt 0</m>, the function has a local minimum at <m>x=x_0</m>.
         If <m>f''(x_0) \lt 0</m>, the function has a local maximum at <m>x=x_0</m>.
-        If <m>f''(x_0)=0</m>, the second derivative test fails.
+        If <m>f''(x_0)=0</m>, the second derivative test fails and we cannot tell if we have a local maximum, local minimum, or neither.
       </p>
     </insight>
 
@@ -2941,7 +2952,7 @@
               <ol label="(a)">
                 <li>
                   <p>
-                    <me>h' (t)=2te^{-t}-t^2 e^{-t}=(2-t)te^{-t}</me>
+                    <me>h' (t)=2te^{-t}-t^2 e^{-t}=(2t-t^2)e^{-t}</me>
                     <me>h'' (t)=(2-2t)e^{-t}-(2t-t^2)e^{-t}=(2-4t+t^2 ) e^{-t}</me>
                   </p>
                 </li>
@@ -2984,7 +2995,7 @@
               <ol label="(a)">
                 <li>
                   <p>
-                    <me>m' (x)=\frac{-10}{(x^2-9)^3}</me>
+                    <me>m' (x)=\frac{-10x}{(x^2-9)^3}</me>
                     <me>m'' (x)=\frac{30x^2+90}{(x^2-9)^3}</me>
                   </p>
                 </li>

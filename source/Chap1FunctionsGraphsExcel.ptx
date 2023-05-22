@@ -12,10 +12,10 @@
       </p>
 
       <p>
-        Following the conventions of microeconomics, we will often use the variables p and q,
-        for price and quantity, rather than x and y.
+        Following the conventions of microeconomics, we will often use the variables q and p,
+        for quantity and  price, rather than x and y.
         We will also follow the conventions of economics in treating quantity as the independent variable.
-        (The q-axis will be the horizontal axis.  A fast web search for supply demand equilibrium will convince you this standard usage.)
+        (The q-axis will be the horizontal axis.  A fast web search for supply and demand equilibrium will convince you this standard usage.)
       </p>
     </introduction>
 
@@ -124,7 +124,7 @@
         This would result in equations that look as follows:
       </p>
 
-      <assemblage xml:id="pqTwoPtLinearEquations">
+      <assemblage xml:id="ATwoPtLinearEquations">
         <sbsgroup widths="50% 50%">
           <sidebyside>
             <p><m>a q+b p+c=0</m></p>
@@ -147,7 +147,7 @@
             Find the equation of the line in all four forms.
           </p>
         </statement>
-        <solution>
+        <solution  xml:id="SolutionFindingFourVersionsOfALine">
           <p>
             Writing this using our variables <m>p</m> (price) and <m>q</m> (quantity of widgets)
             we see that when <m>p = 10</m>, <m>q = 150</m> and when <m>p = 15</m>, <m>q = 110</m>.
@@ -208,7 +208,7 @@
              </ol>
            </p>
          </statement>
-         <solution>
+         <solution xml:id="SolutionFIndingALineFromTwoPoints">
            <p>
              <ol label="(a)">
                <li>
@@ -253,7 +253,7 @@
             </ol>
           </p>
         </statement>
-        <solution>
+        <solution xml:id="SolutionANonlinearFunction">
           <p>
             <ol label="(a)">
               <li>
@@ -327,7 +327,7 @@
             </p>
           </statement>
           <hint><p>Find the slope and use the point-slope form</p></hint>
-          <solution>
+          <solution xml:id="Exercises-LinearFunctions1">
             <p>
               <ol>
                 <li>
@@ -382,7 +382,7 @@
               Points <m>(20,10)</m> and <m>(40,5)</m>, with <m>q_0=12</m>.
             </p>
           </statement>
-          <solution>
+          <solution xml:id="Exercises-LinearFunctions3">
             <p>
               Just as in problem 1 we find the slope and then find the equation of the line.
             </p>
@@ -422,7 +422,7 @@
               Points <m>(273,578)</m> and <m>(412,6)</m>, with <m>q_0=309</m>.
             </p>
           </statement>
-          <solution>
+          <solution xml:id="Exercises-LinearFunctions5">
             <p>Just as in problem 1 we find the slope and then find the equation of the line.</p>
             <p>
               <ol>
@@ -478,7 +478,7 @@
               A slope of <m>3</m>, passing through <m>(6,3)</m>, with <m>q_0=4</m>.
             </p>
           </statement>
-          <solution>
+          <solution xml:id="Exercises-LinearFunctions7">
             <p>
               <ol>
                 <li>
@@ -514,7 +514,7 @@
               A slope of <m>12.7</m>, passing through <m>(22,183)</m>, with <m>q_0=46</m>.
             </p>
           </statement>
-          <solution>
+          <solution xml:id="Exercises-LinearFunctions9">
             <p>
               <ol>
                 <li>
@@ -548,7 +548,7 @@
               A slope of 0, passing through <m>(12.3,9.8)</m>, with <m>q_0=74</m>.
             </p>
           </statement>
-          <solution>
+          <solution  xml:id="Exercises-LinearFunctions11">
             <p>
               <ol>
                 <li>
@@ -598,7 +598,7 @@
               <m>3 p+2 q=6</m>.
             </p>
           </statement>
-          <solution>
+          <solution xml:id="Exercises-LinearFunctions13">
             <p>
               <ol>
                 <li>
@@ -640,7 +640,7 @@
               <m>y=5</m>.
             </p>
           </statement>
-          <solution>
+          <solution  xml:id="Exercises-LinearFunctions15">
             <p>
               <ol>
                 <li><p>The slope is <m>0</m>
@@ -667,7 +667,7 @@
               <m>y=4(x-3)+9</m>.
             </p>
           </statement>
-          <solution>
+          <solution  xml:id="Exercises-LinearFunctions17">
             <p>
               <ol>
                 <li><p>The slope is <m>4</m>
@@ -701,7 +701,7 @@
             Find the equation of the line.
           </p>
         </statement>
-        <solution>
+        <solution  xml:id="Exercises-LinearFunctions19">
           <p>
             The information tells us we have two points: <m>(q,p)=(4783,23)</m>  and <m>(q,p)=(4295,27)</m>.
             (Note that in business the quantity <m>q</m> is usually the input and price <m>p</m> is usually the output.)</p>
@@ -765,7 +765,7 @@
 
       <figure>
        <caption>A quadratic function</caption>
-        <image width="50%" source="images/sec1-2-QuadraticFunctions.png" xml:id="qudraticFunctions">
+        <image width="50%" source="images/sec1-2-QuadraticFunctions.png" xml:id="quadraticFunctions">
             <description>The intersection revenue and demand price</description>
         </image>
       </figure>
@@ -829,7 +829,7 @@
         In business, compound interest is given as an exponential function.
         In particular, if <m>P</m> is the principal and <m>r</m> is the interest rate <q>compounded continuously</q>
         (expressed as a decimal),
-        then the amount <m>A</m> after time <m>t</m> is given by <m>A=P e^rt</m>.
+        then the amount <m>A</m> after time <m>t</m> is given by <m>A=P e^{rt}</m>.
         The relationship (in general) between a <term>future value</term> (FV) and the <term>present value</term> (PV)
         given an interest rate <m>r</m> per period, with <m>t</m> being the number of compounding periods is given by:
       </p>
@@ -878,7 +878,7 @@
         Using Excel it is fairly easy to create a table and graph a logistic function.
       </p>
 
-      <image width="50%" source="images/sec1-2-LogisticFunction.png">
+      <image width="50%" source="images/sec1-2-LogisticFunction.png" xml:id="LogisticFunctionImage">
           <description>Graph of a logistic function</description>
       </image>
     </subsection>
@@ -896,12 +896,12 @@
 
       <p>
         With an appropriate shift we can interchange the sine and cosine functions.
-        The functions <m>\sin(x)</m> and <m>\cos(x)</m> arise from trigonometry.)
+        (The functions <m>\sin(x)</m> and <m>\cos(x)</m> arise from trigonometry.)
         In this course, we will not focus on trigonometric functions and their properties.
         We are only concerned with having a periodic function for seasonal variations.
       </p>
 
-      <image width="50%" source="images/sec1-2-SinCurve.png">
+      <image width="50%" source="images/sec1-2-SinCurve.png"  xml:id="SinFunctionImage">
           <description>The intersection revenue and demand price</description>
       </image>
     </subsection>
@@ -923,7 +923,7 @@
         The typical scenario in which we will be using this curve model is one where we ask what range of sizes do we need to cover for the population in an area to be large enough to justify a specialty store.
       </p>
 
-      <image width="50%" source="images/sec1-2-NormalCurve.png">
+      <image width="50%" source="images/sec1-2-NormalCurve.png"  xml:id="NormalCurveImage">
           <description>A normal curve</description>
       </image>
 
@@ -934,20 +934,20 @@
         <me>f(x)=a e^{\left(\frac{-(m-m)}{s}\right)^2}=a e^0=a*1=a</me>,
         hence the maximum value is <m>a</m>.
       </p>
+     <p>There are a few more models that will show up from time to time and are worth mentioning.</p>
     </subsection>
 
 
     <subsection>
       <title>Inversely Proportional Functions</title>
-      <p>There are a few more models that will show up from time to time and are worth mentioning.</p>
-      <p>
+       <p>
         If we see the phrase that two quantities are inversely proportional,
         it means that <m>f(x)</m> is a constant times <m>1/x</m>.
         We might expect to use such a model when a fixed amount of money will be spent to acquire all of a given product.
-        Thus we may see it used to describe price as a function of supply.
+        Thus, we may see it used to describe price as a function of supply.
       </p>
 
-      <image width="50%" source="images/sec1-2-InverseCurve.png">
+      <image width="50%" source="images/sec1-2-InverseCurve.png"  xml:id="InverseCurveImage">
           <description>An inversely proportional function</description>
       </image>
     </subsection>
@@ -963,7 +963,7 @@
         then <m>x</m> is a logarithmic function of <m>y</m>.)
       </p>
 
-      <image width="50%" source="images/sec1-2-LogCurve.png">
+      <image width="50%" source="images/sec1-2-LogCurve.png"  xml:id="LogFunctionImage">
           <description>A logarithmic function graph</description>
       </image>
     </subsection>
@@ -991,7 +991,7 @@
               </ol>
             </p>
           </statement>
-          <solution>
+          <solution  xml:id="Exercises-BusinessModels1">
             <p>
               <ol>
                 <li>
@@ -1367,7 +1367,7 @@
         We start with an example that covers basic arithmetic.  Assume we are given the following worksheet:
       </p>
 
-      <image width="50%" source="images/sec1-3-1BasicData.png"/>
+      <image width="50%" source="images/sec1-3-1BasicData.png"  xml:id="BasicDataImage"/>
 
       <p>
         From data we would like to compute the figures for the quarter (add the three months),
@@ -1400,13 +1400,13 @@
         We will come back to commands in Excel later in the section.
       </p>
 
-          <image width="80%" source="images/sec1-3-2ShowFormulas.png"/>
+          <image width="80%" source="images/sec1-3-2ShowFormulas.png"  xml:id="ShowFormulasImage"/>
 
       <p>
         If we unselect <term>Show Formulas</term>, we see the values that Excel computes.
       </p>
 
-          <image width="80%" source="images/sec1-3-3UnshowFormulas.png"/>
+          <image width="80%" source="images/sec1-3-3UnshowFormulas.png"  xml:id="UnshowFormulasImage"/>
 
       <p>
         We want to finish our assignment by computing the Profit and Per Unit Costs for March and for the Quarter.
@@ -1552,7 +1552,7 @@
 
       <p>
         <term>Note</term>: Excel can also make references across multiple pages of a workbook,
-        but we will not need that capability for htis course.
+        but we will not need that capability for this course.
       </p>
     </subsection>
 

@@ -10,8 +10,8 @@
       <p>
          As we mentioned in the previous chapter, many functions are locally linear,
          so if we restrict the domain the function will appear linear.
-         Thus we often start with linear models when trying to understand a situation.
-         In this section we look at the concepts of supply and demand and market equilibrium.
+         Thus, we often start with linear models when trying to understand a situation.
+         In this section, we look at the concepts of supply and demand and market equilibrium.
          For our examples in this section we will assume that the functions are linear in the range we care about.
       </p>
     </introduction>
@@ -55,7 +55,7 @@
       <p>
         The <term>law of demand</term> looks at the economy from the consumer’s point of view.
         Price and quantity available for sale always move in the opposite direction.
-        If the price goes down we can assume that all the old consumers are still willing to buy at the lower price,
+        If the price goes down, we can assume that all the old consumers are still willing to buy at the lower price,
         but some more consumers may enter the market.  If the price goes up, no new consumers will enter the market,
         and some old consumers may leave the market.  For a linear model:
       </p>
@@ -776,7 +776,7 @@
         In the last section we looked at the economic model for supply and demand.
         We were particularly interested in the point of market equilibrium.
         In this section we will look at the model for revenue, cost and profit.
-        As with the previous section we will begin with assumptions that make as many things as possible linear.
+        As with the previous section, we will begin with assumptions that make as many things as possible linear.
       </p>
     </introduction>
 
@@ -883,12 +883,12 @@
             <li>
               <p>
                 Variable costs are tied to the amount you produce or sell.
-                They might include raw material for a manufacturer or the cost of goods for someone in sales.
+                For a manufacturer they might include raw material or labor costs.  For someone in sales they might include the cost of goods.
               </p>
             </li>
             <li>
               <p>
-                For our simplified model we assume that variable costs are proportional to quantity.
+                For our simplified model, we assume that variable costs are proportional to quantity.
                 This makes our cost function linear.
               </p>
             </li>
@@ -1048,10 +1048,10 @@
           </p>
 
           <p>
-            The first break even point tells us that we need to lower our price to no more than
-            $13.00 to attract enough customers to be able to turn a profit.
+            The first break even point tells us that, if our price is more than
+            $13.00, we will not attract enough customers to be able to turn a profit.
             The second break even point says that is we bring our price down below $10,
-            we will not be able to bring in enough customers to make a profit.
+            we will bring in enough customers, but our revenue will not cover expenses.
           </p>
         </solution>
       </example>
@@ -1128,8 +1128,8 @@
       <title>Technical note</title>
       <p>
         In business situations we often have cases where a change of
-        quantity in the thousands only changes prices by pennies.  Then our coefficients are close
-        to zero and Excel may give formulas rounded to zero.  In those cases we need to format the
+        quantity in the thousands only changes prices by pennies.  Then, our coefficients are close
+        to zero, and Excel may give formulas rounded to zero.  In those cases we need to format the
         trendline to get more digits of accuracy.
       </p>
 
@@ -1192,7 +1192,7 @@
 
           <p>
             These equations have only one digit of accuracy.
-            In general that will not be accurate enough.
+            In general, that will not be accurate enough.
           </p>
 
           <p>
@@ -1452,7 +1452,7 @@
                 <li>
                   <p> Find the revenue and profit functions.</p>
                   <p>
-                    <me>\revenue=q(-0.04q+12)= -0.04 q^2+12x</me>
+                    <me>\revenue=q(-0.04q+12)= -0.04 q^2+12q</me>
                     <md>
                       <mrow>\profit=\revenue-\cost \amp=-0.04 q^2+12q-(3q+150)</mrow>
                       <mrow>\amp=-0.04 q^2+9q-150</mrow>
@@ -1785,7 +1785,7 @@
     <introduction>
       <p><url href="external/Examples/Section-2-3-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-2-3-Examples.xlsx">Link to worksheets used in this section</url></p>
       <p>
-        For most of this chapter we have restricted ourselves to functions that were either linear functions or polynomial functions where they are built from the interaction of linear functions.  While this makes the economic models easier to understand, it is pretty clear that the situations we care about are often better described by more complicated functions.  Suppliers of gasoline have a finite amount they can deliver regardless of the price.  That leads to a very nonlinear supply function.  It is worthwhile to review how we would enter other functions in a spreadsheet.
+        For most of this chapter, we have restricted ourselves to functions that were either linear functions or polynomial functions where they are built from the interaction of linear functions.  While this makes the economic models easier to understand, it is pretty clear that the situations we care about are often better described by more complicated functions.  Suppliers of gasoline have a finite amount they can deliver regardless of the price.  That leads to a very nonlinear supply function.  It is worthwhile to review how we would enter other functions in a spreadsheet.
       </p>
     </introduction>
 
@@ -1817,7 +1817,7 @@
         <cell/></row>
         <row bottom="medium">
         <cell><m>f(x)=-x^4</m></cell>
-        <cell><c>=-(A1^4)</c></cell>
+        <cell><c>=-1*(A1^4)</c></cell>
         <cell>Excel does negation before exponentiation</cell></row>
         <row bottom="medium">
         <cell><m>f(x)=\ln(x)</m></cell>
@@ -1852,10 +1852,10 @@
       <p>
         Consider a demand function and why it is probably not linear.
         We expect demand to go up whenever we drop the price.
-        However with a linear function, we get the same increase in demand by cutting the price in half,
-        or if from half price we give the product away for free.
+        However, with a linear function, if dropping the price from $100 t0 $50 increases the demand by 20 from 100 to 120, 
+        then decreasing the price from $50 to $0 and giving it away would only increase demand by another 20 to 140.
         A more reasonable model may be a power function where decreasing the price by a fixed percentage increases consumption by a fixed percentage.
-        Similarly when we think about the supply function,
+        Similarly, when we think about the supply function,
         we often expect the limits on available materials to make increasing the supply progressively more expensive.
       </p>
 
@@ -1869,7 +1869,7 @@
 
           <p>
             We are interested in selling gizmos.  The most a consumer will pay is $1,000.
-            If we drop the cost by 10% we increase demand by 100.
+            If we drop the cost by 10\%, we increase demand by 100.
             The cheapest that a supplier will sell for is $200.
             We find the market will produce another 100 gizmos whenever we increase the price by 20%.
             Find the market equilibrium.
@@ -1922,7 +1922,7 @@
             We have reason to believe that my demand price is a power function of some kind.
             Our cost function is close to linear,
             but we can get volume discounts and reduce the per-unit cost with larger quantities.
-            Thus we expect my cost function is actually quadratic, with the quadratic term much smaller than the linear term.
+            Thus, we expect my cost function is actually quadratic, with the quadratic term much smaller than the linear term.
             Find best fitting curves for cost and price.  Derive functions for revenue and profit.
             Find break-even points between 10 and 1500.
           </p>
@@ -1975,7 +1975,7 @@
         Many businesses will give a volume discount to their best customers,
         so there is one price for small quantities and a different price for large quantities.
         The cost of labor changes if overtime pay is involved.
-        In all of these cases the graph has a break in it.
+        In all of these cases, the graph has a break in it.
       </p>
 
       <p>
@@ -2128,7 +2128,7 @@
             The regular pay is the base rate times the hours worked,
             unless the employee worked more than 40 hours, in which case it is the base rate times 40.
             Overtime pay is the base pay times 1.5 times the number of overtime hours.
-            Since overtime cannot be negative we use the maximum of 0 and hours worked minus 40.
+            Since overtime cannot be negative, we use the maximum of 0 and hours worked minus 40.
           </p>
 
           <image width="80%" source="images/sec2-3-7.png"/>
@@ -2145,7 +2145,7 @@
         If our functions are discontinuous,
         we need to exercise a bit of care with our economic models and the points of interest we have been finding.
         The market equilibrium and break-even points are both places where two functions are equal.
-        When the mathematics does not give us a clear answer we should think about the problem and consider what answer makes the most sense.
+        When the mathematics does not give us a clear answer, we should think about the problem and consider what answer makes the most sense.
         Consider a simplified example to illustrate the point.
       </p>
 
@@ -2158,7 +2158,7 @@
           </figure>
 
           <p>
-            In the widget market the supply is constrained.
+            In the widget market, the supply is constrained.
             Obtaining more than 2 widgets means using a more expensive process.
             My supply and demand curves are:
             <md>
