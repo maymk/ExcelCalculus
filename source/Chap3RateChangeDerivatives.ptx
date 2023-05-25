@@ -1655,13 +1655,13 @@
     <aside>
       <p>
         Note the use of <m>mf</m> to denote the marginal change in <m>f</m>.
-        This notation will be used throughout this seciton.
+        This notation will be used throughout this section.  We will use <m>\text{linear}\, f_a (x)</m> for the linear function that intersects <m>f(x)</m> at <m>x=a</m> and <m>x=a+1</m>.
       </p>
     </aside>
 
     <assemblage>
       <p>
-        <me>\text{discrete linear}\, f_a (x)=f(a)+mf(a+1)*(x-a)</me>.
+        <me>\text{linear}\, f_a (x)=f(a)+mf(a+1)*(x-a)</me>.
       </p>
     </assemblage>
 

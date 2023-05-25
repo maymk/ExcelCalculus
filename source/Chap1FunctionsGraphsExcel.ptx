@@ -5,10 +5,9 @@
     <title>Linear Functions and models</title>
     <introduction>
       <p>
-        We will start this chapter with a review of linear functions.
+        We will start this chapter with a review of linear functions, which are common in business.
         In business there are quite a few examples of linear equations.
-        Examples include supply and demand functions.
-        There are some standard concepts related to lines that we will review, including the slope.
+        We start by reviewing some standard concepts related to lines, including the slope.
       </p>
 
       <p>
@@ -164,6 +163,12 @@
               p-p_0=\frac{p_1-p_0}{q_1-q_0 }(q-q_0)
             </me>.
           </p>
+          <p>
+            In our case this becomes:
+            <me>
+              p-10=\frac{15-10}{110-150}(q-150)
+            </me>.
+          </p>
 
           <p>
             We just found the slope and we just need to pick a point <m>(p_0,q_0)</m> to finish the problem.
@@ -180,6 +185,12 @@
             <m>p-10=\frac{-1}{8}(q-150)</m> implies that
             <me>
               p=\frac{-1}{8} (q-150)+10=  \frac{-1}{8} q+  \frac{150}{8}+10=  \frac{-1}{8} q+\frac{230}{8}
+            </me>.
+          </p>
+          <p>
+            Thus
+            <me>
+              p=  \frac{-1}{8} q+\frac{230}{8}
             </me>.
           </p>
 
@@ -258,9 +269,9 @@
             <ol label="(a)">
               <li>
                 <p>
-                  For this example we will use <q>designer variables</q>.
+                  For this example we will use <q>designer variables</q>, longer variables that make the equation easier to read.
                   The output will be Pay, and the input variable <mdash/> the number of hours worked <mdash/> will be hrs.
-                  We are told that Pay = 500 when hrs = 40. The slope of the line work beyond 40 hours is <m>m=18</m>.
+                  We are told that Pay = 500 when hrs = 40. The slope of the line for work beyond 40 hours is <m>m=18</m>.
                   Another way to think of this is to say that there is a fixed Pay of $500 and a variable Pay for any hours in excess of 40:
                   <ie/> (hrs - 40). Thus, the equation of the line, according to the point-slope form is
                   <me>\text{Pay} = \text{variable  pay} + \text{Fixed  pay}</me>.
@@ -817,14 +828,6 @@
       </p>
 
       <p>
-        Math books (and Excel) like using a base of <m>e</m> because it makes the mathematics easier when we do calculus,
-        so the equation is written as <m>f(t)=p*e^{rt}</m> or <m>f(t)=p*\exp(r t)</m>.
-        However, in real world applications we tend to use <m>A=pR^t</m> and make the equation <m>f(t)=p*R^t</m>.
-        (The reader is warned that <m>R=e^r</m> and both <m>R</m> and <m>r</m> are referred to as the <term>rate</term>.
-        You will have to use the context to tell them apart.)
-      </p>
-
-      <p>
         Exponential functions are used for proportional growth or decay.
         In business, compound interest is given as an exponential function.
         In particular, if <m>P</m> is the principal and <m>r</m> is the interest rate <q>compounded continuously</q>
@@ -841,6 +844,10 @@
       <p>
         It is also useful in determining a fair value today of a promised future payout.
         The sign of the rate will determine if the graph turns up or down.
+      </p>
+      <p>
+        A word of warning - Math books (and Excel) like using a base of <m>e</m> because it makes the mathematics easier when we do calculus, so the equation is written as <m>f(t)=p*e^{rt}</m> or <m>f(t)=p*\exp(r t)</m> where <m>r</m> is the instantaneous rate of change.
+        However, in real world applications we tend to use  <m>f(t)=p*R^t</m>, where <m>R</m> is the effective rate of change.  We also use <m>f(t)=p*(1+r)^t</m>.  The reader is warned that in <m>R=e^r</m> and both <m>R</m> and <m>r</m> are referred to as the <term>rate</term>.  You will have to use the context to tell them apart.
       </p>
 
       <p>
@@ -1477,7 +1484,7 @@
 
       <p>
         Consider the following example:
-        Your rich uncle Fred decided to give you 10 shares of Google stock (<abbr>GOOG</abbr>) on January first 2009,
+        Your rich uncle, Fred, decided to give you 10 shares of Google stock (<abbr>GOOG</abbr>) on January first 2009,
         with the option of receiving instead the same value in either Microsoft (<abbr>MSFT</abbr>) or Apple stock (<abbr>AAPL</abbr>).
         You would like to see the monthly change in value of the portfolios over a three-year period.
       </p>
@@ -1485,7 +1492,7 @@
       <p>
         We start by going to <url href="finance.yahoo.com" visual="finance.yahoo.com"/> and collecting the monthly prices of the stocks,
         downloading the answers into a spreadsheet.
-        When we look up historical prices from yahoo, we are interested in the adjusted closing price.
+        When we look up historical prices from Yahoo, we are interested in the adjusted closing price.
         (They adjust the price to account care of splits and dividends.)
         That produces a spreadsheet like the one below.
       </p>
@@ -1503,7 +1510,7 @@
 
       <p>
         In the formula for the number of shares of <abbr>MSFT</abbr>, we used <c>$B$3</c> for the initial price of <abbr>GOOG</abbr>.
-        This is an absolute cell reference.  When we copy the formula from cell <c>C1</c> to cell <c>D1</c>, the new formula is <c>=10*$B$3/D3</c>.
+        This is an absolute cell reference.  When we copy the formula from cell <c>C1</c> to cell <c>D1</c>, the formula changes from <c>=10*$B$3/C3</c> to <c>=10*$B$3/D3</c>.
         This formula in cell <c>D1</c> asks for 10 times the value in cell <c>B3</c>,
         divided by the value in the 2 rows below the cell of the formula.
       </p>
@@ -1516,6 +1523,10 @@
         <p>
           <term>Relative references</term> refer to the cell the same distance away from the cell containing the formula.
         </p>
+        <p>
+          <term>Partial absolute references</term>, like <c>$B3</c>and <c>B$3</c>, are absolute in either the row direction or the column direction and relative  in the other direction.
+        </p>
+        
       </assemblage>
 
       <p>
@@ -1905,17 +1916,17 @@
 
     <p>
       One area where Excel is different from a graphing calculator is in producing the graph of a function that has been defined by a formula.
-      It is not difficult, but it is not as straight forward as with a calculator. It is a skill worth developing however.
+      It is not difficult, but it is not as straight forward as with a calculator. However, it is a skill worth developing .
       When we are given a formula as part of a problem, we will want to easily see a graph of the function.
     </p>
     <p>
       We will walk through the process for producing graphs for three examples of increasing complexity.
-      For the first example we have a specific function and specific range in mind,
+      For the first example, we have a specific function and specific range in mind,
       say <m>y=x^2-6 x</m> over <m>-10 \le x \le 10</m>.
       For the second example, we would like to use parameters in the formula,
       for example, <m>y = a x^2 + b x + c</m>, with specified values of a, b, and c,
       and have the ability to easily change the values of the parameters and see the graph.
-      For the third example we would also like to have the ability to change the domain,
+      For the third example, we would also like to have the ability to change the domain,
       graphing over <m>\xLow \le x \le \xHigh</m>, where <m>\xLow</m> and <m>\xHigh</m> can easily be changed.
     </p>
 
@@ -1978,7 +1989,7 @@
       </p>
 
       <p>
-        Now we set up the problem in the same way we did above except that we are using absolute references for <m>a</m>, <m>b</m>, and <m>c</m>,
+        Now we set up the problem in the same way we did above, except that we are using absolute references for <m>a</m>, <m>b</m>, and <m>c</m>,
         and relative references for <m>x</m>.
       </p>
             <image width="80%" source="images/sec1-4-5.png"/>
@@ -2024,7 +2035,7 @@
               <image width="80%" source="images/sec1-4-8.png"/>
 
       <p>
-        In this case I want a better look at the vertex of the parabola.
+        In this case, I want a better look at the vertex of the parabola.
         I decide I want to see the graph for <m>0 \le x \le 5</m>.
         My value for <c>x-start</c> is 0.
         My value for <c>x-step</c> is one twentieth of the distance from 0 to 5,
@@ -2285,8 +2296,8 @@
       <p>
         If we are given a data set, we can find a best fitting curve.
         A straightforward approach is to assume that the data represents the output of a nice formula.
-        In real life applications we will often see that so-called noise can complicate the situation.
-        (For example, if I am looking at sales at a fast food restaurant, our model will have noise from traffic jams and bad weather outside.)
+        In real life applications, we will often see that so-called "noise" can complicate the situation.
+        (Noise is a technical term to describe external unpredictable factors that may cause your data to deviate form the model.  For example, if I am looking at sales at a fast food restaurant, our model will have noise from traffic jams and bad weather outside.)
         For the purpose of this course we will assume that the data will be reasonably nice,
         although some noise may be evident. The problem of producing a best fitting curve to data can be broken into two pieces:
       </p>
@@ -2419,10 +2430,10 @@
         When finding the best fitting curve to data we have gathered,
         we need to pay attention to the model we have chosen and to the range to which we want to apply it.
         In our example, the linear fit looks pretty good.
-        However we should be careful about using it on too wide a domain.
+        However, we should be careful about using it on too wide a domain.
         According to our model, a worker who works no hours produces 12.52 widgets a week,
         which is obviously silly.
-        In the other direction it predicts that a worker who worked 168 (= 7 <times/> 24) hours a week would produce almost 970 widgets,
+        In the other direction, it predicts that a worker who worked 168 (= 7 <times/> 24) hours a week would produce almost 970 widgets,
         instead of predicting a collapse from exhaustion.
       </p>
 
@@ -2485,7 +2496,7 @@
         <ul>
           <li><p>That constant only shows one significant digit, which is not enough to make meaningful predictions.</p></li>
           <li><p>The font size is too small to easily read off the resulting equations.</p></li>
-          <li><p>The constant coefficient is ridiculously small because it gives the projected value of the index in the year 0. Another way of thinking about this is that the values we are evaluating this exponential function at run in the thousands!.</p></li>
+          <li><p>The constant coefficient is ridiculously small because it gives the projected value of the index in the year o.</p></li>
           <li><p>The graph does not look like a very good fit.  The plot of the numbers actually looks as though it represents three different graphs.</p></li>
         </ul>
       </p>
@@ -2496,7 +2507,7 @@
       <p>
         The first problem is that the equation Excel has given us does not have enough significant digits to make useful predictions.
         We want to right click on the equation, select <q>Format Trendline Label</q>.  We are given a dialog box that lets us make formatting options.
-        Since the lead coefficient is so small, we want the numbers formatted in Scientific notation.
+        Since the lead coefficient is so small, we want the numbers formatted in scientific notation.
         We choose 4 digits beyond the decimal point in that notation.
       </p>
 
@@ -3015,13 +3026,13 @@
     <p><url href="external/Examples/Section-1-6-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-6-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <p>
-      In previous sections we looked at deciding on a model to use for numerical data,
+      In previous sections, we looked at deciding on a model to use for numerical data,
       and finding the best fitting curve of that model for our data.
       Once we have completed those phases of the process, we have reduced our data to an equation.
       At that point we want to use the equation to answer some question.
-      Sometimes that question will reduce to solving an equation,
+      Sometimes ,that question will reduce to solving an equation,
       as when we have an equation for profit as a function of sales and we want to know when the business will break even.
-      At other times we want to know what input gives a desired output.
+      At other times, we want to know what input gives a desired output.
       (<eg/>, How much do I need to sell to make $100,000 in commission?)
     </p>
     <p>
@@ -3097,7 +3108,7 @@
 
 
       <p>
-        For most of our work, that is close enough.  Sometimes however we may want more precision.
+        For most of our work, that is close enough.  Sometimes, however, we may want more precision.
         (Our units may be millions of dollars.)  In that case, we can improve the precision with a work around.
         We add another cell with a formula whose value is a large number, say <m>10^6</m>, times the error.
         We then use Goal Seek to make that value close to zero.
@@ -3134,7 +3145,7 @@
 
       <p>
         We can see that the curves cross when q is somewhere between 100 and 110.
-        To make this a Goal Seek problem we add an extra column for the difference between supply and demand,
+        To make this a Goal Seek problem, we add an extra column for the difference between supply and demand,
         and look for where that is zero.
       </p>
 
@@ -3277,7 +3288,7 @@
         We can ask Goal Seek to find an x with <m>1/x^4 = 0</m>.
         Clearly this problem has no answer.  However, if we start with a guess of <m>x = 1</m>, we get an answer of <m>x = 6.14798</m>.
         That is because <m>1/6.14798^4</m> is within our tolerance of 0.
-        In both of these cases we see that when we use Goal Seek we should also look at the graph of the function in question to make sure we are asking a reasonable question.
+        In both of these cases, we see that when we use Goal Seek we should also look at the graph of the function in question to make sure we are asking a reasonable question.
       </p>
 
       <image width="80%" source="images/sec1-6-15.png"/>

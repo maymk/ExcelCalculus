@@ -2232,7 +2232,7 @@
             For the lower endpoint, <m>x=1</m> becomes <m>u=2(1)+5=7</m>.  For the upper endpoint
             <m>x=3</m> becomes <m>u=2(3)+5=11</m>.  Substituting,
             <md>
-              <mrow>\int_1^3 e^{2x+5}\, dx \amp =\left({\frac{1}{2}}) (2)\int_1^3 e^{2x+5} \,dx)\quad \text{ (Add needed factors.)}</mrow>
+              <mrow>\int_1^3 e^{2x+5}\, dx \amp =\left({\frac{1}{2}}\right) (2)\int_1^3 e^{2x+5} \,dx)\quad \text{ (Add needed factors.)}</mrow>
               <mrow> \amp =\frac{1}{2} \int_1^3 e^{2x+5} (2\,dx) \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
               <mrow>\amp =\frac{1}{2} \int_{u=7}^{u=11}e^u \,du \quad \text{ (Do the substitution.)}</mrow>
               <mrow>\amp =\left.\frac{1}{2} e^u\right|_7^{11} \quad \text{ (Find the antiderivative.)}</mrow>
