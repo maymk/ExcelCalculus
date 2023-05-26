@@ -825,7 +825,7 @@
 
           <figure>
             <caption>Wire mesh</caption>
-            <interactive xml:id="geogebra-wire-mesh" platform="geogebra" width="80%" aspect="5:8">
+            <interactive xml:id="geogebra-wire-mesh" platform="geogebra" width="80%" aspect="5:8" preview="images/geogebra-wire-mesh.png">
               <slate xml:id="upper-sum" surface="geogebra" material="xzf3xzzm" aspect="5:8">
                 setCoordSystem(-200, 1200, -1000, 5500);
               </slate>

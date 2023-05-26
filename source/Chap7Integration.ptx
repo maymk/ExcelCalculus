@@ -131,7 +131,7 @@
 
         <figure>
           <caption>GeoGebra: Upper sum approximation</caption>
-          <interactive xml:id="geogebra-upper-sum" platform="geogebra" width="75%" aspect="1:1">
+          <interactive xml:id="geogebra-upper-sum" platform="geogebra" width="75%" aspect="1:1" preview="sec7-1-geogebra1.png">
               <slate xml:id="ggb-upper-sum" surface="geogebra" material="aydvqybh" aspect="1:1">
                   setAxisSteps(1, 1, 1, 1);
                   setCoordSystem(-1, 5, -1, 5);

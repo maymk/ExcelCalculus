@@ -9,7 +9,7 @@
       <tableofcontents level="3"/>
     </common>
     <source>
-      <directories external="../external" generated="../generated"/>
+      <directories external="../assets" generated="../generated-assets"/>
     </source>
     <!-- HTML-Specific Options -->
     <html>
