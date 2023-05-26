@@ -483,7 +483,7 @@
         <introduction>
           <p>
             For <xref first="ex-mfunction-first" last="ex-mfunction-last"/>:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p> Make a chart of the function and the marginal function as q goes from 0 to 30.</p></li>
               <li><p> Plot the function and the marginal function on the same graph.</p></li>
               <li><p> From the shape of the graph of the marginal function, decide what kind of graph it appears to be.</p></li>
@@ -502,7 +502,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>Recall that <m>\Mcost(q+1)=\cost(q+1)-\cost(q)</m>.</p>
                   <p>The entries in the cells should be</p>
@@ -538,7 +538,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p> Recall that <m>\Mrev(q+1)=\revenue(q+1)-\revenue(q)</m></p>
                   <p>The entries in the cells should be</p>
@@ -574,7 +574,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p> Recall that <m>\Mcost(q+1)=\cost(q+1)-\cost(q)</m>.</p>
                   <p>The entries in the cells should be</p>
@@ -607,7 +607,7 @@
         <introduction>
           <p>
             For problems 13-16 you are given data for a function.
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p> Assuming the function is of the kind specified; find a best fitting curve for the function and a formula.</p></li>
               <li><p> Plot the function and the marginal function on the same graph.</p></li>
               <li><p> From the shape of the graph of the marginal function, decide what kind of graph it appears to be.</p></li>
@@ -641,7 +641,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li><p> The best fitting curve is:   <m>y = -0.0297x^2 + 8.26x + 227.96</m></p></li>
                 <li>
                   <p>
@@ -713,7 +713,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="60%" source="images/sec3-1-sol15a.png"/>
                   <p>
@@ -794,7 +794,7 @@
             Plot 5 years of data.
           </p>
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p> Explain why looking at marginal change of revenue from one quarter to the next is misleading.</p></li>
               <li><p> Explain how to adjust for this problem.</p></li>
             </ol>
@@ -1225,7 +1225,7 @@
         <introduction>
           <p>
             For each specified function and x-value, do the following:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p> Find a value of <m>\Delta x</m> small enough that graph of the function looks like a straight line on the region from <m>5*\Delta x</m> before the x-value to <m>5*\Delta x</m> after the x-value.  Graph the function in this region and find the slope of the corresponding secant line</p></li>
               <li><p>  Estimate the derivative by finding the slope of the secant when <m>\Delta x</m> takes the values 0.1, 0.01, 0.001, 0.0001, -0.1, -0.01, -0.001, and -0.0001.  Give a value of the limit of the slope.</p></li>
               <li><p> Use the calculator estimate to estimate the slope of the tangent.</p></li>
@@ -1258,7 +1258,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p> Using <c>Slope= (B14-B4)/(10*B1)</c> we get the following</p>
                   <image width="90%" source="images/sec3-2-sol1a.png"/>
@@ -1310,7 +1310,7 @@
             </statement>
             <solution>
               <p>
-                <ol label="(a)">
+                <ol marker="(a)">
                   <li>
                     <image width="90%" source="images/sec3-2-sol3a.png"/>
                     <p>The slope of the secant line is 15.</p>
@@ -1347,7 +1347,7 @@
             </statement>
             <solution>
               <p>
-                <ol label="(a)">
+                <ol marker="(a)">
                   <li>
                     <image width="90%" source="images/sec3-2-sol5a.png"/>
                     <p>The slope of the secant line is 7.</p>
@@ -1381,7 +1381,7 @@
             </statement>
             <solution>
               <p>
-                <ol label="(a)">
+                <ol marker="(a)">
                   <li>
                     <image width="90%" source="images/sec3-2-sol7a.png"/>
                     <p>The slope of the secant line is 14.78.</p>
@@ -1418,7 +1418,7 @@
             </statement>
             <solution>
               <p>
-                <ol label="(a)">
+                <ol marker="(a)">
                   <li>
                     <image width="90%" source="images/sec3-2-sol9a.png"/>
                     <p>The slope of the secant line is 0.2.</p>
@@ -1448,7 +1448,7 @@
           <introduction>
             <p>
               For each specified function, do the following:
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li><p> On a single graph, but using separate axes, graph the function and its derivative.</p></li>
                 <li><p>  Using goal seek, identify places where the derivative is 0 in the interval <m>-10 \lt x \lt 10</m>.</p></li>
                 <li><p> For each point where the derivative is 0, tell whether the corresponding point on the graph of the function is locally a maximum, minimum, or neither.</p></li>
@@ -1465,7 +1465,7 @@
             </statement>
             <solution>
               <p>
-                <ol label="(a)">
+                <ol marker="(a)">
                   <li>
                     <image width="60%" source="images/sec3-2-sol11a.png"/>
                   </li>
@@ -1492,7 +1492,7 @@
             </statement>
             <solution>
               <p>
-                <ol label="(a)">
+                <ol marker="(a)">
                   <li>
                     <image width="60%" source="images/sec3-2-sol13a.png"/>
                   </li>
@@ -1519,7 +1519,7 @@
             </statement>
             <solution>
               <p>
-                <ol label="(a)">
+                <ol marker="(a)">
                   <li>
                     <image width="60%" source="images/sec3-2-sol15a.png"/>
                   </li>
@@ -1546,7 +1546,7 @@
             </statement>
             <solution>
               <p>
-                <ol label="(a)">
+                <ol marker="(a)">
                   <li>
                     <image width="60%" source="images/sec3-2-sol17a.png"/>
                   </li>
@@ -1569,7 +1569,7 @@
       <exercisegroup>
         <introduction>
           <p>For each specified function, do the following:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p> On a single graph, but using separate axes, graph the function and its derivative.</p></li>
               <li><p>  Looking at the graph of the derivative, decide what kind of function is an appropriate model for the derivative.</p></li>
               <li><p> Add a trendline to produce a formula for the derivative.</p></li>
@@ -1585,7 +1585,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="60%" source="images/sec3-2-sol19a.png"/>
                 </li>
@@ -1614,7 +1614,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="60%" source="images/sec3-2-sol21a.png"/>
                 </li>
@@ -1873,7 +1873,7 @@
            <p>
              For <xref first="ex-loclin-first" last="ex-loclin-last"/>,
              for the given function and value for <m>x_0</m>:
-             <ol label="(a)">
+             <ol marker="(a)">
                <li><p>Give the formula for the discrete linear approximation.</p></li>
                <li><p>Evaluate the approximation at <m>x_1</m>.</p></li>
              </ol>
@@ -1970,7 +1970,7 @@
            <p>
              For <xref first="ex-numapp-first" last="ex-numapp-last"/>,
              for the given function and value for <m>x_0</m>:
-             <ol label="(a)">
+             <ol marker="(a)">
               <li><p>Calculate the numeric approximation of the derivative at <m>x_0</m>.</p></li>
               <li><p>Give the formula for the linear approximation at that point.</p></li>
               <li><p>Evaluate the approximation at <m>x_1</m>.</p></li>
@@ -1995,7 +1995,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p><me>g(x)\approx g(81)+g'(81)*(x-81)</me>.</p>
                   <p>
@@ -2043,7 +2043,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     <me>\revenue(x)\approx \revenue(3000)+\revenue'(3000)*(x-3000)</me>.
@@ -2096,7 +2096,7 @@
             Let <m>f(x)=(1+x)^r</m> and <m>x_0=0</m>.
           </p>
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p>Find the linear approximation of <m>f(x)</m> at <m>x_0</m> for <m>r=1/3,1/2,-1</m> and <m>2</m>.</p></li>
               <li><p>Give a rule for the linear approximation for a general value of r.</p></li>
               <li><p>How accurate is the linear approximation for square and cube roots of 1.1, obtained at <m>x_1=0.1</m>?</p></li>
@@ -2106,7 +2106,7 @@
         <solution>
           <image width="60%" source="images/sec3-3-sol11a.png"/>
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li>
                 <p>
                   The linear approximation of <m>f(x)</m> at <m>x=0</m> is <m>f(0)+f'(0)(x)</m>.
@@ -2516,7 +2516,7 @@
          <introduction>
            <p>
              For the given function and domain:
-             <ol label="(a)">
+             <ol marker="(a)">
               <li><p>Plot the function and its derivative on the same graph.</p></li>
               <li><p>Identify the regions where the function is increasing and the regions where the function is decreasing.</p></li>
               <li><p>Identify the local maximum and minimum for the given domain.</p></li>
@@ -2553,7 +2553,7 @@
             </p>
 
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="80%" source="images/sec3-4-sol1a.png"/>
                   <p>The table is truncated at <m>x = 25</m>, but the rest was used to create the graph.</p>
@@ -2616,7 +2616,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="80%" source="images/sec3-4-sol3a.png"/>
                 </li>
@@ -2677,7 +2677,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="80%" source="images/sec3-4-sol5a.png"/>
                 </li>
@@ -2713,7 +2713,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="80%" source="images/sec3-4-sol7a.png"/>
                 </li>
@@ -2774,7 +2774,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="80%" source="images/sec3-4-sol9a.png"/>
                 </li>
@@ -2835,7 +2835,7 @@
             The fixed costs are $7,500 and the variable costs are $10 per widget.
           </p>
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p> Give a profit function for widgets.  Specify the domain on which the function makes sense.</p></li>
               <li><p> Identify the candidate points for maximizing profit.</p></li>
               <li><p> Give the quantity that maximizes profit along with the maximum profit.</p></li>
@@ -2850,7 +2850,7 @@
             </md>.
           </p>
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li>
                 <p>
                   <md>
@@ -3058,7 +3058,7 @@
           </tabular>
 
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p>Plot the data and find a reasonable best fitting curve for the data.</p></li>
               <li><p>Find the production level that maximizes profit.</p></li>
               <li><p>Find the maximum profit.</p></li>
@@ -3398,7 +3398,7 @@
           <p>
             In <xref first="ex-solver-opt-first" last="ex-solver-opt-last"/>
             you are given a function and an interval it is defined over:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p>Make a chart of values and plot a graph of the function.</p></li>
               <li><p>Find any roots for the function.</p></li>
               <li><p>Find relative maxima and minima for the function.  (Remember to include the endpoints.).</p></li>
@@ -3415,7 +3415,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="70%" source="images/sec3-5-sol1a.png"/>
                 </li>
@@ -3451,7 +3451,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="70%" source="images/sec3-5-sol3a.png"/>
                 </li>
@@ -3493,7 +3493,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="70%" source="images/sec3-5-sol5a.png"/>
                 </li>
@@ -3583,7 +3583,7 @@
             </p>
 
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <image width="70%" source="images/sec3-5-sol7a.png"/>
                 </li>
@@ -3616,7 +3616,7 @@
           <p>
             In <xref first="ex-solver-plot-first" last="ex-solver-plot-last"/>
             you are given a function that and an interval it is defined over.
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p>Make a chart of values and plot a graph of the function.</p></li>
               <li><p>Visually identify approximate local maxima and minima.  </p></li>
               <li><p>Find a reasonable range of starting points from which Solver will find each local maximum or minimum.</p></li>
@@ -3645,7 +3645,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     Inserting an empty row will allow us to see the break in the graph where we switch from the linear part to the quadratic part of the function.

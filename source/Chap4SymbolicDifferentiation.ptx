@@ -94,7 +94,7 @@
         <statement>
           <p>
             Using our first rule of symbolic differentiation, find the derivatives of the following functions:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> f(x)=3 x</m></li>
               <li><m>g(x)=5 x^2</m></li>
               <li><m>h(x)=7x^{25}</m></li>
@@ -106,7 +106,7 @@
         <solution xml:id="ExampleMonomialDerivs">
           <p>
             Using our rule:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (3 x^1)=1*3 x^0=3.</m></li>
               <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (5 x^2 )=2*5 x^1=10 x.</m></li>
               <li><m> \frac{d}{dx} h(x)=\frac{d}{dx} (7x^{25})=25*7 x^{24}=175x^{24}.</m></li>
@@ -254,7 +254,7 @@
         <statement>
           <p>
             Using the exponential rules of symbolic differentiation, find the derivatives of the following functions:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> f(x)=2 e^x</m></li>
               <li><m> g(x)=\pi e^x</m></li>
               <li><m> h(x)=7*2^x</m></li>
@@ -266,7 +266,7 @@
         <solution xml:id="GenExponeExampleSol">
           <p>
             Using our rule:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (2 e^x)=2 e^x.</m></li>
               <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (\pi e^x )=\pi e^x.</m></li>
               <li><m> \frac{d}{dx} h(x)=\frac{d}{dx} (7*2^x )=7*\ln(2)*2^x</m></li>
@@ -392,7 +392,7 @@
         <statement>
           <p>
             Using the logarithmic rule of symbolic differentiation, find the derivatives of the following functions:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> f(x)=2 \ln(x)</m></li>
               <li><m> g(x)=3 \ln(x^2)</m></li>
               <li><m> h(x)=5 \ln(1/x)</m></li>
@@ -402,7 +402,7 @@
         <solution xml:id="ExampleDerivLogRUleSols">
           <p>
             Using our rule:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (2 \ln(x))=2/x.</m></li>
               <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (3 \ln(x^2))= \frac{d}{dx}  (3*2\ln(x))=6/x.</m></li>
               <li><m> \frac{d}{dx} h(x)=\frac{d}{dx}  (5 \ln(1/x))= \frac{d}{dx}  (-1*5\ln(x))=-5/x.</m></li>
@@ -784,7 +784,7 @@
         <statement>
           <p>
             Find the derivatives of the following functions:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> f(x)=2e^x</m></li>
               <li><m> g(x)=500(1.05)^x</m></li>
               <li><m> h(x)=\ln(x^7)</m></li>
@@ -794,7 +794,7 @@
         <solution>
           <p>
             Using our rule:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> f'(x)=2[e^x ]'=2e^x.</m></li>
               <li><m> g'(x)=500[(1.05)^x ]'=500(1.05)^x \ln(1.05).</m></li>
               <li><m> h'(x)=[\ln(x^7)]'=[7 \ln(x)]'=7[\ln(x)]'=7/x.</m></li>
@@ -827,7 +827,7 @@
         <statement>
           <p>
             Find the derivatives of the following functions:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> f(x)=5x^3+3x^2-7</m></li>
               <li><m> g(x)=100e^x-1000(1.03)^x</m></li>
               <li><m> h(x)=5\sqrt{x}+2/\sqrt{x}-7x^{-3}</m></li>
@@ -837,7 +837,7 @@
         <solution>
           <p>
             Using our rule:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m>  f'(x)=[5x^3 ]'+[3x^2 ]'-[7]'=15x^2+6x-0.</m></li>
               <li><m> g'(x)=100[e^x]'-[1000(1.03)^x]'=100e^x-1000(1.03)^x  \ln(1.03).</m></li>
               <li>
@@ -953,7 +953,7 @@
         <statement>
           <p>
             Find the derivatives of the following functions:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> f(x)=(6x+100)*(1.06)^x.</m></li>
               <li><m> g(x)=\sqrt{x}  \ln(x).</m></li>
             </ol>
@@ -961,7 +961,7 @@
         </statement>
         <solution>
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><md>
             <mrow> f'(x)\amp=(6x+100)'*(1.06)^x+(6x+100)*((1.06)^x)'</mrow>
             <mrow>\amp =(6)*(1.06)^x+(6x+100)*(1.06)^x \ln(1.06) </mrow>
@@ -1050,7 +1050,7 @@
         <statement>
           <p>
             Find the derivatives of the following functions:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m> f(x)=((6x^2+100))/(x^3+x).</m></li>
               <li><m> g(x)=(1.07)^x/(3x+5).</m></li>
             </ol>
@@ -1058,7 +1058,7 @@
         </statement>
         <solution>
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><m>f'(x)=\left(\frac{6x^2+100}{x^3+x}\right)'=\frac{(12x)(x^3+x)-(6x^2+100)(3x^2+1)}{(x^3+x)^2}</m></li>
               <li><m>g'(x)=\left(\frac{1.07^x}{3x+5}\right)'=\frac{(\ln(1.07)1.07^x)(3x+5)-(1.07^x)(3)}{(3x+5)^2}</m></li>
             </ol>
@@ -1552,7 +1552,7 @@
       <statement>
         <p>
           Find the derivative of the following functions:
-          <ol label="(a)">
+          <ol marker="(a)">
             <li><m> f(p)=(p^3+2 p+5)^7.</m></li>
             <li><m> g(q)=\sqrt{q^2+6}.</m></li>
             <li><m> h(x)=e^{2 x+5}.</m></li>
@@ -1561,7 +1561,7 @@
       </statement>
       <solution>
         <p>
-          <ol label="(a)">
+          <ol marker="(a)">
             <li>
               <p>
                 We could do this problem by expanding it to a polynomial and using rules from the previous section,
@@ -1699,7 +1699,7 @@
           Find <m>h'(x)</m> for <m>h(x)=f(g(x))</m> for the given <m>f(z)</m> and <m>g(x)</m>.
         </p>
         <p>
-          <ol label="(a)">
+          <ol marker="(a)">
             <li><p><m>f(z)=2z+7</m> and <m>z=g(x)=3 x+5</m>.</p></li>
             <li><p><m>f(z)=z^3</m> and <m>z=g(x)=x^2+7</m>.</p></li>
             <li><p><m>f(z)=e^z</m> and <m>z=g(x)=x^2+3</m>.</p></li>
@@ -1708,7 +1708,7 @@
       </statement>
       <solution>
         <p>
-          <ol label="(a)">
+          <ol marker="(a)">
             <li><m>\frac{dh}{dx}=\frac{dh}{dz}\frac{dg}{dx}=2*3=6.</m></li>
             <li>
               <p>
@@ -2722,7 +2722,7 @@
       <statement>
         <p>
           Find the second derivative for each of the following functions:
-          <ol label="(a)">
+          <ol marker="(a)">
             <li><m>f(x)=3x^5+4x^2</m></li>
             <li><m> g(x)=5 x^6+3x+9</m></li>
             <li><m> h(x)=x e^{2x}</m></li>
@@ -2734,7 +2734,7 @@
       <solution>
         <p>
           Using our rule:
-          <ol label="(a)">
+          <ol marker="(a)">
             <li><m>  f''(x)=\frac{d}{dx}(\frac{d}{dx}( 3x^5+4x^2 ))\frac{d}{dx} (15x^4+8x)=60x^3+8.</m></li>
             <li><m>  g''(x)=\frac{d}{dx} (\frac{d}{dx}  (5 x^6+3x+9))=\frac{d}{dx} (30x^5+3)=150x^4.</m></li>
             <li>
@@ -2793,7 +2793,7 @@
           For the designated function and point, determine if the graph has a local minimum, local maximum, or non-extreme point, or if the second derivative test fails.
         </p>
         <p>
-          <ol label="(a)">
+          <ol marker="(a)">
             <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=2</m></li>
             <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=-2</m></li>
             <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=4</m></li>
@@ -2804,7 +2804,7 @@
       </statement>
       <solution>
         <p>Using our rule:
-          <ol label="(a)">
+          <ol marker="(a)">
             <li>
               <p>
                 <m>f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6</m>x.
@@ -2903,7 +2903,7 @@
       <exercisegroup>
         <introduction>
           <p>
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p>Find the first and second derivatives of the given function.</p></li>
               <li><p>Determine where the function is concave up and where it is concave down.</p></li>
               <li><p>Find the critical points of the function.  Classify each as a local minimum, a local maximum, neither, or not a local extremum.</p></li>
@@ -2919,7 +2919,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     <me>f'(x)=2(x-3)</me>
@@ -2949,7 +2949,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     <me>h' (t)=2te^{-t}-t^2 e^{-t}=(2t-t^2)e^{-t}</me>
@@ -2992,7 +2992,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     <me>m' (x)=\frac{-10x}{(x^2-9)^3}</me>
@@ -3035,7 +3035,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     <me>price'=\frac{-1}{100}-\frac{quantity}{5000}</me>
@@ -3065,7 +3065,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     <me>\Sprice'=\frac{\ln(104)}{10}*1.04^{(\quantity/100)} </me>
@@ -3136,7 +3136,7 @@
           </p>
           <p>
             For each problem give:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p>The cost of the bond as described.</p></li>
               <li><p>The first derivative of cost as a function of rate. (This measures risk of interest rate change.)</p></li>
               <li><p>The second derivative of cost as a function of rate.  (This measures the value of an option on the bond.)</p></li>
@@ -3160,7 +3160,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li><me>\cost=\frac{1000}{(1.04)^{30}} =308.32</me></li>
                 <li>
                   <p>
@@ -3198,7 +3198,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li><me>\cost=\frac{1000}{(1.03)^{20}} =553.68</me></li>
                 <li>
                   <p>

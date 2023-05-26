@@ -1339,7 +1339,7 @@
           </p>
 
           <p>
-            <ol label="(A)">
+            <ol marker="(A)">
               <li>
                 <p>
                   Find the elasticity when <m>q=800</m>.  Interpret what that means for the strategy to raise revenue.
@@ -1352,7 +1352,7 @@
         </statement>
         <solution>
           <p>
-            <ol label="(A)">
+            <ol marker="(A)">
               <li>
                 <p>
                   The formula for elasticity is:

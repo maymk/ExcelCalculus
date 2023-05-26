@@ -20,7 +20,7 @@
 
     <p>
       Before we look at functions of several variables, we want to create a list of tasks we have learned to accomplish with functions of one variable:
-      <ol label="(1)">
+      <ol marker="(1)">
         <li><p> Evaluate the function at a particular point with Excel.</p></li>
         <li><p> Make a table of values at a series of points with Excel.</p></li>
         <li><p> Make a reasonable graph from a table of values.</p></li>
@@ -1039,7 +1039,7 @@
         <introduction>
           <p>
             For the given functions and points <m>P_1</m> and <m>P_2</m>:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p> Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p></li>
               <li><p> Find the partial derivatives of the original function.</p></li>
               <li><p> Evaluate the partial derivatives at <m>P_1</m>.</p></li>
@@ -1058,7 +1058,7 @@
             </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.
@@ -1128,7 +1128,7 @@
             </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.
@@ -1227,7 +1227,7 @@
             </p>
 
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.
@@ -1359,7 +1359,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     Give the 2 functions of one variable through <m>P_1</m> obtained by holding each variable constant.
@@ -1443,7 +1443,7 @@
         <introduction>
           <p>
             For the given functions and points <m>P_1</m> and <m>P_2</m>:
-            <ol label="(a)">
+            <ol marker="(a)">
               <li><p> Give the 3 functions of one variable through <m>P_1</m> obtained by holding each variable constant.</p></li>
               <li><p> Find the partial derivatives of the original function.</p></li>
               <li><p> Evaluate the partial derivatives at <m>P_1</m>.</p></li>
@@ -1469,7 +1469,7 @@
           </statement>
           <solution>
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     Give the 3 functions of one variable through <m>P_1</m> obtained by holding each variable constant.
@@ -1573,7 +1573,7 @@
             <p>(Note: the last step/simplification was done in Wolfram Alpha)</p>
 
             <p>
-              <ol label="(a)">
+              <ol marker="(a)">
                 <li>
                   <p>
                     Give the 3 functions of one variable through <m>P_1</m> obtained by holding each variable constant.
@@ -2648,7 +2648,7 @@
           </p>
 
           <p>
-            <ol label="(1)">
+            <ol marker="(1)">
               <li><p>A local maximum.</p></li>
               <li><p>A local minimum.</p></li>
               <li><p>A saddle point where the function f(x,0)  has a local maximum and f(0,y)  has a local minimum.</p></li>
@@ -2662,7 +2662,7 @@
           <p><m>f(x)=ax^4</m> has minimum at <m>x=0</m> if <m>a\gt 0</m> and a maximum if <m>a\lt 0</m>.</p>
           <p>Since all terms are of degree at least three, all second partial derivatives are zero at the origin, so the discriminant test fails.</p>
           <p>
-            <ol label="(1)">
+            <ol marker="(1)">
               <li>
                 <p>
                   A local maximum: <m>(x,y) = -x^4-y^4</m>.
@@ -3255,7 +3255,7 @@
          <introduction>
            <p>
              For the given data sets:
-             <ol label="(1)">
+             <ol marker="(1)">
               <li><p>Plot the points and add a linear trendline.  Show the equation of the line.</p></li>
               <li><p>Create a spreadsheet to compare the data to a linear function.</p></li>
               <li><p>Add error to your spreadsheet.  Find the best fitting line, using Solver.</p></li>
