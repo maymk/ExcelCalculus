@@ -1071,7 +1071,6 @@
 
     <p>
       Several of our observations from this example work in general.
-      </p>
       <ul>
       <li><p>      Looking at a single point, the derivative of a function is the slope of the line tangent to the graph at that point.
       </p></li>
@@ -1085,6 +1084,7 @@
       so the derivative must either be zero or undefined for the graph of the function to have a maximum or minimum.
       </p></li>
       </ul>
+      </p>
       <p>
        Finding places where functions reach their highest and lowest values is an important activity in mathematics.
       We will look at these applications in more depth in upcoming sections.
