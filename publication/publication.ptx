@@ -14,6 +14,7 @@
     <!-- HTML-Specific Options -->
     <html>
         <calculator model="geogebra-graphing"/>
+        <webwork divisional="dynamic"/>
         <index-page ref="ExcelCalculus"/>
         <video privacy="yes"/>
         <!-- baseurl should not have a trailing slash -->
