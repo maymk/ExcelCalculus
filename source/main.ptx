@@ -132,8 +132,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
   </docinfo>
   <book xml:id="ExcelCalculus">
     <title>Business Calculus with Excel</title>
-
-    <xi:include href="./Chap0frontmatter.ptx"/>
+ 
+      <xi:include href="./Chap0frontmatter.ptx"/>
   
     <xi:include href="./Chap1FunctionsGraphsExcel.ptx"/>
     <xi:include href="./Chap2BusinessApplications.ptx"/>
@@ -145,7 +145,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                                                                                
 
     <xi:include href="./backmatter.ptx" />
-
+                                                                          
 ]
 <!--                                                                   
     <xi:include href="./Chap0frontmatter.ptx"/>

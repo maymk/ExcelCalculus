@@ -319,6 +319,139 @@
 
     <exercises xml:id="exercises-set-sec-1-1">
       <title>Exercises 1.1 Linear Functions and models</title>
+
+<!-->
+<exercise><title>WeBWorK - Computing Percentiles</title>
+	<webwork source="Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg">
+	</webwork>
+
+</exercise>
+
+
+<exercise><title>WeBWorK - Computing Percentiles</title>
+	<webwork source="Contrib/SLU/excelcalculus/ch1/rqC1/Ch1Sec1Q1pg">
+	</webwork>
+
+</exercise>
+<-->
+ <!-->  
+<exercise>
+    <title>String Answers</title>
+    <idx><h><webwork/></h><h>string answers</h></idx>
+    <idx><h><webwork/></h><h>algorithmic image</h></idx>
+    <introduction>
+      <p>
+        Spelling counts, but not capitalization or spaces.
+      </p>
+    </introduction>
+    <webwork>
+   
+   
+      <pg-code>
+        Context("ArbitraryString");
+        $platypus = Compute("platypus")->cmp(checker => sub {
+          my ($correct,$student,$ans) = @_;
+          $correct = $correct->value;
+          $student = $student->value;
+          $student = lc($student);
+          $student =~ s/ +/ /;
+          $student =~ s/^ //;
+          $student =~ s/ $//;
+          return ($student eq $correct);
+        });
+      </pg-code>
+      <statement>
+        <p>
+          This Venn Diagram groups animals by certain characteristics.
+        </p>
+        <image width="50%">
+          <latex-image syntax="PGtikz">
+            \draw[fill=red, opacity=0.5] (0,0) circle (2cm) node[below left=1.5cm, opacity=1] {Has a Bill} node[below left, opacity=1] {Duck};
+            \draw[fill=green, opacity=0.5] (60:2cm) circle (2cm) node [above=2.1cm, opacity=1] {Is Venemous} node[above=0.5cm, opacity=1] {Jellyfish};
+            \draw[fill=blue, opacity=0.5] (0:2cm) circle (2cm) node [below right=1.5cm, opacity=1] {Has Fur} node[below right, opacity=1] {Beaver};
+          </latex-image>
+        </image>
+        <p>
+          Name an animal that belongs in the center region. Spelling counts!
+        </p>
+        <p>
+          <var name="$platypus" width="30"/>
+        </p>
+      </statement>
+    </webwork>
+  </exercise>
+ 
+<exercise>
+    <title>Reading 1-1</title>
+    <idx><h><webwork/></h><h>Reading 1-1</h></idx>
+    <idx><h><webwork/></h><h>algorithmic image</h></idx>
+    <introduction>
+      <p>
+        Spelling counts, but not capitalization or spaces.
+      </p>
+    </introduction>
+    <webwork>
+   <pg-macros>
+   		<macro-file>PGstandard.pl</macro-file> 
+   		<macro-file>PGchoicemacros.pl</macro-file> 
+   		<macro-file>PGcourse.pl</macro-file> 
+   </pg-macros>
+      <pg-code>
+$mc = new_checkbox_multiple_choice(); 
+
+$mc -> qa ( "Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order",  
+"In this class we will sometimes use \(q\) and \(p\) instead of \(x\) and \(y\). $BR", 
+"The supply curve has a positive slope. $BR", 
+"\(y=mx+b\) is often referred to as the slope-intercept form of the line.  $BR",                 
+"\(y-y_1=m(x-x_1)\) is often referred to as the point-slope form of the line.  $BR",                 
+"The slope can be defined as rise over run. $BR"); 
+
+$mc -> extra( "If they are not labeled, there is no way to tell which is the supply curve and which is the demand curve. $BR", 
+"\(y=mx+b\) is often referred to as the general form of the line.  $BR", 
+"The demand function is a line with a positive slope.$BR"); 
+$mc -> makeLast("None of the above");
+      </pg-code>
+      <statement>
+This question checks your reading comprehension of the material is section 1.1, Linear functions and models, of Business Calculus with Excel.
+$BR
+\{ $mc -> print_q() \} $BR 
+\{ $mc -> print_a() \}  
+        <p>
+          This Venn Diagram groups animals by certain characteristics.
+        </p>
+        <image width="50%">
+          <latex-image syntax="PGtikz">
+            \draw[fill=red, opacity=0.5] (0,0) circle (2cm) node[below left=1.5cm, opacity=1] {Has a Bill} node[below left, opacity=1] {Duck};
+            \draw[fill=green, opacity=0.5] (60:2cm) circle (2cm) node [above=2.1cm, opacity=1] {Is Venemous} node[above=0.5cm, opacity=1] {Jellyfish};
+            \draw[fill=blue, opacity=0.5] (0:2cm) circle (2cm) node [below right=1.5cm, opacity=1] {Has Fur} node[below right, opacity=1] {Beaver};
+          </latex-image>
+        </image>
+        <p>
+          Name an animal that belongs in the center region. Spelling counts!
+        </p>
+        <p>
+          <var name="$platypus" width="30"/>
+        </p>
+      </statement>
+    </webwork>
+  </exercise>
+    
+
+        <exercise>
+    <title>Open Problem Library</title>
+    <idx><h><webwork/></h><h>Open Problem Library</h></idx>
+    <introduction>
+      <p>
+        <webwork/> has an Open Problem Library with over 40,000 exercises.
+        One of them is this exercise, with file path
+        <url href="https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg"><c>Library/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg</c></url>.
+      </p>
+    </introduction>
+    <webwork source="Library/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg"/>
+  </exercise>
+
+<-->
+
       <exercisegroup>
         <introduction>
           <p>Given two points in the <m>(q,p)</m> plane and a value <m>q_0</m>:</p>
