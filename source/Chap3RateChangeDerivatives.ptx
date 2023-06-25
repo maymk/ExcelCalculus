@@ -389,6 +389,38 @@
       </p>
     </subsection>
 
+
+    <exercise>
+      <title>Reading check, Marginal Functions and Difference Quotients</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The marginal value of \(f(x)\) is defined to be the change in \(f(x)\) as \(x\) increases by 1. ", 
+"Marginal Cost at x, or Marginal Cost(x+1) is the change from Cost(x) to Cost(x+1). ", 
+"Marginal Profit(x+1) is the change from Profit(x) to Profit(x+1).  ",                 
+"Marginal functions are difference quotients with denominator 1. ", 
+"Marginal Revenue(x) is the change from Revenue(x) to Revenue(x+1).  "                
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.1, Marginal Functions and Difference Quotients,, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-3-1">
       <title>Exercises: Marginal Functions and Difference Quotients Problems</title>
 
@@ -804,6 +836,7 @@
     </exercises>
   </section>
 
+
   <section xml:id="sec-3-2-NumericDerivativesLimits">
     <title>Numeric Derivatives and Limits</title>
 
@@ -1217,6 +1250,44 @@
         </dl>
       </p>
     </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, 3.2, Numeric Derivatives and Limits,</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+<!-->                
+"For a function \(f(x)\), the derivative \(f'(x)\) is defined as the limit as \(del\ x\) approaches 0 of \((f(x+del \ x)-f(x))/(del\ x)\).  ", 
+<-->
+"For a function \(f(x)\), the derivative \(f'(x)\) is defined as the limit as \(del\ x\) approaches 0 of \((f(x+del \ x)-f(x))/(del\ x)\).  ", 
+"The calculator definition of derivative approximates \(f'(x)\) by \((f(x+0.001)-f(x-0.001)) / (0.002)\). ", 
+"The calculator definition of derivative has problems with corners and cusps.  ",                 
+"If the derivative of \(f(x)\) is positive, the graph of the function  \(f(x)\),  is increasing. ",  
+"The calculator definition of the derivative gives a good approximation for all functions.).  ",                 
+"If the derivative of \(f(x)\) is negative, the graph of the function  \(f(x)\),  is increasing. "
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.2, Numeric Derivatives and Limits, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
 
     <exercises xml:id="exercises-set-sec-3-2">
 	    <title>Exercises: Numeric Derivatives and Limits</title>
@@ -1865,6 +1936,41 @@
       The good domain will also depend on how far the graph is from linear, or how fast it is bending.
     </p>
 
+
+    <exercise>
+      <title>Reading check, Local Linearitys</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+ "For a function \(f(x)\), the discrete linear approximation of \(f(x)\) at \(a\) is  \(f(a)+mf(a+1)*(x-a)\) where \(mf(a+1)\) is the marginal change of \(f(x(\) form \(a\) to \(a+1\).  ", 
+"For a function \(f(x)\), the linear approximation of \(f(x)\) at \(a\) is  \(f(a)+f'(a)*(x-a)\) where \(f'(a)\) is the derivative of \(f(x(\) at \(a\) .  ", 
+ "One of the reasons for looking at the linear approximation of a function is that linear functions are easy to evaluate. ", 
+"In the differentiable case, the the linear approximation is the tangent line.  ",                 
+"In the discrete case, the linear approximation is a secant line.  ",                 
+"In the discrete case we look at the the linear approximation is the tangent line.  ",                 
+"Linear approximations can always be used for values within 5 of the base point. " 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.3, Local Linearity, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
     <exercises xml:id="exercises-set-sec-3-3">
        <title>Exercises: Local Linearity</title>
 
@@ -2508,6 +2614,43 @@
         </p>
       </solution>
     </example>
+
+
+    <exercise>
+      <title>Reading check, Optimization</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"In a business setting, we are often concerned with finding the maximum and minimum values of a function, because one or the other will be a best, or optimum value.  ", 
+"We cannot have an extremum at an interior point of the domain if the derivative is nonzero.  ", 
+"We can only have extrema at a critical point, a place when the derivative is zero or undefined, or at an endpoint. ", 
+"The process for optimization is to find all the candidate points, then to see which gives the highest and lowest values. ", 
+"When a curve has a point that is a maximum or minimum for the whole domain, we call it an absolute maximum or minimum.  ",                      
+"When a curve has a point that is a maximum or minimum in some interval around the point, we call it a relative maximum or minimum.  ",                 
+ 
+"At points where the derivative is zero we must have a relative maximum or minimum.  ",                 
+"Every function must have an absolute maximum. ",
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4, 5],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.4, Optimization, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
 
     <exercises xml:id="exercises-set-sec-3-4">
        <title>Exercises: Optimization</title>
@@ -3390,6 +3533,42 @@
         It will also work with models that may not have been programmed into the Trendline tool.
       </p>
     </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, Optimization</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"It is easiest to think of solver as a more powerful version of Goal Seek.  ", 
+"Solver is more versatile than  Goal Seek. ", 
+"Solver uses a version of Newton's method to find extrema.  ", 
+"Solver can run into problems when it has to move across a bend in the curve to find a solution. ", 
+"Solver can be used on functions of 2 variables.  ",                      
+                
+"Solver can find the minimum of any function.  ",                 
+"Solver will only find a root if the function actually has one.  "
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.5, An Introduction to Solver, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
 
     <exercises xml:id="exercises-set-sec-3-5">
       <title>Exercises: An Introduction to Solver</title>

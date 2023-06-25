@@ -317,6 +317,41 @@
       </example>
     </subsection>
 
+
+    <exercise>
+      <title>Reading check, Market Equilibrium Problems</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The law of supply looks at the economy from the supplier's point of view. ", 
+"The law of demand looks at the economy from the consumer's point of view. ", 
+"The slope of the supply curve is always positive.  ",                 
+"This intersection of the supply and the demand functions is called the point of market equilibrium, or equilibrium point. ", 
+"The standard economic theory says that a free and open market will naturally settle on the equilibrium price. ",
+
+ "The slope of the demand curve is always positive.  ",                 
+"If the supply and demand curves are unlabeled, there is no way to guess which is which. "
+				],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 2.1, Market Equilibrium Problems, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-2-1">
   	   <title>Exercises 2.1 Equilibrium Problems</title>
 
@@ -766,6 +801,7 @@
       </exercisegroup>
     </exercises>
   </section>
+
 
   <section xml:id="sec-2-2-ModelingRevenueCostProfit">
     <title>Modeling Revenue, Costs, and Profit</title>
@@ -1223,6 +1259,44 @@
         </solution>
       </example>
     </subsection>
+
+
+    <exercise>
+      <title>Reading check, Modeling Revenue, Costs, and Profit</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The simple model for revenue is revenue =quantity*price. ", 
+"We typically use the demand price in computing revenue. ", 
+"In real world cases the revenue function has a negative coefficient for the quadratic term and is a downward facing parabola.  ",                 
+"For our simplified model, costs= fixed costs + unit costs*quantity. ", 
+"The point at which revenues equal expenses (cost) is called the break-even point. ", 
+"Fixed costs include the costs of being in business. They might include license fees, rent for a store or plant, and the cost of furnishings and equipment. ", 
+"We typically use the supply price in computing revenue.  ", 
+"In the real world variable costs are proportional to quantity. ", 
+"Profit = Costs - Revenue. ", 
+"In our simplified model, the profit function is linear. "
+				],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4, 5],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 2.2, Modeling Revenue, Costs, and Profit, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
 
     <exercises xml:id="exercises-set-sec-2-2">
       <title>Exercises: Modeling Revenue, Costs, and Profit</title>
@@ -2209,6 +2283,45 @@
         In the continuous case, this reduces to our old definition.
       </p>
     </subsection>
+
+
+
+    <exercise>
+      <title>Reading check, Nonlinear Functions</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"In the real world, the demand function is probably not linear. ", 
+"ln(x) is used for the natural log of x, or log base e. ", 
+"In Excel \(e^x\) is written EXP(x).  ",                 
+"Excel does negation before exponentiation. ", 
+"The if construction can be used in Excel for a function with branches. ", 
+"For the ROUND command we specify the number of digits past the decimal point in the rounded number. ",  
+
+"All real world cost functions are continuous.  ", 
+"The commands ROUND, ROUNDUP, and ROUNDDOWN can be used interchangeably. ", 
+"For the FLOOR command we specify the number of digits past the decimal point in the rounded number. ", 
+"The CEIL command can be used to roundup. "
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4, 5],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 2.3, Nonlinear Functions, Costs, and Profit, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-2-3">
       <title>Exercises 2.3 Nonlinear functions</title>

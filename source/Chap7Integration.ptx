@@ -272,6 +272,40 @@
       </solution>
     </example>
 
+   <exercise>
+      <title>Reading check, Approximating Definite Integrals as Sums</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"We can approximate the area under a curve with a sum of rectangular areas. ", 
+"The limit of a Riemann Sum is a Definite Integral.   ", 
+"For functions in this class it does not matter is our sum uses right or left hand points to form the rectangle in a subinterval.  ", 
+"One of the examples in the section looked at finding the present value of a revenue stream.  ", 
+"The text mentioned a memory aid that uses the Greek and Latin alphabets.  ", 
+
+"One of the examples in the section looked at finding the volume of a solid of revolution.  ", 
+"This sections gave a list of formulas of definite integrals of nice functions.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.1, Approximating Definite Integrals as Sums, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-7-1">
 	     <title>Exercises: Approximating Definite Integrals as Sums Problems</title>
 
@@ -876,6 +910,43 @@
       The method we have just used is often referred to as the <q>guess and check</q> method of finding anti-derivatives.
       We will look at methods of finding anti-derivatives in the next several sections.
     </p>
+
+   <exercise>
+      <title>Reading check, The Fundamental Theorem of Calculus</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Let \(f(x)\) be a continuous function on the interval \([a, b]\).
+ On that interval, define an area function by 
+ \(F(x)=\int^x_a d(t)\ dt\). Then \(\frac{d}{dx}F(x)=f(x)\). ", 
+"Let \(f(x)\) be a continuous function on the interval \([a, b]\).  Suppose \(F(x)\) is any continuous, differentiable  function with  \(\frac{d}{dx}F(x)=f(x)\).  Then 
+\(F(x)=\int^x_a d(t)\ dt=F(b)-f(a)\)
+  ", 
+"The fundamental theorem of calculus says we can use antiderivatives to find the area under a curve.  ", 
+"We can use guess and check to verify antiderivatives.  ", 
+
+"The fundamental theorem can be used to evaluate the area under any function,  ", 
+"The two versions of the fundamental theorem of calculus are interchangeable.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.2, The Fundamental Theorem of Calculus, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-7-2">
 	    <title>Exercises: The Fundamental Theorem of Calculus Problems</title>
@@ -1647,6 +1718,43 @@
       In general, the process of finding anti-derivatives symbolically is an art form that we only begin to work with in this course.
     </p>
 
+   <exercise>
+      <title>Reading check, Basic Antidifferentiation</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"\(\int x^n dx = \frac{x^{n+1}}{n+1}+C\), assuming \(n\ne -1\).", 
+"\(\int 1/x dx = \ln |x|+C\).", 
+"\(\int e^x dx = e^x+C\).", 
+"\(\int a^x dx = \frac{a^x}{\ln(a)}+C\).", 
+"\(\int (f(x)+g(x))dx = \int f(x) dx + \int(g(x)dx\).",
+
+"\(\int x^n dx = \frac{x^{n+1}}{n+1}+C\), assuming \(n\ne +1\).", 
+"\(\int x^n dx = nx^{n-1}+C\).", 
+"\(\int a^x dx = \ln(a)*a^x+C\), assuming \(n\ne -1\).", 
+"\(\int (f(x)*g(x))dx = \int f(x) dx * \int(g(x)dx\).",
+"\(\int e^x dx = \frac{e^{x+1}}{x+1}+C\), assuming \(n\ne -1\).", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.3, Basic Antidifferentiation, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-7-3">
 	    <title>Exercises: Basic Antidifferentiation Problems</title>
 
@@ -2282,6 +2390,39 @@
         </solution>
       </example>
     </subsection>
+
+   <exercise>
+      <title>Reading check, Integration by Change of Variable or Substitution</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"One of the methods in this section is called Guess and Check. ", 
+"Substitution for integration is related to the chain rule for integration. ", 
+"For the method of substitution, we want to make both \(u\) and 
+\(du\) explicit. ", 
+"We can also do change of variables with definite integrals. ", 
+
+"We can pick any expression for \(u\) when doing substitution. ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.4, Integration by Change of Variable or Substitution, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-7-4">
       <title>Exercises: Integration by Change of Variables or Substitution Problems</title>
@@ -2947,6 +3088,39 @@
       </example>
     </subsection>
 
+   <exercise>
+      <title>Reading check, Integration Using Computer Algebra</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The section uses Wolfram|Alpha as a computer algebra system that will do integration. ", 
+"The section uses Symbolab as a computer algebra system that will do integration.  ", 
+"Wolfram|Alpha will also do definite integrals.  ", 
+"In initial value problems, we have to solve for the value of the integration constant \(C\). ", 
+
+"The section uses GeoGebra as a computer algebra system that will do integration.  ", 
+"The computer algebra systems used in this section cannot do Riemann sums.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.5, Integration Using Computer Algebra, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-7-5">
 	    <title>Exercises: Integration using Computer Algebra Problems</title>
       <exercisegroup>
@@ -3565,6 +3739,42 @@
         It does not let us leave a worksheet that is well documented and that can be easily modified by someone else asking similar questions.
       </p>
     </subsection>
+
+   <exercise>
+      <title>Reading check, The Normal Distribution: An Extended Numeric Example</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"One method in the sections was described as Excel with Riemann sums. ", 
+"One method in the sections was described as Excel with formulas. ", 
+"One method in the sections was described as CAS. ", 
+"The section uses Symbolab as a computer algebra system that will do integration.  ", 
+"Each method described has advantages and disadvantages. \(C\). ", 
+
+"One method in the sections was described as Statistical Averaging. ", 
+"One method in the sections was described as Integration by parts. ", 
+"The method of using Excel with Riemann sums is always the best method.  ", 
+"The method of using CAS is always the best method.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.6, The Normal Distribution: An Extended Numeric Example, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-7-6">
 	    <title>Exercises: Normal Distribution Problems</title>
@@ -4190,6 +4400,39 @@
       </example>
     </subsection>
 
+   <exercise>
+      <title>Reading check, Applications of the Integral, Investment and Depreciation</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Accumulating a function over time is simply taking a definite integral. ", 
+"We can accumulate marginal cost over time to find change in cost. ", 
+"The example on oil production took the integral of an exponential function. ", 
+"to find the current value of a revenue stream we take the integral of the revenue stream times a discounting functions that represents how much a future payment is worth today.  ", 
+"If we can set up the integral of an application, we can use CAS to evaluate the integral. ", 
+
+"This section explained how to use calculus to predict the future value of the stock market. ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.7, Applications of the Integral, Investment and Depreciation, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-7-7">
 	    <title>Exercises: Applications of the integral: Investment and depreciation Problems</title>
 
@@ -4691,6 +4934,39 @@
         </solution>
       </example>
     </subsection>
+
+   <exercise>
+      <title>Reading check, Economics Applications of the integral</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Accumulating a function over time is simply taking a definite integral. ", 
+"We can accumulate marginal cost over time to find change in cost. ", 
+"The example on oil production took the integral of an exponential function. ", 
+"to find the current value of a revenue stream we take the integral of the revenue stream times a discounting functions that represents how much a future payment is worth today.  ", 
+"If we can set up the integral of an application, we can use CAS to evaluate the integral. ", 
+
+"This section explained how to use calculus to predict the future value of the stock market. ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.8, Economics Applications of the integral, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-7-8">
       <title>Exercises Business Applications of the Integral Problems</title>

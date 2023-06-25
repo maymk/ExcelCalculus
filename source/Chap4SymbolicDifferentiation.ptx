@@ -456,6 +456,41 @@
       </example>
     </subsection>
 
+    <exercise>
+      <title>Reading check, Elementary Derivatives</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"If \(f(x)=a*x^n\) then \(f'(x)=n*a*x^{n-1}\).  ", 
+"If \(f(x)=a*e^x\) then \(f'(x)=a*e^x\).  ", 
+"If \(f(x)=b*a^x\) then \(f'(x)=b*\ln(a)*a^x\).  ", 
+"If \(f(x)=a*\ln(x)\) then \(f'(x)=a/x\).  ", 
+
+"If \(f(x)=a*x^{\pi}\) then \(f'(x)=a*\ln(pi)*x^{\pi}\).  ", 
+"The monomial rule for taking the derivative of \(f(x)=a*x^n\) is only valid when \(n\) is an integer.   ", 
+"If \(f(x)=a*\ln(x^n)\) then \(f'(x)=a*n/x^{n-1}\).  " 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.1, Elementary Derivatives, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
     <exercises xml:id="exercises-set-ElementaryDerivaitives">
       <title>Exercises: Elementary Derivatives Problems</title>
       <exercisegroup xml:id="exerciseGoup-1-ElementaryDerivaitives">
@@ -1092,6 +1127,42 @@
         </p>
       </paragraphs>
     </subsection>
+
+
+    <exercise>
+      <title>Reading check, Derivative Rules for Combinations of Functions</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The derivative of \(c*f(x)\) is \(c*f'(x)\).  ", 
+"The derivative of \(f(x)+g(x)\) is \(f'(x)+g'(x)\).  ", 
+"The derivative of \(f(x)-g(x)\) is \(f'(x)-g'(x)\).  ", 
+"The derivative of \(f(x)*g(x)\) is \(f'(x)*g(x)+f(x)*g'(x)\).  ", 
+"The derivative of \(f(x)/g(x)\) is \(\frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x)^2}\).  ", 
+
+"The derivative of \(f(x)/g(x)\) is \(\frac{f(x)*g'(x)-f'(x)*g(x)}{(g(x)^2}\).  ", 
+"The derivative of \(f(x)*g(x)\) is \(f'(x)*g'(x)\).  ", 
+"The derivative of \(f(x)/g(x)\) is \(f'(x)/g'(x)\).  " 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.2, Derivative Rules for Combinations of Functions, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-4-2">
 	    <title>Exercises: Derivative Rules for Combinations of Functions Problems</title>
@@ -1757,6 +1828,42 @@
       </dl>
     </p>
 
+
+    <exercise>
+      <title>Reading check, The Chain Rule</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The derivative of \(f(g(x))\) is \(f'(g(x))*g'(x)\).  ", 
+"If \(z=g(x)\), and \(y=f(z)\), so \(y=f(g(x))\), then 
+\(\frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}\).  ", 
+"If \(g(x)=g(f(x)^n\) then \(g'(x)=n*(f(x)^{n-1}*f'(x)\).  ", 
+"If \(g(x)=(f(a*x+b)\) then \(g'(x)=a*f'(a*x+b)\).  ", 
+
+"The derivative of \(f(g(x))\) is \(f'(g'(x))\).  ", 
+"If \(z=g(x)\), and \(y=f(z)\), so \(y=f(g(x))\), then 
+\(\frac{dy}{dz}=\frac{dy}{dz}\frac{dz}{dx}\).  ",
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.3, The Chain Rule, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-4-3">
 	    <title>Exercises: The Chain Rule</title>
 
@@ -2306,6 +2413,40 @@
     <image width="70%" source="images/sec4-4-10.png"/>
 
     <p>You may find other websites for doing derivatives as well.</p>
+
+
+    <exercise>
+      <title>Reading check, Differentiation Using Computer Algebra</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Differentiation can be done with free tools available on the web.  ", 
+"Wolfram|Alpha is a free tool available on the web that does symbolic differentiation.  ", 
+"Symbolab is a free tool available on the web that does symbolic differentiation.  ", 
+"Some free tools give step by step work for symbolic differentiation.  ", 
+
+"Desmos is a free tool available on the web that does symbolic differentiation.  ", 
+"The free tools for differentiation all use the same syntax.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.4, Differentiation Using Computer Algebra, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-4-4">
 	     <title>Exercises: Differentiation Using Computer Algebra Problems</title>
@@ -2896,6 +3037,42 @@
         It looks at how much the pricing curve bends.  We will return to these uses when we look at integrals.
       </p>
     </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, The Second Derivative and Concavity</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"We say that a graph is concave up if the line between any two points is above the graph.  ", 
+"We say that a graph is concave down if the line between any two points is below the graph.  ", 
+"We say that a graph is concave up if the first derivative is increasing.  ", 
+"The second derivative of a function is the derivative of the derivative of the function.  ", 
+"The second derivative test fails if we are not at a critical point.  ", 
+
+"If the second derivative is positive we are at a local maximum.  ", 
+"If the second derivative is positive we are at a local minimum.  ", 
+"If the second derivative is zero we cannot have a local maximum.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.5, The Second Derivative and Concavity, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-4-5">
       <title>Exercises: The Second Derivative and Concavity Problems</title>

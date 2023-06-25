@@ -271,6 +271,41 @@
       </p>
     </paragraphs>
 
+
+    <exercise>
+      <title>Reading check, Implicit Differentiation</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Implicit differentiation is an application of the chain rule.  ", 
+"Implicit differentiation is used when we are given an equation between two variables and it is not solved for one of the variables.  ", 
+"A relation involving two quantities implicitly defines one as a function of the other in a small region.  ", 
+"The textbook worked through examples of using implicit differentiation to find tangent lines to circles.  ", 
+
+"For implicit  differentiation, you need to explicitly solve for one of the variables. ", 
+"The textbook worked through examples of using implicit differentiation to find tangent lines to hyperbolas.  ", 
+"The textbook worked through examples of using implicit differentiation to find tangent lines to ellipses.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 5.1, Implicit Differentiation, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-5-1">
   	   <title>Exercises: Implicit Differentiation Problems</title>
 
@@ -865,6 +900,40 @@
         We either want to multiply or divide theses fractions to obtain the desired derivative.
       </p>
     </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, Related Rates</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"When using the method of related rates, we act as if the derivatives are fractions that we can multiply or divide to obtain the appropriate fraction.  ", 
+"The related rates technique is an application of the chain rule.   ", 
+"Related rates are useful when we are looking at a two-step process and we are interested in the rate of the combined process.  ", 
+"Related rates are useful when we are looking at a two variables related by some constraint or equation and both are varying with time.  ", 
+
+"We always can use algebra to reduce to two variables, so we do not really need related rates.  ", 
+"Related rates and implicit differentiation are interchangeable methods.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 5.2, Related Rates, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-5-2">
 	     <title>Exercises: Related Rates Problems</title>
@@ -1515,6 +1584,46 @@
         </solution>
       </example>
     </subsection>
+
+   <exercise>
+      <title>Reading check, 5.3, Elasticity</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Elasticity of demand is a concept from economics that looks at relative rate of change rather than rate of change.  ", 
+"Elasticity of demand is the relative rate of change with respect to price.   ", 
+<!--><-->
+ "When demand is elastic (E is greater than 1), we raise revenue by lowering price.  ", 
+"When demand is inelastic (E is less than 1), we raise revenue by raising price.  ", 
+
+ "Arc elasticity is computed from two points.  ", 
+"The formula for Point elasticity is \(\frac{-dQ}{dP}*\frac{P(Q_0)}{Q_0}\).  ", 
+
+"We say elasticity is high if we can easily change the price without changing the demand.  ", 
+"We say elasticity is low  we cannot easily change the price without changing the demand.  ", 
+		],
+               "None of the above"
+              ],
+              [0, ],
+  <!-->
+             [0, 1, 2, 3, 4, 5],
+  <-->
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 5.3, Elasticity, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-5-3">
 	    <title>Exercises: Elasticity Problems</title>

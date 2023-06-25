@@ -340,6 +340,38 @@
       In the next section we explore techniques for understanding functions of several variables by treating some of the variables as constants.
     </p>
 
+    <exercise>
+      <title>Reading check, Evaluating and Graphing Functions of Several Variables</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"In the text, bank balance was discussed as a function of 4 variables. ", 
+"In the text, the demand price of an object was discussed as a function of 5 variables, 2 given demands with associated prices and the demand quantity in question.   ", 
+"The book showed how to make a table for functions of two variables.  ", 
+"Wolfram Alpha will plot functions of two variables.  ", 
+
+"All functions have a single input variable, <m>x</m>  ", 
+"Excel easily graphs functions of three variables.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 6.1, Evaluating and Graphing Functions of Several Variables, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-6-1">
 	     <title>Exercises: Evaluating and Graphing Functions of Several Variables Problems</title>
@@ -1031,6 +1063,7 @@
         </p>
       </paragraphs>
     </subsection>
+
 
     <exercises xml:id="exercises-set-sec-6-2">
 	    <title>Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</title>
@@ -2124,6 +2157,42 @@
         </solution>
       </example>
     </subsection>
+
+    <exercise>
+      <title>Reading check, Wire Frames, Critical Points and Extrema</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The point \((a, b)\) is a critical point for the multivariable function \(f(x,y)\),
+ if both partial derivatives are 0 at the same time. ", 
+"A saddle point has a minimum in one direction and a maximum in a different direction.   ", 
+"The formula for the discriminant of \(f(x,y)\) is is \(f_{xx}f_{yy}-f^2_{xy}\).   ", 
+"If the discriminant is negative at a critical point, then we have a saddle point.  ", 
+"If the discriminant of \(f\) is positive at a critical point, and \(f_{xx}\) is positive, then we have a local minimum.  ", 
+
+"If a function is a minimum in both the \(x\) and \(y\) directions, then it is a minimum.  ", 
+"We cannot have a maximum if the discriminant is zero.  ", 
+"If the discriminant of \(f\) is positive , and \(f_{xx}\) is negative, then we have a local maximum.  "
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 6.3, Critical Points and Extrema, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-6-3">
       <title>Exercises: Critical Points and Extrema Problems</title>
@@ -3248,6 +3317,40 @@
         As a general rule, we will use the <c>trendline</c> command when it works with the kind of equation we have decided to use as our model.
       </p>
     </paragraphs>
+
+   <exercise>
+      <title>Reading check, Optimization and Best Fitting Curves</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The best fitting line is defined to be the line that that minimizes the sum of the squares of the error.  ", 
+"To find the best fitting curve we try to use the trendline command, even if the curve is not a line.   ", 
+"the trendline command only works with a limited number of kinds of functions.   ", 
+"The minimize sum of squared errors method works with a broader array of functions.  ", 
+"The method of graphing points and using the trendline command has the advantage of being the simplest method when it works.  ", 
+
+"The method of using partial derivatives has the advantage of easiest to use.  ", 
+"Solver always find the global minimum of a function.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 6.4, Optimization and Best Fitting Curves, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
 
     <exercises xml:id="exercises-set-sec-6-4">
 	     <title>Exercises: Optimization and Best Fitting Curves Problems</title>

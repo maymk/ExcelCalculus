@@ -317,6 +317,43 @@
       </p>
     </subsection>
 
+    <exercise>
+      <title>Reading check, Linear Functions and Models</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+                                
+                 "In this class we will sometimes use \(q\) and \(p\) instead of \(x\) and \(y\).",
+                 "The supply curve has a positive slope. ",
+                 "\(y=mx+b\) is often referred to as the slope-intercept form of the line. ",
+                 "\(y-y_1=m(x-x_1)\) is often referred to as the point-slope form of the line.",
+                 "The slope can be defined as rise over run.",
+                 "If they are not labeled, there is no way to tell which is the supply curve and which is the demand curve.",
+                 "\(y=mx+b\) is often referred to as the general form of the line.  ",
+                 "The demand function is a line with a positive slope.$BR"
+                ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.1, Linear functions and models, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+
     <exercises xml:id="exercises-set-sec-1-1">
       <title>Exercises 1.1 Linear Functions and models</title>
 
@@ -334,124 +371,6 @@
 
 </exercise>
 <-->
- <!-->  
-<exercise>
-    <title>String Answers</title>
-    <idx><h><webwork/></h><h>string answers</h></idx>
-    <idx><h><webwork/></h><h>algorithmic image</h></idx>
-    <introduction>
-      <p>
-        Spelling counts, but not capitalization or spaces.
-      </p>
-    </introduction>
-    <webwork>
-   
-   
-      <pg-code>
-        Context("ArbitraryString");
-        $platypus = Compute("platypus")->cmp(checker => sub {
-          my ($correct,$student,$ans) = @_;
-          $correct = $correct->value;
-          $student = $student->value;
-          $student = lc($student);
-          $student =~ s/ +/ /;
-          $student =~ s/^ //;
-          $student =~ s/ $//;
-          return ($student eq $correct);
-        });
-      </pg-code>
-      <statement>
-        <p>
-          This Venn Diagram groups animals by certain characteristics.
-        </p>
-        <image width="50%">
-          <latex-image syntax="PGtikz">
-            \draw[fill=red, opacity=0.5] (0,0) circle (2cm) node[below left=1.5cm, opacity=1] {Has a Bill} node[below left, opacity=1] {Duck};
-            \draw[fill=green, opacity=0.5] (60:2cm) circle (2cm) node [above=2.1cm, opacity=1] {Is Venemous} node[above=0.5cm, opacity=1] {Jellyfish};
-            \draw[fill=blue, opacity=0.5] (0:2cm) circle (2cm) node [below right=1.5cm, opacity=1] {Has Fur} node[below right, opacity=1] {Beaver};
-          </latex-image>
-        </image>
-        <p>
-          Name an animal that belongs in the center region. Spelling counts!
-        </p>
-        <p>
-          <var name="$platypus" width="30"/>
-        </p>
-      </statement>
-    </webwork>
-  </exercise>
- 
-<exercise>
-    <title>Reading 1-1</title>
-    <idx><h><webwork/></h><h>Reading 1-1</h></idx>
-    <idx><h><webwork/></h><h>algorithmic image</h></idx>
-    <introduction>
-      <p>
-        Spelling counts, but not capitalization or spaces.
-      </p>
-    </introduction>
-    <webwork>
-   <pg-macros>
-   		<macro-file>PGstandard.pl</macro-file> 
-   		<macro-file>PGchoicemacros.pl</macro-file> 
-   		<macro-file>PGcourse.pl</macro-file> 
-   </pg-macros>
-      <pg-code>
-$mc = new_checkbox_multiple_choice(); 
-
-$mc -> qa ( "Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order",  
-"In this class we will sometimes use \(q\) and \(p\) instead of \(x\) and \(y\). $BR", 
-"The supply curve has a positive slope. $BR", 
-"\(y=mx+b\) is often referred to as the slope-intercept form of the line.  $BR",                 
-"\(y-y_1=m(x-x_1)\) is often referred to as the point-slope form of the line.  $BR",                 
-"The slope can be defined as rise over run. $BR"); 
-
-$mc -> extra( "If they are not labeled, there is no way to tell which is the supply curve and which is the demand curve. $BR", 
-"\(y=mx+b\) is often referred to as the general form of the line.  $BR", 
-"The demand function is a line with a positive slope.$BR"); 
-$mc -> makeLast("None of the above");
-      </pg-code>
-      <statement>
-This question checks your reading comprehension of the material is section 1.1, Linear functions and models, of Business Calculus with Excel.
-$BR
-\{ $mc -> print_q() \} $BR 
-\{ $mc -> print_a() \}  
-        <p>
-          This Venn Diagram groups animals by certain characteristics.
-        </p>
-        <image width="50%">
-          <latex-image syntax="PGtikz">
-            \draw[fill=red, opacity=0.5] (0,0) circle (2cm) node[below left=1.5cm, opacity=1] {Has a Bill} node[below left, opacity=1] {Duck};
-            \draw[fill=green, opacity=0.5] (60:2cm) circle (2cm) node [above=2.1cm, opacity=1] {Is Venemous} node[above=0.5cm, opacity=1] {Jellyfish};
-            \draw[fill=blue, opacity=0.5] (0:2cm) circle (2cm) node [below right=1.5cm, opacity=1] {Has Fur} node[below right, opacity=1] {Beaver};
-          </latex-image>
-        </image>
-        <p>
-          Name an animal that belongs in the center region. Spelling counts!
-        </p>
-        <p>
-          <var name="$platypus" width="30"/>
-        </p>
-      </statement>
-    </webwork>
-  </exercise>
-    
-
-        <exercise>
-    <title>Open Problem Library</title>
-    <idx><h><webwork/></h><h>Open Problem Library</h></idx>
-    <introduction>
-      <p>
-        <webwork/> has an Open Problem Library with over 40,000 exercises.
-        One of them is this exercise, with file path
-        <url href="https://github.com/openwebwork/webwork-open-problem-library/blob/master/OpenProblemLibrary/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg"><c>Library/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg</c></url>.
-      </p>
-    </introduction>
-    <webwork source="Library/PCC/BasicAlgebra/NumberBasics/FactorInteger10.pg"/>
-  </exercise>
-
-<-->
-
       <exercisegroup>
         <introduction>
           <p>Given two points in the <m>(q,p)</m> plane and a value <m>q_0</m>:</p>
@@ -1107,6 +1026,44 @@ $BR
           <description>A logarithmic function graph</description>
       </image>
     </subsection>
+
+
+    <exercise>
+      <title>Reading check, Functions in the Business Setting</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"In business we encounter quadratic equations when we study revenue and profit functions.", 
+"In business, compound interest is given as an exponential function.", 
+"When the rate of change is proportional both to the current quantity and to the distance from the theoretical maximum value we have logistic growth. ",               
+"The sinusoidal model is for data that repeats on a natural cycle.", 
+"The normal distribution or bell curve is used because many populations follow a normal distribution on many scales.",
+"If we see the phrase that two quantities are inversely proportional, it means that 
+\(f(x)\) is a constant times \(1/x\).",
+"The exponential model models growth over prolonged periods in most business situations. ", 
+"Present and future values is given by a linear function.", 
+"Quadratic functions always have two roots." 
+                ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4, 5],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.2, Functions in the Business Setting, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
 
     <exercises xml:id="exercises-set-sec-1-2">
     <title>Exercises  Functions in the Business Setting</title>
@@ -1813,6 +1770,41 @@ $BR
       </p>
     </subsection>
 
+
+    <exercise>
+      <title>Reading check, Functions in the Business Setting</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Absolute references refer to a particular column and/or row. The dollar sign '$DOLLAR' is used to fix the reference.", 
+"Relative references refer to the cell the same distance away from the cell containing the formula.", 
+"We can name cells to make formulas easier to read. ",                 
+"In Excel, \(e^x\) is written EXP(x).", 
+"Excel can format an answer as currency.", 
+ "Absolute and relative cell references can be used interchangeably. ", 
+"We can only check the underlying functions one cell at a time.", 
+"There is only one correct way to add up three quantities with Excel."
+                ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.3, Introduction to Excel Spreadsheets, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
     <exercises xml:id="exercises-set-sec-1-3">
       <title>Exercises Introduction to Excel Spreadsheets</title>
 
@@ -2252,6 +2244,42 @@ $BR
 
       <p>We will return to Wolfram Alpha from time to time, when we have nice formulas to manipulate. </p>
     </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, Functions in the Business Setting</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"We use a marked scatterplot to graph with Excel.", 
+"We can use absolute references to set up a graph where we can easily change the viewing window.", 
+"Secondary  axes are useful when looking at functions that are of different scales.",                 
+"We can manually change the title of of a chart.", 
+"Sometimes, there are other tools that are easier to use to produce a graph.",
+"Absolute and relative cell references can be used interchangeably. ", 
+"If we want to look at the graph of several quadratic polynomials, we have to start over for each graph.", 
+"We can only graph one function at a time with Excel."
+                ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.4, Graphing Functions in Excel, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
 
     <exercises xml:id="exercises-set-sec-1-4">
       <title>Exercises 1.4 Graphing functions with Excel</title>
@@ -2697,6 +2725,42 @@ $BR
         That question is beyond the scope of this course.
       </p>
     </example>
+
+
+    <exercise>
+      <title>Reading check, Using Excel to Find Best Fit Curves</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The best fitting curve minimizes the sum of the squares of the differences between the measured and predicted values.", 
+"In Excel we 'Add a Trendline' to a scatterplot to find a best fitting curve.", 
+"When interpreting a trendline we need to be careful about the domain where the function makes sense. ",                 
+"We can change the number of digits shown in the trendline equation.", 
+"The trendline equation can simply be copied into a cell for computation. ", 
+"It does not matter which model we use with trendline.", 
+"With an exponential model, it does not matter what we choose as the base year."   
+               ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.5, Using Excel to Find Best Fit Curves, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
 
     <exercises xml:id="exercises-set-sec-1-5">
       <title>Exercises: Using Excel to find best fit curves</title>
@@ -3448,6 +3512,41 @@ $BR
         As noted above, Goal Seek is most useful for problems with lots of steps where we would have difficulty reducing the problem to a single equation.
       </p>
     </example>
+
+
+    <exercise>
+      <title>Reading check, Finding Numerical Solutions with Goal Seek</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Goal Seek lets you determine the input of a function that gives a desired output.", 
+"Goal Seek stops when it finds an answer whose output is within 0.001 of the desired output.", 
+"Goal Seek is found by choosing what if analysis. ",                 
+"Goal seek gets confused by functions that asymptotically approach zero.", 
+"Goal Seek finds an exact answer. ", 
+"Goal Seek only works with if the function can be put in a single cell.", 
+"Goal Seek always finds the answer closest to the starting value."
+				],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.6, Finding Numerical Solutions with Goal Seek, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
 
     <exercises xml:id="exercises-set-sec-1-6">
       <title> Finding Numerical Solutions with Goal Seek</title>
