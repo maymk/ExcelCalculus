@@ -143,8 +143,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xi:include href="./Chap6FunctionsSeveralVariables.ptx"/>
     <xi:include href="./Chap7Integration.ptx"/>
                                                                                
-
-    <xi:include href="./backmatter.ptx" />
 ]
 <!--                                                                   
     <xi:include href="./Chap0frontmatter.ptx"/>

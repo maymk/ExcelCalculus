@@ -7,7 +7,8 @@
 
     <common>
       <tableofcontents level="2"/>
-    </common>
+      <exercise-inline hint="no" answer="no" solution="no"/>
+ </common>
     <source>
       <directories external="../assets" generated="../generated-assets"/>
     </source>
