@@ -7,7 +7,7 @@
       <p><url href="external/Examples/Section-1-3-Examples-Unworked.xlsx"  visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-3-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
       <p><url href="external/Examples/Section-1-3-Examples.xlsx" visual="external/Examples/Section-1-3-Examples.xlsx">Link to worksheets used in this section</url></p>
 
-      <p>mathstat.slu.edu/~may/ExcelCalculus/external/Examplesol used in the business world.
+      <p>Excel is  used in the business world.
         (More precisely, the spreadsheet is the standard tool, and Excel is currently the de facto standard brand.
         Most of this text can easily be used with other spreadsheets.) However, we do not assume that the student has worked with Excel previously.
         Throughout the course we will introduce those features of Excel we need to do mathematics and model the business problems we encounter.
@@ -40,12 +40,12 @@
       </p>
     </introduction>
 
-    <subsection>
+    <subsection  xml:id="BasicArithmeticSubsection">
       <title>Basic Arithmetic, show formulas and quick fill.</title>
 
-      <figure>
+      <figure xml:id="BasicArithmeticVideo">
         <caption>Video presentation of this example</caption>
-        <video youtube="x3l0gz5APk0" xmlid="BasicArithmeticVideo"/>
+        <video youtube="x3l0gz5APk0" />
       </figure>
 
       <p>
@@ -60,7 +60,7 @@
       </p>
 
       <p>
-        With the formula ribbon, we go to show and select <term xmlid="ShowFormulasTerm">Show Formulas</term>.
+        With the formula ribbon, we go to show and select <term xml:id="ShowFormulasTerm">Show Formulas</term>.
         Since we want the worksheet to be readable by others, we add labels for the quantities we are computing,
         and in each cell we enter the formula for the quantity.   The formula bar tells us which cell has been selected and the formula for that cell.
         It is generally easier to edit a formula by using the formula bar.
@@ -84,12 +84,15 @@
         In cell <c>E4</c>, we are taking the sum of the values in the cells from <c>B4</c> through <c>D4</c>.
         We will come back to commands in Excel later in the section.
       </p>
-
-          <image width="80%" source="images/sec1-3-2ShowFormulas.png"  xml:id="ShowFormulasImage"/>
-
+         <figure  xml:id="ShowFormulasImage">
+          <image width="80%" source="images/sec1-3-2ShowFormulas.png"/>
+        </figure>
       <p>
         If we unselect <term>Show Formulas</term>, we see the values that Excel computes.
       </p>
+     
+        
+
 
           <image width="80%" source="images/sec1-3-3UnshowFormulas.png"  xml:id="UnshowFormulasImage"/>
 
@@ -142,12 +145,12 @@
       </p>
     </subsection>
 
-    <subsection>
-      <title xmlid="RelAbsRefTitle">Absolute and Relative Cell References</title>
+    <subsection xml:id="RelAbsRefTitle">
+      <title>Absolute and Relative Cell References</title>
 
-      <figure>
+      <figure xml:id="RelativeAbsoluteVideo">
         <caption>Video presentation of this example</caption>
-        <video xmlid="RelativeAbsoluteVideo" youtube="32VufLury4g"/>
+        <video  youtube="32VufLury4g"/>
       </figure>
 
       <p>
