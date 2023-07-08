@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-2-2-ModelingRevenueCostProfit">
+    <title>Modeling Revenue, Costs, and Profit</title>
+    <introduction>
+      <p><url href="external/Examples/Section-2-2-Examples-unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-2-2-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-2-2-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-2-2-Examples.xlsx">Link to worksheets used in this section.</url></p>
+      <p>
+        In the last section we looked at the economic model for supply and demand.
+        We were particularly interested in the point of market equilibrium.
+        In this section we will look at the model for revenue, cost and profit.
+        As with the previous section, we will begin with assumptions that make as many things as possible linear.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Revenue and a review of demand price</title>
+      <p>
+        The simple model for revenue is
+        <me>
+          \revenue = \quantity*\price
+        </me>.
+      </p>
+
+      <p>
+        However, in the previous section we worked with two price functions,
+        the supply price and the demand price.
+        Since we can only make a sale if the consumer is willing to buy,
+        we typically use the demand price in computing revenue.  Our model is now
+        <me>
+          \revenue = \quantity*\Dprice(\quantity)
+        </me>.
+      </p>
+
+      <p>
+        If the demand price is a linear function, then revenue is a quadratic function.
+      </p>
+      <p>
+        We previously noted that a linear demand price function has a negative slope.
+        We should note the two limiting cases. If the slope of the demand curve is 0,
+        the consumers have a fixed price they will pay for however much of the product is available.
+        In this case the demand curve is a constant, so the revenue curve will be linear.
+        This is referred to as a perfectly elastic market.
+        The other limiting case is where the demand is for a fixed amount no matter what the price.
+        In this case the demand curve is a vertical line and is not a function,
+        so the revenue curve also fails to be a function of quantity.
+      </p>
+
+      <image width="60%" source="images/sec2-2-1.png"/>
+
+      <p>
+        Obviously, we don’t expect to find the limiting cases in the real world.
+        In real world cases the revenue function has a negative coefficient for the quadratic term and is a downward facing parabola.
+      </p>
+
+      <image width="60%" source="images/sec2-2-2.png"/>
+
+      <example>
+        <title>Finding Revenue From Linear Demand Price</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="c8wOmYDtQPE"/>
+          </figure>
+
+          <p>
+            We have determined that the demand price function for widgets is
+            <me>
+              \Dprice(q)=10-q/1000
+            </me>,
+            if the quantity is between 2000 and 8000.
+            Find the revenue function and graph it over the region where it is defined.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We set up a chart in Excel with revenue defined as <m>\Sprice * \quantity</m>.
+          </p>
+
+          <image width="60%" source="images/sec2-2-3.png"/>
+
+          <p>
+            When we graph we note that the scales are quite different for price and revenue.
+            Thus we want to use secondary axes to capture the scale of both price and revenue.
+            We can also put different labels on the two vertical axes.
+          </p>
+
+          <image width="60%" source="images/sec2-2-4.png"/>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Cost</title>
+
+      <p>
+        Once again we will start with a simplified model for cost.
+      </p>
+
+      <assemblage>
+        <p>
+          <ul>
+            <li>
+              <p>
+                For our (simplified) model we will break costs into <term>fixed costs</term>
+                and <term>variable costs</term>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Fixed costs include the costs of being in business.
+                They might include license fees, rent for a store or plant,
+                and the cost of furnishings and equipment.
+              </p>
+            </li>
+            <li>
+              <p>
+                Variable costs are tied to the amount you produce or sell.
+                For a manufacturer they might include raw material or labor costs.  For someone in sales they might include the cost of goods.
+              </p>
+            </li>
+            <li>
+              <p>
+                For our simplified model, we assume that variable costs are proportional to quantity.
+                This makes our cost function linear.
+              </p>
+            </li>
+            <li>
+              <p>
+                For our simplified model <term>variable costs= unit costs*quantity</term>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Thus <term>costs= fixed costs + unit costs*quantity</term>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </assemblage>
+
+      <image width="60%" source="images/sec2-2-5.png"/>
+
+      <example>
+        <title>Finding Linear Cost</title>
+        <statement>
+          <p>
+            We can set up a small gizmo manufacturing shop for $6,000.
+            The raw materials for producing gizmos cost $14 per unit.
+            Find the cost function for gizmo production.
+            Find the cost of producing 2500 gizmos.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The fixed costs are the <m>y</m> value of the <m>y</m>-intercept of the cost function.
+            The per unit material cost is the slope of the function.  We have
+            <me>
+              \cost=6000+14*\quantity
+            </me>.
+          </p>
+
+          <p>
+            If we substitute 2500 for the quantity, our costs are
+            <me>
+              \cost(2500)=6000+14*2500=41000
+            </me>.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Profit</title>
+      <p>
+        For the third piece of the model, we look at profit.  We have the simple formula
+      </p>
+
+      <assemblage>
+        <p>
+          <me>
+            \profit = \revenue - \cost
+          </me>.
+        </p>
+      </assemblage>
+
+      <p>
+        For our simple examples where cost is linear and revenue is quadratic,
+        we expect the profit function to also be quadratic, and facing down.
+        We will obviously be interested in the spots where the profit function either crosses the axis or reaches a maximum.
+      </p>
+
+      <image width="60%" source="images/sec2-2-6.png"/>
+
+      <figure>
+        <caption>Video presentation of the next two examples</caption>
+        <video youtube="pgLZENVOjLo"/>
+      </figure>
+
+      <example>
+        <title>Finding Profit</title>
+        <statement>
+          <p>
+            We are interested in selling widgets.  The demand price function is
+            <me>
+              \Dprice=15-\frac{q}{1000}
+            </me>.
+          </p>
+
+          <p>
+            It will cost $10,000 to keep our shop open before we consider the price of inventory.
+            Our variable cost is the cost of buying the widgets from our wholesaler who will sell them to us for $8 a unit.
+            Find a function for profit as a function of how many units we sell.
+            Graph that function for quantities from 1000 to 10000.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Using the methods from the previous examples, we write down the functions for revenues and costs.
+            <md>
+              <mrow>\revenue \amp = \quantity*\price</mrow>
+              <mrow>\amp =q*(15-\frac{q}{1000})</mrow>
+              <mrow>\text{costs} \amp = \text{fixed costs} + \text{variable costs}*\quantity</mrow>
+              <mrow>\amp =10000+8*q</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Now we find profit as the difference of revenue and cost.
+            <md>
+              <mrow>\profit = q*(15-\frac{q}{1000})-(10000+8q)</mrow>
+              <mrow>\profit= \frac{-q^2}{1000}+7q-10000</mrow>
+            </md>.
+          </p>
+
+          <p>
+            We then use Excel to make a chart of values and a graph.
+          </p>
+
+          <image width="60%" source="images/sec2-2-7.png"/>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Break-Even Point</title>
+      <p>
+        The last example illustrates a reality of manufacturing and retail.
+        If a business has a fixed cost or startup expense, it will have a loss if it does not sell enough.
+      </p>
+
+      <assemblage>
+        <p>
+          The point at which revenues equal expenses (cost) is called the <term>break-even point</term>.
+        </p>
+      </assemblage>
+
+      <p>
+        This is important in preparing a business proposal,
+        because the bank will want to know if the break even point is a reasonable amount before it lends any money.
+      </p>
+
+      <example>
+        <title>Find Break-Even Points</title>
+        <statement>
+          <p>
+            Find break-even points for previous example.
+            Explain what those points mean in practical terms.
+          </p>
+        </statement>
+        <solution>
+          <p>We look at the chart from the previous example.</p>
+
+          <image width="60%" source="images/sec2-2-8.png"/>
+
+          <p>
+            We can find break-even points by using Goal Seek and setting profit to 0 while changing quantity.
+            In this case, we see that we have break-even points when the quantity is 2000 or 5000,
+            since those numbers were already on our chart.
+          </p>
+
+          <p>
+            The first break even point tells us that, if our price is more than
+            $13.00, we will not attract enough customers to be able to turn a profit.
+            The second break even point says that is we bring our price down below $10,
+            we will bring in enough customers, but our revenue will not cover expenses.
+          </p>
+        </solution>
+      </example>
+
+      <example>
+        <title>Repeat, Starting With Data</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="21NfE3S7EQs"/>
+          </figure>
+
+          <p>
+            We have the following data from the gizmo market, with quantity and costs measured in millions.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Quantity</cell><cell>7.81</cell><cell>10.07</cell>
+              <cell>11.99</cell><cell>13.84</cell><cell>15.80</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Demand Price</cell><cell>$12.07</cell><cell>$9.05</cell>
+              <cell>$7.60</cell><cell>$6.64</cell><cell>$5.64</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Cost</cell><cell>$60.05</cell><cell>$70.09</cell>
+              <cell>$79.98</cell><cell>$89.90</cell><cell>$99.83</cell>
+            </row>
+          </tabular>
+
+          <p>
+            Assuming that price and cost are well modeled by linear equations,
+            find the break-even points and explain what they mean with units included in the explanation.
+          </p>
+
+          <p>
+            To find the break-even point when we are given data instead of an equation, we usually follow this procedure:
+            Find the best fitting equations for price and cost.
+            From those equations, produce formulas for revenue and profit.
+            Use the formulas to find the break-even points using either algebra or Excel.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We put the data into Excel and ask for best fitting lines.
+          </p>
+
+          <image width="80%" source="images/sec2-2-9.png"/>
+
+          <p>
+            This produces the desired cost and price functions.
+            <md>
+              <mrow>\Dprice \amp =-0.7796 q+17.478</mrow>
+              <mrow>\cost \amp = 5.00251 q+20.162</mrow>
+            </md>.
+          </p>
+
+          <p>
+            We enter these functions in new columns in the spreadsheet and then compute projective
+            revenues and profit.  We then use Goal Seek to find places where the projected profit is 0.
+            The first break-even point tells us that we expect to break even if we sell 1.83 million units.
+            We can do that by setting the price at $16.05.  The second break-even point is at
+            14.15 million units.  We reach that sales volume by lowering the price to $6.45.
+            While we will have gained market share, we will no longer be making a profit.
+          </p>
+
+          <image width="80%" source="images/sec2-2-10.png"/>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Technical note</title>
+      <p>
+        In business situations we often have cases where a change of
+        quantity in the thousands only changes prices by pennies.  Then, our coefficients are close
+        to zero, and Excel may give formulas rounded to zero.  In those cases we need to format the
+        trendline to get more digits of accuracy.
+      </p>
+
+      <example>
+        <title>Problems  with using big numbers </title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="5gQrHSDUwlU"/>
+          </figure>
+
+          <p>
+            We want to explore an issue that arises our coefficients are very small.
+            We will have to be concerned with the number of significant digits in our coefficients.
+          </p>
+
+          <p>
+            We repeat the previous example, but with quantity and cost measured directly, rather than in millions.
+            We should get the same answers, since we are using the same data.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>Quantity</cell><cell>7,810,000</cell><cell>10,070,000</cell>
+            <cell>11,990,000</cell><cell>13,840,000</cell><cell>15,800,000</cell></row>
+            <row bottom="medium">
+            <cell>Demand Price</cell><cell>$12.07</cell><cell>$9.05</cell>
+            <cell>$7.60</cell><cell>$6.64</cell><cell>$5.64</cell></row>
+            <row bottom="medium">
+            <cell>Cost</cell><cell>$60,050,000</cell><cell>$70,090,000</cell>
+            <cell>$79,980,000</cell><cell>$89,900,000</cell><cell>$99,830,000</cell></row>
+          </tabular>
+
+          <p>
+            We face the same tasks.  Assuming that price and cost are well modeled by linear equations,
+            find the break-even points and explain what they mean with units included in the explanation.
+          </p>
+
+          <p>
+            To find the break-even point when we are given data instead of an equation, we usually follow this procedure:
+          	Find the best fitting equations for price and cost.
+          	From those equations, produce formulas for revenue and profit.
+          	Use the formulas to find the break-even points using either algebra or Excel.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We put the data into Excel and ask for best fitting lines.
+          </p>
+
+          <image width="80%" source="images/sec2-2-11.png"/>
+
+          <p>
+            As expected, a coefficient of each equation has been shifted by a factor of 1,000,000.
+            <md>
+              <mrow>\Dprice \amp =-8*10^{-7} q+17.478</mrow>
+              <mrow>\cost \amp =5.0251 q+2*10^{7}</mrow>
+            </md>.
+          </p>
+
+          <p>
+            These equations have only one digit of accuracy.
+            In general, that will not be accurate enough.
+          </p>
+
+          <p>
+            We enter these functions in new columns in the spreadsheet and then compute
+            projective revenues and profit.  We then use Goal Seek to find places where the
+            projected profit is 0.  The first break-even point goes from 1.83 million at price of $16.05 to 1.82 million at a price of $1602.
+            The second break even point goes from 14.15 million units at a price to $6.45 to 13.75 million at a price of $6.48.
+          </p>
+
+          <image width="90%" source="images/sec2-2-12.png"/>
+
+          <p>
+            The solution is to right click (Command click on a mac) on the label and select <q>Format Trendline Label</q>.
+            Then change category from general to number, and choose 10 decimal places.  This gives us the equations:
+            <md>
+              <mrow>\Dprice \amp =-0.0000007796 q + 17.4782059302</mrow>
+              <mrow>\cost \amp = 5.02506 q+ 20161700</mrow>
+            </md>.
+          </p>
+
+          <image width="40%" source="images/sec2-2-13.png"/>
+
+          <p>
+            We then go through the same process at get our original answers back.
+          </p>
+
+          <image width="90%" source="images/sec2-2-14.png"/>
+        </solution>
+      </example>
+    </subsection>
+
+
+    <exercise>
+      <title>Reading check, Modeling Revenue, Costs, and Profit</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The simple model for revenue is revenue =quantity*price. ", 
+"We typically use the demand price in computing revenue. ", 
+"In real world cases the revenue function has a negative coefficient for the quadratic term and is a downward facing parabola.  ",                 
+"For our simplified model, costs= fixed costs + unit costs*quantity. ", 
+"The point at which revenues equal expenses (cost) is called the break-even point. ", 
+"Fixed costs include the costs of being in business. They might include license fees, rent for a store or plant, and the cost of furnishings and equipment. ", 
+"We typically use the supply price in computing revenue.  ", 
+"In the real world variable costs are proportional to quantity. ", 
+"Profit = Costs - Revenue. ", 
+"In our simplified model, the profit function is linear. "
+				],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4, 5],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 2.2, Modeling Revenue, Costs, and Profit, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+    <exercises xml:id="exercises-set-sec-2-2">
+      <title>Exercises: Modeling Revenue, Costs, and Profit</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For <xref first="ex-cdpf-first" last="ex-cdpf-last"/>,
+            given the equations of the cost and demand price function:
+            <ol marker="(a)">
+              <li><p> Identify the fixed and variable costs.</p></li>
+              <li><p> Find the revenue and profit functions.</p></li>
+              <li><p> Evaluate cost, demand price, revenue, and profit at <m>q_0</m>.</p></li>
+              <li><p> Find all break-even points.</p></li>
+              <li>
+                <p>
+                  Graph the profit function over a domain that includes both break-even points.
+                  Add a textbox and label to identify the first break-even point.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-cdpf-first">
+          <statement>
+            <p>
+              Given <m>\Dprice=-2 \quantity+20</m> and <m>\cost=3 \quantity+10</m>, with <m>q_0=6</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>Identify the fixed and variable costs.</p>
+                  <p>
+                    The fixed cost is $10 (the constant/fixed part of the cost function),
+                    and the variable cost is $3 per item.
+                  </p>
+                </li>
+                <li>
+                  <p>Find the revenue and profit functions</p>
+                  <p>
+                    <md>
+                      <mrow>\revenue\amp=\Dprice*\quantity</mrow>
+                      <mrow>\amp=(-2 q+20)*q=-2 q^2  +20 q</mrow>
+                    </md>
+                    <md>
+                      <mrow>\profit= \revenue-\cost \amp=-2 q^2  +20q-(3q+10)</mrow>
+                      <mrow>\amp=-2 q^2+17q-10</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p>Evaluate cost, demand price, revenue, and profit at <m>q_0</m></p>
+                  <p>
+                    <md>
+                      <mrow>\cost(6)\amp =3 (6)+10=28</mrow>
+                      <mrow>\Dprice(6)\amp =-2 (6)+20=8</mrow>
+                      <mrow>\revenue(6)\amp =-2 6^2  +20 (6)=-72+120=48</mrow>
+                      <mrow>\profit\amp =\revenue-\cost =48-28=20</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p>Find all break-even points</p>
+                  <p>
+                    Solve <m>\profit=-2 q^2+17q-10=0</m>.
+                    We can do this with Excel or with Wolfram.
+                    The break even points are <m>q = 0.6</m> and <m>q = 7.9</m>.
+                  </p>
+
+                  <image width="80%" source="images/sec2-2-sol1a.png"/>
+                </li>
+                <li>
+                  <p>
+                    Graph the profit function over a domain that includes both break-even points.
+                    Add a textbox and label to identify the first break-even point.
+                  </p>
+                  <p>
+                    If we had done the whole problem in Excel it would look like this:
+                  </p>
+
+                  <sidebyside widths="50% 35%" valigns="middle top">
+                    <image source="images/sec2-2-sol1b.png"/>
+                    <p>Entries in the cells before quick fill</p>
+                  </sidebyside>
+                  <sidebyside widths="65% 35%" valigns="middle top">
+                    <image source="images/sec2-2-sol1c.png"/>
+                    <p>The table with <m>q</m> between 0 and 8</p>
+                  </sidebyside>
+                  <sidebyside widths="65% 35%" valigns="middle top">
+                    <image source="images/sec2-2-sol1d.png"/>
+                    <p>Goal Seek gives break even points at <m>q = 0.64</m> and <m>q = 7.86</m></p>
+                  </sidebyside>
+                  <image width="80%" source="images/sec2-2-sol1e.png"/>
+
+                  <p>
+                    The graph produced in Excel. To create the labels: double click on one of the break-even points,
+                    go to <q>Chart Layout</q>, go to <q>Data Labels</q>. In this example we chose the <q>x-value</q>.
+                    Both break-even points were labeled to show where they are and what the values are in this problem.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>\Dprice=- \quantity/10+50</m> and <m>\cost=10 \quantity+1000</m>,
+              with <m>q_0=300</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>\Dprice =-2.35 \quantity+250</m> and <m>\cost=54.6 \quantity+1234</m>,
+              with <m>q_0=59</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p> Identify the fixed and variable costs.</p>
+                  <p><m>\text{Fixed cost} = \$1234</m>, and the <m>\text{variable cost} =\$54.60</m> (per unit)</p>
+                </li>
+                <li>
+                  <p> Find the revenue and profit functions.
+                    <me>\revenue=q(-2.35 q+250)= -2.35 q^2+250 q</me>
+                    <md>
+                      <mrow>\profit=\revenue-\cost \amp=-2.35 q^2+250 q-(54.6q+1234)</mrow>
+                      <mrow>\amp=-2.35 q^2+195.4 q-1234</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p>Evaluate cost, demand price, revenue, and profit at <m>q_0</m>.</p>
+                  <sidebyside widths="50% 35%" valigns="middle top">
+                    <image source="images/sec2-2-sol3a.png"/>
+                    <p>Entries in the cells before quick fill</p>
+                  </sidebyside>
+                  <sidebyside widths="65% 35%" valigns="middle top">
+                    <image source="images/sec2-2-sol3b.png"/>
+                    <p>Table plus extra column for the value <m>q = 59</m>.</p>
+                  </sidebyside>
+
+                  <p>
+                    At <m>q =59</m>, <m>\cost = \$4455.40</m>, <m>\Dprice = \$111.35</m>,
+                    <m>\revenue = \$6569.65</m>, and <m>\profit = \$2114.25</m>
+                  </p>
+                </li>
+                <li>
+                  <p>Find all break-even points.</p>
+                  <sidebyside widths="65% 35%" valigns="middle top">
+                    <image source="images/sec2-2-sol3c.png"/>
+                    <p>Table plus extra column for the value <m>q = 59</m></p>
+                  </sidebyside>
+
+                  <p>The break-even points are <m>q = 6.9</m> and <m>q = 76.3</m></p>
+                </li>
+                <li>
+                  <p>
+                    Graph the profit function over a domain that includes both break-even points.
+                    Add a textbox and label to identify the first break-even point.
+                  </p>
+
+                  <image width="80%" source="images/sec2-2-sol3d.png"/>
+
+                  <p>
+                    The graph produced in Excel. To create the labels: double click on one of the break-even points,
+                    go to <q>Chart Layout</q>, go to <q>Data Labels</q>.
+                    In this example we chose the <q>x-value</q>.
+                    Both break-even points were labeled to show where they are and what the values are in this problem.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>\Dprice=-0.0023 \quantity+9</m> and <m>\cost=1.39 \quantity+1398.7</m>,
+            with <m>q_0=687</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given demand price and cost are the linear functions that best fit the data below and that <m>q_0=75</m>.
+            </p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>50</cell><cell>100</cell></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>10</cell><cell>8</cell></row>
+              <row bottom="medium">
+              <cell>Cost</cell><cell>300</cell><cell>450</cell></row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    If the table only has 2 data points, Excel can get confused wether the data is in rows or columns.
+                    We duplicated one column to get the data plotted correctly.
+                  </p>
+
+                  <image width="100%" source="images/sec2-2-sol5a.png"/>
+
+                  <p>
+                    Identify the fixed and variable costs.
+                  </p>
+                  <p>
+                    <m>\text{Fixed cost} = \$150</m>, and the <m>\text{variable cost} =\$3</m> (per unit).
+                  </p>
+                </li>
+                <li>
+                  <p> Find the revenue and profit functions.</p>
+                  <p>
+                    <me>\revenue=q(-0.04q+12)= -0.04 q^2+12q</me>
+                    <md>
+                      <mrow>\profit=\revenue-\cost \amp=-0.04 q^2+12q-(3q+150)</mrow>
+                      <mrow>\amp=-0.04 q^2+9q-150</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p> Evaluate cost, demand price, revenue, and profit at <m>q_0</m>.</p>
+                  <p>At <m>q =75</m>, <m>\cost = \$375</m>, <m>\Dprice = \$9</m>, <m>\revenue = \$675</m>,
+                  and <m>\profit = \$300</m></p>
+                </li>
+                <li>
+                  <p> Find all break-even points.</p>
+                  <p>The break-even points, found with goal seek, are <m>q = 18.127</m> and <m>q = 206.873</m></p>
+                </li>
+                <li>
+                  <p>
+                    Graph the profit function over a domain that includes both break-even points.
+                    Add a textbox and label to identify the first break-even point.
+                  </p>
+
+                  <sidebyside widths="50% 35%" valigns="middle top">
+                    <image source="images/sec2-2-sol5b.png"/>
+                    <p>Entries in the cells before quick fill</p>
+                  </sidebyside>
+
+                  <sidebyside widths="65% 35%" valigns="middle top">
+                    <image source="images/sec2-2-sol5c.png"/>
+                    <p>Table plus extra columns for the brek even points</p>
+                  </sidebyside>
+
+                  <image width="80%" source="images/sec2-2-sol5d.png"/>
+
+                  <p>
+                    The graph produced in Excel. To create the labels: double click on one of the break-even points,
+                    go to <q>Chart Layout</q>, go to <q>Data Labels</q>.
+                    In this example we chose the <q>x-value</q>.
+                    Both break-even points were labeled to show where they are and what the values are in this problem.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given demand price and cost are the linear functions that best fit the data below and that <m>q_0=110</m>.
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>60</cell><cell>70</cell>
+              <cell>90</cell><cell>100</cell></row>
+              <row bottom="medium">
+              <cell>Demand Price</cell><cell/><cell>19</cell>
+              <cell> </cell><cell>16</cell></row>
+              <row bottom="medium">
+              <cell>Cost</cell><cell>460</cell><cell/>
+              <cell>540</cell><cell/></row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given demand price and cost are the linear functions that best fit the data below and that <m>q_0=75</m>.
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>4356</cell><cell>4792</cell>
+              <cell>6503</cell><cell>7038</cell></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell/><cell>$1.10</cell>
+              <cell/><cell>$.98</cell></row>
+              <row bottom="medium">
+              <cell>Cost</cell><cell>$1190</cell><cell/>
+              <cell>$1860</cell><cell/></row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              We plot the data, and find the linear models for demand and cost.
+              <me>\cost=0.3121 x-169.35</me>
+              <me>\Dprice= 5*(10)^{-5}  x+1.356</me>
+            </p>
+
+            <image width="90%" source="images/sec2-2-sol7a.png"/>
+
+            <p>
+              Given the demand price and the cost we create a table using the formulas and we also include a row for the
+              <m>\revenue =( \Dprice * \quantity)</m> and <m>\profit =(\revenue - \cost)</m>
+            </p>
+
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>Identify the fixed and variable costs.</p>
+                  <p>
+                    The fixed cost is - $169.35, and the variable cost is $0.3121 per unit of quantity.
+                    (That the fixed costs are negative should make us suspicious that we are outside the useful domain of our cost function.)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Find the revenue and profit functions.
+                    <me>\revenue = 5*(10)^{-5}  x^2+1.356x </me>
+                    <md>
+                      <mrow>\profit\amp= 5*(10)^{-5}  x^2+1.356x- 0.3121 x+169.35</mrow>
+                      <mrow>\amp= 5*(10)^{-5}  x^2+1.0439x+169.35 </mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p> Evaluate cost, demand price, revenue, and profit at <m>q_0</m>.</p>
+                  <p>
+                    At <m>q = 75</m> we have that <m>\cost = - \$146</m>, <m>\Dprice = \$1.35</m>,
+                    <m>\revenue = \$101.42</m>, and <m>\profit = \$247</m>.
+                  </p>
+                </li>
+                <li>
+                  <p> Find all break-even points.</p>
+                  <p>Re-compute profit for a different range of quantities and we get</p>
+                  <image width="90%" source="images/sec2-2-sol7b.png"/>
+
+                  <p>
+                    Goal Seek using the quantity of 20000 as the basis gives a break-even point at <m>q= 21,039</m>.
+                    The other place where the profit is 0 occurs for <m>q = -161</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Graph the profit function over a domain that includes both break-even points.
+                    Add a textbox and label to identify the first break-even point.
+                  </p>
+
+                  <image width="90%" source="images/sec2-2-sol7c.png"/>
+
+                  <p>The profit function shows the break-even points close to 0 (-161) and near 20,000 (21,039)</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-cdpf-last">
+          <statement>
+            <p>
+              Given demand price and cost are the linear functions that best fit the data below and that <m>q_0=7500</m>.
+            </p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>5378</cell><cell>7984</cell>
+              <cell>8352</cell></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>$12.00</cell><cell/>
+              <cell>$10.00</cell></row>
+              <row bottom="medium">
+              <cell>Supply price</cell><cell>$31,100</cell><cell>$45,100</cell>
+              <cell/></row>
+            </tabular>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            Mary has been put in charge of a school function.
+            She estimates that there is a fixed cost of $1000 for the site plus a cost of $5 per person that attends.
+            If she charges $15 a ticket she can sell 250 tickets,
+            but if she lowers the price to $10 she can sell 500 tickets.
+            Assuming the demand price is linear, what price should she charge to break even while maximizing attendance?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The description of the cost function states that the fixed cost is $1000,
+            and the variable cost is $5, so the cost function is <m>\cost=5 q+1000</m>.
+          </p>
+          <p>
+            Two points are given for the price function: <m>(q_1  ,p_1 )=(250,15)</m> and <m>(q_2  ,p_2 )=(500,10)</m>.
+            Hence the slope is <m>m=  (15-10)/(250-500)= -5/250= -1/50=-0.02</m>.
+          </p>
+          <p>
+            Then the demand price function is <m>(p-p_0 )= m (q-q_0)</m> Hence
+            <md>
+              <mrow>(p-15) \amp = -0.02 (q-250)</mrow>
+              <mrow>p \amp =15 -0.02 (q-250)</mrow>
+            </md>.
+          </p>
+
+          <sidebyside widths="50% 35%" valigns="middle top">
+            <image source="images/sec2-2-sol9a.png"/>
+            <p>Entries in the cells before quick fill</p>
+          </sidebyside>
+          <sidebyside widths="65% 35%" valigns="middle top">
+            <image source="images/sec2-2-sol9b.png"/>
+            <p>Values after quick fill</p>
+          </sidebyside>
+          <sidebyside widths="65% 35%" valigns="middle top">
+            <image source="images/sec2-2-sol9c.png"/>
+            <p>Identified the break-even points using Goal Seek</p>
+          </sidebyside>
+
+          <p>
+            The optimal demand price is $6.48, which allows them to sell 676 tickets and break even.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For <xref first="ex-bfe-first" last="ex-bfe-last"/>,
+            given the cost and demand data:
+            <ol marker="(a)">
+              <li><p> Find best fitting equations of the cost and demand curves, assuming they are both linear.</p></li>
+              <li><p> Find the revenue and profit functions and evaluate them at the extra given value.</p></li>
+              <li><p> Find the break-even points.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-bfe-first">
+          <statement>
+            <p>Given the cost and demand data:</p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>100</cell><cell>120</cell>
+              <cell>140</cell><cell>160</cell><cell>180</cell>
+              <cell>155</cell></row>
+              <row bottom="medium">
+              <cell>Cost</cell><cell>1015</cell><cell>1152</cell>
+              <cell>1327</cell><cell>1467</cell><cell>1651</cell>
+              <cell/></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>21.3</cell><cell>18.1</cell>
+              <cell>14.7</cell><cell>12.3</cell><cell>8.6</cell>
+              <cell/></row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>Given the cost and demand data:</p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>5021</cell><cell>6051</cell>
+              <cell>6968</cell><cell>7901</cell><cell>9023</cell>
+              <cell>9917</cell><cell>7500</cell>
+              </row>
+              <row bottom="medium">
+              <cell>Cost </cell><cell>80376</cell><cell/>
+              <cell>103874</cell><cell/><cell>128513</cell>
+              <cell>140258</cell><cell/></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell/><cell>19.69</cell>
+              <cell>18.78</cell><cell>18.05</cell><cell/>
+              <cell>17.61</cell><cell/></row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p> Find best fitting equations of the cost and demand curves, assuming they are both linear.</p>
+                  <p>
+                    Using trendlines we get
+                    <md>
+                      <mrow>\cost \amp = 12.175x + 19117</mrow>
+                      <mrow>\text{demand} \amp = - 0.0005x + 22.506</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p>Find the revenue and profit functions and evaluate them at the extra given value.</p>
+                  <p>Creating a table with the cost and demand functions we get</p>
+
+                  <image width="90%" source="images/sec2-2-sol11a.png"/>
+
+                  <p>We see that when quantity is 7500 the revenue is $140,670, and the profit is $30,240.50.</p>
+                </li>
+                <li>
+                  <p>Find the break-even points.</p>
+                  <p>
+                    Note that these values are not usefull for finding the break-even points.
+                    To find those we will start quantity <m>q</m> at 0 and go up to 20,000.
+                  </p>
+
+                  <image width="90%" source="images/sec2-2-sol11b.png"/>
+
+                  <p>So the two break-even points are <m>q = 2054.8</m> and <m>q = 18,607.2</m>.</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-bfe-last">
+          <statement>
+            <p>Given the cost and demand data:</p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>3160</cell><cell>3615</cell>
+              <cell>4092</cell><cell>4462</cell><cell>4837</cell>
+              <cell>5261</cell><cell>5579</cell><cell>6000</cell>
+              </row>
+              <row bottom="medium">
+              <cell>Cost (Thousands)</cell><cell/><cell>90.1</cell>
+              <cell>126.70</cell><cell/><cell>197.2</cell>
+              <cell>234.9</cell><cell/><cell/></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>25.31</cell><cell/>
+              <cell/><cell>20.91</cell><cell>17.04</cell>
+              <cell/><cell>14.37</cell><cell/></row>
+            </tabular>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>

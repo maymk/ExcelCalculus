@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-6-3-CriticalPointsExtrema">
+    <title>Critical Points and Extrema</title>
+    <subsection>
+      <title>Critical Points</title>
+
+      <p><url href="external/Examples/Section-6-3-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-6-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+      <p>
+        With functions of one variable we were interested in places where the derivative is zero,
+        since they made candidate points for the maximum or minimum of a function.
+        If the derivative is not zero, we have a direction that is downhill and moving a little in that direction gives a lower value of the function.
+        Similarly, with functions of two variables we can only find a minimum or maximum for a function if both partial derivatives are 0 at the same time.
+        Such points are called critical points.
+      </p>
+
+      <assemblage>
+        <p>
+          The point <m>(a,b)</m> is a <term>critical point</term> for the multivariable function <m>f(x,y)</m>,
+          if both partial derivatives are 0 at the same time.
+        </p>
+
+        <p>
+          In other words,
+          <me>\frac{\partial }{\partial x} f(x,y)|_{x=a,y=b}=0</me>
+          and
+          <me>\frac{\partial }{\partial y} f(x,y)|_{x=a,y=b}=0</me>.
+        </p>
+      </assemblage>
+
+      <example>
+        <title>Finding a Local Minimum of a Function</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="nZdaPjC0VWQ"/>
+          </figure>
+
+          <p>Use the partial derivatives of <m>f(x,y)=x^2+ 2xy+3y^2-4x-3y</m> to find the minimum of the graph. </p>
+        </statement>
+        <solution>
+          <p>
+            <dl>
+              <li>
+                <title>Critical Point by Algebra</title>
+                <p>
+                  In the previous section, we already computed
+                  <md>
+                    <mrow>\frac{\partial }{\partial x} f(x,y) \amp = 2x+2y-4</mrow>
+                    <mrow>\frac{\partial }{\partial y} f(x,y) \amp = 2x+6y-3</mrow>
+                  </md>.
+                </p>
+
+                <p>
+                  We need to find the places where both partial derivatives are 0.
+                  With this simple system, I can solve this system algebraically and find the only critical point is <m>(9/4, -1/4)</m>.
+                  <md>
+                    <mrow>0 \amp = 2x+2y-4</mrow>
+                    <mrow>0 \amp = 2x+6y-3</mrow>
+                  </md>.
+                </p>
+
+                <p>
+                  Subtract the equations to eliminate <m>x</m>:
+                  <me>0=0-4y-1</me>.
+                  Solve for <m>y</m>:
+                  <md>
+                    <mrow>4y \amp = -1</mrow>
+                    <mrow>y \amp = -1/4</mrow>
+                  </md>.
+                  Substitute back and solve for <m>x</m>:
+                  <md>
+                    <mrow>0 \amp = 2x+2(-1/4)-4</mrow>
+                    <mrow>2x \amp = 9/2</mrow>
+                    <mrow>x \amp =9/4</mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <title>Critical Point by Solver</title>
+                <p>
+                  If the partials are more complicated, I will want to find the critical points another way.
+                  I can find the point with Solver.
+                </p>
+
+                <image width="50%" source="images/sec-6-3-1.png"/>
+
+                <p>
+                  To get solver to set both partials to 0 at the same time, I ask it to solve for <m>f_y=0</m>,
+                  while setting <m>f_x=0</m> as a constraint.  Make sure to uncheck the box that makes unconstrained variables non-negative.
+                </p>
+
+                <image width="80%" source="images/sec-6-3-2.png"/>
+
+                <p>This finds our critical point within our error tolerance.</p>
+
+                <image width="40%" source="images/sec-6-3-3.png"/>
+              </li>
+              <li>
+                <title>Critical Point by CAS</title>
+                <p>
+                  We can also use Wolfram|Alpha to find the solution to our system of equations.
+                </p>
+
+                <image width="80%" source="images/sec-6-3-4.png"/>
+              </li>
+              <li>
+                <title>Determining the Critical Point is a Minimum</title>
+                <p>
+                  We thus get a critical point at <m>(9/4,-1/4)</m> with any of the three methods of solving for both partial derivatives being zero at the same time.
+                  Once we have a critical point we want to determine if it is a maximum, minimum, or something else.
+                  The easiest way is to look at the graph near the critical point.
+                </p>
+
+                <image width="100%" source="images/sec-6-3-5.png"/>
+
+                <p>It is clear from the graph that this critical point is a local minimum.</p>
+              </li>
+            </dl>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        It is easy to see that <m>f(x,y)=x^2+y^2</m> has a critical point at <m>(0,0)</m> and that that point is a minimum for the function.
+        Similarly, <m>f(x,y)=-x^2-y^2</m> has a critical point at <m>(0,0)</m> and that that point is a maximum for the function.
+        For some functions, like <m>f(x,y)=x^2-y^2</m>, which has a critical point at <m>(0,0)</m>,
+        we can have a maximum in one direction and a minimum in another direction.
+        Such a point is called a <term>saddle point</term>.
+        We note that we can have a saddle point even if the <m>x</m> and <m>y</m> slice curves both indicate a minimum.
+      </p>
+
+      <example>
+        <title>A Saddle Point at a Minimum on Both Axes</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="ThmQTWWOvYw"/>
+          </figure>
+
+          <p>
+            Show that <m>f(x,y)=x^2-3xy+y^2</m> has a critical point at <m>(0,0)</m>,
+            which is a minimum of both slice curves, but is not a local minimum.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We look at the two partial derivatives, and notice they are both zero at the origin.
+            <md>
+              <mrow>\frac{\partial }{\partial x} f(x,y) \amp = 2x-3y</mrow>
+              <mrow>\frac{\partial }{\partial x} f(x,y) \amp = -3x+2y</mrow>
+            </md>.
+          </p>
+
+          <p>
+            We then see that both slice curves are parabolas that bend up, with a minimum at 0.
+            <md>
+              <mrow>f(x,0) \amp = x^2</mrow>
+              <mrow>f(0,y) \amp = y^2</mrow>
+            </md>.
+          </p>
+
+          <p>
+            However if we take the slice with <m>x=y</m>,
+            we get a parabola bending down, so we don’t have a minimum.
+            <me>f(x,-x)=x^2-3x x+x^2=-x^2</me>.
+            Looking at the graph, we see that this graph does not have a minimum.
+          </p>
+
+          <image width="100%" source="images/sec-6-3-6.png"/>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Second Partial Derivatives</title>
+
+      <p>
+        With only first derivatives, we can just find the critical points.
+        To check if a critical point is maximum, a minimum, or a saddle point, using only the first derivative,
+        the best method is to look at a graph to determine the kind of critical point.
+        For some applications we want to categorize the critical points symbolically.
+      </p>
+
+      <p>
+        With functions of one variable we used the second derivative to test if a critical point was a maximum or minimum.
+        In the two variable case we need to define the second derivatives
+        and use them to define the discriminant of a function to test if a critical point is a minimum, maximum, or saddle point.
+        We first need to define second partial derivatives.
+      </p>
+
+      <assemblage>
+        <title>Second partials</title>
+        <p>
+          <me> f_{ab}=(f_a )_b=\frac{\partial}{\partial b}(\frac{\partial}{\partial a} f)</me>.
+        </p>
+      </assemblage>
+
+      <p>
+        Note that <m>f_{xx}</m> is simply the old second derivative of the curve <m>f(x,y_0)</m> and
+        <m>f_{yy}</m> is simply the old second derivative of the curve <m>f(x_0,y)</m>.
+        For functions with continuous second partial derivatives, the mixed partials,
+        <m>f_{yx}</m> and <m>f_{xy}</m> are the same.
+      </p>
+
+      <example>
+        <title>Finding Second Partial Derivatives</title>
+        <statement>
+          <p>
+            Find the second partial derivatives of
+            <me>f(x,y)=x^2+ 3xy+5y^3-7x-11y</me>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We start by computing the first partial derivatives.
+            <md>
+              <mrow>f_x \amp = \frac{\partial}{\partial x} f(x,y)=2x+3y-7</mrow>
+              <mrow>f_y \amp = \frac{\partial}{\partial y} f(x,y)=3x+15y^2-11</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Then we compute the second partial derivatives.
+            <md>
+              <mrow>f_{xx} \amp = \frac{\partial}{\partial x} f_x=2</mrow>
+              <mrow>f_{xy} \amp = \frac{\partial}{\partial y} f_x=3</mrow>
+              <mrow>f_{yx} \amp = \frac{\partial}{\partial x} f_y=3</mrow>
+              <mrow>f_{yy} \amp = \frac{\partial}{\partial y} f_y=30y</mrow>
+            </md>.
+            As expected, the mixed partials are the same.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Using the Discriminant to Test Critical Points</title>
+
+      <p>
+        To test if a critical point is a maximum, minimum, or saddle point we compute the discriminant of the function.
+      </p>
+
+      <assemblage>
+        <title>Discriminant</title>
+        <p>
+          <me> D(f(x,y))=f_{xx} f_{yy}-f_{xy}^2</me>.
+        </p>
+      </assemblage>
+
+      <example>
+        <title>Finding the Discriminant of a Function</title>
+        <statement>
+          <p>
+            Find the discriminant of
+            <me>f(x,y)=x^2+ 3xy+5y^3-7x-11y</me>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We have already computed the second partial derivatives.
+            <me>f_{xx}=2,\quad f_{xy}=3,\quad   f_{yy}=30y</me>.
+            Substituting into the formula,
+            <me>D=(2)(30y)-3^2=60y-9</me>.
+          </p>
+        </solution>
+      </example>
+
+      <assemblage>
+        <title>Discriminant test</title>
+        <p>
+          Let <m>(a,b)</m>  be a critical point of <m>f(x,y)</m>.
+        </p>
+
+        <p>
+          If <m>D(a,b)&gt;0</m> and <m>f_{xx} (a,b)&gt;0</m> then <m>(a,b)</m> is a local minimum of <m>f(x,y)</m>.
+        </p>
+
+        <p>
+          If <m>D(a,b)&gt;0 </m> and <m>f_{xx} (a,b)\lt 0</m> then <m>(a,b)</m> is a local maximum of <m>f(x,y)</m>.
+        </p>
+
+        <p>
+          If <m>D(a,b)\lt 0</m> then <m>(a,b)</m> is a saddle point of <m>f(x,y)</m>.
+        </p>
+
+        <p>
+          If <m>D(a,b)=0</m> we do not have enough information to classify the point.
+        </p>
+      </assemblage>
+
+      <example>
+        <title>Using the Discriminant to Classify Critical Points</title>
+        <statement>
+          <p>
+            Based on the information given, classify each of the following points as a local maximum,
+            local minimum, saddle point, not a critical point, or not enough information to classify.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>p</cell>
+            <cell><m>{f_x}</m></cell>
+            <cell><m>{f_y}</m></cell>
+            <cell><m>f_{xx}</m></cell>
+            <cell><m>f_{xy}</m></cell>
+            <cell><m>f_{yy}</m></cell>
+            </row>
+            <row bottom="minor">
+            <cell>A</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            </row>
+            <row bottom="minor">
+            <cell>B</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>3</cell>
+            <cell>2</cell>
+            <cell>4</cell>
+            </row>
+            <row bottom="minor">
+            <cell>C</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            </row>
+            <row bottom="minor">
+            <cell>D</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>0</cell>
+            </row>
+            <row bottom="minor">
+            <cell>E</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>-1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            </row>
+            <row bottom="minor">
+            <cell>F</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>-3</cell>
+            <cell>1</cell>
+            <cell>-2</cell>
+            </row>
+            <row bottom="minor">
+            <cell>G</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+            </row>
+          </tabular>
+        </statement>
+        <solution>
+          <p>We need to compute the discriminant and apply the test.</p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>p</cell>
+            <cell><m>f_x</m></cell>
+            <cell><m>f_y</m></cell>
+            <cell><m>f_{xx}</m></cell>
+            <cell><m>f_{xy}</m></cell>
+            <cell><m>f_{yy}</m></cell>
+            <cell>Discriminant</cell>
+            <cell>Classification</cell>
+            </row>
+            <row bottom="minor">
+            <cell>A</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>Not enough information</cell>
+            </row>
+            <row bottom="minor">
+            <cell>B</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>3</cell>
+            <cell>2</cell>
+            <cell>4</cell>
+            <cell>8</cell>
+            <cell>Not a critical point</cell>
+            </row>
+            <row bottom="minor">
+            <cell>C</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>-4</cell>
+            <cell>Not a critical point</cell>
+            </row>
+            <row bottom="minor">
+            <cell>D</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>0</cell>
+            <cell>-4</cell>
+            <cell>Saddle point</cell>
+            </row>
+            <row bottom="minor">
+            <cell>E</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>-1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>-7</cell>
+            <cell>Saddle point</cell>
+            </row>
+            <row bottom="minor">
+            <cell>F</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>-3</cell>
+            <cell>1</cell>
+            <cell>-2</cell>
+            <cell>5</cell>
+            <cell>Maximum</cell>
+            </row>
+            <row bottom="minor">
+            <cell>G</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+            <cell>0</cell>
+            <cell>Not enough information</cell>
+            </row>
+          </tabular>
+        </solution>
+      </example>
+
+      <example>
+        <title>Finding and Classifying Critical Points</title>
+        <statement>
+          <p>Let <m>f(x,y)=x^3-3x+y^3-3y^2</m>.  Find the critical points and classify them using the discriminant. </p>
+        </statement>
+        <solution>
+          <p>
+            We start by computing the first partial derivatives.
+            <md>
+              <mrow>f_x \amp = 3x^2-3=3(x-1)(x+1)</mrow>
+              <mrow>f_y \amp = 3y^2-6y=3(y-2)(y)</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Then we compute the second partial derivatives and the discriminant.
+            <me>f_{xx}=6x,\quad f_{xy}=0,\quad f_{yy}=6y-6,\quad D=(6x)(6y-6)-0^2=36xy-36x</me>.
+          </p>
+
+          <p>We have critical points when both first partials are 0, so at <m>(1,2)</m>, <m>(-1,2)</m>, <m>(1,0)</m>, and <m>(-1,0)</m>.</p>
+          <p>At <m>(1,2)</m>, both <m>D</m> and <m>f_{xx}</m> are positive, so we have a local minimum.</p>
+          <p>At <m>(-1,2)</m> and <m>(1,0)</m>, <m>D</m> is negative, so we have a saddle point.</p>
+          <p>At <m>(-1,0)</m>, <m>D</m> is positive and <m>f_{xx}</m> is negative, so we have a local maximum.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <exercise>
+      <title>Reading check, Wire Frames, Critical Points and Extrema</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The point \((a, b)\) is a critical point for the multivariable function \(f(x,y)\),
+ if both partial derivatives are 0 at the same time. ", 
+"A saddle point has a minimum in one direction and a maximum in a different direction.   ", 
+"The formula for the discriminant of \(f(x,y)\) is is \(f_{xx}f_{yy}-f^2_{xy}\).   ", 
+"If the discriminant is negative at a critical point, then we have a saddle point.  ", 
+"If the discriminant of \(f\) is positive at a critical point, and \(f_{xx}\) is positive, then we have a local minimum.  ", 
+
+"If a function is a minimum in both the \(x\) and \(y\) directions, then it is a minimum.  ", 
+"We cannot have a maximum if the discriminant is zero.  ", 
+"If the discriminant of \(f\) is positive , and \(f_{xx}\) is negative, then we have a local maximum.  "
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 6.3, Critical Points and Extrema, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-6-3">
+      <title>Exercises: Critical Points and Extrema Problems</title>
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the given functions and region:
+            <ul>
+              <li><p>Find the partial derivatives of the original function.</p></li>
+              <li><p>Find any critical points in the region.</p></li>
+              <li><p>Produce a small graph around any critical point.</p></li>
+              <li><p>Determine if the critical points are maxima, minima, or saddle points.</p></li>
+            </ul>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              The function is <m>f(x,y)=x^2+2xy+4y^2+5x-6y</m>, for the region
+              <m>-10\le x\le 10</m>, and <m>-10\le y\le 10</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    <md>
+                      <mrow>f_x  (x,y) \amp = 2x+2y+5</mrow>
+                      <mrow>f_y  (x,y) \amp = 2x+8y-6</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Set the partial derivatives equal to 0 and solve for <m>x</m> and <m>y</m>.
+                    <md>
+                      <mrow>f_x  (x,y) \amp = 2x+2y+5=0</mrow>
+                      <mrow>f_y  (x,y) \amp = 2x+8y-6=0</mrow>
+                    </md>.
+                  </p>
+
+                  <p>
+                    We can use either the method of substitution
+                    (solve for <m>x</m> or <m>y</m> in one equation and substitute into the other and solve),
+                    or method by elimination (multiply both equations by carefully chosen numbers and add/subtract the equations from each other.)
+                  </p>
+
+                  <p>
+                    We will demonstrate method of elimination:
+                    <md>
+                      <mrow>-1×(2x+2y+5 \amp = 0)  \amp     \text{gives }-2x-2y-5\amp=0</mrow>
+                      <mrow>1×(2x+8y-6 \amp = 0)  \amp    \text{gives } 2x+8y-6\amp =0</mrow>
+                    </md>.
+                    Adding the two equations gives <m>6y-11=0</m>;
+                    hence,  <m>y=  11/6</m>.
+                  </p>
+
+                  <p>
+                    Pick one of the equations to solve for x (it does not matter which one):
+                    <me>2x+2y+5=0  \quad \text{and }y=  11/6</me>
+                    implies that   <m>2x+2(11/6)+5=0</m>  so <m>x=  (2(11/6)+5)/(-2)=-13/3</m>.
+                  </p>
+
+                  <p>We can also solve this system of equations using Wolfram Alpha:</p>
+
+                  <image width="40%" source="images/sec6-3-sol1a.png"/>
+                </li>
+                <li>
+                  <p>
+                    The command in Wolfram Alpha is:
+                  </p>
+                  <image width="60%" source="images/sec6-3-sol1b.png"/>
+
+                  <p>
+                    It is worth looking at both the 3D Plot and the Contour Plot.
+                  </p>
+
+                  <sbsgroup widths="45% 45%" valigns="middle top">
+                    <sidebyside >
+                      <image source="images/sec6-3-sol1c.png"/>
+                      <image source="images/sec6-3-sol1d.png"/>
+                    </sidebyside>
+                    <sidebyside>
+                      <p>3D Plot</p>
+                      <p>Contour Plot</p>
+                    </sidebyside>
+                  </sbsgroup>
+                </li>
+                <li>
+                  <p>
+                    The 3D plot suggests a minimum, and this is confirmed by the contour plot which shows they typical view of a local minimum.
+                  </p>
+
+                  <p>
+                    As an alternative we can find the discriminant.
+                    <md>
+                      <mrow>f_{xx}  (x,y) \amp = 2</mrow>
+                      <mrow>f_{xy}  (x,y) \amp = 2</mrow>
+                      <mrow>f_{yy}  (x,y) \amp = 8</mrow>
+                      <mrow>D \amp = f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2=2*8-2^2=12&gt;0</mrow>
+                    </md>.
+                    Since <m> D\gt 0</m> and <m>f_{xx}  (x,y)\gt 0</m> we have a local minimum.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The function is <m>f(x,y)=x^2+7xy+2y^2+4x-3y</m>, for the region
+              <m>-10\le x\le 10</m>, and <m>-10\le y\le 10</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The function is <m>f(x,y)=-x^2+2xy-4y^2+8x-11y</m>, for the region
+              <m>-10\le x\le 10</m>, and <m>-10\le y\le 10</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    <md>
+                      <mrow>f_x  (x,y) \amp = -2x+2y+8</mrow>
+                      <mrow>f_y  (x,y) \amp = 2x-8y-11</mrow>
+                    </md>.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Set the partial derivatives equal to 0 and solve for <m>x</m> and <m>y</m>.
+                    <md>
+                      <mrow>f_x  (x,y) \amp = -2x+2y+8=0</mrow>
+                      <mrow>f_y  (x,y) \amp = 2x-8y-11=0</mrow>
+                    </md>.
+                  </p>
+
+                  <p>Adding the equations <m>-6y-3=0</m>, and so <m>y=-1/2</m>.</p>
+                  <p>Substituting in the first equation give <m>-2x+7=0</m>, and so <m>x=7/2</m>.</p>
+                  <p>Hence we have a critical points at <m>(7/2,-1/2)</m>.</p>
+                </li>
+
+                <li>
+                  <p>
+                    For <m>(x,y)= (2,1)</m>:
+                  </p>
+
+                  <image width="60%" source="images/sec6-3-sol3a.png"/>
+
+                  <sidebyside widths="45% 45%" valigns="middle top">
+                      <image source="images/sec6-3-sol3b.png"/>
+                      <image source="images/sec6-3-sol3c.png"/>
+                  </sidebyside>
+                </li>
+
+                <li>
+                  <p>
+                    From the picture we conclude that the critical point is a maximum.
+                    As an alternative we can find the discriminant.
+                    <md>
+                      <mrow>f_{xx}  (x,y) \amp = -2</mrow>
+                      <mrow>f_{xy}  (x,y) \amp = 2</mrow>
+                      <mrow>f_{yy}  (x,y) \amp = -8</mrow>
+                      <mrow>D \amp = f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2=2*8-2^2=12\gt 0</mrow>
+                    </md>.
+                  </p>
+
+                  <p>Since <m> D\gt 0</m> and <m>f_{xx}  (x,y)\lt 0</m> we have a local maximum.</p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The function is <m>f(x,y)=x^3-12x+y^3-3y</m>, for the region
+              <m>-10\le x\le 10</m>, and <m>-10\le y\le 10</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The function is the revenue function for selling widgets and gizmos with demand price functions
+              <md>
+                <mrow>\PriceGizmo \amp = 25-\frac{\QuantityGizmo}{50}-\frac{\QuantityWidget}{200}</mrow>
+                <mrow>\PriceWidget \amp = 30-\frac{\QuantityWidget}{45}-\frac{\QuantityGizmo}{300}</mrow>
+              </md>
+              for the region <m>0\le \QuantityWidget\le 1500</m>, and <m>0\le \QuantityGizmo\le 1500</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              To solve this problem we will rename Gizmos <m>x</m> and Widgets <m>y</m>.
+              This will make using Wolfram Alpha slightly easier, and symbol manipulation a tad more straight forward.
+              <md>
+                <mrow>\PriceX \amp = 25-\frac{x}{50}-\frac{y}{200}</mrow>
+                <mrow>\PriceY \amp = 30-\frac{y}{45}-\frac{x}{300}</mrow>
+                <mrow>\revenue (x,y) \amp =x*\PriceX+y *\PriceY</mrow>
+                <mrow> \amp =x \left[25-\frac{x}{50}-\frac{y}{200}\right]+y\left[30-\frac{y}{45}-\frac{x}{300}\right]</mrow>
+                <mrow> \amp = \frac{-36x^2-15xy+45000x-40y^2+54000y}{1800} </mrow>
+              </md>.
+            </p>
+
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    <md>
+                      <mrow>\revenue_x (x,y)\amp = \frac{-24x-5y+1000}{600} </mrow>
+                      <mrow>\revenue_y (x,y)\amp = \frac{-3x-16y+10800}{360} </mrow>
+                    </md>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Using WolframALpha, the critical point is at <m>(62000/123, 23800/41)  \approx (504, 580.5)</m>.
+                  </p>
+
+                  <image width="50%" source="images/sec6-3-sol5a.png"/>
+                </li>
+
+                <li>
+                  <p>Using WolframAlpha we get:</p>
+
+                  <image width="60%" source="images/sec6-3-sol5b.png"/>
+
+                  <image width="40%" source="images/sec6-3-sol5c.png"/>
+                </li>
+
+                <li>
+                  <p>From the picture we conclude that the critical point is a maximum. </p>
+
+                  <p>
+                    As an alternative we can find the discriminant.
+                    <md>
+                      <mrow>f_{xx}  (x,y) \amp = -\frac{1}{25}</mrow>
+                      <mrow>f_{xy}  (x,y) \amp = -\frac{1}{120}</mrow>
+                      <mrow>f_{yy}  (x,y) \amp = -\frac{4}{25}</mrow>
+                      <mrow>D \amp = f_{xx}  (x,y)f_{yy}  (x,y)-f_{xy}  (x,y)^2 \gt 0</mrow>
+                    </md>.
+                  </p>
+                  <p>Since <m> D\gt 0</m> and <m>f_{xx}  (x,y)\lt 0</m> we have a local maximum.</p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The function is the revenue function for selling widgets and gizmos with demand price functions
+              <md>
+                <mrow>\PriceGizmo \amp = 30(0.9)^{(\QuantityGizmo/150) }-\frac{\QuantityWidget}{250}</mrow>
+                <mrow>\PriceWidget \amp = 20(0.97)^{(\QuantityWidget/50) }-\frac{\QuantityGizmo}{350}</mrow>
+              </md>
+              for the region <m>0\le \QuantityWidget\le 1500</m>,
+              and <m>0\le \QuantityGizmo\le 1500</m>.  (Warning: There are several critical points.)
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            Based on the information given, classify each of the following points as a local maximum,
+            local minimum, saddle point, not a critical point, or not enough information to classify.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>p</cell>
+            <cell><m>f_x</m></cell>
+            <cell><m>f_y</m></cell>
+            <cell><m>f_{xx}</m></cell>
+            <cell><m>f_{xy}</m></cell>
+            <cell><m>f_{yy}</m></cell>
+            </row>
+            <row bottom="minor">
+            <cell>A</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>5</cell>
+            </row>
+            <row bottom="minor">
+            <cell>B</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            </row>
+            <row bottom="minor">
+            <cell>C</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>3</cell>
+            </row>
+            <row bottom="minor">
+            <cell>D</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>2</cell>
+            <cell>2</cell>
+            <cell>2</cell>
+            </row>
+            <row bottom="minor">
+            <cell>E</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            </row>
+            <row bottom="minor">
+            <cell>F</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            </row>
+            <row bottom="minor">
+            <cell>G</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>-1</cell>
+            <cell>0</cell>
+            </row>
+          </tabular>
+        </statement>
+        <solution>
+          <p>Add a column for D and classify.</p>
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>p</cell>
+            <cell><m>f_x</m></cell>
+            <cell><m>f_y</m></cell>
+            <cell><m>f_{xx}</m></cell>
+            <cell><m>f_{xy}</m></cell>
+            <cell><m>f_{yy}</m></cell>
+            <cell><m>D</m></cell>
+            <cell>Classification</cell>
+            </row>
+            <row bottom="minor">
+            <cell>A</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>5</cell>
+            <cell>-1</cell>
+            <cell>Not Critical</cell>
+            </row>
+            <row bottom="minor">
+            <cell>B</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>Not Enough Info</cell>
+            </row>
+            <row bottom="minor">
+            <cell>C</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>3</cell>
+            <cell>-19</cell>
+            <cell>Not Critical</cell>
+            </row>
+            <row bottom="minor">
+            <cell>D</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>2</cell>
+            <cell>2</cell>
+            <cell>2</cell>
+            <cell>0</cell>
+            <cell>Not Enough Info</cell>
+            </row>
+            <row bottom="minor">
+            <cell>E</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>-1</cell>
+            <cell>Saddle Point</cell>
+            </row>
+            <row bottom="minor">
+            <cell>F</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>Not Enough Info</cell>
+            </row>
+            <row bottom="minor">
+            <cell>G</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>-1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>Not Enough Info</cell>
+            </row>
+          </tabular>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Based on the information given, classify each of the following points as a local maximum,
+            local minimum, saddle point, not a critical point, or not enough information to classify.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>p</cell>
+            <cell><m>f_x</m></cell>
+            <cell><m>f_y</m></cell>
+            <cell><m>f_{xx}</m></cell>
+            <cell><m>f_{xy}</m></cell>
+            <cell><m>f_{yy}</m></cell>
+            </row>
+            <row bottom="minor">
+            <cell>A</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>5</cell>
+            </row>
+            <row bottom="minor">
+            <cell>B</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            </row>
+            <row bottom="minor">
+            <cell>C</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>5</cell>
+            <cell>3</cell>
+            </row>
+            <row bottom="minor">
+            <cell>D</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>2</cell>
+            <cell>2</cell>
+            <cell>2</cell>
+            </row>
+            <row bottom="minor">
+            <cell>E</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            </row>
+            <row bottom="minor">
+            <cell>F</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            </row>
+            <row bottom="minor">
+            <cell>G</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>-1</cell>
+            <cell>0</cell>
+            </row>
+          </tabular>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Using polynomials of the form <m>f(x,y)=ax^3+bx^4+cy^3+dy^4</m>,
+            produce a function that has a critical point at <m>(0, 0)</m>, of each type.
+          </p>
+
+          <p>
+            <ol marker="(1)">
+              <li><p>A local maximum.</p></li>
+              <li><p>A local minimum.</p></li>
+              <li><p>A saddle point where the function f(x,0)  has a local maximum and f(0,y)  has a local minimum.</p></li>
+              <li><p>A saddle point where the function f(x,0)  and f(0,y)  both have inflection points.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>It helps to consider the question with only one variable.</p>
+          <p><m>f(x)=ax^3</m> has an inflection point at <m>x=0</m> and neither a max nor a minimum.</p>
+          <p><m>f(x)=ax^4</m> has minimum at <m>x=0</m> if <m>a\gt 0</m> and a maximum if <m>a\lt 0</m>.</p>
+          <p>Since all terms are of degree at least three, all second partial derivatives are zero at the origin, so the discriminant test fails.</p>
+          <p>
+            <ol marker="(1)">
+              <li>
+                <p>
+                  A local maximum: <m>(x,y) = -x^4-y^4</m>.
+                  Both <m>x^4</m> and <m>y^4</m> are nonnegative,
+                  so the function is negative everywhere except at the origin where it is 0.
+                </p>
+              </li>
+              <li>
+                <p>
+                  A local minimum: <m>f(x,y)= x^4+y^4</m>.
+                  Both <m>x^4</m> and <m>y^4</m> are nonnegative,
+                  so the function is positive everywhere except at the origin where it is 0.
+                </p>
+              </li>
+              <li>
+                <p>
+                  A saddle point where the function <m>f(x,0)</m>  has a local maximum and <m>f(0,y)</m>
+                  has a local minimum: <m>(x,y)= -x^4+y^4</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  A saddle point where the function <m>f(x,0)</m>  and <m>f(0,y)</m>
+                  both have inflection points: <m>f(x,y)= x^3+y^3</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>

@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-2-3-NonlinearFunctions">
+    <title>Nonlinear Functions</title>
+    <introduction>
+      <p><url href="external/Examples/Section-2-3-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-2-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p>
+        For most of this chapter, we have restricted ourselves to functions that were either linear functions or polynomial functions where they are built from the interaction of linear functions.  While this makes the economic models easier to understand, it is pretty clear that the situations we care about are often better described by more complicated functions.  Suppliers of gasoline have a finite amount they can deliver regardless of the price.  That leads to a very nonlinear supply function.  It is worthwhile to review how we would enter other functions in a spreadsheet.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Algebraic Functions</title>
+
+      <p>
+        We start with the algebraic functions that should be familiar from previous courses.
+        These functions will let us use all the models that were mentioned in <xref ref="chap-1-FunctionsGraphsExcel"/>.
+        For this table, we will assume the input to the function has been stored in cell <c>A1</c>.
+      </p>
+
+      <tabular top="major" halign="center">
+        <row bottom="minor">
+        <cell><term>Algebraic Entry</term></cell>
+        <cell><term>Spreadsheet Entry</term></cell>
+        <cell><term>Notes</term></cell></row>
+        <row bottom="medium">
+        <cell><m>f(x)=\sqrt{2x+7}</m></cell>
+        <cell><c>=SQRT(2*A1+7)</c></cell>
+        <cell>* needed for multipliciation</cell></row>
+        <row bottom="medium">
+        <cell><m>f(x)=\sqrt[3]{2x+7}</m></cell>
+        <cell><c>=(2*A1+7)^(1/3)</c></cell>
+        <cell>other roots done as fractional exponents</cell></row>
+        <row bottom="medium">
+        <cell><m>f(x)=x^4</m></cell>
+        <cell><c>=A1^4</c></cell>
+        <cell/></row>
+        <row bottom="medium">
+        <cell><m>f(x)=-x^4</m></cell>
+        <cell><c>=-1*(A1^4)</c></cell>
+        <cell>Excel does negation before exponentiation</cell></row>
+        <row bottom="medium">
+        <cell><m>f(x)=\ln(x)</m></cell>
+        <cell><c>=LN(A1)</c></cell>
+        <cell>Log base <m>e</m> or natural log</cell></row>
+        <row bottom="medium">
+        <cell><m>f(x)=\log_{10}(x)</m></cell>
+        <cell><c>=LOG10(A1)</c></cell>
+        <cell>Log base 10 or common log</cell></row>
+        <row bottom="medium">
+        <cell><m>f(x)=\log_{2}(x)</m></cell>
+        <cell><c>=LOG(A1,2)</c></cell>
+        <cell>Log to another base</cell></row>
+        <row bottom="medium">
+        <cell><m>f(x)=1.06^x</m></cell>
+        <cell><c>=1.06^(A1)</c></cell>
+        <cell/></row>
+        <row bottom="medium">
+        <cell><m>f(x)=e^x</m></cell>
+        <cell><c>=EXP(A1)</c></cell>
+        <cell/></row>
+        <row bottom="medium">
+        <cell><m>f(x)=e^{(-x^2)}</m></cell>
+        <cell><c>=EXP(-(A1^2))</c></cell>
+        <cell>Parentheses needed for correct evaluation</cell></row>
+        <row bottom="medium">
+        <cell><m>f(x)=|x|</m></cell>
+        <cell><c>=ABS(A1)</c></cell>
+        <cell>Absolute value</cell></row>
+      </tabular>
+
+      <p>
+        Consider a demand function and why it is probably not linear.
+        We expect demand to go up whenever we drop the price.
+        However, with a linear function, if dropping the price from $100 t0 $50 increases the demand by 20 from 100 to 120, 
+        then decreasing the price from $50 to $0 and giving it away would only increase demand by another 20 to 140.
+        A more reasonable model may be a power function where decreasing the price by a fixed percentage increases consumption by a fixed percentage.
+        Similarly, when we think about the supply function,
+        we often expect the limits on available materials to make increasing the supply progressively more expensive.
+      </p>
+
+      <example>
+        <title>Exponential Supply and Demand Price</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="Ac0q2H7dlx4"/>
+          </figure>
+
+          <p>
+            We are interested in selling gizmos.  The most a consumer will pay is $1,000.
+            If we drop the cost by 10\%, we increase demand by 100.
+            The cheapest that a supplier will sell for is $200.
+            We find the market will produce another 100 gizmos whenever we increase the price by 20%.
+            Find the market equilibrium.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We start by converting our information about supply and demand into equations,
+            plugging the equations into Excel, and sketching a graph.
+            We then use Goal Seek to find where the two equations are equal.
+            <md>
+              <mrow>\Dprice(\quantity)\amp =1000*(0.9)^{(\quantity/100)}</mrow>
+              <mrow>\Sprice(\quantity)\amp =200*(1.2)^{(\quantity/100)}</mrow>
+            </md>.
+          </p>
+
+          <image width="90%" source="images/sec2-3-1.png"/>
+
+          <p>
+            We see that the equilibrium price is at $554.64.  At that price the supply and demand will both be 559.45.
+          </p>
+        </solution>
+      </example>
+
+      <example>
+        <title>Nonlinear Functions From Data</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="Q0nJctuVNVc"/>
+          </figure>
+
+          <p>
+            We have the following table of data for demand price and costs for our product.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>Quantity</cell><cell>100</cell><cell>300</cell>
+            <cell>500</cell><cell>1000</cell><cell>1500</cell></row>
+            <row bottom="medium">
+            <cell>Demand Price</cell><cell>$35.35</cell><cell>$21.63</cell>
+            <cell>$17.25</cell><cell>$12.70</cell><cell>$10.26</cell></row>
+            <row bottom="medium">
+            <cell>Costs</cell><cell>$2347.67</cell><cell>$5040.00</cell>
+            <cell>$7481.67</cell><cell>$12469.67</cell><cell>$16196.00</cell></row>
+          </tabular>
+
+          <p>
+            We have reason to believe that my demand price is a power function of some kind.
+            Our cost function is close to linear,
+            but we can get volume discounts and reduce the per-unit cost with larger quantities.
+            Thus, we expect my cost function is actually quadratic, with the quadratic term much smaller than the linear term.
+            Find best fitting curves for cost and price.  Derive functions for revenue and profit.
+            Find break-even points between 10 and 1500.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            I start by finding best-fit curves of for cost and price.
+          </p>
+
+          <image width="80%" source="images/sec2-3-2.png"/>
+
+          <p>Thus we have:
+            <md>
+              <mrow>\cost(q) \amp =-0.0028q^2+14.353q+968.13</mrow>
+              <mrow>\price(q) \amp =286.02 q^{-0.453}</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Next, we follow our models to get equations for revenue and profit.
+            <md>
+              <mrow>\revenue(q) \amp =q*\price(q)=q 286.02 q^{-0.453}=286.02 q^{0.547}</mrow>
+              <mrow>\profit(q) \amp = \revenue(q)-\cost(q)=286.02 q^{0.547}+0.0028q^2-14.353q-968.13</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Finally, we load these equations back into Excel and use Goal Seek to find the break-even points.
+            Looking at projected profit on the chart we see a sign change near 1000,
+            so we suspect a break-even point there.  We also note that profit seems to be going up until <m>q</m> is about 300,
+            so I test for a break-even point for small values of <m>q</m>.
+          </p>
+
+          <image width="80%" source="images/sec2-3-3.png"/>
+
+          <p>We see we have break-even points when q is 12.74 and 996.28.</p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Discontinuous Functions</title>
+
+      <p>
+        All of the functions above have graphs without breaks.
+        In mathematical terms, they are continuous functions.
+        When we are modeling real world phenomena, we also want to use functions that have breaks in the graph.
+        Paint is typically bought in gallon containers,
+        so the price to paint a room is based on the number of gallons rounded up to the next whole number.
+        Many businesses will give a volume discount to their best customers,
+        so there is one price for small quantities and a different price for large quantities.
+        The cost of labor changes if overtime pay is involved.
+        In all of these cases, the graph has a break in it.
+      </p>
+
+      <p>
+        Excel has several discontinuous functions that are of use to us.
+      </p>
+
+      <tabular top="major" halign="center">
+        <row bottom="minor">
+        <cell>Function</cell>
+        <cell>Example</cell>
+        <cell>Value</cell>
+        <cell>Notes</cell></row>
+        <row bottom="minor">
+        <cell>ROUND</cell>
+        <cell>ROUND(2.347,1)</cell>
+        <cell>2.3</cell>
+        <cell>2.35 would round to 2.4</cell></row>
+        <row bottom="minor">
+        <cell>ROUNDDOWN</cell>
+        <cell>ROUNDDOWN(2.99,0)</cell>
+        <cell>2.0</cell>
+        <cell>0 for digits rounds to integers</cell></row>
+        <row bottom="minor">
+        <cell>ROUNDUP</cell>
+        <cell>ROUNDUP(-2.132,2)</cell>
+        <cell>-2.14</cell>
+        <cell>Up is away from 0.</cell></row>
+        <row bottom="minor">
+        <cell>CEILING</cell>
+        <cell>CEILING(3.14159,1.5)</cell>
+        <cell>4.5</cell>
+        <cell>Rounds up to a multiple of 1.5</cell></row>
+        <row bottom="minor">
+        <cell>FLOOR</cell>
+        <cell>FLOOR(3.14159,2)</cell>
+        <cell>2</cell>
+        <cell>Rounds down to a multiple of 2.</cell></row>
+        <row bottom="minor">
+        <cell>IF</cell>
+        <cell>IF(<m>2 \lt 1</m>,5,10)</cell>
+        <cell>10</cell>
+        <cell>The condition is false.</cell></row>
+        <row bottom="minor">
+        <cell>MIN</cell>
+        <cell>MIN(1, 3, 5)</cell>
+        <cell>1</cell>
+        <cell>The minimum of a list of values.</cell></row>
+        <row bottom="minor">
+        <cell>MAX</cell>
+        <cell>MAX(1, 3, 5)</cell>
+        <cell>5</cell>
+        <cell>The maximum of a list of values.</cell></row>
+      </tabular>
+
+      <p>
+        The functions ROUND, ROUNDUP, and ROUNDDOWN are all used for rounding.
+        They have a second argument that specifies the number of digits to which we are rounding.
+        It should be noted that Excel understands up and down as away from zero for negative numbers.
+        Thus it will round <m>-1.5</m> up to <m>-2</m>.
+        The CEILING and FLOOR functions also do rounding, but with some different features.
+        Instead of specifying the number of digits in the answer,
+        these functions round to a multiple of the second argument.
+        As expected, CEILING rounds to the next higher multiple, and FLOOR rounds to the next lower multiple.
+      </p>
+
+      <image width="80%" source="images/sec2-3-4.png"/>
+
+      <figure>
+        <caption>Video discussion of discontinuous functions in Excel</caption>
+        <video youtube="dH_2jZZygYw"/>
+      </figure>
+
+      <example>
+        <title>Raw Materials in Blocks</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="x_gEP5xo04w"/>
+          </figure>
+
+          <p>
+            The raw material needed to build widgets is sold in blocks that will make 100 widgets.
+            A block costs $1000.  The labor cost for building a widget is $7.
+            The fixed costs for widget production is $10,000.
+            Find a formula for the costs of producing widgets.
+            Find the cost of producing 998 and 1009 widgets.
+            You should also find the cost per unit at those quantities.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To make the worksheet easier to follow, we break costs into three pieces,
+            fixed costs labor costs, and materials costs.
+            The fixed coasts are constant, and the labor costs are linear.
+            For the materials costs we need to use the CEILING function to round the number of widgets up to the next even 100,
+            then divide by 100 to obtain the number of blocks of raw material we want to buy.
+          </p>
+
+          <image width="80%" source="images/sec2-3-5.png"/>
+
+          <p>
+            When we look at the numbers we see that the total cost of producing 998 widgets is $26,986 and the cost of producing 1009 widgets is $28,063.
+            When we look at the unit costs, we expect the cost per unit to generally go down as we produce more,
+            since the fixed costs are distributed over more units.  However the per unit cost is $27.04 when we produce 998 widgets,
+            but that goes up to $28.81 when we make 1009 widgets, since we had to buy another block of raw material.
+          </p>
+
+          <image width="60%" source="images/sec2-3-6.png"/>
+        </solution>
+      </example>
+
+      <p>
+        The IF command is used when we use different formulas for different cases.
+        Some easy examples are overtime pay, benefits costs, and volume discount.
+        In many work situations employees are paid one rate up to a certain amount of work and a second rate for additional work.
+        It is also common for full time employees to receive certain benefits, like retirement,
+        that are not offered to part time employees.
+        It is also common for certain industries to offer different rates for their biggest and best customers.
+        The basic syntax of the IF command is:
+      </p>
+
+      <assemblage>
+        <p>
+          IF(test condition, value if condition is true, value if condition is false)
+        </p>
+      </assemblage>
+
+      <p>The values for true and false can be numbers, string, or formulas to evaluate.</p>
+
+      <example>
+        <title>Computing Overtime Pay</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="6O5cSUxwDcU"/>
+          </figure>
+
+          <p>
+            I am a bookkeeper at a small firm.
+            Company policy pays the employees time and a half for working more than 40 hours per week.
+            I need to compute the weekly pay of 5 employees.
+            The employees worked 35, 42, 43, 38, and 42.5 hours.
+            Their base pay rates were respectively $8, $9, $10, $11, and $12 an hour.
+            Compute the pay for each employee.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In setting up the worksheet, I will separate regular pay from overtime pay.
+            The regular pay is the base rate times the hours worked,
+            unless the employee worked more than 40 hours, in which case it is the base rate times 40.
+            Overtime pay is the base pay times 1.5 times the number of overtime hours.
+            Since overtime cannot be negative, we use the maximum of 0 and hours worked minus 40.
+          </p>
+
+          <image width="80%" source="images/sec2-3-7.png"/>
+
+          <p>
+            Looking at the computed values, the employees are owed $280, $387, $445, $418, and $525, respectively.
+          </p>
+
+          <image width="50%" source="images/sec2-3-8.png"/>
+        </solution>
+      </example>
+
+      <p>
+        If our functions are discontinuous,
+        we need to exercise a bit of care with our economic models and the points of interest we have been finding.
+        The market equilibrium and break-even points are both places where two functions are equal.
+        When the mathematics does not give us a clear answer, we should think about the problem and consider what answer makes the most sense.
+        Consider a simplified example to illustrate the point.
+      </p>
+
+      <example>
+        <title>Market Equilibrium with Discontinuous Supply Price</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="ci90zlHUbP8"/>
+          </figure>
+
+          <p>
+            In the widget market, the supply is constrained.
+            Obtaining more than 2 widgets means using a more expensive process.
+            My supply and demand curves are:
+            <md>
+              <mrow>\Dprice(q)=4-q/2</mrow>
+              <mrow>\Sprice(q)=\begin{cases}
+                                             1q/2+1&amp;q\le 2\\
+                                             1q/2+3&amp;q&gt;2\\
+                                           \end{cases}</mrow>
+            </md>.
+          </p>
+
+          <p>Find the market equilibrium price.</p>
+        </statement>
+        <solution>
+          <p>
+            We would like to find the place where the two curves cross.
+            However when we look at a graph of the two functions we see that they never meet.
+          </p>
+
+          <image width="60%" source="images/sec2-3-9.png"/>
+
+          <p>
+            It is clear from the graph that the market should reach equilibrium at a quantity of 2,
+            but it is not clear what the equilibrium price should be.
+            We need to do some reasoning about the behavior described by the equations.
+            From our formula, the supply price for 2 widgets is $2.
+            However if we look at the supply prices of <m>2+h</m> for small values of <m>h</m>,
+            we see that the limit of the supply price from above is $4.
+            In practical terms the suppliers will produce 2 widgets for any price from $2 to $4.
+            If we offer $2, they are also willing to produce 2 widgets.
+            If we offer a price of $3.95, they are still only willing to produce 2 widgets.
+            The suppliers will be thus willing to produce 2 widgets at a price of $3.
+            The equilibrium price is 3.
+          </p>
+
+          <p>
+            If we want to look at the graph in Excel, it is useful to plot points very close to the discontinuity on both sides.
+            For this problem, we might look at both 2 and 2.0001.
+          </p>
+
+          <image width="80%" source="images/sec2-3-10.png"/>
+        </solution>
+      </example>
+
+      <p>
+        A lesson to remember is that we need to pay attention to places where our functions are discontinuous and that we need to understand what our economic model should do when the curves do not cross.
+        For example, we will understand the break-even point to be the first point where revenue is greater than or equal to costs.
+        In the continuous case, this reduces to our old definition.
+      </p>
+    </subsection>
+
+
+
+    <exercise>
+      <title>Reading check, Nonlinear Functions</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"In the real world, the demand function is probably not linear. ", 
+"ln(x) is used for the natural log of x, or log base e. ", 
+"In Excel \(e^x\) is written EXP(x).  ",                 
+"Excel does negation before exponentiation. ", 
+"The if construction can be used in Excel for a function with branches. ", 
+"For the ROUND command we specify the number of digits past the decimal point in the rounded number. ",  
+
+"All real world cost functions are continuous.  ", 
+"The commands ROUND, ROUNDUP, and ROUNDDOWN can be used interchangeably. ", 
+"For the FLOOR command we specify the number of digits past the decimal point in the rounded number. ", 
+"The CEIL command can be used to roundup. "
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4, 5],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 2.3, Nonlinear Functions, Costs, and Profit, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-2-3">
+      <title>Exercises 2.3 Nonlinear functions</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For <xref first="ex-sdc-nl-first" last="ex-sdc-nl-last"/>,
+            given the equations of the supply and demand curves:
+            <ol marker="(a)">
+              <li><p>Evaluate the curves at <m>q_0</m>.</p></li>
+              <li><p>Find the market equilibrium.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-sdc-nl-first">
+           <statement>
+             <p>
+               Given <m>\Sprice=20*(1.1)^{(q/10)}</m> and <m>\Dprice=50*(0.95)^{(q/10)}</m>,
+               with <m>q_0=10</m>.
+             </p>
+           </statement>
+           <solution>
+            <sidebyside widths="60% 15%" valigns="middle top">
+              <image source="images/sec2-3-sol1a.png"/>
+              <p>Formulas</p>
+            </sidebyside>
+            <sidebyside widths="80% 15%" valigns="middle top">
+              <image source="images/sec2-3-sol1b.png"/>
+              <p>Table </p>
+            </sidebyside>
+            <p>
+              <ol marker="(a)">
+                <li><p>At <m>q_0=10</m>, supply = $22, and demand = $47.50</p></li>
+                <li>
+                  <p>Using Goal Seek we see that the equilibrium occurs at <m>q = 62.5</m> and the price is $36.29</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given supply <m>\price=10*(1.05)^{(q/10)}</m> and <m>\Dprice=60*(0.96)^{(q/10)}</m>,
+              with <m>q_0=10</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>Given <m>p_s=5 \ln(q+10)</m> and <m>p_d=1000/(q+10)-2</m>, with <m>q_0=40</m>.</p>
+          </statement>
+          <solution>
+            <sidebyside widths="60% 15%" valigns="middle top">
+              <image source="images/sec2-3-sol3a.png"/>
+              <p>Formulas</p>
+            </sidebyside>
+            <sidebyside widths="80% 15%" valigns="middle top">
+              <image source="images/sec2-3-sol3b.png"/>
+              <p>Table </p>
+            </sidebyside>
+            <sidebyside widths="80% 15%" valigns="middle top">
+              <image source="images/sec2-3-sol3c.png"/>
+              <p>Goal Seek near <m>q=40</m> </p>
+            </sidebyside>
+            <p>
+              <ol marker="(a)">
+                <li><p>At <m>q_0=40</m>, supply = $19.56, and demand = $18</p></li>
+                <li>
+                  <p>Using Goal Seek we see that the equilibrium occurs at <m>q = 37</m> and the price is $19.25</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>\Sprice=10 \ln(q+2)</m> and <m>\Dprice=60*(0.90)^{(q/100)}</m>,
+              with <m>q_0=6000</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="ex-sdc-nl-last">
+          <statement>
+            <p> Given
+              <me>
+                \Sprice(q)=\begin{cases}
+                20*(1.1)^{(q/10)}&amp;q \le 50\\
+                20*(1.1)^{(q/10)}&amp;q \gt 50\\
+                \end{cases}
+              </me>
+              and
+              <me>
+                \Dprice(q)=50*(0.095)^{(q/10)}
+              </me>,
+              with <m>q_0=40</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              For this problem our supply price function changes at <m>q = 50</m>.
+              This is indicated in the table by a thin blue column.
+            </p>
+            <image width="80%" source="images/sec2-3-sol5a.png"/>
+            <p>
+              <ol marker="(a)">
+                <li><p>At <m>q_0=40</m>, supply = $29.28, and demand = $40.73</p></li>
+                <li>
+                  <p>
+                    The equilibrium occurs somewhere between <m>q = 60</m> and <m>q = 70</m>.
+                    Using Goal Seek we find that the equilibrium occurs for <m>q = 62.43</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For <xref first="ex-bfe-nl-first" last="ex-bfe-nl-last"/>,
+            given the supply and demand data:
+            <ol marker="(a)">
+              <li><p>Find best fitting equations of the supply and demand curves, using the assumptions given in the problem.</p></li>
+              <li><p>Find the market equilibrium.</p></li>
+              <li><p>Find the projected supply and demand prices for the extra quantities given.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-bfe-nl-first">
+          <statement>
+            <p> Given the data</p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>100</cell><cell>120</cell>
+              <cell>140</cell><cell>160</cell><cell>180</cell>
+              <cell>155</cell></row>
+              <row bottom="medium">
+              <cell>Supply price</cell><cell>32</cell><cell>35.5</cell>
+              <cell>39</cell><cell>42.6</cell><cell>47</cell>
+              <cell/></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>47.2</cell><cell>42.5</cell>
+              <cell>38.3</cell><cell>34.5</cell><cell>31</cell>
+              <cell/></row>
+            </tabular>
+
+            <p>
+              and the assumption that supply price and demand price are both exponential.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>Given the data</p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>5017</cell><cell>5937</cell>
+              <cell>7003</cell><cell>8070</cell><cell>9017</cell>
+              <cell>9943</cell><cell>7500</cell></row>
+              <row bottom="medium">
+              <cell>Supply price</cell><cell>17.5</cell><cell>19</cell>
+              <cell>20.4</cell><cell/><cell>23.7</cell>
+              <cell>25.1</cell><cell/></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>29.6</cell><cell>26.7</cell>
+              <cell/><cell>21.3</cell><cell>19.2</cell>
+              <cell>17.6</cell><cell/></row>
+            </tabular>
+
+            <p>
+              and the assumption that supply price is linear and demand price is exponential.
+            </p>
+          </statement>
+          <solution>
+            <image width="80%" source="images/sec2-3-sol7a.png"/>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    Using the trendline feature from Excel we get that
+                    <md>
+                      <mrow>\text{Supply} \amp= 0.0015x + 9.7518 </mrow>
+                      <mrow>\text{Demand} \amp = 50.214e^{(-0.0001x)}</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p>See the tables below.</p>
+                </li>
+                <li>
+                  <p>See the tables below.</p>
+                </li>
+              </ol>
+            </p>
+            <sidebyside widths="40% 15%" valigns="middle top">
+              <image source="images/sec2-3-sol7b.png"/>
+              <p>Formulas entered</p>
+            </sidebyside>
+            <sidebyside widths="78% 20%" valigns="middle top">
+              <image source="images/sec2-3-sol7c.png"/>
+              <p>Finding all valuers with these formulas.  The yellow ones are the ones we are looking for.</p>
+            </sidebyside>
+            <sidebyside widths="78% 20%" valigns="middle top">
+              <image source="images/sec2-3-sol7d.png"/>
+              <p>Using Goal Seek to find the equilibrium values in column E</p>
+            </sidebyside>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-bfe-nl-last">
+          <statement>
+            <p> Given the data</p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>1009</cell><cell>1469</cell>
+              <cell>2041</cell><cell>2462</cell><cell>3002</cell>
+              <cell>3517</cell><cell>3979</cell><cell>3200</cell></row>
+              <row bottom="medium">
+              <cell>Supply price</cell><cell>98</cell><cell>106</cell>
+              <cell>112</cell><cell/><cell>120</cell>
+              <cell>1231</cell><cell>126</cell><cell/></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>160</cell><cell>144</cell>
+              <cell/><cell>116</cell><cell>102</cell>
+              <cell/><cell>82</cell><cell/></row>
+            </tabular>
+            <p>
+              and the assumption that supply price is linear and demand price is exponential.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For <xref first="ex-excel-disc-first" last="ex-excel-disc-last"/>,
+            for the given functions:
+            <ol marker="(a)">
+              <li><p>Give the excel command that will produce the following function with the assumption that x is in cell A2.</p></li>
+              <li><p>Give a chart of the values of the function evaluated as x goes from 0 to 100 in steps of 5.</p></li>
+              <li><p>A graph of the function.</p></li>
+              <li><p>A list of x-values where the function is discontinuous.  (Where the graph jumps.)</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-excel-disc-first">
+          <statement>
+            <p>
+              Let
+              <me>
+                f(x)=\begin{cases}
+                \ln(2x)&amp;x \le 50\\
+                200\exp(-x/10)&amp;x \gt 50\\
+                \end{cases}
+              </me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    The Excel command is <c>=IF(A2 &lt; =50, LN(2*A2),200*EXP(-A2/10))</c>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The chart is produced by the following code.
+                  </p>
+                  <image width="60%" source="images/sec2-3-sol9a.png"/>
+                </li>
+                <li>
+                  <p>
+                    The graph will look as follows. Note that the function is not defined at 0.
+                  </p>
+                  <image width="80%" source="images/sec2-3-sol9b.png"/>
+                </li>
+                <li>
+                  <p>
+                    The function is not continuous at <m>x = 50</m>.
+                    Note that the function drops from near 4.5 to about 1 rather suddenly.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let
+              <me>
+                f(x)=\begin{cases}
+                \sqrt{2x+21}&amp;x \le 50\\
+                10\sin(x/5)&amp;x \gt 50\\
+                \end{cases}
+              </me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The cost of shipping an item is $2 per pound, or fraction thereof, with a minimal cost of $5.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    The function is <c>=MAX(2*A2,5)</c>
+                  </p>
+                </li>
+                <li>
+                  <image width="60%" source="images/sec2-3-sol11a.png"/>
+                </li>
+                <li>
+                  <p>
+                    See the graph above.  This function will return <m>y = 2x</m>,
+                    unless the output drops below 5.
+                    It is thus also useful to look at this function between 0 and 20 in steps of 1.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The graph has a slight bend on the lower left, but there is no discontinuity.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Widgets cost $10 each when purchased individually.
+              They cost $9 each when purchased in packages of 10.
+              They cost $8 each when purchased in cases of 50.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Gizmos cost $10 each for the first 9 on an order.
+              The 10th through 49th gizmo cost $9 each.  Additional gizmos beyond that each cost $8.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Writing this in math terms:
+              <me>
+                \text{Cost}=\begin{cases}
+                10x&amp;x \le 9\\
+                90+9(x-9)&amp;10\le x\le 49\\
+                450+8(x49)&amp;x\ge 50\\
+                \end{cases}
+              </me>
+              or
+              <me>
+                \text{Cost}=\begin{cases}
+                10x&amp;x \le 9\\
+                9+9x&amp;10\le x\le 49\\
+                58+8x&amp;x\ge 50\\
+                \end{cases}
+              </me>.
+            </p>
+
+            <p>
+              <ol marker="(a)">
+                <li><p>The Excel command is <c>=IF(A2 &lt; 10, 10*A2, IF(A2 &lt; 50, 90+9*(A2-9),450+8*(A2-49)))</c></p></li>
+                <li><image width="90%" source="images/sec2-3-sol13a.png"/></li>
+                <li><p>The graph is on the chart above.</p></li>
+                <li>
+                  <p>
+                    Note that this function is only defined for integers so technically it is not a continuous function at all.
+                    If we use the same definition for all reals as long as the pieces change at 9 and 49.
+                    Note however that the slopes change at 9 and 49.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>Let <m>f(x)</m> be the minimum of <m>(x-50)^2/25</m> and 50.</p>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="ex-excel-disc-last">
+          <statement>
+            <p>
+              The cost of parking is $5 per hour rounded to the nearest half hour.
+              For the chart of the values let x goes from 0 to 4 in steps of 0.2.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li><p>The Excel command is <c>=5*CEILING(A2,0.5)</c></p></li>
+                <li><image width="90%" source="images/sec2-3-sol15a.png"/></li>
+                <li><p>The graph is on the chart above.</p></li>
+                <li><p>The graph is discontinuous at multiples of .5</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Profit model with nonlinear models</p>
+
+          <p>
+            For <xref first="ex-prof-nlm-first" last="ex-prof-nlm-last"/>,
+            given the equations of the cost and demand price function:
+            <ol marker="(a)">
+              <li><p>Find the revenue and profit functions.</p></li>
+              <li><p>Evaluate cost, demand price, revenue, and profit at <m>q_0</m>.</p></li>
+              <li><p>Find the first break-even point.</p></li>
+              <li>
+                <p>
+                  Graph the profit function over a domain that includes the first break-even point.
+                  Add a textbox and label to identify the break-even point.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-prof-nlm-first">
+          <statement>
+            <p>
+              Given <m>\Dprice=30*(0.95)^{\quantity/10}</m> and <m>\cost=3 \quantity+100</m>, with <m>q_0=6</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>\Dprice=40*(0.90)^{(q/10)}</m> and <m>\cost=10 q+200</m>, with <m>q_0=10</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <md>
+                      <mrow>\revenue \amp =q*40(0.90)^{q/10}</mrow>
+                      <mrow>\profit \amp =q*40(0.90)^{q/10}-10q-200</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <md>
+                      <mrow>\Dprice(10)\amp =40*(0.90)^{10/10} =36</mrow>
+                      <mrow>\cost(10) \amp =10*10+200=300</mrow>
+                      <mrow>\revenue(10)\amp =q*40(0.90)^{10/10}=36</mrow>
+                      <mrow>\profit \amp =400(0.90)^{10/10}-300=60</mrow>
+                    </md>
+                  </p>
+                </li>
+                <li><p>The first break-even point was found using Goal Seek and occurs when <m>q = 7.4</m>.</p></li>
+                <li><image width="90%" source="images/sec2-3-sol17a.png"/></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>\Dprice =- q/10+50</m> and <m>\cost=-2(q/1000)^2+10 q+1000</m>, with <m>q_0=300</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>\price=47*(0.96)^{(q/11)}</m> and <m>\cost=-2(q/1000)^2+17 q+1234</m>, with <m>q_0=59</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <md>
+                      <mrow>\revenue \amp =q*47(0.96)^{q/11}</mrow>
+                      <mrow>\profit \amp =q*47(0.96)^{q/11}+2(\frac{q}{1000})^2-17q-1234</mrow>
+                    </md>
+                  </p>
+                </li>
+                <li>
+                  <p>Using Excel we get</p>
+                  <image width="90%" source="images/sec2-3-sol19a.png"/>
+                </li>
+                <li>
+                  <p>
+                    Using <m>q = 60</m> as the basis,
+                    using Goal Seek gives the value of our first break-even point as being 59.75.
+                  </p>
+                </li>
+                <li>
+                  <image width="90%" source="images/sec2-3-sol19b.png"/>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given demand price is an exponential function and cost is a quadratic
+              function fitting the data below and that <m>q_0=75</m>.
+            </p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>100</cell><cell>130</cell>
+              <cell>160</cell><cell>190</cell><cell>220</cell>
+              <cell>250</cell></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>48</cell><cell>41</cell>
+              <cell>35</cell><cell>30</cell><cell>26</cell>
+              <cell>22</cell></row>
+              <row bottom="medium">
+              <cell>Cost</cell><cell>3000</cell><cell>3280</cell>
+              <cell>3560</cell><cell>3860</cell><cell>4160</cell>
+              <cell>4470</cell></row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given demand price is an exponential function and cost is a quadratic
+              function fitting the data below and that <m>q_0=300</m>.
+            </p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>200</cell><cell>600</cell>
+              <cell>1000</cell><cell>1400</cell><cell>1800</cell>
+              <cell>2200</cell></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>190</cell><cell>171</cell>
+              <cell>155</cell><cell>140</cell><cell>126</cell>
+              <cell>114</cell></row>
+              <row bottom="medium">
+              <cell>Cost</cell><cell>30000</cell><cell>69600</cell>
+              <cell>109000</cell><cell>148000</cell><cell>186800</cell>
+              <cell>225200</cell></row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              Using Excel trendlines, we use the polynomial of order 2 approximation for cost:
+              <me>\cost = -0.0009x^2  + 99.864x + 10050</me>.
+            </p>
+            <p>
+              We use the exponential approximation for demand price:
+              <me>\Dprice = 199.78e^{(-0.0003x)}</me>.
+            </p>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <md>
+                      <mrow>\revenue=x*199.78e^{(-0.0003x)}</mrow>
+                      <mrow>\profit=x*199.78e^{(-0.0003x)}-(-0.0009x^2  + 99.864x + 10050)</mrow>
+                    </md>.
+                  </p>
+                </li>
+                <li><p>Recreate the table, but now with the functions we found:</p>
+                  <image width="70%" source="images/sec2-3-sol21a.png"/>
+                  <p>
+                    We can add another column to find the values of the respective functions when <m>q_0=300</m>.</p>
+                    <p>Demand price = $ 182.59, cost = $39,928.20, revenue = $54,775.55 and profit = $14,847.35.</p>
+                </li>
+                <li><p>The initial table does not include the break-even points.</p>
+                  <image width="70%" source="images/sec2-3-sol21b.png"/>
+                  <p>
+                    So we redo the table starting with q=0 and taking steps of 400.
+                    Goal Seek on the quantity q =0 reveals the first break even point to be at <m>q = 107.27</m>.
+                  </p>
+                  <image width="80%" source="images/sec2-3-sol21c.png"/>
+                </li>
+                <li>
+                  <image width="90%" source="images/sec2-3-sol21d.png"/>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given demand price is a linear function and cost is a quadratic
+              function fitting the data below and that <m>q_0=800</m>.
+            </p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell><cell>200</cell><cell>600</cell>
+              <cell>1000</cell><cell>1400</cell><cell>1800</cell>
+              <cell>2200</cell></row>
+              <row bottom="medium">
+              <cell>Demand price</cell><cell>140</cell><cell>120</cell>
+              <cell>100</cell><cell>80</cell><cell>60</cell>
+              <cell>40</cell></row>
+              <row bottom="medium">
+              <cell>Cost</cell><cell>31600</cell><cell>52400</cell>
+              <cell>70000</cell><cell>84400</cell><cell>95600</cell>
+              <cell>103600</cell></row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given
+              <me>
+                \Dprice(q)=\begin{cases}
+                100-q/10&amp;q \le 50\\
+                95-q/20&amp;q \gt 50\\
+                \end{cases}
+              </me>
+              and
+              <me>
+                \cost(q)=\begin{cases}
+                3000+50q&amp;q \le 100\\
+                3000+47q&amp;q \gt 100\\
+                \end{cases}
+              </me>.
+              with <m>q_0=200</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <md>
+                      <mrow>\revenue(q)=\begin{cases}
+                      q*100-q^2/10&amp;q \le 50\\
+                      95q-q^2/20&amp;q \gt 50\\
+                      \end{cases}</mrow>
+                      <mrow>\profit(q)=\begin{cases}
+                        q*100-q^2/10-50q-3000&amp;q \le 50\\
+                        95q-q^2/20-50q-3000&amp;50 \lt q \le 100\\
+                        95q-q^2/20-47q-3000&amp;q \gt 100\\
+                        \end{cases}</mrow>
+                    </md>
+                  </p>
+                </li>
+                <li><p>Cost = $12,400, demand price = $88, revenue = $17,600, and profit = $5200</p></li>
+                <li>
+                  <p>The table shows that the breakeven point is close to <m>q = 70</m>.</p>
+                  <p>Goal Seek shows it’s at <m>q=72.5</m>.</p>
+                </li>
+                <li><image width="90%" source="images/sec2-3-sol23a.png"/></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-prof-nlm-last">
+          <statement>
+            <p>
+              Given
+              <me>
+                \Dprice(q)=\begin{cases}
+                200-0.05q&amp;q \le 50\\
+                200-0.07q&amp;q \gt 50\\
+                \end{cases}
+              </me>
+              and
+              <me>
+                \cost(q)=\begin{cases}
+                  4000+40q&amp;q \le 100\\
+                  4000+37q&amp;q \gt 100\\
+                  \end{cases}
+              </me>
+              with <m>q_0=300</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>

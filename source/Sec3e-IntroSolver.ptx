@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-3-5-IntroductionSolver">
+    <title>An Introduction to Solver</title>
+
+    <p><url href="external/Examples/Section-3-5-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-5-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+    <p>
+      We should expect, whenever we look at an operation that is used a lot in the business world,
+      that Excel will have a fairly simple command to achieve the result.
+      In section 1.5, we introduced Goal Seek, a tool that is part of Excel,
+      and that can be used to solve an equation for a root from a given starting point.
+      In the last section, we noted that one can find candidates for a local maximum or minimum of a function by finding the derivative and using Goal Seek to find where the derivative is 0.
+      In this section we introduce Solver, an Add-In to Excel.
+      It is easiest to think of solver as a more powerful version of Goal Seek.
+      It will be easiest to walk through the use of Solver while working an example.
+    </p>
+
+    <example>
+      <title>Use Solver to gather information about the graph</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="vBGPmtXB_VY"/>
+        </figure>
+
+        <p>
+          Let <m>f(x)=9 x-x^2+7</m> on the interval <m>-1\le x \le 14</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          As always, we start by using simpler tools.
+          In this case it is useful to have Excel sketch a graph and to use information we gathered in prior course.
+          From the form of the function we know the graph is a parabola that points downwards.
+        </p>
+
+        <image width="70%" source="images/sec3-5-1.png"/>
+
+        <p>
+          Looking at the chart and the picture we see that the vertex is close to <m>x=4.5</m>.
+          We also see that the x-intercepts are close to <m>x=-0.5</m> and <m>x=9.5</m>.
+        </p>
+
+        <p>
+          Next, we want to make sure that Solver is installed.
+          It should be on the Analysis section of the Data tab.
+        </p>
+
+        <image width="30%" source="images/sec3-5-2.png"/>
+
+        <p>
+          If you don’t find it there, you should go to the online help for Excel,
+          and look for help on Solver.  Under the topic <q>Define and solve a problem by using Solver</q>,
+          select first <q>Define and solve a problem</q>, then <q>If you don’t see Solver under Analysis on the Data tab</q>.
+        </p>
+
+        <p>
+          We first want to use Solver to find a root.
+          Using the same approach we used with Goal Seek, we would like cell <c>B5</c>
+          to be set equal to 0 by changing the value of cell <c>A5</c>.
+          (As we have set up the problem, we could use solver starting with any of the cells that give a value for <m>f(x)</m>.
+          I chose the one that has <m>f(x)</m> closest to the desired result.)
+        </p>
+
+        <image width="70%" source="images/sec3-5-3.png"/>
+
+        <p>
+          Solver finds a solution with <m>x=-0.72015</m>.
+          We are given a dialog box that asks if we want to keep the solver solution or restore our original value.
+        </p>
+
+        <image width="70%" source="images/sec3-5-4.png"/>
+
+        <p>
+          As with Goal Seek, if we use Solver again, starting with <m>x</m> closer to 9,
+          we will find a solution <m>x=9.72015</m>.
+        </p>
+
+        <p>
+          We introduce Solver because it can do things would be more difficult with Goal Seek.
+          From the graph, and our knowledge or parabolas, we know the graph has a single maximum.
+          To find the maximum with Goal Seek, we need to realize that the maximum occurs when the derivative is 0,
+          define the numerical derivative, then set the derivative equal to 0.
+          With Solver, we simply ask it to find the maximum.  It finds the vertex at <m>x=4.5</m>.
+        </p>
+
+        <image width="70%" source="images/sec3-5-5.png"/>
+
+        <p>
+          We also would like to be able to find a minimum.
+          From the picture, we know that a downward pointing parabola has no absolute minimum.
+          However, in business, we are typically concerned with functions defined on a finite domain.
+          For this problem, consider only the interval <m>0\le x\le 15</m>.
+          We want the minimum to appear in cell <c>B7</c>, so we want to constrain cell <c>A7</c>.
+          If we start Solver, then hit the add button, we get a dialog box to enter the first constraint, that <c>A7</c><m>\ge 0</m>.
+        </p>
+
+        <image width="40%" source="images/sec3-5-6.png"/>
+
+        <p>
+          In a similar manner, we add the constraint that A7 15 and ask solver for a minimum.
+        </p>
+
+        <image width="70%" source="images/sec3-5-7.png"/>
+
+        <p>
+          Since we started the search for the minimum at <m>x=0.5</m>, Solver finds the minimum at <m>x=0</m>.
+          This is a <q>local minimum</q>.  Any <m>x</m> value in the interval that is close by gives a higher value for the function.
+        </p>
+
+        <p>
+          We would also like to find the minimum at the other end of the interval.
+          To do that it is useful to know a bit of the mathematics behind what solver is doing.
+          Solver uses derivatives from the starting point to decide on the direction it should look and how far it should go to find the next guess for its answer.
+          This is a modification of a technique called Newton’s method.
+          In terms of our picture, depending on whether we tell it to find a maximum,
+          minimum, or specified value, Solver tries to slide up or down the graph until it finds a good candidate,
+          which it gives us as a solution.  It is actually looking for the first local maximum or minimum it gets to.
+          It does not look for other candidates.  So if we started at <m>x=0.5</m>, it will slide to the left to find an answer.
+          To find the minimum at the other end of the interval, we need a starting point where the graph is already sloping down to the right.
+          Starting at <m>x=8</m> should work.  We set up Solver.
+        </p>
+
+        <image width="70%" source="images/sec3-5-8.png"/>
+
+        <p>
+          Solver finds that the curve had a minimum at <m>x=15</m> with <m>f(x)=-83</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      To recap, using Solver on the interval <m>0\le x\le 15</m>,
+      we found has a root at <m>x=9.72015</m>, a maximum at <m>x=4.5</m>,
+      and local minimums at <m>x=0</m> and <m>x=15</m>.
+      We also found the values of <m>f(x)</m> at all of those points.
+      However, this example was chosen because we could get the same results with work by simply using the properties of parabolas.
+      Thus, we now want to ask the same questions about a problem we cannot solve algebraically.
+    </p>
+
+    <example xml:id="eg-deceptive-graph">
+      <title>A deceptive graph</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="80rgSBoubTk"/>
+        </figure>
+        <p>
+          Use solver to gather information, on the interval <m>0\le x\le 15</m>,
+          on the graph of <m>f(x)=(x^3-4x^2+4x+3) e^{(-x/2)}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>As always, start by looking at a graph.</p>
+
+        <image width="70%" source="images/sec3-5-9.png"/>
+
+        <p>
+          From the graph I expect the function has no roots on the interval.
+          It has local minimums near 0, 2.5, and 10.  It has local maximums near 0.5, and 8.
+          I will need to add constraints to find the local minimums at the boundaries.
+          To make my worksheet easy to read I add two extra columns for the x and y values of interesting point,
+          and fill in guesses.
+        </p>
+
+        <image width="100%" source="images/sec3-5-10.png"/>
+
+        <p>
+          After I use Solver, I find the local minimums occur at 0, 2.326, and 10,
+          and the local maximums occur at 0.29115 and 7.3827.
+          The maximum value for the function in the interval is 5.409 and the minimum is 1.0149.
+          We verify that the endpoints, <m>x=0</m> and <m>x=10</m>, are both local minimums.
+        </p>
+
+        <image width="100%" source="images/sec3-5-11.png"/>
+
+        <p>
+          This function can be used to illustrate a limitation of our method.
+          If we had graphed the functions at intervals at intervals of size 1 rather than 0.5, we get a different picture.
+        </p>
+
+        <image width="100%" source="images/sec3-5-12.png"/>
+
+        <p>
+          In that case, we miss the local maximum at 0.29 and confuse the left endpoint as a local maximum.
+          Since Solver does not use the picture, it will not be misled by it.
+          This example points out that while the graph is useful for guidance,
+          we need to verify that we have not been misled by not graphing with enough resolution.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      <alert>Warning</alert>: In <xref ref="eg-deceptive-graph"/> we saw that relying on the graph could deceive us.
+      The flip side is an example where relying on Solver can deceive us.
+      We mentioned earlier that Solver uses a variant of Newton’s method to find values.
+      In rough terms, it repeatedly finds the linear approximation and slides up or down that line to the desired answer.
+      If we start close to the answer, this is a very effective method of finding a numerical solution.
+      However, it is easy to construct problems where this leads to a blind alley or to the wrong answer.
+      In particular, the method has great difficulty with problems where the function is not differentiable or where it has several bends.
+      Consider the following example.
+    </p>
+
+    <example>
+      <title>Deceiving Solver</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="Bc9CGnk9X8I"/>
+        </figure>
+        <p>
+          Use solver to gather information, on the interval <m>-2\le x\le 2</m>, on the graph of
+          <me>f(x)=\begin{cases}
+          -5x-3\amp x\lt 0\\
+          4(x-1)^2 \amp x \gt 0\\
+          \end{cases}</me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          As always, start by looking at a graph.  We use the <c>IF</c> function to produce cases.
+        </p>
+
+        <image width="70%" source="images/sec3-5-13.png"/>
+
+        <p>
+          It is pretty easy to see that the function reaches a maximum of 7 at <m>x=-2</m>,
+          and has a root at <m>x=-0.6</m>.  On this interval the function does not have a minimum,
+          but it gets close to -3 when <m>x</m> approaches 0 from the negative side.
+          If we start at <m>x=0.5</m> and try sliding up or down the curve,
+          we are going in the wrong direction to find the root or minimum.
+          To find the maximum we also need to go down before we can go up to the maximum.
+        </p>
+
+        <p>
+          When we look at solver, we get the wrong but expected results.
+          The function not only fails to have a tangent line at <m>x=0</m>, it has a jump there.
+          Solver finds the nearest local maximum and minimum.
+          For the root, it tells us it can’t find a feasible solution.
+        </p>
+
+        <image width="70%" source="images/sec3-5-14.png"/>
+      </solution>
+    </example>
+
+    <p>
+      The lesson to learn is that solver will help us find our candidate points,
+      but we still need to understand the functions behavior well enough to give a good starting point.
+    </p>
+
+    <paragraphs>
+      <title>A preview of things to come <mdash/> Extrema of functions of two variables</title>
+
+      <p>
+        There is another feature of Solver that we will come back to later in the course.
+        Goal Seek asked which cell should be changed to reach our desired goal.
+        Solver allows us to specify a number of cells that we can change.
+        This means it will work with functions of several variables.
+        This will allow us to shed some light on one of the <q>black boxes</q> we used earlier in this course,
+        the ability of Excel to find a trendline, or best fitting curve to a set of data.
+      </p>
+
+      <example>
+        <title>Use solver to find a best fitting line to a data set</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="EAMhm1ALbv0"/>
+          </figure>
+
+          <p>
+            Find a best fitting line to the following data.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>x</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>5</cell></row>
+            <row bottom="minor">
+            <cell>y</cell>
+            <cell>35</cell>
+            <cell>46</cell>
+            <cell>78</cell>
+            <cell>84</cell>
+            <cell>114</cell></row>
+          </tabular>
+        </statement>
+        <solution>
+          <p>
+            As we mentioned in <xref ref="sec-1-4-GraphingFunctionsExcel"/>,
+            when we are asked to find a best fitting line,
+            we are asked to create a predicting function <m>p(x)=A x+B</m>,
+            with <m>A</m> and <m>B</m> chosen to minimize the sum of the squares of the error between the actual values and the predicted values.
+            We build a worksheet that finds the sum of squared errors.
+            We start with our variables, A and B, set at 5, an arbitrary initial guess.
+          </p>
+
+          <image width="70%" source="images/sec3-5-15.png"/>
+
+          <p>
+            We ask Solver to minimize <c>D11</c> by changing <c>B2</c> and <c>B3</c>.
+            For comparison we ask for the best fitting Trendline using the scatterplot.
+          </p>
+
+          <image width="80%" source="images/sec3-5-15.png"/>
+
+          <p>
+            We see that we get the same answers, subject to rounding rules.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        The Trendline tool has the advantage of being easier to use in many cases.
+        Finding the best fitting curve with solver has the advantage of showing what we mean by best fitting.
+        It will also work with models that may not have been programmed into the Trendline tool.
+      </p>
+    </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, Optimization</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"It is easiest to think of solver as a more powerful version of Goal Seek.  ", 
+"Solver is more versatile than  Goal Seek. ", 
+"Solver uses a version of Newton's method to find extrema.  ", 
+"Solver can run into problems when it has to move across a bend in the curve to find a solution. ", 
+"Solver can be used on functions of 2 variables.  ",                      
+                
+"Solver can find the minimum of any function.  ",                 
+"Solver will only find a root if the function actually has one.  "
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.5, An Introduction to Solver, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+    <exercises xml:id="exercises-set-sec-3-5">
+      <title>Exercises: An Introduction to Solver</title>
+      <exercisegroup>
+        <introduction>
+          <p>
+            In <xref first="ex-solver-opt-first" last="ex-solver-opt-last"/>
+            you are given a function and an interval it is defined over:
+            <ol marker="(a)">
+              <li><p>Make a chart of values and plot a graph of the function.</p></li>
+              <li><p>Find any roots for the function.</p></li>
+              <li><p>Find relative maxima and minima for the function.  (Remember to include the endpoints.).</p></li>
+              <li><p>Find the absolute maximum and minimum of the function on the interval.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-solver-opt-first">
+          <statement>
+            <p>
+              <m>f(x)=x^2-10x+9</m>, on the interval <m>0\le x\le 10</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="70%" source="images/sec3-5-sol1a.png"/>
+                </li>
+                <li><p>We can read off the roots from the table <m>f(x)=0</m> at <m>x = 1</m> and at <m>x = 9</m></p></li>
+                <li>
+                  <p>Use Solver to find the minimum.</p>
+                  <image width="50%" source="images/sec3-5-sol1b.png"/>
+                  <p>Solver indicates that the minimum value of the function is -16 and the minimum takes place at <m>x = 5</m>.</p>
+                  <p>We have local maximums at the endpoints <m>(0, 9)</m> and <m>(10,9)</m>.</p>
+                </li>
+                <li>
+                  <p>Test the endpoints,<m>(0, 9)</m> and <m>(10,9)</m>,  and compare to the minimum, <m>(5, 16)</m>.</p>
+                  <p>The absolute minimum is -16 (at <m>x = 5</m>) and the absolute maximum is 9 (at <m>x = 1</m> and 10)</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+  	           <m>g(x)=10x*(4/5)^x-1</m>, on the interval <m>0\le x\le 10</m>.
+             </p>
+           </statement>
+         </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+  	          <m>h(x)=(3000+200x) (0.97)^x</m>, on the interval <m>0\le x\le 100</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="70%" source="images/sec3-5-sol3a.png"/>
+                </li>
+                <li><p>This function does not have any roots on the interval <m>0\le x \le 100</m>. </p></li>
+                <li>
+                  <p>
+                    The graph indicates there is a maximum near <m>x = 20</m>. Use Solver:
+                    There is a maximum at <m>x = 17.83</m>. The maximum value is 3814.53.
+                  </p>
+                  <p>We have local minimums at the endpoints <m>(0, 3000)</m> and <m>(100, 1093.71)</m>.</p>
+                </li>
+                <li>
+                  <p>
+                    Compare the local extrema to the endpoints.
+                    We need to consider three points, <m>(100, 1093.71)</m>, <m>(17.83, 3814.53)</m>, and <m>(100, 1093.71)</m>.
+                  </p>
+                  <p>The global maximum is 3814.53 (at <m>x = 17.83</m>). </p>
+                  <p>The global minimum of 1093.71 (at <m>x = 100</m>).</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The revenue function, <m>\revenue(q)=(500-3q)(q)</m>, on the interval <m>0\le q\le 200</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+	             The profit function, <m>\profit(q)=(500-3q)(q)-(12q+600)</m>, on the interval
+               <m>0\le q\le 200</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="70%" source="images/sec3-5-sol5a.png"/>
+                </li>
+                <li>
+                  <p>
+                    There are 2 roots: one near <m>q = 0</m>, and the other near <m>q = 160</m>.
+                    Using Solver we find the roots are at <m>q = 1.24</m> and <m>q = 161.43</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The local maximum looks to be near <m>q = 80</m>.
+                    Using solver we get a local maximum of $19,245.33 at <m>q = 81.33</m>.
+                  </p>
+                  <p>We have local minimums at the endpoints <m>(0, -600)</m> and <m>(200, -23000.)</m>.</p>
+                </li>
+                <li>
+                  <p>
+                    Compare the local extrema to the endpoints.
+                    We need to consider three points, <m>(0, -600)</m>, <m>(81.33, 19245.33)</m>, and <m>(200, -23000)</m>.
+                  </p>
+                  <p>The global maximum is 19245.33 (at <m>x = 81.33</m>). </p>
+                  <p>The global minimum of -23000 (at <m>x = 200</m>).</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+	            The profit function obtained as the best fitting quadratic curve for the following data.
+            </p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell>
+              <cell>157</cell>
+              <cell>513</cell>
+              <cell>702</cell>
+              <cell>842</cell>
+              <cell>995</cell></row>
+              <row bottom="minor">
+              <cell>Profit</cell>
+              <cell>143,814</cell>
+              <cell>314,801</cell>
+              <cell>322,223</cell>
+              <cell>279,988</cell>
+              <cell>189,263</cell></row>
+            </tabular>
+            <p>
+              on the interval <m>0\le \quantity\le 1200</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="ex-solver-opt-last">
+          <statement>
+            <p>
+	            The cost function obtained as the best fitting cubic curve for the following data.
+            </p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell>
+              <cell>2</cell>
+              <cell>6</cell>
+              <cell>9</cell>
+              <cell>12</cell>
+              <cell>15</cell></row>
+              <row bottom="minor">
+              <cell>Cost</cell>
+              <cell>487</cell>
+              <cell>539</cell>
+              <cell>532</cell>
+              <cell>541</cell>
+              <cell>626</cell></row>
+            </tabular>
+            <p>
+              on the interval <m>0\le \quantity\le 16</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              First we need to use Trendlines to find the equation of the function.
+              Use polynomial of degree 3 to find the function
+              <me>\cost(x)= 0.3353x^3  - 7.9874x^2  + 59.63x + 396.91</me>.
+            </p>
+
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="70%" source="images/sec3-5-sol7a.png"/>
+                </li>
+                <li><p>There are no roots on the interval <m>[0,16]</m>.</p></li>
+                <li>
+                  <p>
+                    There is a local maximum between 4 and 8, and a local minimum between 8 and 12.
+                    Using Solver We find the local maximum at <m>(6.00, 539.57)</m> and a local minimum at <m>(9.88, 529.74)</m>.
+                    We also have a local minimum at the endpoint <m>(0, 396.91)</m>
+                    and a local maximum at the other endpoint <m>(16, 679.604)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Compare the local extrema to the endpoints.
+                    We need to consider four points, <m>(0, \$396.91)</m>,
+                    <m>(6.00, \$539.57)</m>, <m>(9.88, \$529.74)</m>, and <m>(16, \$584.30)</m>.
+                  </p>
+                  <p>The global maximum is $396.91 (at <m>x = 0</m>) </p>
+                  <p>The global minimum of $679.604 (at <m>x = 16</m>)</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            In <xref first="ex-solver-plot-first" last="ex-solver-plot-last"/>
+            you are given a function that and an interval it is defined over.
+            <ol marker="(a)">
+              <li><p>Make a chart of values and plot a graph of the function.</p></li>
+              <li><p>Visually identify approximate local maxima and minima.  </p></li>
+              <li><p>Find a reasonable range of starting points from which Solver will find each local maximum or minimum.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-solver-plot-first">
+          <statement>
+            <p>
+              <m>f(x)=-0.25x^4+5.3x^3-36x^2+90x-15</m>, on the interval <m>0\le x\le 15</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me>g(x)=\begin{cases}
+                          4x-10&amp; x\lt 5\\
+                          2(x-7)^2&amp;x \gt 5\\
+                          \end{cases}
+              </me>
+              on the interval <m>0\le x\le 10</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    Inserting an empty row will allow us to see the break in the graph where we switch from the linear part to the quadratic part of the function.
+                    The functions have been included for clarity.
+                  </p>
+                  <image width="90%" source="images/sec3-5-sol9a.png"/>
+                </li>
+                <li>
+                  <p>
+                    The local maximum looks to be at approximately <m>x = 5</m> and the local minimum appears to be near <m>x = 7</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The local minimum is the most straight forward:
+                    start at <m>x = 7</m> and let Solver find the minimum.
+                    Solver indicates that the minimum value is 0 and the minimum occurs at <m>x = 7</m>.
+                  </p>
+                  <p>For the local maximum we can have two things happen:
+                    <ul>
+                      <li><p>The maximum is on the linear part of the equation.</p></li>
+                      <li><p>The maximum is on the quadratic part.</p></li>
+                    </ul>
+                  </p>
+                  <p>The two pieces do meet at <m>x = 5</m>, but we cannot see just where the line ends up.</p>
+                  <p>
+                    So start with <m>x = 4</m> on Solver,
+                    find the maximum on the interval [4,5] and compare that to the value on the other branch of the graph.
+                  </p>
+
+                  <image width="90%" source="images/sec3-5-sol9b.png"/>
+
+                  <p>Solver returns a value of 10 at <m>x = 5</m>.</p>
+                  <p>
+                    Note that <m>g(x)</m> is defined to be 8 exactly at <m>x = 5</m>,
+                    because the output is determined by the <m>2(x-7)^2</m>  part.
+                  </p>
+                  <p>
+                    Thus we do not have a local maximum here.
+                    The graph approaches 10 (gets infinitely close to it) as x approaches 5 from the left,
+                    but switches to 8 at he last minute.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-solver-plot-last">
+          <statement>
+            <p>
+              <me>h(x)=\begin{cases}
+                        -4*(x-2)^2&amp; x \lt 6\\
+                        2(x-7)^2-10&amp;x \gt 6\\
+                        \end{cases}
+              </me>
+              on the interval <m>0\le x\le 10</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>
+

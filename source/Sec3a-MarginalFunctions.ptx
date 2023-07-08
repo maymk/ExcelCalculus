@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+  <section xml:id="sec-3-1-MarginalFunctions">
+    <title>Marginal Functions and Difference Quotients</title>
+    <introduction>
+      <p><url href="external/Examples/Section-3-1-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+      <p>
+        There are a number of industries where it is common for people to pay significantly different prices for the same product from the same vendor.
+        (Airline tickets, symphony seats, and doughnuts at different times of the day come to mind.)
+        The reason is generally not favoritism or an irrational vendor,
+        but an analysis that looks at the change in costs and profits for making an additional sale.
+        Flying a plane with 51 passengers does not cost much more than flying the same plane with 50 passengers.
+        The same is true when playing a symphony.
+        Selling an extra doughnut at half price, just before closing when you would have to throw the doughnut out, adds to the profit.
+        In all of these cases, we are less concerned with total revenues and profits and more concerned with how things change with one more sale.
+      </p>
+
+      <p>
+        In finance and economics this issue is dealt with using marginal functions.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Marginal Functions</title>
+      <definition>
+        <title>Marginal value</title>
+        <statement>
+          <p>
+            If <m>f(x)</m> is a function (i.e., cost, revenue, or profit),
+            we define the <term>marginal value</term> of <m>f(x)</m> to be the change in <m>f(x)</m> as <m>x</m> increases by 1.
+            Thus
+            <me>
+              \operatorname{Marginal}f(x+1)=f(x+1)-f(x)
+            </me>.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        It is worthwhile to point out a detail that may cause a bit of confusion.
+        Note that we are defining marginal functions of <m>x+1</m> rather than the marginal functions of <m>x</m>.
+        This is the standard convention in finance where the question is phrased in terms of change associated with producing one more.
+        I am more concerned about deciding about what I should do rather than looking at what I have already done.
+        The usual functions with related marginal functions are Cost, Revenue, and Profit.
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              Marginal Cost at <m>x</m>, or <m>\Mcost(x+1)</m> is the change from <m>\cost(x)</m> to <m>\cost(x+1)</m>:
+              <me>
+                \Mcost(x+1)=\cost(x+1)-\cost(x)
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Mrev(x+1)</m> is the change from <m>\revenue(x)</m> to <m>\revenue(x+1)</m>:
+              <me>
+                \Mrev(x+1)=\revenue(x+1)-\revenue(x)
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Mprofit(x+1)</m> is the change from <m>\profit(x)</m> to <m>\profit(x+1)</m>:
+              <me>
+                \Mprofit(x+1)=\profit(x+1)-\profit(x)
+              </me>.
+            </p>
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        It is noteworthy that the three examples mentioned are all cases where the cost of producing the goods has already been set,
+        the goods cannot be saved and sold later, and any change in revenue adds to the profit.
+      </p>
+
+      <example>
+        <title>Marginal functions for widgets</title>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="ieyBmPqUBE4"/>
+          </figure>
+        <p>
+          For my widget company, I have determined that the cost and demand price functions are:
+          <md>
+            <mrow>\cost(q) \amp =40+3q+q^2/10</mrow>
+            <mrow>\Dprice(q) \amp =30-q/2</mrow>
+          </md>.
+        </p>
+
+        <p>
+          I want to compute the marginal cost, revenue, and profit to produce the 11th and 26th widget.
+          I also want to understand the marginal cost of producing the 1st widget.
+        </p>
+
+        <p>
+          To set up the problem, I recall that we assume we are selling at the demand price,
+          the highest price consumers will pay and still have us sell all we produce.
+          Thus the formulas for revenue and profit are:
+        </p>
+
+        <p>
+          <md>
+            <mrow>\revenue(q) \amp =(\Dprice(q))*q</mrow>
+            <mrow>\profit(q) \amp =\revenue(q)-\cost(q).</mrow>
+          </md>
+        </p>
+
+        <p>
+          I set up my worksheet to compute these values.
+        </p>
+
+        <image width="70%" source="images/sec3-1-1.png"/>
+
+        <p>
+          I then create additional columns for the marginal functions.
+        </p>
+
+        <image width="70%" source="images/sec3-1-2.png"/>
+
+        <p>
+          Now we simply go back to values and see the values.
+        </p>
+
+        <image width="70%" source="images/sec3-1-3.png"/>
+
+        <p>
+          <md>
+            <mrow>\Mcost(11) \amp =\cost(11)-\cost(10)=85.1-80=5.1</mrow>
+            <mrow>\Mrev(11) \amp =\revenue(11)-\revenue(10)=269.5-250=19.5</mrow>
+            <mrow>\Mprofit(11) \amp =\profit(11)-\profit(10)=184.4-170=14.4</mrow>
+            <mrow>  \amp </mrow>
+            <mrow>\Mcost(26) \amp =\cost(26)-\cost(25)=185.6-177.5=8.1</mrow>
+            <mrow>\Mrev(26) \amp =\revenue(26)-\revenue(25)=442-437.5=4.5</mrow>
+            <mrow>\Mprofit(26) \amp =\profit(26)-\profit(25)=256.4-260=-3.6</mrow>
+          </md>.
+        </p>
+      </example>
+
+      <p>
+        The last equation illustrates the use of marginal functions.
+        While producing and selling the 26th widget did increase total revenue,
+        the marginal profit was negative, so I would have been better off if I had made fewer widgets.
+        Notice that the marginal value of producing the 1st widget is not on the spreadsheet and needs to be dealt with as a special case.
+        Given our functions we have two reasonable ways to understand the value <m>\cost(0)</m>.
+        Either we can assume that there is no cost to not being in a business, so <m>\cost(0)=0</m>,
+        and our cost function was only valid for positive numbers,
+        or that the <m>\cost(0)</m> is understood as the fixed costs, which we have already undertaken,
+        like a tax or license fee, so <m>\cost(0)=40</m> for this problem.
+        Both are reasonable interpretations.
+        We will need to look at the context of our problem to decide on the correct interpretation.
+      </p>
+
+      <p>
+        Many questions in business can be translated into making some function as big or small as possible,
+        depending on whether we think the value is good or bad.
+        It is thus often useful to see a graph of both the function of interest and the related marginal function on the same graph.
+      </p>
+
+      <example>
+        <title>Profit and Marginal Profit Together</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="P-Y47M9eONI"/>
+          </figure>
+
+          <p>
+            The function <m>\profit(q)=-q^2/20+100q-1000 </m> expresses the profit at my gadget factory.
+            Plot both profit and marginal profit together to estimate both the maximum profit at the factory,
+            as well as the quantity I should produce to get that profit.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In setting up the spreadsheet, there are some details to notice.
+          </p>
+
+          <image width="70%" source="images/sec3-1-4.png"/>
+
+          <p>
+            Since Excel does negation before powers, I need parentheses so <m>-(q^2)</m> is evaluated correctly.
+            Since I suspect I will have to look at a large range of numbers to find the maximum,
+            I put <m>\profit(q)</m> and <m>\profit(q+1)</m> as separate columns.
+            This keeps my marginal operation in a single row and allows computation of Marginal Profit without evaluating for every value of q.
+            We now look at the graph with both Profit and Marginal Profit.
+            To make the graph easier to read, a secondary axis is used for profit.
+            This allows us to see where Marginal Profit crosses the axis.
+          </p>
+
+          <image width="70%" source="images/sec3-1-5.png"/>
+
+          <p>
+            We see that profit reaches a maximum where marginal profit is zero.
+            This occurs approximately when q is approximately 1000.
+            In that case the profit is about $50,000.  Looking back at the numbers in the spreadsheet,
+            we see that the maximum profit is closer to $49,000.
+          </p>
+
+          <image width="50%" source="images/sec3-1-6.png"/>
+        </solution>
+      </example>
+
+      <p>
+        The more realistic situation for us to face is one where we are given a collection of data points.
+        In that situation, we need to first find a best fitting curve and use it to make predicted values.
+        Then, we can find the marginal function of interest and do our comparison.
+      </p>
+
+      <example>
+        <title>Marginal Profit from Data</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="Vk-lG9Lysgo"/>
+          </figure>
+
+          <p>
+            I have the following data on profit and production level for widgets.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>Widgets produced</cell>
+            <cell>40</cell>
+            <cell>50</cell>
+            <cell>78</cell>
+            <cell>87</cell>
+            <cell>95</cell></row>
+            <row bottom="minor">
+            <cell>Profit</cell>
+            <cell>$7,486.40</cell>
+            <cell>$14,505.60</cell>
+            <cell>$23,431.60</cell>
+            <cell>$23,014.30</cell>
+            <cell>$21,258.50</cell></row>
+          </tabular>
+
+          <p>
+            Use Marginal Profit to find the level of production that maximizes profit.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            I put the data into a spreadsheet and find a best fitting curve to produce a formula.
+            Looking at the data, I will assume that profit is a quadratic function of the amount produced.
+          </p>
+
+          <image width="70%" source="images/sec3-1-7.png"/>
+
+          <p>
+            With the formula from the trendline, I can add a column for <m>\Pprofit(x)</m>.
+            The obvious adjustment produces <m>\Pprofit(x+1)</m>.
+            It is then easy to compute the value of <m>\Mprofit(x+1)</m>.
+          </p>
+
+          <image width="100%" source="images/sec3-1-8.png"/>
+
+          <p>
+            Looking at the graph, the maximum is close to <m>x=80</m>.
+            I simply add some rows with appropriate values of <m>x</m> to get the desired answer.
+          </p>
+
+          <image width="50%" source="images/sec3-1-9.png"/>
+
+          <p>
+            When <m>x = 80</m>, the Marginal Profit turns negative.
+            The maximum profit is $23,492.96, obtained by producing 80 widgets.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Difference Quotients and Average Rate of Change</title>
+
+      <p>
+        The marginal value, <m>Mf(x+1)</m>, of a function <m>f(x)</m>,
+        measures the amount of change from <m>f(x)</m> to <m>f(x+1)</m>.
+        It can also be understood as a special case of the average rate of change of <m>f(x)</m>.
+      </p>
+
+      <assemblage>
+        <p>
+          It is easy to see that the average rate of change of <m>f(x)</m> as <m>x</m> goes from <m>a</m> to <m>b</m> is
+          <me>
+            \frac{f(b)-f(a)}{b-a}
+          </me>.
+        </p>
+      </assemblage>
+
+      <p>
+        There are a number of situations where we want to look at average rate of change for a period of some other change in the variable.
+        We may have production in thousands or millions of units.
+        If we are looking at monthly or quarterly financial records,
+        we may want to look at the average rate of change over a year to take into account the seasonal variation of production.
+      </p>
+
+      <example>
+        <title>Rate of Change when denominator is not 1</title>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="KZ8qy3Q4GWk"/>
+        </figure>
+
+        <p>
+          We have the following monthly sales data on gizmos.
+        </p>
+
+        <image width="80%" source="images/sec3-1-10.png"/>
+
+        <p>
+          We want to find the rate of change of monthly sales. If we look at a graph of the sales data:
+        </p>
+
+        <image width="60%" source="images/sec3-1-11.png"/>
+
+        <p>
+          I can see that sales are trending upwards, but there is a seasonal variation added in.
+          Excel will not do a good job of modeling this function with a trendline.
+          Thus, I want to find a rate of change over a period of 12 months to eliminate the seasonal variation.
+          To find the most recent trend I use the most recent data with a time period of 12 months.
+        </p>
+
+        <p>
+          <md>
+            <mrow>\text{Monthly Rate of Change} \amp = \frac{Sales(25)-Sales(13)}{25-13}</mrow>
+            <mrow> \amp = \frac{1298-1176}{25-13}=\frac{122}{12}\approx 10</mrow>
+          </md>.
+        </p>
+      </example>
+
+      <p>
+        It is worth noting that the need to adjust for the right time period for comparisons is
+        probably the reason that company revenue reports typically show the previous quarter as well as
+        the quarter from a year earlier.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>An Excel Trick for Difference Quotients</title>
+      <figure>
+        <caption>Video presentation of this topic</caption>
+        <video youtube="N50HlMfvYSc"/>
+      </figure>
+
+      <p>
+        When creating marginal functions or other difference quotients,
+        we often want the computations kept in one row,
+        particularly if we want to graph the function and the marginal function together.
+        A careful arrangement of the columns and the use of quick fill will make our life easier.
+      </p>
+
+      <p>
+        Suppose my revenue function is <m>\revenue(q)=-0.2q^2+20q-5</m> and I want to compute marginal revenue.
+        Then <m>\revenue(q+1)=-0.2(q+1)^2+20(q+1)-5</m>.
+        Experience shows that students will often make a typing mistake in the second formula,
+        often forgetting parentheses somewhere or forgetting to change one of the copies of <m>q</m> to <m>q+1</m>.
+      </p>
+
+      <image width="60%" source="images/sec3-1-12.png"/>
+
+      <p>
+        One solution is to add an extra column for <m>q+1</m> next to the column for <m>q</m>.
+        Then the formula for <m>\revenue(q+1)</m> is obtained by quick filling form the formula for <m>\revenue(q)</m>.
+      </p>
+
+      <image width="60%" source="images/sec3-1-13.png"/>
+
+      <p>
+        This trick will be even more useful in the next section when we want to compute the values of <m>\revenue(q)</m>,
+        <m>\revenue(q+0.001)</m>, and <m>\revenue(q-0.001)</m>.
+      </p>
+    </subsection>
+
+
+    <exercise>
+      <title>Reading check, Marginal Functions and Difference Quotients</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The marginal value of \(f(x)\) is defined to be the change in \(f(x)\) as \(x\) increases by 1. ", 
+"Marginal Cost at x, or Marginal Cost(x+1) is the change from Cost(x) to Cost(x+1). ", 
+"Marginal Profit(x+1) is the change from Profit(x) to Profit(x+1).  ",                 
+"Marginal functions are difference quotients with denominator 1. ", 
+"Marginal Revenue(x) is the change from Revenue(x) to Revenue(x+1).  "                
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.1, Marginal Functions and Difference Quotients,, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-3-1">
+      <title>Exercises: Marginal Functions and Difference Quotients Problems</title>
+
+      <exercise>
+        <statement>
+          <p>
+            If <m>\revenue(q)=5q</m>, what is the marginal revenue from selling the 10th item?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The marginal revenue would be given by
+            <md>
+              <mrow>\Mrev(10) \amp =\revenue(10)-\revenue(9)</mrow>
+              <mrow> \amp =50-45=5</mrow>
+            </md>.
+          </p>
+
+          <p>
+            The marginal revenue from selling the 10th item is $5.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            If <m>\profit(q)=-100+5q-0.01q^2</m>, what is the marginal profit from selling the 20th item?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            If <m>\cost(q)=100+7q</m>, what is the marginal cost from selling the 30th item?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The marginal cost would be given by
+            <md>
+              <mrow>\Mcost(30) \amp =\cost(30)-\cost(29)</mrow>
+              <mrow> \amp =310-303=7</mrow>
+            </md>
+          </p>
+
+          <p>The marginal cost from selling the 30th item is $7.</p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            If <m>\revenue(q)=-500+7q-0.01\sqrt{q^3}</m>, what is the marginal revenue from selling the 100th item?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            If <m>\cost(q)</m> is a constant function what can you say about the marginal cost function?
+            (Use algebra to find a formula for the marginal function.)
+          </p>
+        </statement>
+        <hint>
+          <p>
+            <m>\Mcost(q+1)=\cost(q+1)-\cost(q)</m>
+          </p>
+        </hint>
+        <solution>
+          <p>
+            <m>\Mcost(q+1)=\cost(q+1)-\cost(q)</m>,
+            but the cost function is equal to some constant, so <m>cost(q+1)=cost(q)</m>.
+            This implies that the Marginal Cost function must be 0.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            If <m>\revenue(q)</m> is a linear function with slope <m>m</m>,
+            what can you say about the marginal revenue function?
+            (Use algebra to find a formula for the marginal function.)
+          </p>
+        </statement>
+      </exercise>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For <xref first="ex-mfunction-first" last="ex-mfunction-last"/>:
+            <ol marker="(a)">
+              <li><p> Make a chart of the function and the marginal function as q goes from 0 to 30.</p></li>
+              <li><p> Plot the function and the marginal function on the same graph.</p></li>
+              <li><p> From the shape of the graph of the marginal function, decide what kind of graph it appears to be.</p></li>
+              <li><p> Find the formula for a best fitting curve for the marginal function.</p></li>
+              <li><p> List the regions where the original function is increasing and the regions where it is decreasing.</p></li>
+              <li><p> List the regions where the marginal function is positive and where the marginal function is negative.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-mfunction-first">
+          <statement>
+            <p>
+              Let <m>\cost(q)=5000+23 q</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>Recall that <m>\Mcost(q+1)=\cost(q+1)-\cost(q)</m>.</p>
+                  <p>The entries in the cells should be</p>
+                  <image width="60%" source="images/sec3-1-sol7a.png"/>
+                  <p>(See part b for some of the values)</p>
+                </li>
+                <li>
+                  <p>Partial table and the graphs:</p>
+                  <image width="100%" source="images/sec3-1-sol7b.png"/>
+                </li>
+                <li><p>The table and the graph indicate that the marginal function is a constant (23 to be precise)</p></li>
+                <li><m>\Mcost (q)= 23</m></li>
+                <li><p> The cost function is always increasing.</p></li>
+                <li><p>The marginal function is always positive.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>\revenue(q)=16 q</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>\revenue(q)=-0.3q^2+10q-15</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p> Recall that <m>\Mrev(q+1)=\revenue(q+1)-\revenue(q)</m></p>
+                  <p>The entries in the cells should be</p>
+                  <image width="60%" source="images/sec3-1-sol9a.png"/>
+                  <p>(See part b for some of the values)</p>
+                </li>
+                <li>
+                  <p> Partial table and the graphs:</p>
+                  <image width="80%" source="images/sec3-1-sol9b.png"/>
+                </li>
+                <li><p> The table and the graph indicate that the marginal function is a line.</p></li>
+                <li><m>\Mrev(q+1)= -0.6q+9.7</m></li>
+                <li><p> The Revenue function is increasing until <m>q</m> is about 17.</p></li>
+                <li><p>The marginal function is positive until <m>q</m> is about 17.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>\profit(q)=-2q^2+100q-500</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>\cost(q)=q^3-4.5q^2+60q+100</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p> Recall that <m>\Mcost(q+1)=\cost(q+1)-\cost(q)</m>.</p>
+                  <p>The entries in the cells should be</p>
+                  <image width="90%" source="images/sec3-1-sol11a.png"/>
+                  <p>(See part b for some of the values)</p>
+                </li>
+                <li>
+                  <p> Partial table and the graphs:</p>
+                  <image width="80%" source="images/sec3-1-sol11b.png"/>
+                </li>
+                <li><p> The table and the graph indicate that the marginal function is a quadratic function.</p></li>
+                <li><m>\Mcost (q)= 3q^2-6q+56.5</m></li>
+                <li><p>The Cost function is always increasing.</p></li>
+                <li><p>The marginal function is always positive.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-mfunction-last">
+          <statement>
+            <p>
+              Let <m>value(q)=100(0.9)^q</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For problems 13-16 you are given data for a function.
+            <ol marker="(a)">
+              <li><p> Assuming the function is of the kind specified; find a best fitting curve for the function and a formula.</p></li>
+              <li><p> Plot the function and the marginal function on the same graph.</p></li>
+              <li><p> From the shape of the graph of the marginal function, decide what kind of graph it appears to be.</p></li>
+              <li><p> In a textbox, describe your conclusions about the sign of the marginal function and the rising or falling of the original function.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-mf-graph-first">
+          <statement>
+            <p>
+              Assume <m>\profit(q)</m> is a polynomial function of degree 2 and that you have the following data:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell>
+              <cell>30</cell>
+              <cell>48</cell>
+              <cell>73</cell>
+              <cell>149</cell>
+              <cell>177</cell></row>
+              <row bottom="minor">
+              <cell>Profit</cell>
+              <cell>447</cell>
+              <cell>561</cell>
+              <cell>669</cell>
+              <cell>801</cell>
+              <cell>759</cell></row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li><p> The best fitting curve is:   <m>y = -0.0297x^2 + 8.26x + 227.96</m></p></li>
+                <li>
+                  <p>
+                    If  <m>\Mprofit(x+1)=\profit(x+1)-\profit(x)</m>, then
+                    you can set this up in Excel by finding: <m>q, \profit (q), \profit(q-1)</m> and <m>\Mprofit (q)</m>.
+                  </p>
+
+                  <image width="80%" source="images/sec3-1-sol13a.png"/>
+
+                  <p>
+                    The chart was created and the marginal profit was plotted using the secondary axis.
+                  </p>
+                  <image width="80%" source="images/sec3-1-sol13b.png"/>
+                </li>
+                <li><p> The Marginal Profit function seems to be a straight line with negative slope.</p></li>
+                <li>
+                  <p>
+                    In a textbox, describe your conclusions about the sign of the marginal function and the rising or falling of the original function.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>Assume <m>\profit(q)</m> is a polynomial function of degree 2 and that you have the following data:</p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Quantity</cell>
+              <cell>105</cell>
+              <cell>203</cell>
+              <cell>349</cell>
+              <cell>535</cell>
+              <cell>644</cell></row>
+              <row bottom="minor">
+              <cell>Profit</cell>
+              <cell>339</cell>
+              <cell>1535</cell>
+              <cell>2429</cell>
+              <cell>2035</cell>
+              <cell>1029</cell></row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Assume <m>\operatorname{Resale Value}(q)</m> is an exponential function and that you have the following data:
+            </p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Year</cell>
+              <cell>2</cell>
+              <cell>4</cell>
+              <cell>6</cell>
+              <cell>8</cell>
+              <cell>10</cell></row>
+              <row bottom="minor">
+              <cell>Resale Value</cell>
+              <cell>$8,607</cell>
+              <cell>$7,593</cell>
+              <cell>$6,423</cell>
+              <cell>$5,684</cell>
+              <cell>$5,051</cell></row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="60%" source="images/sec3-1-sol15a.png"/>
+                  <p>
+                    <me>\operatorname{Resale Value}(x)=9836e^{-0.068x}</me>.
+                  </p>
+                </li>
+                <li>
+                  <p>Using the following Excel commands</p>
+                  <image width="80%" source="images/sec3-1-sol15b.png"/>
+                  <image width="80%" source="images/sec3-1-sol15c.png"/>
+                </li>
+                <li><p> Marginal Resale Value seems to be an exponential function</p></li>
+                <li><p> It appears that Marginal Resale Value is always negative and Resale value is always decreasing.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-mf-graph-last">
+          <statement>
+            <p>Assume <m>\operatorname{Retirement Balance}(q)</m> is an exponential function and that you have the following data:</p>
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+              <cell>Year</cell>
+              <cell>10</cell>
+              <cell>20</cell>
+              <cell>30</cell>
+              <cell>35</cell>
+              <cell>40</cell></row>
+              <row bottom="minor">
+              <cell>Amount</cell>
+              <cell>$54,713</cell>
+              <cell>$143,909</cell>
+              <cell>$289,476</cell>
+              <cell>$395,709</cell>
+              <cell>$533,071</cell></row>
+            </tabular>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            The monthly revenue, in thousands of dollars for your company is found to follow:
+            <me>
+              \revenue(t)=300+5t+30 \sin(t/6*\pi())
+            </me>.
+          </p>
+          <p>
+            Plot the revenue and marginal revenue.  Explain why marginal revenue is not a good indicator of growth.
+            Plot average rate of change over a 12-month span and explain why it is a better measure of growth.
+          </p>
+        </statement>
+        <solution>
+          <image width="90%" source="images/sec3-1-sol17a.png"/>
+          <p>
+            Marginal Revenue is the change in revenue each month.
+            This gives us some idea of what is happening each month,
+            but does not give a very clear picture of overall trends.
+          </p>
+          <p>
+            The average rate of change over a 12-month time span would be
+            <me>
+              \text{Average rate of change} =  \frac{\revenue(13)-\revenue(1)}{13-1}=\frac{360-300}{12}=5
+            </me>.
+            The overall growth over an entire year gives a better indication of trends.
+            And the comparison over a year indicates a slight growth on average by $5/month.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Historical data for quarterly revenue reports for Microsoft can be found online.
+            (A good source is <url href="http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.aspx" visual="http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.aspx">http://www.microsoft.com/investor/EarningsAndFinancials/TrendedHistory/default.asp</url>.)
+            Plot 5 years of data.
+          </p>
+          <p>
+            <ol marker="(a)">
+              <li><p> Explain why looking at marginal change of revenue from one quarter to the next is misleading.</p></li>
+              <li><p> Explain how to adjust for this problem.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+

@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-6-1-EvaluatingFunctionsSeveralVariables">
+    <title>Evaluating and Graphing Functions of Several Variables</title>
+
+    <p><url href="external/Examples/Section-6-1-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-6-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+    <p>
+      When we were evaluating functions of a single variable we had to replace the variable with a cell reference.
+      We do the same for functions of several variables.  We simply have to use several cell references.
+    </p>
+
+    <example>
+      <title>Bank balances</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="JY8lnC5VvFY"/>
+        </figure>
+
+        <p>
+          Find the amount of money I will have in the bank in 10 years if I deposit $1000 and the bank pays 5% interest, compounded quarterly.
+          Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use the formula for future value of a single deposit.
+          <me>
+            \FutureAmount=\InitialDeposit*\left(1+\frac{\rate}{\ppy}\right)^{\years*\ppy}
+          </me>.
+        </p>
+
+        <p>
+          Rather than typing the numbers into the formula, we place them in separate cells,
+          so we can easily change the values for any of the 4 variables.
+        </p>
+
+        <sidebyside widths="40% 40%">
+          <image width="40%" source="images/sec-6-1-1.png"/>
+          <image width="40%" source="images/sec-6-1-2.png"/>
+        </sidebyside>
+
+        <p>
+          At the end of 10 years, we have $1,643.62 in the bank.
+          By simply changing values in the worksheet, I find that compounding the interest annually reduces the final amount on 10 years to $1.628.89,
+          while compounding weekly increases the final amount to $1,648.33.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      In this example we have four variables. We could vary
+      the initial deposit, the rate, the number of periods per year and the interest rate.
+      In previous chapters we have a variable (say q) and the function (such as profit) that depends on <m>q</m>.
+      Such a function might be written as something like <m>\profit(q)= -3 q^2+500q-1000</m>.
+    </p>
+
+    <p>
+      If we simplify the notation a little bit in this example so that we have
+      <me>\operatorname{FA}(d,r,p,y)=d*\left(1+\frac{r}{p}\right)^{(y*p)}</me>,
+      where <m>\operatorname{FA}</m> is the future amount, and this is a function of four variables <m>d</m> (deposit),
+      <m>r</m> (interest rate), <m>p</m> (number of payments), and <m>y</m> (number of years).
+    </p>
+
+    <example>
+      <title>Demand price from 2 points</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="9gUk3C5kizM"/>
+        </figure>
+
+        <p>
+          Find the revenue for 500 widgets if I know that the demand price for 100 widgets is $20,
+          the demand price for 200 widgets is $18.75, and that the demand price is a linear function.
+          Set the problem up in Excel so that I can use the worksheet for similar problems with different numbers.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To make our worksheet easier to read, we use named cells.
+          We first have to find an equation for the demand price formula.
+          We compute a slope and intercept for this line from the points (100, 20) and (200, 18.75).
+          Once we have this function, we find that the demand price is $15 when quantity is 500.
+          We then compute revenue as price times quantity.
+        </p>
+
+        <sidebyside widths="40% 40%">
+          <image width="60%" source="images/sec-6-1-3.png"/>
+          <image width="40%" source="images/sec-6-1-4.png"/>
+        </sidebyside>
+
+        <p>
+          In this problem, revenue is a function of 5 variables:
+          <c>Demand1</c>, <c>Demand2</c>, <c>Price1</c>, <c>Price2</c>, and <c>NewDemand</c>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The next task to consider is making a table of values for a function of several variables.
+      Since our screens have 2 dimensions, we first look at the case when we allow two values to change.
+      When we made a table for a single variable, we had to use both absolute and relative cell reference
+      to distinguish between constant values used for all entries and variables that changed in each case.
+      With functions of two variables our table will have rows where one variable is held constant and columns where the other is held constant.
+      We note that quick filling a formula with the reference <c>$A5</c> will keep the column, A, constant but allow the row to change.
+      Similarly with the reference <c>A$5</c> the column can change, but the row is constant.
+    </p>
+
+    <example>
+      <title>Building a table with two variables</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="TwY2oKUKo7I"/>
+        </figure>
+
+        <p>
+          I want to produce a table that shows how much I need to put in the bank to have $100,000 at some point in the future.
+          I will assume that interest is compounded annually.
+          I want interest rate and number of years to be treated as variables with interest rate ranging from 5% to 6% and the length of time to vary from 5 to 40 years.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use the formula for present value of a single deposit.
+          Since the interest is compounded annually, the formula simplifies.
+          <me>
+            \PresentAmount=\frac{\FutureAmount}{(1+\rate)^{\years}}
+          </me>.
+        </p>
+
+        <p>
+          As we build the table, the future amount will be a constant, so it needs to be given as an absolute reference.
+          The number of years will be down the left side of the table and will be constant across a row,
+          so its reference should have a dollar sign before the letter.
+          The interest rate will be listed across the top of the table,
+          so its reference should have a dollar sign before the number.
+        </p>
+
+
+        <image width="80%" source="images/sec-6-1-5.png"/>
+
+        <p>
+          This lets us build the table we desire.  From the complete table,
+          we see that we can have $100,000 in the bank in 40 years by making a deposit of $9,722.22 at 6% interest.
+          In contrast if we only earn 5% interest and can only keep the money in the bank for 15 years,
+          we need to start with $48,101.71.
+        </p>
+
+        <image width="70%" source="images/sec-6-1-6.png"/>
+      </solution>
+    </example>
+
+    <p>
+      Similarly, we might want to produce a table that shows the monthly payment
+      on a mortgage where both the annual interest rate and the number of years are treated as variables.
+      Such a chart would be useful in deciding how big a mortgage a person can afford with different kinds of mortgages.
+    </p>
+
+    <example>
+      <title>Mortgage payments</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="SgewfMtKNDM"/>
+        </figure>
+
+        <p>
+          I want to produce a table that shows the monthly payment on a $100,000 mortgage with a range of interest rates and lengths of the mortgage.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use the <c>PMT</c> command to find the monthly payment.
+        </p>
+
+        <image width="80%" source="images/sec-6-1-7.png"/>
+
+        <p>
+          We can see that the monthly payment is $421.60 for a 30-year fixed rate mortgage at 3% compounded monthly.
+          For a 10-year mortgage at 6% the payment increases to $1,110.21.
+        </p>
+
+        <image width="70%" source="images/sec-6-1-8.png"/>
+      </solution>
+    </example>
+
+    <p>
+      After we build a table for a function we would also like to see a graph of the function.
+      Excel’s abilities to graph surfaces in not one of the program’s strong points.
+      Nevertheless, it is useful to be “able to see the big picture” by looking at a graph.
+      We will also note how to draw a graph of a surface with Wolfram Alpha.
+    </p>
+
+    <p>
+      When we looked at models of price, quantity, cost, revenue, and profit,
+      we made the simplifying assumption that a company only produces one product.
+      We want to consider what happens with two products.
+    </p>
+
+    <example xml:id="ex-multi-two-products">
+      <title>Table and graph</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="MmoLoUI-Ob4"/>
+        </figure>
+
+        <p>
+          I have a company that produces two products, widgets and gizmos.  The two demand functions are:
+          <md>
+            <mrow>\text{PriceGizmo}\amp =10-\text{QuantityGizmo}/50</mrow>
+            <mrow>\text{PriceWidget}\amp =20-\text{QuantityWidget}/40</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Produce a table and a graph for revenue as a function of the quantity of gizmos and widgets produced.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We need to start by producing a formula for revenue.
+          To shorten the equations we will abbreviate the terms or use initials.
+          We need formulas for revenue for each of our products:
+          <md>
+            <mrow>\text{RevG}\amp =\text{PriceG}*\text{QG}=\left(10-\frac{\text{QG}}{50}\right)\text{QG}=10\text{QG}-\frac{\text{QG}^2}{50}</mrow>
+            <mrow>\text{RevW}\amp =\text{PriceW}*\text{QW}=\left(20-\frac{\text{QW}}{40}\right)\text{QW}=20\text{QW}-\frac{\text{QW}^2}{40}</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Putting the equations together gives an equation for revenue.
+          <me>
+            \revenue=\text{RevG}+\text{RevW}=10\text{QG}-\frac{\text{QG}^2}{50}+20\text{QW}-\frac{\text{QW}^2}{40}
+          </me>.
+        </p>
+
+        <p>
+          Next we build a build a table for the function as we have done above.
+        </p>
+
+        <image width="80%" source="images/sec-6-1-9.png"/>
+
+        <p>
+          Finally, we would like to see a graph of the function.
+          We notice that the 3D plots in Excel have a number of drawbacks.
+          The plots do not label the input variables.
+          These first plots also don’t tell us what values of the variables correspond to particular points on the graph.
+          Some of these drawbacks can be overcome, but only with more work than we wish to expend in this course.
+          We will only add one non-intuitive option to make the graphs work better.
+        </p>
+
+        <image width="100%" source="images/sec-6-1-10.png"/>
+
+        <p>
+          We will move the names of the variables out of the upper left corner of the chart and into the row above and to the side of the data.
+          We leave the corner cell blank.  This will let us see the values of the variables in the graphs.
+          In the table, we select the data we would like to graph.
+          In this example we select from cells <c>B4</c> through <c>M12</c>.
+          Finally, we select a chart to insert.  The charts we are interested in are surface charts.
+          The types of interest are 3-D Surface, Wireframe 3-D, and contour.
+          Each of these chart types highlights some useful information.
+        </p>
+
+        <p>
+          The 3-D Surface gives a fast picture.  It is useful in seeing local minimums and maximums.
+        </p>
+
+        <image width="60%" source="images/sec-6-1-11.png"/>
+
+        <p>
+          The Wireframe 3-D chart emphasizes that we can build a reasonable picture from the curves obtained by treating either <m>x</m> or <m>y</m> as a constant.
+          It lets us understand a function of 2 variables by putting together a collection of several functions of one variable.
+          This point of view will be useful when we try to take derivatives.
+        </p>
+
+        <image width="80%" source="images/sec-6-1-12.png"/>
+
+        <p>
+          The Contour chart emphasizes the level curves. The rate of change will be fastest in a direction perpendicular to the level curves.
+        </p>
+
+        <image width="60%" source="images/sec-6-1-13.png"/>
+
+        <p>
+          Another alternative for seeing a graph is to use Wolfram Alpha.
+          Unfortunately variable names in Alpha seem to be limited to a single letter, or a letter followed by a digit.
+          Thus we change the formula to one using the names <c>g</c> and <c>w</c>.
+        </p>
+
+        <image width="80%" source="images/sec-6-1-14.png"/>
+      </solution>
+    </example>
+
+    <p>
+      The techniques of this section let us look at functions of two variables.
+      In the next section we explore techniques for understanding functions of several variables by treating some of the variables as constants.
+    </p>
+
+    <exercise>
+      <title>Reading check, Evaluating and Graphing Functions of Several Variables</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"In the text, bank balance was discussed as a function of 4 variables. ", 
+"In the text, the demand price of an object was discussed as a function of 5 variables, 2 given demands with associated prices and the demand quantity in question.   ", 
+"The book showed how to make a table for functions of two variables.  ", 
+"Wolfram Alpha will plot functions of two variables.  ", 
+
+"All functions have a single input variable, <m>x</m>  ", 
+"Excel easily graphs functions of three variables.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 6.1, Evaluating and Graphing Functions of Several Variables, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-6-1">
+	     <title>Exercises: Evaluating and Graphing Functions of Several Variables Problems</title>
+
+       <exercisegroup>
+         <introduction>
+           <p>
+             For the following exercises, set up an Excel notebook,
+             and evaluate the given function of several variables at the indicated values.  T
+             he workbook should be set up so that the input values can be changed and the formula will re-compute with the new values.
+           </p>
+         </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Evaluate the function <m>f(x,y)=x^2+3xy+4y^2</m>, when <m>x=4</m>, and <m>y=-2</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Setting this up so that the values of <m>x</m> and <m>y</m> can be easily changed we define <m>x</m> and <m>y</m>
+              in separate cells and then enter the function that computes <m>f(x,y)</m>.
+            </p>
+
+            <sbsgroup widths="50% 30%" valigns="middle top">
+              <sidebyside>
+                <image source="images/sec6-1-sol1a.png"/>
+                <image source="images/sec6-1-sol1b.png"/>
+              </sidebyside>
+              <sidebyside>
+                <p>Excel commands and general setup</p>
+                <p>Excel output</p>
+              </sidebyside>
+            </sbsgroup>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+               Evaluate the function <m>f(x,y,z)=x^2+3xy+4y^3+5xyz</m>, when <m>x=3</m>, <m>y=5</m>, and <m>z=7</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Express cost as a function of quantity, initial cost, and per-unit cost, when the initial cost is $2,000, the per-unit cost is $25, and the quantity is 75.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The function we would have is
+              <me>\text{Cost}=\text{Initial cost}+\text{per unit cost}*\quantity</me>.
+            </p>
+            <p>
+              We can set this up as a general Excel worksheet that allows us to vary all three givens.
+            </p>
+
+            <sbsgroup widths="50% 30%" valigns="middle top">
+              <sidebyside>
+                <image source="images/sec6-1-sol3a.png"/>
+                <image source="images/sec6-1-sol3b.png"/>
+              </sidebyside>
+              <sidebyside>
+                <p>Excel commands  and general setup</p>
+                <p>Excel output</p>
+              </sidebyside>
+            </sbsgroup>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+               Express revenue as a function of two quantity demand-price pairs and quantity,
+               assuming that demand price is a linear function,
+               where the quantity demand-price pairs are <m>(0, \$20)</m> and <m>(100, \$18)</m> and the quantity is 300.
+               (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Express revenue as a function of two quantity demand-price pairs and quantity,
+              assuming that demand price is an exponential function,
+              here the quantity price pairs are <m>(0, \$20)</m> and <m>(100, \$18)</m> and the quantity is 300.
+              (You may find it useful to have intermediate computations that find the coefficients of the demand price function, and the demand price.)
+            </p>
+          </statement>
+          <solution>
+            <p>
+              To get the price equation we can solve the system of equations we get by evaluating the exponential function <m>P=P_0  e^{kq}</m> at the two given points:
+              <md>
+                <mrow>(0,20)  \text{ gives us }   20 \amp =P_0  e^{(k*0)}</mrow>
+                <mrow>(100,18)  \text{ gives us }   18 \amp =P_0  e^{(k*100)}</mrow>
+              </md>.
+            </p>
+
+            <p>
+              Then <m>P_0=20</m> (from the first equation) , and
+              <m>18=P_0  e^{(k*100)}</m>  implies <m>18=20 e^{(k*100)}</m>  so that <m>e^{(k*100)}=18/20</m>.
+            </p>
+
+            <p>
+              Hence <m>100*k=\ln(18/20)</m>.
+              Solving for <m>k</m>:
+              <me>k=1/100\ln(18/20)\approx -0.0011</me>.
+            </p>
+
+            <p>
+              Alternatively we can use Excel.
+              Remember that if we have only two points we need to add one of the pairs twice so that Excel can graph the points correctly in a scatter plot.
+            </p>
+
+            <image width="90%" source="images/sec6-1-sol5a.png"/>
+
+            <p>
+              In Excel we have the Price equation as
+              <me>P=20 e^{(-0.001 q)}</me>.
+            </p>
+
+            <p>
+              The difference between the symbolic and numerical answers is a matter of how many decimals / significant digits we choose to keep.
+            </p>
+
+            <p>
+              The simplest answer would be to treat Price as a function of quantity.
+              But this is a section about multivariable functions.
+              So what if we wanted a more general setting where we were given the following:
+              <ul>
+                <li><p>Two points <m>(0,P_0)</m> and <m>(q_1,P_1)</m></p></li>
+                <li><p>A quantity <m>Q</m></p></li>
+              </ul>
+            </p>
+
+            <p>
+              The Price function would be
+              <me>P=P_0  e^{\left(\frac{1}{q_1} \ln\left(\frac{P_1}{P_0}\right) q\right)}</me>.
+            </p>
+
+            <p>
+              In Excel we could set up a table that would allow us to change <m>P_0</m>, <m>P_1</m>, <m>q_1</m>  and <m>q</m>
+              <me>\revenue(P_0,P_1,q_1,q)=q*P_0  e^{\left(\frac{1}{q_1} \ln\left(\frac{P_1}{P_0}\right) q\right)}</me>.
+            </p>
+
+            <sbsgroup widths="50% 30%" valigns="middle top">
+              <sidebyside>
+                <image source="images/sec6-1-sol5b.png"/>
+                <image source="images/sec6-1-sol5c.png"/>
+              </sidebyside>
+              <sidebyside>
+                <p>Excel commands  and general setup</p>
+                <p>Excel output</p>
+              </sidebyside>
+            </sbsgroup>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+               Express profit as a function of two quantity demand-price pairs,
+               quantity, initial cost, and per-unit cost, assuming that demand price is a linear function,
+               where the quantity demand-price pairs are <m>(100, \$30)</m> and <m>(200, \$28)</m>,
+               the quantity is 300, the initial cost is $3000, and the per-unit cost is $8.
+               (You may find it useful to have intermediate computations that find the cost and revenue.)
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Express the future value of a deposit as a function of the initial deposit, the annual interest rate, the number of years the deposit is held, and the number of times per year that the interest is compounded, where the deposit of $10,000 is held for 20 years at 3% interest, compounded monthly.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>\FutureAmount=\InitialDeposit*\left(1+\frac{\rate}{\ppy}\right)^{\years*\ppy}</me>.
+            </p>
+
+            <sbsgroup widths="50% 30%" valigns="middle top">
+              <sidebyside>
+                <image source="images/sec6-1-sol7a.png"/>
+                <image source="images/sec6-1-sol7b.png"/>
+              </sidebyside>
+              <sidebyside>
+                <p>Excel commands  and general setup</p>
+                <p>Excel output</p>
+              </sidebyside>
+            </sbsgroup>
+
+            <p>
+              For the rate, you should either make sure the cell is formatted as a percentage.
+              Or you can just enter the decimal 0.03. The display formula allows you to check that the number is formatted correctly.
+              We do want Excel to use the value of 0.03 in the formula, not 3.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Express the future value of a regular series of deposits as a function of the periodic deposit amount,
+              the annual interest rate, the number of years the deposits accumulate,
+              and the number of times per year that the deposits are made, where the deposit of $200 is deposited weekly for 20 years at 3% interest, compounded weekly.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Express the current value of a bond as a function of the final value,
+              the annual interest rate, and the number of years the bond is held,
+              where the final value of the bond is $10,000, held for 15 years at 3.5% interest, compounded monthly.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>\InitialDeposit=\FutureAmount*\left(1+\frac{\rate}{\ppy}\right)^{-\years*\ppy}</me>.
+            </p>
+
+            <sbsgroup widths="50% 30%" valigns="middle top">
+              <sidebyside>
+                <image source="images/sec6-1-sol9a.png"/>
+                <image source="images/sec6-1-sol9b.png"/>
+              </sidebyside>
+              <sidebyside>
+                <p>Excel commands  and general setup</p>
+                <p>Excel output</p>
+              </sidebyside>
+            </sbsgroup>
+
+            <p>So, to have $10,000 after 15 years we need to invest $5,920.08 now.</p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup xml:id="exg-ch6-excel">
+        <introduction>
+          <p>
+            For the following exercises,
+            set up an Excel notebook to produce a table for the given function as a function of the two specified variables and the other parameters.
+            The workbook should be set up so that the input values can be changed and the formula will recompute with the new values.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+               Create a table for the function <m>f(x,y)=3x^2+xy+5y^2</m>, with <m>x</m> ranging from <m>-10</m> to <m>10</m>,
+               and <m>y</m> ranging from <m>-5</m> to <m>15</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Create a table for the function <m>f(x,y,z)=xyz+x^2 y-y^2+5z</m>, with <m>x</m> ranging from <m>-10</m> to <m>10</m>,
+              and <m>y</m> ranging from <m>-5</m> to <m>15</m>, with <m>z=2</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              We need different types of absolute references.
+              If the <m>x</m> values are entered in column A,
+              and the <m>y</m> values are entered in row 4, and <m>z</m> is stored in Cell <c>B2</c>:
+              <ul>
+                <li><p> When using <m>x</m>, we want to fix the column reference.</p></li>
+                <li><p> When using <m>y</m>, we want to fix the row reference.</p></li>
+                <li><p> When using z we want to fix the cell reference.</p></li>
+              </ul>
+            </p>
+
+            <image width="90%" source="images/sec6-1-sol11a.png"/>
+
+            <p>In table form we get:</p>
+
+            <image width="100%" source="images/sec6-1-sol11b.png"/>
+
+            <p>
+              We can always check our work by double clicking a value in the table.
+              This will highlight the calls called upon to compute the entry.
+              Note that this will check if you are calling on the right <m>x</m>, <m>y</m> and <m>z</m>.
+              To check that the formula is correct we recommend the Show Formula feature.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+               Create a table that expresses cost as a function of quantity, and per-unit cost, with initial cost as a parameter, when the initial cost is $3,000, the per-unit cost ranges from $20 to $40 by $2, and the quantity ranges from 50 to 100 by 5.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Create a table that expresses the future value of a deposit as a function of the annual interest rate and the number of years the deposit is held, with the amount of the initial deposit and the number of times per year that the interest is compounded being treated as parameters, where the interest on a deposit of $10,000 is compounded quarterly, and the deposit is held for 20 to 40 years at interest rates ranging from 3% to 5%.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              We will enter the deposit and the times the interest is compounded (ppy) as fixed parameters.
+              The years run from 20 to 40, and the interest rate from 3% to 5%.
+              We have enough space on one sheet to do the years in increments of 1.
+              The interest is done in increments of 0.25%. This is something not uncommon in the banking world.
+            </p>
+
+            <image width="90%" source="images/sec6-1-sol13a.png"/>
+
+            <image width="100%" source="images/sec6-1-sol13b.png"/>
+
+            <p>
+              How much detail should you give? Imagine working at a bank.
+              What would be a good spreadsheet to share with a colleague, boss, or costumer?
+              It should be adequately labeled and it should be easy to read.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+               Create a table that expresses the future value of a regular series of deposits as a function of the annual interest rate and the number of years the deposit accumulate, with the amount of the deposits and the number of times per year that the interest is compounded being treated as parameters, where a deposit of $2,000 is made monthly, and the deposits accumulate for 20 to 40 years at interest rates ranging from 3% to 5%.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Create a table that expresses the current value of a bond as a function of the number of years the bond is held and the interest rate, where the final value of the bond is $10,000, the number of years the bond is held runs from 5 to 40 and the interest rate runs from 2% to 6%.
+            </p>
+          </statement>
+          <solution>
+            <p>The entries in the cell look like this:</p>
+
+            <image width="90%" source="images/sec6-1-sol15a.png"/>
+
+            <image width="100%" source="images/sec6-1-sol15b.png"/>
+
+            <p>
+              We can easily read off what our initial investment needs to be if we want to earn $10,000.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Create a table that expresses revenue as a function of the quantity of widgets and gizmos sold as both quantities range from 0 to 1000,
+              where the demand price functions are:
+              <md>
+                <mrow>\PriceGizmo\amp =50-\frac{\QuantityGizmo}{40}-\frac{\QuantityWidget}{300}</mrow>
+                <mrow>\PriceWidget\amp =40-\frac{\QuantityGizmo}{400}-\frac{\QuantityWidget}{50}</mrow>
+              </md>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Create a table that expresses revenue as a function of the quantity of widgets and gizmos sold as both quantities range from 0 to 1000,
+              where the demand price functions are:
+              <md>
+                <mrow>\PriceGizmo\amp =60(0.9)^{\QuantityGizmo/100}-\frac{\QuantityWidget}{200}</mrow>
+                <mrow>\PriceWidget\amp =40(0.85)^{\QuantityWidget/100}-\frac{\QuantityGizmo}{100}</mrow>
+              </md>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>x</m> be Gizmo, and <m>x</m> be Widget, then
+              <md>
+                <mrow>\text{PriceX}\amp =60(0.9)^{\frac{x}{100}}-\frac{y}{200}</mrow>
+                <mrow>\text{PriceY}\amp  =40(0.85)^{\frac{y}{100}}-\frac{x}{100} </mrow>
+                <mrow>\revenue \amp =x \text{PriceX}+y \text{Pricey}</mrow>
+                <mrow>\revenue \amp =x 60(0.9)^{\frac{x}{100}}-\frac{y}{200}+y40(0.85)^{\frac{y}{100}}-\frac{x}{100}</mrow>
+              </md>.
+            </p>
+
+            <image width="100%" source="images/sec6-1-sol17a.png"/>
+
+            <image width="90%" source="images/sec6-1-sol17b.png"/>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            Use either Excel or WolframAlpha to produce a graph of the function described in <xref ref="exg-ch6-excel"/>.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+

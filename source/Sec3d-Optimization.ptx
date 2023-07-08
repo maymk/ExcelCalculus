@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-3-4-Optimization">
+    <title>Optimization</title>
+
+    <p><url href="external/Examples/Section-3-4-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p>
+      In Section 3.2 we noticed that the high and low points of the graph of a function often coincided with a point where the derivative of the function was 0.
+      In a business setting, we are often concerned with finding the maximum and minimum values of a function,
+      because one or the other will be a best, or optimum value.
+      We typically want to maximize functions like profit, utility, revenue, and market share.
+      We typically want to minimize functions like cost and liability.
+      We will use the same basic process to optimize, whether the extremum we are finding is a maximum and minimum.
+    </p>
+
+    <p>
+      Recall, we said that the derivative can be thought of as the slope of the apparent line,
+      obtained by zooming in on the graph of a function.
+      Clearly, we cannot have an extremum at an interior point of the domain if the derivative is nonzero,
+      because we could go either higher or lower by moving a little to the right or left.
+      Thus we can only have extrema at a critical point, a place when the derivative is zero or undefined,
+      or at an endpoint where we cannot go both left and right.
+      This gives us a small list of candidate points for the optimum value.
+    </p>
+
+    <p>
+      Our process for optimization will be to find all the candidate points,
+      then to see which gives the highest and lowest values.
+      When our curve has a point that is a maximum or minimum in some interval around the point,
+      we call it a <term>relative</term> maximum or minimum.
+      If it is the highest or lowest point for the whole domain of the function it is called a
+      <term>global</term> maximum or minimum.
+    </p>
+
+    <example>
+      <title>Profit function for widgets</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="Q8w-CjhtcQE"/>
+        </figure>
+
+        <p>
+          We have determined that the profit function for selling widgets is
+          <me>
+            \profit(\quantity)=\quantity*(400-\quantity)-5000
+          </me>,
+          with the function valid on the interval <m>0\le \quantity\le 500</m>.
+          Find the minimum and maximum profit in the given interval.
+        </p>
+      </statement>
+      <solution>
+        <title>Solution A: without calculus</title>
+        <p>
+          The first example was chosen because it can be done without using any calculus,
+          so we solve it with easier methods first.  The profit function is a quadratic function in quantity,
+          so it is a downward pointing parabola.  The location of the vertex is at <m>\quantity=200</m>,
+          which we obtain from the coefficients of the quadratic and linear terms.
+          Thus we need to check this point and the two endpoints.
+          Plugging in values, we get <m>(0,-5000)</m>, <m>(200, 35000)</m> and <m>(500, -55000)</m>.
+          The maximum occurs when we sell 200 widgets and our profit is $35,000,
+          the minimum occurs when we sell 500 widgets and our loss is $55,000.
+          A relative minimum occurs when we sell 0 widgets and our loss is $5,000.
+        </p>
+      </solution>
+
+      <solution>
+        <title>Solution B: with calculus</title>
+        <p>
+          We want to set up the problem to be able to graph the profit function and its derivative on the same graph.
+          We will us the calculator approximation of the derivative.
+          As we did in the last section, we set up a worksheet with columns for
+          <m>q</m>, <m>q+.001</m>, <m>q-0.001</m>, <m>p(q)</m>, <m>p(q+.001)</m>, <m>p(q-0.001)</m>, and <m>p'(q)</m>.
+          This allows most of the worksheet to be filled in with quick fill.
+        </p>
+
+        <image width="100%" source="images/sec3-4-1.png"/>
+
+        <p>
+          We then look at the values, and compare the table to a graph.
+          We find the same three candidate points and the same maximum and minimum values.
+        </p>
+
+        <image width="80%" source="images/sec3-4-2.png"/>
+      </solution>
+    </example>
+
+    <p>
+      For a second example we want to look at a function where we can’t find the maximum by algebraic means.
+    </p>
+
+    <example>
+      <title>Cumquat oil</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="6ICUxS6-g0Q"/>
+        </figure>
+
+        <p>
+          We have determined that the profit function for selling cumquat oil is
+          <me>
+            \profit(\quantity)=(10\quantity-20)*exp(-\quantity/50)-10
+          </me>.
+        </p>
+
+        <p>
+          We understand that the function is valid on the interval <m>0\le \quantity\le 400</m>,
+          where the quantity is measured in thousands of pints and profit is measured in thousands of dollars.
+          Find the minimum and maximum profit in the given interval.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The spreadsheet is set up like it was in the first example, but with the function changed.
+        </p>
+
+        <image width="100%" source="images/sec3-4-3.png"/>
+
+        <p>
+          Looking at the graph and the chart we expect to find local minima at the endpoints,
+          and the maximum when <m>q</m> is close to 50.  We use goal seek to find where the derivative is zero.
+          As we see below, Goal Seek does not find a point where the derivative is zero.
+          Instead it finds a point where the derivative is <q>close enough</q> to zero.
+          By default, <q>close enough</q> is understood by Excel as being within 0.001.
+        </p>
+
+        <image width="70%" source="images/sec3-4-4.png"/>
+
+        <p>
+          If the default definition of <q>close enough</q> is good enough for our purposes,
+          then the maximum profit of $166,727 occurs when we sell 51,998 pints of oil.
+          (In fact, selling 2 more pints of oil will yield an extra 0.01 cents.)
+          The minimum profit occurs when we sell no product, in which case we have a loss of $30,000.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      One of the things to notice about the last example is the robustness of the method.
+      From an algebraic point of view, the function was rather ugly.
+      All we needed to know to use the method was that the function was smooth enough,
+      that when we zoomed in to a scale of <m>x</m> changing by 0.001 the graph looked like a straight line.
+    </p>
+
+    <p>
+      Throughout the section we have looked for places where the derivative is zero when looking for extrema.
+      We have not paid any attention to how we decide if the point we find is a local maximum or a local minimum.
+      There are several approaches we could use.
+      Since we are computing the derivative we could note that a local maximum is a place where the function goes from increasing to decreasing,
+      so the derivative goes from positive to negative.
+      (Similarly, a local minimum is at a place where the derivative goes from positive to negative.)
+      There is also a test that looks at the derivative of the derivative.
+      Those tests will be more useful in the next chapter when we are finding a formula for the derivative by symbolic means.
+      However, with the numeric technique we are using,
+      the easiest test is that a local maximum is greater than or equal to points a little bit to both the left and right.
+      We simply plug in points a little bit to each side to test.
+      Since a change in <m>q</m> of 0.001 makes the graph look like a flat straight line, we change <m>q</m> by 0.01.
+    </p>
+
+    <image width="50%" source="images/sec3-4-5.png"/>
+
+    <p>
+      As expected, profit goes down as we move away from our expected maximum.
+    </p>
+
+    <example>
+      <title> Gizmo profit</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example></caption>
+          <video youtube="BG0W-F1oeXk"/>
+        </figure>
+
+        <p>
+          A plant can produce between 150 and 300 gizmos.  The profit function for the plant is:
+          <me>\profit(\quantity)=4 \quantity^2-1300 \quantity+125000</me>.
+        </p>
+
+        <p>Find the production level that maximizes profit.</p>
+      </statement>
+      <solution>
+        <p>
+          We set up the problem as before, using goal seek on the derivative to find critical points,
+          and checking the ends of the interval.
+        </p>
+
+        <image width="70%" source="images/sec3-4-6.png"/>
+
+        <p>
+          We have three candidates for the extrema, the two endpoints and the critical point at 162.5.
+          However, by looking at the points to the side of the critical point, we see it is a local minimum.
+          We also see, that of our 3 candidate points, the one that gives the maximum profit is the right endpoint,
+          when quantity is 300.
+        </p>
+
+        <p>
+          For our first three examples we have been trying to find the minimum or maximum of one-variable functions.
+          Sometimes we need to do a bit of work to get the function in that format.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Minimizing material costs</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="5MO904y3fOw"/>
+        </figure>
+
+        <p>
+          I am manufacturing goop, a liquid that needs to be put in cans.
+          We will use cans that have a standard cylindrical shape.
+          Find the height and radius of a 1 liter can that uses a minimal amount of metal surface.
+        </p>
+
+        <image width="50%" source="images/sec3-4-7.png"/>
+      </statement>
+      <solution>
+        <p>
+          Using basic geometry we recall the formulas for the volume and surface area of a cylinder.
+          <md>
+            <mrow>\text{volume} \amp = \pi \text{radius}^2*\text{height}</mrow>
+            <mrow>\text{area} \amp =2 \pi \text{radius}^2+2 \pi*\text{radius}*\text{height}</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Since I am measuring volume in liters,
+          I want to measure radius and height in decimeters so the units work correctly.
+          In order to optimize, we need to reduce the problem to a single function of a single variable.
+          We are told that the volume is 1, so we can solve for height as a function of radius,
+          then plug it into the equation for area.  Then, area is a function of a single variable,
+          radius, and we can find the critical points and check for a minimum.
+        </p>
+
+        <p>
+          <md>
+            <mrow> \text{height} \amp =1/( \pi \text{radius}^2)</mrow>
+            <mrow> \text{area} \amp =2 \pi \text{radius}^2+\frac{2}{\text{radius}} </mrow>
+          </md>.
+        </p>
+
+        <p>
+          Since we now have area as a function of the single variable radius we can take a derivative to find the critical point,
+          then find the optimal shape.
+        </p>
+
+        <image width="90%" source="images/sec3-4-8.png"/>
+
+        <p>
+          Solving for where the derivative of area is zero,
+          we find the radius of the can should be 0.5419 deciliters.
+          We plug that value back into the formula for height in terms of radius and see that the height should be 1.083854 deciliters.
+          To understand the shape of the can we see that the height is twice the radius,
+          or the same thing as the diameter of the can.  The can is optimally shaped when it is the shape of a large paint can.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      There are three technical details worth mentioning from the last example.
+      First, in Excel, the best way to put <m>\pi</m> in a formula is with the constant <c>PI()</c>.
+      Second, the function for area is defined on an open interval where the radius is positive.
+      There is no maximum area for a can of fixed volume.
+      (However inefficient our can is, we can always make it worse, by moving farther from the optimum.)
+      Third, one should also note that for this problem, we wanted several numbers as part of our answer.
+      The worksheet for the problem puts the best height and radius at the top,
+      where the reader can easily find it.
+    </p>
+
+    <p>
+      In this last example we had to reduce two equations in two unknowns to a single equation in one unknown to be able to optimize.
+      We may also need to produce an equation from data.
+    </p>
+
+    <example>
+      <title>Maximized profits and break-even points</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="wimpz29YypU"/>
+        </figure>
+
+        <p>
+          For widget production and sales, we have the following data on profit based on sales.
+        </p>
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+            <cell>Quantity</cell>
+            <cell>10</cell>
+            <cell>100</cell>
+            <cell>200</cell>
+            <cell>250</cell>
+            <cell>300</cell>
+            <cell>400</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Profit</cell>
+            <cell>-$2,083</cell>
+            <cell>$31,040</cell>
+            <cell>$48,587</cell>
+            <cell>$49,845</cell>
+            <cell>$46,146</cell>
+            <cell>$23,670</cell>
+          </row>
+        </tabular>
+
+        <p>
+          Find the break even points and the quantity that maximizes profit.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From looking at a quick plot of the data,
+          I am going to assume that the profit function is a downward facing parabola,
+          so I find the best fitting quadratic polynomial for the data.
+          Using trendlines, my profit function is
+          <me>
+            \profit(q)=-1.002 q^2+477.22 q=6720.9
+          </me>.
+        </p>
+
+        <image width="70%" source="images/sec3-4-9.png"/>
+
+        <p>
+          I now set up the table for special values with goal seek.
+          I use starting points of 20 and 450 for the break even points and 250 for the maximum.
+          To find break even points, I goal seek on the profit function.
+          To find the maximum point, I goal seek on the derivative of the profit function.
+        </p>
+
+        <image width="70%" source="images/sec3-4-10.png"/>
+
+        <p>
+          Rounding to the nearest whole number in each case, my break even points are for selling 15 and 460 widgets.
+          My maximum profit of $50,032 occurs when I sell 238 widgets.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Minimizing expenses</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="ioyz19BK6Vk"/>
+        </figure>
+
+        <p>
+          We are running a business and want to minimize equipment expenses.
+          For a particular piece of equipment the costs can be broken into initial outlays to buy the equipment,
+          fixed annual expenses to keep the equipment in the inventory,
+          and repair costs which we anticipate rising as the equipment gets older.
+          A widget press costs $10,000 to buy, and the operating expenses are $500 a year,
+          and the total repair costs are <m>300t^2</m> over the first <m>t</m> years.
+          What is the optimal length of time to use a widget press before replacing it?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          My annual cost equation is total cost divided by <m>t</m>.
+          This annual cost is:
+          <me>
+            \AnnualCost(t)=10000/t+500+300t
+          </me>.
+        </p>
+
+        <p>I create a spreadsheet that calculates the cost and its derivative over the first 10 years.</p>
+
+        <image width="70%" source="images/sec3-4-11.png"/>
+
+        <p>
+          Looking at the data, the minimal annual cost is obtained by keeping the press between 5.5 and 6.0 years.
+          Using Goal seek on the derivative,
+          I find the minimal annual cost of $3,964.10 is obtained by keeping the press for 5.77 years.
+        </p>
+      </solution>
+    </example>
+
+
+    <exercise>
+      <title>Reading check, Optimization</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"In a business setting, we are often concerned with finding the maximum and minimum values of a function, because one or the other will be a best, or optimum value.  ", 
+"We cannot have an extremum at an interior point of the domain if the derivative is nonzero.  ", 
+"We can only have extrema at a critical point, a place when the derivative is zero or undefined, or at an endpoint. ", 
+"The process for optimization is to find all the candidate points, then to see which gives the highest and lowest values. ", 
+"When a curve has a point that is a maximum or minimum for the whole domain, we call it an absolute maximum or minimum.  ",                      
+"When a curve has a point that is a maximum or minimum in some interval around the point, we call it a relative maximum or minimum.  ",                 
+ 
+"At points where the derivative is zero we must have a relative maximum or minimum.  ",                 
+"Every function must have an absolute maximum. ",
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4, 5],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.4, Optimization, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+    <exercises xml:id="exercises-set-sec-3-4">
+       <title>Exercises: Optimization</title>
+
+       <exercisegroup>
+         <introduction>
+           <p>
+             For the given function and domain:
+             <ol marker="(a)">
+              <li><p>Plot the function and its derivative on the same graph.</p></li>
+              <li><p>Identify the regions where the function is increasing and the regions where the function is decreasing.</p></li>
+              <li><p>Identify the local maximum and minimum for the given domain.</p></li>
+              <li><p>Identify the global maximum and minimum for the given domain</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=-2x^2+17x+23</m> on the interval <m>0\le x\le 50</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Setting up these problems in Excel follows the same process.
+              <ul>
+                <li><p>We create columns for <m>x, x+.001, x-.001, f(x), f(x+.001), f(x-.001)</m>,and <m>f'(x)</m></p></li>
+                <li>
+                  <p>
+                    Once you enter <m>f(x)</m>, doing a right quick fill easily finds <m>f(x+.001)</m> and <m>f(x-.001)</m>,
+                    and then <m>f'(x)</m> is easy to compute.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Once you graph <m>f</m> and <m>f'</m>,
+                    it is usually a good idea to graph the derivative using the secondary axis:
+                    double click on the derivative function and choose the appropriate button in the dialogue box.
+                  </p>
+                </li>
+              </ul>
+            </p>
+
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="80%" source="images/sec3-4-sol1a.png"/>
+                  <p>The table is truncated at <m>x = 25</m>, but the rest was used to create the graph.</p>
+                </li>
+                <li>
+                  <p>We can do a Goalseek to find the critical point: set <m>f'(x)=0</m>.</p>
+                  <p>In this example <m>f'(x)=0</m> when <m>x = 4.25</m></p>
+                  <p>The function <m>f</m> is increasing for <m>0\lt x \lt 4.25</m>.</p>
+                  <p>The function <m>f</m> is decreasing for <m>x\gt 4.25</m></p>
+                </li>
+                <li>
+                  <p>The function has a local max at <m>x = 4.25</m> and the maximum value is <m>59.13</m></p>
+                  <p>The only local minimums are the endpoints, <m>(0, 23)</m> and <m>(50, -4127)</m>.</p>
+                </li>
+                <li>
+                  <p>To find the global maximum and minimum we check the endpoints and the critical points</p>
+                  <tabular top="major" halign="center">
+                    <row bottom="minor">
+                    <cell><m>x</m></cell>
+                    <cell><m>f(x)</m></cell>
+                    <cell>status</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>0</cell>
+                    <cell>23</cell>
+                    <cell/>
+                    </row>
+                    <row bottom="minor">
+                    <cell>4.25</cell>
+                    <cell>59.13</cell>
+                    <cell>maximum</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>50</cell>
+                    <cell>-4127</cell>
+                    <cell>minimum</cell>
+                    </row>
+                  </tabular>
+                  <p>The global minimum value is  <m>-4127</m> at <m>x=50.</m></p>
+                  <p>The global maximum value is  <m>59.13</m> at <m>x=4.25</m></p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=-3x^2+18x+25</m> on the interval <m>10\le x\le 50</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=x^3-9x+12</m> on the interval <m>0\le x\le 10</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="80%" source="images/sec3-4-sol3a.png"/>
+                </li>
+                <li>
+                  <p>The place where <m>f'(x)=0</m> is at <m>x = 1.73</m>.</p>
+                  <p>The function <m>f</m> is decreasing for <m>0\lt x \lt 1.73</m>.</p>
+                  <p>The function <m>f</m> is increasing for <m>1.73 \lt x\lt 10</m>.</p>
+                </li>
+                <li>
+                  <p>The function has a local minimum at <m>(1.73, 1.61)</m>.</p>
+                  <p>The function has a local maximums at <m>(0, 12)</m> and <m>(10, 922)</m>.</p>
+                </li>
+                <li>
+                  <p>To find the global maximum and minimum we check the endpoints and the critical points.</p>
+                  <tabular top="major" halign="center">
+                    <row bottom="minor">
+                    <cell><m>x</m></cell>
+                    <cell><m>f(x)</m></cell>
+                    <cell>status</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>0</cell>
+                    <cell>12</cell>
+                    <cell/>
+                    </row>
+                    <row bottom="minor">
+                    <cell>1.73</cell>
+                    <cell>1.61</cell>
+                    <cell>minimum</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>10</cell>
+                    <cell>922</cell>
+                    <cell>maximum</cell>
+                    </row>
+                  </tabular>
+                  <p>The global minimum value is  <m>1.73</m> at <m>x=1.61.</m></p>
+                  <p>The global maximum value is  <m>922</m> at <m>x=10</m></p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=x^3-6x^2+12x+5</m> on the interval <m>0\le x\le 10</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=5x+9</m> on the interval <m>-10\le x\le 30</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="80%" source="images/sec3-4-sol5a.png"/>
+                </li>
+                <li>
+                  <p>The derivative is never zero</p>
+                  <p>The function <m>m(x)</m> is always increasing for <m>-10 \lt x\lt 30</m></p>
+                </li>
+                <li>
+                  <p>The function has a local minimum at <m>(-10, -41)</m> and a local maximum at <m>(30, 159)</m>.</p>
+                </li>
+                <li>
+                  <p>The global minimum value is  <m>-41</m> at the left endpoint <m>x=-10.</m></p>
+                  <p>The global maximum value is  <m>159</m> at the right endpoint <m>x=30</m></p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=42</m> on the interval <m>0\le x\le 10</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=(x-3)\exp(-0.02 x)</m> on the interval <m>0\le x\le 100</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="80%" source="images/sec3-4-sol7a.png"/>
+                </li>
+                <li>
+                  <p>The place where <m>f'(x)=0</m> is at <m>x = 52.95</m></p>
+                  <p>The function <m>f</m> is increasing for <m>0\lt x \lt 52.95</m>.</p>
+                  <p>The function <m>f</m> is decreasing for <m>52.95 \lt x\lt 100</m></p>
+                </li>
+                <li>
+                  <p>The function has a local max at <m>x = 52.95</m> and the maximum value is <m>17.32</m></p>
+                  <p>The function has a local minimum at <m>(0, -3)</m> and <m>(100, 13.13)</m>.</p>
+                </li>
+                <li>
+                  <p>To find the global maximum and minimum we check the endpoints and the critical points</p>
+                  <tabular top="major" halign="center">
+                    <row bottom="minor">
+                    <cell><m>x</m></cell>
+                    <cell><m>f(x)</m></cell>
+                    <cell>status</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>0</cell>
+                    <cell>-3</cell>
+                    <cell>minimum</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>52.95</cell>
+                    <cell>17.32</cell>
+                    <cell>maximum</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>100</cell>
+                    <cell>13.13</cell>
+                    <cell/>
+                    </row>
+                  </tabular>
+                  <p>The global minimum value is  <m>-3</m> at <m>x=0.</m></p>
+                  <p>The global maximum value is  <m>17.32</m> at <m>x=52.95</m></p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=(x^3-9 x)exp(-0.1 x)</m> on the interval<m> 0\le x\le 100</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=100/x+5 x</m> on the interval <m>1\le x\le 50</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="80%" source="images/sec3-4-sol9a.png"/>
+                </li>
+                <li>
+                  <p>The place where <m>f'(x)=0</m> is at <m>x = 4.47</m></p>
+                  <p>The function <m>h</m> is decreasing for <m>1\lt x \lt 4.47</m>.</p>
+                  <p>The function <m>h</m> is increasing for <m>4.47 \lt x\lt 50</m></p>
+                </li>
+                <li>
+                  <p>The function has a local min at <m>x = 4.47</m> and the minimum value is <m>44.72</m></p>
+                  <p>The function has a local maximums at <m>(1, 105)</m> and <m>(50, 252)</m>.</p>
+                </li>
+                <li>
+                  <p>To find the global maximum and minimum we check the endpoints and the critical points</p>
+                  <tabular top="major" halign="center">
+                    <row bottom="minor">
+                    <cell><m>x</m></cell>
+                    <cell><m>h(x)</m></cell>
+                    <cell>status</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>1</cell>
+                    <cell>105</cell>
+                    <cell/>
+                    </row>
+                    <row bottom="minor">
+                    <cell>4.47</cell>
+                    <cell>44.73</cell>
+                    <cell>minimum</cell>
+                    </row>
+                    <row bottom="minor">
+                    <cell>50</cell>
+                    <cell>252</cell>
+                    <cell>maximum</cell>
+                    </row>
+                  </tabular>
+                  <p>The global minimum value is  <m>44.73</m> at <m>x=4.47.</m></p>
+                  <p>The global maximum value is  <m>252</m> at <m>x=50</m></p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=75/x+3 x^2</m> on the interval <m>1\le x\le 50</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            The demand price for widgets is given by <m>\price(q)=300-0.5q</m>.
+            The fixed costs are $7,500 and the variable costs are $10 per widget.
+          </p>
+          <p>
+            <ol marker="(a)">
+              <li><p> Give a profit function for widgets.  Specify the domain on which the function makes sense.</p></li>
+              <li><p> Identify the candidate points for maximizing profit.</p></li>
+              <li><p> Give the quantity that maximizes profit along with the maximum profit.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>Preliminary work: find the formulas for price (given) and cost (described).
+            <md>
+              <mrow>\price(q) \amp =300-0.5q</mrow>
+              <mrow>\cost(q) \amp =10 q+7,500</mrow>
+            </md>.
+          </p>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  <md>
+                    <mrow>\profit(q) \amp =\revenue(q)- \cost(q)</mrow>
+                    <mrow> \amp = 300q-0.5 q^2-10q-7500</mrow>
+                    <mrow> \amp = -0.5 q^2+290q-7500</mrow>
+                  </md>.
+                </p>
+
+                <p>
+                  One assumption that makes sense is that the price should be positive.
+                  <md>
+                    <mrow>\price(q)=300-0.5q \amp  \gt 0</mrow>
+                    <mrow> -0.5 q \amp \gt -300 </mrow>
+                    <mrow> q \amp \lt 600</mrow>
+                  </md>
+                </p>
+              </li>
+              <li>
+                <p>
+                  We find profit and the derivative of the profit function to determine where the derivative is 0.
+                  Below is the graph of <m>\profit, \profit'</m> and we did GoalSeek to find the critical point (x=290).
+                  We should also consider endpoints, but the vertex is clearly above 0.
+                </p>
+
+                <image width="80%" source="images/sec3-4-sol11a.png"/>
+              </li>
+              <li><p> The profit is maximized at 290 and the maximum profit is $34,550</p></li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The cost equation for gizmos is <m>\cost(q)=1000+3q</m> and the demand function is <m>\price(q)=500-3q</m>.
+            Find the maximum profit.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The cost equation for gadgets is <m>\cost(q)=1000+2q+.0001q^2</m>
+            and the demand function is <m>\price(q)=100/(1+.01q)</m>.  Find the maximum profit.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <md>
+              <mrow>\profit(q)\amp = \revenue(q)- \cost(q)</mrow>
+              <mrow> \amp =q*100/(1+.01q)- (1000+2q+.0001q^2)</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Assuming that the price should be a positive number does not help us in this problem.
+            We can check, but all we get is that <m>q \gt -100</m>, but <m>q</m> should be positive.
+          </p>
+
+          <p>
+            If domain restrictions are not obvious or the algebra is challenging we can resort to trial and error.
+            The small coefficients (.0001 for instance) do suggest we have fairly large values for <m>q</m>.
+          </p>
+
+          <image width="80%" source="images/sec3-4-sol13a.png"/>
+
+          <p>
+            Using <m>0\lt q\lt 1000</m>, we see that there is a maximum near <m>q = 600</m>.
+            Goal Seek shows that the critical point is at <m>q = 588</m> gadgets.
+            The maximum profit is $6336.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The cost equation for gizmos is <m>\cost(q)=10000+10q</m>
+            and the demand function is <m>\price(q)=100/\sqrt{1+.01q}</m>.
+            Find the maximum profit.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Suppose the cost function for your operation is <m>\cost(q)=10000+10q+20000/(1+.1q)</m>.
+            Find the quantity that minimizes price.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The function is interesting in that the minimum cost is not easily see on the graph.
+          </p>
+
+          <image width="80%" source="images/sec3-4-sol15a.png"/>
+
+          <p>
+            The function is graphed for <m>0\le q\le 150</m> in steps of 10.
+            The cost function almost looks as though it is leveling out and reaching an asymptote.
+            An inspection of the table shows that this is not true.
+            The derivative goes from negative to positive right around 130.
+            GoalSeek shows that the derivative is zero at approximately 131.42.
+            The recorded Cost is $12,728.40, which is the minimal cost for this function.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Suppose your cost function is <m>\cost(q)=10000(0.8)^{.1q}+.1q^2</m>.
+            Find the quantity that minimizes price.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            With rental property,
+            a simplified model of costs spreads the purchase cost over the time that the property is held and assume that repair costs will rise the longer the property is held.
+            This gives a formula for annual expenses as
+            <me>\AnnualExpense(t)=(\Pprice)/t+\RepairFactor*t^r</me>,
+            where <m>r</m> is a positive number that depends on the type of property.
+            Assume for carpet cleaners that the replacement cost is $600,
+            that the repair costs in the first year are $50, and <m>r=1</m>.
+            Find the length of time the property should be held to minimize the annual expense.
+          </p>
+        </statement>
+        <solution>
+          <p>In this instance the Annual Expense function is
+            <me>\AnnualExpense(t)=600/t+50*t^1=600/t+50t</me>.
+            Note that the function is not defined when <m>t = 0</m>.
+            So we will graph the function and the derivative for <m>1 \le t \le 10</m>.
+            The property should be held for 3.5 years.
+          </p>
+
+          <image width="80%" source="images/sec3-4-sol17a.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            With rental property,
+            a better model factors in the depreciation of the property and how much can be recovered by selling the property used.
+            If we use a 5 year straight line depreciation the formula becomes
+            <me>\AnnualExpense(t)=(\Pprice*(1-0.2t))/t+\RepairFactor*t^r</me>.
+            Repeat the assumptions from the problem above.
+            Assume for carpet cleaners that the replacement cost is $600,
+            that the repair costs in the first year are $50, and <m>r=1</m>.
+            Find the length of time the property should be held to minimize the annual expense.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The annual sales rate for a new toy is found to be
+            <m>\Sales(t)=10000 t^2  \exp(-t^2/16)</m>.
+            Find the month that maximizes sales.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If we are minimizing according to month, we will graph the function for <m>1 \le t \le 12</m>.
+          </p>
+
+          <image width="80%" source="images/sec3-4-sol19a.png"/>
+
+          <p>
+            GoalSeek does not improve our estimate, and we see that the maximum sales must occur when <m>t = 4</m>.
+            The derivative is (close to) 0 there and this means our sales are maximized in April (assuming 1 represents January).
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Consider the following sales data for your business.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+            <cell>Production level</cell>
+            <cell>1903</cell>
+            <cell>2424</cell>
+            <cell>3065</cell>
+            <cell>3424</cell>
+            <cell>4076</cell></row>
+            <row bottom="minor">
+            <cell>Profit</cell>
+            <cell>$828,560.10</cell>
+            <cell>$942,625.40</cell>
+            <cell>$1,006,167.50</cell>
+            <cell>$987,980.40</cell>
+            <cell>$929,780.40</cell></row>
+          </tabular>
+
+          <p>
+            <ol marker="(a)">
+              <li><p>Plot the data and find a reasonable best fitting curve for the data.</p></li>
+              <li><p>Find the production level that maximizes profit.</p></li>
+              <li><p>Find the maximum profit.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>

@@ -5,9 +5,22 @@
 <!--                                               -->
 <!-- Copyright (C) 1997-2017  Thomas W. Judson     -->
 <!-- See the file COPYING for copying conditions.  -->
-<backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
-  <!-- <solutions divisional="answer solution" admit="odd"> -->
+<backmatter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="backmatter">
+  <!-- <solutions divisional="answer solution" admit="odd"> 
   <solutions divisional="answer solution">
     <title>Answers to Odd Exercises</title>
   </solutions>
+  -->
+
+
+   <xi:include href="Appendix1.ptx"/>
+   <xi:include href="Appendix2.ptx"/>
+   <xi:include href="Appendix3.ptx"/>
+   <xi:include href="Appendix6.ptx"/>
+   <xi:include href="Appendix7.ptx"/>
+
+
+
+
+
 </backmatter>

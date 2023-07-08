@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-7-5-IntroductionComputerAlgebra">
+    <title>Integration using Computer Algebra</title>
+    <introduction>
+      <p>
+        Recall that the fundamental theorem of calculus states that if <m>F(x)</m>
+        is a function with its derivative equal to <m>f(x)</m> on the region <m>a \leq  x \leq  b</m>,
+        then  <m>\int_a^b f(x)\,dx=F(b)-F(a)</m>.  We say <m>\int_a^b f(x)\,dx</m>  is the definite integral of <m>f(x)</m> from <m>a</m> to <m>b</m>.
+        If <m>f(x)</m> is a derivative of <m>F(x)</m>,
+        then <m>F(x)</m> is an anti-derivative of <m>f(x)</m>, and any anti-derivative of <m>f(x)</m> has the form <m>F(x) + c</m>,
+        for some constant <m>c</m>.  We use the symbol  <m>\int f(x)\,dx</m>, without limits of integration, for the indefinite integral.
+      </p>
+
+      <p>
+        In <xref ref="sec-7-1-RiemannSums"/> we looked at approximating definite integrals with a Riemann sum that added up the area of a bunch of rectangles.
+        In <xref ref="sec-7-2-FundamentalTheoremCalculus"/>
+        we saw that the fundamental theorem of calculus lets us use an antiderivative or indefinite integral to evaluate a definite integral.
+        In <xref first="sec-7-3-BasicAntidifferentiation" last="sec-7-4-ChangeVariables"/>
+        we saw how to compute indefinite integrals by hand for a limited number of functions.
+        In this section, we will look at how to use computer software at a web site to find antiderivatives.
+      </p>
+
+      <p>
+        We start with Wolfram|Alpha, available at <url href="http://www.wolframalpha.com" visual="http://www.wolframalpha.com"/>.
+        We can give Wolfram|Alpha the question we want solved in plain English.
+        In our case we would like to find the antiderivative of <m>x^n</m> with respect to <m>x</m>.
+      </p>
+
+      <image width="70%" source="images/sec7-5-1.png"/>
+
+      <p>
+        The Alpha provides an answer.
+      </p>
+
+      <image width="70%" source="images/sec7-5-2.png"/>
+
+      <p>
+        Note that the response tells us the question the Wolfram|Alpha is answering.
+        That helps us check that we have been properly understood.
+        We may find it useful to give a formula without the extra words.
+      </p>
+
+      <image width="70%" source="images/sec7-5-3.png"/>
+
+      <p>
+        The interface is fairly robust.  It understands the convention that the variable for math problems is typically <m>x</m>,
+        so it will generally guess that <m>x</m> is our variable if we don't specify the variable with respect to which we are integrating.
+      </p>
+
+      <image width="70%" source="images/sec7-5-4.png"/>
+
+      <p>
+        It is worth noting that Wolfram|Alpha is connected with Mathematica,
+        so it will understand questions in Mathematica syntax.
+        On the right side to the screen there is a link for related links.
+        In particular, there will be a link for the related command in Mathematica.
+      </p>
+
+      <image width="50%" source="images/sec7-5-5.png"/>
+
+      <p>
+        Following that link gives more information on the syntax of the Mathematica command.
+        We generally don't need to know the syntax, but it is useful if we want to use specific options.
+      </p>
+
+      <image width="60%" source="images/sec7-5-6.png"/>
+
+      <p>
+        We should note that Wolfram|Alpha will easily find antiderivatives that we would find very hard to do or beyond the scope of this class.
+      </p>
+
+      <image width="80%" source="images/sec7-5-7.png"/>
+
+      <p>
+        The output also has a link for showing steps on complicated problems.
+      </p>
+
+      <image width="80%" source="images/sec7-5-8.png"/>
+
+      <p>
+        The show steps link only works on the paid version of Alpha.
+        However we can find other tools by searching for integral calculator.
+        Such a search reveals <term>Symbolab</term>,
+        <url href="https://www.symbolab.com/solver/definite-integral-calculator" visual="https://www.symbolab.com/solver/definite-integral-calculator"/>,
+        which we also used in <xref ref="chap-4-SymbolicDifferentiation"/>.
+      </p>
+
+      <image width="90%" source="images/sec7-5-9.png"/>
+
+      <p>
+        In <xref ref="chap-4-SymbolicDifferentiation"/>, we found a derivative calculator.
+        Similarly we can find an integral calculator (<url href="http://www.integral-calculator.com/" visual="http://www.integral-calculator.com/"/>)  that will show steps.
+        For problems of at the level of difficulty we have been doing, Wolfram|Alpha also produces plots of the integral.
+      </p>
+
+      <image width="90%" source="images/sec7-5-10.png"/>
+    </introduction>
+
+    <subsection>
+      <title>Definite integrals</title>
+      <p>
+        One of the reasons we wanted to find antiderivatives was to be able to use them to evaluate definite integrals.
+        We can ask Wolfram|Alpha for the definite integral directly.
+        In that case, Wolfram|Alpha will give the numeric answer and will also produce the relevant graph.
+        (Symbolab will also do definite integrals.)
+      </p>
+
+      <image width="90%" source="images/sec7-5-11.png"/>
+
+      <p>
+        This is particularly useful when finding the antiderivative is beyond the scope of this course.
+        Consider for example if we want to find the area under a portion of a curve that has the shape of a normal curve.
+      </p>
+
+      <image width="90%" source="images/sec7-5-12.png"/>
+
+      <p>
+        Another example when we can easily set up integrals we cannot solve by hand
+        occurs when we are trying to find the current value of a revenue stream.
+        A value, <m>V</m>, that we get <m>t</m> years in the future, has a present value of
+        <m>V \exp(-r t)</m> where <m>r</m> is an investment return rate.
+        Thus the current value of a revenue stream, <m>V(t)</m>,
+        from time <m>a</m> to time <m>b</m>, is <m>\int_a^b V(t)*e^{(-r*t)} dt</m>.
+        However we only have a rule for finding the antiderivative when <m>V(t)</m>
+        is either a constant or exponential function.
+        With a CAS program it is straightforward to compute such integrals for a broad range of value stream functions.
+      </p>
+
+      <image width="80%" source="images/sec7-5-13.png"/>
+
+      <p>
+        If you are going to use Wolfram|Alpha in doing work,
+        you should realize that the terms of use of the site require you to appropriately cite Wolfram|Alpha.
+        (This is standard academic procedure.)  Your citation should include that date that you got your answer from the site.
+        The results above were obtained on Feb 29, 2012.
+      </p>
+
+      <p>
+        In business situations, we are rarely asked to simply find an integral.
+        Instead, finding an integral is generally part of a larger problem.
+        Thus we often use CAS for part of a problem.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Initial value problems</title>
+      <p>
+        We often want to choose a particular antiderivative of a function.
+        We typically do this when we have the value of the antiderivative for some value.
+        We simply plug that value into the general antiderivative and solve for <m>C</m>.
+      </p>
+
+      <example>
+        <title>Finding the antiderivative, then the constant</title>
+        <statement>
+          <p>
+            The rate of change profit with respect to quantity is given by
+            <m>P'(q)=-q^2+5q+50</m> and the break-even point occurs when <m>q=5</m>.
+            Find the formula for profit as a function of <m>q</m>.  Find the maximum profit.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We can do this by putting together things we have already done.
+            First we use Wolfram|Alpha to find an antiderivative.
+          </p>
+         <image width="70%" source="images/sec7-5-14.png"/>
+         
+          <p>
+            Thus we know <m>P(q)=\frac{1q^3}{3}+\frac{5q^2}{2}+50q+C</m> for some constant <m>C</m>.
+            We also know <m>P(5)=0</m>.  
+            </p>
+            <p>Thus, <m>0=P(5)=\frac{5^3}{3}+\frac{5*5^2}{2}+50*5+C</m>, or
+            <m>--C=\frac{5^3}{3}+\frac{5*5^2}{2}+50*5</m>.
+            </p>
+            <p>
+            Using Excel, we now plug the function, without the <m>C</m>,
+            into Excel and evaluate at <m>q=5</m>.
+          </p>
+
+          <image width="70%" source="images/sec7-5-15.png"/>
+
+          <p>
+            We make <m>C</m> the negative of our answer and modify our function accordingly.
+            We now use solver to maximize the function.
+          </p>
+
+          <image width="70%" source="images/sec7-5-16.png"/>
+
+          <p>
+            Thus the maximum profit is $145.83, and it occurs when <m>q=10</m>.
+          </p>
+        </solution>
+      </example>
+
+      <example>
+        <title>The previous example in one step</title>
+        <statement>
+          <p>
+            The rate of change profit with respect to quantity is given by
+            <m>P' (q)=-q^2+5q+50</m> and the break-even point occurs when <m>q=5</m>.
+            Find the formula for profit as a function of <m>q</m>.  Find the maximum profit.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We can also do this with Wolfram|Alpha bysetting up the boundary value problem.
+             We give the alpha bot the derivative we want integrated and the fixed value of the original function.
+             (Notice that the answer does not include a <m>+C</m>, since we have computed a particular constant.)
+           </p>
+
+          <image width="70%" source="images/sec7-5-17.png"/>
+
+          <image width="70%" source="images/sec7-5-18.png"/>
+
+          <p>
+            We then ask Alpha to maximize the function.
+          </p>
+
+          <image width="90%" source="images/sec7-5-19.png"/>
+
+          <p>
+            This gives the same answer of $145.83.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        This first example could easily have been done by hand.
+        We can repeat the process with an example that could not be easily been by hand.
+      </p>
+
+      <example>
+        <title>A more complicated initial value problem</title>
+        <statement>
+          <p>
+            The rate of change of profit with respect to quantity is given by
+            <m>P' (q)=q^2  \exp(-q/10)-q/10</m> and a break-even point occurs when <m>q = 5</m>.
+            Find the formula for profit as a function of <m>q</m>.  Find the maximum profit.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In structure, this example is very similar to the first example.
+            However, where in the first example, the function would have been easy to do by hand, in this case,
+            the problem is very hard to do by hand.  We use Wolfram/Alpha to find the antiderivative.
+          </p>
+
+          <image width="70%" source="images/sec7-5-20.png"/>
+
+          <p>
+            <me>P(q) = \exp(-q/10)*(-10*q^2-200*q-2000)-q^2/20+C</me>.
+          </p>
+
+          <p>
+            We then use Excel to find <m>C</m>, noting that if we use <m>P(q)</m> without the <m>C</m>,
+            then <m>C</m> is the value of <m>-P(5) = 1972.474</m>.
+          </p>
+
+          <image width="70%" source="images/sec7-5-21.png"/>
+
+          <p>
+            We plug in 5 and note <m>P(5) = 0 = C-1972.474</m>, thus <m>C = 1972.474</m>.
+            We use solver to maximize and find the maximum profit of $1675.17 occurs at <m>q=64.72775</m>.
+          </p>
+
+          <image width="90%" source="images/sec7-5-22.png"/>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Riemann Sums</title>
+
+      <p>
+        We can also use Alpha to do Riemann sums.
+        We need to give a starting and ending point and the number of intervals.
+      </p>
+
+      <example>
+        <title>Riemann sums with Wolfram|Alpha</title>
+        <statement>
+          <p>
+            Find the current value of a revenue stream <m>V(t)=2000+5t</m>
+            for 10 years with an investment rate of <m>r=1.03</m>,
+            assuming payments are made daily.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We approximate the current value with the integral
+            <me>\text{CurrentValue}=\int_{\text{start}}^{\text{stop}} r^{-t} V(t)dt= \int_0^{10} 1.03^{-t} (2000+5t)\,dt</me>.
+          </p>
+
+          <p>
+            What we really want is the Riemann sum with one interval per day.  Over 10 years we have 3652 days.
+          </p>
+
+          <image width="70%" source="images/sec7-5-23.png"/>
+
+          <image width="70%" source="images/sec7-5-24.png"/>
+
+          <p>
+            If we assume payments start at the beginning of the first day, we would use the left endpoint method.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+   <exercise>
+      <title>Reading check, Integration Using Computer Algebra</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The section uses Wolfram|Alpha as a computer algebra system that will do integration. ", 
+"The section uses Symbolab as a computer algebra system that will do integration.  ", 
+"Wolfram|Alpha will also do definite integrals.  ", 
+"In initial value problems, we have to solve for the value of the integration constant \(C\). ", 
+
+"The section uses GeoGebra as a computer algebra system that will do integration.  ", 
+"The computer algebra systems used in this section cannot do Riemann sums.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.5, Integration Using Computer Algebra, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-7-5">
+	    <title>Exercises: Integration using Computer Algebra Problems</title>
+      <exercisegroup>
+        <introduction>
+          <p>
+            Find the antiderivative of the given function.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=x \ln(x)</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>\int x \ln(x)dx=\frac{1}{4} x^{2}(2\ln(x)-1) +c</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(t)=e^{.07t} (-t^2+3t+5)</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(t)=t^2 e^(-0.06t)</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>\int t^2 e^{-0.06 t} dt= e^{-0.06t} (-9259.26 - 555.556 t - 16.6667 t^2)+c</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=\ln(x)</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(t)=(t+1) e^{-0.06t}</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>\int (t+1) e^{-0.06t}\,dt =e^(-0.06t) (-294.444 - 16.6667 t)+c</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=\frac{1}{(1+2x)(3+x)(5+6x) }</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=\frac{1}{\sqrt{1+x^2}}</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>\int \frac{1}{\sqrt{1+x^2}}\,dx= \sinh^{-1}(x)+c</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=\frac{1}{(3+2x)^2} </me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=\frac{5}{9+x^2 }</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>\int \frac{5}{9+x^2 }\,dx = \left(\frac{5}{3}\right)\tan^{-1}\left(\frac{x}{3}\right)+c</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=\frac{1}{(5x+4)^2 (7x+9)}</me>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Evaluate the definite integral. </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_0^{10} t^2 e^{-0.06t}  dt </me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me> \int_0^{10} t^2 e^{-0.06t}  dt \approx 214.03</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_1^{10}\frac{dt}{t} </me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_1^8(x-1)(x-8)  dx</me>.
+            </p>
+          </statement>
+        <solution>
+          <p>
+            <me> \int_1^8(x-1)(x-8)  dx \approx -57.167</me>.
+          </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_0^{10}t^2 e^{.05(10-t)}  dt </me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_0^2 e^{-x^2} dx</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>  \int_0^2 e^{-x^2} dx \approx 0.882081</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_9^{16} \frac{1}{\sqrt{2\pi}} e^{-(x-10)^2}  dx </me>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Do the initial value problem.</p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> P' (q)=-q^2+3q+5\text{ and }P(3)=5.\text{ Find } P(q)</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>P(q)=\frac{1}{6} (-2q^3+9q^2+30q-87)</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> F' (t)=t^2 e^{-0.1t} \text{ and } F(10)=2.  \text{ Find } F(t)</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> P' (q)=\sqrt{q^2+5q+7} \text{ and } P(0)=7.  \text{ Find } P(q)</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>P(q) \amp = (56 - 50 \sqrt{157} + (4q+10) \sqrt{7 + 5 q + q^2} </mrow>
+                <mrow> \amp - 3 \sinh^{-1}\left(\frac{25}{\sqrt{3}}\right)+ 3 \sinh^{-1}\left(\frac{5 + 2 q}{\sqrt{3}}\right))/8</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> P' (q)=-(q^2+2q+3)^2 \text{ and } P(10)=-7.  \text{ Find } P(q)</me>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            I have an investment that produces income at a rate of <m>P(t)=5000+100t</m>.
+            I assume the present value of an asset decreases continuously at a rate of 2% per year for the length of time I have to wait for the asset.
+            What is the present value of the first 7 years of return from my investment?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <me>\int_0^7(5000+100t) (.98)^t dt\approx 34868.6</me>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            My oil well is producing revenue at a rate of <m>P(t)=5000(0.09^t)</m>.
+            I assume the present value of an asset decreases continuously at a rate of 3% per year for the length of time I have to wait for the asset.
+            What is the present value of the first 10 years of return from my investment?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The rate of marginal profit is <m>MP(q)=100-12\ln(q)</m> and a break-even point occurs at <m>q=100</m>.
+            Find the quantity that produces the most profit and the amount of profit generated at that point.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We have maximal profit when <m>MP(q)=0</m>, or when <m>q=e^8=2981</m>.
+            Using WolframAlpha to solve the initial value problem we get
+            <md>
+              <mrow>P(q)\amp =16(7q-700+75ln(100))-12q ln(q)</mrow>
+              <mrow>P(2981)\amp = 16(7*2981-700+75ln(100))-12*2981 ln(2981)=42021.7</mrow>
+            </md>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Our marginal cost function is <m>MC(q)=10q \ln(q)</m> and the startup costs are $23,000.  Produce a cost function.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+

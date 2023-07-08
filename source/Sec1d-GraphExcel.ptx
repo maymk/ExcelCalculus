@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-1-4-GraphingFunctionsExcel">
+    <title>Graphing functions with Excel</title>
+
+    <p><url href="external/Examples/Section-1-4-Examples-Unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-4-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-4-Examples.xlsx"  visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+    <p>
+      One area where Excel is different from a graphing calculator is in producing the graph of a function that has been defined by a formula.
+      It is not difficult, but it is not as straight forward as with a calculator. However, it is a skill worth developing .
+      When we are given a formula as part of a problem, we will want to easily see a graph of the function.
+    </p>
+    <p>
+      We will walk through the process for producing graphs for three examples of increasing complexity.
+      For the first example, we have a specific function and specific range in mind,
+      say <m>y=x^2-6 x</m> over <m>-10 \le x \le 10</m>.
+      For the second example, we would like to use parameters in the formula,
+      for example, <m>y = a x^2 + b x + c</m>, with specified values of a, b, and c,
+      and have the ability to easily change the values of the parameters and see the graph.
+      For the third example, we would also like to have the ability to change the domain,
+      graphing over <m>\xLow \le x \le \xHigh</m>, where <m>\xLow</m> and <m>\xHigh</m> can easily be changed.
+    </p>
+
+    <example><title>A basic graph</title>
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="0zuJMZN1UoA"/>
+      </figure>
+
+      <p>Graphing <m>y=x^2-6 x</m> over <m>-10 \le x \le 10</m></p>
+
+        <image width="80%" source="images/sec1-4-1.png"/>
+
+      <p>
+        We start by producing a column for <m>x</m> and one for <m>f(x)</m>.
+        In the column for <m>x</m> we start with values <m>-10</m> and <m>-9</m>, so that we can complete the column with a quick fill.
+        Similarly, we start the <m>f(x)</m> columns in the first cell with the <q><m>x</m></q> replaced by the appropriate cell reference.
+        In this case the formula for <m>f(x)</m> is in cell <c>B15</c> and <m>x</m> is in cell <c>A15</c>.
+      </p>
+      <p>
+        We then use quick fill and quick copy to fill out the table.
+      </p>
+
+          <image width="60%" source="images/sec1-4-2.png"/>
+      <p>
+        With the values of the cells filled in we highlight the cells we want to graph (<c>A14</c> through <c>B35</c>) and add a scatter plot for the highlighted values.
+      </p>
+          <image width="80%" source="images/sec1-4-3.png"/>
+
+      <p>
+        (The location of the scatterplot will be a bit different with Macs.
+        The scatterplot is in the Charts ribbon, under other, on Macs.)  This gives the desired graph.
+      </p>
+
+          <image width="80%" source="images/sec1-4-4.png"/>
+    </example>
+
+
+    <example><title>A graph with parameters</title>
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="PFjsfVqDorE"/>
+      </figure>
+
+      <p>
+        Graphing <m>y=x^2-6 x</m> as an example of
+        <m>y = a x^2 + b x + c</m> over the domain <m>-10 \le x \le 10</m>.
+      </p>
+
+      <p>
+        For the second example, we want the same graph,
+        but we want the ability to easily convert the graph of our first quadratic into a different quadratic function.
+        The solution is to consider <m>a</m>, <m>b</m>, and <m>c</m> to be parameters that we can change.
+      </p>
+
+      <p>
+        Toward the top of the worksheet, we put the labels <m>a</m>, <m>b</m>,
+        and <m>c</m>, and give values for those parameters.
+        In this case the values of <m>a</m>, <m>b</m>, and <m>c</m> are in cells <c>B9</c>, <c>B10</c>, and <c>B11</c> respectively.
+      </p>
+
+      <p>
+        Now we set up the problem in the same way we did above, except that we are using absolute references for <m>a</m>, <m>b</m>, and <m>c</m>,
+        and relative references for <m>x</m>.
+      </p>
+            <image width="80%" source="images/sec1-4-5.png"/>
+
+      <p>
+        Now, we once again do a quick fill to complete the table, and then add a scatterplot.
+      </p>
+            <image width="80%" source="images/sec1-4-6.png"/>
+
+      <p>
+        The difference with this second example is that if I now want to look at the graph of <m>y = -x^2 + 3 x + 10</m>,
+        I simply change the values of the parameters <m>a</m>, <m>b</m>, and <m>c</m>.
+      </p>
+
+            <image width="80%" source="images/sec1-4-7.png"/>
+    </example>
+
+    <example><title>Controlling the viewing window</title>
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="KMc0wWSgdIo"/>
+      </figure>
+
+      <p>
+        Graphing <m>y=x^2 - 6 x</m> as an example of <m>y = a x^2 + b x + c</m> over the domain <m>-10 \le x \le 10</m>,
+        but with the ability to easily change the domain of the graph.
+      </p>
+
+      <p>
+        Often, when we graph, we will want to change the domain of the graph.
+        Most easily, I may want to zoom in on a particular region to get a better view of some interesting feature.
+        I may want to look closely at several different regions.
+      </p>
+
+      <p>
+        To do this we will again plot 21 points, but we want to have control of the starting point and the change in x between the first and second points.
+        First we add labels and values for <c>x-start</c> and <c>x-step</c>.
+        Then we need a bit of care in defining the values of <m>x</m>.
+        The first value of <m>x</m> (cell <c>A18</c>) is the value of <c>x-start</c>.
+        Every other value of x is defined as the previous value of x plus the value of <c>x-step</c>.
+      </p>
+
+              <image width="80%" source="images/sec1-4-8.png"/>
+
+      <p>
+        In this case, I want a better look at the vertex of the parabola.
+        I decide I want to see the graph for <m>0 \le x \le 5</m>.
+        My value for <c>x-start</c> is 0.
+        My value for <c>x-step</c> is one twentieth of the distance from 0 to 5,
+        or <m>(5-0)/20 = 0.25</m>.  I plug those values in and see the graph.
+      </p>
+
+      <image width="80%" source="images/sec1-4-9.png"/>
+
+    </example>
+
+    <example>
+      <title>Graphing more than one function</title>
+
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="gMIn78ufX0g"/>
+      </figure>
+
+      <p>
+        We would also like to put two or more graphs together.
+        For our examples, we will want to use the functions <m>f(x) = x - 3</m>, <m>g(x) = (x^2 - x)/10</m>,
+        and <m>h(x) = x^3 - x</m>.
+        We start by using the procedure given above to make a chart of values for the three functions.
+      </p>
+
+              <image width="60%" source="images/sec1-4-10.png"/>
+
+      <p>
+        We then simply select the cells for <m>x</m> and the functions we want graphed together and produce a scatterplot as before.
+        (To graph <m>g(x)</m> and <m>h(x)</m> together, we want to select the columns for <m>x</m>, <m>g(x)</m>, and <m>h(x)</m>.)
+      </p>
+
+              <image width="80%" source="images/sec1-4-11.png"/>
+
+      <p>
+        One problem with the graph of <m>g(x)</m> and <m>h(x)</m> together is that the functions have different orders of magnitude,
+        so we do not see that <m>y = g(x)</m> is a parabola.
+        One remedy is to use a secondary axis for the graph of <m>h(x)</m>.
+        (Simply double click on one of the points for <m>h(x)</m>, and select secondary axis from the axes tab.)
+      </p>
+
+              <image width="80%" source="images/sec1-4-12.png"/>
+    </example>
+
+    <paragraphs>
+      <title>Formatting a chart</title>
+      <p>
+        Excel has a lot of ways to add formatting to a graph or chart,
+        many more than we want to be concerned with at this point.
+        We simply point out a few and leave it to the reader to explore how this should be used for a good visual presentation.
+        If you click once on the chart to select it, the Chart tab in the home ribbon, adds sub-tabs for layout and format.
+        With Chart Title, you can add a title to the chart, then edit it.  The Axes icon allows you to add titles for the axes.
+        If you select a data point form <m>g(x)</m>, you can then use the Data Labels icon to add values next to the points.
+        The chart with these annotations is given below.
+        The rule of thumb to follow is to add enough annotations for a reader to be able to easily understand what is happening in the chart.
+      </p>
+
+                <image width="80%" source="images/sec1-4-13.png"/>
+
+      <p>
+        It is also worthwhile to note that you can manually set the y-range of a graph by double clicking on the axis and setting the values.
+        This is particularly useful of the function has a vertical asymptote.
+      </p>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Online graphing tools: Wolfram Alpha</title>
+
+      <p>
+        Throughout this book, we are limiting ourselves to mathematical tools that the student can reasonably expect to find in a generic work environment.
+        That is one of the reasons for focusing on using spreadsheets and Excel.
+        A second reason is that we will spend a significant amount of time on functions defined by data points,
+        where we then try to construct a formula.
+        However when we are starting with a formula, there are easier ways to produce a graph.
+        The simplest is to use the free website, <url href="https://www.wolframalpha.com/"  visual="https://www.wolframalpha.com/">Wolfram Alpha</url>.
+        For example to obtain a graph of the functions <m>f(x) = x^2 - 3 x</m>, as <m>x</m> ranges from <m>-5</m> to <m>5</m>,
+        we simply type <q><c>plot x^2 - 3 x for x from -5 to 5</c></q> and obtain:
+      </p>
+
+                <image width="80%" source="images/sec1-4-14.png"/>
+
+      <p>We will return to Wolfram Alpha from time to time, when we have nice formulas to manipulate. </p>
+    </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, Functions in the Business Setting</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"We use a marked scatterplot to graph with Excel.", 
+"We can use absolute references to set up a graph where we can easily change the viewing window.", 
+"Secondary  axes are useful when looking at functions that are of different scales.",                 
+"We can manually change the title of of a chart.", 
+"Sometimes, there are other tools that are easier to use to produce a graph.",
+"Absolute and relative cell references can be used interchangeably. ", 
+"If we want to look at the graph of several quadratic polynomials, we have to start over for each graph.", 
+"We can only graph one function at a time with Excel."
+                ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.4, Graphing Functions in Excel, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+    <exercises xml:id="exercises-set-sec-1-4">
+      <title>Exercises 1.4 Graphing functions with Excel</title>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet that with a graph of the function <m>f(x) = x^2 - 5 x</m>, with <m>x</m> going from -10 to 10 by 1.
+          </p>
+        </statement>
+        <solution>
+          <p>The entry in cell B2 is <c>=A2^2-5*A2</c>; remember to use quickfill to complete the table</p>
+
+          <image width="80%" source="images/sec1-4-sol1a.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet that with a graph of the function
+            <m>g(x) = (x^2 - 5 x)/(x^2 + 7 x + 10)</m>, with <m>x</m> going from -10 to 10 by 1.
+            Explain why the graph is inaccurate.  (Pay attention to places where there should be asymptotes.)
+          </p>
+          <p>
+            2* <ndash/> Extra credit) <mdash/> Fix the graph from problem 2 by adjusting the set of <m>x</m>-values used.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet with a graph of <m>h(x) = x^3 + a x^2 + b x + c</m> for <m>x</m> from -10 to 10,
+            where the values of <m>a</m>, <m>b</m>, and <m>c</m> can be changed and the graph will update automatically.
+            For initial values, use <m>a = -2</m>, <m>b = 1</m>, and <m>c = -11</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The entry in B5 should be <c>=A5^3+$B$1*A5^2+$B$2*A5+$B$3</c>.
+            Note that the references to <m>a</m>, <m>b</m> and <m>c</m> are absolute references.
+          </p>
+
+          <image width="100%" source="images/sec1-4-sol3a.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet with a graph of <m>k(x) = (x^2 + a x + b)/( x + c)</m> for x from -10 to 10,
+            where the values of <m>a</m>, <m>b</m>, and <m>c</m> can be changed and the graph will update automatically.
+            For initial values, use <m>a = -5</m>, <m>b = 2</m>, and <m>c = -11</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet with a graph of <m>h(x) = x^3 -2 x^2 +  x -11</m> for <m>x</m> going from a to b,
+            where the values of <m>a</m> and <m>b</m> can be changed and the graph will update automatically.
+            For initial values, use <m>a = -5</m> and <m>b = 5</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The entries are <m>a</m> and <m>b</m>, and the step size.
+            We assume here that we are using 10 points to create a graph.
+          </p>
+
+          <image width="100%" source="images/sec1-4-sol5a.png"/>
+
+          <p>
+            The data and the graph looks as follows, and changing <m>a</m> and <m>b</m>
+            allows us to quickly find several different graphs of the same function.
+          </p>
+
+          <image width="100%" source="images/sec1-4-sol5b.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet with a graph of <m>k(x) = (x^2 -5 x + 2)/( x -11)</m> for <m>x</m> going from <m>a</m> to <m>b</m>, where the values of a and b can be changed and the graph will update automatically.  For initial values, use <m>a = -5</m> and <m>b = 5</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            (Writing assignment) Write a report of 2 pages or less on the graph of the function
+            <m>f(x) = (x^2 + 7 x + 10)/(x^2 - 3 x +2)</m>.
+            The report should be in Word (or other word processor)
+            format with at least 2 graphs that illustrate different features by looking at different viewing windows.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet with graphs of <m>f(x) = 2 x + 5</m> and <m>g(x) = x^3 - 9 x</m>,
+            for x going from -10 to 10.  Use secondary axes so that both graphs use the full plotting window.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet with graphs of <m>h(x) = (x^3 - 9 x)/(x^2 + 3 x + 35/16)</m> and
+            <m>k(x) = 2 x^2 + 5</m>, for x going from -10 to 10.
+            Use secondary axes so that both graphs use the full plotting window.
+            Adjust the range of <m>y</m> values used to make the graph reasonable.
+          </p>
+        </statement>
+        <solution>
+          <p>The entries should look like this:</p>
+
+          <image width="100%" source="images/sec1-4-sol9a.png"/>
+
+          <p>Using secondary axes we are able to show the important feature of each of the graphs.</p>
+
+          <image width="100%" source="images/sec1-4-sol9b.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a worksheet with graphs of <m>f(x) = 2 x + 3</m> and <m>g(x) = -2 x +5</m>, for <m>x</m> going from -10 to 10.  Add a title to the chart.  Do something interesting with the fonts or other options and explain what you did.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Use Wolfram Alpha to produce a graph of <m>f(x) = x^3 - 16 x</m>,
+            for <m>x</m> going from -5 to 5.  Use your favorite screen capture software and paste the result into an Excel worksheet.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using Wolfram, the command and the resulting graph look like this:
+          </p>
+
+          <image width="100%" source="images/sec1-4-sol11a.png"/>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>

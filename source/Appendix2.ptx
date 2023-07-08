@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--   This file is part of Business Calculus with Excel      -->
+<!--                                                          -->
+<!--                                   -->
+<!--                                                          -->
+<!-- Copyright (C) 2023  Mike May                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<appendix xml:id="SpreadSkills2">
+    <title>Spreadsheet Skills Chapter 2</title>
+
+<section xml:id="SpreadSkillsChap2">
+    <title>Chapter 2 Skills</title>
+    <subsection xml:id="SpreadSkillsSection2-3">
+        <title>Section 2.3 Skills</title>
+        <ul>
+            <li>
+                <p>
+                    Using Nonlinear functions
+                </p>
+            </li>
+        </ul>
+    </subsection>
+</section>
+</appendix>
+<!-->
+
+
+6.1
+Making a table for f(x,y) =z – same
+
+Making a graph for f(x,y) =z from a table
+
+6.3 Using solver to find critical points -Same
+<-->

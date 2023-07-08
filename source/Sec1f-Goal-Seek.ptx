@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-1-6-GoalSeek">
+    <title>Finding Numerical Solutions with Goal Seek</title>
+
+
+    <p><url href="external/Examples/Section-1-6-Examples-unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-6-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-6-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-6-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+    <p>
+      In previous sections, we looked at deciding on a model to use for numerical data,
+      and finding the best fitting curve of that model for our data.
+      Once we have completed those phases of the process, we have reduced our data to an equation.
+      At that point we want to use the equation to answer some question.
+      Sometimes ,that question will reduce to solving an equation,
+      as when we have an equation for profit as a function of sales and we want to know when the business will break even.
+      At other times, we want to know what input gives a desired output.
+      (<eg/>, How much do I need to sell to make $100,000 in commission?)
+    </p>
+    <p>
+      We can obviously use all the algebraic techniques we developed in previous courses to solve our problem symbolically.
+      However, Excel gives us two tools to use to solve problems numerically, Goal Seek and Solver.
+      In this section we will explore Goal Seek, the simpler of these tools.
+    </p>
+    <assemblage>
+      <p>
+        <ul>
+          <li><p>We will use Goal Seek if we know what the desired output of an equation is, and would like to know when that output is achieved. </p></li>
+          <li><p>We need to have an equation to work with and we can only solve for one kind of input (variable).</p></li>
+          <li><p>Goal Seek is located under the What-If analysis menu.</p></li>
+        </ul>
+      </p>
+    </assemblage>
+
+    <example>
+      <title>A linear example</title>
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="KPmpUjuI9gA"/>
+      </figure>
+
+      <p>
+        As with all new techniques in a math class,
+        we start with a very simple example that you can easily solve by methods you learned in previous courses.
+        Suppose we have the function <m>f(x) = 3 x + 5</m>, and I want to find the value of <m>x</m> where <m>f(x) = 40</m>.
+        I start by setting up a worksheet with <m>x</m> and <m>f(x)</m> as columns.
+        I also need to start with a guessed value, which can be any number.
+        I will start by guessing a value of 5.  (I will enter that value twice so we can see before and after.)
+      </p>
+
+          <image width="80%" source="images/sec1-6-1.png"/>
+
+      <p>
+        I then go to the data tab and under the What-If analysis menu choose Goal Seek.
+        In the Goal Seek dialog, I want to change <c>B3</c>, to <m>f(x)</m>, to 40 by changing <c>A3</c>, or <m>x</m>.
+        I then select OK.
+      </p>
+
+          <image width="80%" source="images/sec1-6-2.png"/>
+
+      <p>
+        Excel finds the value and asks if it is OK to replace the initial guess with that value.
+        In this case, Excel found the value of <m>11.66666667</m> or <m>35/3</m>,
+        which we could also have found by simple algebra.
+      </p>
+
+          <image width="80%" source="images/sec1-6-3.png"/>
+    </example>
+
+    <example>
+      <title>A quadratic example and concern with precision</title>
+      <p>
+        We move on to a quadratic example.  We let <m>f(x)=x^2</m> and want to find <m>f(x)=2</m>.
+        The set up is similar, with an appropriate change in the equation.
+        However when I use Goal Seek, I don't get quite the correct answer.
+      </p>
+
+          <image width="80%" source="images/sec1-6-4.png"/>
+
+      <p>
+        Instead of finding a value with <m>x^2 = 2</m>, I found a value with <m>x^2 = 1.99999495</m>.
+      </p>
+
+      <p>
+        <ul>
+          <li><p>We note that Excel is not solving the problem algebraically, but is finding a numerical approximation within a preset tolerance. </p></li>
+          <li><p>It is actually finding an x such that f(x) is within 0.001 of 2.  </p></li>
+        </ul>
+      </p>
+
+
+      <p>
+        For most of our work, that is close enough.  Sometimes, however, we may want more precision.
+        (Our units may be millions of dollars.)  In that case, we can improve the precision with a work around.
+        We add another cell with a formula whose value is a large number, say <m>10^6</m>, times the error.
+        We then use Goal Seek to make that value close to zero.
+        We effectively reduce our error tolerance by a factor of our large number.
+        Applying this to our example gives:
+      </p>
+
+          <image width="80%" source="images/sec1-6-5.png"/>
+
+      <p>
+        This has computed the value of the square root of 2 to 10 digits.
+      </p>
+    </example>
+
+    <example>
+      <title>More realistic examples: finding the intersection of two curves, or equivalently finding where two functions are equal to one another.</title>
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="bA5ECNm_nvA"/>
+      </figure>
+
+      <p>
+        In economics, there are the concepts of supply and demand prices,
+        the prices that will produce a specified supply or demand.
+        (We will look at this problem in more depth in the next chapter.)
+        Suppose we are told the formula for the supply and demand prices of a product are:
+        <me>\Sprice (q) = \ln(50 + 1000 q) + q</me>
+        <me>\Dprice (q) = 1000*\exp(-0.02*q)</me>.
+        We want to find the quantity where supply and demand prices are equal.
+        We first do a fast graph to get an understanding of what is going on.
+      </p>
+
+          <image width="80%" source="images/sec1-6-6.png"/>
+
+      <p>
+        We can see that the curves cross when q is somewhere between 100 and 110.
+        To make this a Goal Seek problem, we add an extra column for the difference between supply and demand,
+        and look for where that is zero.
+      </p>
+
+          <image width="80%" source="images/sec1-6-7.png"/>
+
+      <p>
+        We see that equilibrium occurs when q is 106.725.
+        We could have found this algebraically by solving the equation
+        <me>0 = 1000*\exp(-0.02*q) - (\ln(50 + 1000*q) + q)</me>,
+        but that is not an easy problem.
+      </p>
+    </example>
+
+      <p>
+        Our last example for Goal Seek looks at financial computations.
+      </p>
+
+    <example>
+      <title>Using Goal Seek for financial computations</title>
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="pJdAEO1qEao"/>
+      </figure>
+
+      <p>
+        Assume you have decided to open a retirement account when you get out of college.
+        You decide that you will start by contributing $2,000 at the beginning of each year,
+        with that amount increasing by $100 each year, assuming a 5% annual interest rate.
+        The relevant formulas are:
+        <md>
+          <mrow>\text{Ending Balance} \amp = \text{Beginning Balance + deposits + Interest Earned}</mrow>
+          <mrow>\text{Interest Earned} \amp = \text{(Beginning\ Balance + Deposits) * Interest\ Rate}</mrow>
+          <mrow>\text{Beginning Balance} \amp = \text{previous\ year's\ ending\ balance}</mrow>
+        </md>.
+        It becomes easy to set up a spreadsheet to compute the balance at the end of 40 years.
+      </p>
+
+          <image width="80%" source="images/sec1-6-8.png"/>
+
+      <p>
+        (We will look at this example in greater detail in a later chapter.
+        For now, note that this example is in the Excel notebook for this section.)
+        We can see that we have a bit more than $420,000 after 40 years.
+      </p>
+
+          <image width="80%" source="images/sec1-6-9.png"/>
+
+      <p>
+        With Goal Seek it is easy to ask the question of how we need to change the problem to have a balance of $500,000 after 40 years,
+        either by changing the initial deposit, or the rate at which deposits are increasing,
+        or the expected yield.  We see that we need a yield of 5.74% to have $500,000 ready for retirement.
+      </p>
+
+          <image width="80%" source="images/sec1-6-10.png"/>
+
+      <p>
+        It is worthwhile to note that in this case our final balance is the result of a 120-step computation with our input variable.
+        Goal Seek finds a solution without us having to reduce that 120-step computation to a single long formula.
+      </p>
+    </example>
+
+    <example>
+      <title>Looking under the hood and understanding Goal Seek's limitations</title>
+      <p>
+        As with any tool we use, it is wise to have some understanding of the method used by Goal Seek.
+        That will help us understand when it is giving us an answer different from the one we were expecting,
+        or even gives us an answer that is wrong.
+      </p>
+
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="vIfIFoM1GA0"/>
+      </figure>
+
+      <p>
+        Goal Seek uses Newton's Method, a technique based on Calculus, to find solutions.
+        The heart of the method is based on the fact that,
+        at least for most functions nice enough to show up in a course like this,
+        when you zoom in far enough on a graph you will get something that looks like a straight line.
+        The line we find that way is called the tangent line.
+        (Finding the slope of the tangent line, or the instantaneous rate of change,
+        is one of the main goals of calculus, and is given the name of finding the derivative.)
+        If we start with a guessed solution, we can produce a tangent line,
+        find the point where the tangent line reaches the desired value, and take the point's x-coordinate as our next guess.
+        Repeating this process usually converges to a solution.
+      </p>
+
+      <image width="80%" source="images/sec1-6-11.png"/>
+
+      <p>
+        If we use the spreadsheet to illustrate Newton's method for our example,
+        finding the solution for <m>x^2 = 2</m> starting with a guess of <m>x = 1</m>,
+        we see that it converges in 5 iterations.
+        (At this point, we are simply illustrating how Goal Seek works.
+        You are not yet expected to be able to replicate the process.
+        You will learn how to find the slope of the tangent in later chapters.)
+      </p>
+
+      <image width="80%" source="images/sec1-6-12.png"/>
+
+      <p>
+        As mentioned earlier, the reason for looking under the hood of Goal Seek is to understand when it gives us an unexpected answer.
+        A simplified description of the method used is that it heads down to where it expects to find a solution
+        and repeats the process until it is within 0.001 of the desired answer.
+        There are several easy ways for this method to cause problems.
+      </p>
+
+      <figure>
+        <caption>Further video for this example</caption>
+        <video youtube="zIIm0H1t8Vs"/>
+      </figure>
+
+      <p>
+        The first difficulty is that Goal Seek may not give you the answer you are looking for if there are multiple answers.
+        The function <m>f(x) = x^3 - x</m> has three roots, <m>x = -1, 0, 1</m>.
+        If we give Goal Seek a starting point of <m>x=.55</m>, it will give the solution of <m>x=0</m>.
+      </p>
+
+      <image width="80%" source="images/sec1-6-13.png"/>
+
+      <p>
+        As a general rule, Goal Seek will get to the correct answer if there are no big curves between the guess and the answer.
+        Another difficulty arises if you ask Goal Seek a question for which there is no answer.
+        The easy case is when there is no answer and we don't even get close.
+        We could ask it to find an x with <m>x^2+1=0</m>.
+        Since we know that all squares are non-negative, this does not have an answer.
+        Goal Seek will tell us that, but it will make some pretty wild guesses.
+      </p>
+
+      <image width="80%" source="images/sec1-6-14.png"/>
+
+      <p>
+        In this case Goal Seek will run for a fixed number of iterations and tell us it <q>may not have found a solution.</q>
+        In that case it will tell us where it ended and give us the choice of accepting that point, or cancelling and going back to where we started.
+        If there is no solution and one of our intermediate points was close to a point with a flat tangent line, we may wind up anywhere.
+      </p>
+
+      <p>
+        The more challenging case arises when there is no answer, but we get close.
+        We can ask Goal Seek to find an x with <m>1/x^4 = 0</m>.
+        Clearly this problem has no answer.  However, if we start with a guess of <m>x = 1</m>, we get an answer of <m>x = 6.14798</m>.
+        That is because <m>1/6.14798^4</m> is within our tolerance of 0.
+        In both of these cases, we see that when we use Goal Seek we should also look at the graph of the function in question to make sure we are asking a reasonable question.
+      </p>
+
+      <image width="80%" source="images/sec1-6-15.png"/>
+
+      <p>
+        A variant of these problems occasionally shows up.
+        If we start with a carefully rigged problem we can set the algorithm of Goal Seek into a loop.
+        If we start with the function <m>f(x) = x^3 - 50*x</m> with an initial guess of <m>x=1</m>,
+        and ask Goal Seek to find when <m>f(x) = 500</m>,  Goal Seek will not find an answer.
+        In this case we could look at a graph and make an initial guess of 6, and then get a correct answer.
+        Once again, with a numerical method, it pays to try some cases and make sure that our guess is close to a reasonable answer.
+        If <m>f(x)</m> is a continuous function, this means finding a value of <m>x</m> where <m>f(x)</m> is too low and another value where <m>f(x)</m> is too high.
+      </p>
+
+      <p>
+        While Excel is a powerful tool, we should always ask if there is an easier way to do a problem.
+        Most of the examples we looked at in this section boil down to finding a solution to <m>f(x)=0</m> where <m>f(x)</m> is a simple equation.
+        We can solve such problems more quickly with Wolfram Alpha.
+      </p>
+
+      <image width="80%" source="images/sec1-6-16.png"/>
+
+      <p>
+        As noted above, Goal Seek is most useful for problems with lots of steps where we would have difficulty reducing the problem to a single equation.
+      </p>
+    </example>
+
+
+    <exercise>
+      <title>Reading check, Finding Numerical Solutions with Goal Seek</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Goal Seek lets you determine the input of a function that gives a desired output.", 
+"Goal Seek stops when it finds an answer whose output is within 0.001 of the desired output.", 
+"Goal Seek is found by choosing what if analysis. ",                 
+"Goal seek gets confused by functions that asymptotically approach zero.", 
+"Goal Seek finds an exact answer. ", 
+"Goal Seek only works with if the function can be put in a single cell.", 
+"Goal Seek always finds the answer closest to the starting value."
+				],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.6, Finding Numerical Solutions with Goal Seek, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+    <exercises xml:id="exercises-set-sec-1-6">
+      <title> Finding Numerical Solutions with Goal Seek</title>
+      <exercisegroup>
+        <introduction>
+          <p>
+            Use Goal Seek to find where the given equation has the desired value.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x) = -2 x^2 + 20 x + 7</m>.  Find an <m>x</m> so that <m>f(x) = 50</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>Wolfram detects two solutions.</p>
+
+            <image width="100%" source="images/sec1-6-sol1a.png"/>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x) = -x^2 + 4 x + 5</m>.  Find an <m>x</m> so that <m>f(x) = -5</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x) = 5 x + 7/x</m>.  Find an <m>x</m> so that <m>f(x) = 20</m>.
+            </p>
+          </statement>
+          <solution>
+            <image width="60%" source="images/sec1-6-sol3a.png"/>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x) = 10 \exp(x/10)</m>.  Find an <m>x</m> so that <m>f(x) = 1000</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x) = \ln(x+5) + 7</m>.  Find an <m>x</m> so that <m>f(x) = 5</m>.
+            </p>
+          </statement>
+          <solution>
+            <image width="100%" source="images/sec1-6-sol5a.png"/>
+
+            <p>
+              Note that next to the solution there is a button for <q>Approximate form</q>.
+            </p>
+
+            <p>We can use that to get a decimal approximation:</p>
+
+            <image width="100%" source="images/sec1-6-sol5b.png"/>
+
+            <p>
+              Note that we can get more digits if we want or return to the exact answer
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x) = 1000*(1/2)^{(x/7)}</m>.  Find an <m>x</m> so that <m>f(x) = 50</m>.    </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Use Goal Seek to find the indicated number of points where the curves intersect.</p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Find an intersection point of <m>f(x) = 5 x + 7</m> and <m>g(x) = 40 - 2 x</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Finding the intersection point means we are setting the two equations equal to one another.
+              Wolfram will include a plot of the solution as well as the numerical answer.
+            </p>
+
+            <image width="100%" source="images/sec1-6-sol7a.png"/>
+
+            <p>
+              Wolfram tells us that <m>x=\frac{33}{7}</m>. We can plug that into one of the equations and get
+              <me>y=40-\frac{66}{7}=\frac{280}{7}-\frac{66}{7}=\frac{214}{7}</me>.
+              So the intersection point is <m>(x,y)=(\frac{33}{7}  ,\frac{214}{7})</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Find an intersection point of <m>f(x) = 5 x</m>  and <m>g(x) = 9 x / 7</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Find an intersection point of <m>f(t) = \exp(-0.05 t)*(3 t + 5)</m> and <m>g(t) = t/10</m>.
+            </p>
+          </statement>
+          <solution>
+            <image width="100%" source="images/sec1-6-sol9a.png"/>
+
+            <p>
+              Wolfram finds two intersections: one at <m>t\approx-1.71925</m> and the other at <m>t\approx68.5047</m>.
+            </p>
+            <p>
+              Using the function <m>g(t)=t/10</m> we get the two intersection points at
+              <m>(-1.71925,-.171925)</m> and <m>(68.5047,6.85047)</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Find an intersection point of <m>f(t) = 20 \ln(100 t + 854)</m> and <m>g(t) = 0.02 t</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Find both intersection points of <m>f(x) = 7 + 10 x - x^2</m> and <m>g(x) = 0</m>.
+            </p>
+          </statement>
+          <solution>
+            <image width="60%" source="images/sec1-6-sol11a.png"/>
+
+            <p>
+              The <m>y</m>-coordinates must be 0. If we use the approximate form of the solution we get
+              <m>(-0.65685,0)</m> and <m>(10.657,0)</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Find both intersection points of <m>f(x) = 15 x + 200/x</m> and <m>g(x) = 20 + 25 x</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            We have reason to believe that the profit function for widget manufacturing is modeled by a quadratic equation.
+            We have the following data for sales and profits.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Sales</cell><cell>100</cell><cell>250</cell>
+              <cell>350</cell><cell>500</cell><cell>600</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Profit</cell><cell>$8,462</cell><cell>$18,378</cell>
+              <cell>$22,455</cell><cell>$24,400</cell><cell>$23,747</cell>
+            </row>
+          </tabular>
+
+          <p>
+            <ol>
+              <li><p> Find the best fitting curve for the data.</p></li>
+              <li>
+                <p>
+                  Find the two break-even point, or amount of sales that yield a profit of $0.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol>
+              <li><p> Using Excel we find the best fitting polynomial of order 2:</p>
+                <image width="60%" source="images/sec1-6-sol13a.png"/>
+                <p>
+                  <m>y = -0.1006x2 + 100.66x - 555.65</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Using Wolfram we then find where the profit is 0.
+                  Using the approximate form of the solution is preferable in this case
+                  because we want to know at what Sales we have 0 profit (the break-even points).
+                </p>
+
+                <image width="60%" source="images/sec1-6-sol13b.png"/>
+
+                <p>
+                  The break-even points are at sales of 5.55 and 995.05.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            A certain bank will give a $75 bonus on a new account with a deposit of $1000, and then pays 5% interest compounded continuously.
+            A second investment opportunity will pay $100 per year.
+          </p>
+
+          <p>
+            <ol>
+              <li><p> Which opportunity pays more in the first year?</p></li>
+              <li><p> For what period of time do the two opportunities offer the same return?</p></li>
+              <li><p> What is the payout from the two opportunities for a 30-year investment?</p></li>
+              <li><p> What is the second period of time when the two opportunities offer the same return?</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x) = (10 x-1) *\exp(-x) + 2</m>.
+          </p>
+
+          <p>
+            <ol>
+              <li><p> Find a solution with Goal Seek starting with x=1.</p></li>
+              <li><p> What happens when Goal Seek tries to find a solution starting at <m>x=2</m>?</p></li>
+              <li><p> Explain why, from the graph of <m>f(x)</m>, we should expect this problem.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  The entry in cell B2 is <c>=(10*A2-1)*EXP(-A2)+2</c>.
+                </p>
+                <p>
+                  In the screen grab the values of <m>f</m> for <m>x = 1</m> and <m>x = 2</m> are given,
+                  and below it the result for the GoalSeek procedure are given.
+                </p>
+
+                <image width="50%" source="images/sec1-6-sol15a.png"/>
+
+                <p>
+                  For <m>x = 1</m> as the starting point GoalSeek find a zero at <m>x\approx-0.0839</m>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Starting at <m>x = 2</m> GoalSeek does not find a zero at all.
+                  If we run GoalSeek a second time, now starting with the value at
+                  <m>x = 53.02</m> we zoom in on the first zero!
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Using Wolfram, we see a fairly complicated solution,
+                  but we are also shown that there is one real solution.
+                </p>
+
+                <image width="80%" source="images/sec1-6-sol15b.png"/>
+
+                <p>
+                  Looking at the graph we see that there is clearly only one solution to the equation
+                  <m>(10 x-1) *\exp(-x) + 2 = 0</m>.
+                </p>
+
+                <p>
+                  If we start Goalseek at <m>x = 2</m>, the graph is sloping down to the right,
+                  which is why Goalseek approximates the zero to be at about <m> = 53</m>.
+                  The graph looks to be asymptotically approaching the <m>x</m>-axis.
+                  In this case Wolfram would have given the correct answer a bit more easily.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x) = x^2*\exp(-(x^2))</m>.
+          </p>
+          <p>
+            <ol>
+              <li><p> Find a solution with Goal Seek, starting with <m>x=.5</m>.  Does this represent an actual solution?</p></li>
+              <li><p> Find a solution with Goal Seek, starting with <m>x=2</m>.  Does this represent an actual solution?</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+

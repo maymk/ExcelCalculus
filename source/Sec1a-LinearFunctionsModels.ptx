@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-1-1-LinearFunctionsAndModels">
+    <title>Linear Functions and models</title>
+    <introduction>
+      <p>
+        We will start this chapter with a review of linear functions, which are common in business.
+        In business there are quite a few examples of linear equations.
+        We start by reviewing some standard concepts related to lines, including the slope.
+      </p>
+
+      <p>
+        Following the conventions of microeconomics, we will often use the variables q and p,
+        for quantity and  price, rather than x and y.
+        We will also follow the conventions of economics in treating quantity as the independent variable.
+        (The q-axis will be the horizontal axis.  A fast web search for supply and demand equilibrium will convince you this standard usage.)
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Equations of a line</title>
+
+      <p>
+        From prior courses, such as college algebra,
+        you will remember that lines can be written in several different forms.
+        If we are given the slope and the <m>y</m>-intercept,
+        the slope intercept form will be the equation of choice.
+        If we are given a point and a slope, it might be faster if we use the point-slope form of a line.
+      </p>
+
+      <assemblage xml:id="KindsOfLinearEquations">
+        <title>Kinds of Linear Equations</title>
+        <p></p>
+        <sbsgroup widths="40% 60%">
+          <sidebyside>
+            <p><m>y=m x+b</m></p>
+            <p>the slope-intercept form of a line</p>
+        	</sidebyside>
+          <sidebyside>
+            <p><m>y-y_0=m(x-x_0)</m></p>
+            <p>the point-slope form of a line</p>
+          </sidebyside>
+        </sbsgroup>
+      </assemblage>
+
+      <p>
+        In a business setting we are likely to use <m>q</m> instead of <m>x</m> and <m>p</m> instead of <m>y</m>.
+      </p>
+
+      <p>
+        With this notation these standard equations of a line become:
+      </p>
+
+      <assemblage xml:id="PQLinearEquations">
+        <sbsgroup widths="40% 60%">
+          <sidebyside>
+            <p><m>p=mq+b</m></p>
+            <p>the slope-intercept form of a line</p>
+      		</sidebyside>
+          <sidebyside>
+            <p><m>p-p_0=m(q-q_0)</m></p>
+            <p>the point-slope form of a line</p>
+          </sidebyside>
+        </sbsgroup>
+      </assemblage>
+
+      <example>
+        <title>Supply and Demand Curves</title>
+        <p>
+          Supply and demand equations are often modeled by linear equations.
+          The supply function is a line with a positive slope, and the demand function is a line with a negative slope.
+        </p>
+
+        <figure xml:id="Supply-Demand-Intersection">
+          <caption>The intersection of a supply and demand curve</caption>
+          <image width="50%" source="images/sec1-1-SDcurves.png">
+              <description>The intersection of a supply and demand curve</description>
+          </image>
+        </figure>
+
+        <p>
+          The vertical axis shows the price, the horizontal axis shows quantity.
+          Both supply (S) and demand (D) are linear functions.
+          In this diagram <sq>B</sq> denotes a surplus of supply, and <sq>A</sq> denotes a surplus of demand.
+        </p>
+      </example>
+
+      <p>
+        Recall, that the slope of a line through the points <m>P_0=(q_0,p_0)</m> and <m>P_1=(q_1,p_1)</m> is given by:
+      </p>
+      <assemblage xml:id="SlopeDef">
+          <p><me>m=\frac{\text{rise}}{\text{run}}=\frac{(p_1-p_0)}{(q_1-q_0 )}</me></p>
+      </assemblage>
+
+      <image width="50%" source="images/sec1-1-slope.png">
+          <description>The intersection of a supply and demand curve</description>
+      </image>
+
+      <p>
+        There are two other forms of a line that are sometimes used.
+        The general form of a line is a standard notation used in mathematics.
+        The 2-point form of a line is very handy in those situations where we are not given a slope,
+        but we are given information about two points that lie on the line.
+      </p>
+
+      <assemblage xml:id="TwoPtLinearEquations">
+        <sbsgroup widths="50% 50%">
+          <sidebyside>
+            <p><m>a x+b y+c=0</m></p>
+            <p> The general form of a line</p>
+      		</sidebyside>
+          <sidebyside>
+            <p><m>y-y_0=\frac{y_1-y_0}{x_1-x_0 }(x-x_0)</m></p>
+            <p>The 2-point form of a line</p>
+        	</sidebyside>
+        </sbsgroup>
+      </assemblage>
+
+      <p>
+        As above, in the setting of this course we may be using <m>p</m>
+        (price) and <m>q</m> (quantity) as our variables.
+        This would result in equations that look as follows:
+      </p>
+
+      <assemblage xml:id="ATwoPtLinearEquations">
+        <sbsgroup widths="50% 50%">
+          <sidebyside>
+            <p><m>a q+b p+c=0</m></p>
+            <p> The general form of a line</p>
+          </sidebyside>
+          <sidebyside>
+            <p><m>p-p_0=\frac{p_1-p_0}{q_1-q_0 }(q-q_0)</m></p>
+            <p>The 2-point form of a line</p>
+          </sidebyside>
+        </sbsgroup>
+      </assemblage>
+
+      <example>
+        <title>Finding four versions of a line</title>
+        <statement>
+          <p>
+            We find that we can sell 150 widgets a day if we sell them at $10.
+            If we raise the price to $15, we can only sell 110 widgets a day.
+            Assume that there is a linear relationship between price and quantity sold.
+            Find the equation of the line in all four forms.
+          </p>
+        </statement>
+        <solution  xml:id="SolutionFindingFourVersionsOfALine">
+          <p>
+            Writing this using our variables <m>p</m> (price) and <m>q</m> (quantity of widgets)
+            we see that when <m>p = 10</m>, <m>q = 150</m> and when <m>p = 15</m>, <m>q = 110</m>.
+            Points are (usually) given as <m>(q,p)</m>, so this means we have two point <m>(150,10)</m> and <m>(110,15)</m> on the line.
+            We always need to find the slope of the line, and in this case
+            <me>
+              m=  \frac{15-10}{110-150}=  \frac{5}{-40}= \frac{-1}{8}
+            </me>.
+          </p>
+
+          <p>
+            We are given two points, so the 2-point form of the line should be the easiest formula to find:
+            <me>
+              p-p_0=\frac{p_1-p_0}{q_1-q_0 }(q-q_0)
+            </me>.
+          </p>
+          <p>
+            In our case this becomes:
+            <me>
+              p-10=\frac{15-10}{110-150}(q-150)
+            </me>.
+          </p>
+
+          <p>
+            We just found the slope and we just need to pick a point <m>(p_0,q_0)</m> to finish the problem.
+            (Recall that <m>p</m> and <m>q</m> are the variables, so we want to leave those as they are.)
+            In this case lets pick <m>(p_0,q_0)= (150,10)</m>.
+            Then we get this simplified version, which is also the point-slope form of this line.
+            <me>
+              p-10=\frac{-1}{8}(q-150)
+            </me>.
+          </p>
+
+          <p>
+            From here we can very easily find the slope intercept form by some straight-forward algebra:
+            <m>p-10=\frac{-1}{8}(q-150)</m> implies that
+            <me>
+              p=\frac{-1}{8} (q-150)+10=  \frac{-1}{8} q+  \frac{150}{8}+10=  \frac{-1}{8} q+\frac{230}{8}
+            </me>.
+          </p>
+          <p>
+            Thus
+            <me>
+              p=  \frac{-1}{8} q+\frac{230}{8}
+            </me>.
+          </p>
+
+          <p>
+            And finally the general form will be another exercise in algebra.
+            We clear the fractions and put everything on one side.
+            <me>
+              8p+q-230=0
+            </me>.
+          </p>
+        </solution>
+      </example>
+
+      <example>
+        <title>Finding a line from two points</title>
+        <statement>
+          <p>
+            Suppose that a linear cost-quantity relationship exists in producing widgets.
+            There is a fixed cost of $400.  There is also a per-unit cost of $11.
+          </p>
+
+          <p>
+            <ol marker="(a)">
+               <li><p>Find the equation of the line.</p></li>
+               <li><p>Find the cost of making 200 widgets.</p></li>
+             </ol>
+           </p>
+         </statement>
+         <solution xml:id="SolutionFIndingALineFromTwoPoints">
+           <p>
+             <ol marker="(a)">
+               <li>
+                 <p>
+                   We have one point of the form (quantity, cost) at (0, 400) from the fixed cost.
+                   This point happens to be an intercept.  The slope of the line is <m>m=11/1=11</m>.
+                   We will let <m>C</m> stand for Cost and <m>q</m> stand for quantity.
+                   The general formula for a line with these variables will have the form
+                   <me>C=m q+b.</me>
+                 </p>
+
+                 <p>
+                   In this example <m>m = 11</m> and <m>b = 400</m>,
+                   hence the equation of the line is
+                   <me>C=11 q+400</me>
+                 </p>
+               </li>
+               <li>
+                 <p>
+                   Using the equation form part a) we see that the cost of producing 200 widgets is
+                   <me>C=11 (200)+400=\$2,600</me>
+                 </p>
+               </li>
+             </ol>
+           </p>
+         </solution>
+       </example>
+
+       <example>
+         <title>A nonlinear function</title>
+         <statement>
+           <p>
+             Sarah is paid $500 for working up to 40 hours per week.
+             For work beyond 40 hours per week she is paid $18/hour.
+           </p>
+
+           <p>
+            <ol marker="(a)">
+            	<li><p>Find the equation of the line.</p></li>
+            	<li><p>How much is she paid if she works 56 hours in a week?</p></li>
+            	<li><p>What is she paid for working 30 hours in a week?</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution xml:id="SolutionANonlinearFunction">
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  For this example we will use <q>designer variables</q>, longer variables that make the equation easier to read.
+                  The output will be Pay, and the input variable <mdash/> the number of hours worked <mdash/> will be hrs.
+                  We are told that Pay = 500 when hrs = 40. The slope of the line for work beyond 40 hours is <m>m=18</m>.
+                  Another way to think of this is to say that there is a fixed Pay of $500 and a variable Pay for any hours in excess of 40:
+                  <ie/> (hrs - 40). Thus, the equation of the line, according to the point-slope form is
+                  <me>\text{Pay} = \text{variable  pay} + \text{Fixed  pay}</me>.
+                </p>
+
+                <p>
+                  This gives us
+                  <me>
+                    \text{Pay}=m(\text{hrs}-40)+500=18*(\text{hrs}-40)+500
+                  </me>.
+                </p>
+              </li>
+              <li>
+                <p>The pay for working 56 hours is 18(56-40)+500=$788.</p>
+              </li>
+              <li>
+                <p>The pay for working 30 hours is $500.
+                  This is a trick question part of the problem.
+                  From the text of the problem, the linear model only works for overtime,
+                  with a flat rate applying to less than 40 hours per week.
+                  Comment: The function should be written as a piecewise defined function.
+                </p>
+              </li>
+            </ol>
+          </p>
+
+          <p>
+            This question is all about the function <m>f</m> defined by
+            <me>
+              \operatorname{Pay}=\begin{cases}
+              500\amp \text{hrs}\le 40\\
+              18*(\text{hrs}-40)+500\amp \text{hrs}\gt 40\\
+              \end{cases}
+            </me>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        It can be useful when writing reports to have variables that convey some meaning.
+        We could have used <m>y</m> for <m>\operatorname{Pay}</m>, and <m>x</m> for <m>\operatorname{hrs}</m>,
+        but using the much more easily interpreted variables named Pay and hrs helps when reading the formulas.
+      </p>
+    </subsection>
+
+    <exercise>
+      <title>Reading check, Linear Functions and Models</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+                                
+                 "In this class we will sometimes use \(q\) and \(p\) instead of \(x\) and \(y\).",
+                 "The supply curve has a positive slope. ",
+                 "\(y=mx+b\) is often referred to as the slope-intercept form of the line. ",
+                 "\(y-y_1=m(x-x_1)\) is often referred to as the point-slope form of the line.",
+                 "The slope can be defined as rise over run.",
+                 "If they are not labeled, there is no way to tell which is the supply curve and which is the demand curve.",
+                 "\(y=mx+b\) is often referred to as the general form of the line.  ",
+                 "The demand function is a line with a positive slope."
+                ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.1, Linear functions and models, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+
+    <exercises xml:id="exercises-set-sec-1-1">
+      <title>Exercises 1.1 Linear Functions and models</title>
+
+<!-->
+<exercise><title>WeBWorK - Computing Percentiles</title>
+	<webwork source="Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg">
+	</webwork>
+
+</exercise>
+
+
+<exercise><title>WeBWorK - Computing Percentiles</title>
+	<webwork source="Contrib/SLU/excelcalculus/ch1/rqC1/Ch1Sec1Q1pg">
+	</webwork>
+
+</exercise>
+<-->
+      <exercisegroup>
+        <introduction>
+          <p>Given two points in the <m>(q,p)</m> plane and a value <m>q_0</m>:</p>
+          <p>
+            <ol>
+            	<li><p>Find the slope of the line determined by the points.</p></li>
+            	<li><p>Give the equation of the line determined by the points.</p></li>
+            	<li><p>Give the value of <m>p</m> predicted for <m>q_0</m> by the line.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Points <m>(2,5)</m> and <m>(6,17)</m>, with <m>q_0=4</m>.
+            </p>
+          </statement>
+          <hint><p>Find the slope and use the point-slope form</p></hint>
+          <solution xml:id="Exercises-LinearFunctions1">
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    First find the slope: <m>m=  \frac{\text{change in }p}{\text{change in }q}
+                    =  \frac{17-5}{6-2}=\frac{12}{4}=3</m>
+                  </p>
+                </li>
+
+                <li>
+                  <p>Next we find the equation of the line. There are several ways to do this and two methods are outlined below.</p>
+                  <p>
+                    <ul>
+                      <li>
+                        <p>
+                          Method 1: use the point-slope equation: <m>p-p_0=m (q-q_0)</m>.
+                          We can choose either one of the points,
+                          so in this case we will find the line using the point <m>(q_0,p_0 )=(2,5)</m>.
+                          This gives the equation <m>p-5=3 (q-2)</m>.
+                        </p>
+                        <p>Rewrite this as <m>p=3q-1</m></p>
+                      </li>
+                      <li>
+                        <p>
+                          Method 2: use the slope- intercept equation <m>p=m q+b</m>.
+                          Use <m>(q,p)=(2,5)</m> and <m>m = 3</m> and solve for <m>b</m>:
+                          <m>5=3 (2)+b</m>.
+                          And solving for <m>b</m> we have that <m>b= -1</m>, and hence <m>p=3q-1</m>
+                        </p>
+                      </li>
+                    </ul>
+                  </p>
+                </li>
+
+                <li><p>Evaluate at the given point.  <m>p(4)=3*4-1=11</m></p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Points <m>(5,7)</m> and <m>(10,7)</m>, with <m>q_0=20</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Points <m>(20,10)</m> and <m>(40,5)</m>, with <m>q_0=12</m>.
+            </p>
+          </statement>
+          <solution xml:id="Exercises-LinearFunctions3">
+            <p>
+              Just as in problem 1 we find the slope and then find the equation of the line.
+            </p>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    First find the slope:
+                    <m>m=  \frac{\text{change in }p}{\text{change in }q} =  \frac{5-10}{40-20}=-\frac{5}{20}=-\frac{1}{4}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Using <m>p=m (q-q_0)+p_0</m> with <m>(q_0,p_0 )=(20, 10)</m> and <m>m = -\frac{1}{4}</m>,
+                    we get <m>p=-\frac{1}{4}(q-20)+10</m>.  Solving for <m>p</m> we get <m>p =-\frac{1}{4}q+15</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>Evaluate at the given point.  <m>p(12)=-\frac{1}{4}(12)+15=12</m>.</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Points <m>(5,62)</m> and <m>(115,783)</m>, with <m>q_0=415</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Points <m>(273,578)</m> and <m>(412,6)</m>, with <m>q_0=309</m>.
+            </p>
+          </statement>
+          <solution xml:id="Exercises-LinearFunctions5">
+            <p>Just as in problem 1 we find the slope and then find the equation of the line.</p>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    First find the slope:
+                    <m>m=  \frac{\text{change in }p}{\text{change in }q} =  \frac{578-6}{273-412}=-\frac{572}{139}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Using <m>p=m (q-q_0)+p_0</m> with <m>(q_0,p_0 )=(412, 6)</m> and <m>m = -\frac{572}{139}</m>,
+                    we get <m>p=-\frac{572}{139}(q-412)+6</m>.
+                    (We can combine the constant terms <mdash/> the <m>6</m> and the <m>-\frac{572}{139}*(-412)</m>,
+                    but leaving the equation in this form is acceptable.)
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Evaluate at the given point.
+                    <m>p(309)=-\frac{572}{139}(309-412)+6 =-\frac{572}{139}(-103)+6=429\frac{119}{139}</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Points <m>(509,17)</m> and <m>(211,132)</m>, with <m>q_0=4</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the following problems, start with the information given:
+            <ol>
+            	<li><p>Give the equation of the line determined by that information.</p></li>
+            	<li><p>Using the line, give the predicted value of <m>p</m> for the given <m>q_0</m>.</p></li>
+            	<li><p>Give the value of <m>q</m> for which the predicted value of <m>p</m> is <m>0</m>.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              A slope of <m>3</m>, passing through <m>(6,3)</m>, with <m>q_0=4</m>.
+            </p>
+          </statement>
+          <solution xml:id="Exercises-LinearFunctions7">
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    Using <m>p=m q+b</m>, we get <m>3=3 (6)+b</m>,
+                    so <m>b= -15</m> and the equation of the line is <m>p=3 q-15</m>.
+                  </p>
+                </li>
+                <li><p>If <m>q_0=4</m>, then <m>p=3 q-15=3(4)-15= -3</m></p></li>
+                <li>
+                  <p>
+                    The predicted value of <m>p</m> is <m>0</m>, when <m>0=3 q-15</m>.
+                    Solving for <m>q</m> we get <m>q=5</m>.
+                    [Comment: in part a) we could have used the point-slope for as well.]
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              A slope of <m>-2</m>, passing through <m>(2,-5)</m>, with <m>q_0=3</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              A slope of <m>12.7</m>, passing through <m>(22,183)</m>, with <m>q_0=46</m>.
+            </p>
+          </statement>
+          <solution xml:id="Exercises-LinearFunctions9">
+            <p>
+              <ol>
+                <li>
+                  <p>	Using <m>p=m (q-q_0 )+p_0</m>   we get <m>p=12.7 (q-22)+183</m>.</p>
+                </li>
+                <li>
+                  <p>When <m>q_0=46</m>, we get that <m>p=12.7 (46-22)+183=12.7(24)+183</m>. And hence <m>p=487.8</m>.</p>
+                </li>
+                <li>
+                  <p>
+                    The predicted value of <m>p</m> is <m>0</m>, when <m>0=183+12.7 (q-22)</m>.
+                    Solving for <m>q</m> we get: <m>12.7 (q-22)= -183</m> This implies <m>(q-22)= \frac{-183}{12.7}</m>.
+                    Therefore,
+                    <me>q=22 -\frac{183}{12.7}=7.59</me>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              A slope of <m>-0.23</m>, passing through <m>(7.6,19.7)</m>, with <m>q_0=59.6</m>.
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              A slope of 0, passing through <m>(12.3,9.8)</m>, with <m>q_0=74</m>.
+            </p>
+          </statement>
+          <solution  xml:id="Exercises-LinearFunctions11">
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    Using <m>p=m (q-q_0 )+p_0</m>   we get <m>p=0 (q-12.3)+9.8</m> or <m>p=9.8</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    When <m>q_0=74</m>, we get that <m>p=9.8</m>.
+                    (This is a constant function, and the output is going to be <m>9.8</m>
+                    no matter what value of <m>q</m> we plug in.)
+                  </p>
+                </li>
+                <li>
+                  <p>The predicted value of <m>p</m> is never  <m>0</m>, because the predicted value of p is always 9.8.</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              A slope that is undefined, passing through <m>(6,3)</m>, explaining why part b would not make sense.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>For problems 13-18, start with the equation given:</p>
+          <p>
+            <ol>
+          	<li><p>Give the slope of the line or say that the slope is undefined.</p></li>
+          	<li><p>Give the intercepts of the line with the axes.</p></li>
+          	<li><p>Give two points that are on the line but not on the axes.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>3 p+2 q=6</m>.
+            </p>
+          </statement>
+          <solution xml:id="Exercises-LinearFunctions13">
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    Solve for <m>p</m> so we can read off the slope more easily:  <m>p= -2/3 q+2</m>.
+                    Hence the slope is <m>m= -2/3</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To get the <m>p</m>-intercept we set <m>q=0</m>, so that <m>3 p=6</m>, and we get <m>p=2</m>.
+                    To get the <m>q</m>-intercept we set <m>p=0</m>, so that <m>2q=6</m>, and we get <m>q=3</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We can pick any two values for <m>q</m> (except <m>0</m> and <m>3</m> because those are intercepts),
+                    so arbitrarily pick some values: say <m>q=1</m> and <m>q=-1</m>.
+                    If <m>q=1</m>, then <m>3 p+2=6</m>, and hence  <m>p=4/3</m> so the point would be <m>(q,p)=(1,4/3)</m>.
+                    If <m>q=-1</m>, then <m>3 p-2=6</m>, and hence  <m>p=8/3</m> so the point would be <m>(q,p)=(-1,8/3  )</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>7 p-4 q+14=0</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>y=5</m>.
+            </p>
+          </statement>
+          <solution  xml:id="Exercises-LinearFunctions15">
+            <p>
+              <ol>
+                <li><p>The slope is <m>0</m>
+                </p></li>
+                <li><p>The y-intercept is <m>y = 5</m>. There is no <m>x</m>-intercept
+                </p></li>
+                <li><p>No matter what <m>x</m> we choose the <m>y</m> value will always be <m>5</m>. So we can pick any two values of <m>x</m> (not <m>0</m> to avoid the intercept). For instance <m>(x,y)=(-20,5)</m>, <m>(x,y)=(-2,5)</m>, <m>(x,y)=(7,5)</m>, etc are all points on the line.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>x=3</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>y=4(x-3)+9</m>.
+            </p>
+          </statement>
+          <solution  xml:id="Exercises-LinearFunctions17">
+            <p>
+              <ol>
+                <li><p>The slope is <m>4</m>
+                </p></li>
+                <li><p>To get the <m>y</m>-intercept we set <m>x=0</m>, so that <m>y=4(-3)+9=-3</m>,</p>
+                <p>To get the <m>x</m>-intercept we set <m>y=0</m>, so that <m>0=4(x-3)+9</m>.  Solve for <m>x</m> and we get <m>x-3=-\frac{9}{4}</m> and <m>x=3-\frac{9}{4}=\frac{3}{4}</m>
+                </p></li>
+                <li><p>Avoiding the intercepts we can choose <m>x</m> to be any number other than <m>x = 0</m> and <m>x=3/4</m>.  We may look for nice values of <m>x</m> that make the arithmetic come out nice: for example choose <m>x=3</m> and <m>x=4</m>.
+                When <m>x=3</m>, <m>y=9</m>, and we get the point <m>(x,y)=(3,9)</m>.
+                When <m>x=4</m>, <m>y=13</m>, and we get the point <m>(x,y)=(4,13)</m>.
+                </p></li>
+              </ol>
+            </p>
+        </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>112 p+257 q=4783</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            Suppose that the relationship between price and quantity of widgets sold is linear.
+            When the price is $23, we can sell 4783 widgets.  If we raise the price to $27, we can only sell 4295 widgets.
+            Find the equation of the line.
+          </p>
+        </statement>
+        <solution  xml:id="Exercises-LinearFunctions19">
+          <p>
+            The information tells us we have two points: <m>(q,p)=(4783,23)</m>  and <m>(q,p)=(4295,27)</m>.
+            (Note that in business the quantity <m>q</m> is usually the input and price <m>p</m> is usually the output.)</p>
+            <p>Next we need the slope: <m>m=  (27-23)/(4295-4783)=4/(-488)=-1/122</m></p>
+            <p>
+              Using <m>p-p_0=m (q-q_0 )</m>   we get <m>p-23=-1/122  (q-4783)</m>.
+              We can rewrite the latter as <m>p=23-1/122  (q-4783)</m>.
+            </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Suppose that the relationship between price and quantity of gizmo kits we can buy is linear.
+            When the price is $15, we can buy 6000 gizmo kits.
+            If we lower the price we will pay to $13, we can only buy 4500 kits.
+            Find the equation of the line.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>

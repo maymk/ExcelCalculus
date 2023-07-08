@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-5-1-ImplicitDifferentiation">
+    <title>Implicit Differentiation</title>
+
+    <p>
+      We often run into situations where <m>y</m> is expressed not as a function of <m>x</m>,
+      but as being in a relation with <m>x</m>.
+      A familiar example is the equation for a circle of radius 5,
+      <me>x^2+y^2=25</me>.
+    </p>
+
+    <p>
+      We recall that a circle is not actually the graph of a function.
+      It is, however, the combined graph of the two functions representing the top and bottom halves of the circle.
+    </p>
+
+    <p>
+      We have two approaches if we want to find the slope of the line tangent to the circle at <m>(4,3)</m>.
+      We could first use algebra to express <m>y</m> as a function of <m>x</m>,
+      and then use our rules to find the derivative.
+      That approach works in this problem but will fail with more complicated relations.
+      The alternative method is to say that <m>y</m> is implicitly a function of <m>x</m>.
+      We can then use the chain rule to take the derivative of the relation,
+      with the derivative of <m>y</m> being designated as <m>y'</m>.
+      We can then solve for <m>y'</m> in terms of <m>x</m> and <m>y</m>.
+      This second method is called implicit differentiation.
+    </p>
+
+    <p>We start by trying both approaches on the equation of a circle.</p>
+
+
+    <example>
+      <title>Tangent to a circle</title>
+      <statement>
+        <p>
+          Find the equation of the line tangent to <m>x^2+y^2=25</m> at <m>(4,3)</m>.
+        </p>
+      </statement>
+      <solution>
+        <title>Solution A</title>
+        <p>
+          To find the equation of a line we need a point and a slope.
+          We already have the point at <m>(4,3)</m>.
+          To find the slope, we can express the circle as the graph of 2 functions.
+          We first solve for <m>y^2</m>:
+          <me>y^2=25-x^2</me>.
+          We then take the square root to produce 2 functions.
+          <md>
+            <mrow>f_1 (x)\amp =\sqrt{25-x^2 }</mrow>
+            <mrow>f_2 (x)\amp =-\sqrt{25-x^2 }</mrow>
+          </md>.
+        </p>
+
+        <p>
+          The point is on the first function, which is the top half of the circle,
+          so we take its derivative and evaluate at <m>x=4</m>.
+          <md>
+            <mrow>f_1' (x)\amp =1/2 (25-x^2 )^{-1/2} (-2x)</mrow>
+            <mrow>f_1' (4)\amp =1/2 (25-4^2 )^{-1/2} (-8)=-4/3</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Thus the tangent line, in point-slope form, is:
+          <me>y=3-\frac{4}{3} (x-4)</me>.
+        </p>
+      </solution>
+      <solution>
+        <title>Solution B</title>
+        <p>
+          To find the equation of a line we need a point and a slope.
+          We already have the point at <m>(4,3)</m>.  To find the slope, we take the derivative of our equation.
+          Since we do not have y as a function of <m>x</m>, we simply note that its derivative is the placeholder <m>y'</m>.
+          Recall that <m>\frac{d}{dx} x</m>, the derivative of <m>x</m> with respect to <m>x</m>, is simply 1.
+          <md>
+            <mrow>\frac{d}{dx}(x^2+y^2\amp =25)</mrow>
+            <mrow>\frac{d}{dx}(x^2)+\frac{d}{dx}(y^2)\amp =\frac{d}{dx}(25)</mrow>
+            <mrow>2x \frac{d}{dx}(x)+2y \frac{d}{dx}(y)\amp =0</mrow>
+            <mrow>2x+2y y'\amp =0</mrow>
+          </md>.
+        </p>
+
+        <p>
+          We then solve for <m>y'</m> and substitute our point <m>(4,3)</m> in for <m>(x,y)</m>.
+          <me>y'=-\frac{2x}{2y}=-\frac{x}{y}</me>.
+        </p>
+
+        <p>
+          When we substitute our point <m>(4,3)</m> in for <m>(x,y)</m> we get the same value,
+          <m>y'=-\frac{4}{3}</m>.  Thus the tangent line, in point-slope form, is:
+          <me>y=3-\frac{4}{3} (x-4)</me>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      For the equation of a circle, either method works.
+      We may encounter relations where solving for an explicit function is hard or impossible.
+    </p>
+
+    <example>
+      <title>Differentiation of a price-quantity relationship</title>
+      <statement>
+        <p>
+          The quantity <m>q</m> and demand price <m>p</m> for widgets satisfy the relation
+          <me>10p+2pq+q^2=1000</me>,
+          with <m>10\lt q\lt 90</m>, where quantity is in thousands of units.
+          If I am currently selling 20,000 widgets, what is the relationship between change in quantity and change in price?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Instead of solving for quantity as an explicit function of price, we will implicitly differentiate.
+          <md>
+            <mrow>\frac{d}{d q}(10p+2pq+q^2 \amp =1000)</mrow>
+            <mrow>10 \frac{d p}{d q}+2*\frac{d p}{d q}*q+2p+2q\amp =0</mrow>
+            <mrow>\frac{d p}{d q} (10+2q)\amp =-2*(p+q)</mrow>
+            <mrow>\frac{d\ p}{d\ q}\amp =\frac{-2*(p+q)}{(10+2q) }</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Since quantity is in thousands of units, if we are selling 20,000 widgets,
+          <m>\quantity:q=20</m> and <m>\price:p=14.64</m>.
+          Substituting those values into the formula for the derivative of price with respect to quantity, we see
+          <me>\frac{d\price}{d\quantity}=\frac{-2(14.64+20)}{(10+2*20) }=-1.386</me>.
+          We increase sales by 1000 by dropping price by $1.386.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      For the first two examples, the relation was quadratic,
+      so it was straightforward to find the derivative by either solving for an explicit function or by differentiating implicitly.
+      However, if the relation more complicated we will find implicit differentiation easier than solving for the function.
+    </p>
+
+    <example>
+      <title>Another price-quantity relationship</title>
+      <statement>
+        <p>
+          The quantity <m>q</m> and demand price <m>p</m> for gizmos satisfy the relation
+          <me>5p+3*(pq)^{1.5}+2q=2000</me>,
+          with <m>10\lt q\lt 100</m>, where quantity is in thousands of units.
+          If I am currently selling 25,000 widgets, what is the relationship between change in quantity and change in price?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          There is no easy method to solve this relation for either price or quantity as an explicit function of the other.
+          Instead, we will implicitly differentiate.
+          <md>
+            <mrow>\frac{d\ }{d\ q}\amp(5*p+3*(p*q)^{1.5+}2*q =2000)</mrow>
+            <mrow>5 \frac{d\ p}{d\ q}\amp+3*(1.5*p^{.5}*\frac{d p}{d q}*q^{1.5}+p^{1.5}*1.5*q^{.5} )+2 =0</mrow>
+            <mrow>\frac{d\ p}{d\ q}\amp*(5+4.5*p^{.5}*q^{1.5} ) =-(2+4.5*p^{1.5}*q^{.5})</mrow>
+            <mrow>\frac{d\ p}{d\ q}\amp =-\frac{(2+4.5*p^{1.5}*q^{.5})}{(5+4.5*p^{.5}*q^{1.5} ) }</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Since quantity is in thousands of units, if we are selling 25,000 widgets,
+          <m>\quantity=25</m> and <m>\price=2.986</m>.
+          Substituting those values into the formula for the derivative of price with respect to quantity, we see
+          <me>\frac{d\ price}{d\ quantity}=\frac{-118.104}{997.025}=-0.12088</me>.
+        </p>
+
+        <p>We increase sales by 1000 by dropping price by $0.121.</p>
+      </solution>
+    </example>
+
+    <assemblage>
+      <p>
+        A standard result from economics is the <term>Cobb-Douglas equation</term> that claims
+        <me>Y=AL^\alpha K^\beta</me>,
+        where <m>Y</m>, <m>L</m>, and <m>K</m> represent total production, labor, and capital, respectively.
+        In the classical model <m>\alpha+\beta=1</m>.
+      </p>
+    </assemblage>
+
+    <p>
+      This can be understood as a relation involving capital and labor.
+      An interesting question is to ask for the rate of change of capital with respect to labor,
+      or how increasing or reducing capital investment will raise or lower labor costs.
+    </p>
+
+    <example>
+      <title>Differentiation of Cobb-Douglas</title>
+      <statement>
+        <p>
+          A widget manufacturer has a production function given by
+          <me>Y=50L^{0.75} K^{0.25}</me>.
+        </p>
+
+        <p>
+          The manufacturer currently uses 81 units of labor and 16 units of capital.
+          Find the derivative of labor with respect to capital and interpret your result.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We implicitly differentiate our equation with respect to capital.
+          <md>
+            <mrow>\frac{d }{d K}\amp (Y =50L^{.75} K^{.25})</mrow>
+            <mrow>0\amp =50*(0.75*L^{-0.25}*\frac{d L}{d K}*K^{.25}+L^{.75}*.25*K^{-0.75} )</mrow>
+            <mrow>\frac{d L}{d K}\amp*(0.75*L^{-0.25}*K^{.25} ) =-(L^{.75}*.25*K^{-0.75})</mrow>
+            <mrow>\frac{d L}{d K}*\amp =-(L^{.75}*.25*K^{-0.75})/((0.75*L^{-0.25}*K^{.25} ) )=-L/3K</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Substituting in our values for <m>L</m> and K we see that <m>Y=50*81^{.75} 16^{.25}=2700</m>
+          and <m>(d L)/(d K)=-81/48\approx-1.6875</m>.
+          This means, if we want to keep level production,
+          changing capital investment by 1 unit allows us to change labor by <m>-1.6875</m> units.
+        </p>
+      </solution>
+    </example>
+
+    <paragraphs>
+      <title>Implicit differentiation using CAS</title>
+
+      <p>
+        As with regular differentiation, we can use online computer algebra systems to do implicit differentiation.
+        The easiest way to do this is with a web search for implicit differentiation calculator.
+      </p>
+
+      <image width="100%" source="images/sec5-1-1.png"/>
+
+      <p>
+        The first option we are given is a widget interface for WolframAlpha.
+        It easily lets us do the first example in this section.
+      </p>
+
+      <image width="70%" source="images/sec5-1-2.png"/>
+
+      <p>
+        The second option from the search takes us to a calculator from Symbolab.
+        It will easily do the second example from this section.
+      </p>
+
+      <image width="100%" source="images/sec5-1-3.png"/>
+
+      <p>
+        You should notice that the Symbolab calculator lets you use other variables
+        and has an easy option for showing step by step solutions.
+      </p>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Summary</title>
+      <p>
+        Implicit differentiation is an application of the chain rule.
+        To use this technique we need an equation between two variables that we can
+        think of as implicitly defining one variable as a function of the other.
+        If assume one variable is implicitly a function of the other,
+        differentiating the equation gives us an equation in the two variables and the derivative.
+        We can then use algebra to solve the new equation for the derivative.
+      </p>
+    </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, Implicit Differentiation</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Implicit differentiation is an application of the chain rule.  ", 
+"Implicit differentiation is used when we are given an equation between two variables and it is not solved for one of the variables.  ", 
+"A relation involving two quantities implicitly defines one as a function of the other in a small region.  ", 
+"The textbook worked through examples of using implicit differentiation to find tangent lines to circles.  ", 
+
+"For implicit  differentiation, you need to explicitly solve for one of the variables. ", 
+"The textbook worked through examples of using implicit differentiation to find tangent lines to hyperbolas.  ", 
+"The textbook worked through examples of using implicit differentiation to find tangent lines to ellipses.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 5.1, Implicit Differentiation, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-5-1">
+  	   <title>Exercises: Implicit Differentiation Problems</title>
+
+       <exercisegroup>
+         <introduction>
+           <p>
+             For the following equations find the specified derivative.
+           </p>
+         </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>2x+3y=23</m>.	Find <m>\frac{dy}{dx}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The best method is to notice this is a line with slope <m>\frac{-2}{3}</m>.
+              Plunging ahead without noticing that:
+              <md>
+                <mrow>\frac{d}{dx}  (2x+3y )\amp = \frac{d}{dx}  23</mrow>
+                <mrow>\text{Implies that }2+  3\frac{dy}{dx}\amp =0</mrow>
+              </md>.
+            </p>
+
+            <p>
+              Solve for <m>\frac{dy}{dx}</m>:
+              <me>\frac{dy}{dx}  =\frac{-2}{3}</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>7x+9y=23</m>.	Find <m>\frac{dy}{dx}</m>.  (You can use two different methods.)
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>x^2+3xy+5y^2=23</m>.	Find <m>\frac{dy}{dx}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>\frac{d}{dx}  (x^2+3xy+5y^2 )\amp = \frac{d}{dx}  23</mrow>
+                <mrow>\text{Implies that }2x+3  \frac{d}{dx} (xy)+5  \frac{d}{dx}  y^2\amp =0</mrow>
+              </md>.
+            </p>
+
+            <p>
+              For the  <m>\frac{d}{dx} (xy)</m> term we need to use the product rule and for
+              <m>\frac{d}{dx}  y^2</m> we need the chain rule. We then get
+              <me>2x+3[(1)y+x\frac{dy}{dx}]+5 (2y)\frac{dy}{dx}  =0</me>.
+            </p>
+
+            <p>
+              Solve for <m>\frac{dy}{dx}</m>:
+              <md>
+                <mrow>2x+3y+3x \frac{dy}{dx}+10y \frac{dy}{dx}  \amp =0</mrow>
+                <mrow>\text{Hence }(3x+10y)  \frac{dy}{dx}  \amp =-(2x+3y)</mrow>
+                <mrow>\text{And  }\frac{dy}{dx}  \amp =-((2x+3y))/((3x+10y) )</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>(x^3+x^2+1)(y^3+2y+3)=5</m>.	Find <m>\frac{dy}{dx}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>75*\price+(\quantity^2)/100=2000</m>.	Find <m>\left(\frac{d\price}{d\quantity}\right)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Some may find this easier with shorter variable labels: <m>75P+Q^2/100=2000</m>.
+              Find <m>\frac{dP}{dQ}</m>.
+              <md>
+                <mrow>\frac{d}{dQ}  [75P+\frac{Q^2}{100}]\amp =\frac{d}{dQ}  2000</mrow>
+                <mrow>   75  \frac{dP}{dQ}+\frac{Q}{50}\amp =0</mrow>
+              </md>.
+            </p>
+
+            <p>
+              Hence    <m>\frac{dP}{dQ}=-  \frac{Q}{50*75}= \frac{-Q}{3750}</m>.
+            </p>
+
+            <p>
+              So we have that <m>\frac{d\price}{d\quantity}/= \frac{-\quantity}{3750}</m>.
+            </p>
+
+            <p>
+              So if we were to increase the quantity by 1 (<m>d\quantity = 1</m>),
+              then there would be a decrease in price (<m>= d\price</m>) equal to the quantity divided by 3750.
+              So a small increase in quantity would result in a (small) decrease in price.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>50*\price+5*\price*\quantity+(\quantity^2)/10=5000</m>.	Find <m>\frac{d\price}{d\quantity}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>40*\price+7*\price*\quantity+\sqrt{\quantity}=2000</m>.	 Find <m>\frac{d\price}{d\quantity}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Rewrite as:   <m>40p+7pq+\sqrt{q}=2000</m>.  Find <m>\frac{d\ p}{d\ q}</m>.
+            </p>
+
+            <p>
+              We take the derivative with respect to q of both sides.
+              In other words we apply <m>\frac{d}{d\ q}</m> to both sides.
+              <md>
+                <mrow>\frac{d}{d\ q}  [40p+7pq+q^{0.5} ]\amp =\frac{d}{d\ q} 2000</mrow>
+                <mrow>40 \frac{d\ p}{d\ q}+7[\frac{dp}{dq}  q+p]+0.5 q^{-0.5}\amp =0</mrow>
+                <mrow>(40+7q)\frac{d\ p}{d\ q}+7p+0.5 q^{-0.5}\amp =0</mrow>
+                <mrow>\frac{d\ p}{d\ q}\amp =  \frac{-7p-0.5 q^{-0.5}}{40+7q}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>50*\price^2+5*\price*\quantity=3000</m>.	Find <m>\frac{d\price}{d\quantity}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>1000=5L^{0.6} K^{0.4}</m>.	Find <m>\frac{dK}{dL}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Take the derivative with respect to <m>L</m> to both sides:
+              <md>
+                <mrow>\frac{d}{dL} 1000\amp =5 \frac{d}{dL} [L^{0.6} K^{0.4} ]</mrow>
+                <mrow>0\amp =5[\frac{d}{dL}(L)^{0.6})K^{0.4}+L^{0.6}  \frac{d}{dL}(K^{0.4})]  \qquad \text{(product rule)}</mrow>
+                <mrow>0\amp =5[0.6 L^{-0.4}  K^{0.4}+L^{0.6}  0.4K^{-0.6}  \frac{dK}{dL}]   </mrow>
+              </md>.
+            </p>
+
+            <p>
+              Divide both sides by 5 and solve for <m>\frac{dK}{dL}</m>.
+              <me>
+                \frac{dK}{dL}=-  \frac{0.6 L^{-0.4}  K^{0.4}}{L^{0.6}  0.4K^{-0.6}}=\frac{-3K}{2L}
+              </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>2000=7L^{0.3} K^{0.7}</m>.	Find <m>\frac{dK}{dL}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>3000=2L^{0.25} K^{0.75}</m>.	Find <m>\frac{dL}{dK}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>\frac{d}{dK} 3000\amp =2 \frac{d}{dK} [L^{0.25} K^{0.75} ]</mrow>
+                <mrow>0\amp =2[\frac{d}{dK}( L^{0.25}) K^{0.75}+L^{0.25} \frac{d}{dK}( K^{0.75} )]   \qquad\text{(product rule)}</mrow>
+                <mrow>0\amp =2[0.25L^{-0.75}\frac{dL}{dK} K^{0.75}+L^{0.25} 0.75K^{-0.25} ]   </mrow>
+                <mrow>\frac{dL}{dK}\amp =-\frac{L^{0.25} 0.75K^{-0.25}}{0.25L^{-0.75} K^{0.75}}</mrow>
+                <mrow>\amp =-3 \frac{L}{K}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>7000=11L^{0.8} K^{0.2}</m>.	Find <m>\frac{dL}{dK}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The production function for a widget factory is <m>1000=15L^{0.7} K^{0.3}</m>.
+              Find <m>\frac{dK}{dL}</m> and <m>\frac{dL}{dK}</m>.  Interpret what they mean.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Part 1: Find <m>\frac{dK}{dL}</m>.
+              <md>
+                <mrow>\frac{d}{dL} 1000\amp =15\frac{d}{dL}[L^{0.7} K^{0.3}]</mrow>
+                <mrow>0\amp =15[\frac{d}{dL}  (L^{0.7} )K^{0.3}+L^{0.7}  \frac{d}{dL} (K^{0.3})]</mrow>
+                <mrow>0\amp =[0.7 L^{-0.3} K^{0.3}+L^{0.7} 0.3K^{-0.7}  \frac{dK}{dL}]</mrow>
+                <mrow>\frac{dK}{dL}L\amp =\frac{-0.7 L^{-0.3} K^{0.3}}{L^{0.7} 0.3K^{-0.7}} = -\frac{7K}{3L}</mrow>
+              </md>.
+            </p>
+
+            <p>
+              Part 2: Find <m>\frac{dL}{dK}</m>.
+              <md>
+                <mrow>\frac{d}{dK} 1000\amp =15\frac{d}{dK}[L^{0.7} K^{0.3}]</mrow>
+                <mrow>0\amp =15[\frac{d}{dK}  (L^{0.7}) K^{0.3}+L^{0.7} \frac{d}{dK} (K^{0.3})]</mrow>
+                <mrow>0\amp =[0.7 L^{-0.3}  \frac{dL}{dK} K^{0.3}+L^{0.7} 0.3K^{-0.7}]</mrow>
+                <mrow>\frac{dL}{dK}\amp = \frac{- 0.3 L^{0.7} K^{-0.7}}{0.7  L^{-0.3} K^{0.3}} = \frac{-3L}{7K}</mrow>
+              </md>.
+            </p>
+
+            <p>
+              Part 3: Interpret. <m>\frac{dK}{dL}</m> and <m>\frac{dL}{dK}</m> are both negative and are reciprocals of one another.
+              In other words: <m>\frac{dK}{dL}=\frac{1}{\frac{dL}{dK}}</m>.
+            </p>
+            <p>
+              Since they are negative, if we increase <m>L</m>, then <m>K</m> will decrease and vice versa.
+              <m>\frac{dK}{dL}</m> measures the slope of <m>K</m> ans a function of <m>L</m>.
+              <m>\frac{dL}{dK}</m> measures the slope of <m>L</m> ans a function of <m>K</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>30*\price+3*\price*\quantity+(\quantity^2)/100=2000</m>
+              be an equation relating supply and price for gizmos.
+              Find <m>\frac{d\price}{d\quantity}</m> and <m>\frac{d\quantity}{d\price}</m>.
+              Explain what each derivative means.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>e^{xy}+2x+3y=17</m>.	Find <m>\frac{dy}{dx}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me> \frac{d}{dx}  (e^{xy}+2x+3y)= \frac{d}{dx}  17</me>.
+              Evaluating the derivatives:
+              <me> e^{xy}   \frac{d}{dx}  (xy)+2+3 \frac{dy}{dx}=0</me>,
+              which gives:
+              <me>e^{xy} [y+x \frac{dy}{dx}]+2+3 \frac{dy}{dx}=0</me>.
+              Next we solve for <m>\frac{dy}{dx}</m>:
+              <md>
+                <mrow>e^{xy} y+xe^{xy}  \frac{dy}{dx}+2+3 \frac{dy}{dx}\amp =0</mrow>
+                <mrow>(xe^{xy}+3)\frac{dy}{dx}\amp =-(e^{xy} y+2)</mrow>
+                <mrow>\frac{dy}{dx}\amp =-\frac{(y e^{xy}+2)}{(x e^{xy}+3)}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>
+
+

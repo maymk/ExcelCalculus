@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-4-5-SecondDerivativeConcavity">
+    <title>The Second Derivative and Concavity</title>
+
+    <p>
+      For an intuitive definition of the derivative, we talked about zooming in on the graph until it looks like a straight line and taking the slope.
+      For concavity, we want to zoom out a bit, so the graph curves up or down from a line.
+    </p>
+
+    <p>
+      We say that a graph is concave up if the line between two points is above the graph,
+      or alternatively if the first derivative is increasing.  (In finance, such a curve is said to be convex.)
+      Similarly, we say that a graph is concave down if the line between two points is below the graph,
+      or alternatively if the first derivative is decreasing.  (In finance, such a curve is said to be concave.)
+    </p>
+
+    <sidebyside widths="40% 40%">
+      <image source="images/sec4-5-1.png"/>
+
+      <image source="images/sec4-5-2.png"/>
+    </sidebyside>
+
+    <p>
+      In determining is a curve is concave up or concave down,
+      we want to take the second derivative of a function, or the derivative of the derivative.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          For a function <m>f(x)</m>, the <term>second derivative</term> of <m>f(x)</m> or the derivative of <m>f'(x)</m>,
+          denoted as <m>f''(x)</m>,   is defined as
+          <me>
+            f''(x)=\frac{d}{dx}\left(\frac{d}{dx}\left( f(x)\right)\right)
+          </me>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      We also want to recall some alternate notations we may use.
+    </p>
+
+    <aside>
+      <p>
+        <alert>Notation</alert>:  Let <m>y=f(x)</m>.
+      </p>
+      <p>
+        The second derivative of <m>f(x)</m>  is denoted as <m>f''(x)</m> or
+        <m>\frac{d^2}{dx^2}f(x)</m> or <m>\frac{d^2y}{dx^2}</m>.
+      </p>
+
+      <p>
+        The second derivative at <m>x=x_0</m> is denoted as <m>f''(x_0 )</m> or
+        <m>\left.\frac{d^2y}{dx^2}\right|_{x=x_0}</m>.
+      </p>
+    </aside>
+
+    <p>
+      As we have noted before, when there are several forms, we use the one that makes the most sense in the case on which we are working.
+    </p>
+
+    <example>
+      <title>Finding second derivatives</title>
+      <statement>
+        <p>
+          Find the second derivative for each of the following functions:
+          <ol marker="(a)">
+            <li><m>f(x)=3x^5+4x^2</m></li>
+            <li><m> g(x)=5 x^6+3x+9</m></li>
+            <li><m> h(x)=x e^{2x}</m></li>
+            <li><m> j(x)=6 \sqrt{x}+\frac{3}{x}</m></li>
+            <li><m> k(x)=\frac{\ln(x)}{x^3} </m></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using our rule:
+          <ol marker="(a)">
+            <li><m>  f''(x)=\frac{d}{dx}(\frac{d}{dx}( 3x^5+4x^2 ))\frac{d}{dx} (15x^4+8x)=60x^3+8.</m></li>
+            <li><m>  g''(x)=\frac{d}{dx} (\frac{d}{dx}  (5 x^6+3x+9))=\frac{d}{dx} (30x^5+3)=150x^4.</m></li>
+            <li>
+              <m>\begin{aligned}  h'' (x)\amp =\frac{d}{dx} (\frac{d}{dx}  (x e^{2x} ))
+              =\frac{d}{dx} (e^{2x}+2xe^{2x} )\\
+              \amp =2e^{2x}+2e^{2x}+4xe^{2x}=4e^{2x}+4xe^{2x}.\end{aligned}</m>
+            </li>
+            <li>
+              <m>\begin{aligned}  j'' (x) \amp = \frac{d}{dx} (\frac{d}{dx}  (6 \sqrt{x}+3/x))
+              =\frac{d}{dx} (\frac{d}{dx} (6x^{1/2}+3x^{-1} ))\\
+              \amp = \frac{d}{dx} (3x^{-1/2}-3x^{-2} )=-3/2 x^{-3/2}+6x^{-3}\\
+              \amp = \frac{3}{2\sqrt{x^3}}+\frac{6}{\sqrt{x^3}}.\end{aligned}
+              </m>
+            </li>
+            <li>
+              <m> \begin{aligned}   k'' (x) \amp = \frac{d}{dx} \left({\frac{d}{dx}  \left({\frac{\ln(x)}{x^3} }\right)}\right)
+              =\frac{d}{dx} \left({\frac{(\frac{1}{x} x^3-3(x^2 )  ln(x))}{x^6 }}\right)\\
+                \amp = \frac{d}{dx} \left({\frac{(1-3 \ln(x))}{x^4 }}\right)
+                = \frac{(-\frac{3}{x} x^4-(1-3 \ln(x) )4x^3)}{x^8} \\
+                \amp =\frac{-3-(1-3 \ln(x) )4}{x^5} = \frac{-7+12\ln(x)}{x^5}.\end{aligned} </m>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <p>As the last problem shows, it is often useful to simplify between taking the first and second derivatives.</p>
+
+    <p>
+      If our function is the position of <m>x</m>, then the first derivative is the rate of change or the <term>velocity</term> of <m>f(x)</m>.
+      The second derivative is <term>acceleration</term> or how fast velocity changes.
+    </p>
+
+    <p>
+      Graphically, the first derivative gives the slope of the graph at a point.
+      The second derivative tells whether the curve is concave up or concave down at that point.
+      If the second derivative is positive at a point, the graph is bending upwards at that point.
+      Similarly, if the second derivative is negative, the graph is concave down.
+      This is of particular interest at a critical point where the tangent line is flat and concavity tells us if we have a relative minimum or maximum.
+    </p>
+
+    <insight>
+      <title>Second derivative test of extrema</title>
+      <p>
+        Let <m>f(x)</m> be a function with <m>f'(x_0)=0</m>.
+        Then if <m>f''(x_0) \gt 0</m>, the function has a local minimum at <m>x=x_0</m>.
+        If <m>f''(x_0) \lt 0</m>, the function has a local maximum at <m>x=x_0</m>.
+        If <m>f''(x_0)=0</m>, the second derivative test fails and we cannot tell if we have a local maximum, local minimum, or neither.
+      </p>
+    </insight>
+
+    <example>
+      <title>Second derivative tests</title>
+      <statement>
+        <p>
+          For the designated function and point, determine if the graph has a local minimum, local maximum, or non-extreme point, or if the second derivative test fails.
+        </p>
+        <p>
+          <ol marker="(a)">
+            <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=2</m></li>
+            <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=-2</m></li>
+            <li><m>f(x)=x^3-12 x,\qquad\qquad x_0=4</m></li>
+            <li><m>g(x)=x^4,\qquad\qquad x_0=0</m></li>
+            <li><m>h(x)=x^5,\qquad\qquad x_0=0</m></li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>Using our rule:
+          <ol marker="(a)">
+            <li>
+              <p>
+                <m>f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6</m>x.
+              </p>
+
+              <p>
+                At <m>x_0=2</m>, we have <m>f'(x_0)=0</m> and <m>f''(x_0)=12</m>.
+                We are at a critical point, and the curve is concave up, so we have a local minimum.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6x</m>.
+              </p>
+
+              <p>
+                At <m>x_0=-2</m>, we have <m>f'(x_0)=0</m> and <m>f'' (x_0 )=-12</m>.
+                We are at a critical point and the curve is concave down, so we have a local maximum.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>f(x)=x^3-12 x,\qquad\qquad f'(x)=3x^2-12,\qquad\qquad f''(x)=6x</m>.
+              </p>
+
+              <p>
+                At <m>x_0=4</m>, we have <m>f'(x_0)=36</m>.
+                The second derivative is positive, so the curve is concave up,
+                but since the derivative is not zero, this is not an extreme point.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>g(x)=x^4,\qquad\qquad g'(x)=4x^3,\qquad\qquad g''(x)=12x^2</m>.
+              </p>
+
+              <p>
+                At <m>x_0=0</m>, we have <m>g'(x_0)=0</m> and <m>g''(x_0)=0</m>,
+                so the second derivative test fails at this point.
+                (However if we look a the graph, we can see the curve is concave up everywhere,
+                and that this point is a local minimum.)
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>h(x)=x^5,\qquad\qquad h'(x)=5x^4,\qquad\qquad h''(x)=20x^3</m>.
+              </p>
+
+              <p>
+                At <m>x_0=0</m>, we have <m>h'(x_0)=0</m> and <m>h''(x_0)=0</m>,
+                so the second derivative test fails at this point.
+                (However if we look a the graph, we can see this point is neither a local minimum or a local maximum.
+                It is a place where the graph switches from being concave up to being concave down.
+                This is called an <term>inflection point</term>.)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <p>We will use the second derivative test for finding maximums and minimums in the next chapter.</p>
+
+    <paragraphs>
+      <title>Second derivative with CAS</title>
+
+      <p>We can find second derivatives with our favorite CAS programs.  </p>
+
+      <p>With Symbolab</p>
+
+      <image width="80%" source="images/sec4-5-3.png"/>
+
+      <p>With WolframAlpha</p>
+
+      <image width="80%" source="images/sec4-5-4.png"/>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Second derivative in finance</title>
+
+      <p>
+        The mathematical first and second derivatives are used in pricing various financial products and options that are also called derivatives.
+        The first derivative is used to give a value to whether the underlying product has a price that goes up or down.
+        It looks at the slope of the pricing curve.  The second derivative is used to give a value to the volatility of the underlying product.
+        It looks at how much the pricing curve bends.  We will return to these uses when we look at integrals.
+      </p>
+    </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, The Second Derivative and Concavity</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"We say that a graph is concave up if the line between any two points is above the graph.  ", 
+"We say that a graph is concave down if the line between any two points is below the graph.  ", 
+"We say that a graph is concave up if the first derivative is increasing.  ", 
+"The second derivative of a function is the derivative of the derivative of the function.  ", 
+"The second derivative test fails if we are not at a critical point.  ", 
+
+"If the second derivative is positive we are at a local maximum.  ", 
+"If the second derivative is positive we are at a local minimum.  ", 
+"If the second derivative is zero we cannot have a local maximum.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.5, The Second Derivative and Concavity, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-4-5">
+      <title>Exercises: The Second Derivative and Concavity Problems</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            <ol marker="(a)">
+              <li><p>Find the first and second derivatives of the given function.</p></li>
+              <li><p>Determine where the function is concave up and where it is concave down.</p></li>
+              <li><p>Find the critical points of the function.  Classify each as a local minimum, a local maximum, neither, or not a local extremum.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=(x-3)^2-4</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <me>f'(x)=2(x-3)</me>
+                    <me>f''(x)=2</me>
+                  </p>
+                </li>
+                <li><p>The second derivative is always positive, so the function is always concave up</p></li>
+                <li><p>There is one critical point at <m>x=3</m>.  It is a local minimum.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(t)=(x-3)(x-1)(x+4)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(t)=t^2 e^{-t}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <me>h' (t)=2te^{-t}-t^2 e^{-t}=(2t-t^2)e^{-t}</me>
+                    <me>h'' (t)=(2-2t)e^{-t}-(2t-t^2)e^{-t}=(2-4t+t^2 ) e^{-t}</me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The function is concave down, where the second derivative is negative,
+                    that is for <m>2-\sqrt{2} \lt t \lt 2+\sqrt{2}</m>.
+                    It is concave up outside this region.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    There are critical points when the derivative is undefined or 0.
+                    The only critical points are when <m>t=0</m> and <m>t=2</m>.
+                    When <m>t=0</m>, <m>h''(t)\gt 0</m>, so we have a local minimum.
+                    When <m>t=2</m>, <m>h''(t)\lt 0</m>, so we have a local maximum.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=(x^2-9)^3</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\frac{x^2-4}{x^2-9}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <me>m' (x)=\frac{-10x}{(x^2-9)^3}</me>
+                    <me>m'' (x)=\frac{30x^2+90}{(x^2-9)^3}</me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The function is concave down, where the second derivative is negative,
+                    which for our function is when the denominator is negative.
+                    The function <m>m(x)</m> is concave down when <m>-3 \lt x \lt 3</m>.
+                    It is concave up outside this region.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    There are critical points when <m>t</m> is 0 or 2.
+                    When <m>t=0</m>, <m>h''(t)\gt 0</m>, so we have a local minimum.
+                    When <m>t=2</m>, the second derivative is negative and we have a local maximum.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> \text{ConsumerSurplus}= 10*(0.95)^{\frac{\quantity}{100}}- 2*(1.07)^{\frac{\quantity}{100}}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\price= 10-\frac{\quantity}{100}- \frac{\quantity^2}{10000}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <me>price'=\frac{-1}{100}-\frac{quantity}{5000}</me>
+                    <me>price''=\frac{-1}{5000}</me>
+                  </p>
+                </li>
+                <li><p>The second derivative is always negative, to the function is always concave down.</p></li>
+                <li><p>There is one critical point at <m>quantity=-50</m>.  It is a local maximum.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=\quantity*\left(20*.9^{\left(\frac{\quantity}{200}\right)}\right)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice= 10*1.04^{\left(\frac{\quantity}{100}\right)}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <me>\Sprice'=\frac{\ln(104)}{10}*1.04^{(\quantity/100)} </me>
+                    <me>\Sprice''=\frac{\ln(104)^2}{1000}*1.04^{(quantity/100)}</me>
+                  </p>
+                </li>
+                <li><p>The second derivative is always positive, to the function is always concave up.</p></li>
+                <li><p>The first derivative is always positive.  There are no critical points.</p></li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Identify which curve is <m>f</m>, <m>f'</m>, and <m>f''</m>.</p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <image width="50%" source="images/sec4-5-e1.png"/>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <image width="50%" source="images/sec4-5-e2.png"/>
+          </statement>
+          <solution>
+            <p>
+              Note that local maximums of a function must correspond to zeroes of its derivative.
+              The original function is F (green).   Its derivative is D (Purple).
+              The second derivative is E (black).
+              <me>E(x) = D'(x)=F''(x)</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <image width="50%" source="images/sec4-5-e3.png"/>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <image width="50%" source="images/sec4-5-e4.png"/>
+          </statement>
+          <solution>
+            <p>
+              Looking at the middle segment of the curves, the green curve is a downward facing parabola,
+              whose derivative is a line with a negative slope like the purples curve,
+              whose derivative is a negative constant like the black line.
+              <me>F(x) = D'(x)=E''(x)</me>.
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the next set of problems, you need to know the formula for the price of a zero coupon bond given the face value,
+            the interest rate, and the time to maturity.  For such instruments we use the formula
+            <me>\cost=\frac{\FaceValue}{(1+\rate)^{\years}}</me>.
+            (Be aware that a rate of 4% is a rate of 0.04.)
+          </p>
+          <p>
+            For each problem give:
+            <ol marker="(a)">
+              <li><p>The cost of the bond as described.</p></li>
+              <li><p>The first derivative of cost as a function of rate. (This measures risk of interest rate change.)</p></li>
+              <li><p>The second derivative of cost as a function of rate.  (This measures the value of an option on the bond.)</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              The face value of the bond is $1000.  The interest rate is currently 4%.  The bond matures in 10 years.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The face value of the bond is $1000.  The interest rate is currently 4%.  The bond matures in 30 years.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li><me>\cost=\frac{1000}{(1.04)^{30}} =308.32</me></li>
+                <li>
+                  <p>
+                    <me>\cost(\rate)=\FaceValue(1+\rate)^{(-\years)}</me>
+                    <me>\cost(\rate)=-\years*\FaceValue(1+\rate)^{(-\years-1)}</me>
+                    <me>\cost'(.04)=-30*1000(1.04)^{-31}=-8993</me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <me>\cost''(\rate)=\years(1+\years)*\FaceValue(1+\rate)^{(-\years-2)}</me>
+                    <me>
+                      \cost(.04)=30(31)*1000(1.04)^{(-32)}=265103
+                    </me>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The face value of the bond is $1000.  The interest rate is currently 6%.  The bond matures in 10 years.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The face value of the bond is $1000.  The interest rate is currently 3%.  The bond matures in 20 years.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li><me>\cost=\frac{1000}{(1.03)^{20}} =553.68</me></li>
+                <li>
+                  <p>
+                    <me>\cost(\rate)=\FaceValue(1+\rate)^{(-\years)}</me>
+                    <me>\cost(\rate)=-\years*\FaceValue(1+\rate)^{(-\years-1)}</me>
+                    <me>\cost'(.03)=-20*1000(1.03)^{-21}=-8000</me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <me>\cost''(\rate)=\years(1+\years)*\FaceValue(1+\rate)^{(-\years-2)}</me>
+                    <me>
+                      \cost(.03)=20(21)*1000(1.03)^{(-22)}=219914
+                    </me>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+    </exercises>
+  </section>
+

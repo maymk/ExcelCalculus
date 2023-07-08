@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-1-2-FunctionsBusinessSetting">
+    <title>Functions in the Business setting</title>
+    <introduction>
+      <p><url href="external/Examples/Section-1-2-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-2-Examples.xlsx" >Link to worksheets used in this section</url></p>
+
+      <p>
+         Not all functions we encounter in a business setting are linear.
+         There are several other families of functions we should (re-) familiarize ourselves with. These models include:
+      </p>
+      <p>
+        <ul>
+          <li>	Quadratic functions</li>
+          <li>	Exponential functions</li>
+          <li>	Logistic functions</li>
+          <li>	Normal distribution functions</li>
+          <li>	Sinusoidal functions</li>
+        </ul>
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Quadratic Functions</title>
+      <p>
+        <term>Quadratic functions</term> should be very familiar from previous mathematics courses.
+        They are of the form <m>y=a x^2+b x+c</m>. These are our standard parabolas.
+      </p>
+      <p>
+        In business we encounter quadratic equations when we study revenue and profit functions.
+        Recall from your economics course that:
+        <me>\revenue=\price*\quantity=p*q</me>
+        In some of the models we will investigate later in the course price will be a linear function.
+        We will assume <m>\price=m q+b</m>. This implies that
+        <me>\revenue=(m q+b)*q=m q^2+b q</me>
+        If <m>m &gt; 0</m>, then the revenue function will look like a parabola that opens up.
+        If <m>m \lt 0,</m> then the revenue function will look like a parabola that opens down.
+      </p>
+
+      <figure>
+       <caption>A quadratic function</caption>
+        <image width="50%" source="images/sec1-2-QuadraticFunctions.png" xml:id="quadraticFunctions">
+            <description>The intersection revenue and demand price</description>
+        </image>
+      </figure>
+
+      <p>
+        For a quadratic model we are often very interested in the coordinates of the vertex, and any possible zeros.
+        For the general equation <m>y=a x^2+b x+c</m> the sign of the coefficient of <m>x^2</m>, <m>a</m>,
+        will determine if we have a maximum or a minimum. If <m>a</m> is positive,
+        the parabola opens up and the vertex will be a minimum.
+        If <m>a</m> is negative, the parabola opens down and the vertex will be a maximum.
+      </p>
+      <p>
+        Recall that we can find the zeros of a quadratic by using the quadratic equation.
+        <me>
+          \text{roots or zeroes}  = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+        </me>.
+        From this equation we see that the vertex must be located at <m>x= -b/(2a.)</m>.
+        The discriminant (the term underneath the radical sign determines if there are 0, 1, or 2 roots.
+      </p>
+
+      <p>
+        <ul>
+          <li><p>If <m>b^2-4ac&gt;0</m>, then there are 2 roots.</p></li>
+          <li><p>If <m>b^2-4ac=0</m>, then there is 1 root (the vertex will touch the axis)</p></li>
+          <li>
+            <p>
+              If <m>b^2-4ac\lt 0</m>, then there are no roots.
+              This means the entire graph must lie above the <m>x</m>-axis
+              (<m>a &gt; 0</m>) or below the <m>x</m>-axis (<m>a \lt 0</m>).
+            </p>
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        Sometimes we may need more general polynomials in a model,
+        with an equation of the form <m>f(x)=a_n x^n+\cdots+a_1 x+a_0</m>.
+        In such cases we remember that the number of turning points of the graph can be no more than <m>n-1</m>.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Exponential functions</title>
+      <p>
+        The <term>exponential model</term>, with an equation of the form <m>f(t)=p*e^t</m>.
+        Sometimes the exponential function <m>e^t</m> is denoted by <m>\exp(t)</m>.
+        Excel will use this format, so it is worth looking at the notation in this case.
+        <m>f(t)=p*e^{rt}</m> can also be written as  <m>f(t)=p*\exp(r t)</m>
+      </p>
+
+      <p>
+        Exponential functions are used for proportional growth or decay.
+        In business, compound interest is given as an exponential function.
+        In particular, if <m>P</m> is the principal and <m>r</m> is the interest rate <q>compounded continuously</q>
+        (expressed as a decimal),
+        then the amount <m>A</m> after time <m>t</m> is given by <m>A=P e^{rt}</m>.
+        The relationship (in general) between a <term>future value</term> (FV) and the <term>present value</term> (PV)
+        given an interest rate <m>r</m> per period, with <m>t</m> being the number of compounding periods is given by:
+      </p>
+
+      <assemblage xml:id="FutureValueDef">
+        <p><me>\FutureValue: FV=PV*(1+r)^t</me></p>
+      </assemblage>
+
+      <p>
+        It is also useful in determining a fair value today of a promised future payout.
+        The sign of the rate will determine if the graph turns up or down.
+      </p>
+      <p>
+        A word of warning - Math books (and Excel) like using a base of <m>e</m> because it makes the mathematics easier when we do calculus, so the equation is written as <m>f(t)=p*e^{rt}</m> or <m>f(t)=p*\exp(r t)</m> where <m>r</m> is the instantaneous rate of change.
+        However, in real world applications we tend to use  <m>f(t)=p*R^t</m>, where <m>R</m> is the effective rate of change.  We also use <m>f(t)=p*(1+r)^t</m>.  The reader is warned that in <m>R=e^r</m> and both <m>R</m> and <m>r</m> are referred to as the <term>rate</term>.  You will have to use the context to tell them apart.
+      </p>
+
+      <p>
+        When modeling real world behavior, we often know some special features of the problem.
+        For instance, we may know that our present value is $2,000 and that we would like the future value to be $10,000 after 10 years.
+        The question would be what function would describe such a model?
+        A method commonly used to solve such a problem is to plug in the values we are given and see if we can determine what the remaining quantities should be.
+        We know that <m>FV=PV*(1+r)^t</m>. The extra information tells us PV = 2000, and when t = 10 we know that <m>FV=2000*(1+r)^{10}=10,000</m>.
+        This is enough information to solve for <m>r</m>. Dividing both sides by 2000 shows that <m>(1+r)^{10}=5</m>.
+      </p>
+
+      <p>
+        To solve this equation we need rules of exponents. We obtain
+        <m>1+r=5^{1⁄10}</m>, and hence <m>r= 5^{1/10}-1= 0.1746</m>.
+        This means that to obtain such a growth we would need a rate of growth of about 17.46%.
+        The function modeling that growth would be <m>FV=2000*(1.1746)^t</m>.
+        In general we can set up equations and solve for the unknown quantities.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Logistic Functions</title>
+
+      <p>
+        The exponential model assumes growth without end.
+        That is impossible in most business situations.
+        Instead there is typically a point where the market is saturated.
+        The alternative model says that the rate of change is proportional both to the current quantity and to the distance from the theoretical maximum value.
+        This is called logistic growth.  A typical formula for <term>logistic growth</term> given an interest rate <m>r</m>,
+        market saturation point <m>M</m>, and constant a depending on the problem is
+        <me>f(x)=  \frac{M}{1+a e^{-rx}} </me>.
+      </p>
+      <p>
+        In Excel we would write this function as: <c>f(x)=M/(1+a exp(-r x))</c>.
+        Using Excel it is fairly easy to create a table and graph a logistic function.
+      </p>
+
+      <image width="50%" source="images/sec1-2-LogisticFunction.png" xml:id="LogisticFunctionImage">
+          <description>Graph of a logistic function</description>
+      </image>
+    </subsection>
+
+    <subsection>
+      <title>Sinusoidal Functions</title>
+      <p>
+         The <term>sinusoidal model</term> is for data that repeats on a natural cycle.
+         Typical examples would include need for heating oil, electricity for air conditioning
+         and sales for seasonal items such as Christmas.  The typical equation is
+         <me>f(x)=M+A*\sin(2\pi*(x-\text{shift})/\text{period})</me>,
+         where the mean <m>M</m> is the average value, the amplitude <m>A</m> is the distance from the mean to the maximum,
+         the period is the length of time till the cycle repeats, and the shift is where we start the cycle for <m>x=0</m>.
+      </p>
+
+      <p>
+        With an appropriate shift we can interchange the sine and cosine functions.
+        (The functions <m>\sin(x)</m> and <m>\cos(x)</m> arise from trigonometry.)
+        In this course, we will not focus on trigonometric functions and their properties.
+        We are only concerned with having a periodic function for seasonal variations.
+      </p>
+
+      <image width="50%" source="images/sec1-2-SinCurve.png"  xml:id="SinFunctionImage">
+          <description>The intersection revenue and demand price</description>
+      </image>
+    </subsection>
+
+    <subsection>
+      <title>Normal Distribution Functions</title>
+
+      <p>
+        The <term>normal distribution</term> or <term>bell curve</term> is used because many populations follow a normal distribution on many scales.
+        The equation
+        <me>f(x)=a e^{-\left(\frac{(x-m)}{s}\right)^2} </me>
+        looks a bit intimidating, but we will be able to use the power of a spreadsheet to easily handle it.
+      </p>
+
+      <p>
+        In retail, there are several examples of items that follow a normal distribution.
+        In a store selling shoes for women for instance, we would expect to see that some sizes are more prevalent than others.
+        This would be a factor in determining what sizes to have in stock, and at what quantities.
+        The typical scenario in which we will be using this curve model is one where we ask what range of sizes do we need to cover for the population in an area to be large enough to justify a specialty store.
+      </p>
+
+      <image width="50%" source="images/sec1-2-NormalCurve.png"  xml:id="NormalCurveImage">
+          <description>A normal curve</description>
+      </image>
+
+      <p>
+        The normal distribution function has certain interesting features.
+        The graph shows a maximum value. The maximum occurs when <m>x = m</m>.
+        And when <m>x = m</m>, we know that
+        <me>f(x)=a e^{\left(\frac{-(m-m)}{s}\right)^2}=a e^0=a*1=a</me>,
+        hence the maximum value is <m>a</m>.
+      </p>
+     <p>There are a few more models that will show up from time to time and are worth mentioning.</p>
+    </subsection>
+
+
+    <subsection>
+      <title>Inversely Proportional Functions</title>
+       <p>
+        If we see the phrase that two quantities are inversely proportional,
+        it means that <m>f(x)</m> is a constant times <m>1/x</m>.
+        We might expect to use such a model when a fixed amount of money will be spent to acquire all of a given product.
+        Thus, we may see it used to describe price as a function of supply.
+      </p>
+
+      <image width="50%" source="images/sec1-2-InverseCurve.png"  xml:id="InverseCurveImage">
+          <description>An inversely proportional function</description>
+      </image>
+    </subsection>
+
+    <subsection>
+      <title>Logarithmic Functions</title>
+
+      <p>
+        The <term>logarithmic model</term> looks at equations of the form <m>f(x)=a*\ln (x)+b</m> or <m>f(x)=a*\ln (Bx)</m>.
+        This model shows up in two ways.  It can be obtained as the accumulation of a quantity that is inversely proportional to our variable.
+        It also shows up as the inverse of the exponential model.
+        (If <m>y</m> is described as an exponential function of <m>x</m>,
+        then <m>x</m> is a logarithmic function of <m>y</m>.)
+      </p>
+
+      <image width="50%" source="images/sec1-2-LogCurve.png"  xml:id="LogFunctionImage">
+          <description>A logarithmic function graph</description>
+      </image>
+    </subsection>
+
+
+    <exercise>
+      <title>Reading check, Functions in the Business Setting</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"In business we encounter quadratic equations when we study revenue and profit functions.", 
+"In business, compound interest is given as an exponential function.", 
+"When the rate of change is proportional both to the current quantity and to the distance from the theoretical maximum value we have logistic growth. ",               
+"The sinusoidal model is for data that repeats on a natural cycle.", 
+"The normal distribution or bell curve is used because many populations follow a normal distribution on many scales.",
+"If we see the phrase that two quantities are inversely proportional, it means that 
+\(f(x)\) is a constant times \(1/x\).",
+"The exponential model models growth over prolonged periods in most business situations. ", 
+"Present and future values is given by a linear function.", 
+"Quadratic functions always have two roots." 
+                ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4, 5],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.2, Functions in the Business Setting, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+    <exercises xml:id="exercises-set-sec-1-2">
+    <title>Exercises  Functions in the Business Setting</title>
+      <exercisegroup>
+        <introduction>
+          <p>
+            For each model, some features of the graph are listed.
+            Describe how to change each feature by changing the parameters of the model.
+            (<eg/>, With the linear model, <m>f(x)=a x+b</m>, the parameters are <m>a</m> and <m>b</m>.
+            The place where the line intercepts the <m>x</m>-axis is <m>-b/a</m>,
+            so any <m>x</m>-intercept can be produced with <m>a=-1</m> and <m>b</m> equal to the desired value.)
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              For a linear model, <m>f(x)=a x+b</m>, how do I get a graph with
+              <ol marker="(a)">
+              	<li><p>A positive <m>y</m>-intercept?</p></li>
+              	<li><p>A negative slope?</p></li>
+              </ol>
+            </p>
+          </statement>
+          <solution  xml:id="Exercises-BusinessModels1">
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    How to obtain a positive <m>y</m>-intercept: The <m>y</m>-intercept is determined by <m>b</m>,
+                    so we just let <m>b\gt 0</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    How to obtain a negative slope: The slope is determined by <m>a</m> in the formula above,
+                    so we let <m>a\lt 0</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Suppose we are working with a quadratic model, <m>f(x)=a x^2+b x+c</m>
+              <ol marker="(a)">
+              	<li><p>How do we get a graph, that points down? (i.e. a graph that has a maximum)?</p></li>
+              	<li><p>How will we know if the graph of the function intercepts the <m>x</m>-axis at two positive values?</p></li>
+              </ol>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For a quadratic model, <m>f(x)=a x^2+b x+c</m>, How do I get a graph where the vertex has <m>x=5</m>?
+            </p>
+          </statement>
+          <solution>
+            <p>Quadratics are parabolas and the zeros (if they exist) are at <m>x=  \frac{-b\pm \sqrt{b^2-4ac}}{2a}</m>.</p>
+            <p>
+              The vertex is always located at <m>x=  \frac{-b}{2a}</m>.
+              So if the vertex is to be at <m>x = 5</m> we need to make sure <m>\frac{-b}{2a}=5</m>.
+              There are many ways to do this (there are infinitely many different parabolas with their vertex located at <m>x = 5</m>).
+              One possible solution would be to let <m>b = -10</m> and <m>a = 1</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For a polynomial model, <m>f(x)=a_n x^n+\cdots+a_1 x+a_0</m>, how do I get a graph that goes up at both ends?
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For an exponential model, <m>f(x)=P*\exp(r x)</m>, how do I get a graph with <m>f(0)=100</m>, that goes to zero as x gets large?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li><p><m>f(0)=P*\exp(0)= P</m>, so if  <m>f(0)=100</m> we know that <m>P=100</m>.</p></li>
+                <li><p>If <m>f</m> goes to 0 as <m>x</m> gets large it must be an exponential decay function which means that the coefficient <m>r</m> must be negative.</p></li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For an exponential model, <m>f(x)=P*\exp(-r x)+b</m>, how do I get a graph where <m>f(x)</m> goes to 10 as <m>x</m> gets large, <m>f(0)=1</m>, and <m>f(10)</m> is at least <m>9</m>?
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For a logistic growth model,
+              <m>f(x)=\frac{M}{1+a \exp(-r*t)}</m>, how do I get a graph where <m>f(x)</m> goes to <m>10</m> as <m>x</m> gets large,
+              <m>f(0)=1</m>, and <m>f(10)</m> is at least <m>9</m>?
+            </p>
+          </statement>
+          <solution>
+            <p>We have several conditions here that need to be met. We use them to find our parameters one at a time.</p>
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    <m>f(x)</m> goes to <m>10</m> as <m>x</m> gets large. If  <m>-r\gt 0</m>, then
+                    <m>a\exp(-r*x)</m> gets very large as <m>x</m> gets large which would send <m>f</m> down to <m>0</m>,
+                    but <m>f</m> goes to <m>10.</m> So we know that <m>-r\lt 0</m>.
+                  </p>
+                  <p>
+                    When <m>-r\lt 0</m>, <m>\exp(-r*x)</m> goes to <m>0</m> for large <m>x</m>.
+                    So the whole equation must go to <m>M</m>. Hence <m>M=10</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>f(0)=1</m>. When <m>x = 0</m> we get <m>f(x)=M/(1+a \exp(0) )=M/(1+a)=10/(1+a)=1</m>,
+                    Hence <m>a = 9</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>f(10)</m> is at least <m>9</m>. With <m>M = 10</m> and  <m>a = 9</m> we have that
+                    <m>f(10)=10/(1+9 \exp(-r*10) )\gt 9</m>
+                    This implies that <m>1+9 \exp(-r*10)\lt 10/9</m> and hence <m>\exp(-r*10)\lt 1/81</m>.
+                    This means that  <m>r\gt -1/10  \ln(1/81)= 0.44</m>
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For a sinusoidal model, <m>f(x)=M+A \sin(2\pi(x+\text{shift})/\text{period})</m>,
+              based on seasonal change through the year, if <m>x</m> is measured in months, what value should period have?
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For a normal model,
+        <m>f(x)=a \exp\left(-\left(\frac{x-m}{s}\right)^2\right)</m>, how do I produce a graph with a high point at <m>(7, 20)</m>, and the value of <m>f(4)</m> between 1 and 2?  (You need to use trial and error on this problem.)
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li><p>The high point of the graph occurs when <m>\frac{x-m}{s}=0</m>. This happens at <m>x = 7</m>, so this means that <m>m = 7</m> as well. </p></li>
+                <li><p>Once we know that <m>m = 7</m>, then
+                <m>f(7)=a \exp\left(-\left(\frac{7-7}{s}\right)^2 \right)=a \exp(0)=a</m> But <m>f(7)=20</m>, so <m>a = 20</m>.  This means that
+                <m>f(x)=20 \exp\left(-\left(\frac{x-7}{s}\right)^2\right)</m>.</p></li>
+                <li><p>If the value of <m>f(4)</m> is between <m>1</m> and <m>2</m>,
+                <m>f(4)=20 \exp\left(-\left(\frac{4-7}{s}\right)^2\right)</m> is between <m>1</m> and <m>2</m>. We can solve for <m>s</m>
+                <me>1\lt 20 \exp\left(-\left(\frac{4-7}{s}\right)^2\right)\lt 2</me>
+                <me>1/20\lt \exp\left(-\left(\frac{4-7}{s}\right)^2\right)\lt 1/10</me>
+                <me>\ln (1/20)\lt \left(-\left(\frac{4-7}{s}\right)^2\right)\lt \ln (1/10)</me>
+                <me>\ln (1/20)\lt \frac{-9}{s^2}\lt \ln (1/10)</me>
+                 and hence
+                <me>2.3026\lt \frac{9}{s^2} \lt 2.996</me>
+                So  <m>s^2\gt \frac{9}{2.996}</m> and  <m>s^2\lt\frac{9}{2.3026} </m>. Hence <m>1.734\lt s\lt 1.977</m>.
+                </p></li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For a normal model,
+              <m>f(x)=a \exp\left(-\left(\frac{x-m}{s}\right)^2\right)</m>,
+              how do I produce a graph with a high point at <m>(7, 20)</m>,
+              and the value of <m>f(1)</m> between 1 and 2?  (You need to use trial and error on this problem.)
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For the power model, <m>f(x)=a x^b</m>,
+              how do I produce a graph with <m>f(1)=5</m> and <m>f(3)=1</m>?
+            </p>
+          </statement>
+          <solution>
+            <p><m>f(1)=5</m> means that <m>a 1^b=a=5</m>.</p>
+            <p><m>f(3)=1</m> means that <m>a x^b=5*3^b=1</m> hence <m>3^b=0.2</m> and hence
+            <m>\ln(3^b )=\ln(0.2)</m>.</p>
+            <p>So <m>b \ln(3)=\ln(0.2)</m> which implies that <m>b=\ln(0.2)/\ln(3) \approx -1.465</m>.</p>
+          </solution>
+        </exercise>
+
+
+        <exercise>
+          <statement>
+            <p>
+              For the inversely proportional model, <m>f(x)=a/x</m>,
+              how do I produce a graph with <m>f(1) \lt 0</m> and <m>f(3)=-5?</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              For the logarithmic model, <m>f(x)=a \ln(x)</m> how do I produce a graph with <m>f(e)=3</m>?
+            </p>
+          </statement>
+          <solution>
+            <p><m>f(e)=a \ln(e)=a (1)= a</m>, hence <m>a = 3</m></p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For each situation, explain which model you would use for each situation (linear, quadratic, etc.).
+            Be sure to explicitly mention what you are using as the free variable (the equivalent of x),
+            what you are using as the dependent variable (the equivalent of y), and why that model makes sense in the given situation.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              The cost of producing an amount of a product is the sum of the fixed costs,
+              like warehouse rent, and the variable costs, like labor and materials,
+              which we can assume to be the same for each unit produced.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              When looking at revenue, we can assume that sales will be linear function of the price of the object.
+            </p>
+          </statement>
+          <solution>
+            <p>Using a linear model we get  <m>\Sales=m *\price+b</m>.</p>
+            <p>
+              Price is the free variable (the input) and sales is the dependent variable (the output)
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The amount I expect to be able to withdraw from an account at a future date,
+              assuming that interest is compounded continuously and is fixed.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The amount of time it takes an investment to double assuming a fixed interest rate.
+            </p>
+          </statement>
+          <solution>
+            <p>The Future value is given by <m>FV=PV*(1+r)^t</m></p>
+            <p>
+              Here the Future value (<m>FV</m>) will be the input (it will be <m>2*PV</m>)
+              and the output will be the time <m>t</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The amount of electricity needed for air conditioners in a Washington, D.C. at various times of the year.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The amount of metal needed to build a fuel tank as a function of the amount of fuel to be stored.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Volume is 3-dimensional and the metal would be related to the surface area <mdash/>
+              which is 2-dimensional <mdash/> so the formula would be something like:
+              <me>\text{Amount of metal}=K*(\Volume)^{3/2}</me>.
+              <m>\Volume</m> is the input, the <m>K</m> is some constant and <m>\text{Amount of Metal}</m> is the output.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The total length of booms needed to contain an oil spill as a function of the size of the spill.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The monthly sales of a hot new electronic device in a country.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Sales will likely increase a lot initially, but then level out.
+              So a logistic equation may be a reasonable model.
+              <me>f(x)=  M/(1+a e^{-rx} )</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The distribution of sales of pairs of pants by leg length.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+
+  </section>

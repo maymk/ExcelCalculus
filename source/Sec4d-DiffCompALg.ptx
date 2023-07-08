@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-4-4-DIfferentiationComputerAlgebra">
+    <title>Differentiation Using Computer Algebra</title>
+
+    <p>
+      As we noted in <xref ref="chap-1-FunctionsGraphsExcel"/>,
+      in this book we are limiting ourselves to mathematical tools that the student can reasonably expect to find in a generic work environment.
+      That is one of the reasons for focusing on using spreadsheets and Excel.
+      However, we will also look at using free web tools, particularly as a means of doing symbolic manipulation.
+      Differentiation is one of those operations that can be done with free tools available on the web.
+      The student in this course will be expected to routinely do symbolic differentiation by hand.
+      However, it is good to be able to check your work.  We also want tools that will work reliably with messier problems.
+    </p>
+
+    <p>
+      In working with derivatives, we have looked at three basic problems:
+      <ul>
+        <li><p>	Given a function, find a formula for its derivative.  A related question is finding the marginal function.</p></li>
+        <li><p>	Given a function, find the value of the derivative at a particular point.  We do this when we want a rate of change at a particular point.</p></li>
+        <li><p>	Given a function, find where the derivative is 0.  We do this when we are trying to find minimum or maximum values of the function.</p></li>
+      </ul>
+    </p>
+
+    <p>
+      There are a number of websites that will take symbolic derivatives.  We start with Wolfram|Alpha, which is available at
+      <url href="http://www.wolframalpha.com" visual="http://www.wolframalpha.com">http://www.wolframalpha.com</url>.
+    </p>
+
+    <example>
+      <title>A simple derivative with Alpha</title>
+      <statement>
+        <p>
+          Use Wolfram|Alpha to find the derivative of <m>x^3+5x+7</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          When you call the website, you get an input bar much as you would with your favorite search engine.
+        </p>
+
+        <image width="70%" source="images/sec4-4-1.png"/>
+
+        <p>
+          The interface for Wolfram|Alpha is rather robust.  While Wolfram|Alpha lets you use a Math Input pallette, we can ask the question in plain English.
+          In our case, we would like to find the derivative of <m>x^3+5x+7</m> with respect to <m>x</m>.
+          Some of the ways of asking that question are:
+          <ul>
+            <li><p>find the derivative of (x^3+5x+7)</p></li>
+            <li><p>find the derivative of (x^3+5x+7) with respect to x</p></li>
+            <li><p>derivative of (x^3+5x+7)</p></li>
+            <li><p>differentiate (x^3+5x+7) with respect to x</p></li>
+            <li><p>differentiate (x^3+5x+7)</p></li>
+            <li><p>D (x^3+5x+7)</p></li>
+            <li><p>d/dx (x^3+5x+7)</p></li>
+            <li><p>(x^3+5x+7)'</p></li>
+          </ul>
+        </p>
+
+        <p>
+          For all of these, the website provides the same answer.
+        </p>
+
+        <image width="90%" source="images/sec4-4-2.png"/>
+      </solution>
+    </example>
+
+    <p>
+      Note that the response tells us the question that Wolfram|Alpha is answering.
+      This helps us check that we have been properly understood.
+    </p>
+
+    <p>
+      It is worthwhile to note that Wolfram|Alpha has an option to show step-by-step solutions with a paid subscription.  Alternatives can be found by searching for "symbolic derivative calculator".
+    </p>
+
+    <image width="70%" source="images/sec4-4-3.png"/>
+
+    <p>
+      Wolfram|Alpha understands the convention that the variable for math problems is typically <m>x</m>.
+      If we don't specify the variable with respect to which we are differentiating, it will guess that <m>x</m> is our variable.
+      Other letters are treated as constants unless we use function notation with parentheses.
+      Thus we can use Wolfram|Alpha to check our differentiation rules.
+    </p>
+
+    <example>
+      <title>Recalling the quotient rule</title>
+      <statement>
+        <p>Use Wolfram|Alpha to recall the quotient rule.</p>
+      </statement>
+      <solution>
+        <p>
+          See the image below.
+        </p>
+        <image width="70%" source="images/sec4-4-4.png"/>
+      </solution>
+    </example>
+
+    <p>
+      It should be noted that Wolfram|Alpha will not work with long variable names like Principal or MonthlyPayment.
+      We simply need to change variables to work with Wolfram|Alpha.
+    </p>
+
+    <example>
+      <title>Working with long variable names</title>
+      <statement>
+        <p>
+          The cost of widgets is given by:
+          <me>
+            \cost=2000+10*\quantity+.001*\quantity^2
+          </me>.
+        </p>
+
+        <p>
+          Find the rate of change of cost with respect to quantity when <m>\quantity=1000</m>.
+          (We are using the derivative to estimate the marginal cost.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since we will use Wolfram|Alpha, we want to convert the equation to use single letter variables:
+          <me>
+            c=2000+10*q+.001*q^2
+          </me>.
+          We can input this as <c>c=2000+10*q+.001*q^2</c>.
+        </p>
+
+        <p>
+          We want to evaluate the derivative with respect to <m>q</m> when <m>q=1000</m>.
+        </p>
+
+        <image width="90%" source="images/sec4-4-5.png"/>
+
+        <p>
+          Thus, when <m>\quantity=1000</m>, increasing production by 1 widget increases cost by $12.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The third basic derivative problem was to find a maximum or minimum.
+      For extrema problems, we want to find where the derivative is 0,
+      since the extrema can only occur at endpoints and critical points.
+    </p>
+
+    <example>
+      <title>Exploring a business example</title>
+      <statement>
+        <p>
+          The cost and demand price functions of widgets are given by:
+          <md>
+            <mrow>\cost\amp =2000+10*\quantity+.001*\quantity^2</mrow>
+            <mrow>\revenue\amp =\frac{100*\quantity}{1+.01*\quantity}</mrow>
+          </md>.
+        </p>
+
+        <p>Find the quantity that maximizes profit.</p>
+      </statement>
+      <solution>
+        <p>
+          We simplify variable names to <m>q, c, p</m>, and <m>r</m> for quantity, cost, profit and revenue, respectively.
+          Our formula for profit is:
+          <me>
+            p=r-c=100q/(1+.01q)-(2000+10q+.001q^2 )
+          </me>.
+        </p>
+
+        <p>
+          When looking for a maximum, we always start by looking at a graph of the function in question.
+        </p>
+
+        <image width="80%" source="images/sec4-4-6.png"/>
+
+        <p>
+          From the graph, it is clear that we have a single maximum for the profit function and it occurs near <m>q=200</m>.
+          To find this point, we want to take the derivative and set it equal to zero,
+          or we want to use the solve command on the derivative.  We enter the command
+          <cd>
+            <cline>solve(derivative 100q/(1+.01q)-(2000+10q+.001q^2 ) with respect to q)</cline>
+          </cd>.
+        </p>
+
+        <image width="80%" source="images/sec4-4-7.png"/>
+
+        <p>
+          We need to do a bit of interpretation since Wolfram|Alpha is using numerical methods with complex numbers.
+          In particular, the answers have a zero imaginary part.  We are also looking for a positive number.
+          Thus, we conclude profit is maximized at 209.8 widgets.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      In looking at free software on the web for taking derivatives we started with Wolfram|Alpha because we can use it throughout the book when Excel does not solve our needs.
+      It is also supported by the company that produces Mathematica<registered/>, so it should stay available for the foreseeable future.
+      Another useful source are the solvers from Symbolab  <url href="https://www.symbolab.com/solver" visual="https://www.symbolab.com/solver">https://www.symbolab.com/solver</url>.
+      Symbolab has a collection of solvers for the topics in this course.
+    </p>
+
+    <image width="70%" source="images/sec4-4-8.png"/>
+
+    <p>
+      It also has a section that lets you do drill and practice with the techniques we have learned.
+      Like Wolfram|Alpha, it gives the option of step-by-step solutions.
+      I find the site a bit more user friendly for math students.
+    </p>
+
+    <p>
+      For individual problems we may want to use other software.
+      For finding derivatives, a quick web search found <url href="http://www.derivative-calculator.net/" visual="http://www.derivative-calculator.net/"> http://www.derivative-calculator.net/</url>
+      which is nicer if you are simply checking your work.
+      As with Wolfram|Alpha, the derivative calculator shows you the problem in math form so you can check your syntax.
+    </p>
+
+    <image width="90%" source="images/sec4-4-9.png"/>
+
+    <p>
+      However, the show steps formatting is nicer since hovering over one step shows the change for that step in the next line.
+    </p>
+
+    <image width="70%" source="images/sec4-4-10.png"/>
+
+    <p>You may find other websites for doing derivatives as well.</p>
+
+
+    <exercise>
+      <title>Reading check, Differentiation Using Computer Algebra</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Differentiation can be done with free tools available on the web.  ", 
+"Wolfram|Alpha is a free tool available on the web that does symbolic differentiation.  ", 
+"Symbolab is a free tool available on the web that does symbolic differentiation.  ", 
+"Some free tools give step by step work for symbolic differentiation.  ", 
+
+"Desmos is a free tool available on the web that does symbolic differentiation.  ", 
+"The free tools for differentiation all use the same syntax.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.4, Differentiation Using Computer Algebra, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-4-4">
+	     <title>Exercises: Differentiation Using Computer Algebra Problems</title>
+
+       <exercisegroup>
+         <introduction>
+           <p>
+             Find the derivative of the given function.
+           </p>
+         </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=x \ln(x)</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="40%" source="images/sec4-4-sol1a.png"/>
+            <p>So  <m>f' (x)= \ln(x)+1</m>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(t)=e^{.07t} (-t^2+3t+5)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(t)=t^2 e^{-0.06t}</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="40%" source="images/sec4-4-sol3a.png"/>
+
+            <p>
+              Wolfram returns several forms (they differ by some simple algebra).
+              We can choose the one that has the form we find most useful.
+              In this case we could choose for instance:
+              <me>h' (t)=e^{-0.06t} (2t-0.06 t)^2</me>.
+            </p>
+
+            <p>It’s a nice compact answer that avoids decimal approximations.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=(2x+5)^{37}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\ln(\ln(\ln(x^2+3)))</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="50%" source="images/sec4-4-sol5a.png"/>
+            <p>
+              Wolfram writes <c>ln</c> as <c>log</c> but still means base <m>e</m>.
+              The common log of x would be <c>log(10,x)</c>. To stick with our notation we would say
+              <me>m'(x)=\frac{2 x}{(x^2+3)ln(x^2+3)ln(ln(x^2+3))} </me>.
+            </p>
+
+            <p>
+              Note that Wolfram allows us to copy the text. Hover over the answer and under “A”  and you will find plaintext that can be copied.
+              This can be edited into a word document or an Excel document.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=\frac{e^x}{\ln(x^2+3)}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\price=10-\frac{\quantity}{100} -\frac{\quantity^2}{10000}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Wolfram does not work well with whole word variables.
+              Edit the equation (you can do this in Wolfram) and let
+              <m>\price = P(q)</m> and <m>quantity = q</m>. This gives the following derivative:
+            </p>
+
+            <image width="50%" source="images/sec4-4-sol7a.png"/>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=\quantity*\left(20*.9^{(\quantity/200)}\right)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice=10*1.04^{(\quantity/100)}</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="50%" source="images/sec4-4-sol9a.png"/>
+            <p>
+              Going back to the original notation we have
+              <me>SupplyPrice'(q) = 0.00392207 (1.04)^{q/100}</me>,
+              where <m>(1.04)^{0.01}=e^{0.000392207}</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\text{ConsumerSurplus}=10*(0.95)^{(\quantity/100)}-2*(1.07)^{(\quantity/100)}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=f(x)*g(x)*h(x)</m>
+            </p>
+          </statement>
+          <solution>
+            <image width="50%" source="images/sec4-4-sol11a.png"/>
+
+            <p>
+              <me>k'(x)=g(x) h(x) f'(x) + f(x) h(x) g'(x) + f(x) g(x) h'(x) </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=f(f(f(x)))</m>
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Evaluate the definite derivative at the given point.</p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(t)=t^2 e^{(-0.06t)}</m> at <m>t=10</m>.
+            </p>
+          </statement>
+          <solution>
+           <image width="40%" source="images/sec4-4-sol13a.png"/>
+
+           <p>
+             <me>f' (10)=7.68336</me>.
+           </p>
+         </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+             <m>g(x)=x^2+6x+10</m> at <m>x=5</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+             <m>h(q)=(\ln(q+5) )*(1.07^q)</m> at <m>q=8</m>.
+            </p>
+          </statement>
+          <solution>
+            <image width="50%" source="images/sec4-4-sol15a.png"/>
+         </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+             <m>\Dprice=20*(0.95)^{(\quantity/100) }</m> at <m>\quantity=200</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice=20*(1.09)^{(\quantity/100)}</m> at <m>\quantity=300</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Rewriting the function as <m>P(q)=20*(1.09)^{(q/100)}</m> we get:
+            </p>
+
+            <image width="70%" source="images/sec4-4-sol17a.png"/>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=\quantity*(20-\quantity/500)</m> at <m>\quantity=2000</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=f(g(x))</m> at <m>x=4</m>.
+            </p>
+          </statement>
+          <solution>
+            <image width="40%" source="images/sec4-4-sol19a.png"/>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Find the critical points of the given function.  Identify each as a local minimum, local maximum, or neither.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=x^3-5x^2+7x-2</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>r(q)=q*100*(0.9)^q</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              We find the critical point by solving:
+              <c>Solve (derivative of q*100*(.9)^q)= 0</c>
+            </p>
+
+            <image width="40%" source="images/sec4-4-sol21a.png"/>
+
+            <p>
+              Then we plot the original function. We want to know if <m>q = 9.49122</m> is a max, min or neither.
+              So graph over the interval <m>[1,20]</m>:
+            </p>
+
+            <image width="50%" source="images/sec4-4-sol21b.png"/>
+
+            <p>So the function has a local maximum at <m>q = 9.49122</m></p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\text{TotalCost}=100000+5*\text{OrderSize}+4*10000/\text{OrderSize}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=20*\quantity-(\quantity^2)/100</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Wolfram shows that the critical point is at <m>q = 1000</m>.
+            </p>
+
+            <image width="40%" source="images/sec4-4-sol23a.png"/>
+
+            <p>
+              Graphing the original function from 0 to 2000 shows the critical point is a maximum.
+            </p>
+
+            <image width="60%" source="images/sec4-4-sol23b.png"/>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue=\quantity*20*(0.95)^{(\quantity/100)}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\profit=\quantity*20*(0.95)^{(\quantity/100) }-(1000+10*\quantity)</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              We set the derivative equal to 0. The general answer is complicated but the real valued answer is what we are looking for.
+            </p>
+
+            <image width="70%" source="images/sec4-4-sol25a.png"/>
+
+            <p>So the critical point is at <m>q = 613.965</m>.</p>
+
+            <p>
+              We want to graph over some interval that contains <m>q = 613.965</m>.
+              Big pictures are usually nice, so let’s choose the interval <m>[0,1500]</m>.
+            </p>
+
+            <image width="60%" source="images/sec4-4-sol25b.png"/>
+
+            <p>The function has a (local) maximum at the critical point.</p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--   This file is part of Business Calculus with Excel      -->
+<!--                                                          -->
+<!--                                   -->
+<!--                                                          -->
+<!-- Copyright (C) 2023  Mike May                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<appendix xml:id="SpreadSkills3">
+    <title>Spreadsheet Skills Chapter 3</title>
+<section xml:id="SpreadSkillsChap3">
+    <title>Chapter 3 Skills</title>
+    <subsection xml:id="SpreadSkillsSection3-1">
+        <title>Section 3.1 Skills</title>
+        <ul>
+            <li>
+                <p>
+                    Build a template for showing a function and its numeric derivative or related marginal function
+                </p>
+            </li>
+        </ul>
+    </subsection>
+    <subsection xml:id="SpreadSkillsSection3-5">
+        <title>Section 3.5 Skills</title>
+        <ul>
+            <li>
+                <p>
+                    An Introduction to solver
+                </p>
+            </li>
+        </ul>
+    </subsection>
+</section>
+</appendix>

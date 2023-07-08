@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-7-4-ChangeVariables">
+    <title>Integration by Change of Variables or Substitution</title>
+
+    <introduction>
+      <p>
+        At the end of the last section, we warned that the symbolic integration techniques we have developed only work for problems that exactly fit our formulas.
+        When we tried integrating an exponential function where the exponent was a constant times <m>t</m>,
+        we had to change the base to get a function with only <m>t</m> in the exponent.
+        We want to develop one more technique of integration, called change of variables or substitution,
+        to handle integrals that are pretty close to our stated rules.
+        This technique is often called <m>u</m>-substitution and is related to the chain rule for differentiation.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Change of variables for indefinite integrals</title>
+      <p>We start by exploring some examples where we can get the desired result by the guess and check technique.</p>
+
+      <example xml:id="power-of-linear">
+        <title>Power of a linear by guess and check</title>
+        <statement>
+          <p>Find <m>\int (3x+5)^7\,  dx</m>.</p>
+        </statement>
+        <solution>
+          <p>
+            We could do this problem by rewriting the integrand as an explicit seventh degree polynomial and then using the power and sum rules,
+            but that is too much work.  Instead, I will notice the integrand looks almost like a power,
+            and thus guess an answer of <m>\frac{1}{8} (3x+5)^8+C</m>.
+            I then check by differentiating.  Using the chain rule,
+            <me>\frac{d}{dx}  (\frac{1}{8} (3x+5)^8+C)=\frac{1}{8}*8(3x+5)^{8-1}*3=3(3x+5)^7</me>.
+          </p>
+
+          <p>
+            Thus our guess was off by a factor of 3 and the correct antiderivative is
+            <me>\frac{1}{3}*\frac{1}{8} (3x+5)^8+C=\frac{1}{24} (3x+5)^8+C</me>.
+          </p>
+        </solution>
+      </example>
+
+      <p>We can easily use the same trick to produce a rule for powers of a linear polynomial.</p>
+
+      <example>
+        <title>Power of a generic linear by guess and check</title>
+        <statement>
+          <p>Find <m>\int (ax+b)^n  dx</m>.</p>
+        </statement>
+        <solution>
+          <p>
+            As we did in the previous example, we first guess the antiderivative to be
+            <m>\frac{1}{n+1} (ax+b)^{n+1}+C</m>. We then take the derivative of that expression and obtain <m>a(ax+b)^n</m>.
+            This misses our integrand by a factor of <m>a</m>.
+            We adjust by that factor and find the antiderivative is <m>\frac{1}{a}  \frac{1}{(n+1)} (ax+b)^{n+1}+C</m>.
+          </p>
+        </solution>
+      </example>
+
+      <p>We can use the same trick to produce a rule for functions that are the exponential of a linear function.</p>
+
+      <example>
+        <title>Antidifferentiation of an exponential function by guess and check</title>
+        <statement>
+          <p>Find <m>\int e^{ax+b}  dx</m>.</p>
+        </statement>
+        <solution>
+          <p>
+            As we did in the last example,
+            our first guess uses the basic rule without worrying about the linear term,
+            so we guess <m>e^{ax+b}+C</m>. We then take the derivative of that expression and obtain <m>ae^{ax+b}</m>.
+            This misses our integrand by a factor of <m>a</m>.
+            We adjust by that factor and find the antiderivative is <m>\frac{1}{a} e^{ax+b}+C</m>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        We run into a problem if we try to extend this method with quadratic terms.
+        If we start with <m>(x^2+5)^3</m> and guess an antiderivative of <m>\frac{1}{4} (x^2+5)^4</m>,
+        when we differentiate we get <m>(x^2+5)^3 2x</m> and are off by a factor of <m>8x</m>.
+        However, when we divide by that factor to get <m>\frac{(x^2+5)^4}{8x}</m> as a proposed antiderivative,
+        and then differentiate again, we get
+        <me>\frac{4*2x(x^2+5)^3*8x-(x^2+5)^4*8}{8x}</me>,
+        which is not what we want.  The key is to start by recalling the chain rule:
+        <me>\frac{d}{dx}  (f(g(x)))=f'(g(x))g'(x)</me>.
+      </p>
+
+      <p>
+        We want to use the same rule with a different notation, using implicit differentiation and a new variable <m>u</m>:
+        <me>\frac{d}{dx}  (f(u))=f'(u)\frac{du}{dx}</me>.
+        By the fundamental theorem of calculus, we can convert this to an integration formula:
+        <me>\int f' (u)  \frac{du}{dx}  dx=f(u)+C</me>.
+      </p>
+
+      <p>
+        We will generally simplify <m>\frac{du}{dx} dx</m> to <m>du</m>, so our substitution rule is
+        <me>\int f' (u)du=f(u)+C</me>.
+      </p>
+
+      <p>Let us rework some earlier examples with this method and then illustrate the method with a more difficult problem.</p>
+
+      <example>
+        <title>Power of linear example redone with change of variables</title>
+        <statement>
+          <p>Find <m>\int (3x+5)^7 dx</m>.</p>
+        </statement>
+        <solution>
+          <p>
+            The obvious candidate for <m>u</m> is <m>3x+5</m>.  Then <m>du=3\,dx</m>.  Thus
+            <md>
+              <mrow>\int (3x+5)^7\,  dx \amp =\frac{1}{3} \int (3x+5)^7  (3\,dx) \quad \text{ (Make } u \text{ and } du \text{explicit.)}</mrow>
+              <mrow>\amp =\frac{1}{3} \int (u)^7 \, du \quad \text{ (Do the substitution.)}</mrow>
+              <mrow>\amp =\frac{1}{3*8} (u)^8+C  \quad \text{ (Find the integral in terms of } u.)</mrow>
+              <mrow>\amp =\frac{1}{24} (3x+5)^8+C \quad \text{ (Substitute back.)}</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>This is easy to generalize for a power of a linear term.</p>
+
+      <example>
+        <title>Power of generic linear example redone with change of variables</title>
+        <statement>
+          <p>Find <m>\int (ax+b)^n dx</m>.</p>
+        </statement>
+        <solution>
+          <p>
+            The obvious candidate for <m>u</m> is <m>ax+b</m>.  Then <m>du=a \, dx</m>.  Hence
+            <md>
+              <mrow>\int (ax+b)^n\, dx \amp =\frac{1}{a} \int (ax+b)^n  (a\, dx)  \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
+              <mrow>\amp =\frac{1}{a} \int (u)^n \, du \quad \text{ (Do the substitution.)}</mrow>
+              <mrow>\amp =\frac{1}{a*(n+1)} (u)^{n+1}+C \quad \text{ (Find the integral in terms of } u.)</mrow>
+              <mrow>\amp =\frac{1}{a*(n+1)} (ax+b)^{n+1}+C \quad \text{ (Substitute back.)}</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        To use this method with <m>u</m> replacing something more complicated than a linear term,
+        we need to have <m>du</m> available, with the possible addition of multiplying by a scalar constant.
+      </p>
+
+      <example>
+        <title>Power of cubic function with change of variables</title>
+        <statement>
+          <p>Find <m>\int (2x^3+11)^7 x^2 dx</m>.</p>
+        </statement>
+        <solution>
+          <p>
+            The obvious candidate for <m>u</m> is <m>2x^3+11</m>, since it is an expression taken to a large power.  Then <m>du=6x^2\, dx</m>.  Thus
+            <md>
+              <mrow>\int (2x^3+11)^7 x^2\, dx \amp =\frac{1}{6} \int (2x^3+11)^7 (6x^2 \,dx) \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
+              <mrow>\amp =\frac{1}{6} \int (u)^7 \, du \quad \text{ (Do the substitution.)}</mrow>
+              <mrow>\amp =\frac{1}{6*8} (u)^8+C \quad \text{ (Find the integral in terms of } u.)</mrow>
+              <mrow>\amp =\frac{1}{48} (2x^3+11)^8+C \quad \text{ (Substitute back.)}</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        By convention, <m>u</m> is often used the new variable used with this change of variables technique,
+        so the technique is often called <m>u</m>-substitution.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Change of variables for definite integrals</title>
+
+      <p>
+        In the definite integral, we understand that <m>a</m> and <m>b</m> are the <m>x</m>-values of the ends of the integral.
+        We could be more explicit and write <m>x=a</m> and <m>x=b</m>.
+        The last step in solving a definite integral is to substitute the endpoints back into the antiderivative we have found.
+        We can either change the variables for the endpoints as well,
+        or we can convert the antiderivative back to the original variables before substituting.
+        Consider the following example.
+      </p>
+
+      <example>
+        <title>A definite integral with change of variables</title>
+        <statement>
+          <p>Evaluate <m>\int_1^3 e^{2x+5} dx</m>.</p>
+        </statement>
+        <solution>
+          <p>
+            Solution 1: Convert everything to <m>u</m>.
+            The obvious candidate for <m>u</m> is <m>2x+5</m>.  Then <m>du=2\, dx</m>.
+            For the lower endpoint, <m>x=1</m> becomes <m>u=2(1)+5=7</m>.  For the upper endpoint
+            <m>x=3</m> becomes <m>u=2(3)+5=11</m>.  Substituting,
+            <md>
+              <mrow>\int_1^3 e^{2x+5}\, dx \amp =\left({\frac{1}{2}}\right) (2)\int_1^3 e^{2x+5} \,dx)\quad \text{ (Add needed factors.)}</mrow>
+              <mrow> \amp =\frac{1}{2} \int_1^3 e^{2x+5} (2\,dx) \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
+              <mrow>\amp =\frac{1}{2} \int_{u=7}^{u=11}e^u \,du \quad \text{ (Do the substitution.)}</mrow>
+              <mrow>\amp =\left.\frac{1}{2} e^u\right|_7^{11} \quad \text{ (Find the antiderivative.)}</mrow>
+              <mrow>\amp =\frac{1}{2} e^{11}-\frac{1}{2} e^7. \quad \text{ (Evaluate.)}</mrow>
+            </md>.
+          </p>
+        </solution>
+        <solution>
+          <p>
+            Solution 2: Keeping, but labeling, the endpoints.
+            We have the same <m>u</m> and <m>du</m>, but do not convert the endpoints.
+            To reduce confusion we make sure to label the variable when we are using both <m>x</m> and <m>u</m>.
+            Thus,
+            <md>
+              <mrow>\int_1^3 e^{2x+5} \, dx \amp =\frac{1}{2} \int_1^3 e^{2x+5} (2\,dx) \quad \text{ (Make } u \text{ and } du \text{ explicit.)}</mrow>
+              <mrow>\amp =\frac{1}{2} \int_{x=1}^{x=3}e^u \,du \quad \text{ (Do the substitution.)}</mrow>
+              <mrow>\amp =\left.\frac{1}{2} e^u\right|_{x=1}^{x=3} \quad \text{ (Find the antiderivative.)}</mrow>
+              <mrow>\amp =\left.\frac{1}{2} e^{2x+3}\right|_{x=1}^{x=3} \quad \text{ (Convert back.)}</mrow>
+              <mrow>\amp =\frac{1}{2}  e^{11}-\frac{1}{2} e^7. \quad \text{ (Evaluate.)}</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        It should be noted that when we change variables we may find ourselves looking at an integral from <m>a</m> to <m>b</m> where the <m>b \lt a</m>.
+        We do not change the order of the endpoints.
+      </p>
+
+      <example>
+        <title>A second definite integral with change of variables</title>
+        <statement>
+          <p>Evaluate <m>\int_{-2}^1 x e^{(x^2)}dx</m></p>
+        </statement>
+        <solution>
+          <p>
+            (Convert everything to <m>u</m>.) The obvious candidate for <m>u</m> is <m>x^2</m>.
+            Then <m>du=2x\, dx</m>. For the lower endpoint, <m>x=-2</m> becomes <m>u=(-2)^2=4</m>.
+            For the upper endpoint <m>x=1</m> becomes <m>u=1^2=1</m>. Substituting,
+            <md>
+              <mrow>\int_{-2}^1 x e^{(x^2)}\,dx \amp =\frac{1}{2} \int_{-2}^1 e^{(x^2)}(2x\, dx) \quad \text{(Make } u \text{ and } du \text{explicit.)}</mrow>
+              <mrow>\amp =\frac{1}{2} \int_{4}^{1}e^u\, du \quad \text{ (Do the substitution.)}</mrow>
+              <mrow>\amp =\left.\frac{1}{2} e^u\right|_4^{1} \quad \text{ (Find the antiderivative.)}</mrow>
+              <mrow>\amp =\frac{1}{2} (1-e^4).\amp \quad \text{ (Evaluate.)}</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+   <exercise>
+      <title>Reading check, Integration by Change of Variable or Substitution</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"One of the methods in this section is called Guess and Check. ", 
+"Substitution for integration is related to the chain rule for integration. ", 
+"For the method of substitution, we want to make both \(u\) and 
+\(du\) explicit. ", 
+"We can also do change of variables with definite integrals. ", 
+
+"We can pick any expression for \(u\) when doing substitution. ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.4, Integration by Change of Variable or Substitution, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-7-4">
+      <title>Exercises: Integration by Change of Variables or Substitution Problems</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Evaluate the following integrals.  In each case identify the term that will be treated as <m>u</m>.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int (5x+3)^4  dx</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=5x+3</m>.  Then <m>du=5dx</m>.
+              <md>
+                <mrow>\int (5x+3)^4  dx\amp =\int \frac{(u)^4  du}{5}</mrow>
+                <mrow>\amp =\frac{u^5}{25} +c</mrow>
+                <mrow>\amp =\frac{(5x+3)^5}{25} +c</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int (7x-9)^{11}  dx</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int (x/5-2)^{2/3}  dx</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=x/5-2</m>.  Then <m>du=dx/5</m>.
+              <md>
+                <mrow>\int (x/5-2)^{2/3}  dx\amp=5\int {u^{2/3}  du}</mrow>
+                <mrow>\amp=5\frac{u^{5/3}}{5/3}+c </mrow>
+                <mrow>\amp=3{u^{5/3}}+c </mrow>
+                <mrow>\amp= 3{(x/5-2)^{5/3}} +c</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int (143567x+98736)^{2578965}  dx </me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int \sqrt{(8x-3)}  dx</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=8x-3</m>.  Then <m>du=8dx</m>.
+              <md>
+                <mrow>\int (8x-3)^{1/2}  dx\amp=1/8 \int {u^{1/2}  du}</mrow>
+                <mrow>\amp=\frac{1}{12}{u^{3/2}}+c </mrow>
+                <mrow>\amp= \frac{1}{12}{(8x-3)^{3/2}} +c</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int \frac{1}{\sqrt{3x+7}}  dx </me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int 100e^{.06t-5}  dt</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>Let <m>u=0.06t-5</m>.  Then <m>du=0.06dt</m>.
+              <md>
+                <mrow>\int 100 e^{0.06t-5}dt \amp=\frac{1}{0.06} \int {100 e^{u}du}</mrow>
+                <mrow>\amp=\frac{100 e^{u}}{0.06}+c </mrow>
+                <mrow>\amp= \frac{100 e^{0.06t-5}}{0.06}+c</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int 150(1/2)^{t/5}  dt</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int (2x+5) (x^2+5x+3)^5  dx </me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=x^2+5x+3</m>.  Then <m>du=(2x+5)dx</m>.
+              <md>
+                <mrow>\int (2x+5) (x^2+5x+3)^5  dx\amp =\int u^5\,du</mrow>
+                <mrow>\amp =\frac{u^6}{6} +c</mrow>
+                <mrow>\amp =\frac{(x^2+5x+3)^6}{6} +c</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int 50xe^{-x^2 }  dx</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me>  \int \frac{3x^2+1}{x^3+x+9} dx </me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=x^3+x+9</m>.  Then <m>du=(3x^2+1)dx</m>.
+              <md>
+                <mrow>\int \frac{3x^2+1}{x^3+x+9} dx\amp =\int \frac{du}{u}</mrow>
+                <mrow>\amp =\ln|u| +c</mrow>
+                <mrow>\amp =\ln|x^3+x+9| +c</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me>  \int x\sqrt{x^2-9}  dx</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me>  \int_0^3 e^{3x+1} dx</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=3x+1</m>.  Then <m>du=3dx</m>.
+              <md>
+                <mrow>\int_0^3 e^{3x+1} dx\amp=\int_{u=1}^{u=10} e^u \,du</mrow>
+                <mrow>\amp=\left.\frac{1}{3}e^u\right|_{u=1}^{u=10}</mrow>
+                <mrow>\amp= \frac{1}{3} (e^{10}-e^1)</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_0^10 100e^{-0.04t} dt </me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_0^5 e^{(-0.05(t+1))} dt </me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=-0.05(t+1)</m>.  Then <m>du=-0.05dt</m>.
+              <md>
+                <mrow>\int_0^5 e^{-0.05(t+1)} dt\amp=-\frac{1}{0.05}\int_{u=-0.05}^{u=-0.3} e^u \,du</mrow>
+                <mrow>\amp=\left.-20e^u\right|_{u=-0.05}^{u=-0.3}</mrow>
+                <mrow>\amp= -20 (e^{-0.3}-e^{-0.05})</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_1^3 (2x+5)^{-2} dx</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_1^6 x\sqrt{3x^2+7} dx </me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Let <m>u=3x^2+7</m>.  Then <m>du=6x\,dx</m>.
+              <md>
+                <mrow>\int_1^6 x(3x^2+7)^{1/2} dx\amp=\frac{1}{6}\int_{u=10}^{u=115} u^{1/2} \,du</mrow>
+                <mrow>\amp=\left.\frac{1}{9}u^{3/2}\right|_{u=10}^{u=115}</mrow>
+                <mrow>\amp= \frac{1}{9} (115^{3/2}-10^{3/2})\approx 133.51</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_0^2 x^2 e^{(1-0.2x^3)} dx </me>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            Find an antiderivative <m>F(x)</m> for <m>f(x)=x^2(x^3+7)^3</m> such that <m>F(0)=5</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let <m>u=x^3+7</m>.  Then <m>du=6x^2 dx</m>.
+            <md>
+              <mrow>\int (x^2 ) (x^3+7)^3 dx\amp=\frac{1}{6} \int u^3 du</mrow>
+              <mrow>\amp=\frac{u^4}{24}+c</mrow>
+              <mrow>\amp= \frac{(x^3+7)^4}{24}+c</mrow>
+              <mrow>F(0)\amp =5=\frac{(7)^4}{24}+c</mrow>
+              <mrow>c\amp =5-\frac{(7)^4}{24}4</mrow>
+              <mrow>F(x)\amp =\frac{(x^3+7)^4}{24}+5-\frac{(7)^4}{24}</mrow>
+            </md>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Find an antiderivative <m>F(x)</m>  for <m>f(x)=(4x^3+5)\exp(x^4+5x-9)</m> such that <m>F(0)=2</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            An investment stream pays out at a rate of $10,000 per year.
+            In computing present value, I assume an investment return rate of 5% compounded continuously.
+            What is the present value of the first 10 years of the payout?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <md>
+              <mrow>\text{Value}\amp =\int_0^{10}10000e^{-0.05t}\, dt</mrow>
+              <mrow>\amp =\left.\frac{-10000e^{-0.05t}}{0.05}\right|_0^{10}</mrow>
+              <mrow>\amp =\frac{-10000}{0.05} (e^{-0.5}-1) \approx 78693.87</mrow>
+            </md>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+             My gas well is returning a payout of  $10,000.
+             The well output is expected to decay exponentially with half as much output in 7 years.
+             How much do I make over the next 10 years?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The sales rate on a book is <m>s(t)=1000t \exp(-t^2/4)</m>, with time in years.
+            <ol marker="(a)">
+              <li><p>What are the total sales over 10 years?</p></li>
+              <li><p>When does the sales rate drop to 10?</p></li>
+              <li><p>What is the maximum sales rate?</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  Let <m>u=-\frac{t^2}{4}</m>.  Then <m>du=-\frac{t}{2} dt</m>.
+                  <md>
+                    <mrow>Sales\amp=\int_0^{10} 1000t e^{-t^2/4}dt=\int_0^{-25}-2000 e^u\,du</mrow>
+                    <mrow>\amp=\left.-2000e^u)\right|_0^{-25}</mrow>
+                    <mrow>\amp= 2000((1-e^{-25})\approx 2000</mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <md>
+                    <mrow>10\amp =1000t e^{-t^2/4}</mrow>
+                    <mrow>t\amp \approx 5.0028</mrow>
+                  </md>.
+                </p>
+              </li>
+              <li><p>At <m>t=1.454</m>, sales are approximately 857.4</p></li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+             The marginal profit on an item is <m>Mp(q)=\frac{(100q)}{(q^2+1)}-2</m>, measured in thousands of dollars per thousands of units.
+             <ol marker="(a)">
+              <li><p>How much should I produce to maximize profits?</p></li>
+              <li><p>What is my profit function if my start up cost is $60,000?</p></li>
+              <li><p>What is the maximum profit?</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+

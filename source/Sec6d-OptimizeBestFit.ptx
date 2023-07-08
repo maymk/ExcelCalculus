@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-6-4-OptimizationBestFitCurves">
+    <title>Optimization and Best Fitting Curves</title>
+
+    <p><url href="external/Examples/Section-6-4-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-6-4-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+    <p>
+      In the last section we looked at using the partial derivatives to find the maximum or minimum of a function in several variables.
+      This is an extension of the optimization problems we did with functions of a single variable.
+      It is worthwhile to take another look at best fitting curves or trendlines,
+      a process Excel has been doing throughout the course and see that it is a particular example of optimization.
+      This will let us to best fitting curves that use models other than the ones used by the <c>trendline</c> command.
+    </p>
+
+    <assemblage>
+      <title>Definition of Best Fitting Curve</title>
+
+      <p>
+        Before we can find the curve that is best fitting to a set of data,
+        we need to understand how <q>best fitting</q> is defined.
+        We start with the simplest nontrivial example.  We consider a data set of 3 points,
+        <m>{(1,0),(3,5),(6,5)}</m> and a line that we will use to predict the y-value given the x-value,
+        <m>\predicted(x)=x/2 +1</m>.  We want to determine how well the line matches that data.
+        For each point, <m>(x_i,y_i)</m>, in the set we start by finding the corresponding point,
+        <m>(x_i,\predicted(x_i ))</m>, on the line.
+      </p>
+
+      <p>
+        This gives us a set of predicted points, <m>{(1,1.5),(3,2.5),(6,4)}</m>.
+      </p>
+
+      <image width="80%" source="images/sec-6-4-1.png"/>
+
+      <p>
+        For each point we now compute the difference between the actual y-values and the predicted y-values.
+        Our errors are the lengths of the brown segments in the picture, in this case <m>{3/2,3/2,1}</m>.
+        Finally we add the squares of the errors, <m>9/4+9/4+1=11/2</m>.
+      </p>
+
+      <p>
+        The best fitting line is defined to be the line that that minimizes the sum of the squares of the error.
+        If we are trying to fit the data with a different model, we want to choose the equation from that model that minimizes the sum of the squares of the error.
+      </p>
+    </assemblage>
+
+    <p>
+      Now that we have a definition we want to look at fitting a line to a simple data set in three ways.
+      We will start with the data set of three points:
+    </p>
+
+    <tabular top="major" halign="center">
+      <row bottom="minor">
+      <cell>x</cell>
+      <cell>2</cell>
+      <cell>4</cell>
+      <cell>8</cell>
+      </row>
+      <row bottom="minor">
+      <cell>y</cell>
+      <cell>1</cell>
+      <cell>15</cell>
+      <cell>15</cell>
+      </row>
+    </tabular>
+
+    <p>
+      We want to start with the familiar method, using the <c>trendline</c> command from a graph.
+      Then we want to use solver to minimize the sum of squared errors.
+      Finally, we want to look at the function for sum of squared errors to see how we find the line using partial derivatives.
+      After we have looked at all three approaches for this first example, we will consider more complicated examples.
+    </p>
+
+    <figure>
+      <caption>Video presentation of the first two examples></caption>
+      <video youtube="oBFOOrFfN1I"/>
+    </figure>
+
+    <example>
+      <title>Finding a Best-Fit Curve with Trendline</title>
+      <statement>
+        <p>Use the <c>trendline</c> command to find the best fitting line for the data:</p>
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+          <cell>x</cell>
+          <cell>2</cell>
+          <cell>4</cell>
+          <cell>8</cell>
+          </row>
+          <row bottom="minor">
+          <cell>y</cell>
+          <cell>1</cell>
+          <cell>15</cell>
+          <cell>15</cell>
+          </row>
+        </tabular>
+      </statement>
+      <solution>
+        <p>
+          We start by making a table adding a scatterplot and adding a trendline to the graph.
+          We remember to select the option to make the formula visible.
+          The <c>trendline</c> command tells us the slope should be 2 and the intercept should be 1.
+        </p>
+
+        <image width="80%" source="images/sec-6-4-2.png"/>
+      </solution>
+    </example>
+
+    <example>
+      <title>Finding a Best-Fit Curve with the Definition and Solver</title>
+
+      <statement>
+        <p>Use solver and the definition of best fitting to find the best fitting line for the data:</p>
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+          <cell>x</cell>
+          <cell>2</cell>
+          <cell>4</cell>
+          <cell>8</cell>
+          </row>
+          <row bottom="minor">
+          <cell>y</cell>
+          <cell>1</cell>
+          <cell>15</cell>
+          <cell>15</cell>
+          </row>
+        </tabular>
+      </statement>
+      <solution>
+        <p>
+          We need to add the predicting equation to use solver .
+          We start with a randomly chosen slope and intercept for our prediction line.
+          Our table has a PredictedY column, which gives the value that would be on the line with our slope and intercept.
+          We add in the error, which is the difference between the predicted y and the actual y, and the square of the error.
+          We then take the sum of the squares of the errors.
+        </p>
+
+        <image width="70%" source="images/sec-6-4-3.png"/>
+
+        <p>
+          Our use of Solver is similar to when we were looking for a minimum of a function of one variable.
+          We need to designate the cell with the value we want to minimize.  We select the button to minimize.
+          Recall that Solver selects the "Make unconstrained variables non-negative" and we want to uncheck that box.
+          We now designate two cells that represent variables we can change.
+        </p>
+
+        <image width="80%" source="images/sec-6-4-4.png"/>
+
+        <p>
+          Solver produces the same answer.  The best fitting line is
+          <me>y=2x+1</me>.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Finding a Best-Fit Curve with the Definition and Calculus</title>
+
+      <statement>
+        <p>
+          Use calculus, partial derivatives, and the definition of best fitting to find the best fitting line for the data:
+        </p>
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+          <cell>x</cell>
+          <cell>2</cell>
+          <cell>4</cell>
+          <cell>8</cell>
+          </row>
+          <row bottom="minor">
+          <cell>y</cell>
+          <cell>1</cell>
+          <cell>15</cell>
+          <cell>15</cell>
+          </row>
+        </tabular>
+      </statement>
+      <solution>
+        <p>
+          Before we can use partial derivatives to find a best fitting line,
+          we need a function whose derivatives we are taking.
+          We start with the chart we produced when we were using solver.
+          This gives a formula for the squared error at each point in terms of the slope and intercept of the line.
+        </p>
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+            <cell>Point</cell>
+            <cell>x</cell>
+            <cell>y</cell>
+            <cell>Predicted-y</cell>
+            <cell><m>error</m></cell>
+            <cell><m>error^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell><m>P1</m></cell>
+            <cell><m>2</m></cell>
+            <cell><m>1</m></cell>
+            <cell><m>m*2+b</m></cell>
+            <cell><m>m*2+b-1</m></cell>
+            <cell><m>(m*2+b-1)^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell>P2</cell>
+            <cell>4</cell>
+            <cell>15</cell>
+            <cell>m*4+b</cell>
+            <cell>m*4+b-15</cell>
+            <cell>(m*4+b-15)</cell>
+          </row>
+          <row bottom="minor">
+            <cell>P3</cell>
+            <cell>8</cell>
+            <cell>15</cell>
+            <cell>m*8+b</cell>
+            <cell>m*8+b-15</cell>
+            <cell><m>(m*8+b-15)^2</m></cell>
+          </row>
+        </tabular>
+
+        <p>
+          We can expand the error squared term and add up those values.
+          After a straightforward but tedious computation, we see that we are trying to minimize
+          <me>\operatorname{SumErrorSq}(m,b)=84m^2+28mb+3b^2-62b-364m+451</me>.
+        </p>
+
+        <p>
+          We take the partial derivative of this function with respect to the slope <m>m</m> and the intercept <m>b</m>.
+          <md>
+            <mrow>\operatorname{SumErrorSq}_m (m,b) \amp = 168m+28b-364</mrow>
+            <mrow>\operatorname{SumErrorSq}_b (m,b) \amp = 28m+6b-62</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Setting the two partials to zero and solving we see the partials are both zero when <m>m=2</m> and <m>b=1</m>.
+          One again, this method produces the same best fitting line.
+        </p>
+      </solution>
+    </example>
+
+    <p>We can use the same methods with a larger problem.</p>
+
+    <example>
+      <title>Use the Solver Method on a larger Data Set</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="SArudnSafCE"/>
+        </figure>
+
+        <p>
+          The table below gives census data for a collection of 10 states.
+          Find the best fitting line to predict 2010 population based on 2000 population.
+        </p>
+
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+            <cell/>
+            <cell>Pop 2000</cell>
+            <cell>Pop 2010</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Wyoming</cell>
+            <cell>493,782</cell>
+            <cell>563,62</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Delaware</cell>
+            <cell>783,600</cell>
+            <cell>897,934</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Maine</cell>
+            <cell>1,274,923</cell>
+            <cell>1,328,361</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Nevada</cell>
+            <cell>1,998,257</cell>
+            <cell>2,700,551</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Iowa</cell>
+            <cell>2,926,324</cell>
+            <cell>3,046,355</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Kentucky</cell>
+            <cell>4,041,769</cell>
+            <cell>4,339,367</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Arizona</cell>
+            <cell>5,130,632</cell>
+            <cell>6,392,017</cell>
+          </row>
+          <row bottom="minor">
+            <cell>Washington</cell>
+            <cell>5,894,121</cell>
+            <cell>6,724,540</cell>
+          </row>
+          <row bottom="minor">
+            <cell>New Jersey</cell>
+            <cell>8,414,350</cell>
+            <cell>8,791,894</cell>
+          </row>
+          <row bottom="minor">
+            <cell>California</cell>
+            <cell>33,871,648</cell>
+            <cell>37,253,956</cell>
+          </row>
+        </tabular>
+      </statement>
+      <solution>
+        <p>
+          We set up a spreadsheet in the same way we set it up in the last example.
+          For an initial slope we will start with 1.1 for 10% growth.
+          For a starting point we will guess an intercept of 0.
+          As we did in the last example, the predicted population in 2010 is the slope times the population in 2000 plus the intercept.
+          We add extra columns for the predicted population,
+          the error between the prediction and the actual population, the square of the error.
+          At the bottom of the last column, we add the squared errors.
+          This gives the value we want to minimize.
+        </p>
+
+        <image width="80%" source="images/sec-6-4-5.png"/>
+
+        <p>
+          When we use solver, the best fitting line is
+          <me>\text{2010population}=1.096*\text{2000population}+98,154</me>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The advantage of using the sum of squares definition is that we can find a best fitting curve using a model not supported by Excel.
+      For example, if we have money invested with interest,
+      but a portion of the capital kept available as cash without earning interest,
+      we are looking for a curve of the form:
+      <me>\TotalValue(\Time)=\CashAmount+\DepositAmount*\rate^{\Time}</me>.
+    </p>
+
+    <p>
+      The <c>trendline</c> command does not let us choose such a model to find a best fitting curve.
+      It is straightforward using the best fit construction.
+    </p>
+
+    <example>
+      <title>Finding a Best-Fit Curve for a Nonstandard Model Equation</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="OzLKA8GnUiE"/>
+        </figure>
+
+        <p>We are given the following data on the value of a portfolio over time:</p>
+
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+            <cell>Year</cell>
+            <cell>Amount</cell>
+          </row>
+          <row bottom="minor">
+            <cell>0</cell>
+            <cell>$10,000</cell>
+          </row>
+          <row bottom="minor">
+            <cell>2</cell>
+            <cell>$10,920</cell>
+          </row>
+          <row bottom="minor">
+            <cell>5</cell>
+            <cell>$12,490</cell>
+          </row>
+          <row bottom="minor">
+            <cell>8</cell>
+            <cell>$14,300</cell>
+          </row>
+          <row bottom="minor">
+            <cell>9</cell>
+            <cell>$14,960</cell>
+          </row>
+          <row bottom="minor">
+            <cell>12</cell>
+            <cell>$17,169</cell>
+          </row>
+          <row bottom="minor">
+            <cell>14</cell>
+            <cell>$18,820</cell>
+          </row>
+          <row bottom="minor">
+            <cell>17</cell>
+            <cell>$21,630</cell>
+          </row>
+          <row bottom="minor">
+            <cell>19</cell>
+            <cell>$23,740</cell>
+          </row>
+          <row bottom="minor">
+            <cell>20</cell>
+            <cell>$24,880</cell>
+          </row>
+        </tabular>
+
+        <p>
+          We think the investor put some money in a secure account that does not give interest (a coffee can)
+          and the rest of the money in an account that bore interest (an investment account).
+          Find the amount deposited in each account and the interest rate of the investment account.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We set this up much like we did for the linear model, except of model equation is now
+          <me>\TotalValue(\Time)=\CashAmount+\DepositAmount*\rate^{\Time}</me>.
+        </p>
+
+        <image width="80%" source="images/sec-6-4-6.png"/>
+
+        <p>
+          We then use Solver to minimize cell <c>E26</c>, by changing cells <c>B20:B22</c>.
+          Our solution indicates that <m>\CashAmount=\$997.76</m>, <m>\DepositAmount=\$9,005.51</m>,
+          and <m>\rate=1.05</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      When we use this technique with other mathematical models,
+      the only change is in the formula used for the predicted <m>y</m> value.
+    </p>
+
+    <example>
+      <title>Finding a Best-Fit Logistic Curve</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="6JNwHvtAJjA"/>
+        </figure>
+
+        <p>
+          We are managing a wood harvesting business.
+          The number of trees available in a plot is modeled as constrained growth.
+          That means we expect it to be modeled by a logistic equation.
+          <me>\AvailableTrees(\Time)=\Capacity/(1+C*e^{(-\rate*\Time)}</me>.
+        </p>
+
+        <p>
+          We have the following information.  Find the best fitting curve.
+        </p>
+
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+            <cell>Time</cell>
+            <cell>Trees</cell>
+          </row>
+          <row bottom="minor">
+            <cell>0</cell>
+            <cell>150</cell>
+          </row>
+          <row bottom="minor">
+            <cell>5</cell>
+            <cell>400</cell>
+          </row>
+          <row bottom="minor">
+            <cell>10</cell>
+            <cell>1030</cell>
+          </row>
+          <row bottom="minor">
+            <cell>20</cell>
+            <cell>5300</cell>
+          </row>
+          <row bottom="minor">
+            <cell>30</cell>
+            <cell>12020</cell>
+          </row>
+          <row bottom="minor">
+            <cell>40</cell>
+            <cell>14510</cell>
+          </row>
+        </tabular>
+      </statement>
+      <solution>
+        <p>
+          We set this up much like we did for the linear model, but using the logistic model.
+        </p>
+
+        <p>
+          We then use Solver to minimize cell <c>E12</c>, by changing cells <c>B1:B3</c>.
+          Our solution indicates that <m>\Capacity=14996</m>, <m>C=99.93</m>,
+          and <m>\rate=0.200</m>.
+        </p>
+
+        <image width="80%" source="images/sec-6-4-7.png"/>
+      </solution>
+    </example>
+
+    <paragraphs>
+      <title>Strengths and weaknesses of the three methods of fitting curves</title>
+
+      <p>
+        We have examined three methods for finding a best fitting curve.
+        From <xref ref="chap-1-FunctionsGraphsExcel"/>, we reviewed the method of plotting points and adding a trendline.
+        Using the sum of least squared error definition of best fit, we looked at creating an error function and using Solver to minimize the error.
+        We also looked at using partial derivatives to find critical points of the error function.
+        It is worthwhile to look at some of the strengths and weaknesses of each method.
+      </p>
+
+      <p>
+        The method of graphing points and using the <c>trendline</c> command has the advantage of being the simplest method when it works.
+        The biggest disadvantage of this method is that it only works with a small collection of mathematical models.
+        (We can use this method if our desired equation is linear, <m>y=mx+b</m>,
+        logarithmic, <m>y=a \log(x)+b</m>, polynomial of degree no more than 6,
+        power, <m>y=ax^b</m>, or exponential, <m>y=ae^{bx}</m>.)
+        As we have seen in this section, it is not hard to find situations where some other model should be used.
+        This method also has the disadvantage of simply giving an answer without showing intermediate steps that might provide other useful information.
+      </p>
+
+      <p>
+        The method of using partial derivatives has the advantage of being mathematically clear.
+        It shows us what is going on when we find a best fitting curve.
+        However, in all but the simplest cases, this method has the disadvantage of involving a daunting flood of computations.
+        This method is good for informing us about how the method works,
+        but not a method we want to use in practice for most realistic problems.
+      </p>
+
+      <p>
+        The middle method, using Solver, is a hybrid of the other two methods.
+        We start by deciding on the mathematical model that should fit our situation.
+        As we saw, the method is straightforward to adapt to any kind of equation.
+        It is straightforward to explicitly build our error function.
+        This method also has the advantage of making the error attributed to each point visible.
+        We can see if another curve is almost as good as the solution we find.
+      </p>
+
+      <p>
+        The disadvantages of the Solver method are the standard disadvantages of using Solver to find a minimum.
+        Recall that Solver simply finds a local minimum from a starting point.
+        Since solver uses numerical methods it looks for places where the partial derivatives are within our tolerance bounds of zero.
+        We cannot expect Solver to give an answer that is more precise than the tolerance bounds.
+        With all of the methods we should be aware that we need enough points to get a reasonable fit of the curve.
+        Intuitively, a small change in any point should not cause a big change in the curve.
+      </p>
+
+      <p>
+        As a general rule, we will use the <c>trendline</c> command when it works with the kind of equation we have decided to use as our model.
+      </p>
+    </paragraphs>
+
+   <exercise>
+      <title>Reading check, Optimization and Best Fitting Curves</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The best fitting line is defined to be the line that that minimizes the sum of the squares of the error.  ", 
+"To find the best fitting curve we try to use the trendline command, even if the curve is not a line.   ", 
+"the trendline command only works with a limited number of kinds of functions.   ", 
+"The minimize sum of squared errors method works with a broader array of functions.  ", 
+"The method of graphing points and using the trendline command has the advantage of being the simplest method when it works.  ", 
+
+"The method of using partial derivatives has the advantage of easiest to use.  ", 
+"Solver always find the global minimum of a function.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 6.4, Optimization and Best Fitting Curves, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-6-4">
+	     <title>Exercises: Optimization and Best Fitting Curves Problems</title>
+       <exercisegroup>
+         <introduction>
+           <p>
+             For the given data sets:
+             <ol marker="(1)">
+              <li><p>Plot the points and add a linear trendline.  Show the equation of the line.</p></li>
+              <li><p>Create a spreadsheet to compare the data to a linear function.</p></li>
+              <li><p>Add error to your spreadsheet.  Find the best fitting line, using Solver.</p></li>
+              <li><p>Explicitly find the sum of squared errors function as a quadratic function of the slope m, and the intercept b.</p></li>
+              <li><p>Find the values of m and b that minimize the error function by taking partial derivatives and setting them equal to 0.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              The given points are:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>x</cell>
+                <cell>-2</cell>
+                <cell>0</cell>
+                <cell>6</cell>
+              </row>
+              <row bottom="minor">
+                <cell>y</cell>
+                <cell>-7</cell>
+                <cell>5</cell>
+                <cell>15</cell>
+              </row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              With trendlines we get the best fitting line:
+            </p>
+
+            <image width="60%" source="images/sec6-4-sol1a.png"/>
+
+            <p>The line that gives us the best fitting curve is <m>y=2.5 x+1</m>.</p>
+            <p>Using the least square error method we have the following values.</p>
+            <p>We can set the information up as rows or as columns. Using the rows form the initial problem we have:</p>
+
+            <image width="80%" source="images/sec6-4-sol1b.png"/>
+
+            <p>Next we use Solver to minimize the sum of the errors.</p>
+
+            <image width="100%" source="images/sec6-4-sol1c.png"/>
+
+            <p>
+              We started with <m>m=2</m> and <m>b=5</m> (somewhat arbitrary choices).
+              We unchecked the constraint that the variables should be non-negative
+              (<m>m</m> and/or <m>b</m> could theoretically be negative).
+            </p>
+
+            <image width="60%" source="images/sec6-4-sol1d.png"/>
+
+            <p>The least square method gives us the function <m>y=2.5x+1</m>.</p>
+
+            <p>
+              (Comment: this shows that the least squares method gives the same answer as the trendline method.
+              The Least Square method is a more general technique however and can be used in cases where the trendlines are not sufficient. )
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The given points are:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>x</cell>
+                <cell>-2</cell>
+                <cell>0</cell>
+                <cell>6</cell>
+              </row>
+              <row bottom="minor">
+                <cell>y</cell>
+                <cell>24</cell>
+                <cell>10</cell>
+                <cell>20</cell>
+              </row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The given points are:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>x</cell>
+                <cell>-3</cell>
+                <cell>-1</cell>
+                <cell>1</cell>
+                <cell>3</cell>
+              </row>
+              <row bottom="minor">
+                <cell>y</cell>
+                <cell>-2</cell>
+                <cell>6</cell>
+                <cell>10</cell>
+                <cell>10</cell>
+              </row>
+            </tabular>
+          </statement>
+          <solution>
+            <image width="60%" source="images/sec6-4-sol3a.png"/>
+
+            <p>
+              We would define <m>m</m> and <m>b</m> and use these to create
+              <me>\text{predicted } y=mx+b</me>.
+              If we had not done the trendline, the question would be: what should the initial values for <m>m</m> and <m>b</m>?
+            </p>
+
+            <p>
+              The data ranges from <m>(-3,-2)</m> to <m>(3,10)</m> which suggests a slope of <m>m\approx (10-(-2))/(3-(-3) )=12/6=2</m>.
+              Looking at the data near the <m>y</m>-axis suggests an initial guess of <m>b\approx 7.5</m>.
+              So we would start with an Excel sheet like this:
+            </p>
+
+            <image width="100%" source="images/sec6-4-sol3b.png"/>
+
+            <image width="100%" source="images/sec6-4-sol3c.png"/>
+
+            <p>Setting up Solver as shown above we get <m>m = 2</m> and <m>b = 6</m>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The given points are:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>x</cell>
+                <cell>-2</cell>
+                <cell>0</cell>
+                <cell>2</cell>
+                <cell>4</cell>
+              </row>
+              <row bottom="minor">
+                <cell>y</cell>
+                <cell>-7</cell>
+                <cell>5</cell>
+                <cell>11</cell>
+                <cell>11</cell>
+              </row>
+            </tabular>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Find the curve of the indicated type that gives the best fit for the data.</p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Sally has money invested in a single account that compounds the return back into the account.  Thus, the model we want to use for the amount is:
+              <me>\Amount(\Time)=\InitialAmount* \rate^{\Time}</me>.
+            </p>
+
+            <p>With the data:</p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>Time</cell>
+                <cell>0</cell>
+                <cell>2</cell>
+                <cell>5</cell>
+                <cell>10</cell>
+                <cell>15</cell>
+                <cell>20</cell>
+              </row>
+              <row bottom="minor">
+                <cell>Amount</cell>
+                <cell>$5000</cell>
+                <cell>$5600</cell>
+                <cell>$6700</cell>
+                <cell>$9000</cell>
+                <cell>$12000</cell>
+                <cell>$16000</cell>
+              </row>
+            </tabular>
+
+            <p>Find the best fitting curve of the given model.</p>
+          </statement>
+          <solution>
+            <p>
+              A scatter plot of the data will help us find some good initial guesses for the initial amount and the rate.
+            </p>
+
+            <image width="60%" source="images/sec6-4-sol5a.png"/>
+
+            <p>
+              The <m>y</m>-intercept is about $5000. This occurs when time = 0,
+              so the initial guess for the initial amount will be 5,000.
+              The graph is an increasing function, so we know rate  <m>\gt 1</m>.
+            </p>
+
+            <p>
+              Choosing <m>\rate = 1</m> will cause problems (the base of an exponential function should not be 1).
+              Assuming this is a reasonable investment problem we will assume 5$ growth, so <m>r = 1.05</m>.
+            </p>
+
+            <p>
+              The initial set-up looks like this. We have included a graph of the data given versus the predicted numbers.
+              The initial guesses are not bad, but clearly we can do better.
+            </p>
+
+            <image width="100%" source="images/sec6-4-sol5b.png"/>
+
+            <p>After using Solver we determine that the best model function for our data is as follows:</p>
+
+            <image width="100%" source="images/sec6-4-sol5c.png"/>
+
+            <p>
+              <me>\Amount(\Time)=5,013.11* (1.06)^{\Time}</me>.
+              Notice that the data is now indistinguishable from the model function in the graph.
+            </p>
+
+            <p>
+              Remark: If we use Trendlines to find a exponential function that fits the data, we would get <m>y=5001 e^{0.0583*time}</m>.
+              The least square error analysis shows that this is not as good of an approximation as the one we just found using Solver!
+              The least squares error for the trendline is approximately 30% greater than for the value we found using Solver.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Fred has put some of his money in a cash account that pays no interest and the rest of his money a single account that compounds the return back into the account.
+              Thus, the model we want to use for the amount is
+              <me>\Amount(\Time)=\CashAmount+\InvestmentAmount*\rate^{\Time}</me>.
+            </p>
+
+            <p>With the data:</p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>Time</cell>
+                <cell>0</cell>
+                <cell>2</cell>
+                <cell>5</cell>
+                <cell>10</cell>
+                <cell>15</cell>
+                <cell>20</cell>
+              </row>
+              <row bottom="minor">
+                <cell>Amount</cell>
+                <cell>$10000</cell>
+                <cell>$11000</cell>
+                <cell>$14000</cell>
+                <cell>$19000</cell>
+                <cell>$27000</cell>
+                <cell>$39000</cell>
+              </row>
+            </tabular>
+
+            <p>Find the best fitting curve of the given model.</p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Mary has put some of her money in an investment that pays simple interest and the rest of her money into a single account that compounds the return back into the account.
+              Thus, the model we want to use for the amount is
+              <me>\Amount(\Time)=\Amount_1+\Return_1*\Time+\Amount_2*{\rate_2}^{\Time}</me>.
+            </p>
+
+            <p>With the data:</p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>Time</cell>
+                <cell>0</cell>
+                <cell>2</cell>
+                <cell>5</cell>
+                <cell>10</cell>
+                <cell>15</cell>
+                <cell>20</cell>
+                <cell>30</cell>
+                <cell>40</cell>
+              </row>
+              <row bottom="minor">
+                <cell>Amount</cell>
+                <cell>$10000</cell>
+                <cell>$11300</cell>
+                <cell>$13500</cell>
+                <cell>$18300</cell>
+                <cell>$24700</cell>
+                <cell>$33500</cell>
+                <cell>$62600</cell>
+                <cell>$118800</cell>
+              </row>
+            </tabular>
+
+            <p>Find the best fitting curve of the given model.</p>
+          </statement>
+          <solution>
+            <p>
+              The function we are looking for has a linear component (<m>\Amount_1+\Return_1*|time</m>), and an exponential component.
+              There is no trendline that would do this for us.
+            </p>
+
+            <p>What do we know about these values?
+              <ul>
+                <li><p>We have $10,000 at the very beginning and this is split into two different investments, so Amount 1 + Amount 2 = $10,000. </p></li>
+                <li><p>What is Return 1? It should be the return on the first part of the investment. So it should be some amount we receive on an investment of at most $10,000. A first guess would be that the value is in the hundreds of dollars, but maybe close to $150 or $200?</p></li>
+                <li><p>The rate is our final parameter. This is the growth due to interests. We will start with a guess of <m>rate = 1.05</m>.</p></li>
+              </ul>
+            </p>
+
+            <p>The Excel commands used to generate the table are as follows:</p>
+
+            <image width="100%" source="images/sec6-4-sol7a.png"/>
+
+            <p>It is worth graphing both the actual data and the predicted data to see if we are setting the problem up correctly.</p>
+
+            <image width="100%" source="images/sec6-4-sol7b.png"/>
+
+            <p>The general shape of the predicted values graph seems fine. The values are off, but Solver will be able to reduce the error.</p>
+
+            <image width="100%" source="images/sec6-4-sol7c.png"/>
+
+            <p>The solution is:</p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>Amount 1</cell>
+                <cell>3317.59</cell>
+              </row>
+              <row bottom="minor">
+                <cell>return 1</cell>
+                <cell>163.19</cell>
+              </row>
+              <row bottom="minor">
+                <cell>rate </cell>
+                <cell>1.07</cell>
+              </row>
+            </tabular>
+
+            <p>
+              Hence <m>\Amount_2 = 10,000 - 3,317.59 = 6,682.41</m>, and we have that
+              <me>\Amount(\Time)=\$3,317.59+\$163.19*\Time+\$6,682.41* (1.07)^{\Time}</me>.
+            </p>
+
+            <p>In Excel the data and the predicted values now line up very nicely.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              John has divided his money between two accounts.
+              They both compound their returns, but they pay different rates.
+              Thus, the formula that models the investment is:
+              <me>\Amount(\Time)=\Amount_1*\rate_1^{\Time}+\Amount_2*\rate2^{\Time}</me>.
+            </p>
+
+            <p>With the data:</p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>Time</cell>
+                <cell>0</cell>
+                <cell>2</cell>
+                <cell>5</cell>
+                <cell>10</cell>
+                <cell>15</cell>
+                <cell>20</cell>
+                <cell>30</cell>
+                <cell>40</cell>
+              </row>
+              <row bottom="minor">
+                <cell>Amount</cell>
+                <cell>$10000</cell>
+                <cell>$11500</cell>
+                <cell>$14000</cell>
+                <cell>$20000</cell>
+                <cell>$29000</cell>
+                <cell>$41500</cell>
+                <cell>$87000</cell>
+                <cell>$183500</cell>
+              </row>
+            </tabular>
+
+            <p>Find the best fitting curve of the given model.</p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--   This file is part of Business Calculus with Excel      -->
+<!--                                                          -->
+<!--                                   -->
+<!--                                                          -->
+<!-- Copyright (C) 2023  Mike May                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<appendix xml:id="SpreadSkills">
+    <title>Spreadsheet Skills introduced in chapter 1</title>
+
+    <introduction>
+       <p>This appendix accumulates the spreadsheet skills used in chapter 1 of this textbook.</p>
+    </introduction>
+
+    <section xml:id="SppreadSkillsSection1-3">
+        <title>Section 1-3 - Entering and Copying Formulas</title>
+             <p>
+                Spreadsheet skills introduced in <xref ref="sec-1-3-IntroExcelSpreadsheets">
+                Section 1.3 Introduction to Excel Spreadsheets</xref>
+            </p>
+          <ul>
+            <li>
+                <p>
+                    <term>Basic Arithmetic in a cell</term> - Addition, subtraction, multiplication, and exponentiation are done with <c>+</c>, <c>1</c> , <c>*</c>, <c>/</c>, and <c>^</c>.  The variable is replaced by a cell reference.  Multiplication needs to be explicit.  (We need <c>x*y</c>) rather than <c>xy</c>.)  Raising to a power of <c>e</c> is done with the <c>EXP()</c> function.
+                </p>
+                <p>
+                    One feture to remember is that Excel uses a slightly different order of operations compared to what is used in all math classes.  Excel interprets <c>-5^2</c> as <c>(-5)^2</c> rather than <c>-(5^2)</c>.
+                </p>
+                <p>
+                    The <xref ref="BasicArithmeticVideo"> Basic Arithmetic video </xref> demonstrates basic arithmetic.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Arithmetic with commands</term> - Excel has commands for normal aritmetic operations, SUM(), PRODUCT(), QUOTIENT(), and POWER().  In practice, we will only use SUM(), which cam be used on a list. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Showing all the formulas on a page</term> Under the Formulas tab, the show formulas item from the show button shows all the formulas on the page. An <xref ref="ShowFormulasImage">image of the button </xref> is in the section.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Quick fill</term>  Is used when we want to repeat a cell or collection of cells many times.  You select a group of cells, then position the cursor over the dot in the lower right corner of the selection.  The shape of the curve will change.  Click and drage to fill.  Formulas are modified according to the rules of relative and absolute references. A screencast is in the <xref ref="BasicArithmeticVideo"> Basic Arithmetic video </xref>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <term>Relative and absolute references</term> - When Copying formulae from one cell to another, either with copy and paste, or with quickfil,
+                    it is important to understand relative and absolute cell references. Suppose we are moving a formula from cell <c>A1</c> to cell <c>B3</c>.  (We are going one column over and two rows down.) A relative reference changes with the formula location. <c>=F5</c> becomes <c>=G7</c>.
+                    An absolute reference stays the same and has dollar signs, <c>$</c>, to fix an index. For the same move, <c>=$F$5</c> stays <c>=$F$5</c>.  
+                </p>
+                <p>
+                    We can also fix either the rows or columns by using dollar signs, <c>$</c>.  Moving from cell <c>A1</c> to cell <c>B3</c>, the formula <c>=F$5</c> becomes <c>=G$5</c> and <c>=$F5</c> becomes <c>=$F7</c> 
+                </p>
+                <p>     
+                     
+                    See an explanation at <xref ref="RelAbsRefTitle"> Relative and Absolute reference discussion</xref> and a video at <xref ref="sec-1-3-IntroExcelSpreadsheets">  Relative and Absolute reference video. </xref>
+                 
+                    <!-->      
+                    See an explanation at <xref ref="RelAbsRefTitle"> Relative and Absolute reference discussion</xref> and a video at <xref ref="RelativeAbsoluteVideo">  Relative and Absolute reference video. </xref>
+                 <-->
+                </p>
+            </li>
+          </ul>
+    </section>
+    <section xml:id="SpreadSkillsSection1-4">
+        <title>Section 1.4 Graphing Functions in a Spreadsheet</title>
+        
+            <ul>
+                <li>
+                    <p>
+                        <term>Graph a function</term> We graph a function in Excel by foirst making a table of input and output values.  We then select the values for both the x and y values, then select the button to insert a scatter plot.  The most common error is to ouly selct the output, in which case Excel assumes the sequence 1, 2, 3, ... is the input. (Video reference)
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Graph multiple functions</term> Two graph multiple functions we start with a chart that has the input and the output of the multiple functions,  Select the column for the input and the outputs to be graphed and then insett a scatterplot.  If the input variable is not included, Excel will interpret the first output varaiable as the input and give a very different graoph. (reference)
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Use a secondary axis.</term>  If the scales of the graphs are noticably differnt we want to use a secondary axis for one of the graphs.  For example is we are graphung <m>f(x)=x^2</m> and <m>g(x)=x^5</m> for the interval <m>[-10,10]</m>, the scale of <m>g(x)</m> is so large that we cannot see what happens fith <m>f(x)</m>.  Use a secondary axis. (ref)
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Graph multiple functions tht are not adjacent in the chart.</term>  Use the COmmand -Selest to choose table untries that are not nesxt to each other (reference)
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Graph functions with parameters in the definition.</term>
+                    </p>
+                </li>
+            </ul>
+     </section >     
+    <section xml:id="SpreadSkillsSection1-5">
+            <title>Section 1.5 Adding and Using Best Fit Curves (Trendlines)</title>
+            <ul>
+                <li>
+                    <p>
+                        <term>Add a trendline to a chart</term>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Find non linear best fit curves.</term>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Change the precision of the coefficients in the trendline.</term>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Find the equation of the trendline.</term>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Add the predicted function to the chart.</term>
+                    </p>
+                </li>
+            </ul>
+    </section>
+       
+        
+    <section xml:id="SpreadSkillsSection1-6">
+            <title>Section 1.6 Using Goal Seek</title>
+            <ul>
+                <li>
+                    <p>
+                        Using Goal Seek
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Avoiding traps of Goal Seek
+                    </p>
+                </li>
+            </ul>
+    </section>
+
+</appendix>

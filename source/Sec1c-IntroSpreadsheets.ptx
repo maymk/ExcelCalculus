@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-1-3-IntroExcelSpreadsheets">
+    <title>Introduction to Excel Spreadsheets</title>
+    <introduction>
+      <p><url href="external/Examples/Section-1-3-Examples-Unworked.xlsx"  visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-3-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-1-3-Examples.xlsx" visual="external/Examples/Section-1-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+      <p>mathstat.slu.edu/~may/ExcelCalculus/external/Examplesol used in the business world.
+        (More precisely, the spreadsheet is the standard tool, and Excel is currently the de facto standard brand.
+        Most of this text can easily be used with other spreadsheets.) However, we do not assume that the student has worked with Excel previously.
+        Throughout the course we will introduce those features of Excel we need to do mathematics and model the business problems we encounter.
+      </p>
+      <p>
+        While introducing Excel, we will also introduce rules of <q>Good Excel practice.</q>
+         In a business environment, spreadsheets should be written so that someone else can easily understand the worksheet,
+         and maintain it for future use. You should assume those same standards when submitting work in Excel.
+      </p>
+
+      <p>
+        This section is meant as an introduction to several standard features of Excel we will use often. These include:
+        <ul>
+          <li><p>
+          <term>Basic Arithmetic</term> such as add, subtract, multiply etc.
+          </p></li>
+          <li><p>
+          <term>Show formulas</term>: allows us to check if the formulas in the cells are what they should be.
+          </p></li>
+          <li><p>
+          <term>Quick fill</term>: this feature takes a pattern and fills it across a column or a row.
+          </p></li>
+          <li><p>
+          <term>Relative and Absolute Reference</term>: when do we refer to a fixed cell and when does the reference depend on our place in the spreadsheet?
+          </p></li>
+          <li><p>
+          <term>SUM()</term>: Adding a large number of cells can be efficiently done with this feature.
+          </p></li>
+        </ul>
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Basic Arithmetic, show formulas and quick fill.</title>
+
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="x3l0gz5APk0" xmlid="BasicArithmeticVideo"/>
+      </figure>
+
+      <p>
+        We start with an example that covers basic arithmetic.  Assume we are given the following worksheet:
+      </p>
+
+      <image width="50%" source="images/sec1-3-1BasicData.png"  xml:id="BasicDataImage"/>
+
+      <p>
+        From data we would like to compute the figures for the quarter (add the three months),
+        the monthly profit (revenues-cost), and the monthly unit costs (costs/ units sold).
+      </p>
+
+      <p>
+        With the formula ribbon, we go to show and select <term xmlid="ShowFormulasTerm">Show Formulas</term>.
+        Since we want the worksheet to be readable by others, we add labels for the quantities we are computing,
+        and in each cell we enter the formula for the quantity.   The formula bar tells us which cell has been selected and the formula for that cell.
+        It is generally easier to edit a formula by using the formula bar.
+      </p>
+
+      <p>
+        In this example, we have used several different ways of writing the formula.
+        In cells <c>E2</c>, <c>B6</c>, and <c>B7</c> we simply typed in the equation like we would on a calculator.
+        Thus the profit for January is Revenues <mdash/> Costs, or 3600-2700.  Since we want Excel to compute this value,
+        we put an equals sign at the start of the formula.
+      </p>
+
+      <p>
+        In cells <c>E3</c>, <c>C6</c> and <c>C7</c>, instead of typing the values,
+        we use a reference to the cell where the value is kept.
+        This allows us to change the raw data and have Excel automatically recompute the quantities that were derived from those numbers.
+      </p>
+
+      <p>
+        In cells <c>E4</c> and <c>E5</c> we use Excel's <c>SUM</c> command.
+        In cell <c>E4</c>, we are taking the sum of the values in the cells from <c>B4</c> through <c>D4</c>.
+        We will come back to commands in Excel later in the section.
+      </p>
+
+          <image width="80%" source="images/sec1-3-2ShowFormulas.png"  xml:id="ShowFormulasImage"/>
+
+      <p>
+        If we unselect <term>Show Formulas</term>, we see the values that Excel computes.
+      </p>
+
+          <image width="80%" source="images/sec1-3-3UnshowFormulas.png"  xml:id="UnshowFormulasImage"/>
+
+      <p>
+        We want to finish our assignment by computing the Profit and Per Unit Costs for March and for the Quarter.
+        However, we would prefer not to type any more formulas.
+        (Typing in four more cells is not so bad, but we can imagine being told to do this for several years of data.)
+        We will use a process called Quick Fill, that tells Excel to repeat the same formula, with the cell references appropriately modified.
+      </p>
+
+      <p>
+        To do the quick fill, we select the cells we want copied.
+      </p>
+
+          <image width="80%" source="images/sec1-3-4.png"/>
+
+      <p>
+        We can move the cursor until the cell(s) show the fill handle.
+        This will change the symbol in the corner of the cell to a thin dark <sq><c>+</c></sq>.
+      </p>
+
+          <image width="20%" source="images/sec1-3-5.png"/>
+
+      <p>
+        We then drag the little blue box at the lower left corner of the box of selected cells.
+        Excel automatically fills in the new values.
+      </p>
+
+          <image width="80%" source="images/sec1-3-6FebSums.png"/>
+
+      <p>
+        We look back at the formulas and see that Excel has produced formulas where cells are in the same relative position.
+        Profit is the value from the cell 4 rows higher minus the value of the cell three rows higher.
+      </p>
+
+          <image width="80%" source="images/sec1-3-7MoreSums.png"/>
+
+      <p>
+        There is a last detail to fix in our report.
+        The quantities in profit and Per Unit Cost are in money, so we want them formatted correctly.
+        (They should start with a dollar sign, have a decimal point, and stop at two decimal places or cents.)
+        We do this by selecting the cells and then formatting the cells as currency.
+      </p>
+
+          <image width="80%" source="images/sec1-3-8.png"/>
+
+      <p>
+        If we use the quick fill on a pair of numbers, Excel produces an arithmetic sequence.
+        A pair of cells containing 1 then 4 becomes the start of a sequence 1, 4, 7, 10, <ellipsis/> .
+      </p>
+    </subsection>
+
+    <subsection>
+      <title xmlid="RelAbsRefTitle">Absolute and Relative Cell References</title>
+
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video xmlid="RelativeAbsoluteVideo" youtube="32VufLury4g"/>
+      </figure>
+
+      <p>
+        One of the reasons that spreadsheets are so useful for doing mathematics in a
+        business setting is that businesses often do a relatively simple computation for a large number of cases.
+        That means we should pay attention to formulas with cell references and the process of copying a formula from one case to another.
+        In the example above, all of the values change from one month to the next.
+        It is not hard to imagine a calculation where some values remain the same for many cases.
+        Thus we want to look at the idea of absolute and relative cell references.
+        This is a very important topic and an Excel feature we will be using for the rest of the term.
+      </p>
+
+      <p>
+        Consider the following example:
+        Your rich uncle, Fred, decided to give you 10 shares of Google stock (<abbr>GOOG</abbr>) on January first 2009,
+        with the option of receiving instead the same value in either Microsoft (<abbr>MSFT</abbr>) or Apple stock (<abbr>AAPL</abbr>).
+        You would like to see the monthly change in value of the portfolios over a three-year period.
+      </p>
+
+      <p>
+        We start by going to <url href="finance.yahoo.com" visual="finance.yahoo.com"/> and collecting the monthly prices of the stocks,
+        downloading the answers into a spreadsheet.
+        When we look up historical prices from Yahoo, we are interested in the adjusted closing price.
+        (They adjust the price to account care of splits and dividends.)
+        That produces a spreadsheet like the one below.
+      </p>
+
+          <image width="80%" source="images/sec1-3-9SharePrices.png"/>
+
+
+      <p>
+        Next we want to compute the number of shares for each stock.
+        This is 10 times the closing price of Google divided by the closing price of the stock we selected.
+      </p>
+
+          <image width="80%" source="images/sec1-3-10ShareAjustments.png"/>
+
+
+      <p>
+        In the formula for the number of shares of <abbr>MSFT</abbr>, we used <c>$B$3</c> for the initial price of <abbr>GOOG</abbr>.
+        This is an absolute cell reference.  When we copy the formula from cell <c>C1</c> to cell <c>D1</c>, the formula changes from <c>=10*$B$3/C3</c> to <c>=10*$B$3/D3</c>.
+        This formula in cell <c>D1</c> asks for 10 times the value in cell <c>B3</c>,
+        divided by the value in the 2 rows below the cell of the formula.
+      </p>
+
+      <assemblage>
+        <p>
+          <term>Absolute references</term> refer to a particular column and/or row.
+          The dollar sign <sq><c>$</c></sq> is used to fix the reference.
+        </p>
+        <p>
+          <term>Relative references</term> refer to the cell the same distance away from the cell containing the formula.
+        </p>
+        <p>
+          <term>Partial absolute references</term>, like <c>$B3</c>and <c>B$3</c>, are absolute in either the row direction or the column direction and relative  in the other direction.
+        </p>
+        
+      </assemblage>
+
+      <p>
+        We continue our example by computing the change in value of our <abbr>GOOG</abbr> portfolio in the first month.
+        That will be the share price at the beginning of the next month minus the share price at the beginning of the month,
+        times the number of shares.  For January 2009, for <abbr>GOOG</abbr> this becomes <c>=(B4-B3)*B$1</c>.
+      </p>
+
+          <image width="90%" source="images/sec1-3-11.png"/>
+
+      <p>
+        Since we have properly used relative and absolute references,
+        we can now copy this formula to complete the chart, and Excel will modify the formula appropriately.
+      </p>
+
+          <image width="80%" source="images/sec1-3-12.png"/>
+
+      <p>
+        We note that the rows and columns can be independently made absolute or relative.
+        Thus if we are looking at a formula in cell <c>A1</c>,
+        and see a reference to <c>B2</c> it means the cell one below and to the right of the location of the formula.
+        If we see <c>$B2</c> it means the cell in column B that is one row down from the formula.
+        If we see <c>B$2</c> it means the cell in row two that is one column to the right of the formula.
+      </p>
+
+      <p>
+        When we convert back to see the values, we see that an original investment of $3,385.30 would have made a profit of $3,073.70 in <abbr>GOOG</abbr> stock,
+        $2,128.02 in <abbr>MSFT</abbr> stock and $11,826.60 in <abbr>AAPL</abbr> stock.
+        Once again we use the <c>SUM</c> function and a cell range to add the values in the column.
+        We also use the split screen icons in the scroll bars to be able to see the correct rows and columns.
+      </p>
+
+          <image width="80%" source="images/sec1-3-13.png"/>
+
+      <p>
+        <term>Note</term>: Excel can also make references across multiple pages of a workbook,
+        but we will not need that capability for this course.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Named Cell References</title>
+
+      <p>An alternative to using absolute references in formulas is to name the cells. </p>
+
+      <assemblage>
+        <p>By default, Excel names each cell by its row and column.
+          We can use the name cell in the upper left corner of the Excel sheet to change the name from the letter/number format into a descriptive name.</p>
+      </assemblage>
+
+      <p>
+        The more descriptive name can be useful when constructing and documenting the process we are using for our computations.
+        Consider the previous example with the rich uncle.
+        In cells <c>B1</c>, <c>C1</c>, and <c>D1</c>,
+        we had the number of shares of Google, Microsoft, and Apple we could have had in the portfolio.
+        Better names for those cells would then be SharesGOOG, SharesMSFT, and SharesAAPL.
+        We can name a cell by editing the name box at the left side of the formula bar.
+      </p>
+
+      <image width="40%" source="images/sec1-3-14.png"/>
+
+      <p>
+        We can then use the names in formulas.  In general, the formulas with nicely named variables are easier to read.
+      </p>
+
+      <image width="80%" source="images/sec1-3-15.png"/>
+    </subsection>
+
+    <subsection>
+      <title>Getting Help</title>
+
+      <p>
+        One of the ways that doing mathematics with a program like Excel differs from working with a calculator is that computer programs have help features.
+        It is worthwhile pointing out two that come with Excel.  We illustrate both with the <c>SUM</c> function we have used a number of times.
+      </p>
+
+      <p>
+        When we call Help from the top menu, we are given a pop up window for Excel Help.
+        It has a number of topics listed by default.  It also has a bar for searching topics.
+      </p>
+
+      <image width="80%" source="images/sec1-3-16.png"/>
+
+      <p>
+        We type the name of the command we are looking for and we are given a page of help for that command.
+      </p>
+
+      <image width="80%" source="images/sec1-3-17.png"/>
+
+      <p>
+        A second kind of help is the formula builder from the formula ribbon.
+        It gives a more concise help when you do not remember the exact syntax of a command.
+      </p>
+
+      <image width="80%" source="images/sec1-3-18.png"/>
+
+      <p>
+        A third source of help is simply to do a web search for Excel help.
+        To find how to do a computation with an exponential functions you can search for <q>Excel formulas exponential.</q>
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Other Details</title>
+
+      <p>
+        Excel is a rich and complex tool.
+        We will be looking at more features as we go through the course.
+        There are several that are worth pointing out explicitly at this point.
+      </p>
+
+      <p>
+        <ul>
+          <li><p>For ordinary arithmetic, Excel uses the standard symbols of
+            <kbd name="plus"/>, <kbd name="minus"/>, <kbd>*</kbd>, <kbd>/</kbd>, and <kbd>^</kbd>
+            for plus, minus, times, divided by, and raising to a power.
+          </p></li>
+          <li><p>We can also use the <c>SUM</c>, <c>PRODUCT</c>, <c>QUOTIENT</c>,
+          and <c>POWER</c> commands for ordinary arithmetic.
+          </p></li>
+          <li>
+            <p>
+              The order of operations used by Excel differs from the traditional
+              order of operations when it comes to taking powers of negative numbers.
+              The problem is illustrated in evaluating  <m>-3^2</m>, which has a negative sign and an exponentiation.
+              In all math classes you have taken this is interpreted as <m>-(3^2)</m> or <m>-9</m>, with exponentiation done first.
+              In Excel, this is interpreted as <m>(-3)^2</m> or 9, with negation done first.
+              When in doubt, use parenthesis to make the order of operations explicit.
+            </p>
+          </li>
+          <li>
+            <p>
+              Excel also has the other mathematical functions you have used before.
+              The functions for square root, log base 10, log base <m>e</m>, and <m>e</m> to the power of,
+              are respectively, <c>SQRT</c>, <c>LOG</c>, <c>LN</c>, and <c>EXP</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The value of <m>e</m> is represented by <c>EXP(1)</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Excel has a number of very useful operations on collections of numbers.
+              We start with easy ones where the name is self explanatory, like <c>SUM</c>,
+              <c>AVERAGE</c>, <c>COUNT</c>, <c>MIN</c>, and <c>MAX</c>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </subsection>
+
+
+    <exercise>
+      <title>Reading check, Functions in the Business Setting</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Absolute references refer to a particular column and/or row. The dollar sign '$DOLLAR' is used to fix the reference.", 
+"Relative references refer to the cell the same distance away from the cell containing the formula.", 
+"We can name cells to make formulas easier to read. ",                 
+"In Excel, \(e^x\) is written EXP(x).", 
+"Excel can format an answer as currency.", 
+ "Absolute and relative cell references can be used interchangeably. ", 
+"We can only check the underlying functions one cell at a time.", 
+"There is only one correct way to add up three quantities with Excel."
+                ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.3, Introduction to Excel Spreadsheets, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-1-3">
+      <title>Exercises Introduction to Excel Spreadsheets</title>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a spreadsheet where the first 100 rows are used.
+            The cell in row n and column A should have value n.  The cell in row n and column B should have value 2*n.
+            You should be able to do this by typing in the value of 4 cells and using quick fill.
+          </p>
+        </statement>
+        <solution>
+          <p>The formulas entered should look like this:</p>
+
+          <image width="80%" source="images/sec1-3-sol1a.png"/>
+
+          <p>Once we quickfill and have the regular view (not showing the formulas)</p>
+
+          <image width="50%" source="images/sec1-3-sol1b.png"/>
+
+          <p>
+            <ul>
+              <li><p>The actual spreadsheet has 100 rows.</p></li>
+              <li><p>Note that there is a small window that shows how far the quickfill has gone.</p></li>
+              <li>
+                <p>
+                  If you want to check the formulas used you go to the <q>Formula</q> menu and choose <q>Show formulas</q>.
+                  This feature is good for debugging any problem that may happen.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a spreadsheet where the first 100 rows are used.
+            Column A should contain the first 100 odd numbers.
+             Column B should contain multiples of 7 starting with 21.
+           </p>
+         </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Start with the worksheet given.
+            Complete the worksheet in such a way that if the values of x, y, and z are changed,
+            the other values are automatically recomputed.
+          </p>
+
+          <image width="80%" source="images/sec1-3-e1.png"/>
+        </statement>
+        <solution>
+          <p>
+            We do not need to use absolute references in this case,
+            but when we are computing something involving the <m>x</m>, <m>y</m> and <m>z</m>
+            values we should refer to cells B1, B2, and B3 respectively.
+          </p>
+
+          <image width="80%" source="images/sec1-3-sol3b.png"/>
+
+          <p>The spreadsheet should have entries as shown above.</p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Produce a spreadsheet where the first 101 rows are used.
+            Row 1 should be used for labels. Column A should contain integers from 1 to 100.
+            Columns B through F should contain the squares, cubes, square roots, logs base 10 and natural logs of the entries in columns A.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Start with the spreadsheet section below.
+          </p>
+
+          <image width="60%" source="images/sec1-3-e2.png"/>
+
+          <p>
+            If column E is copied and pasted into column G, give both the formula and value for each non-empty cell in column G.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Any entry that is absolute (with a $) will be fixed. The relative references
+            (without the $) will change all the Bs to Ds because we moved over 2 columns.
+          </p>
+
+          <p>Formulas</p>
+
+          <image width="80%" source="images/sec1-3-sol5a.png"/>
+
+          <p>Entries</p>
+
+          <image width="80%" source="images/sec1-3-sol5b.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            We would like to really understand what happens when we use quick fill.
+          </p>
+
+          <p>
+            <ol marker="(A)">
+              <li>
+                <p>
+                  Let's consider the entries =A1, =$A1, =A$1, and =$A$1 in row 2.
+                  Do quick fill below to fill in 3 more rows and see what happens.
+                  Clearly in the first row these cells all now point to cell A1 and the value returned is 1.
+                  After the first row we get a mixture of values. Why?
+                </p>
+
+                <image width="80%" source="images/sec1-3-e3.png"/>
+              </li>
+              <li>
+                <p>
+                  Next, we can set up the values in column D.
+                  Do quick fill to fill in the 3 columns to the right?
+                  Explain the pattern of values we see.
+                </p>
+
+                <image width="80%" source="images/sec1-3-e4.png"/>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Complete the spreadsheet section below so that columns A through C are complete for numbers 1 to 100.
+            (The value for a should be a random number generated by the formula in cell E1.)
+          </p>
+
+          <image width="60%" source="images/sec1-3-e5.png"/>
+        </statement>
+        <solution>
+          <p>
+            The random number will differ from person to person, but the Excel entries are as follows.
+            Note that we need to use an absolute reference for the value of <c>a</c>!
+          </p>
+
+          <p>Formulas</p>
+
+          <image width="80%" source="images/sec1-3-sol7a.png"/>
+
+          <p>The entry in C2 could also have been given as <c>=A2^2+$E$1</c>.</p>
+          <p>Just <c>E$1</c> will work as well. We are filling down so we really need to fix the row in this case.</p>
+          <p>
+            In this version the random number settled on <m>-6</m> (yours is likely different)
+            and the first part of the table looks as follows. The actual answer has all 100 rows completed.
+          </p>
+
+          <image width="80%" source="images/sec1-3-sol7b.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Using the help functions to check syntax, write a formula for cell B2,
+            that looks at the value for cell A2, and if it is negative, returns the square of it,
+            and if positive returns its square root.
+          </p>
+        </statement>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            Using your favorite source on the web create a spreadsheet that has the
+            closing price of your favorite stock on the first day of the month for the past 5 years.
+            Compute the change in adjusted stock price for each month and identify which month had the greatest increase.
+            (<url href="http://finance.yahoo.com/" visual="http://finance.yahoo.com/">http://finance.yahoo.com/</url>) is one source for such data.)
+          </p>
+        </statement>
+        <solution>
+          <p>For example if we type in Coca-Cola we get to <q>The Coca-Cola Company (KO)</q></p>
+          <p>From the menu on the left choose “Historical Prices” and pull the monthly data from the past 5 years. Then scroll down and download to spreadsheet.</p>
+          <p>Using the Adjusted close we compute the change:</p>
+
+          <image width="80%" source="images/sec1-3-sol9a.png"/>
+
+          <p>The above partial table shows what the table should look like.</p>
+          <p>Using the MAX function for this data the biggest change is $3.39.</p>
+          <p>
+            Finding the month can be done by inspection as this point (there are more sophisticated ways to do this,
+            but that requires rather advanced Excel commands). In this instance the greatest change took place in December 2013.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Using your favorite source on the web create a spreadsheet that has the closing
+            price of your favorite stock on the first day of the month for the past 5 years.
+            Compute the percentage change in adjusted stock price for each month and identify which month had the greatest increase.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Create a spreadsheet showing the Consumer Price Index by month from 1930-2010.
+            (Good sources are <url href="http://inflationdata.com/" visual="http://inflationdata.com/">http://inflationdata.com/</url>
+            and <url href="http://www.bls.gov/cpi/" visual="http://www.bls.gov/cpi/">http://www.bls.gov/cpi/</url> at the Bureau of Labor Statistics.)
+            Compute the percentage change between January and July for each year.
+            Which year had the greatest percentage change in the first half of the year?
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>

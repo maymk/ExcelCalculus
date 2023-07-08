@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-2-1-MarketEquilibriumProblems">
+    <title>Market Equilibrium Problems</title>
+    <introduction>
+      <p><url href="external/Examples/Section-2-1-Examples-unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-2-1-Examples-unworked.xlsx">Link to unworked set of worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-2-1-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-2-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+      <p>
+         As we mentioned in the previous chapter, many functions are locally linear,
+         so if we restrict the domain the function will appear linear.
+         Thus, we often start with linear models when trying to understand a situation.
+         In this section, we look at the concepts of supply and demand and market equilibrium.
+         For our examples in this section we will assume that the functions are linear in the range we care about.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Supply and Demand and Market Equilibrium</title>
+
+      <p>
+        The normal laws of supply and demand assume we are in a market with many producers and consumers,
+        operating independently, all of them looking out for their own best interests.
+        We expect that when the price goes up, more producers are willing to sell but fewer consumers are willing to buy.
+        Conversely, when the price goes down, fewer producers are willing to sell but more consumers are willing to buy.
+      </p>
+
+      <p>
+        Consider the example of gasoline prices.
+        Different prices will make some areas of exploration and production profitable or not profitable.
+        When prices go up, new wells get drilled. If prices go down too far,
+        stripper wells cease being profitable and are shut down. From the consumer side,
+        when prices go up, more people look at mass transit or getting a more fuel-efficient vehicle.
+        When prices go down, it is easier to think about a road trip.
+      </p>
+
+      <p>
+        The <term>law of supply</term> looks at the economy from the supplier’s point of view.
+        Price and quantity available for sale always move in the same direction.
+        If the price goes up we can assume that all the old suppliers are still willing to sell at the higher price,
+        but some more suppliers may enter the market.  If the price goes down,
+        no new suppliers will enter the market, and some old suppliers may leave the market.  For a linear model:
+      </p>
+
+      <assemblage>
+        <p>
+          <me>
+            \text{slope  of supply curve} = \frac{\text{change in price}}{\text{change in quantity supplied}} =
+            \frac{\Delta p}{\Delta q} \gt 0
+          </me>.
+        </p>
+      </assemblage>
+
+      <p>
+        The <term>law of demand</term> looks at the economy from the consumer’s point of view.
+        Price and quantity available for sale always move in the opposite direction.
+        If the price goes down, we can assume that all the old consumers are still willing to buy at the lower price,
+        but some more consumers may enter the market.  If the price goes up, no new consumers will enter the market,
+        and some old consumers may leave the market.  For a linear model:
+      </p>
+
+      <assemblage>
+        <p>
+          <me>
+            \text{slope  of demand curve} = \frac{\text{change in price}}{\text{change in quantity demanded}}=
+            \frac{\Delta p}{\Delta q} \lt 0
+          </me>.
+        </p>
+      </assemblage>
+
+
+      <p>
+        When we look at a graph of the supply price graph and the demand price graph on the same graph,
+        we know the supply curve goes up as we go left to right, while the demand curve goes down.
+        From the properties of lines we know there is a single point where such a pair of lines can intersect.
+        It is at the point where the amount of goods offered for a price equals the amount of goods desired for the same price.
+      </p>
+
+      <assemblage>
+        <p>
+          <ul>
+            <li>
+              <p>
+                This intersection of the supply and the demand functions is called the point of <term>market equilibrium</term>,
+                or <term>equilibrium point</term>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The price at this point is referred to as the <term>equilibrium price</term>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The standard economic theory says that a free and open market will naturally settle on the equilibrium price.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </assemblage>
+
+      <image width="60%" source="images/sec2-1-1.png"/>
+
+      <example>
+        <title>Starting With Formulas</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="ulx0bKHKrVY"/>
+          </figure>
+
+          <p>
+            Suppose <m>q</m> denotes quantity, and the supply price for widgets is given by
+            <me>
+              \Sprice =\$6+\frac{q}{100}
+            </me>.
+            We are also told the demand price is given by
+            <me>
+              \Dprice=\$18-\frac{2q}{100}
+            </me>.
+            Find the equilibrium price and quantity.
+          </p>
+        </statement>
+        <solution>
+          <title>Solution (a)</title>
+          <p>
+            We have started with an example that we can do by basic algebra without any technology.
+            Subtracting the two equations, we see that
+            <me>
+              0=\$12-\frac{3q}{100}
+            </me>.
+          </p>
+
+          <p>
+            Some straightforward algebra shows that the equilibrium quantity is 400.
+            Substituting back into either equation gives an equilibrium price of $10.
+          </p>
+        </solution>
+
+        <solution>
+          <title>Solution (b)</title>
+          <p>
+            While we can do this example by hand, we also want to use it to set up a solution with Excel,
+            since we may want help on problems where the numbers are not as nice.
+            Our plan is to use Goal Seek to find the intersection.
+            We need a cell where we can solve the problem by forcing the cell to have a value of zero.
+          </p>
+
+          <image width="50%" source="images/sec2-1-2.png"/>
+
+          <p>
+            When cell <c>D2</c> is zero, the supply price will be the same as the demand price.
+            We now invoke Goal Seek.
+          </p>
+
+          <image width="60%" source="images/sec2-1-3.png"/>
+
+          <p>
+            As expected, it finds equilibrium when <m>q=400</m>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        We need to do a bit more work when we are simply given data points and need to find the supply and demand curves.
+      </p>
+
+
+      <example>
+        <title>Starting With Data</title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="ZYZhgmFvvtc"/>
+          </figure>
+
+          <p>
+            My market data indicates customers will buy 700 gizmos if they are priced at $13 each.
+            If the price rises to $15, they will only buy 500.  If the price is $12 a unit,
+            the producers will make 400 gizmos.  If the price rises to $13, they will produce 600 gizmos.
+            Assume that the supply and demand curves are linear for between 300 and 1000 gizmos.
+            Find the equilibrium point for the gizmo market.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We start by making a chart for the values given. We add a scatterplot so that we can see the values.
+          </p>
+
+          <image width="80%" source="images/sec2-1-4.png"/>
+
+          <p>
+            Next we add linear trendlines for both the supply and demand.
+            We select the option to show the equations.
+          </p>
+
+          <image width="80%" source="images/sec2-1-5.png"/>
+
+          <p>
+            The projected equations are:
+            <md>
+              <mrow>\Sprice\amp =0.005*\quantity+10</mrow>
+              <mrow>\\Dprice\amp =-0.01*\quantity+20</mrow>
+            </md>.
+          </p>
+
+          <p>
+            We set up columns for the projected supply and demand curves.
+            We also add a column for the difference so that we can use Goal seek to find the equilibrium point.
+          </p>
+
+          <image width="80%" source="images/sec2-1-6.png"/>
+
+          <p>
+            It is then straightforward to see that the equilibrium quantity is 666.67 and the equilibrium price is $13.33.
+          </p>
+
+          <image width="80%" source="images/sec2-1-7.png"/>
+        </solution>
+      </example>
+
+      <p>
+        There is one more detail worth noting from this last example.
+        Depending on the units used, the slope can be very close to zero.
+        If we are selling tens of millions of units for a price under a dollar,
+        the change in price of a penny may correspond to a change in quantity of several thousand.
+        Make sure to include enough digits for your equation to be meaningful.
+      </p>
+
+      <example>
+        <title>Computing Sales </title>
+        <statement>
+          <figure>
+            <caption>Video presentation of this example</caption>
+            <video youtube="yBqKOI11Bds"/>
+          </figure>
+
+          <p>
+            We have obtained the following data for sales of gizmos in our location.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>quantity</cell><cell>653</cell><cell>762</cell>
+              <cell>847</cell><cell>943</cell><cell>1050</cell>
+              <cell>1130</cell><cell>1260</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Supply price</cell><cell>5.52</cell><cell/>
+              <cell>6.20</cell><cell/><cell>6.85</cell>
+              <cell/><cell>7.48</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Demand price</cell><cell/><cell>6.68</cell>
+              <cell/><cell>6.50</cell>
+              <cell>6.38</cell><cell>6.31</cell><cell/>
+            </row>
+          </tabular>
+
+          <p>
+            Assume the supply and demand curves are linear for quantities between 600 and 1300.
+            Find the best fitting lines for the supply and demand functions.
+            Find the equilibrium point.  Make a chart listing how many we can sell for $6.40 and $6.60.
+            Remember that sales will be the minimum of the supply and the demand.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            We start by putting the data into a spreadsheet and finding the best fitting lines.
+            We select the option to show the equations in the chart.
+          </p>
+
+          <image width="80%" source="images/sec2-1-8.png"/>
+
+          <p>
+            The supply and demand functions are:
+            <md>
+              <mrow>\Sprice \amp =.0032*\quantity+3.44</mrow>
+              <mrow>\Dprice \amp =-0.0010*\quantity+7.46</mrow>
+            </md>.
+          </p>
+
+          <p>
+            We add columns for the projected supply and demand prices,
+            using the equations obtained from the best fitting lines.
+            We also add a column, and compute the difference of the supply and demand functions.
+            We can now use goal seek to solve the problem.
+          </p>
+
+          <image width="60%" source="images/sec2-1-9.png"/>
+
+          <p>
+            We now use Goal Seek to find the equilibrium point.
+          </p>
+
+          <image width="80%" source="images/sec2-1-10.png"/>
+
+          <p>
+            At equilibrium we sell 956 gizmos at $6.50.
+            To find sales at $6.40 and $6.60, we use Goal Seek to get those values at both supply and demand prices.
+          </p>
+
+          <image width="50%" source="images/sec2-1-11.png"/>
+
+          <p>
+            We see that we can sell 1055 gizmos at $6.40, but can only obtain 925.
+            Thus our sales at $6.40 will be 925.  At $6.60 we can obtain 987 gizmos, but can only sell 855.
+            Thus our sales at $6.60 will be 855.
+            We can eliminate a step in this process if we recall that below equilibrium price the constraint is supply,
+            while above equilibrium price the constraint will be demand.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+
+    <exercise>
+      <title>Reading check, Market Equilibrium Problems</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The law of supply looks at the economy from the supplier's point of view. ", 
+"The law of demand looks at the economy from the consumer's point of view. ", 
+"The slope of the supply curve is always positive.  ",                 
+"This intersection of the supply and the demand functions is called the point of market equilibrium, or equilibrium point. ", 
+"The standard economic theory says that a free and open market will naturally settle on the equilibrium price. ",
+
+ "The slope of the demand curve is always positive.  ",                 
+"If the supply and demand curves are unlabeled, there is no way to guess which is which. "
+				],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 2.1, Market Equilibrium Problems, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-2-1">
+  	   <title>Exercises 2.1 Equilibrium Problems</title>
+
+       <exercisegroup>
+         <introduction>
+           <p>
+             Given the equations of the supply and demand curves:
+             <ol marker="(a)">
+               <li><p> Evaluate the curves at <m>q_0</m>.</p></li>
+               <li><p> Find the market equilibrium.</p></li>
+             </ol>
+           </p>
+         </introduction>
+
+         <exercise>
+           <statement>
+             <p>
+               Given <m>\Sprice=3 \quantity+10</m> and <m>\Dprice=-2 \quantity+30</m>, with <m>q_0=6</m>.
+             </p>
+           </statement>
+           <solution>
+             <p>
+              <ol marker="(a)">
+                <li>
+                  <sidebyside widths="50% 35%" valigns="middle top">
+                      <image source="images/sec2-1-sol1a.png"/>
+                      <p>Entries in the cells before quick fill</p>
+                  </sidebyside>
+                  <sidebyside widths="65% 35%" valigns="middle top">
+                      <image source="images/sec2-1-sol1b.png"/>
+                      <p>Table with quantities ranging from 0 to 10</p>
+                  </sidebyside>
+                  <p>
+                    From the table we see that at <m>q_0=6</m> the supply price is $28 and the demand price is $18.
+                  </p>
+                </li>
+                <li>
+                  <p>The market equilibrium happened to show up without requiring any more work.
+                    The equilibrium occurs when <m>q = 4</m> and the price is $22.
+                  </p>
+                  <p>
+                    If we had not seen the equilibrium in the table,
+                    we should graph the table and determine what values of <m>q</m> we should look at.
+                    After adjusting the table we can use Goal Seek to find the equilibrium point:
+                    Solve<m>\text{supply}-\text{demand}=0.</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>p_s=2 q+20</m> and <m>p_d=- q+200</m>, with <m>q_0=40</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>\Sprice=.2 q+157.3</m> and <m>\Dprice=-0.01 q+3468.9</m>, with <m>q_0=6000</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    The initial entries:
+                  </p>
+                  <image width="60%" source="images/sec2-1-sol3a.png"/>
+                  <p>
+                    Initial attempt at the data includes the quantity 6000 (to answer part a)
+                  </p>
+                  <image width="80%" source="images/sec2-1-sol3b.png"/>
+                  <p>
+                    When <m>q = 6000</m> we have that the supply price is $1357.30 and the demand price is $3408.90.
+                  </p>
+                </li>
+
+                <li>
+                  <p>The market equilibrium is outside the range that we tested.
+                    The graph indicates that the equilibrium (the intersection point) is to the right of the values we checked.
+                    Let’s redo the table with <m>q</m> between 0 and 20,000.
+                    The increments are a matter of preference. In this example we will use steps of 4000.
+                    The graph shows that the intersection point is somewhere between <m>q = 12,000</m> and <m>16,000</m>.
+                    The table shows it’s close to <m>q = 16,000</m>.
+                  </p>
+                  <image width="80%" source="images/sec2-1-sol3c.png"/>
+
+                  <p>
+                    We use Goal Seek to determine the actual equilibrium point.
+                  </p>
+
+                  <sidebyside widths="25% 70%" valigns="middle top">
+                      <image source="images/sec2-1-sol3d.png"/>
+                      <p>
+                        Goal Seek shows that the equilibrium point is at <m>q = 15770</m> with a price of $3311.20
+                      </p>
+                  </sidebyside>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given <m>p_s=0.0035 q+23</m> and <m>p_d=-0.0027 q+463</m>, with <m>q_0=46,798</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            I am given <m>p=-2 q+100</m> and <m>p=3 q-30</m>,
+            as my supply and demand curves, but am not told which is which.
+            Determine which curve is the supply curve and explain how you did it.
+            What limits can you put on the domain of the supply and demand functions?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The supply function is always increasing (positive slope) and the demand function is always decreasing (negative slope),
+            so we have:
+            <md>
+              <mrow>\text{demand:  }   p \amp =-2 q+100</mrow>
+              <mrow>\text{supply:  }   p \amp =3 q-30</mrow>
+            </md>.
+          </p>
+          <p>
+            We expect both functions to be positive,
+            because negative prices would indicate we would have to actually give people money to take our product off our hands!
+            <md>
+              <mrow>-2 q+100\gt 0 \amp \text{  implies }  q\lt 50</mrow>
+              <mrow>3 q-30\gt 0 \amp \text{ implies }  q\gt 10</mrow>
+            </md>.
+          </p>
+
+          <p>So we should only consider quantities between 10 and 50.</p>
+        </solution>
+      </exercise>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For <xref first="ex-sdc-first" last="ex-sdc-last"/>,
+            given the supply and demand data:
+            <ol marker="(a)">
+              <li><p> Find equations of the supply and demand curves, assuming they are both linear.</p></li>
+              <li><p> Find the market equilibrium.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-sdc-first">
+          <statement>
+            <p>
+              Given supply and demand data:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>quantity</cell><cell>50</cell><cell>100</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Supply price</cell><cell>4</cell><cell>10</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Demand price</cell><cell>9</cell><cell>5</cell>
+              </row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given supply and demand data:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>quantity</cell><cell>60</cell><cell>70</cell>
+                <cell>90</cell><cell>100</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Supply price</cell><cell>14</cell><cell/>
+                <cell>20</cell><cell/>
+              </row>
+              <row bottom="medium">
+                <cell>Demand price</cell><cell/><cell>19</cell>
+                <cell/><cell>16</cell>
+              </row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    We start by using trendlines to find the linear model functions.
+                  </p>
+                  <p>
+                    Once we have the function we create a second table using the functions instead of the initial data.
+                    The equations were edited to indicate which one is the supply and which one is the demand function.
+                  </p>
+                  <image width="90%" source="images/sec2-1-sol7a.png"/>
+                </li>
+                <li>
+                  <p>
+                    The second table will be set up to give us the supply,
+                    demand and the supply <minus/> demand so we can use Goal Seek to find the market equilibrium.
+                  </p>
+
+                  <image width="60%" source="images/sec2-1-sol7b.png"/>
+
+                  <p>
+                    The market equilibrium occurs at <m>q = 80</m> with a price of $18. (No Goal Seek required in this case.)
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given supply and demand data:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>quantity</cell><cell>4356</cell><cell>4792</cell>
+                <cell>6503</cell><cell>7038</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Supply price</cell><cell>$1.00</cell><cell/>
+                <cell>$1.15</cell><cell/>
+              </row>
+              <row bottom="medium">
+                <cell>Demand price</cell><cell/><cell>$1.10</cell>
+                <cell/><cell>$.98</cell>
+              </row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="ex-sdc-last">
+          <statement>
+            <p>
+              Given supply and demand data:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>quantity</cell><cell>5378</cell><cell>7984</cell><cell>8352</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Supply price</cell><cell>$8.00</cell><cell>$9.50</cell><cell/>
+              </row>
+              <row bottom="medium">
+                <cell>Demand price</cell><cell>$12.00</cell><cell/><cell>$10.00</cell>
+              </row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              <ol>
+                <li>
+                  <image width="100%" source="images/sec2-1-sol9a.png"/>
+                  <p>
+                    The supply and demand functions are:
+                    <md>
+                      <mrow>\Sprice (q) \amp = 0.0006 q+4.9045</mrow>
+                      <mrow>\Dprice (q) \amp = -0.0007 q+15.017</mrow>
+                    </md>.
+                  </p>
+
+                  <p>
+                    These decimal approximations introduce a bit of an error:
+                    note the difference between the recorded prices and the ones predicted by the model.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    To find the market equilibrium the column for <m>q = 8352</m> was copied and used to find the equilibrium point.
+                    Note that Goal Seek only works if the entries in the cells are formulas!
+                    The equilibrium is at <m>q = 8240</m>, with a price of $9.85.
+                  </p>
+                </li>
+
+                <li>
+                  <p>The projected prices are:
+                    <ul>
+                      <li>
+                        <p>
+                          Supply price of $9.92 when <m>q = 8352</m>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          Demand price of $10.03 when <m>q = 7984</m>
+                        </p>
+                      </li>
+                    </ul>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For <xref first="ex-sdc-me-first" last="ex-sdc-me-last"/>,
+            given the supply and demand data:
+            <ol marker="(a)">
+              <li><p> Find equations of the supply and demand curves, assuming they are both linear.</p></li>
+              <li><p> Find the market equilibrium.</p></li>
+              <li><p> Find the projected supply and demand prices for the extra quantities given.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-sdc-me-first">
+          <statement>
+            <p>
+              Given the supply and demand data:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>quantity</cell><cell>100</cell><cell>120</cell>
+                <cell>140</cell><cell>160</cell><cell>180</cell><cell>155</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Supply price</cell><cell>10.5</cell><cell>11.8</cell>
+                <cell>13.9</cell><cell>16.3</cell><cell>17.5</cell><cell/>
+              </row>
+              <row bottom="medium">
+                <cell>Demand price</cell><cell>21.3</cell><cell>18.1</cell>
+                <cell>14.7</cell><cell>12.3</cell><cell>8.6</cell><cell/>
+              </row>
+            </tabular>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Given the supply and demand data:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>quantity</cell><cell>5021</cell><cell>6051</cell>
+                <cell>6968</cell><cell>7901</cell><cell>9023</cell>
+                <cell>9917</cell><cell>7500</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Supply price</cell><cell>13.18</cell><cell/>
+                <cell>16.76</cell><cell/><cell>17.89</cell>
+                <cell>19.32</cell><cell/>
+              </row>
+              <row bottom="medium">
+                <cell>Demand price</cell><cell/><cell>19.69</cell>
+                <cell>18.78</cell><cell>18.05</cell><cell/>
+                <cell>17.61</cell><cell/>
+              </row>
+            </tabular>
+          </statement>
+          <solution>
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    For this problem the trendlines are truly models and will find the best fit curve.
+                  </p>
+                  <image width="100%" source="images/sec2-1-sol11a.png"/>
+
+                  <p>
+                    To be able to use Goal Seek we do need a table generated by formulas,
+                    so we use the trendline equations:
+                    <md>
+                      <mrow>\Sprice \amp = 0.0012 x+7.773</mrow>
+                      <mrow>\Dprice \amp = -0.0005 x+22.506</mrow>
+                    </md>.
+                  </p>
+
+                  <image width="100%" source="images/sec2-1-sol11b.png"/>
+                </li>
+
+                <li>
+                  <p>
+                    The market equilibrium takes place at <m>q = 8666.5</m> with a price of $ 18.17.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    The projected prices are
+                  </p>
+
+                  <image width="100%" source="images/sec2-1-sol11c.png"/>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-sdc-me-last">
+          <statement>
+            <p>
+              Given the supply and demand data:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>quantity</cell><cell>3160</cell><cell>3615</cell>
+                <cell>4092</cell><cell>4462</cell><cell>4837</cell>
+                <cell>5261</cell><cell>5579</cell><cell>6000</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Supply price</cell><cell/><cell>20.54</cell>
+                <cell>20.70</cell><cell/><cell>22.37</cell>
+                <cell>22.43</cell><cell/><cell/>
+              </row>
+              <row bottom="medium">
+                <cell>Demand price</cell><cell>25.31</cell><cell/>
+                <cell/><cell>18.91</cell><cell>17.04</cell>
+                <cell/><cell>14.37</cell><cell/>
+              </row>
+            </tabular>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>

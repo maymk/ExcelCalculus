@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-4-1-ElementaryDerivatives">
+    <title>Elementary Derivatives</title>
+    <subsection>
+      <title>Definition and Notation</title>
+      <p><url href="external/Examples/Section-4-1-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-4-1-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+      <p>
+        We start by recalling the formal definition,
+        with a slight adjustment in notation to match the standard conventions:
+      </p>
+
+      <definition xml:id="DefDerivative">
+        <title>Derivative</title>
+        <statement>
+          <p>
+            For a function <m>f(x)</m>, the instantaneous rate of change of <m>f(x)</m>,
+            or the <term>derivative</term> of <m>f(x)</m>, denoted as <m>f'(x)</m>,
+            is defined as
+            <me>
+              f'(x )=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+            </me>.
+          </p>
+        </statement>
+      </definition>
+
+      <p>
+        We also want to recall some alternate notations we may use.
+      </p>
+
+      <assemblage>
+        <p>
+          Notation:  Let <m>y=f(x)</m>.
+        </p>
+
+        <p>
+  	      The derivative of <m>f(x)</m>  is denoted as <m>f'(x)</m> or  <m>\frac{d}{dx} f(x) </m>or <m>dy/dx</m>.
+        </p>
+
+        <p>
+  	      The derivative at <m>x=x_0</m> is denoted as <m>f'(x_0 )</m> or <m>\frac{dy}{dx}|_{x=x_0}</m>.
+        </p>
+  	  </assemblage>
+
+      <p>
+        As is typical in mathematics, when there are several forms,
+        we use the one that makes the most sense in the case on which we are working.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of monomials</title>
+
+      <p>
+        Our first rule for symbolic differentiation gives the derivative of a monomial.
+      </p>
+
+      <claim xml:id="DerivMonomialRule">
+        <title>Monomial rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=a x^n</m>, then <m>f'(x)=n*a*x^{n-1}</m>.
+          </p>
+        </statement>
+      </claim>
+
+      <p>
+        This rule is a generalization of the rule we found in section 3.2 using trendlines.
+        There we noticed that the derivative is linear whenever the function is quadratic.
+        The rule is valid for all values of n, not just for positive whole numbers.
+        We can now find derivatives for expressions that can be converted into this form.
+      </p>
+
+      <example>
+        <title>Derivatives of monomials</title>
+        <statement>
+          <p>
+            Using our first rule of symbolic differentiation, find the derivatives of the following functions:
+            <ol marker="(a)">
+              <li><m> f(x)=3 x</m></li>
+              <li><m>g(x)=5 x^2</m></li>
+              <li><m>h(x)=7x^{25}</m></li>
+              <li><m>j(x)=6 \sqrt{x}</m></li>
+              <li><m>k(x)=\frac{4}{x^3} </m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution xml:id="ExampleMonomialDerivs">
+          <p>
+            Using our rule:
+            <ol marker="(a)">
+              <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (3 x^1)=1*3 x^0=3.</m></li>
+              <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (5 x^2 )=2*5 x^1=10 x.</m></li>
+              <li><m> \frac{d}{dx} h(x)=\frac{d}{dx} (7x^{25})=25*7 x^{24}=175x^{24}.</m></li>
+              <li><m> \frac{d}{dx} j(x)=\frac{d}{dx}  (6 \sqrt{x})=\frac{d}{dx}  (6x^{1/2} )=1/2*6x^{-1/2}=3x^{-1/2}=\frac{3}{\sqrt{x}}</m></li>
+              <li><m> \frac{d}{dx}  k(x)=\frac{d}{dx}  \frac{4 }{x^3 }=d/dx (4 x^{(-3)} )=-3*4 x^{-4}=-12 x^{-4}=\frac{-12}{x^4}</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        For parts (d) and (e), we converted roots and fractions so they looked like monomials
+        with negative or fractional exponents and applied our rule.
+      </p>
+
+      <p>
+        Probably the most convincing demonstration of the truth of this rule is for us to use
+        Excel and the techniques of the last chapter to find a function,
+        its numeric and symbolic derivatives and see that the symbolic and numeric derivatives are the same up to round off error.
+        We would also like to see how the symbolic derivative can be derived from the formal definition of derivative in simple cases.
+      </p>
+
+      <example>
+        <title>Derivatives of linear functions</title>
+        <statement>
+          <p>
+            From the formal definition of derivative, if <m>f(x)=a x+b</m>, then show <m>f'(x)=a</m>.
+          </p>
+        </statement>
+        <solution xml:id="ExampleLinearDerivs">
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)+b)-(a x+b)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a x+a h+b)-(a x+b)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{ah}{h}=\left({\lim_{h\to0}\frac{a}{1}}\right)\left({\lim_{h\to0}\frac{h}{h}}\right)</mrow>
+              <mrow>\amp =\lim_{h\to0}a=a</mrow>
+            </md>.
+          </p>
+
+          <p>
+            The last step is justified by noting that as <m>h</m> gets very small the value of <m>a</m> simply stays <m>a</m>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        We want to look at a quadratic function, since we will need to take a limit in that case.
+      </p>
+
+      <example>
+        <title>A quadratic derivative</title>
+        <statement>
+          <p>
+            From the formal definition of derivative, if <m>f(x)=a x^2</m>,
+            then show <m>f'(x)=2 a x</m>.
+          </p>
+        </statement>
+        <solution  xml:id="ExampoleFormalQuadDerivs">
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)^2)-(a x^2)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a x^2+2 a h x +a h^2)-(a x^2)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{2 a h x +a h^2}{h} =\lim_{h\to0}\frac{h(2 a x +a h)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}(2ax+ah)=2ax</mrow>
+            </md>.
+          </p>
+
+          <p>
+            The last step is justified by noting that as <m>h</m> gets very small the value of <m>ah</m> also gets very small.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        We can modify this last example to find a formula for the derivative of
+        <m>f(x)=x^n</m> for any positive integer <m>n</m>.  We recall that
+        <me>
+          (x+h)^n=x^n+n x^{(n-1)}h+\text{ terms involving } h^2
+        </me>.
+      </p>
+
+      <p>We are ready to generalize.</p>
+
+      <example  xml:id="PowerFunctionRule">
+        <title>Derivative of power function</title>
+        <statement>
+          <p>
+            From the formal definition of derivative, if <m>f(x)=a x^n</m>,
+            then show <m>f'(x)=n a x^{(n-1)}</m>.
+          </p>
+        </statement>
+        <solution xml:id="ProofPowerRule">
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (x+h)^n)-(a x^n)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{(a (x^n+n x^{n-1}h + \text{ terms involving }  h^2)-(a x^n)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{a (n x^{n-1}h + \text{ terms involving }  h^2)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}a (n x^{n-1} + \text{ terms involving }  h)</mrow>
+              <mrow>\amp =anx^{n-1}</mrow>
+            </md>.
+          </p>
+
+          <p>
+            The last step is justified by noting that as <m>h</m> gets very small,
+            the value of <m>h</m> times a polynomial in <m>h</m> also gets very small.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of Exponential Functions</title>
+
+      <claim  xml:id="ExponentialRuleDeriv">
+        <title>Exponential Rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=a*e^x</m>, then <m>f'(x)=a*e^x</m>.
+          </p>
+        </statement>
+      </claim>
+
+      <p>
+        The elegance of this rule is part of the reason why mathematicians and math books like base <m>e</m> for exponential functions.
+        However we more typically want to use exponential functions based on a rate of growth or decay.
+      </p>
+
+      <claim xml:id="GenExponRUleClaim">
+        <title>General Exponential Rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=b*a^x</m>, then <m>f'(x)=b*\ln(a)*a^x</m>.
+          </p>
+        </statement>
+      </claim>
+
+      <example>
+        <title>Exponential examples</title>
+        <statement>
+          <p>
+            Using the exponential rules of symbolic differentiation, find the derivatives of the following functions:
+            <ol marker="(a)">
+              <li><m> f(x)=2 e^x</m></li>
+              <li><m> g(x)=\pi e^x</m></li>
+              <li><m> h(x)=7*2^x</m></li>
+              <li><m> j(x)=5*(1.06)^x</m></li>
+              <li><m> k(x)=9*(0.97)^x</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution xml:id="GenExponeExampleSol">
+          <p>
+            Using our rule:
+            <ol marker="(a)">
+              <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (2 e^x)=2 e^x.</m></li>
+              <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (\pi e^x )=\pi e^x.</m></li>
+              <li><m> \frac{d}{dx} h(x)=\frac{d}{dx} (7*2^x )=7*\ln(2)*2^x</m></li>
+              <li><m> \frac{d}{dx} j(x)=\frac{d}{dx}  (5*(1.06)^x) =5*\ln(1.06)*(1.06)^x </m></li>
+              <li><m> \frac{d}{dx}  k(x)=\frac{d}{dx}  (9*(0.97)^x) =9*\ln(0.97)*(0.97)^x </m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        In some ways, the most convincing argument for these rules is to use Excel to plot the function,
+        its numeric derivative and its symbolic derivative for a variety of values
+        and see that the numeric and symbolic derivatives are the same up to rounding error.
+        We would also like to make an argument from the formal definition of the derivative.
+      </p>
+
+      <example>
+        <title>Justification of first exponential rule</title>
+        <statement>
+          <p>
+            From the formal definition of derivative show that if <m>f(x)=e^x</m>, then <m>f'(x)=e^x</m>.
+          </p>
+        </statement>
+        <solution xml:id="proofExponRule">
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{e^{(x+h)}-e^x}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{e^x(e^h-1)}{h}</mrow>
+              <mrow>\amp=e^x\left(\lim_{h\to0}\frac{e^h-1}{h}\right)</mrow>
+            </md>.
+          </p>
+
+          <p>
+            It suffices to show that <m>\lim_{h\to0}\frac{e^h-1}{h} =1</m>.
+            This can be done by starting with a formal definition of <m>e</m>.
+            For this class it can also be done by using Excel to evaluate the expression for smaller and smaller values of <m>h</m>.
+          </p>
+
+          <image width="60%" source="images/sec4-1-1.png"/>
+
+          <p>
+            It seems clear that <m>\lim_{h\to0}\frac{e^h-1}{h} =1</m>.
+          </p>
+        </solution>
+      </example>
+
+      <example xml:id="JustifySecondExponDerivRule">
+        <title>Justification of second exponential rule</title>
+        <statement>
+          <p>
+            From the formal definition of derivative, if <m>f(x)=a^x</m>, then show <m>f'(x)=\ln(a)*a^x</m>.
+          </p>
+        </statement>
+        <solution xml:id="ProofSecondExponDerivRUle">
+          <p>
+            We start by mimicking the last problem.  At a key step we will recall that by replacing <m>h</m> with <m>h \ln(a)</m> in our previous justification, we obtain
+            <m>a^x=\left({e^{\ln(a)}}\right)^x=e^{ \ln(a)x}=e^{ x\ln(a)}</m>.
+            We also want to note that
+            <me>
+              \left(\lim_{h\ln(a) \to0}\frac{e^{h\ln(a)}-1}{h\ln(a)}\right) = \left(\lim_{h\to0}\frac{e^h-1}{h}\right) =1
+            </me>.
+          </p>
+
+          <p>
+            Using our definition:
+            <md>
+              <mrow>f'(x)\amp =\lim_{h\to0}\frac{f(x+h)-f(x)}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{a^{(x+h)}-a^x}{h}</mrow>
+              <mrow>\amp =\lim_{h\to0}\frac{a^x(a^h-1)}{h}</mrow>
+              <mrow>\amp =(a^x)\left(\lim_{h\to0}\frac{a^h-1}{h}\right)</mrow>
+              <mrow>\amp =(a^x)\left(\lim_{h\to0}(\ln(a))\frac{e^{h\ln(a)}-1}{h\ln(a)}\right)</mrow>
+              <mrow>\amp =(a^x\ln(a))\left(\lim_{h\ln(a)\to0}\frac{e^{h\ln(a)}-1}{h\ln(a)}\right)</mrow>
+              <mrow>\amp =(a^x\ln(a))\left(\lim_{h\to0}\frac{e^{h}-1}{h}\right)</mrow>
+              <mrow>\amp =a^x\ln(a)</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        We are most likely to see exponential functions in the context of continuously compounding interest.
+      </p>
+
+      <example xml:id="ExampleFutureRateOfChange">
+        <title>Computing future rate of change</title>
+        <statement>
+          <p>
+            If I have a dollar in the bank at an effective annual interest rate of 6%,
+            compounded continuously, at what rate is the principal increasing after ten years?
+          </p>
+        </statement>
+        <solution xml:id="ExampleFutureRateOfChangeSol">
+          <p>
+            We know <m>f(x)=(1.06)^x</m>.  Thus <m>f'(x)=\ln(1.06)(1.06)^x</m>.
+            We evaluate this at 10 years and get <m>f'(10)=\ln(1.06)(1.06)^{10}=.10435074</m>.
+            Thus after 10 years, I am earning a little more than 10 cents a year.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of Logarithmic Functions</title>
+
+      <p>
+        For a last rule for this section we want to find the derivative of <m>f(x)=a \ln(x)</m>.
+      </p>
+
+      <claim xml:id="DerivLogRule">
+        <title>Logarithmic Rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=a \ln(x)</m>, then <m>f'(x)=a/x</m>.
+          </p>
+        </statement>
+      </claim>
+
+      <example xml:id="ExampleDerivLorRule">
+        <title>Derivatives of logarithmic functions</title>
+        <statement>
+          <p>
+            Using the logarithmic rule of symbolic differentiation, find the derivatives of the following functions:
+            <ol marker="(a)">
+              <li><m> f(x)=2 \ln(x)</m></li>
+              <li><m> g(x)=3 \ln(x^2)</m></li>
+              <li><m> h(x)=5 \ln(1/x)</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution xml:id="ExampleDerivLogRUleSols">
+          <p>
+            Using our rule:
+            <ol marker="(a)">
+              <li><m> \frac{d}{dx} f(x)=  \frac{d}{dx} (2 \ln(x))=2/x.</m></li>
+              <li><m> \frac{d}{dx} g(x)=\frac{d}{dx}  (3 \ln(x^2))= \frac{d}{dx}  (3*2\ln(x))=6/x.</m></li>
+              <li><m> \frac{d}{dx} h(x)=\frac{d}{dx}  (5 \ln(1/x))= \frac{d}{dx}  (-1*5\ln(x))=-5/x.</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        Our argument for this derivative rule will be more geometric.
+      </p>
+
+      <example xml:id="JustifyDerivLogRule">
+        <title>Justification of logarithmic rule</title>
+        <statement>
+          <p>
+            If <m>f(x)=\ln(x)</m>, then show <m>f'(x)=1/x</m>.
+          </p>
+        </statement>
+        <solution xml:id="JustifyDerivLogRuleSol">
+          <p>
+            We start by noticing that <m>y=e^x</m> and <m>y=\ln(x)</m> are inverse functions.
+            That means their graphs can be obtained by reflecting across the line <m>y=x</m>.
+          </p>
+
+          <image width="80%" source="images/sec4-1-2.png"/>
+
+          <p>
+            The slope of the tangent line at <m>(a,e^a)</m> is <m>e^a</m> by the exponential rule.
+            Symmetry tells us the slope of the line tangent to <m>y=\ln(x)</m> at <m>(e^a,a)</m>   is <m>1/e^a</m>.
+            Letting <m>b=e^a</m>, the slope of the line tangent to <m>y=\ln(x)</m> at <m>(b,\ln(b))</m> is <m>1/b</m>.
+            Thus <m>\frac{d}{dx}(\ln(x))=1/x</m>.
+          </p>
+        </solution>
+      </example>
+
+      <example xml:id="ExampleSlopeTanLine">
+        <title>Slope of a tangent line</title>
+        <statement>
+          <p>
+            Find the slope of the line tangent to <m>y=\ln(x)</m> at <m>x=10</m>.
+            Compare your answer to the estimate given by the approximation techniques of the last chapter.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since <m>f(x)=\ln(x)</m>, <m>f'(10) =1/10=0.1</m>.
+            When I use Excel to compute <m>(f(10.001)-f(9.999))/.002</m> I get <m>0.1000000003</m>.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <exercise>
+      <title>Reading check, Elementary Derivatives</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"If \(f(x)=a*x^n\) then \(f'(x)=n*a*x^{n-1}\).  ", 
+"If \(f(x)=a*e^x\) then \(f'(x)=a*e^x\).  ", 
+"If \(f(x)=b*a^x\) then \(f'(x)=b*\ln(a)*a^x\).  ", 
+"If \(f(x)=a*\ln(x)\) then \(f'(x)=a/x\).  ", 
+
+"If \(f(x)=a*x^{\pi}\) then \(f'(x)=a*\ln(pi)*x^{\pi}\).  ", 
+"The monomial rule for taking the derivative of \(f(x)=a*x^n\) is only valid when \(n\) is an integer.   ", 
+"If \(f(x)=a*\ln(x^n)\) then \(f'(x)=a*n/x^{n-1}\).  " 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.1, Elementary Derivatives, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+    <exercises xml:id="exercises-set-ElementaryDerivaitives">
+      <title>Exercises: Elementary Derivatives Problems</title>
+      <exercisegroup xml:id="exerciseGoup-1-ElementaryDerivaitives">
+        <introduction>
+          <p>
+            In the following exercises, use the symbolic rules to find the derivative of the function.
+          </p>
+        </introduction>
+
+        <exercise xml:id="exercise-ElementaryDerivaitives1">
+          <statement>
+            <p>
+              <m>f(x)=x^5</m>
+            </p>
+          </statement>
+          <answer xml:id="exercise-ElementaryDerivaitives1Answer">
+            <p>
+              <me>f(x)=5x^4</me>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise xml:id="exercise-ElementaryDerivaitives2">
+          <statement>
+            <p>
+              <m> g(x)=7/x^3</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="exercise-ElementaryDerivaitives3">
+          <statement>
+            <p>
+              <m>h(x)=3\sqrt{(x^7)}</m>
+            </p>
+          </statement>
+          <solution xml:id="exercise-ElementaryDerivaitives3Sol">
+            <p>Rewrite <m>h(x)=3x^{7/2}</m>. Then,
+            <me> h'(x)=\frac{21}{2}(x^{5/2})=\frac{21}{2}\left({\sqrt{x^5}}\right)</me>.</p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="exercise-ElementaryDerivaitives4">
+          <statement>
+            <p>
+              <m>f(x)=2x^{\pi}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise xml:id="exercise-ElementaryDerivaitives5">
+          <statement>
+            <p>
+              <m> k(x)=17</m>
+            </p>
+          </statement>
+          <answer xml:id="exercise-ElementaryDerivaitives5Answer">
+            <p><m>k'(x)=0</m></p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=9x^{-5}</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=x^2 \sqrt{x}</m>
+            </p>
+          </statement>
+          <solution>
+            <p>Rewrite <m>f(x)=x^{5/2}</m>. Then
+            <me> f'(x)=\frac{5}{2}x^{3/2} =\frac{5}{2}\sqrt{x^3} </me>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> g(x)=\ln(x)</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h(x)=e^x</m>
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>h'(x)=e^x</m>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> k(x)=5^x</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> m(x)=1.03^x</m>
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>m'(x)=1.03^x\ln(1.03)</m>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> n(x)=(0.9)^x</m>
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the following exercises, use the symbolic rules to find the derivative at the specified point.
+            Use Excel to find the numeric approximation using the <q>calculator formula.</q>
+            To how many digits do the two methods agree?
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=x^2</m>.  Evaluate at <m>x=2</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>f'(x)=2x</m>, so <m>f'(2)=4</m>.
+              The numeric derivative agrees to 12 decimal digits.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> g(x)=5x</m>.  Evaluate at <m>x=7</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h(x)=1.06^x</m>.  Evaluate at <m>x=10</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>h'(x)=\ln(1.06)(1.06)^x</m>.  So <m>h'(10)=\ln(1.06)(1.06)^{10}\   (\approx 0.104)</m>.
+              The numeric derivative agrees to 10 decimal digits.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=e^x</m>.  Evaluate at <m>x=5</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> k(x)=\ln(x)</m>.  Evaluate at <m>x=100</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>k'(x)=1/x</m>.   So <m>k'(100)=0.01</m>. The numeric derivative agrees to 13 decimal digits.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> m(x)=3/x</m>.  Evaluate at <m>x=\pi</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Find tangent lines to the given curves at the indicated points.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=3x^4</m>.  At <m>x=1</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>We need a point: if <m>x =1</m> then <m>y=f(1)=3</m>.</p>
+            <p>We need a slope: <m>f'(x)=12 x^3</m>.   Hence <m>m=f'(1)=12</m>.</p>
+            <p>Find the line: <m>y-y_0=m(x-x_0 )</m>,  so <m>y-3=12(x-1)</m>.</p>
+            <p>
+              Comments
+              <ul>
+                <li><p>We can rewrite the tangent line as <m>y=12x-9</m></p></li>
+                <li>
+                  <p>
+                    We could have used the slope intercept version of the line to solve the problem as well.
+                    Then <m>y=mx+b</m>. We know <m>m = 12</m>,
+                    and we can solve for <m>b</m> by letting <m>x = 1</m> and <m>y = 3</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> g(x)=a x</m>.  At <m>x=b</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h(x)=1.05^x</m>.  At <m>x=20</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>We need a point: if <m>x =20</m> then <m>y=h(20)=(1.05)^{20}\approx 2.6533</m>.</p>
+            <p>We need a slope: <m>h'(x)=\ln(1.05) (1.05)^x</m>.</p>
+            <p>Hence <m>m=\ln(1.05) (1.05)^{20}=0.12945</m></p>
+            <p>Find the line: <m>y-y_0=m(x-x_0 )</m>,  so <m>y-2.6533=0.12945(x-20)</m>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> f(x)=e^x</m>.  At <m>x=1</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>
+

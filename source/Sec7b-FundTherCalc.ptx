@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+ <section xml:id="sec-7-2-FundamentalTheoremCalculus">
+    <title>The Fundamental Theorem of Calculus</title>
+
+    <p><url href="external/Examples/Section-7-2-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-7-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+    <p>
+      In the last section we defined the definite integral, <m>\int_a^b f(t)dt</m>,
+      the signed area under the curve <m>y= f(t)</m> from <m>t=a</m> to <m>t=b</m>,
+      as the limit of the area found by approximating the region with thinner and thinner rectangles.
+      We also saw that we can easily find a reasonable approximation to the area using Excel by finding such a sum with a fairly large number of rectangles.
+    </p>
+
+    <p>
+      In the trivial case where we have a constant function <m>f(t)=c</m>,
+      we can find the area of the area with a simple formula, <m>\int_a^b c\,dt=c(b-a)=cb-ca</m>.
+      If we define an area function, <m>F(x)</m>, as the area under the curve <m>y=f(t)</m> from <m>t=0</m> to <m>t=x</m>,
+      then the area function in this case is  <m>F(x)=c*x</m>.
+      We would like to be able to evaluate more integrals with a process like this,
+      where we have a simple area function.
+    </p>
+
+    <remark>
+      <title>Note on variables used</title>
+      <p>
+        We shifted the independent variable from <m>t</m> for the function <m>f</m>
+        to <m>x</m> for the function <m>F</m> because we have two independent variables in our discussion and we want to keep them separate to avoid confusion.
+        We will consider <m>f</m> as a function of <m>t</m>,
+        and want to find the area under the graph of <m>f(t)</m>.
+        We will consider <m>F</m> as a function of <m>x</m>,
+        and understand it as the area under the curve <m>y=f(t)</m> from some starting point <m>t=a</m> to <m>t=x</m>.
+      </p>
+    </remark>
+
+    <p>
+      We start by exploring cases where we can justify an area function without using calculus.
+      We will then look at some cases where we can experimentally verify the area function with Excel.
+      Finally we will give the general rule for the area function, the Fundamental Theorem of Calculus, and will give some justification.
+    </p>
+
+    <example>
+      <title>Area function for constant by geometry</title>
+      <statement>
+        <p>
+          Let <m>f(t)=c</m>.  For a constant function, <m>f(t)=c</m>,
+          the area under the curve will be the area of a rectangle of height <m>c</m> and width <m>b-a</m>.
+          The obvious area function is <m>F(x)=c*x</m>.  Then
+          <me>\int_a^b c dt=F(b)-F(a)=c*b-c*a=c(b-a)</me>.
+        </p>
+
+        <p>
+          It is worth noting that this formula gives <q>signed area.</q>
+          If <m>c</m> or <m>b-a</m> is negative, the <q>area</q> is negative.
+        </p>
+
+        <image width="60%" source="images/sec7-2-1.png"/>
+      </statement>
+    </example>
+
+    <example>
+      <title>Area function for linear function by geometry</title>
+      <statement>
+        <p>
+          Let <m>f(t) = c*t</m>.  For a linear function, <m>f(t) = c*t</m>,
+          the area under the curve from 0 to <m>b</m> will be the area of a triangle of height <m>c*b</m> and width <m>b</m>.
+        </p>
+
+        <image width="60%" source="images/sec7-2-2.png"/>
+
+        <p>
+          The obvious area function is <m>F(x)=c*x^2/2</m>.
+          If <m>a</m> is also nonzero, the area is the difference of the areas of two triangles.
+          <me>\int_a^b c*t dt=F(b)-F(a)=\frac{c*b^2}{2}-\frac{c*a^2}{2}=\frac{c (b^2-a^2 )}{2}</me>.
+        </p>
+      </statement>
+    </example>
+
+    <remark>
+      <title>A note on versions of Riemann sum used</title>
+      <p>
+        As we consider finding area with Excel and Riemann sums,
+        rather than use a right-hand rule for the rectangles,
+        we are going to use a midpoint rule where we find the area of rectangles evaluated at the middle of each interval.
+      </p>
+
+      <image width="60%" source="images/sec7-2-3.png"/>
+
+      <p>
+        The right-hand rule uses an easier formula, so we used it first.
+        For the <m>i</m>th rectangle we evaluate at <m>x_i=a+i\Delta x</m>.
+        For the midpoint formula, we evaluate at the midpoint of the interval, at <m>\text{mid}_i=a+i\Delta x-\Delta x/2</m>.
+        As the picture suggests, the midpoint formula gives a better approximation.
+        The right-hand rule always overestimates an increasing function.
+        The midpoint rule is exact for linear functions where the midpoint is the average value.
+      </p>
+    </remark>
+
+    <p>
+      In both of the examples we have examined the area function has the original function as its derivative.
+      We would like to use Excel to test a few more cases. In the worksheets we set up in the last section,
+      <c>SumArea</c> is the area function we are looking for.
+      We will plot the area function and use a best-fit curve to find the equation of the area function.
+    </p>
+
+    <example>
+      <title>Best fitting area function for a linear function</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="8j5_ara-niQ"/>
+        </figure>
+
+        <p>
+          Repeat the last example, finding the area under <m>f(x)=6x</m>, with Excel.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          With a linear function we have use the following to produce an area function.
+        </p>
+
+        <image width="90%" source="images/sec7-2-4.png"/>
+
+        <p>
+          Column C has our list of <m>t</m> values in the center of each interval.
+          Column D has the value of <m>f(t)</m> evaluated at those points.
+          The area of the rectangle is the height <m>f(mid_n)</m> times the width, <c>Interval width</c>.
+          <c>SumArea</c> is our running area function.
+          When we plot the area function, we have something that seems to be quadratic with leading coefficient
+          <m>c/2</m> and very small linear and constant coefficients.
+          In fact, the linear and constant coefficients are zero up to a rounding factor for numbers of the size we are using.
+        </p>
+
+        <image width="80%" source="images/sec7-2-5.png"/>
+      </solution>
+    </example>
+
+    <p>
+      This matches the result we had solving the problem with geometry.
+      However, we can repeat the process with Excel and use functions of higher order.
+    </p>
+
+    <example>
+      <title>Best fitting area function for a quadratic function</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="LD6coDN7Hm8"/>
+        </figure>
+
+        <p>
+          Find the area function when <m>f(t) = 6t^2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For this problem we essentially repeat the work of the previous example with a quadratic function for <m>f(t)</m>.
+        </p>
+
+        <image width="90%" source="images/sec7-2-6.png"/>
+
+        <p>
+          When we plot the area function we get a very good fit with a cubic function.
+          Once again, allowing for the way best-fit curves may return small random values for coefficients that should be zero,
+          we see that if <m>f(t) =c*t^2</m>, then the related area function is
+          <me>F(x)=c*t^3/3</me>.
+        </p>
+
+        <image width="100%" source="images/sec7-2-7.png"/>
+      </solution>
+    </example>
+
+    <example>
+      <title>Best fitting area function for a cubic function</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="_jJv47pi3II"/>
+        </figure>
+
+        <p>
+          Find the area when <m>f(x)=6 x^3</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Once again, we can use Excel to produce an area function.
+          The area function seems to be <m>F(x)=1.5 x^4</m>.
+        </p>
+
+        <image width="100%" source="images/sec7-2-8.png"/>
+      </solution>
+    </example>
+
+    <p>
+      In all the examples above, we note that the area function, <m>F(x)</m>,
+      has <m>f(x)</m>, the curve we are finding the area under, as its derivative.
+      Thus, in these cases, the area is an anti-derivative of <m>f(x)</m>.
+      This observation generalizes to the Fundamental Theorem of Calculus, which has two versions:
+    </p>
+
+    <theorem>
+      <title>Fundamental Theorem of Calculus (first version)</title>
+      <statement>
+        <p>
+          Let <m>f(x)</m> be a continuous function on the interval <m>[a, b]</m>.
+          On that interval define an area function by <m>F(x)=\int_a^x f(t)  dt</m>.
+          Then <m>\frac{d}{dx} F(x)=f(x)</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem>
+      <title>Fundamental Theorem of Calculus (second version)</title>
+      <statement>
+        <p>
+          Let <m>f(x)</m> be a continuous function on the interval <m>[a, b]</m>.
+          Suppose <m>F(x)</m> is any continuous,  differentiable function with <m>\frac{d}{dx} F(x)=f(x)</m>.
+          Then <m>\int_a^b f(t) dt=F(b)-F(a)</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      In practice, we use the second version of the fundamental theorem to evaluate definite integrals.
+     Starting with a definite integral <m>\int_a^b f(t)\,dt</m>, we find a function <m>F(x)</m> whose derivative is <m>f(x)</m>, the integrand or function we are integrating,  and then evaluate <m> F(x)</m> at the endpoints.</p>
+     <p>
+      It is easier to prove or justify the first version of the fundamental theorem.
+      The basic argument notes that is <m>F(x)=\int_a^xf(t) \,dt</m>, then formally
+      <me>\frac{d}{dx} F(x)=\lim_{h\to 0}\frac{(F(x+h)-F(x))}{h}</me>.
+    </p>
+
+    <image width="70%" source="images/sec7-2-9.png"/>
+
+    <p>
+      But if <m>h</m> is small, <m>F(x+h)-F(x)</m> is approximately the area of a rectangle of height
+      <m>f(x)</m> and width <m>h</m>, so then <m>F'(x) = f(x)</m>.
+      We then note that any two anti-derivatives of a function differ by a constant.
+    </p>
+
+    <example>
+      <title>Redoing an old area problem by the  FTC</title>
+      <statement>
+        <p>
+          In <xref ref="area-parabola-down"/> in the previous section,
+          we used Riemann sums with 100 and 1000 intervals to approximate the area under <m>y = x*(4-x)</m> with <m>x</m> between 0 and 4.
+          Find the area using the fundamental theorem of calculus.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We rewrite the curve as <m>f(x) = 4x - x^2</m> and note that one anti-derivative of <m>f(x)</m> is
+          <m>F(x) = 2 x^2 - x^3/3</m>.  Then
+          <me>\int_0^4 f(x)\,dx=F(4)-F(0)=\left(32-\frac{64}{3}\right)-(0)=10 \frac{2}{3}</me>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      To get the same answer to 4 decimal places, we needed to use 1000 intervals with Riemann sums.
+      Clearly, it is easier to solve this problem with the fundamental theorem of calculus than to make an approximation with that many intervals.
+    </p>
+
+    <example>
+      <title>Verifying an antiderivative to find area</title>
+      <statement>
+        <p>
+          Let <m>f(x)=x^2 e^{-x}</m>.  We are told <m>F(x)=(x^2+2 x+2) (-e^{-x})</m>  is an anti-derivative of <m>f(x)</m>.
+          Verify the anti-derivative and find the area under the curve with <m>x</m> between 0 and 2.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using the product rule,
+          <me>F'(x)=(2x+2) (-e^{-x}) + (x^2+2x+2) (e^{-x})=x^2 e^{-x}=f(x)</me>.
+        </p>
+
+        <p>
+          The area is
+          <me>F(2) - F(0) = 10(-e^{-2}) - 2(e^{0}) = -2 - 10/e^2 = -3.3534</me>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      We also want to revisit our first three examples in light of the fundamental theorem if calculus.
+      In all of those examples, we used Excel to find a best fitting curve for an area function.
+      We can now check our work by taking the derivative, adjusting parameters as needed, to find an anti-derivative.
+      For constant and linear functions we have already done the adjusting because we could find the area function from geometry.
+    </p>
+
+    <example>
+      <title>Using the FTC to guess and check area under a quadratic</title>
+      <statement>
+        <p>
+          Find the area function when <m>f(t) = 6t^2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have already used Excel to find a best fitting curve.
+        </p>
+
+        <image width="100%" source="images/sec7-2-10.png"/>
+
+        <p>
+          We are thus suspicious that the anti-derivative should be a cubic polynomial.  We need
+          <me>6t^2=d/dt (at^3+bt^2+ct+d)=3at^2+2bt+c</me>.
+        </p>
+
+        <p>
+          Setting coefficients equal for each power, we see <m>a = 2</m> and <m>b = c = 0</m>.
+          Thus our area function has the form <m>F(t) = 2 t^3 + d</m>.
+          Since <m>F(0)</m> is the area of a region between <m>t = 0</m> and <m>t = 0</m>,
+          we conclude <m>d = 0</m> and our area function is <m>F(t) = 2 t^3</m>.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Verifying the best fitting function for area under a cubic function</title>
+      <statement>
+        <p>
+          Find the area when <m>f(x) = 6 x^3</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using Excel we guessed the area function <m>F(x) = 1.5 x^4</m>.
+          We can now verify that the derivative of <m>F(x)</m> is <m>f(x)</m>,
+          so we have found an anti-derivative.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      It is worth noting that using the fundamental theorem to evaluate integrals requires us to be able to find an anti-derivative of a function.
+      Finding an anti-derivative may be quite hard or even an impossible task.
+      The method we have just used is often referred to as the <q>guess and check</q> method of finding anti-derivatives.
+      We will look at methods of finding anti-derivatives in the next several sections.
+    </p>
+
+   <exercise>
+      <title>Reading check, The Fundamental Theorem of Calculus</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Let \(f(x)\) be a continuous function on the interval \([a, b]\).
+ On that interval, define an area function by 
+ \(F(x)=\int^x_a d(t)\ dt\). Then \(\frac{d}{dx}F(x)=f(x)\). ", 
+"Let \(f(x)\) be a continuous function on the interval \([a, b]\).  Suppose \(F(x)\) is any continuous, differentiable  function with  \(\frac{d}{dx}F(x)=f(x)\).  Then 
+\(F(x)=\int^x_a d(t)\ dt=F(b)-f(a)\)
+  ", 
+"The fundamental theorem of calculus says we can use antiderivatives to find the area under a curve.  ", 
+"We can use guess and check to verify antiderivatives.  ", 
+
+"The fundamental theorem can be used to evaluate the area under any function,  ", 
+"The two versions of the fundamental theorem of calculus are interchangeable.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.2, The Fundamental Theorem of Calculus, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-7-2">
+	    <title>Exercises: The Fundamental Theorem of Calculus Problems</title>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x) = 4 x + 5</m>.  We are told that <m>F(x) = 2 x^2 + 5 x + 7</m> is an anti-derivative.
+            <ol marker="(a)">
+              <li><p>  Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+              <li><p> Use the fundamental theorem of calculus to evaluate <m>\int_1^5 f(x)\,dx</m>.</p></li>
+              <li><p> Approximate <m>\int_1^5 f(x)\,dx</m>, using Riemann sums and 100 intervals.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li><me>F' (x)=\frac{d}{dx}  (2 x^2+ 5 x + 7)=4x+5     </me></li>
+              <li><me>\int_1^5 f(x) dx=F(5)-F(1)= 82-14=68</me></li>
+              <li>
+                <p> The midpoint sum gives us an approximation of 68.</p>
+
+                <image width="50%" source="images/sec7-2-sol1a.png"/>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x) = 6 x^2 + 3</m>.  We are told that <m>F(x) = 2 x^3 + 3 x - 2</m> is an anti-derivative.
+            <ol marker="(a)">
+              <li><p>   Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+              <li><p> Use the fundamental theorem of calculus to evaluate <m>\int_{-2}^4 f(x)\, dx</m>.</p></li>
+              <li><p> Approximate <m>\int_{-2}^4 f(x)\,dx</m>, using Riemann sums and 100 intervals.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x) = 5/x</m>.  We are told that <m>F(x) = \ln(x^5) + 9</m> is an anti-derivative.
+            <ol marker="(a)">
+              <li><p>   Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+              <li><p> Use the fundamental theorem of calculus to evaluate <m>\int_1^{20} f(x)\,dx</m>.</p></li>
+              <li><p> Approximate <m>\int_1^{20} f(x)\,dx</m>, using Riemann sums and 200 intervals.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  <me>F' (x)=\frac{d}{dx} [\ln(x^5 )+ 9]=\frac{1}{x^5}   (5x^4 )+ 0=\frac{5}{x}</me>
+                  or
+                  <me>F' (x)=\frac{d}{dx} [\ln(x^5 )+ 9]=\frac{d}{dx} [5\ln(x)+ 9]=5\frac{1}{x}+ 0=\frac{5}{x}</me>.
+                </p>
+              </li>
+              <li><m>\int_1^{20}\frac{5}{x} dx=F(20)-F(1)=\ln(20^5 )+9-(\ln(1)+9)=ln(20^5) =14.98</m></li>
+              <li>
+                <p> The midpoint sum with N = 200 gives an approximation of 14.978</p>
+
+                <image width="50%" source="images/sec7-2-sol3a.png"/>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x) = (2 x +3)^4</m>.  We are told that <m>F(x) = 0.1 (2 x + 3)^5</m> is an anti-derivative.
+            <ol marker="(a)">
+              <li><p>   Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+              <li><p> Use the fundamental theorem of calculus to evaluate <m>\int_{-1}^1 f(x)\,dx</m>.</p></li>
+              <li><p> Approximate <m>\int_{-1}^1 f(x)\,dx,</m> using Riemann sums and 100 intervals.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x) = x exp(-0.05 x)</m>.  We are told that <m>F(x) = -20 (x+20) \exp(-0.05x)+3</m> is an anti-derivative.
+            <ol marker="(a)">
+              <li><p>  Verify that <m>f(x)</m> is a derivative of <m>F(x)</m>.</p></li>
+              <li><p> Use the fundamental theorem of calculus to evaluate <m>\int_0^{10} f(x)\,dx</m>.</p></li>
+              <li><p> Approximate <m>\int_0^{10} f(x)\,dx</m>, using Riemann sums and 100 intervals.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  <md>
+                    <mrow>F'(x)\amp =\frac{d}{dx}  [-20(x+20)  e^{-0.05x}+3]</mrow>
+                    <mrow>\amp =-20 [(1)  e^{-0.05x}+(x+20)  e^{-0.05x} (-0.05)] </mrow>
+                    <mrow> \amp = [(-20)  e^{-0.05x}+(x+20)  e^{-0.05x}]    </mrow>
+                    <mrow>\amp =e^{-0.05x}  [(-20)+(x+20)] </mrow>
+                    <mrow> \amp =e^{-0.05x} x </mrow>
+                  </md>.
+                </p>
+              </li>
+              <li><m>\int_0^{10}x e^{-0.05 x} dx=F(10)-F(0)=-360.92-(-397)=36.08</m></li>
+              <li>
+                <p> The midpoint sum with N = 100 gives an approximation of 38.06</p>
+
+                <image width="50%" source="images/sec7-2-sol5a.png"/>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Explain why, if <m>F(x)</m> is an anti-derivative of <m>f(x)</m>, then <m>F(x) + 7</m> is also an anti-derivative of <m>f(x)</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Using an area function from Riemann sums and best fitting curves we have guessed that a quadratic function will have a cubic anti-derivative.
+            <ol marker="(a)">
+              <li><p>   Find an anti-derivative of <m>f(x)=-x^2+6x-2</m> </p></li>
+              <li>
+                <p>
+                  Use the fundamental theorem of calculus to evaluate
+                  <ul>
+                    <li><m>\int_0^3 f(x)\,dx</m></li>
+                    <li><m>\int_{-2}^4 (x)\,dx</m></li>
+                  </ul>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  The anti-derivative should be a cubic, so something of the form
+                  <me>F(x)=ax^3+bx^2+cx+d</me>,
+                  and the derivative should be <m>f(x)= -x^2+6x-2</m>.
+                </p>
+                <p>
+                  We can <q>guess and check</q>:
+                  <m>F(x)=-1/3 x^3+3x^2-2x+0</m> and sure enough, the derivative is <m>f(x)</m>.
+                </p>
+                <p>
+                  If you are not comfortable with that method note that
+                  <me>F' (x)=3ax^2+2bx+c</me>,
+                  so <m>3a= -1</m>,<m>2b=6</m>, and <m>c=-2</m>.
+                </p>
+                <p>Hence <m>a= -1/3</m>,   <m>b=3</m>, and <m>c=-2</m>.</p>
+                <p>
+                  There are no conditions on <m>d</m>, so that coefficient can be anything.
+                  We picked 0 to keep things simple. But then
+                  <me>F(x)=ax^3+bx^2+cx+d=-1/3 x^3+3x^2-2x</me>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Use the fundamental theorem of calculus to evaluate
+                  <ul>
+                    <li><m>\int_0^3 f(x)\,dx=F(3)-F(0)=(-9+27-6)-(0)= 12</m></li>
+                    <li>
+                      <p>
+                        <md>
+                          <mrow>\int_{-2}^4 (x)\,dx\amp =F(4)-F(-2)</mrow>
+                          <mrow>\amp =(-64/3+48-8)-(8/3+12+4)= -24+40-16=0</mrow>
+                        </md>.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Using an area function from Riemann sums and best fitting curves we have guessed that a cubic function will have a fourth degree anti-derivative.
+            <ol marker="(a)">
+              <li><p>  Find an anti-derivative of <m>f(x)=x^3+9x^2+7x-3</m>. </p></li>
+              <li><p> Use the fundamental theorem of calculus to evaluate <m>\int_1^5 f(x)\,dx</m>.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            I am interested in finding an anti-derivative for <m>f(x)=e^{2x}</m>.
+            <ol marker="(a)">
+              <li>
+                <p>
+                  Using Excel and 100 subintervals of <m>0 \le  x \le  2</m>,
+                  compute an approximate area function for <m>f(x)</m>.
+                  Find a best fitting curve that fits the data well.
+                  (It may help to use a secondary axis for the area data.)
+                </p>
+              </li>
+              <li>
+                <p>
+                  Based on your best fitting curve, use guess and check to find the anti-derivative.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>A quick computation gives the total area:</p>
+
+                <image width="100%" source="images/sec7-2-sol9a.png"/>
+
+                <p>The area under the curve is approx. 26.8.</p>
+                <p>The area under the curve looks like an exponential curve.</p>
+                <p>
+                  A curve fitting using the <c>Trendline</c> gives us that
+                  <me>F(x)= 0.1618 e^2.739x</me>.
+                </p>
+                <p>Note that this is not a very good approximation. The curve does not follow the data very well on the right hand side of the graph.</p>
+              </li>
+              <li>
+                <p>
+                  Based on the curve we would say that the anti-derivative should be an exponential function.
+                  The derivative of <m>e^{2x}</m> is <m>2e^{2x}</m>,
+                  so it seems reasonable to start with the anti-derivative being <m>F(x)=A e^{2x}+B</m>.
+                </p>
+                <p>
+                  Then the derivative has to  be <m>f(x)</m>.
+                  <me>F' (x)=A e^2x  (2)+0=2A e^2x+0=e^2x</me>.
+                </p>
+                <p>
+                  Hence A=0.5 and we may choose B to be any constant we want. Then
+                  <me>F(x)=1/2  e^2x+B  </me>.
+                </p>
+                <p>
+                  That shows us where the problem is in our estimate.
+                  Excel’s best fitting routine does not allow for constants in exponential functions.
+                  Since <m>F(0)=.5+B</m>, and <m>Area(0)=0</m>, we need to add .5 to the area to get a good best fit curve.
+                  Then the best fit line works.
+                </p>
+
+                <image width="100%" source="images/sec7-2-sol9b.png"/>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            I am interested in finding an anti-derivative for <m>f(x)=e^{-5x}</m>.
+            <ol marker="(a)">
+              <li><p>   Using Excel and 100 subintervals of <m>0 \le  x \le  2</m>, compute an approximate area function for <m>f(x)</m>.  Find a best fitting curve that fits the data well.  (It may help to use a secondary axis for the area data.)</p></li>
+              <li><p> Based on your best fitting curve, use guess and check to find the anti-derivative.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            I am interested in finding an anti-derivative for <m>f(x)=1/x</m>.
+            <ol marker="(a)">
+              <li>
+                <p>
+                  Using Excel and 100 subintervals of <m>1 \le  x \le  5</m>,
+                  compute an approximate area function for <m>f(x)</m>.
+                  Find a best fitting curve that fits the data well.
+                  (It may help to use a secondary axis for the area data.)
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Based on your best fitting curve, use guess and check to find the anti-derivative.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <image width="100%" source="images/sec7-2-sol11a.png"/>
+
+                <p>The cumulative function looks like a logarithmic function.</p>
+
+                <p>The <c>Trendline</c> approximation gives the equation <m>y = 0.9913ln(x) + 0.0167</m>.</p>
+                <p>
+                  We can make the fit better when we realize that we are evaluating at the midpoint of each interval but taking the are to the end of the interval.
+                  We want to look at an adjusted x at the right side of each interval.
+                </p>
+
+                <image width="100%" source="images/sec7-2-sol11b.png"/>
+
+                <p>
+                  <me>F(x) = \ln(x) </me>.
+                </p>
+              </li>
+
+              <li>
+                <p>We would say that the anti-derivative is <m>F(x)=\ln(x)+constant</m>.</p>
+                <p>
+                  And we have seen before that
+                  <me>F'(x)=\frac{d}{dx}  \ln(x)+\frac{d}{dx} \text{constant}=\frac{1}{x}</me>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>

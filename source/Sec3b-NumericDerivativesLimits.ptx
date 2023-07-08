@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-3-2-NumericDerivativesLimits">
+    <title>Numeric Derivatives and Limits</title>
+
+    <p><url href="external/Examples/Section-3-2-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p>
+      In the previous section, we looked at marginal functions,
+      the difference between <m>f(x+1)</m> and <m>f(x)</m>.
+      For functions that are only defined at integer values, this is the obvious way to define a rate of change.
+      However for functions that are defined on an interval,
+      we would like to use the information at values closer to our value of <m>x</m>.
+    </p>
+
+    <p>
+      Intuitively, we would like to be able to zoom in on the graph of <m>f(x)</m>
+      at a point until the graph looks like a straight line, then pick two points on that line,
+      and find the slope as the rise over the run.
+      The rate of change is then the slope of the line we have found.
+      If we could zoom arbitrarily close, this process would give an instantaneous rate of change,
+      or the derivative of the function at that point.
+    </p>
+
+    <definition>
+      <title>Formal derivative at a point</title>
+      <statement>
+        <p>
+          For a function <m>f(x)</m>, the instantaneous rate of change of <m>f(x)</m> at <m>x=x_0</m>,
+          or the <term>derivative</term> of <m>f(x)</m>, at <m>x=x_0</m>, denoted as <m>f'(x)</m>, is defined as
+          <me>
+            f'(x_0 )=\lim_{(\Delta x\to 0)}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}
+          </me>,
+          where <m>\lim_{ x\to a}f(x)</m> is understood to be value that <m>f(x)</m>
+          gets arbitrarily close to by making <m>x</m> arbitrarily close to <m>a</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <aside>
+      <p>
+        The symbol <m>\Delta</m> is the captial Greek letter <term>Delta</term>,
+        which is commonly used to signify change in the sciences.
+        Since we can't easily enter Greek letters into an Excel worksheet,
+        we will use <c>del x</c> to represent <m>\Delta x</m>  in Excel.
+      </p>
+    </aside>
+
+    <p>
+      Our task in this section is to turn our intuitive notion and definition and into a process that lets us find the value,
+      and to find it efficiently.
+    </p>
+
+    <example>
+      <title>A simple derivative at a point</title>
+      <statement>
+        <p>Let <m>f(x)=x^2</m>.  We would like to find <m>f'(1)</m>.</p>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="7WCPeUwr8GY"/>
+        </figure>
+      </statement>
+      <solution>
+        <title>Solution A</title>
+        <p>
+          We start with our intuitive notion.  We want to look at the graph of <m>f(x)</m>,
+          zoomed in far enough that the graph looks like a straight line.
+          I set up a worksheet to look at the graph of <m>f(x)=x^2</m> near <m>x_0=1</m>.
+          Since I want to be able to zoom in,
+          I set up the graph so that it plots points that are multiples of <m>\Delta x</m> from <m>x=x_0</m>.
+          I also want to plot the line connecting the points <m>(x_0,f(x_0))</m>
+          and <m>(x_0,f(x_0+\Delta x))</m> and notice that the slope of the line connecting these points, the secant line,  is
+          <me>
+            \frac{f(x_0+\Delta x)-f(x_0 )}{\Delta x}
+          </me>.
+        </p>
+
+        <p>
+          For this example <m>x_0=1</m>. If <m>\Delta x=1</m>,
+          we can see that the function and the secant line are clearly distinct.
+        </p>
+
+        <image width="70%" source="images/sec3-2-1.png"/>
+
+        <p>
+          The worksheet is designed to make it easy to change the value of <m>\Delta x</m>.
+        </p>
+
+        <image width="70%" source="images/sec3-2-2.png"/>
+
+        <p>
+          As we can see, if we let <m>\Delta x=1</m>, the slope is 3,
+          but we have not zoomed in far enough for the graph of <m>f(x)</m> to look like a straight line.
+          Letting <m>\Delta x=0.01</m>, the slope is 2.01, and the graphs of the function and secant line seem to be the same.
+        </p>
+
+        <image width="70%" source="images/sec3-2-3.png"/>
+
+        <p>
+          With some experimentation, taking both positive and negative values of <m>\Delta x</m>,
+          we get the following table of values:
+        </p>
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+          <cell><m>\Delta x</m></cell>
+          <cell>slope</cell>
+          <cell><m>\ \ \ </m></cell>
+          <cell><m>\Delta x</m></cell>
+          <cell>slope</cell>
+          </row>
+          <row bottom="minor">
+          <cell>1</cell>
+          <cell>3</cell>
+          <cell><m>\ \ \ </m></cell>
+          <cell>-1</cell>
+          <cell>1</cell>
+          </row>
+          <row bottom="minor">
+          <cell>0.1</cell>
+          <cell>2.1</cell>
+          <cell><m>\ \ \ </m></cell>
+          <cell>-0.1</cell>
+          <cell>1.9</cell>
+          </row>
+          <row bottom="minor">
+          <cell>0.01</cell>
+          <cell>2.01</cell>
+          <cell><m>\ \ \ </m></cell>
+          <cell>-0.01</cell>
+          <cell>1.99</cell>
+          </row>
+          <row bottom="minor">
+          <cell>0.001</cell>
+          <cell>2.001</cell>
+          <cell><m>\ \ \ </m></cell>
+          <cell>-0.001</cell>
+          <cell>1.999</cell>
+          </row>
+        </tabular>
+
+        <p>
+          It is clear that as <m>\Delta x</m> gets very small,
+          the slope of the secant line gets closer and closer to 2.
+          Thus <m>f'(1)=2</m>.
+        </p>
+      </solution>
+
+      <solution>
+        <title>Solution B</title>
+        <p>
+          The method of the first solution takes too much work and requires us to reset a worksheet and keep track of the slope as we try a number of values for <m>\Delta x</m>.
+          We would like to create a worksheet that simply shows the values of the slope of the secant line for values of <m>\Delta x</m> and takes the value that this approaches.
+          We can set up a worksheet where each line takes <m>\Delta x</m> from the previous line and divides by 10.
+        </p>
+
+        <image width="70%" source="images/sec3-2-4.png"/>
+
+        <p>
+          We get the same value whether we start <m>\Delta x</m> at 1 or -1.  Once again, we find <m>f'(1)=2</m>.
+        </p>
+      </solution>
+
+      <solution>
+        <title>Solution C</title>
+        <p>
+          This method of finding the derivative still has a number of difficulties.
+          In the example above, the exact answer we want (in this case 2) did not show up in any of our computations.
+          We also find that if we make <m>\Delta x</m> too small, we run into a problem called round off error.
+          If the next chapter we will look at methods that compute derivatives symbolically,
+          but for this chapter we want an easy method of approximation.
+          We will use the approximation technique that is used by most graphing calculators when they compute the derivative.
+          They use a <q>balanced difference quotient</q> where we find the slope of the secant line between points
+          <m>\Delta x</m> before and after the point we are interested in.
+          As the picture below shows, compared to either the right secant or the left secant,
+          for most functions the balanced secant is closer to being parallel to the tangent line.
+        </p>
+
+        <image width="70%" source="images/sec3-2-5.png"/>
+
+        <p>
+          We will use the default on calculators, that is we will use <m>\Delta x = 0.001</m>.
+        </p>
+
+        <image width="70%" source="images/sec3-2-6.png"/>
+
+        <p>
+          For our example this gives our familiar result that <m>f'(1)=2</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      We formalize this last approach.
+    </p>
+
+    <definition>
+      <title>Calculator Approximation of the Derivative</title>
+      <statement>
+        <p>
+          <me>
+            f'(x)\approx\frac{f(x+.001)-f(x-0.001)}{.002}
+          </me>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      For the rest of this text, when we need to compute a numerical approximation to the derivative, we will use the calculator approximation of the derivative.
+    </p>
+
+    <p>
+      We should note that the calculator rule is an approximation technique, rather than a definition.
+      It will give a misleading answer for functions that do not approximate a straight line in a window that is 0.002 wide.
+      In this course, the approximation will only cause a problem with functions that have corners or cusps,
+      like the functions <m>f(x)=|x|</m> and <m>f(x)=x^{(2/3)}</m> at <m>x=0</m>.
+      The main advantage of the using the calculator rule is that it is straightforward enough to compute to allow us to plot a function and its derivative on a single graph.
+      This allows us to compare the graph of the function with the graph of the derivative.
+    </p>
+
+    <figure>
+      <caption>Video presentation of the next two examples</caption>
+      <video youtube="F_9rbxTwCXA"/>
+    </figure>
+
+    <example>
+      <title>A Function and its Derivative</title>
+      <statement>
+        <p>
+          Compare the graph of <m>f(x)=x^2-2 x+1</m> and the graph of its derivative,
+          using separate axes for the two graphs.
+          What features of the graph of <m>f(x)</m> can be located by using the graph of <m>f'(x)</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since this problem will serve as a template for a question we will look at many times,
+          it is worthwhile to look at it in detail.
+          We start by setting up a workbook that will have the structure we need to compute a chart of values for
+          <m>f(x)</m> and <m>f'(x)</m>.
+        </p>
+
+        <image width="70%" source="images/sec3-2-7.png"/>
+
+        <p>
+          The picture above gives the minimal amount we need to type in.
+          The rest will be done with quick filling.
+          The entry of cell <c>B1</c> gives the formula for the function.
+           In cell <c>D5</c> we evaluate the function using the first value of <m>x</m> from cell <c>A5</c>.
+           We have two values of <m>x</m> in cells <c>A5</c> and <c>A6</c> so that we can quick fill to get a list of <m>x</m> values.
+           We use absolute references for <m>\Delta x</m>, so it will not change on quick fills.
+           We then fill cells <c>E5</c> and <c>F5</c> from cell <c>D5</c>,
+           then fill row 6 from row 5, then fill the rest of the chart from rows 5 and 6.
+         </p>
+
+        <image width="90%" source="images/sec3-2-8.png"/>
+
+        <p>
+          It is then a straightforward task to plot the two curves.
+          We notice that the graph of the function is a parabola.
+          If the derivative is negative, the graph of <m>f(x)</m> is decreasing.
+          If the derivative is positive, the graph of the function <m>f(x)</m> is increasing.
+          The graph of <m>f(x)</m> reaches its minimum at the vertex, which is also where <m>f'(x)=0</m>.
+          We also notice that the derivative of this parabola seems to be a straight line.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Several of our observations from this example work in general.
+      <ul>
+      <li><p>      Looking at a single point, the derivative of a function is the slope of the line tangent to the graph at that point.
+      </p></li>
+      <li><p>       The tangent line is a best linear approximation to the graph at a point.
+      </p></li>
+      <li><p>      Looking at the derivative at lots of points, the graph of a function is increasing when the derivative is positive,
+      and the graph of a function is decreasing when the derivative is negative.
+      </p></li>
+      <li><p>     For the graph to have a point that is locally a maximum or minimum,
+      the derivative cannot be positive or negative,
+      so the derivative must either be zero or undefined for the graph of the function to have a maximum or minimum.
+      </p></li>
+      </ul>
+      </p>
+      <p>
+       Finding places where functions reach their highest and lowest values is an important activity in mathematics.
+      We will look at these applications in more depth in upcoming sections.
+      The reader is warned that we can have places where the derivative is zero but the function is still increasing or decreasing.
+    </p>
+
+    <example>
+      <title>The derivative of a more complicated function</title>
+      <statement>
+        <p>
+          Compare the graph of <m>f(x)=x^3 (x^2-36)</m> and the graph of its derivative,
+          using separate axes for the two graphs.
+          What features of the graph of <m>f(x)</m> can be located by using the graph of <m>f'(x)</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The setup for this example is very similar to the last problem.
+        </p>
+
+        <image width="100%" source="images/sec3-2-9.png"/>
+
+       <p> Since the values of <m>f(x)</m> range between -500 and 1500, we note that <m>f(x)</m> is the blue graph and uses the axis in the center of the graph.
+       Similarly the values of <m>f'(x)</m> range between -500 and 2500, we note that <m>f'(x)</m> is the red graph and uses the axis on the side of the graph.</p>
+
+        <p>
+          This time we notice three places where the derivative seems to be zero,
+          when <m>x</m> is near <m>-5</m>, <m>0</m>, and <m>5</m>.
+          We use goal seek on the derivative and find that the derivative is zero when <m>x=-4.648</m>,
+          0, or 4.648.  Looking at the graph of f(x) at those points,
+          we see that <m>f(x)</m> has a maximum when <m>x=-4.648</m>, and a minimum when <m>x=-4.648</m>.
+          When <m>x=0</m>, <m>f(x)</m> is neither a maximum nor a minimum.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      In the next chapter, we will look at ways to find the derivative of a function symbolically.
+      We can already reason our way to symbolically finding the derivative of simple functions.
+      If our function <m>f(x)</m> is constant or linear, then the graph of the function is its own tangent line,
+      so the derivative is simply the slope of the graph.
+      For quadratic functions we noticed that the graph of the derivative seems to be linear.
+      If we can guess the form of the derivative, we can use trendlines to produce a formula.
+    </p>
+
+    <example>
+      <title>Using trendlines to get the formula of a derivative</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="AXSJ1UwTSfk"/>
+        </figure>
+        <p>
+          Use trendlines to find a formula for the derivative of <m>f(x)=2x^2+5x-7</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The setup for this example is very similar to the last problem.
+          We simply change the function.
+          This involves changing the formulas in cells <c>B1</c> and <c>D5</c>,
+          then using quick copy to change the formulas for the cells in columns D through F.
+        </p>
+
+        <image width="100%" source="images/sec3-2-10.png"/>
+
+        <p>
+          Once we have points for the derivative, we add a trendline using a linear model.
+          We set the options to show both the formula for the trendline and the value of <m>R^2</m>.
+          The fact that <m>R^2=1</m>, indicates the trendline we found exactly fits the data.
+          In the workbook connected to this section there is a page for Example 6B.
+          It uses parameters for the coefficients on a quadratic formula,
+          so that you can explore the derivative of a general quadratic function.
+        </p>
+      </solution>
+    </example>
+
+    <paragraphs>
+      <title>A Note on Terminology</title>
+      <p>
+        It is worthwhile to point out some ambiguity in the terms used in this section and the previous section.
+        We have been using the term <m>\marginal f(x+1)</m> for the change <m>f(x+1)-f(x)</m>,
+        where <m>f(x)</m>, might be revenue, or cost, or profit.
+        This is the standard definition of a marginal function from finance or economics.
+        However, if you do a web search on <q>calculus marginal revenue</q>
+        you will find that most calculus books treat the marginal function as simply another name for the derivative.
+        While they are related, they are not the same thing.
+        In the next chapter, we will find that it is often easier to produce a formula for the derivative of a function rather than the related marginal function,
+        which is why the derivative is used for the marginal function.
+        However, in this text, we will stick to the correct definition of marginal functions.
+      </p>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Summary</title>
+      <p>
+        The notion of derivative is one of the key concepts of calculus.
+        The concept of the derivative of a function is closely connected to the concept of marginal function.
+        We gave three ways of understanding the derivative of a function at a point.
+      </p>
+
+      <p>
+        <dl>
+          <li>
+            <title>Intuitive understanding</title>
+            <p>
+              The derivative of <m>f(x)</m>, at <m>x=x_0</m> denoted as <m>f'(x_0)</m>,
+              is the slope of the line obtained by zooming in on the graph at <m>(x_0,f(x_0 ))</m>
+              until it looks like a straight line.
+            </p>
+          </li>
+          <li>
+            <title>Formal definition</title>
+            <p>
+              The derivative of <m>f(x)</m>, denoted as <m>f'(x)</m>, is defined as
+              <me>
+                f'(x)=\lim_{\Delta x\to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}
+              </me>.
+            </p>
+          </li>
+          <li>
+            <title>The calculator approximation</title>
+            <p>
+              The derivative of <m>f(x)</m>, can be approximated using the formula
+              <me>
+                f'(x)\approx \frac{f(x+.001)-f(x-0.001)}{.002}
+              </me>.
+            </p>
+          </li>
+        </dl>
+      </p>
+    </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, 3.2, Numeric Derivatives and Limits,</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+<!-->                
+"For a function \(f(x)\), the derivative \(f'(x)\) is defined as the limit as \(del\ x\) approaches 0 of \((f(x+del \ x)-f(x))/(del\ x)\).  ", 
+<-->
+"For a function \(f(x)\), the derivative \(f'(x)\) is defined as the limit as \(del\ x\) approaches 0 of \((f(x+del \ x)-f(x))/(del\ x)\).  ", 
+"The calculator definition of derivative approximates \(f'(x)\) by \((f(x+0.001)-f(x-0.001)) / (0.002)\). ", 
+"The calculator definition of derivative has problems with corners and cusps.  ",                 
+"If the derivative of \(f(x)\) is positive, the graph of the function  \(f(x)\),  is increasing. ",  
+"The calculator definition of the derivative gives a good approximation for all functions.).  ",                 
+"If the derivative of \(f(x)\) is negative, the graph of the function  \(f(x)\),  is increasing. "
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.2, Numeric Derivatives and Limits, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+
+    <exercises xml:id="exercises-set-sec-3-2">
+	    <title>Exercises: Numeric Derivatives and Limits</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For each specified function and x-value, do the following:
+            <ol marker="(a)">
+              <li><p> Find a value of <m>\Delta x</m> small enough that graph of the function looks like a straight line on the region from <m>5*\Delta x</m> before the x-value to <m>5*\Delta x</m> after the x-value.  Graph the function in this region and find the slope of the corresponding secant line</p></li>
+              <li><p>  Estimate the derivative by finding the slope of the secant when <m>\Delta x</m> takes the values 0.1, 0.01, 0.001, 0.0001, -0.1, -0.01, -0.001, and -0.0001.  Give a value of the limit of the slope.</p></li>
+              <li><p> Use the calculator estimate to estimate the slope of the tangent.</p></li>
+              <li><p> Compare the value of the derivative <m>f'(x)</m> with the corresponding value of the marginal function <m>marginal\ f(x+1)</m>.</p></li>
+            </ol>
+          </p>
+          <p>
+            Comment: For problems 1-10 it makes sense to set up the table once with parameters that can be easily changed between problems.
+          </p>
+          <sidebyside widths="52% 30%" valigns="middle top">
+              <image source="images/sec3-2-sol0a.png"/>
+              <image source="images/sec3-2-sol0b.png"/>
+          </sidebyside>
+          <sidebyside widths="50% 35%" valigns="middle top">
+              <p>Excel Commands</p>
+              <p>Excel Output</p>
+          </sidebyside>
+          <p>
+            Change <m>\Delta x</m> (<c>delx</c>) and <m>x</m>-value given depending on the problem,
+            and adjust the function and the rest will autofill.
+            Once the graph has been added that will update as well.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Use <m>f(x)=x^2+3</m> at <m>x=2</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p> Using <c>Slope= (B14-B4)/(10*B1)</c> we get the following</p>
+                  <image width="90%" source="images/sec3-2-sol1a.png"/>
+                  <p>So the slope for this choice of <c>delx</c> is 4.</p>
+                  <p>Your may have chosen a slightly different <m>\Delta x</m>, and as long as the graph looks roughly linear that would be fine.</p>
+                </li>
+                <li>
+                  <p>
+                    You can either change <c>delx</c> and record each of the slopes in the Excel sheet above,
+                    or we can set up another table that records the slopes for us.
+                    We prefer the second method because the table of values allows us to inspect the pattern more easily.
+                  </p>
+                  <p>Excel commands for the table:</p>
+                  <image width="90%" source="images/sec3-2-sol1b.png"/>
+                  <image width="90%" source="images/sec3-2-sol1c.png"/>
+                  <p>The limit is 4.</p>
+                </li>
+                <li>
+                  <p>
+                    <me>
+                      f'(x)\approx\frac{f(x+0.001)-f(x-0.001)}{0.002}
+                    </me>
+                  </p>
+                  <p>So <m>f'(x)\approx\frac{f(2+.001)-f(2-.001)}{.002}=4</m> (second entry in the table for <c>delx</c>).</p>
+                </li>
+                <li>
+                  <p>
+                    <me>\marginal f(x+1)=f(x+1)-f(x)</me>.
+                    <me>\marginal f(2+1)=f(3)-f(2)=(9+3)-(4+3)=5</me>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Use <m>f(x)=(3x)^2-5</m> at <m>x=-2</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Use <m>f(x)=5(x-2)^2</m> at <m>x=3.5</m>.</p>
+            </statement>
+            <solution>
+              <p>
+                <ol marker="(a)">
+                  <li>
+                    <image width="90%" source="images/sec3-2-sol3a.png"/>
+                    <p>The slope of the secant line is 15.</p>
+                  </li>
+                  <li><p>From work in part a, the limit is also 15.</p></li>
+                  <li><p>From Row 21 we see that the slope of the tangent line is estimated to be 15</p></li>
+                  <li>
+                    <p>
+                      <md>
+                        <mrow>\marginal f(4.5)\amp =f(4.5)-f(3.5)</mrow>
+                        <mrow> \amp =5 (2.5)^2-5(1.5)^2=5(6.25-2.25)=20</mrow>
+                      </md>.
+                      So the derivative is 15 and the marginal function is 20 at this point.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Use <m>f(x)=7</m> at <m>x=5</m>.
+              </p>
+            </statement>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Use <m>f(x)=7x-4</m> at <m>x=3</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <ol marker="(a)">
+                  <li>
+                    <image width="90%" source="images/sec3-2-sol5a.png"/>
+                    <p>The slope of the secant line is 7.</p>
+                  </li>
+                  <li><p>From work in part a, the limit is also 7.</p></li>
+                  <li><p>From Row 21 we see that the slope of the tangent line is estimated to be 7</p></li>
+                  <li>
+                    <p>
+                      <me>\marginal f(4)=f(4)-f(3)=7</me>.
+                      So the derivative is 7 and the marginal function is 7 at this point.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Use <m>f(x)=x^3-5</m> at <m>x=2</m>.
+              </p>
+            </statement>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Use <m>f(x)=e^{2x}</m> at <m>x=1</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <ol marker="(a)">
+                  <li>
+                    <image width="90%" source="images/sec3-2-sol7a.png"/>
+                    <p>The slope of the secant line is 14.78.</p>
+                  </li>
+                  <li><p>From work in part a, the limit is also 14.78.</p></li>
+                  <li><p>From Row 21 we see that the slope of the tangent line is estimated to be 14.78</p></li>
+                  <li>
+                    <p>
+                      <me>\marginal\ f(2)=f(2)-f(1)=e^4-e^2\approx 47.21</me>.
+                      Comment: Notice the very large difference between the derivative and the marginal function.
+                      The exponential function is very curved and this curvature means that the discrepancy
+                      between the marginal function and the derivative will be large.
+                      The difference between the two is much smaller for graphs that are less curved.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Use <m>f(x)=2^x</m> at <m>x=3</m>.
+              </p>
+            </statement>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Use <m>f(x)=\ln(x)</m> at <m>x=5</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <ol marker="(a)">
+                  <li>
+                    <image width="90%" source="images/sec3-2-sol9a.png"/>
+                    <p>The slope of the secant line is 0.2.</p>
+                  </li>
+                  <li><p>From work in part a, the limit is also 0.2.</p></li>
+                  <li><p>From Row 21 we see that the slope of the tangent line is estimated to be 0.2</p></li>
+                  <li>
+                    <p>
+                      <me>\marginal\ f(6)=f(6)-f(5)=\ln(6)-\ln(5)\approx 0.18</me>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Use <m>f(x)=x^3-5</m> at <m>x=2</m>.
+              </p>
+            </statement>
+          </exercise>
+        </exercisegroup>
+
+        <exercisegroup>
+          <introduction>
+            <p>
+              For each specified function, do the following:
+              <ol marker="(a)">
+                <li><p> On a single graph, but using separate axes, graph the function and its derivative.</p></li>
+                <li><p>  Using goal seek, identify places where the derivative is 0 in the interval <m>-10 \lt x \lt 10</m>.</p></li>
+                <li><p> For each point where the derivative is 0, tell whether the corresponding point on the graph of the function is locally a maximum, minimum, or neither.</p></li>
+              </ol>
+            </p>
+          </introduction>
+
+
+          <exercise>
+            <statement>
+              <p>
+                Let <m>f(x)=x^3-4 x</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <ol marker="(a)">
+                  <li>
+                    <image width="60%" source="images/sec3-2-sol11a.png"/>
+                  </li>
+                  <li><p> The derivative seems to be zero at <m>x=-1.15</m> and at <m>x=1.15</m>.</p></li>
+                  <li><p> We have a local maximum at <m>x=-1.15</m> and a local minimum at <m>x=1.15</m>.</p></li>
+                </ol>
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Let <m>f(x)=x^4-49 x^2</m>.
+              </p>
+            </statement>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Let <m>f(x)=x^4-7 x^3</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <ol marker="(a)">
+                  <li>
+                    <image width="60%" source="images/sec3-2-sol13a.png"/>
+                  </li>
+                  <li><p>  The derivative seems to be 0 when <m>x=0</m> and <m>x=5.25</m>.</p></li>
+                  <li><p> It seems that the graph has a minimum at <m>x=o</m>.  It seems that the graph has neither at <m>x=5.25</m>.</p></li>
+                </ol>
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Let <m>f(x)=5x e^{-x}</m>.
+              </p>
+            </statement>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Let <m>f(x)=8x e^{-x^2 }</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <ol marker="(a)">
+                  <li>
+                    <image width="60%" source="images/sec3-2-sol15a.png"/>
+                  </li>
+                  <li><p>  It looks like the derivative is 0 at <m>x=-0.707</m> and at <m>x=0.707</m>.</p></li>
+                  <li><p> The first of those points is a local minimum.  The second point is a local maximum.</p></li>
+                </ol>
+              </p>
+            </solution>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Let <m>f(x)=3x+5</m>.
+              </p>
+            </statement>
+          </exercise>
+
+          <exercise>
+            <statement>
+              <p>
+                Let <m>f(x)=\pi^2</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <ol marker="(a)">
+                  <li>
+                    <image width="60%" source="images/sec3-2-sol17a.png"/>
+                  </li>
+                  <li><p>  The derivative is always 0 for this function.</p></li>
+                  <li><p> All points are both local maximums and local minimums.</p></li>
+                </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x)=x^3-4 x</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>For each specified function, do the following:
+            <ol marker="(a)">
+              <li><p> On a single graph, but using separate axes, graph the function and its derivative.</p></li>
+              <li><p>  Looking at the graph of the derivative, decide what kind of function is an appropriate model for the derivative.</p></li>
+              <li><p> Add a trendline to produce a formula for the derivative.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x)=x^3-6 x^2+3x</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="60%" source="images/sec3-2-sol19a.png"/>
+                </li>
+                <li><p>  The derivative looks like a polynomial of order 2. It is a parabola.</p></li>
+                <li><p> The trendline indicates the formula for the derivative can be approximated by
+                  <me>y=3x^2-12x+3</me>.</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x)=x^4-36 x^2+x</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x)=e^{3x}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <image width="60%" source="images/sec3-2-sol21a.png"/>
+                </li>
+                <li><p>  The derivative looks like an exponential function.</p></li>
+                <li><p> The trendline indicates the formula for the derivative can be approximated by
+                  <me>y=3 e^{3x}</me>.</p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>Let <m>f(x)=\ln(x)</m>.</p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>

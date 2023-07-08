@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-3-3-LocalLinearity">
+    <title>Local Linearity</title>
+    <p><url href="external/Examples/Section-3-3-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p>
+      The last two sections examined rate of change in both the discrete and continuous case.
+      The first application for rate of change at a point is to make projections for values of the function close to that point.
+      We want to find the equation of a linear function that can be used to approximate our function.
+      This is straightforward using the point-slope version of a linear equation.
+    </p>
+
+    <p>
+      For the discrete case, given a function <m>y=f(x)</m>, where we know value of,
+      <m>mf(a+1)</m>, the marginal change in <m>f(x)</m> to get to <m>x=a+1</m>,
+      then our discrete linear approximation has the form:
+    </p>
+
+    <aside>
+      <p>
+        Note the use of <m>mf</m> to denote the marginal change in <m>f</m>.
+        This notation will be used throughout this section.  We will use <m>\text{linear}\, f_a (x)</m> for the linear function that intersects <m>f(x)</m> at <m>x=a</m> and <m>x=a+1</m>.
+      </p>
+    </aside>
+
+    <assemblage>
+      <p>
+        <me>\text{linear}\, f_a (x)=f(a)+mf(a+1)*(x-a)</me>.
+      </p>
+    </assemblage>
+
+    <image width="60%" source="images/sec3-3-1.png"/>
+
+    <p>
+      In the differentiable case, given a function <m>y=f(x)</m>, where we know value of,
+      <m>f'(a)</m>, the derivative of <m>f(x)</m> at <m>x=a</m>, then our linear approximation has the form:
+    </p>
+
+    <assemblage>
+      <p>
+        <me>\linear f_a (x)=f(a)+f'(a)*(x-a)</me>.
+      </p>
+    </assemblage>
+
+    <image width="60%" source="images/sec3-3-2.png"/>
+
+    <p>
+      The two formulas are almost the same.
+      The discrete case uses the slope of a secant line obtained by looking at points where the x values differ by 1.
+      In the differentiable case we look at the slope of the tangent line.
+      One of the reasons for looking at the linear approximation of a function is that linear functions are easy to evaluate.
+    </p>
+
+    <example>
+      <title>Estimating profit</title>
+      <statement>
+        <p>
+          The profit from selling 10,000 gizmos is $487,253.  We also know that marginal profit(10001)=$45.
+          Estimate the profit from selling 10,013 gizmos.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use the formula from above:
+          <me>\text{discrete linear profit}_a (x)=\profit(a)+\Mprofit(a+1)*(x-a)</me>.
+        </p>
+
+        <p>
+          Filling in the values from the problem yields:
+          <md>
+            <mrow>\text{discrete linear profit}_{10000} (x)\amp =487253+45*(x-10000)</mrow>
+            <mrow>\text{discrete linear profit}_{10000} (10013)\amp =487253+45*(13)=487838</mrow>
+          </md>.
+        </p>
+
+        <p>Thus we estimate the profit from selling 10013 gizmos to be $487,838.</p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Estimating square roots</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="hhl9vdXWAlk"/>
+        </figure>
+        <p>
+          Use information about <m>f(x)=\sqrt{x}</m> near <m>x_0=100</m> to estimate the square roots of 96 through 104.
+          Check the accuracy of your approximations.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We first use Excel to find the value of the function and its derivative at 100.
+          For the derivative we use the calculator approximation.
+        </p>
+
+        <image width="80%" source="images/sec3-3-3.png"/>
+
+        <image width="80%" source="images/sec3-3-4.png"/>
+
+        <p>
+          Thus, the linear approximation is
+          <md>
+            <mrow>\linear f(x) \amp = f(100)+f'(100)(x-100)</mrow>
+            <mrow>\amp =10+(0.05)(x-100)</mrow>
+          </md>.
+        </p>
+
+        <p>
+          We can set up the worksheet to compute the approximation and to give us the error,
+          both as a number and as a percentage of the correct answer.
+        </p>
+
+        <image width="70%" source="images/sec3-3-5.png"/>
+
+        <image width="60%" source="images/sec3-3-6.png"/>
+
+        <p>
+          It is then straightforward to compute values and check accuracy.
+          On the given domain, the linear approximation has an error under 0.03%.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Estimating reciprocals</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="yP4rEOI5xnM"/>
+        </figure>
+
+        <p>
+          Use information about <m>f(x)=100/x</m> near <m>x_0=400</m>
+          to estimate the reciprocals of the integers from of 396 through 404.
+          Check the accuracy of your approximations.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Once again, we use Excel to find the value of the function and its derivative at 400.
+          For the derivative we use the calculator approximation.
+        </p>
+
+        <image width="70%" source="images/sec3-3-7.png"/>
+
+        <p>
+          Thus the linear approximation is
+          <md>
+            <mrow>\linear f(x) \amp = f(400)+f'(400)(x-400)</mrow>
+            <mrow>\amp =.25+(-0.000625)(x-400)</mrow>
+          </md>.
+        </p>
+
+        <image width="60%" source="images/sec3-3-8.png"/>
+
+        <p>
+          It is then straightforward to compute values and check accuracy.
+          On the given domain, the linear approximation has an error under 0.01%.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Estimating exponential functions</title>
+      <statement>
+        <figure>
+          <caption>Video presentation of this example</caption>
+          <video youtube="O4vpT6wOgoE"/>
+        </figure>
+
+        <p>
+          For approximating interest with continual compounding it is useful to have a linear approximation of
+          <m>f(r)=exp(r)</m> when <m>r</m> is close to 0.
+          Use information about <m>f(r)=exp(r)</m> near <m>r_0=0</m> to estimate the exponential function for numbers near 0.
+          Check the accuracy of your approximations and give a domain where the approximation is good enough to use.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Once again, we use Excel to find the value of the function and its derivative at 0.
+          For the derivative we use the calculator approximation.
+        </p>
+
+        <image width="80%" source="images/sec3-3-9.png"/>
+
+        <p>
+          Thus the linear approximation is
+          <md>
+            <mrow>\linear f(x) \amp = f(0)+f'(0)(r-0)</mrow>
+            <mrow> \amp = 1+(1)(r)</mrow>
+          </md>.
+        </p>
+
+        <p>
+          This is much easier to compute than the exponential function.
+          However, when we check accuracy, we find that it is not very accurate for other integer values.
+        </p>
+
+        <image width="60%" source="images/sec3-3-10.png"/>
+
+        <p>
+          That brings us back to the last part of the question,
+          which asks for a domain where the approximation is good enough to use.
+          The phrase <q>good enough to use</q> will depend on the setting,
+          but we will be happy with an estimate that is within 1%.
+          Since we are going to use this for interest rates, we are interested in positive rates.
+        </p>
+
+        <p>
+          We modify the worksheet to allow a step size, <m>\Delta x</m>, to be used.
+          Then we experiment with step sized till we get a domain where the error is under 1%.
+        </p>
+
+        <image width="60%" source="images/sec3-3-11.png"/>
+
+        <p>
+          We see that <m>\exp(r)\approx 1+r</m> for <m>0\le r\lt 0.15</m>.
+          This gives us an approximation we can use for rates of up to 15%.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      The last example illustrates that linear approximations should only be used for a limited domain.
+      The size of the domain where the linear approximation is <q>good enough</q>
+      will depend on the definition of <q>good enough</q> or the acceptable error in our approximation.
+      The good domain will also depend on how far the graph is from linear, or how fast it is bending.
+    </p>
+
+
+    <exercise>
+      <title>Reading check, Local Linearitys</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+ "For a function \(f(x)\), the discrete linear approximation of \(f(x)\) at \(a\) is  \(f(a)+mf(a+1)*(x-a)\) where \(mf(a+1)\) is the marginal change of \(f(x(\) form \(a\) to \(a+1\).  ", 
+"For a function \(f(x)\), the linear approximation of \(f(x)\) at \(a\) is  \(f(a)+f'(a)*(x-a)\) where \(f'(a)\) is the derivative of \(f(x(\) at \(a\) .  ", 
+ "One of the reasons for looking at the linear approximation of a function is that linear functions are easy to evaluate. ", 
+"In the differentiable case, the the linear approximation is the tangent line.  ",                 
+"In the discrete case, the linear approximation is a secant line.  ",                 
+"In the discrete case we look at the the linear approximation is the tangent line.  ",                 
+"Linear approximations can always be used for values within 5 of the base point. " 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 3.3, Local Linearity, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+    <exercises xml:id="exercises-set-sec-3-3">
+       <title>Exercises: Local Linearity</title>
+
+       <exercisegroup>
+         <introduction>
+           <p>
+             For <xref first="ex-loclin-first" last="ex-loclin-last"/>,
+             for the given function and value for <m>x_0</m>:
+             <ol marker="(a)">
+               <li><p>Give the formula for the discrete linear approximation.</p></li>
+               <li><p>Evaluate the approximation at <m>x_1</m>.</p></li>
+             </ol>
+           </p>
+         </introduction>
+
+         <exercise xml:id="ex-loclin-first">
+           <statement>
+             <p>
+               <m>x_0=10</m>, <m>f(10)=50</m>, <m>mf(11)=6</m>, and <m>x_1=15</m>.
+             </p>
+           </statement>
+           <solution>
+             <p>
+               <md>
+                 <mrow>f(x) \amp \approx f(10)+mf(11)*(x-10)</mrow>
+                 <mrow>f(x) \amp \approx 50+6*(x-10)</mrow>
+               </md>.
+             </p>
+             <p>
+               Next we evaluate the linear approximation at 15:
+               <me>f(15)\approx 50+6*(15-10)=50+30=80</me>.
+             </p>
+           </solution>
+         </exercise>
+
+         <exercise>
+           <statement>
+             <p>
+               <m>x_0=15</m>, <m>\profit(15)=50</m>, <m>\Mprofit(16)=2</m>, and <m>x_1=6</m>.
+             </p>
+           </statement>
+         </exercise>
+
+         <exercise>
+           <statement>
+             <p>
+               <m>x_0=20</m>, <m>f(19)=191</m>, <m>f(20)=200</m>, <m>f(21)=210</m>, and <m>x_1=28</m>.
+             </p>
+           </statement>
+           <solution>
+             <p>
+               <me>f(x)\approx f(20)+mf(21)*(x-20)</me>.
+             </p>
+             <p>
+               Note that we have to compute <m>mf(21)</m>.
+               <md>
+                 <mrow>mf(21)\amp =f(21)-f(20)= 210-200=10</mrow>
+                 <mrow>f(x) \amp \approx 200+10*(x-20)</mrow>
+               </md>.
+             </p>
+             <p>
+               Next we evaluate the linear approximation at 28:
+               <me>f(28)\approx 200+10*(28-20)=200+80=280</me>.
+             </p>
+           </solution>
+         </exercise>
+
+         <exercise>
+           <statement>
+             <p>
+               <m>x_0=50</m>, <m>\revenue(49)=1007</m>, <m>\revenue(50)=1000</m>, <m>\revenue(51)=994</m>, and <m>x_1=45</m>.
+             </p>
+           </statement>
+         </exercise>
+
+         <exercise xml:id="ex-loclin-last">
+           <statement>
+             <p>
+               <m>x_0=100</m>, <m>cost(99)=3740</m>, <m>cost(100)=3743</m>, <m>cost(101)=3754</m>, and <m>x_1=112</m>.
+             </p>
+           </statement>
+           <solution>
+             <p>
+               <me>\cost(x)\approx \cost(100)+\Mcost(101)*(x-100)</me>.
+             </p>
+             <p>
+               Note that we have to compute <m>\Mcost(101)</m>
+               <md>
+                 <mrow>\Mcost(101)=\cost(101)-\cost(100)=3754-3743=11</mrow>
+                 <mrow>cost(x)\approx3743+11*(x-100)</mrow>
+               </md>.
+             </p>
+
+             <p>Next we evaluate the linear approximation at 112:
+               <me>\cost(112)\approx 3743+11*(112-100)=3743+132=3875</me>.
+             </p>
+           </solution>
+         </exercise>
+       </exercisegroup>
+
+       <exercisegroup>
+         <introduction>
+           <p>
+             For <xref first="ex-numapp-first" last="ex-numapp-last"/>,
+             for the given function and value for <m>x_0</m>:
+             <ol marker="(a)">
+              <li><p>Calculate the numeric approximation of the derivative at <m>x_0</m>.</p></li>
+              <li><p>Give the formula for the linear approximation at that point.</p></li>
+              <li><p>Evaluate the approximation at <m>x_1</m>.</p></li>
+              <li><p>Evaluate the function at <m>x_1</m> and compute the accuracy of the approximation.</p></li>
+            </ol>
+          </p>
+        </introduction>
+
+        <exercise xml:id="ex-numapp-first">
+          <statement>
+            <p>
+              <m>f(x)=\ln(x)</m>, <m>x_0=100</m>, and <m>x_1=105</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=\sqrt{x}</m>, <m>x_0=81</m> and <m>x_1=85</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p><me>g(x)\approx g(81)+g'(81)*(x-81)</me>.</p>
+                  <p>
+                    Note that <m>g(81)=\sqrt{81}=9</m> and
+                    <me>g'(81)\approx \frac{g(81+.001)-g(81-.001)}{0.002}=  \frac{\sqrt{81.001}-\sqrt{80.999}}{0.002}=.056</me>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <me>g(x)\approx 9+0.056*(x-81)</me>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Hence at <m>x_1=85</m> we get
+                    <me>g(85)/approx 9+0.056*(85-81)=9+0.056*4=9+0.23=9.23</me>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If we compute <m>\sqrt{85}=9.22</m>, we see that the approximation is fairly good.
+                  </p>
+                  <p>
+                    The error is <m>\abs{\text{real value}-\text{approximation}}=\abs{9.22-9.23}=\abs{-0.01}= 0.01</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\profit(x)=-x^2/10+3000x-7862</m>, <m>x_0=2000</m> and <m>x_1=2050</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\revenue(x)=x*\ln(x)</m>, <m>x_0=3000</m> and <m>x_1=3100</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    <me>\revenue(x)\approx \revenue(3000)+\revenue'(3000)*(x-3000)</me>.
+                  </p>
+                  <p>
+                    Note that <m>\revenue(3000)\approx 24019</m> and
+                    <me>
+                      \revenue'(3000)\approx \frac{\revenue(3000.001)-\revenue(2999.999)}{0.002}=  9.00636
+                    </me>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <me>\revenue(x)\approx 24019+9.00636*(x-3000)</me>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Hence at <m>x_1=3100</m> we get
+                    <me>
+                      \revenue(3100)/approx 24019+9.00636*(3100-3000)=24919.7
+                    </me>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If we compute <m>\revenue(3100)=24921.4</m>, we see that the approximation is fairly good.
+                  </p>
+                  <p>
+                    The error is <m>\abs{\text{real value}-\text{approximation}}=\abs{1.66485}= 1.66485</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="ex-numapp-last">
+          <statement>
+            <p>
+              <m>cost(x)=(x*\ln(x))/2+x^2/300</m>, <m>x_0=3000</m> and <m>x_1=3100</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x)=(1+x)^r</m> and <m>x_0=0</m>.
+          </p>
+          <p>
+            <ol marker="(a)">
+              <li><p>Find the linear approximation of <m>f(x)</m> at <m>x_0</m> for <m>r=1/3,1/2,-1</m> and <m>2</m>.</p></li>
+              <li><p>Give a rule for the linear approximation for a general value of r.</p></li>
+              <li><p>How accurate is the linear approximation for square and cube roots of 1.1, obtained at <m>x_1=0.1</m>?</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <image width="60%" source="images/sec3-3-sol11a.png"/>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  The linear approximation of <m>f(x)</m> at <m>x=0</m> is <m>f(0)+f'(0)(x)</m>.
+                  For all values of <m>r</m> we have <m>f(0)=1</m>.
+                  As the table shows when <m>r=1/3,1/2,-1</m> and 2,
+                  we have <m>f(x)\approx 1+r x</m>
+                </p>
+              </li>
+              <li><p><me>f(x) \approx 1+r*x</me></p></li>
+              <li>
+                <p>
+                  As the table shows,
+                  the error for using these approximations for the square root and cube root of 1.1 is approximately 0.001.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+

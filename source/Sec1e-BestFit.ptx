@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-1-5-IntroBestFitCurves">
+    <title>Using Excel to find best-fit curves</title>
+
+    <p><url href="external/Examples/Section-1-5-Examples-Unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-5-Examples.xlsx"  visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+    <paragraphs>
+      <title>Overview</title>
+
+      <p>
+        In <xref first="sec-1-1-LinearFunctionsAndModels" last="sec-1-2-FunctionsBusinessSetting"/>
+        we looked at useful mathematical models and formulas that we anticipate seeing repeatedly in the business environment.
+        If we are given equations that model the processes we are interested in, then this approach works.
+        What happens though if we are not given equations? Many important functions in business are quite often defined by data.
+        Examples include past sales, material costs, and consumer demand.
+      </p>
+
+      <p>
+        If we are given a data set, we can find a best fitting curve.
+        A straightforward approach is to assume that the data represents the output of a nice formula.
+        In real life applications, we will often see that so-called "noise" can complicate the situation.
+        (Noise is a technical term to describe external unpredictable factors that may cause your data to deviate form the model.  For example, if I am looking at sales at a fast food restaurant, our model will have noise from traffic jams and bad weather outside.)
+        For the purpose of this course we will assume that the data will be reasonably nice,
+        although some noise may be evident. The problem of producing a best fitting curve to data can be broken into two pieces:
+      </p>
+
+      <p>
+        <ol>
+          <li><p>We need to decide what kind of curve, or what model we want to use. </p></li>
+          <li><p>We want to be able to set the parameters (the constants) in the model to give the best fit.</p></li>
+        </ol>
+      </p>
+
+      <p>
+        Coming up with a theoretical reason why we want to use a particular model in a given case forms the content of a large number of your business courses,
+        both courses you have already taken and courses you are yet to take.
+        The models that come up repeatedly in the theoretical courses are given names and used without redoing the theoretical foundation for the model.
+        (This is why we introduced the normal distribution and the logistic growth function, neither of which looks like a simple equation.)
+        In this course, we will be happy with simple heuristic arguments on which model to choose.
+      </p>
+
+      <p>
+        The second half of the problem is deciding how to choose the parameters to give the curve that does the best job of fitting the data.
+        A moment of reflection shows deciding on the correct definition of <q>best fitting</q> is a nontrivial task beyond the scope of this course.
+        For the time being we will accept the standard definition:
+      </p>
+
+      <assemblage>
+        <p>
+          The <term>best fitting curve</term> minimizes the sum of the squares of the differences between the measured and predicted values.
+        </p>
+      </assemblage>
+
+      <p>
+        We will come back to that definition later in the course, when we know more calculus,
+        but for now we simply note that it is the standard definition, and is used by Excel.
+        Instead, we will focus on using Excel to produce a best fitting curve of the appropriate model.
+        Excel has a preprogrammed feature that will find the best fitting equation for a data set for a select number of functions:
+      </p>
+
+      <p>
+        <ul>
+          <li><p>Linear model</p></li>
+          <li><p>Exponential model</p></li>
+          <li><p>Polynomial model</p></li>
+          <li><p>Logarithmic model</p></li>
+          <li><p>Power model</p></li>
+        </ul>
+      </p>
+
+      <p>
+        We will show how to find an equation for a data set,
+        assuming we know what model would be the best one to represent the data.
+      </p>
+    </paragraphs>
+
+    <example>
+      <title>Best fitting linear curves</title>
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="ZI9hS12tHoc"/>
+      </figure>
+
+      <p>
+        For a first example, we are running a widget factory and have the following data on employee performance:
+      </p>
+
+          <image width="80%" source="images/sec1-5-1.png"/>
+
+      <aside>
+        <p>
+          (A parenthetical note:  In economics, widget is a placeholder name for a generic manufactured device.
+          It is only in recent times that it has also become a small computer GUI unit.)
+        </p>
+      </aside>
+
+      <p>
+        We would like a formula for widgets produced as a function of hours worked.
+        Since we can see two entries each, for 36, 43, and 44 hours worked,
+        there cannot be a function that hits all our data exactly.
+        While we expect a linear function, we are not surprised if there is random noise,
+        as a worker may take a break, or be particularly focused on a given day.
+        We start by creating a scatterplot for my data.
+      </p>
+
+          <image width="80%" source="images/sec1-5-2.png"/>
+
+      <p>
+        We right click (control-click on a Mac) on one of the data points and we get a contextual menu.
+        We select <term>Add Trendline</term>.
+      </p>
+
+          <image width="80%" source="images/sec1-5-3.png"/>
+
+      <p>
+        When adding a trend line, we need to select from a number of options.
+        The first option concerns the mathematical model we want to choose.
+        Given that we suspect the number of widget produced will be roughly proportional to the hours worked,
+        we want to use a linear model, so we make that choice.  Under options, we want to display the equation on the chart.
+      </p>
+
+          <image width="80%" source="images/sec1-5-4.png"/>
+
+      <p>
+        We have added a linear trend line to the graph and can also see the equation for the line.
+        We could use that equation to plan how many hours we want our workers on the job based on the number of widgets we expect to sell.
+      </p>
+
+          <image width="80%" source="images/sec1-5-5.png"/>
+
+      <p>
+        Having found a best fitting line,
+        I want to copy the equation back into my spreadsheet and to be able to compare the values in my data with the projections from my equation.
+        You should notice that the equation Excel produces in the chart is written in standard mathematical notation,
+        while the corresponding equation in cell B3 is in Excel notation.
+        (In Excel notation we need a symbol for multiplication rather than simply putting a number and variable together.
+        In Excel notation, we also use a cell reference, B1, rather than a variable, x.)
+      </p>
+
+          <image width="80%" source="images/sec1-5-6.png"/>
+    </example>
+
+    <example>
+      <title>Checking and improving our equations</title>
+
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="wAy0kfdToTA"/>
+      </figure>
+
+      <p>
+        When finding the best fitting curve to data we have gathered,
+        we need to pay attention to the model we have chosen and to the range to which we want to apply it.
+        In our example, the linear fit looks pretty good.
+        However, we should be careful about using it on too wide a domain.
+        According to our model, a worker who works no hours produces 12.52 widgets a week,
+        which is obviously silly.
+        In the other direction, it predicts that a worker who worked 168 (= 7 <times/> 24) hours a week would produce almost 970 widgets,
+        instead of predicting a collapse from exhaustion.
+      </p>
+
+      <p>
+        The other issue is the choice of a model.  We chose a linear model.
+        An argument could easily be made for a proportional model.
+        (A worker who works no hours produces no widgets.)
+        We can switch to the proportional model by setting the <m>y</m>-intercept to 0 in options for the trend line.
+        Then the equation is
+        <me>(\text{Widgets Produced}) = 6.00026*(\text{Hours Worked})</me>
+        instead of our original equation of
+        <me>(\text{Widgets Produced}) = 5.6975*(\text{Hours Worked})+12.54</me>.
+      </p>
+
+          <image width="80%" source="images/sec1-5-7.png"/>
+
+      <p>
+        We should also be careful about trying to get a better fit by using an inappropriate model.
+        In our case, we can get a better fit by allowing the curve to be a 6th degree polynomial.
+        However the resulting equation does not make sense.
+        It predicts that a worker will produce about quarter million widgets with a 1-hour work week, and <m>-1500</m> widgets with a 55-hour work week.
+      </p>
+
+          <image width="80%" source="images/sec1-5-8.png"/>
+
+    </example>
+
+    <example>
+      <title>Fitting the Consumer Price Index (<init>CPI</init>) to a best fitting curve; an extended example</title>
+      <figure>
+        <caption>Video presentation of this example</caption>
+        <video youtube="1hxc1bOOS68"/>
+      </figure>
+
+      <p>
+        For our second example, we will look at the consumer price index and try and fit it to a model.
+        This example will illustrate several issues we need to keep in mind when building models.
+        We obtained data for the consumer price index from</p>
+      <p>
+        <url href="http://inflationdata.com/inflation/Consumer_Price_Index/HistoricalCPI.aspx"  visual="http://inflationdata.com/inflation/Consumer_Price_Index/HistoricalCPI.aspx"/>.
+      </p>
+
+      <p>
+        The data from 1960 to 2011 is in the worksheet <url href="external/Examples/Section-1-5-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples.xlsx">Section-1-5-Examples.xlsx</url>.
+      </p>
+
+          <image width="80%" source="images/sec1-5-9.png"/>
+
+      <p>
+        Since we expect prices to rise as a percentage of the current prices,
+        we expect the <init>CPI</init> to be modeled by an exponential curve.
+        We start by selecting the data, producing a scatterplot, and adding a best fitting curve using an exponential model.
+        We will always select the option to show the equation on the chart.
+      </p>
+
+          <image width="80%" source="images/sec1-5-10.png"/>
+
+      <p>
+        This first attempt gives an exponential formula, but it is unsatisfactory for a number of reasons.
+        <ul>
+          <li><p>That constant only shows one significant digit, which is not enough to make meaningful predictions.</p></li>
+          <li><p>The font size is too small to easily read off the resulting equations.</p></li>
+          <li><p>The constant coefficient is ridiculously small because it gives the projected value of the index in the year o.</p></li>
+          <li><p>The graph does not look like a very good fit.  The plot of the numbers actually looks as though it represents three different graphs.</p></li>
+        </ul>
+      </p>
+
+      <p>
+        We will work through the problems one at a time.
+      </p>
+      <p>
+        The first problem is that the equation Excel has given us does not have enough significant digits to make useful predictions.
+        We want to right click on the equation, select <q>Format Trendline Label</q>.  We are given a dialog box that lets us make formatting options.
+        Since the lead coefficient is so small, we want the numbers formatted in scientific notation.
+        We choose 4 digits beyond the decimal point in that notation.
+      </p>
+
+          <image width="80%" source="images/sec1-5-11.png"/>
+
+      <p>
+        This gives us a better equation.  It should be noted that our pictures in this book use the font option in the formatting to use a larger sized font.
+      </p>
+
+          <image width="80%" source="images/sec1-5-12.png"/>
+
+      <p>
+        The next issue to deal with is adjusting the year.
+        Looking at the raw data, the <init>CPI</init> was 100 sometime in 1983.
+        Thus we simply add an extra column to our spreadsheet where the adjusted year is the current year minus 1983.
+        In our graph, we also adjust the labels so a reader can still understand our chart.
+      </p>
+
+          <image width="80%" source="images/sec1-5-13.png"/>
+
+      <figure>
+        <caption>Continued video presentation of this example</caption>
+        <video youtube="5W3OvF8VNEs"/>
+      </figure>
+
+      <p>
+        Now we want to look at the more serious question, the one that says the model does not fit very well.
+        Looking at our data, the inflation rate seems to fall into roughly 3 blocks,
+        the years before 1973, the years from 1973-1983, and the years after 1983.
+        We would want to go back to our economics classes and find an argument that says this division of years is reasonable.
+        Using the same menu that lets us add a trend line, we can edit the source data.
+        We want to restrict to the years after 1983.  In our case, that means restricting to rows 1 to 30.
+      </p>
+
+          <image width="80%" source="images/sec1-5-14.png"/>
+
+      <p>
+        This breaks the data into two pieces.  The first piece is the period from 1983 till 2011.
+        As we see, the exponential model fits quite well in that case.
+      </p>
+
+           <image width="80%" source="images/sec1-5-15.png"/>
+
+      <p>
+        The second piece is the period from 1973 till 1982.
+        Once again, the exponential model fits quite well over that period.
+        Notice that the exponent is quite different in the two periods.
+      </p>
+
+      <image width="80%" source="images/sec1-5-16.png"/>
+
+      <p>
+        The obvious question that arises is to figure out what happened in 1983 that caused the economic model to shift.
+        That question is beyond the scope of this course.
+      </p>
+    </example>
+
+
+    <exercise>
+      <title>Reading check, Using Excel to Find Best Fit Curves</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The best fitting curve minimizes the sum of the squares of the differences between the measured and predicted values.", 
+"In Excel we 'Add a Trendline' to a scatterplot to find a best fitting curve.", 
+"When interpreting a trendline we need to be careful about the domain where the function makes sense. ",                 
+"We can change the number of digits shown in the trendline equation.", 
+"The trendline equation can simply be copied into a cell for computation. ", 
+"It does not matter which model we use with trendline.", 
+"With an exponential model, it does not matter what we choose as the base year."   
+               ],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 1.5, Using Excel to Find Best Fit Curves, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+
+
+    <exercises xml:id="exercises-set-sec-1-5">
+      <title>Exercises: Using Excel to find best fit curves</title>
+
+      <exercise>
+        <statement>
+          <p>
+            We have the following data on widget production:
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Month</cell><cell>Jan</cell><cell>Feb</cell>
+              <cell>Mar</cell><cell>Apr</cell><cell>May</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Production</cell><cell>16,597</cell><cell>30,687</cell>
+              <cell>48,441</cell><cell>55,751</cell><cell>79,606</cell>
+            </row>
+          </tabular>
+
+          <p>
+            <ol marker="(a)">
+              <li><p> Find the best fitting linear function for the data.</p></li>
+              <li><p> Give the production value that function predicts for May.</p></li>
+              <li><p> Give the production value that function predicts for July.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  Create a scatter plot for the data.
+                  Then use the menu to go to Chart <mdash/> Chart layout <mdash/> Trendlines.
+                  Find the linear approximation and under options choose to display the function.
+                </p>
+                        <image width="100%" source="images/sec1-5-sol1a.png"/>
+                <p>
+                  Excel automatically changes the months into numerical values.
+                </p>
+                <p>
+                  The best linear function for the data is <m>y = 15108x + 891.8</m>.
+                </p>
+              </li>
+              <li>
+                <p> Create a new table using the function to determine the predicted production levels.</p>
+                    <image width="100%" source="images/sec1-5-sol1b.png"/>
+                <p>
+                  Excel needs x to be a number, so we need to insert a row and provide the appropriate numerical values:
+                  1 for Jan, 2 for Feb, <etc/>
+                </p>
+
+                <p>The predicted production for May is 76,432.</p>
+              </li>
+              <li>
+                <p>
+                  To find the production level for July we enter <c>x = 7</c> in the table and compute the output.
+                </p>
+                <p>
+                  The linear model predicts a production of 106, 648 for the month of July.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            We have the following data on gizmo sales:
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Month</cell><cell>Jan</cell><cell>Mar</cell>
+              <cell>Apr</cell><cell>July</cell><cell>Aug</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Units sold</cell><cell>1.505</cell><cell>9,042</cell>
+              <cell>13,018</cell><cell>21,873</cell><cell>22,636</cell>
+            </row>
+          </tabular>
+
+          <p>
+            <ol marker="(a)">
+              <li><p> Find the best fitting linear function for the data.</p></li>
+              <li>
+                <p>
+                  Extend the chart to give the projected sales for each month from January through September.
+                  (You need to add a row for predicted sales, and also add a number of columns for missing months.)
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            We have the following data on gadget revenue:
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Units sold</cell><cell>3,000</cell><cell>5,000</cell>
+              <cell>7,000</cell><cell>9,000</cell><cell>11,000</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Revenue</cell><cell>16,161</cell><cell>24,783</cell>
+              <cell>34,484</cell><cell>38,014</cell><cell>33,030</cell>
+            </row>
+          </tabular>
+
+          <p>
+            <ol marker="(a)">
+              <li><p> Find the best fitting linear function for the data.</p></li>
+              <li><p> Find the best fitting quadratic function for the data.</p></li>
+              <li>
+                <p>
+                  The data fits a quadratic function better than a linear function.
+                  With a quadratic model we do not maximize revenue by selling as many units as possible.
+                  Explain why this is reasonable in the real world.
+                </p>
+              </li>
+              <li><p> Project the revenue for selling 15,000 units with both linear and quadratic models.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p> We can do scatterplots and use the linear trendline find the models we need.</p>
+
+                <image width="100%" source="images/sec1-5-sol3a.png"/>
+
+                <p>
+                The linear model is <m>y = 2.3485x + 12855</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  We can do scatterplots and use the polynomial trendline of degree 2 to find the model we need.
+                  (See the second image in part (a).)
+                </p>
+                <p>The quadratic (polynomial of degree 2) model is <m>y = -0.0006x^2 + 10.694x - 11586</m></p>
+                <p>
+                  The graphs show that the quadratic equation is the better model and follows the data more closely.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The revenue function is given by price * quantity.
+                  If we offer more units the price will eventually go down.
+                  If the price goes down faster than the number of new items sold,
+                  the revenue will at some point go back down.
+                </p>
+              </li>
+              <li>
+                <p> Plug <m>x = 15000</m> into <m>y = 2.3485x + 12855</m> and we get $48,082.50 for the linear model.</p>
+                <p>Plug <m>x = 15000</m> into <m>y =-0.0006x^2 + 10.694x - 11586</m>, and we get $13, 824 for the quadratic model. </p>
+                <p>
+                  [You can use Excel, a calculator or Wolfram Alpha to do these last computations.]
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            In building water tanks, design considerations indicate the weight
+            of the dry tank should be roughly a power function of the capacity.
+            I am interested in building a larger tank than I have before.
+            I have the following data between capacity and weight:
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Gallons</cell><cell>1,000</cell><cell>5,000</cell>
+              <cell>7,000</cell><cell>9,000</cell><cell>17,000</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Weight</cell><cell>103</cell><cell>878</cell>
+              <cell>1,339</cell><cell>1,927</cell><cell>4,496</cell>
+            </row>
+          </tabular>
+
+          <p>
+            <ol marker="(a)">
+              <li><p> Find the best fitting power function for the data.</p></li>
+              <li><p> Use your power function to estimate the weight of a tank that holds 40,000 gallons.</p></li>
+              <li><p> Find the best fitting linear function for the data.</p></li>
+              <li><p> Use your linear function to estimate the weight of a tank that holds 40,000 gallons.</p></li>
+              <li>
+                <p>
+                  Visually, both curves seem to fit the data quite well,
+                  yet they make noticeable different predictions for the weight of a larger tank.
+                  Which prediction would you use?  Justify your answer.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            I am looking at sales figures for a new product, the gizmo.
+            The sales figures seem to be growing at an exponential rate.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Month</cell>
+              <cell>Jan</cell><cell>Apr</cell>
+              <cell>July</cell><cell>Oct</cell><cell>Jan</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Units sold</cell><cell>1082</cell><cell>1680</cell>
+              <cell>2662</cell><cell>3783</cell><cell>6430</cell>
+            </row>
+          </tabular>
+
+          <p>
+            <ol marker="(a)">
+              <li><p> Find the best fitting exponential function for the data.</p></li>
+              <li><p> Using your function, predict sales for the July after the data was collected.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  Using the scatterplot and the trendline from the Chart menu,
+                  we choose Exponential Trendline and display the function.
+                  Note that we do need to change the months to the appropriate numerical value.
+                  Excel would just replace them by consecutive numbers.
+                </p>
+
+                <image width="100%" source="images/sec1-5-sol5a.png"/>
+
+                <p>
+                  The best fitting exponential curve given by Trendlines is <m>y = 934.78e^{0.1459x}</m>.
+                </p>
+              </li>
+              <li>
+                <p> To find the predicted units sold for July we would need <m>x = 19</m>.</p>
+                <image width="100%" source="images/sec1-5-sol5b.png"/>
+                <p>
+                  Using Excel we see that the predicted number of units sold is 14,949.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Excel has a limited set of models that can be used for trend lines to automatically fit curves to data.
+            In later sections we will look at how to we can use calculus to find best fitting curves for other models.
+            Until we develop those techniques, we can make a guess at parameters that will make curves fit.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              The unit sales of widgets can be expected to follow a logistic model, with rapid growth of sales,
+              but with eventual saturation of the market so that there is a cap on the market.
+              In such a case the sales should be modeled by a logistic equation, of the form
+              <me>\Sales(\Time)=\text{MarketCap}/(1+\text{adjustment}*exp(-\rate*\Time))</me>.
+              We have the following data on sales:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>time(years)</cell><cell>0</cell><cell>2</cell>
+                <cell>4</cell><cell>6</cell><cell>8</cell>
+              </row>
+              <row bottom="medium">
+                <cell>sales</cell><cell>1000</cell><cell>5610</cell>
+                <cell>14,845</cell><cell>19,095</cell><cell>19,870</cell>
+              </row>
+            </tabular>
+
+            <p>
+              Find values of the parameters MarketCap, adjustment, and rate to reasonably fit the data.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The unit sales of an article of clothes for adults can be expected to follow the model of a normal distribution.
+              In such a case the sales should be modeled by a normal equation, of the form
+              <me>\Sales(\text{size})=\text{MaxPerSize}*\exp\left(-\left(\left(\frac{\text{Size}-\text{Mean}}{\text{StandardDeviation}}\right)^2\right)\right)</me>.
+              (Note we need an extra set of parenthesis to keep the order of operations correct.)
+              We have the following data on sales:
+            </p>
+
+            <tabular top="major" halign="center">
+              <row bottom="minor">
+                <cell>size</cell><cell>7</cell><cell>8</cell>
+                <cell>9</cell><cell>10</cell><cell>11</cell><cell>12</cell>
+              </row>
+              <row bottom="medium">
+                <cell>Weight</cell><cell>360</cell><cell>3,390</cell>
+                <cell>12,820</cell><cell>20,000</cell><cell>12,826</cell><cell>3,375</cell>
+              </row>
+            </tabular>
+
+            <p>
+              Find values of the parameters MaxPerSize, Mean, and StandardDeviation to reasonably fit the data.
+            </p>
+          </statement>
+          <solution>
+            <p>The initial plot shows that the distribution is normal:</p>
+            <image width="100%" source="images/sec1-5-sol7a.png"/>
+            <p>
+              The maximum is at <m>x = 10</m>. This suggests that <m>\text{Mean} = 10</m>.
+            </p>
+            <p>
+              If we use
+              <m>\Sales (x)= \text{MaxPerSize}*e^{-\left(\left(\frac{x-10}{\text{STDev}}\right)^2 \right)}</m>,
+              then if <m>x = 10</m> we have <m>\Sales (10)= \text{MaxPerSize}</m>,
+              and so <m>\text{MaxPerSize} = 20,000</m>, hence we have that
+              <me>\Sales (x)= 20,000*e^{-\left(\left(\frac{x-10}{\text{STDev}}\right)^2 \right)}</me>.
+            </p>
+            <p>Let <m>x = 11</m>, then <m>12825= 20,000*e^{\left(\left(\frac{-1}{\text{STDev}}\right)^2 \right)}</m>.</p>
+            <p>
+              Hence <m>e^{\frac{-1}{\text{STDev}^2}}=\frac{12825}{2000}</m>.
+              Then <m>\frac{-}{\text{STDev}^2}=\ln\left(\frac{12825}{20000}\right)</m>
+            </p>
+            <p>So <m>\text{STDev}= \sqrt{(-1/\ln(12825/20000  ) )}=1.5002</m> so <m>\text{STDev}= 1.5002</m></p>
+
+            <p>
+              Comment: We will develop some methods to solve problems such as this using
+              Excel in <xref ref="sec-6-4-OptimizationBestFitCurves"/> in <xref ref="chap-6-FunctionsSeveralVariables"/>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The populations of the states can be found online for both the 2000 and 2010 censuses.
+            </p>
+            <p>
+              (A good site is
+              <url href="http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population"  visual="http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population">http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population</url>.)
+            </p>
+
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    Explain why one would guess the 2010 population of a state is
+                    roughly a linear function of the 2000 population of the state.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Download the 2000 and 2010 populations of the 50 states.
+                    Produce a scatterplot that has the 2010 population as a function of the 2000 population.
+                    Find the equation of a best fitting curve for the data.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Explain what the <m>y</m>-intercept means in terms of people moving
+                    to or away from states with large populations.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              The tax revenues of the states can be found online.  (A good site is the census bureau at
+              <url href="http://www.census.gov/govs/state/"  visual="http://www.census.gov/govs/state/">http://www.census.gov/govs/state/</url>.)
+            </p>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    Explain why one would guess the 2010 tax revenue of a state is
+                    roughly a linear function of the 2010 population of the state.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    For 10 states, produce a scatterplot that has the 2010 tax revenue as a function of the 2010 population.
+                    Find the equation of a best fitting curve for the data.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Explain what the <m>y</m>-intercept means in terms of the relationship
+                    of the size of the state and the tax burden per person.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p><term>Projects:</term></p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Find the data for the consumer price index and the Dow Jones Industrial
+              average at the start of the year for the past 50 years.
+              Over that time, what is the best linear relationship between the two indices?
+              To make your equation easier to understand, scale the indices so they both start at 100 on the same day.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Pick your two favorite stocks and chart their prices on the opening days for a period of 30 years.
+              How well are their prices modeled as a linear model of each other?
+              See if you can find two stocks that seem to be inversely proportional to each other.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+
+  </section>

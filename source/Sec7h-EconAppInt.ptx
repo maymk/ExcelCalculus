@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-7-8-BusinessApplicationsIntegral">
+    <title>Economics Applications of the Integral</title>
+    <introduction>
+      <p><url href="external/Examples/Section-7-8-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-7-8-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+      <p>
+        We have looked at the definite integral as the signed area under a curve.
+        This lets us compute total profit, or revenue, or cost, from the related marginal functions.
+        We have looked at a number of applications where this was interpreted as an accumulation over time,
+        including total production of an oil well and present value of a revenue stream.
+        For some applications we want to look at the area between two curves.
+        For example, considering profit as the area between the cost and revenue curves.
+      </p>
+
+      <p>
+        In this section we will look at more applications from finance and economics where the concepts can easily be described in terms as of the area between curves.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Consumer and Producer Surplus</title>
+
+      <p>
+        When we looked at supply and demand curves we found an equilibrium point where the amount being offered for sale was equal to the amount people wanted to buy.
+      </p>
+
+      <image width="50%" source="images/sec7-8-1.png"/>
+
+      <p>
+        However, in that model,
+        there were people who were willing to sell for less than the equilibrium price and people who were willing to buy for more than the equilibrium price.
+        These people got an exceptionally good deal in the transaction.
+        We would like to measure that benefit,
+        since we can think of it as the extra profit the suppliers and buyers make on the transaction.
+        We note that each side will have an incentive to maximize that benefit.
+      </p>
+
+      <p>
+        Focus first on the consumer side.  The area under the demand function,
+        from 0 to the quantity sold, measures the consumers’ willingness to spend.
+        The area in the rectangle with that same base and height equal to the sale price measures the actual consumer expenditure.
+        The difference between the two is a quantity we will call <term>consumer surplus</term>.
+      </p>
+
+      <image width="50%" source="images/sec7-8-2.png"/>
+
+      <p>In calculus terms:</p>
+
+      <assemblage>
+        <p><me>\text{Willingness To Spend} = \int_0^{q_s} \text{demand function}(q)\, dq</me></p>
+        <p><me>\text{consumer expenditure} = \int_0^{q_s} p_s \, dq</me></p>
+        <p><me>\text{consumer surplus}= \int_0^{q_s} (\text{demand function}(q)- p_s )\,  dq</me></p>
+      </assemblage>
+
+      <p>As long as the price stays on the demand function curve, a lower price means a greater quantity sold, and a greater consumer surplus.</p>
+
+      <p>
+        In a similar manner, we can focus on the producer side.
+        The area under the supply function, from 0 to the quantity sold, measures the producers’ need for revenue.
+        The area in the rectangle with that same base and height equal to the sale price measures the actual producer revenue.
+        The difference between the two is a quantity we will call <term>producer surplus</term>.
+      </p>
+
+      <image width="50%" source="images/sec7-8-3.png"/>
+
+      <p>In calculus terms:</p>
+
+      <assemblage>
+        <p><me>\text{Needed revenue}= \int_0^{q_s} \text{supply function}(q)\, dq</me></p>
+        <p><me>\text{producer revenue}= \int_0^{q_s} p_s \,  dq</me></p>
+        <p><me>\text{producer surplus}= \int_0^{q_s} ( p_s-\text{supply function}(q)) \, dq</me></p>
+      </assemblage>
+
+      <p>
+        As long as the price stays on the supply function curve,
+        a higher price means a greater quantity sold, and a greater producer surplus.
+        Consider first an example where the supply and demand functions are simple enough that the computations can all be done by hand.
+      </p>
+
+      <example>
+        <title>Producer surplus with linear functions</title>
+        <statement>
+          <p>
+            I am trying to sell widgets and have determined the supply and demand functions to be:
+            <md>
+              <mrow>\text{supply price}(\quantity) \amp = 4+\quantity</mrow>
+              <mrow>\text{demand price}(\quantity) \amp = 106- 2*\quantity</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Find the equilibrium price and quantity.
+            Find the producer and consumer surpluses when the shirts are sold at the equilibrium price.
+            If the producers form a cartel, find the price that maximizes producer surplus.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            By setting supply price and demand price equal to each other we find an equilibrium quantity of 34 and an equilibrium price of 38.
+            The formulas for the consumer and producer surpluses become:
+            <me>\text{consumer surplus}= \int_0^{34} ((106-2q)-38)\,  dq</me>
+            <me>\text{producer surplus}= \int_0^{34} ( 38-(4+q)) \, dq</me>
+          </p>
+
+          <p>
+            To evaluate the integrals we can notice that each is a triangle of base 34.
+            One has height of 34 and the other has a height of 68.
+            Using geometry, the consumer surplus is $1,156 and the producer surplus is $578.
+          </p>
+
+          <p>
+            To find the maximum producer surplus, we need to turn the endpoint into a variable.
+            If the producers act as a cartel,
+            <me>\text{producer surplus}= \int_0^x ( (106-2x)-(4+q))\,  dq=\int_0^x ( 102-2x-q)\,  dq</me>
+            <me>=\left.\left((102-2x)q-\frac{q^2}{2}\right) \right|_0^x=((102-2x)x-\frac{x^2}{2}=102x-\frac{5x^2}{2}</me>
+          </p>
+
+          <p>
+            We can find the maximum of this by taking its derivative and setting it equal to 0.
+            The maximum occurs when <m>x=\frac{102}{5}=20.4</m>.  At that point the producer surplus is $1,040.40.
+          </p>
+        </solution>
+      </example>
+
+      <p>We now try an example where we need other techniques to evaluate the integrals.</p>
+
+      <example xml:id="ex-surplus-numeric">
+        <title>Producer surplus with numeric integration</title>
+        <statement>
+          <p>
+            A store trying to sell t-shirts on campus has determined the supply and demand functions to be:
+            <me>\text{supply price}(\quantity)=5+\ln (\quantity+10)</me>
+            <me>\text{demand price}(\quantity)=10+100/(\quantity+2)</me>.
+          </p>
+
+          <p>
+            Find the equilibrium price and quantity.
+            Find the producer and consumer surpluses when the shirts are sold at the equilibrium price.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We load the supply and demand price functions into excel and use Goal Seek to find an equilibrium price.
+            Rounding to the nearest unit for quantity and cent for price, we have an equilibrium price of $10.45 for a quantity of 222 shirts.
+          </p>
+
+          <sidebyside widths="40% 40%">
+            <image source="images/sec7-8-4.png"/>
+            <image source="images/sec7-8-5.png"/>
+          </sidebyside>
+
+          <p>
+            We then substitute these values into the equations for consumer and producer surplus.
+            <md>
+              <mrow>\text{consumer surplus}\amp = \int_0^{q_s} (\text{demand function}(q)- p_s )\,  dq</mrow>
+              <mrow>\text{consumer surplus}\amp = \int_0^{222} ((10+100/(\quantity+2))- 10.45)\,  dq</mrow>
+              <mrow>\text{producer surplus}\amp =\int_0^{q_s} ( p_s-\text{supply function}(q)) \, dq</mrow>
+              <mrow>\text{producer surplus}\amp =\int_0^{222} ( 10.45-(5+\ln (\quantity+10))) \, dq</mrow>
+            </md>.
+          </p>
+
+          <p>
+            To evaluate these integrals we either use a Riemann sum approximation,
+            like the one found on the example worksheet, or use Wolfram Alpha.
+            In either case, rounded to the nearest dollar, we have a consumer surplus of $372 and a producer surplus of $191.
+          </p>
+
+          <sidebyside widths="40% 40%">
+            <image source="images/sec7-8-6.png"/>
+            <image source="images/sec7-8-7.png"/>
+          </sidebyside>
+        </solution>
+      </example>
+
+      <p>
+        The sum of the consumer surplus and the producer surplus is referred to as the <term>total social gain</term>.
+        As we looked at consumers' surplus, we assumed that the sales were determined by supply and the price-quantity point was on the supply curve.
+        Similarly, when looking at producers' surplus we assume price is set by demand and the price-quantity point was on the demand curve.
+        If both sides are made up of many individuals acting independently, the price-quantity point is the equilibrium point, which is on both curves.
+        Selling at that point also maximizes the total social gain.
+      </p>
+
+      <image width="60%" source="images/sec7-8-8.png"/>
+
+      <p>
+        If however, either the producers or consumers can organize and act as a unit,
+        they can form a cartel and limit the amount sold.
+        If the producers form a cartel, they can lower production and raise the price.
+      </p>
+
+      <image width="60%" source="images/sec7-8-9.png"/>
+
+      <p>
+        As we can see from the picture, this always lowers the total social gain.
+        However for some reduction of quantity the producers’ surplus is increased.
+        In the equation for producer surplus the price <m>p_s</m> is <m>\text{demand function} (q_s)</m> rather than <m>\text{supply function} (q_s)</m>.
+        If the quantity goes down too far the producer surplus will also go down.
+      </p>
+
+      <example>
+        <title>Computing loss of social gain</title>
+        <statement>
+          <p>
+            A store trying to sell t-shirts on campus has determined the supply and demand functions to be:
+            <me>\text{supply price}(\quantity)=5+\ln (\quantity+10)</me>
+            <me>\text{demand price}(\quantity)=10+100/(\quantity+2)</me>
+          </p>
+
+          <p>
+            The store owner has a monopoly on campus and decides to limit the quantity sold to 200 shirts and charge what the market will bear.
+            Find the price, the producer surplus, and consumer surpluses.
+            Find these numbers if the owner decides to limit sales to 50.
+            How many shirts should the owner sell at what price to maximize producer surplus?
+            If producer surplus is maximized, how much is the total social gain reduced?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The formulas involved for supply and demand are the same ones we used in <xref ref="ex-surplus-numeric"/>.
+            With a slight modification if the worksheet from that example we can set it to compute the Riemann sums approximating the surpluses.
+            In particular, we use the demand function for finding the height of producer surplus.  (See cell D7.)
+
+          </p>
+
+          <image width="80%" source="images/sec7-8-10.png"/>
+
+          <p>
+            If we only want to sell 200 shirts, we can raise the price to from $10.45 to $10.50.
+            The producer surplus rises from $191 to $199.  However the consumer surplus falls from $372 to $362.
+          </p>
+
+          <image width="50%" source="images/sec7-8-11.png"/>
+
+          <p>
+            If we only want to sell 50 shirts, we can raise the price from$10.45 to $11.92.
+            The producer surplus falls from $191 to $174.  The consumer surplus falls from $372 to $230.
+          </p>
+
+          <image width="50%" source="images/sec7-8-12.png"/>
+
+          <p>
+            We can use solver to maximize the Producer surplus by varying the quantity.
+            A quantity of 140 maximizes the producer surplus at $210, but is doing that the total social gain is down to $537 from $563.
+          </p>
+
+          <image width="50%" source="images/sec7-8-13.png"/>
+        </solution>
+      </example>
+
+      <p>
+        Similarly, if the consumers form a cartel, they can artificially reduce the demand.
+        Since they will then pay the supply price the total social gain will be decreased,
+        but the consumers’ surplus may be increased.
+        In this case the consumer surplus is the integral of the difference between the demand function and the supply price of the quantity that will be sold.
+      </p>
+
+      <image width="60%" source="images/sec7-8-14.png"/>
+
+      <p>
+        In the example we just looked at, both the supply and demand curves have a small slope,
+        so the market is quite elastic from both the producers and consumers point of view.
+        Is such a case there is less incentive to form a cartel.
+        In other markets, like gas and oil, where the market is more inelastic,
+        there is more incentive to engage in monopolistic practices.
+      </p>
+    </subsection>
+
+    <subsection>
+      <title>Lorenz Curves and the Gini Index</title>
+
+      <p>
+        A question that arises in economics looks at the equity of income or wealth distribution in a country.
+        In standard economic theories either too much or too little equity indicates a lack of opportunity and is a hindrance to growth.
+        However, before being able to address the advantages or disadvantages of a level of inequity we need to be able to quantify the level of equity or inequity.
+        The standard method is to use the <term>Lorenz curve</term> and the <term>Gini index</term>.
+      </p>
+
+      <p>
+        The Lorenz curve is defined by a function <m>L(x)</m>, with <m>0\leq x\leq 1</m>,
+        that measures the proportion of something is held by the bottom <m>x</m> proportion of the population.
+        Thus, if <m>L(0.2)=.1</m>, for the Lorenz function for income in a country,
+        then the bottom 20% of the population earns 10% of the income in the country.
+        Since, under usual definitions, a person cannot have negative income, the Lorenz functions are nonnegative and increasing.
+        Since the Lorenz functions are measured from the bottom, we also have <m>L(x)\leq x</m> for all <m>x</m>.
+      </p>
+
+      <p>
+        We can make a few more observations.
+        The population as a whole has the entire income of the population.
+        An empty set of the population has none of the population's income.
+        Any bottom segment will have nonnegative income.
+        In formulas these observations become <m>L(1)=1</m>, <m>L(0)=0</m>,
+        and <m>L(x)\ge 0</m>, for all <m>x</m>, respectively.
+      </p>
+
+      <p>
+        If we had perfect equity, our Lorenz function would be <m>L(x)=x</m>.
+        Any Lorenz curve we find for a real population will be below this curve.
+        The Gini index (or Gini coefficient) measures the percentage that a real Lorenz curve is below the ideal curve.
+      </p>
+
+      <image width="50%" source="images/sec7-8-15.png"/>
+
+      <p>
+        Computationally,
+        <me>G=\frac{\int_0^1 (x-L(x))dx}{\int_0^1 x  dx}=2\int_0^1 (x-L(x))dx</me>.
+      </p>
+
+      <p>
+        In practice this number is often multiply by 100,
+        reporting the percentage (0 to 100) rather than proportion (0 to 1) of the area under the ideal function and above the measured function.
+      </p>
+
+      <example>
+        <title>Gini index with a formula for income distribution</title>
+        <statement>
+          <p>
+            The Lorenz curve for income in a certain country is given by
+            <m>L(x)=.8x^3+.2x</m>.  What proportion of the income is earned by the bottom half of the population?
+            Find the Gini index.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To find the proportion earned by the bottom half of the population we substitute 0.5 in the equation.
+            <me>L(0.5)=(0.8) (0.5)^3+(0.2)(0.5)=0.1+0.1=0.2</me>.
+          </p>
+
+          <p>
+            Thus the bottom 50% of the population earns 20.% of the total income.
+            To compute the Gini index, we compute:
+            <me>G=2\int_0^1 (x-0.8x^3-0.2x)dx=(2)(0.4x^2-0.2x^4 ) |_0^1=.4</me>.
+          </p>
+
+          <p>
+            So the Gini index in this hypothetical country is 40.
+            To put this number in context, the reported Gini index for the United States in 2009 was 46.8.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        In practice, the Gini index is an application where a numeric approximation of an integral is the method most likely to be used.
+        We are unlikely to get a formula for income distribution.
+        Instead we are likely to find data points.
+        Since there is no good model for how the income will be distributed,
+        we can simply connect the points with line segments and find the area using the area formula for a trapezoid.
+      </p>
+
+      <example>
+        <title>Gini index with a chart for income distribution</title>
+        <statement>
+          <p>
+            We have the following data from the census bureau on income distribution in the US in 2008.
+            Compute the Gini index.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Population %tile</cell> <cell>0</cell><cell>20</cell><cell>40</cell>
+              <cell>60</cell><cell>80</cell><cell>90</cell><cell>100</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Income %tile</cell><cell>0</cell><cell>3.4</cell>
+              <cell>12.0</cell><cell>26.7</cell><cell>50.0</cell>
+              <cell>78.5</cell><cell>100</cell>
+            </row>
+          </tabular>
+        </statement>
+        <solution>
+          <p>
+            We recall that the area of a trapezoid is (width)(average height).
+            We put the data into a spreadsheet.
+          </p>
+
+          <image width="60%" source="images/sec7-8-16.png"/>
+
+          <p>
+            Then we evaluate the formulas.
+          </p>
+
+          <image width="60%" source="images/sec7-8-17.png"/>
+
+          <p>
+            In percentages, the Gini index is approximated at 45.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+   <exercise>
+      <title>Reading check, Economics Applications of the integral</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Accumulating a function over time is simply taking a definite integral. ", 
+"We can accumulate marginal cost over time to find change in cost. ", 
+"The example on oil production took the integral of an exponential function. ", 
+"to find the current value of a revenue stream we take the integral of the revenue stream times a discounting functions that represents how much a future payment is worth today.  ", 
+"If we can set up the integral of an application, we can use CAS to evaluate the integral. ", 
+
+"This section explained how to use calculus to predict the future value of the stock market. ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.8, Economics Applications of the integral, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-7-8">
+      <title>Exercises Business Applications of the Integral Problems</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the following exercises, assume we have a free market and that goods are sold at market equilibrium.
+            Find the consumer surplus, producer surplus, and total social gain.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice(q)= 50+q/2</m> and <m>\Dprice(q)= 150-q/5</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The two curves intersect at the point of market equilibrium,
+              <m>\left({\frac{1000}{7},\frac{850}{7}}\right)</m>.
+            </p>
+
+            <p>
+              <md>
+                <mrow>\text{ProducerSurplus}\amp =\int_0^{1000/7}\left({\frac{850}{7}}\right)-\left({50+\frac{x}{2}}\right)\,dx=5102.04</mrow>
+                <mrow>\text{ConsumerSurplus}\amp =\int_0^{1000/7}\left({150-\frac{x}{5}}\right)-\left({\frac{850}{7}}\right)\,dx=2040.82</mrow>
+                <mrow>\text{TotalSocialGain}\amp =\text{ProducerSurplus}+\text{ConsumerSurplus}=7142.86</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice(q)=\ln (q+10)</m> and <m>\Dprice(q)= 100-q</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice(q)= 50(1-(0.99)^q)</m> and <m>\Dprice(q)= 100(0.99)^q</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The two curves intersect at the point of market equilibrium,
+              <m>(109.31, 33.33)</m>.
+            </p>
+
+            <p>
+              <md>
+                <mrow>\ProducerSurplus\amp =\int_0^{109.31}(33.33)-\left({50(1-(0.99)^q)}\right)\,dx=1494.79</mrow>
+                <mrow>\ConsumerSurplus\amp =\int_0^{109.31}\left({100(0.99)^q}\right)-33.33)\,dx=2989.58</mrow>
+                <mrow>\TotalSocialGain\amp=\ProducerSurplus+\ConsumerSurplus=4484.37</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice(q)= 50(1-(0.95)^{q/10}</m> and <m>\Dprice(q)= 150(0.95)^{q/10}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me>\Sprice(q)=\begin{cases} 5\amp q\le 10\\
+                                           q^2/20\amp q \gt 10\\
+                             \end{cases}</me>
+              and
+              <me>\Dprice(q)=\begin{cases}
+                              100\amp q\le 10\\
+                              110-q\amp q\gt 10\\
+                             \end{cases}</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The two curve intersect at the point of market equilibrium,
+              <m>(37.958, 72.042)</m>.
+            </p>
+            <p>
+              <me>\ProducerSurplus=\int_0^{37.958}(72.042)-(\Sprice(q))\,dx=1789.732</me>.
+              The integral needs to be done in two parts with the break at 10.
+              <me>\ConsumerSurplus=\int_0^{37.958}\Dprice(q)-72.042\,dx=670.405</me>.
+              <me>\TotalSocialGain=\ProducerSurplus+\ConsumerSurplus=2460.137</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\Sprice(q)= q/2</m> and
+              <me>\Dprice(q)=\begin{cases}
+                              200\amp q\le 10\\
+                              250*.8^{q/10}\amp q\gt 10\\
+                              \end{cases}</me>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            Assume <m>\Sprice(q)= 30+q</m> and <m>\Dprice(q)= 170-q</m>.
+          </p>
+
+          <p>
+            <ol marker="(a)">
+              <li><p> Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+              <li><p> If the producers can form a cartel and restrict the available quantity to 50, selling at the supply price for 50, what are the consumer surplus, producer surplus, and total social gain?</p></li>
+              <li><p> Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  The two curve intersect at the point of market equilibrium,
+                  <m>(70, 100)</m>.
+                </p>
+
+                <p>
+                  <md>
+                    <mrow>\ProducerSurplus \amp =\int_0^{70}(100)-(30+q)\,dx=2450</mrow>
+                    <mrow>\ConsumerSurplus \amp =\int_0^{70}(170-q)-100\,dx=2450</mrow>
+                    <mrow>\TotalSocialGain \amp =\ProducerSurplus+\ConsumerSurplus=4900</mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <md>
+                    <mrow>\Dprice(50) \amp =120</mrow>
+                    <mrow>\ProducerSurplus \amp = \int_0^{50}(120)-(30+q)\,dx=3250</mrow>
+                    <mrow>\ConsumerSurplus \amp = \int_0^{50}(170-q)-120\,dx=1250</mrow>
+                    <mrow>\TotalSocialGain \amp = \ProducerSurplus+\ConsumerSurplus=4500</mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The formula for the producer surplus at x is
+                  <me>\int_0^x \Dprice(t)-\Sprice(x)\,dx</me>.
+                </p>
+
+                <p>
+                  In our case we get
+                  <me>\int_0^x (170-t)-(30+x) \,dt=\int_0^x(140-t-x) \,dt</me>.
+                  We note that x is a constant for our integration.  Thus, thus we get
+                  <me>\left.\left({140t-\frac{t^2}{2}-xt}\right)\right|_0^x=140x-\frac{3x^2}{2}</me>.
+                </p>
+
+                <p>The Maximum Producer surplus is 3266.67, achieved when q is 46.67</p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Assume SupplyPrice(q)= 10+q/2 and DemandPrice(q)= 110-q/3.
+          </p>
+
+          <p>
+            <ol marker="(a)">
+              <li><p> Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+              <li><p> If the producers can form a cartel and restrict the available quantity to 400, selling at the supply price for 400, what are the consumer surplus, producer surplus, and total social gain?</p></li>
+              <li><p> Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Assume <m>SupplyPrice(q)= 10+q^2</m> and <m>DemandPrice(q)= 210-q^2</m>.
+          </p>
+
+          <p>
+            <ol marker="(a)">
+              <li><p> Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</p></li>
+              <li><p> If the producers can form a cartel and restrict the available quantity to 5, selling at the demand price for 5 (for a price of 185), what are the consumer surplus, producer surplus, and total social gain?</p></li>
+              <li><p> Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  The two curve intersect at the point of market equilibrium,
+                  <m>(10, 110)</m>.
+                </p>
+
+                <p>
+                  <md>
+                    <mrow>\ProducerSurplus \amp = \int_0^{10}(110)-(10+q^2)\,dx=\frac{2000}{3}</mrow>
+                    <mrow>\ConsumerSurplus \amp = \int_0^{10}(210-q^2)-110\,dx=\frac{2000}{3}</mrow>
+                    <mrow>\TotalSocialGain \amp = \ProducerSurplus+\ConsumerSurplus=\frac{4000}{3}</mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <md>
+                    <mrow>\Dprice(5)\amp =185</mrow>
+                    <mrow>\ProducerSurplus \amp = \int_0^{5}(185)-(10+q^2)\,dx=\frac{2500}{3}</mrow>
+                    <mrow>\ConsumerSurplus \amp = \int_0^{5}(210-q^2)\,dx=\frac{250}{3}</mrow>
+                    <mrow>\TotalSocialGain \amp = \ProducerSurplus+\ConsumerSurplus=\frac{2750}{3}</mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The formula for the producer surplus at <m>x</m> is
+                  <me>\int_0^x DemandPrice(t)-SupplyPrice(x)\,dx</me>.
+                </p>
+
+                <p>
+                  In our case we get
+                  <me>\int_0^x (210-t^2)-(10+x^2) \,dt=\int_0^x(200-t^2-x^2) \,dt</me>.
+                  We note that <m>x</m> is a constant for our integration.  Thus, thus we get
+                  <me>\left.\left({200t-\frac{t^3}{3}-x^2t}\right)\right|_0^x=200x-\frac{4x^3}{3}</me>.
+                </p>
+
+                <p>
+                  To find the maximum producer surplus, we take the derivative of the function above and see it is zero at <m>\sqrt{50}</m>.
+                  The maximum producer surplus is 942.81, achieved when q is <m>\sqrt{50}</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Consider the Lorenz curve <m>L(x)=0.2x+0.8x^2</m>.  Find the Gini index.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Consider the Lorenz curve <m>L(x)=.03x+0.7x^4</m>.  Find the Gini index.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <me>G=\frac{100 \int_0^1(x-(0.3x+0.7x^4))dx}{.5}=200 \int_0^1(-0.7x+0.7x^4)dx=42</me>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            You research a country and find the following information on income share:
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Population %tile</cell> <cell>20</cell><cell>40</cell>
+              <cell>60</cell><cell>80</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Income %tile</cell><cell>5</cell><cell>15</cell>
+              <cell>30</cell><cell>50</cell>
+            </row>
+          </tabular>
+
+          <p>
+            Compute an approximation of the Gini index.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            You research a country and find the following information on income share:
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Population %tile</cell> <cell>20</cell><cell>40</cell>
+              <cell>60</cell><cell>80</cell><cell>90</cell><cell>95</cell>
+              <cell>99</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Income %tile</cell><cell>5</cell><cell>15</cell>
+              <cell>30</cell><cell>50</cell><cell>65</cell>
+              <cell>75</cell><cell>90</cell>
+            </row>
+          </tabular>
+
+          <p>Compute an approximation of the Gini index.</p>
+        </statement>
+        <solution>
+          <p>
+            We approximate the area by using straight lines between the given point and using trapezoids for the area of section.
+            We then need to multiply by 2, since we want the percentage below the diagonal line, and multiply by 100 to go from percentile to percents.
+          </p>
+
+          <image width="60%" source="images/sec7-8-sol13a.png"/>
+
+          <p> The Gini index is approximately 57.</p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Find data online on the income distribution in the United States.
+            Good sources are the Census Bureau, at
+            <url href="http://www.census.gov/hhes/www/income/data/historical/inequality/index.html" visual="http://www.census.gov/hhes/www/income/data/historical/inequality/index.html">http://www.census.gov/hhes/www/income/data/historical/inequality/index.html</url>, and
+            <url href="http://www.wealthandwant.com/issues/income/income_distribution.html" visual="http://www.wealthandwant.com/issues/income/income_distribution.html">http://www.wealthandwant.com/issues/income/income_distribution.html</url>.
+            Compute an approximation of the Gini index from your data.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>
+

@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+  <section xml:id="sec-4-2DerivativesCombinationFunctions">
+    <title>Derivative Rules for Combinations of Functions</title>
+    <introduction>
+      <p>
+	      In the last section we learned rules to symbolically differentiate some elementary functions.
+        To summarize, we have established 5 rules.
+      </p>
+
+    <assemblage>
+      <title>Elementary Formulas</title>
+      <p>If <m>f(x)=a</m>, then <m>f'(x)=0</m>.</p>
+      <p>If <m>f(x)=ax</m>, then <m>f'(x)=a</m>.</p>
+      <p>If <m>f(x)=a*x^n</m>, then <m>f'(x)=a*n*x^{n-1}</m>, for any nonzero number n.</p>
+      <p>If <m>f(x)=e^x</m>, then <m>f'(x)=e^x</m>.</p>
+      <p>If <m>f(x)=a^x</m>, then <m>f'(x)=a^x \ln(a)</m>.</p>
+      <p>If <m>f(x)=\ln(x)</m>, then <m>f'(x)=1/x</m></p>
+    </assemblage>
+
+      <p>
+        However, we do not yet have a rule for taking the derivative of a function as simple as <m>f(x)=x+2</m>.
+        Rather than producing rules for each kind of function,
+        we wish to discover how to differentiate functions obtained by arithmetic on functions we already know how to differentiate.
+        This would let us differentiate functions like
+        <m>f(x)=5 x^3+3x^2+1</m>, or <m>g(x)=(x+2) 1.03^x</m>, or <m>F(x)= \ln(x)/(x+3)</m>,
+        which are built up from our elementary functions.  We want rules for multiplying a known function by a constant,
+        for adding or subtracting two known functions, and for multiplying or dividing two known functions.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Derivatives of scalar products</title>
+
+      <p>
+        We start by differentiating a constant times a function.
+      </p>
+
+      <claim>
+        <title>Scalar multiple rule</title>
+        <statement>
+          <p>
+            The derivative of <m>c*f(x)</m> is <m>c*f'(x)</m>.
+            In other words,
+            <me>
+              [c*f(x)]'=c*f'(x)
+            </me>.
+          </p>
+        </statement>
+      </claim>
+
+      <example>
+        <title>Derivatives of constants times standard functions</title>
+        <statement>
+          <p>
+            Find the derivatives of the following functions:
+            <ol marker="(a)">
+              <li><m> f(x)=2e^x</m></li>
+              <li><m> g(x)=500(1.05)^x</m></li>
+              <li><m> h(x)=\ln(x^7)</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our rule:
+            <ol marker="(a)">
+              <li><m> f'(x)=2[e^x ]'=2e^x.</m></li>
+              <li><m> g'(x)=500[(1.05)^x ]'=500(1.05)^x \ln(1.05).</m></li>
+              <li><m> h'(x)=[\ln(x^7)]'=[7 \ln(x)]'=7[\ln(x)]'=7/x.</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of sums and differences</title>
+
+      <p>
+        Next we want to look at the sum or difference of two functions.
+      </p>
+
+      <claim>
+        <title>Sum and difference rule</title>
+        <statement>
+          <p>
+            The derivative of <m>f(x)\pm g(x)</m> is <m>f'(x)\pm g'(x)</m>.
+            In other words,
+            <me>[f(x)\pm g(x)]'=f'(x)\pm g'(x)</me>.
+          </p>
+        </statement>
+      </claim>
+
+      <example>
+        <title>Derivatives of sums and differences of standard functions</title>
+        <statement>
+          <p>
+            Find the derivatives of the following functions:
+            <ol marker="(a)">
+              <li><m> f(x)=5x^3+3x^2-7</m></li>
+              <li><m> g(x)=100e^x-1000(1.03)^x</m></li>
+              <li><m> h(x)=5\sqrt{x}+2/\sqrt{x}-7x^{-3}</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our rule:
+            <ol marker="(a)">
+              <li><m>  f'(x)=[5x^3 ]'+[3x^2 ]'-[7]'=15x^2+6x-0.</m></li>
+              <li><m> g'(x)=100[e^x]'-[1000(1.03)^x]'=100e^x-1000(1.03)^x  \ln(1.03).</m></li>
+              <li>
+                <p>
+                  <md>
+                    <mrow> h'(x)\amp =5[x^{1/2}]'+2[x^{-1/2}]'-7[x^{-3}]'</mrow>
+                    <mrow>\amp =5/2 x^{-1/2}-x^{-3/2}+21 x^{-4}</mrow>
+                    <mrow>\amp =\frac{5}{2\sqrt{x}}-\frac{1}{\sqrt{x^3}}+\frac{21}{x^4}</mrow>
+                  </md>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <paragraphs>
+        <title>Theory and justification</title>
+
+        <p>
+          The basic argument for all of our rules starts with local linearity.
+          Recall that if <m>f(x)</m> is differentiable at <m>x_0</m>,
+          then in a region around <m>x_0</m>, we can approximate <m>f(x)</m> by a linear function,
+          <m>f(x)\approx f'(x_0 )(x-x_0 )+f(x_0)</m>.
+          To find the derivative of a scalar product, sum, difference, product, or quotient of known functions,
+          we perform the appropriate actions on the linear approximations of those functions.
+          We then take the coefficient of the linear term of the result.
+        </p>
+
+        <p>
+          For our first rule we are differentiating a constant times a function.
+          Following the general method we look at how we multiply a constant times the linear approximation.
+          <me>
+            c*(f' (x_0 )(x-x_0 )+f(x_0 ))=(c f' (x_0 ))(x-x_0 )+(c f(x_0 ))
+          </me>.
+        </p>
+
+        <p>
+          Taking the coefficient of the linear term gives the scalar multiple rule,
+          the derivative of a constant times a functions is the constant times the derivative of the function.
+        </p>
+
+        <p>
+          Next, we want to look at the sum or difference of two functions.
+          Following the general method we look at the sum or difference of the linear approximations.
+          <md>
+            <mrow>(f' (x_0 )(x-x_0 )+f(x_0 ))\amp \pm(g' (x_0 )(x-x_0 )+g(x_0 ))</mrow>
+            <mrow>\amp =( f' (x_0 )\pm g' (x_0 ))(x-x_0 )+(f(x_0 )±g(x_0 )) </mrow>
+          </md>.
+        </p>
+
+        <p>
+          Taking the coefficient of the linear term gives the sum or difference rule,
+          the derivative of a sum or difference of two functions is the sum or difference of the derivatives of the functions.
+        </p>
+      </paragraphs>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of products</title>
+
+      <p>We now turn our attention to the product of two functions.</p>
+
+      <claim>
+        <title>Product rule</title>
+        <statement>
+          <p>
+            The derivative of <m>f(x)* g(x)</m> is <m>f'(x)g(x)+f(x)g'(x)</m>.
+            In other words,
+            <me>
+              [f(x)*g(x)]'=f'(x)*g(x)+f(x)*g'(x)
+            </me>.
+          </p>
+        </statement>
+      </claim>
+
+      <p>
+        Warning: Note that the derivative of a product is not the product of the derivatives!
+      </p>
+
+      <p>
+        We start with an example that we can do by multiplying before taking the derivative.
+        This gives us a way to check that we have the rule correct.
+      </p>
+
+      <example>
+        <title>Simple derivative of a product</title>
+        <statement>
+          <p>
+            Let <m>f(x)=x</m> and <m>g(x)=x^2</m>.  Find the derivative of <m>f(x)*g(x)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Note that <m>f(x)*g(x)=x^3</m>.  Using our rule for monomials
+            <m>(f(x)*g(x))'=(x^3 )'=3x^2</m>.  Using the same rule we see <m>f'(x)=1</m>, and <m>g'(x)=2x</m>.
+            We can now evaluate using the product rule:
+            <md>
+              <mrow>(f(x)*g(x))' \amp = f'(x)*g(x)+f(x)*g'(x)</mrow>
+              <mrow>\amp = (1)*(x^2 )+(x)*(2x)= 3x^2</mrow>
+            </md>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        Both methods give the same answer.
+        Note that the product of the derivatives is <m>2x</m> which is NOT the derivative of the product.
+      </p>
+
+      <example>
+        <title>General derivatives of products</title>
+        <statement>
+          <p>
+            Find the derivatives of the following functions:
+            <ol marker="(a)">
+              <li><m> f(x)=(6x+100)*(1.06)^x.</m></li>
+              <li><m> g(x)=\sqrt{x}  \ln(x).</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li><md>
+            <mrow> f'(x)\amp=(6x+100)'*(1.06)^x+(6x+100)*((1.06)^x)'</mrow>
+            <mrow>\amp =(6)*(1.06)^x+(6x+100)*(1.06)^x \ln(1.06) </mrow>
+          </md>.</li>
+              <li><m> g'(x)=[\sqrt{x}]'\ln(x)+\sqrt{x}[\ln(x)]'= [1/(2\sqrt{x})]\ln(x)+\sqrt{x}[1/x].</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <paragraphs>
+        <title>Theory and justification</title>
+
+        <p>
+          Following the general rule we look at the linear term of the product of the linear approximations.
+          Consider the product of two linear expressions.
+          <me>
+            (a x+c)(b x+d)=a b x^2+(a d+b c)x+c d
+          </me>.
+        </p>
+
+        <p>
+          The coefficient of the linear term is <m>(a d+b c)</m>.  Thus, when we take the product
+          <me>
+            (f'(x_0)(x-x_0 )+f(x_0 ))*(g' (x_0 )(x-x_0)+g(x_0 ))
+          </me>,
+          the coefficient of the linear term is
+          <me>
+            f'(x_0 )g(x_0 )+f(x_0)g'(x_0)
+          </me>.
+        </p>
+      </paragraphs>
+    </subsection>
+
+    <subsection>
+      <title>Derivatives of quotients</title>
+
+      <p>
+        Finally, we turn our attention to the quotient of two functions.
+      </p>
+
+      <claim>
+        <title>Quotient rule</title>
+        <statement>
+          <p>
+            The derivative of <m>\frac{f(x)}{g(x)}</m> is <m>\frac{f'(x)g(x)-f(x)g'(x)}{(g(x))^2}</m>.
+            In other words,
+            <me>
+              \left[\frac{f(x)}{g(x)}\right]'=\frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x))^2}
+            </me>.
+          </p>
+        </statement>
+      </claim>
+
+      <p>
+        Warning: Once again, note that the derivative of a quotient is NOT the quotient of the derivatives!
+      </p>
+
+      <example>
+        <title>Simple derivative of a quotient</title>
+        <statement>
+          <p>For our first example we look at a case that we dane do without the quotient rule by simplifying first.  This lets us check our answer.  Let <m>f(x)=x^2</m> and <m>g(x)=x</m>.  Find the derivative of <m>f(x)/g(x)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>We start by simplifying.  Note that <m>f(x)/g(x)=x</m>.  Using our rule for monomials, <m>(f(x)*g(x))'=(x )'=1</m>.</p>
+           <p>Now we use the quotient rule directly.  
+            Using the same rule we see <m>f'(x)=2x</m>, and <m>g'(x)=1</m>.
+            Using the quotient rule:
+            <md>
+              <mrow>(f(x)/g(x))' \amp = \frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x))^2}</mrow>
+              <mrow> \amp = \frac{(2x)*(x )-(x^2)*(1)}{x^2}=\frac{x^2}{x^2}=1</mrow>
+            </md>.
+          </p>
+          <p>Both methods give the same answer.</p>
+        </solution>
+      </example>
+
+      <p>
+        Note that the quotient of the derivatives is <m>2x</m>,
+        which is not the same as the derivative of the quotient.
+      </p>
+
+      <example>
+        <title>General derivatives of quotients</title>
+        <statement>
+          <p>
+            Find the derivatives of the following functions:
+            <ol marker="(a)">
+              <li><m> f(x)=((6x^2+100))/(x^3+x).</m></li>
+              <li><m> g(x)=(1.07)^x/(3x+5).</m></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li><m>f'(x)=\left(\frac{6x^2+100}{x^3+x}\right)'=\frac{(12x)(x^3+x)-(6x^2+100)(3x^2+1)}{(x^3+x)^2}</m></li>
+              <li><m>g'(x)=\left(\frac{1.07^x}{3x+5}\right)'=\frac{(\ln(1.07)1.07^x)(3x+5)-(1.07^x)(3)}{(3x+5)^2}</m></li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+
+      <paragraphs>
+        <title>Theory and justification</title>
+
+        <p>
+          Following the general method, we look at the linear term of the quotient of the linear approximations.
+          However, we need to do an algebraic trick before we can find the linear term.
+          Consider the quotient of two linear expressions:
+          <me>
+            \frac{a+c x}{b+d x}=\frac{(a+c x)(b-d x)}{(b+d x)(b-d x)}=\frac{a b+(c b-a d)x-c d x^2}{b^2  -d^2 x^2}
+          </me>.
+        </p>
+
+        <p>
+          When <m>x</m> is small enough, we get a good approximation by ignoring the <m>x^2</m> term.
+          In that approximation, the coefficient of the linear term is <m>\frac{(c b-a d)}{b^2}</m>.
+          Thus, when we take the quotient,
+          <me>
+            \frac{f' (x_0 )(x-x_0 )+f(x_0 )}{g' (x_0 )(x-x_0 )+g(x_0 )}
+          </me>,
+          the coefficient of the linear term is
+          <me>
+            \frac{f'(x_0 )g(x_0 )-f(x_0)g'(x_0 )}{(g(x_0 ))^2}
+          </me>.
+        </p>
+      </paragraphs>
+    </subsection>
+
+
+    <exercise>
+      <title>Reading check, Derivative Rules for Combinations of Functions</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"The derivative of \(c*f(x)\) is \(c*f'(x)\).  ", 
+"The derivative of \(f(x)+g(x)\) is \(f'(x)+g'(x)\).  ", 
+"The derivative of \(f(x)-g(x)\) is \(f'(x)-g'(x)\).  ", 
+"The derivative of \(f(x)*g(x)\) is \(f'(x)*g(x)+f(x)*g'(x)\).  ", 
+"The derivative of \(f(x)/g(x)\) is \(\frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x)^2}\).  ", 
+
+"The derivative of \(f(x)/g(x)\) is \(\frac{f(x)*g'(x)-f'(x)*g(x)}{(g(x)^2}\).  ", 
+"The derivative of \(f(x)*g(x)\) is \(f'(x)*g'(x)\).  ", 
+"The derivative of \(f(x)/g(x)\) is \(f'(x)/g'(x)\).  " 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 4.2, Derivative Rules for Combinations of Functions, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-4-2">
+	    <title>Exercises: Derivative Rules for Combinations of Functions Problems</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Use the rules from the last two sections to find the derivatives of the following functions.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=3x^5+7x^4+5x+9</m>.
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>f'(x)=15x^4+28x^3+5.</m>
+            </p>
+          </answer>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=10x^{123}+19x^{50}-5x^4-2x^{-7}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=2x+3\sqrt{x}-5\sqrt[3]{x}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Rewrite using exponential notation: <m>h(x)=2x+3x^{1/2}-5x^{1/3}</m> Then take the derivative:
+              <me>
+                h'(x)=2+\frac{3}{2} x^{-1/2}-\frac{5}{3} x^{-2/3}=2+\frac{3}{2\sqrt{x}}-\frac{5}{3\sqrt[3]{x^2}}
+              </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=e^x+8^x+\pi^x-1.07^x</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=(x^3+5x^2-7)(x^2-3)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Product Rule:
+              <md>
+                <mrow>m'(x)\amp =(x^3+5x^2-7)'(x^2-3)+(x^3+5x^2-7) (x^2-3)'</mrow>
+                <mrow>\amp=(3x^2+10x)(x^2-3)+(x^3+5x^2-7)(2x)</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=(10x-9)(x^5+\sqrt{x})</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=e^x \ln(x)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Product Rule:
+              <me>
+                f'(x)=(e^x)' \ln(x)+e^x (\ln(x))'= e^x\ln(x)+e^x  \frac{1}{x}=e^x [\ln(x)+\frac{1}{x}]
+              </me>.
+            </p>
+            <p>
+              Note: the equation <m>f'(x)= e^x  \ln(x)+\frac{e^x}{x}</m> is also acceptable as a solution.
+            </p>
+            <p>
+              Factoring is sometimes done, but depends on the problem we are trying to solve and what we are trying to do with the derivative.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=1.07^x (10x-15)</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h(x)=(a x+b)(c x+d)(e x+f)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              If we have a product of 3 functions we need to first consider 2 of the functions as a sigle function that includes a product.
+              <md>
+                <mrow>h'(x)\amp =(a x+b)' ((c x+d)(e x+f))+(a x+b)( (c x+d) (e x+f))'</mrow>
+                <mrow>\amp =(a x+b)' (c x+d)(e x+f)+(a x+b) (c x+d)'  (e x+f)+(a x+b)(c x+d) (e x+f)'</mrow>
+                <mrow>\amp =a(c x+d)(e x+f)+(a x+b)c (e x+f)+(a x+b)(c x+d)e</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> k(x)=1.04^x e^x</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\frac{(x^2-5x)}{(x^2+3)}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Quotient Rule:
+              <md>
+                <mrow>m'(x)\amp =\frac{(x^2-5x)' (x^2+3)-(x^2-5x) (x^2+3)'}{(x^2+3)^2}</mrow>
+                <mrow>\amp =\frac{(2x-5)(x^2+3)-(x^2-5x)(2x)}{(x^2+3)^2}</mrow>
+              </md>.
+            </p>
+
+            <p>
+              We can simplify this :
+              <me>
+                m'(x)=\frac{2x^3-5x^2+6x-15-(2x^3-10x^2 )}{(x^2+3)^2} =\frac{-15x^2+6x-15}{(x^2+3)^2}
+              </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x)=\frac{(x^2-5x+3)}{e^x}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>f(x)=\frac{ln(x))}{(2x+7)}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Quotient Rule:
+              <md>
+                <mrow>f'(x)\amp =\frac{(\ln(x))'(2x+7)-(\ln(x))(2x+7)'}{(2x+7)^2}</mrow>
+                <mrow>\amp =\frac{(1/x)(2x+7)-(\ln(x))(2)}{(2x+7)^2}</mrow>
+                <mrow>\amp =\frac{x}{x}\frac{ (1/x)(2x+7)-(\ln(x))(2)}{(2x+7)^2}</mrow>
+                <mrow>\amp = \frac{2x+7-2x \ln(x)}{x (2x+7)^2}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x)=\frac{(x^3+2x+9)}{1.07^x}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x)=\frac{(a x+b)}{(c x+d)}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Quotient Rule:
+              <md>
+                <mrow>h'(x)\amp =\frac{(a x+b)' (c x+d)-(a x+b) (c x+d)'}{(c x+d)^2}</mrow>
+                <mrow>\amp = \frac{a(c x+d)-(a x+b)c}{(c x+d)^2} =\frac{acx+ad-(ac x+bc)}{(c x+d)^2}</mrow>
+                <mrow>\amp =\frac{ad-bc}{(c x+d)^2}</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>k(x)=\frac{((3x+5)(x^2+7))}{(x^2+2x)}</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\frac{\ln(x)(1.04^x)}{3x^2+7}</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Quotient Rule with embedded Product Rule:
+              <md>
+                <mrow>m'(x)\amp =\frac{(\ln(x)(1.04^x ))'(3x^2+7) -(\ln(x) (1.04^x))(3x^2+7)'}{(3x^2+7)^2}</mrow>
+                <mrow>\amp =\frac{(\ln(x)'(1.04^x )+\ln(x)(1.04^x )')(3x^2+7) -(\ln(x)  (1.04^x))(3x^2+7)'}{(3x^2+7)^2} </mrow>
+                <mrow>\amp =\frac{(\frac{1}{x}(1.04^x )+\ln(x)\ln(1.04)(1.04^x ))(3x^2+7) -(\ln(x) (1.04^x))(6x)}{(3x^2+7)^2} </mrow>
+              </md>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x)=\frac{1.06^x e^x}{1.08^x}</m>
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>For the following problems, use the following data to find the indicated derivative.</p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>x</cell>
+              <cell>0</cell><cell>1</cell><cell>2</cell><cell>3</cell>
+              <cell>4</cell><cell>5</cell><cell>6</cell><cell>7</cell>
+              <cell>8</cell><cell>9</cell>
+            </row>
+            <row bottom="minor">
+              <cell>f(x)</cell>
+              <cell>3</cell><cell>5</cell><cell>7</cell><cell>1</cell>
+              <cell>9</cell><cell>8</cell><cell>4</cell><cell>2</cell>
+              <cell>0</cell><cell>6</cell>
+            </row>
+            <row bottom="minor">
+              <cell>f'(x)</cell>
+              <cell>7</cell><cell>6</cell><cell>5</cell><cell>4</cell>
+              <cell>3</cell><cell>2</cell><cell>1</cell><cell>0</cell>
+              <cell>9</cell><cell>8</cell>
+            </row>
+            <row bottom="minor">
+              <cell>g(x)</cell>
+              <cell>8</cell><cell>4</cell><cell>0</cell><cell>6</cell>
+              <cell>2</cell><cell>9</cell><cell>5</cell><cell>1</cell>
+              <cell>7</cell><cell>3</cell>
+            </row>
+            <row bottom="minor">
+              <cell>g'(x)</cell>
+              <cell>6</cell><cell>8</cell><cell>4</cell><cell>2</cell>
+              <cell>0</cell><cell>7</cell><cell>9</cell><cell>3</cell>
+              <cell>5</cell><cell>1</cell>
+            </row>
+          </tabular>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(2)</m>, where <m>h(x)=f(x)*g(x)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>h' (x)\amp =f' (x)*g(x)+f(x)*g' (x)</mrow>
+                <mrow>h' (2)\amp =f' (2)*g(2)+f(2)*g' (2)</mrow>
+                <mrow>\amp =5*0+7*4=28</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> h'(5)</m>, where <m>h(x)=f(x)-g(x)</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(7)</m>, where <m>h(x)=f(x)/g(x)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <md>
+                <mrow>h'(x)\amp =\frac{f' (x)g(x)-f(x) g' (x)}{(g(x))^2} </mrow>
+                <mrow>h' (7)\amp =\frac{f' (7)g(7)-f(7) g' (7)}{(g(7))^2}</mrow>
+                <mrow>\amp =\frac{0*1-2*3}{(1)^2} =-6</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>h'(4)</m>, where <m>h(x)=g(x)/f(x)</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            The profit function at the widget factory is <m>\profit(q)=-q^2+300q-2500</m>. Find the maximum profit.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\profit (q)</m> is a downward opening parabola, so the maximum occurs where the derivative (slope of the tangent line) is 0.
+          </p>
+          <p>
+            Find the critical point: <m>\profit' (q)=-2q+300=0</m>, So <m>q = 150</m>.
+          </p>
+          <p>
+            The maximum profit is
+            <md>
+              <mrow>\profit(150)\amp =-150^2+300(150)-2500</mrow>
+              <mrow>\amp =-22,500+45,000-2500=20,000</mrow>
+            </md>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The demand function for a fad item is <m>\demand(t)=100t^2 (0.8)^t</m>, with <m>t</m> measured in months.  When is the demand the highest?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The cost function for gizmo production is <m>\cost(q)=3000+10q-0.02q^2</m>, for <m>q\leq 200</m>.
+            Find the equation of the line tangent to the cost function at <m>q=200</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            For the tangent line we need a point and a slope, and once we have those we find the equation of the line.
+          </p>
+          <p>
+            Point: When <m>q = 200</m>,
+            <md>
+              <mrow>\cost(200)\amp =3000+10(200)-.02(200)^2</mrow>
+              <mrow>=3000+2000-.02*40,000=4200</mrow>
+            </md>.
+          </p>
+          <p>Slope: <m>\frac{dcost}{dq}=10-.04q</m>, so at <m>q = 200</m> we have  <m>\frac{dcost}{dq}=10-.04(200)= 2</m>.</p>
+          <p>The line: <m>C-C_0=m(q-q_0)</m>.</p>
+          <p>So we have <m>C-4200=2(q-200)</m>, or in slope intercept form: <m>C=2q+3800</m>.</p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The formula for the current value of a particular revenue stream is
+            <m>\val(t)=.95^{-t} (3000+25t)</m>.  Find the equation of the line tangent to the cost function at <m>t=10</m>.
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>

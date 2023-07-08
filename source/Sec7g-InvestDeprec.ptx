@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-7-7-InvestmentDepreciation">
+    <title>Applications of the integral: Investment and depreciation</title>
+    <introduction>
+      <p><url href="external/Examples/Section-7-7-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-7-7-Examples.xlsx">Link to worksheets used in this section</url></p>
+
+      <p>
+        Having looked at several ways to evaluate definite integrals,
+        we return to practical problems that we can solve be evaluating an integral.
+        We will break our applications in this section into two groups.
+        Problems in the first group reduce to accumulation over time,
+        and are analogous to finding the area under a curve, or finding a definite integral.
+        Problems in the second group ask you to find a specific anti-derivative of a function.
+        They are called boundary value problems.
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Basic Accumulation</title>
+      <p>
+        The most straightforward problem for integration is one where I have a function for some value,
+        like an income stream, or materials produced, or a cost,
+        and I am interested if calculating how much accumulates in a specified interval.
+        We work through a series of examples where the accumulation function gets progressively more complicated.
+      </p>
+
+      <example>
+        <title>Accumulating a constant function over time</title>
+        <statement>
+          <p>
+            Mary runs a small shop that is temporarily disconnected from the power network.
+            A generator that provides power uses 2 gallons of fuel per hour.
+            How much fuel does she need to keep the shop running from 8 in the morning until 6 in the afternoon.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We started with a problem that is easy to do without calculus to give us confidence in our method.
+            We solve it with algebra first.  Mary wants to run the generator for 10 hours and it consumes 2 gallons of fuel per hour.
+            She needs (10 hours)(2 gallons/hour) = 20 gallons of fuel.
+          </p>
+
+          <p>
+            To set the problem up for calculus, we use a 24-hour clock to put time on a number line.
+            We are accumulating <m>\text{FuelConsumption}(t)=2</m> from <m>t=8</m> to <m>t=18</m>.  We need
+            <me>\int_8^{18} 2 dt=2t|_8^{18}=(2*18)-(2*8)=20</me>.
+            gallons of fuel.
+          </p>
+
+          <image width="70%" source="images/sec7-7-1.png"/>
+        </solution>
+      </example>
+
+      <example>
+        <title>Accumulating marginal cost</title>
+        <statement>
+          <p>
+            <me>
+              \Mcost(\quantity)=50+\quantity/1000
+            </me>.
+          </p>
+
+          <p>
+            Find the increase in cost as production goes from 50,000 to 80,000.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since the change in cost looks like a Riemann sum with 30,000 intervals,
+            we will approximate the change in cost with the integral of the marginal cost.
+            With this function we can easily find an antiderivative and evaluate. The change in cost is
+            <md>
+              <mrow>\int_{50000}^{80000} 50+\frac{q}{1000} \,dq \amp =\left.\left(50q+\frac{q^2}{2000}\right)\right|_{50000}^{80000}</mrow>
+              <mrow>\amp =(7,200,000)-(3,750,000)=3,450,000</mrow>
+            </md>.
+          </p>
+
+          <p>
+            The change in cost of production is $3,450,000.
+          </p>
+
+          <image width="50%" source="images/sec7-7-2.png"/>
+        </solution>
+      </example>
+
+      <example>
+        <title>Oil production</title>
+        <statement>
+          <p>
+            An oil well in Texas initially produces oil at a rate of 2 million barrels of oil per year.
+            The production rate will typically fall 15% per year.  How much oil is produced over a 5-year period?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We want to integrate our production rate of <m>2(0.85)^t</m> as <m>t</m> goes from 0 to 5.
+            We can use our antidifferentiation formulas for this problem.
+            <me>\int_0^5 2(0.85)^t   dt= \left.\left(\frac{2(0.85)^t}{\ln (0.85)}\right)\right|_0^5=\frac{2}{\ln (0.85)}  (0.85^5-1)=6.846</me>.
+          </p>
+
+          <p>
+            Over 5 years, the well will produce 6.846 million barrels of oil.
+          </p>
+
+          <image width="40%" source="images/sec7-7-3.png"/>
+        </solution>
+      </example>
+
+      <example>
+        <title>Discounted revenue stream</title>
+        <statement>
+          <p>
+            Your company is interested in acquiring a revenue stream that is currently producing are a rate of
+            <m>50+5 t</m>  thousand dollars per year, where t is measured in years.
+            To obtain current value, you are discounting at a rate of 6% per year compounded continuously.
+            What is the current value of the first 10 years of income from the stream?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To find the total income we would want to integrate <m>(50+5t)</m> as <m>t</m> goes from 0 to 10.
+            To find the current value we must discount the income based in when we receive it.
+            Thus we want to integrate <m>(50+5t) e^{-0.06t}</m> as <m>t</m> goes from 0 to 10.
+            We set up the integral <m>\int_0^{10} (50+5t) e^{-0.06t}  dt</m>.
+            Since we do not know how to find the anti-derivative for this function,
+            we find the area either with Excel and Riemann sums, or with Wolfram Alpha.
+          </p>
+
+          <image width="80%" source="images/sec7-7-4.png"/>
+
+          <p>
+            With either method, we find that the present value of the revenue stream to be $545,298.
+          </p>
+
+          <image width="50%" source="images/sec7-7-5.png"/>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Boundary value problems</title>
+      <p>
+        The accumulation problems asked you to find the area under a curve between two specific points.
+        For those problems, we are not interested in a formulation of a general area function.
+        A second set of applications starts with a derivative and is interested in finding the particular anti-derivative that meets certain initial conditions.
+        (We use the conditions to find the correct value of "+C" in the general anti-derivative.)
+        These problems are often solved once to find the general anti-derivative for a particular kind of problem,
+        and the general solution is then used as a formula to find the constant <m>C</m>.
+      </p>
+
+      <example xml:id="ex-proportional-growth">
+        <title>Proportional growth and continuous reinvestment</title>
+        <statement>
+          <p>
+            I put $20,000 in a retirement account that earns 4% interest compounded continuously.
+            I reinvest all my earnings from the account back into the retirement account.
+            I would like a simple formula for the principal at sometime in the future.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We already have the formula for continuous growth, but it is worthwhile to derive it again.  We are told
+            <me>\Principal' (\Time)=.05*\Principal(\Time)</me>.
+            or
+            <me>\frac{\Principal' (\Time)}{\Principal(\Time)}=.05</me>.
+          </p>
+
+          <p>
+            Integrating both sides with respect to time, we get
+            <me>\ln (\Principal(\Time))=.05*\Time+C</me>.
+          </p>
+
+          <p>
+            Exponentiating both sides gives
+            <me>\Principal(\Time)=\exp(0.05*\Time)*\exp(C)=e^C e^{.05*\Time}</me>.
+          </p>
+
+          <p>
+            Since we know that the Principal is $20,000 at time 0, we see that <m>e^C=20000</m> and our equation simplifies to
+            <me>\Principal(\Time)=20000e^{.05*\Time}</me>.
+          </p>
+
+          <p>
+            This is the formula we took on faith in the last chapter.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Depreciation</title>
+
+      <p>
+        When computing costs of a business, we need to evaluate the depreciation cost of capital equipment.
+        There are a number of reasonable ways of computing depreciation.
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <title>Straight-line depreciation</title>
+            <p>
+              Assumes that a piece of equipment loses the same amount of value each year until it is worthless.
+              <me>\text{Annual Depreciation Expense} =  \frac{\text{Cost of fixed Asset} - \text{Residual Value}}{\text{Useful life of Asset (in years)}}</me>
+            </p>
+          </li>
+
+          <li>
+            <title>The sum of digits method of depreciation</title>
+            <p>
+              Assumes the rate of depreciation is proportional to the expected remaining useful life of the piece of equipment.
+              For example with a sum of years method and defining <m>V(t)</m> as the value,
+              EL is the expected lifetime, <m>k</m> is a constant, and <m>t</m> is time, we would have:
+              <me>V' (t)= -k (\text{EL}-t)</me>
+            </p>
+          </li>
+
+          <li>
+            <title>The declining balance depreciation</title>
+            <p>
+              This method assumes the rate of depreciation is proportional to the current value,
+              with the initial rate of depreciation twice the straight-line rate,
+              with depreciation stopping when the value is the scrap value.
+              We let <m>N</m> be the estimated life of the asset and we let the rate of depreciation be:
+              <me>
+                \text{Depreciation rate}=1- \sqrt[N]{\frac{\text{residual value}}{\text{cost of fixed asset}}}
+              </me>
+            </p>
+          </li>
+        </ul>
+      </p>
+
+      <example>
+        <title>Straight Line Depreciation</title>
+        <statement>
+          <p>
+            You buy a car for $18,000 and you want to depreciate it to $0 over 5 years. Find a formula for the value of the car.
+            We assume the value decreases a constant rate, so we use straight-line depreciation.
+            Give a simple formula to find the book value of the equipment after 3.5 years.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The easiest way to do this problem is not to use calculus,
+            but to realize we want the equation of a line and we have two points.
+            <me>\val(0)=18000 \text{ and } \val(5)=0</me>.
+          </p>
+
+          <p>
+            Taking slope as rise over run, the slope is <m>-3,600</m> and the intercept is 18,000.
+            Thus our equation is
+            <md>
+              <mrow>\val(\Time) \amp = 18000-3600*\Time</mrow>
+              <mrow>\val(3.5) \amp = 5,400</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Using calculus on the same problem we have
+            <md>
+              <mrow>\val' (\Time) \amp = -k\text{ for some constant }k, </mrow>
+              <mrow>\val(0) \amp = 18000\text{ and } \val(5)=0</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Integrating the first equation gives
+            <me>\val(\Time)=-k*\Time+C</me>.
+          </p>
+
+          <p>
+            Thus, straight-line depreciation gives a value function, which is a straight line.
+            We now plug in known values to find the constants.
+            We plug in for <m>\Time = 0</m> to see <m>C = 18,000</m>.
+            We plug in for <m>\Time = 5</m> to see <m>k = 3.600</m>.
+            This gives us the same equation using calculus as we obtained using algebra.
+            The book value of the equipment at 3.5 years is $5,400 with this method of depreciation.
+          </p>
+
+          <image width="60%" source="images/sec7-7-6.png"/>
+        </solution>
+      </example>
+
+      <example>
+        <title>Sum of years method</title>
+        <statement>
+          <p>
+            After buying the same car from the example above,
+            we assume that the depreciation is proportional to the amount of useful life that the equipment has left.
+            (A car loses more value in its first year than in its last year of life.)
+            Produce an equation for the book value of the same $18,000 car with this method.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We start with the observation that we are given that <m>V' (t)=-k(\text{EL}-t)</m>
+            for some constant <m>k</m>, and we know that <m>V(0)=18,000</m> and <m>V(5)=0</m>.
+          </p>
+
+          <p>
+            With an expected lifetime of 5, integrating the first equation gives
+            <me>\val(\Time)=-k*5*t+k*t^2/2+C</me>.
+          </p>
+
+          <p>
+            Thus the sum of years method gives a value function which is quadratic.
+            Once again, we plug in known points to find the constants.
+            We plug in for time = 0 to see <m>C = 18,000</m>.  We plug in for time = 5 and get
+            <me>0=-k*25+k*25/2+18,000</me>.
+          </p>
+
+          <p>
+            Solving this we get <m>k = 1,440</m>.  Our book value formula is then
+            <me>\val(\Time)=-7,200 t+720 t^2+18000</me>.
+          </p>
+
+          <p>
+            At 3.5 years the value will be
+            <me>\val(3.5)=-7,200*3.5+720*12.25+18000=1620</me>.
+          </p>
+
+          <p>
+            The book value at 3.5 years is $1,620 with this method of depreciation.
+          </p>
+
+          <image width="50%" source="images/sec7-7-7.png"/>
+        </solution>
+      </example>
+
+      <example>
+        <title>Declining Balance depreciation</title>
+        <statement>
+          <p>
+            This method of depreciation says an item loses value in proportion to its current value.
+            The standard method uses a rate that is twice the rate of straight-line depreciation until we reach scrap value, when depreciation stops.
+            Use this method to find the book value of our $100,000 piece of equipment at 3.5 years if the scrap value is $10,000 and the useful life is 5 years.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In <xref ref="ex-proportional-growth"/> we saw that proportional growth or decay give an exponential function.
+            The basic value function is
+            <me>\val(\Time)=100000(1-2*.20)^{\Time}=100000(0.6)^{\Time}</me>.
+          </p>
+
+          <p>
+            However we need to find when the piece of equipment stops depreciating.  Solving
+            <me>10000=100000(0.6)^{\Time}</me>,
+            we get
+            <me>0.1=(0.6)^{time}</me>,
+            or
+            <me>\Time=\ln (0.1)/\ln (0.6) =4.508</me>.
+          </p>
+
+          <p>
+            Since 3.5 is less than 4.5 years, the equipment is still depreciating.
+            Its book value is <m>100,000*(0.6)^{3.5} = \$16,731</m>.
+          </p>
+
+          <image width="60%" source="images/sec7-7-8.png"/>
+        </solution>
+      </example>
+    </subsection>
+
+   <exercise>
+      <title>Reading check, Applications of the Integral, Investment and Depreciation</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Accumulating a function over time is simply taking a definite integral. ", 
+"We can accumulate marginal cost over time to find change in cost. ", 
+"The example on oil production took the integral of an exponential function. ", 
+"to find the current value of a revenue stream we take the integral of the revenue stream times a discounting functions that represents how much a future payment is worth today.  ", 
+"If we can set up the integral of an application, we can use CAS to evaluate the integral. ", 
+
+"This section explained how to use calculus to predict the future value of the stock market. ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.7, Applications of the Integral, Investment and Depreciation, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-7-7">
+	    <title>Exercises: Applications of the integral: Investment and depreciation Problems</title>
+
+      <exercise>
+        <statement>
+          <p>
+            The marginal costs for producing widgets is
+            <me>\Mcost(q+1)=20-\frac{q}{10000}</me>.
+            Find the increase in cost in going from producing 60,000 units to producing 80,000 units.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <md>
+            <mrow>\text{increased cost}\amp=\int_{start}^{stop}\text{marginal cost}\,dq</mrow>
+            <mrow>\amp=\int_{60000}^{80000}(20-\frac{q}{10000})\,dq</mrow>
+            <mrow>\amp=\left.(20q-\frac{q^2}{20000}\right|_{60000}^{80000})</mrow>
+            <mrow>\amp=1280000-1020000</mrow>
+            <mrow>\amp=260000</mrow>
+            </md>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The marginal profit for producing gizmos is
+            <me>\Mprofit(q+1)=200-\frac{q}{1000}-\frac{q^2}{100,000,000}</me>.
+            Find the change in profit in going from producing 70,000 units to producing 90,000 units.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The daily sales projections for a fad item are:
+            <me>\text{Daily Sales}(t)=100 t^2 e^{-t/5}</me>.
+            Find the estimated total sales over the first 100 days.
+          </p>
+        </statement>
+        <solution>
+          <p>We expect sales of about 25000 units.</p>
+
+          <image width="80%" source="images/sec7-7-sol3a.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The daily sales projections for a new item are:
+            <me>\text{Daily Sales}(t)=100+10t-\frac{t^2}{100}</me>.
+            Find the estimated total sales over the first 200 days.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The production from an oil well starts at a rate of 10,000 barrels per year and declines exponentially at a rate of 10% per year.
+            How much is produced in 6 years?
+          </p>
+        </statement>
+        <solution>
+          <p>We expect 44,472 barrels of oil over the 6 years.</p>
+
+          <image width="80%" source="images/sec7-7-sol5a.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            An oil well is producing 15,000 barrels per year.
+            The rate of production is continuously declining at a rate of 10% per year.
+            The well will be capped as unproductive when it produces 3,000 barrels per year.
+            How much will it produce before being capped?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            A stream of revenue produces at a rate of $40,000 per year.
+            We assume that the risk free investment rate is 3% per year.
+            What is the current value of the revenue stream over 20 years?
+          </p>
+        </statement>
+        <solution>
+          <p>We evaluate the revenue stram to be worth $603,982.</p>
+
+          <image width="80%" source="images/sec7-7-sol7a.png"/>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            A stream of revenue produces at a rate of
+            <m>$40,000+$2,000t</m> dollars per year with <m>t</m> measured in years.
+            We assume that the risk free investment rate is 3% per year.
+            What is the current value of the revenue stream over 20 years?
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </section>

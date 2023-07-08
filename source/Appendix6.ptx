@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--   This file is part of Business Calculus with Excel      -->
+<!--                                                          -->
+<!--                                   -->
+<!--                                                          -->
+<!-- Copyright (C) 2023  Mike May                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<appendix xml:id="SpreadSkills6">
+    <title>Spreadsheet Skills Chapter 6</title>
+<section xml:id="SpreadSkillsChap6">
+    <title>Chapter 6 Skills</title>
+    <subsection xml:id="SpreadSkillsSection6-1">
+        <title>Section 6.1 Skills</title>
+        <ul>
+            <li>
+                <p>
+                    Build a template for showing a function and its numeric derivative or related marginal function
+                </p>
+            </li>
+        </ul>
+    </subsection>
+</section>
+</appendix>
+<!-->
+
+
+6.1
+Making a table for f(x,y) =z – same
+
+Making a graph for f(x,y) =z from a table
+
+6.3 Using solver to find critical points -Same
+<-->

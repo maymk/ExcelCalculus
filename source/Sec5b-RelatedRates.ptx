@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-5-2-RelatedRates">
+    <title>Related Rates</title>
+
+    <p>
+      As we have seen, <m>\frac{dy}{dx}</m> is the instantaneous rate of change of <m>y</m> with respect to <m>x</m>.
+      In <xref ref="chap-4-SymbolicDifferentiation"/> we learned techniques for finding
+      <m>\frac{dy}{dx}</m> when <m>y</m> is defined as a function of <m>x</m>.
+      In the last section we learned how to use implicit differentiation to find
+      <m>\frac{dy}{dx}</m> when we were given an equation in <m>x</m> and <m>y</m>.
+      In this section we want find <m>\frac{dy}{dx}</m> when <m>x</m> and <m>y</m> are both described in terms of another variable.
+      As with the section on related rates,
+      we will start with an example where we can solve the problem by eliminating the extra variable before differentiating,
+      and then look at how to solve with related rates.
+    </p>
+
+    <example>
+      <title>Change in revenue with respect to expense, doable two ways</title>
+      <statement>
+        <p>
+          We can buy widgets wholesale for $10 a widget.  In the. retail market, the demand price of widgets is $20 minus 0.1 times the quantity to be sold.
+          Find the derivative of revenue with respect to expense.
+        </p>
+      </statement>
+      <solution>
+        <title>Solution A</title>
+        <p>
+          The revenue and cost functions for widgets depend on the quantity <m>q</m>.
+          The formulas for revenue and cost are:
+          <md>
+            <mrow>\revenue\amp =q(20-0.1q)=20q-0.1q^2</mrow>
+            <mrow>\cost\amp =10q</mrow>
+          </md>.
+        </p>
+
+        <p>
+          We can solve the second equation for quantity and substitute back into the first equation.
+          This now gives us the revenue function in terms of cost (<m>c</m>).
+          <md>
+            <mrow>\quantity \amp =0.1*c</mrow>
+            <mrow>\revenue \amp =2c-0.001 c^2</mrow>
+          </md>.
+        </p>
+
+        <p>
+          It is straightforward to take the derivative:
+          <me>\frac{d\revenue}{d\cost}=2-0.002*\cost</me>.
+        </p>
+
+        <p>
+          Note that the derivative is positive for cost between $0 and $1000.
+          This implies that the revenue is rising until the cost is $1000.
+          After we hit a cost of $1000, the derivative becomes negative.
+          This indicates that the revenue will actually decrease.
+        </p>
+      </solution>
+
+      <solution>
+        <title>Solution B</title>
+
+        <p>
+          The alternative method is to differentiate the equations for revenue
+          (<m>r</m>) and cost (<m>c</m>) with respect to quantity (<m>q</m>),
+          and find the two derivatives <m>\frac{d r}{d q}</m> and <m>\frac{d c}{d q}</m>,
+          then treat them as fractions.  The derivative we want is the quotient of these fractions.
+        </p>
+
+        <p>
+          The revenue and cost functions for widgets are the same as above.
+          <md>
+            <mrow>\revenue\amp =20q-0.1 q^2</mrow>
+            <mrow>\cost\amp =10q</mrow>
+          </md>
+        </p>
+
+        <p>
+          We now differentiate:
+          <md>
+            <mrow>\frac{d r}{d q} \amp =20-0.2 q</mrow>
+            <mrow>\frac{d c}{d q}\amp =10</mrow>
+          </md>
+        </p>
+
+        <p>
+          We divide these derivatives to get the desired derivative.
+          <me>
+            \frac{\text{change in revenue}}{\text{change in cost}}: \frac{d r}{d c}=\frac{d r}{d q}/\frac{d c}{d q}=(20-0.2 q)/10
+          </me>.
+        </p>
+
+        <p>
+          Substituting <m>q =0.1 c</m> gives the same solution we had from the first method.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      When using the method of related rates,
+      we act as if the derivatives are fractions that we can multiply or divide to obtain the appropriate fraction.
+      We want to use a bit of caution with that approach,
+      because it does not work with higher order derivatives,
+      or with derivatives of functions of several variables.
+      However, for derivatives of one variable the intuition works.
+      Once again, if we zoom in far enough,
+      the curve will look like a straight line and the derivative is the quotient of rise over run.
+    </p>
+
+    <p>
+      For the first example we could use both methods.
+      We either use algebra to eliminate the extra variable,
+      or find two rates of change and combine them to find the rate we are interested in.
+      For some problems we will only have one choice, either because the algebra is too hard,
+      or because we have been given partial information and the algebraic method is impossible.
+    </p>
+
+    <example>
+      <title>Change in revenue with respect to expense, <m>q</m> elimination hard</title>
+      <statement>
+        <p>
+          The cost (<m>c(q)</m>) and revenue (<m>r(q)</m>) equations for gizmos are both given in terms of quantity (<m>q</m>)
+          <md>
+            <mrow>r(q)\amp =30q-0.1 q^2-0.001 q^3</mrow>
+            <mrow>c(q)\amp =500+10q-0.01 q^2</mrow>
+          </md>
+        </p>
+
+        <p>
+          Find the derivative of revenue with respect to cost (<ie/> <m>\frac{dr}{dc}</m> when <m>q=50</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since the cost is quadratic in quantity,
+          solving for revenue as a function of cost involves more work than we need for this problem.
+          The appropriate derivatives are:
+          <md>
+            <mrow>\frac{d r}{d q} \amp =30-0.2 q-0.003 q^2</mrow>
+            <mrow>\frac{d c}{d q} \amp =10-0.02 q</mrow>
+          </md>.
+        </p>
+
+        <p>
+          When <m>q =50</m>, we have
+          <md>
+            <mrow>\frac{d r}{d q} \amp =30-0.2*50-0.003*50^2=12.5</mrow>
+            <mrow>\frac{d c}{d q}\amp =10-0.02*50=9</mrow>
+          </md>.
+        </p>
+
+        <p>
+          We divide these derivatives to get the desired derivative.
+          <me>
+            \frac{d r}{d c}  =\frac{d r}{d q}/\frac{d c}{d q}=\frac{12.5}{9}\approx 1.389
+          </me>.
+        </p>
+
+        <p>
+          This means that when <m>\quantity=50</m>,
+          there is an increase of $1.39 for every dollar increase in cost of investment.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Change in revenue with respect to expense, long variable names</title>
+      <statement>
+        <p>
+          We have the following cost and revenue information for whatchamacallits:
+          <md>
+            <mrow>\revenue=50*\quantity-0.01*\quantity^2</mrow>
+            <mrow>\frac{d \cost}{d\quantity}=15</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Find the derivative of revenue with respect to cost when <m>\quantity=100</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In this example we do not have a formula that lets us solve for revenue as a function of cost,
+          so we must use the method of related rates.  The other derivatives is:
+          <me>\frac{d\revenue}{d\quantity}  =50-0.02*\quantity</me>.
+        </p>
+
+        <p>
+          When <m>\quantity=100</m>, we have <m>\frac{d\revenue}{d\quantity}  =50-0.02*100=48</m>.  Thus
+          <me>
+            \frac{d\revenue}{d\cost} =\frac{d\revenue}{d\quantity}/\frac{d\cost}{d\quantity}=\frac{48}{15}=3.2
+          </me>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Related rates are also useful when we are looking at a two-step process and we are interested in the rate of the combined process.
+    </p>
+
+    <example>
+      <title>Composition of functions</title>
+      <statement>
+        <p>
+          We are producing widgets (<m>w</m>).
+          The manufacturing process turns goop (<m>g</m>) into sludge (<m>s</m>) and sludge into widgets.
+          The yield equations in the appropriate units are:
+          <me>\text{widgets(sludge)}=4*\text{sludge}-0.1*\text{sludge}^2</me>,
+          or in shorthand notation: <m>w(s)=4 s-0.1 s^2</m>, and
+          <me>\text{sludge(goop)}=3*\text{goop}+.1*\text{goop}^2</me>,
+          or in shorthand notation: <m>s(g)=3 g+.1 g^2</m>.
+        </p>
+
+        <p>
+          Find the derivative of widgets with respect to goop when <m>g=10</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We note that when <m>g=10</m>, we have <m>s=3*10+.1*10^2=40</m>.
+          In this example we will take the derivatives of our equation.
+          We will then multiply them to get the derivative we want.
+          <md>
+            <mrow>\frac{d\text{ widgets}}{d\text{ sludge}}\amp=\frac{dw}{ds}=4-0.02*s</mrow>
+            <mrow>\frac{d\text{ sludge}}{d\text{ goop}}\amp =\frac{ds}{dg}=3+.2*g</mrow>
+          </md>.
+        </p>
+
+        <p>
+          When <m>g=10</m>, <m>\frac{d w}{d s}  =(4-0.02*40)=3.2</m>,
+          and <m>\frac{d s}{d g}=3+0.2*10=5</m>.  We need to multiply the derivatives to cancel the <m>d s</m>.
+          <me>\frac{dw}{dg}  =\frac{dw}{ds}*\frac{ds}{dg}=(3.2)(5)=16</me>.
+        </p>
+
+        <p>
+          Thus the rate of widget production is increasing by 16 units per increase in on unit of goop at that point.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      We often run into situations where several quantities are related by some constraint or equation.
+      In such situations we will want to know the rate at which quantities are changing with time.
+      The technique of related rates gives us a way to move from one rate with respect to time to another.
+      Recall the Cobb-Douglas equation from the last section:
+      <me>Y=AL^\alpha K^\beta</me>,
+      where <m>Y</m>, <m>L</m>, and <m>K</m> represent total production, labor, and capital, respectively.
+      If we know the rate of investment in capital equipment,
+      we will be interested in the rate of change of labor with respect to time.
+      An interesting question is to ask for the rate of change of capital with respect to labor,
+      or how increasing or reducing capital investment will raise or lower labor costs.
+    </p>
+
+    <example>
+      <title>Cobb-Douglas</title>
+      <statement>
+        <p>
+          A gizmo manufacturer has a production function given by
+          <me>Y=50L^{0.75} K^{0.25}</me>.
+        </p>
+
+        <p>
+          The manufacturer currently uses 16 units of labor and 81 units of capital.
+          The total production is constant but the manufacturer is investing in automation.
+          The derivative of capital with respect to time is 2.
+          How fast is the amount of labor needed changing?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We are going to assume that both labor and capital are functions of time and the <m>Y</m> is a constant.
+          We start by implicitly differentiating our equation with respect to time.
+          <md>
+            <mrow>\frac{d}{dt}(Y\amp =50L^{0.75} K^{0.25})</mrow>
+            <mrow>0\amp =50*(0.75*L^{-0.25}*\frac{dL}{dt}*K^{.25}+L^{.75}*.25*K^{-0.75}*\frac{dK}{dt})</mrow>
+          </md>.
+        </p>
+
+        <p>
+          We now substitute in for the values of <m>K</m>, <m>L</m>, and
+          <m>\frac{dK}{dt}</m>, which were given.
+          <md>
+            <mrow>0\amp =50*(0.75*16^{-0.25}*\frac{d\ L}{d\ t}*81^{0.25}+16^{0.75}*.25*81^{-0.75}*2)</mrow>
+            <mrow>0\amp =3/4*1/2*\frac{dL}{dt}*3+8*1/4*1/27*2</mrow>
+            <mrow>\frac{dL}{dt}\amp =-32/243\approx -0.1317</mrow>
+          </md>.
+        </p>
+
+        <p>
+          If capital is increasing at a rate of 2 per unit of time,
+          then labor is decreasing at a rate of <m>-0.1317</m> per unit of time.
+        </p>
+      </solution>
+    </example>
+
+    <paragraphs>
+      <title>Summary</title>
+
+      <p>
+        The related rates technique is an application of the chain rule.
+        We use this technique when we have either three variables.
+        We may want the rate of change of one variable with respect to a second,
+        and those variables may be connected through equations using a third variable.
+        We may also want to relate the rate of change of two variables with respect to time.
+        We take advantage of the fact that we can think of a derivative as a fraction of two small values.
+        We either want to multiply or divide theses fractions to obtain the desired derivative.
+      </p>
+    </paragraphs>
+
+
+    <exercise>
+      <title>Reading check, Related Rates</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"When using the method of related rates, we act as if the derivatives are fractions that we can multiply or divide to obtain the appropriate fraction.  ", 
+"The related rates technique is an application of the chain rule.   ", 
+"Related rates are useful when we are looking at a two-step process and we are interested in the rate of the combined process.  ", 
+"Related rates are useful when we are looking at a two variables related by some constraint or equation and both are varying with time.  ", 
+
+"We always can use algebra to reduce to two variables, so we do not really need related rates.  ", 
+"Related rates and implicit differentiation are interchangeable methods.  ", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 5.2, Related Rates, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-5-2">
+	     <title>Exercises: Related Rates Problems</title>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=3x+5</m> and <m>z=4y+7</m>.
+            Find <m>\frac{dz}{dx}</m> when <m>x=2</m> by solving for <m>z</m> as a function of <m>x</m> and taking the derivative,
+            and also by finding <m>\frac{dz}{dy}</m> and <m>\frac{dy}{dx}</m> and using related rates to apply the chain rule.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ul>
+              <li>
+                <p>
+                  <md>
+                    <mrow>z\amp =4y+7= 4(3x+5)+7=12x+27</mrow>
+                    <mrow>\frac{dz}{dx}\amp=12</mrow>
+                  </md>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <md>
+                    <mrow>z\amp =4y+7 \amp y\amp =3x+5</mrow>
+                    <mrow>\frac{dz}{dy}\amp =4 \amp \frac{dy}{dx}\amp =3</mrow>
+                    <mrow>\frac{dz}{dx}\amp =\frac{dz}{dy} \amp  \frac{dy}{dx}\amp =4*3=12</mrow>
+                  </md>
+                </p>
+              </li>
+            </ul>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=x^2-3x+5</m> and <m>z=y^2-y+6</m>.
+            Find <m>dz/dx</m> when <m>x=1</m> by solving for <m>z</m> as a function of <m>x</m> and taking the derivative,
+            and also by finding <m>\frac{dz}{dy}</m> and <m>\frac{dy}{dx}</m> and using related rates to apply the chain rule.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=1000*1.06^x</m> and <m>z=200y+3</m>. Find <m>\frac{dz}{dx}</m> when <m>x=5</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            First find the derivative
+            <me>
+              \frac{dz}{dx}=\frac{dz}{dy}  \frac{dy}{dx}=(200)  (1000*1.06^x  \ln(1.06) )= 200,000 \ln(1.06)  1.06^x
+            </me>.
+          </p>
+
+          <p>
+            Next plug in our value of <m>x</m>:
+            <me>
+              \text{When }x=5,\quad    \frac{dz}{dx}= 200,000 \ln(1.06)  1.06^5
+            </me>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=200*1.08^x+500x</m> and <m>z=y^2+y</m>. Find <m>\frac{dz}{dx}</m> when <m>x= 3</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m> y=3x+5</m> and <m>z=4x+7</m>. Find <m>\frac{dz}{dy}</m> when <m>x=2</m> by solving for <m>z</m> as a function of <m>y</m> and taking the derivative, and also by finding <m>\frac{dz}{dx}</m> and<m>\frac{dy}{dx}</m> and using related rates to apply the chain rule.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ul>
+              <li>
+                <p>
+                  If <m>y=3x+5</m> then <m>x=\frac{y-5}{3}</m>.
+                  Hence <m>z=4x+7=\frac{4}{3}  (y-5)+7=\frac{4}{3} y+\frac{1}{3}</m>,
+                  so <m>\frac{dz}{dy}=\frac{4}{3}</m>.
+                </p>
+              </li>
+              <li><m>\frac{dz}{dx}=4, \quad \frac{dy}{dx}=3,\quad\frac{dz}{dy}=  \frac{dz/dx}{dy/dx}=\frac{4}{3}</m></li>
+            </ul>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=x^2-3x+5</m> and <m>z=x^2+4x+5</m>. Find <m>\frac{dz}{dy}</m> when <m>x=3</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=1000*1.05^x</m> and <m>z=100*(1+.5x)</m>. Find <m>\frac{dz}{dy}</m> when <m>x=10</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            First find the derivative:
+            <me>\frac{dz}{dy}=  \frac{dz/dx}{dy/dx}=\frac{50}{1000*1.05^x*\ln(1.05)}</me>.
+          </p>
+
+          <p>
+            Next plug in our value of <m>x</m>:
+            <me>\text{When }x=10,   \frac{dz}{dy}=\frac{50}{1000*1.05^{10}*\ln(1.05)}</me>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=100*1.08^x</m> and <m>z=100*1.02^x</m>. Find <m>\frac{dz}{dy}</m> when x=10.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=x^2-3x+5</m> and <m>\frac{dz}{dy} =3</m>. Find <m>\frac{dz}{dx}</m> when <m>x=7</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We want to find <m>\frac{dz}{dx}</m>.
+            We know <m>\frac{dz}{dy}</m> and we can compute <m>\frac{dy}{dx}</m>,
+            hence we compute:
+            <md>
+              <mrow>\frac{dy}{dx}\amp =2x-3,\text{ hence at }x=7\text{ we have }\frac{dy}{dx}=11</mrow>
+              <mrow>\frac{dz}{dx}\amp=\frac{dz}{dy}\frac{dy}{dx}=(3)(11)=33</mrow>
+            </md>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=500*.96^x</m> and <m>\frac{dz}{dy}=5</m>. Find <m>\frac{dz}{dx}</m> when <m>x=4</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>y=x^2-5x+7</m> and <m>\frac{dz}{dx}  =8</m>. Find <m>\frac{dz}{dy}</m> when <m>x=7</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We want to find <m>\frac{dz}{dy}</m>.
+            We know <m>\frac{dz}{dx}</m> and we can compute <m>\frac{dy}{dx}</m>,
+            hence we compute:
+            <md>
+              <mrow>\frac{dy}{dx}\amp =2x-5,\text{ hence at }x=7\text{ we have }\frac{dy}{dx}=9</mrow>
+              <mrow>\frac{dz}{dy}\amp =\frac{dz/dx}{dy/dx}=\frac{8}{9}</mrow>
+            </md>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>z=x^2-3x+5</m> and <m>\frac{dy}{dx}  =3</m>. Find dy/dz when x=7.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The revenue and expense equations for gizmos are
+            <md>
+              <mrow>\revenue\amp=30*\quantity-0.1*\quantity^2</mrow>
+              <mrow>\expense\amp =500+10*\quantity</mrow>
+            </md>
+          </p>
+
+          <p>
+            Find the derivative of revenue with respect to expense when <m>\quantity=100</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>If <m>R= \revenue=30q-0.1q^2</m>, then <m>\frac{dR}{dq}=30-0.2q</m>.</p>
+          <p>If <m>E= \expense=500+10q</m>, then  <m>\frac{dE}{dq}=10</m>.</p>
+          <p>
+            Combining the two rates we get
+            <me>\frac{dR}{dE}=\frac{dR/dq}{dE/dq}=\frac{30-0.2q}{10}</me>.
+          </p>
+          <p>
+            Hence at <m>q =100</m> we have that
+            <me>\frac{dR}{dE}=\frac{30-0.2(100)}{10}=\frac{10}{10}=1</me>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The revenue and expense equations for widgets are
+            <md>
+              <mrow>\revenue\amp =200*\quantity-0.1*\quantity^2+.005*\quantity^3</mrow>
+              <mrow>\expense\amp =1000+20*\quantity</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Find the derivative of revenue with respect to expense when <m>\quantity=50</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The production of gadgets is a two step process:
+            <md>
+              <mrow>\text{productA}\amp =50*\text{RawMaterial}+.01*\text{RawMaterial}^2</mrow>
+              <mrow>\text{gadgets}\amp =4*\text{productA}-0.0001*\text{productA}^2</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Find the derivative of gadgets with respect to RawMaterial when <m>\text{productA} =20</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let’s simplify the notation and write the two equations as
+            <md>
+              <mrow>p\amp =50r+0.01 r^2</mrow>
+              <mrow>g\amp =4 p-0.0001 p^2</mrow>
+            </md>.
+          </p>
+
+          <p> We want to find <m>\frac{dg}{dr}</m> when <m>p = 20</m>.</p>
+
+          <p>
+            What do we have?
+            <md>
+              <mrow>\frac{dp}{dr}\amp =50+0.02 r</mrow>
+              <mrow>\frac{dg}{dp}\amp =4 -0.0002 p</mrow>
+              <mrow>\text{Then }\frac{dg}{dr}\amp =\frac{dg}{dp}  \frac{dp}{dr}=(4 -0.0002 p)  (50+0.02 r)</mrow>
+            </md>.
+          </p>
+
+          <p>
+            We know <m>p = 20</m> (given), but we need <m>r</m> to plug into the second part of the equation.
+            The only function that tells us anything about <m>r</m> is <m>p=50r+0.01 r^2</m>.
+            If <m>p = 20</m> this means <m>20=50r+0.01 r^2</m>.  So <m>0.01 r^2+50r-20=0</m>.
+          </p>
+
+          <p>
+            By the quadratic equation we have <m>r=  \frac{-50\pm \sqrt{2500-4(0.01)(-20)}}{0.02}</m>.
+          </p>
+
+          <p>
+            Using Wolfram Alpha we have that <m>r = 0.4</m>.
+            Then
+            <me>\frac{dg}{dr}=(4 -0.004 )  (50+0.008 )\approx 199.83\frac{gadgets}{raw\ material}</me>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The production of whatchamacallits is a three step process:
+            <md>
+              <mrow>\text{productA}\amp =10*\text{RawMaterial}-7</mrow>
+              <mrow>\text{productB}\amp=15*\text{productA}-20</mrow>
+              <mrow>\text{whatchamacallits}=6*\text{productB}-5</mrow>
+            </md>.
+          </p>
+
+          <p>
+            Find the derivative of <m>\text{whatchamacallits}</m> with respect to
+            <m>\text{RawMaterial}</m> when <m>\text{productA} =15</m>.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercisegroup>
+        <introduction>
+          <p>Find the indicated derivative for the production function. </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Our production function is <m>960=5L^{0.25} K^{0.75}</m>.
+              Find <m>\frac{dL}{dt}</m> if <m>L=81</m>, <m>K=256</m>,  <m>\frac{dK}{dt}=5</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Take the derivative with respect to <m>t</m>:
+              <md>
+                <mrow>\frac{d}{dt} 960\amp =5 \frac{d}{dt}[L^{0.25} K^{0.75}]</mrow>
+                <mrow>0\amp =5[\frac{d}{dt} (L^{0.25}) K^{0.75}+L^{0.25} \frac{d}{dt} (K^{0.75}) ]  </mrow>
+                <mrow>0\amp =[\frac{d}{dt} (L^{0.25}) K^{0.75}+L^{0.25} \frac{d}{dt} (K^{0.75}) ]  </mrow>
+                <mrow>0\amp =[0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}+L^{0.25} 0.75K^{(-0.25)} \frac{dK}{dt}]</mrow>
+              </md>.
+            </p>
+
+            <p>
+              Solve for  <m>\frac{dL}{dt}</m>:
+              <md>
+                <mrow>0.25 L^{-0.75}  \frac{dL}{dt} K^{0.75}\amp =-L^{0.25} 0.75K^{-0.25}  \frac{dK}{dt}</mrow>
+                <mrow>\frac{dL}{dt}\amp =\frac{-L^{0.25} 0.75K^{-0.25}}{ 0.25 L^{-0.75} K^{0.75}} \frac{dK}{dt}=-3\frac{L}{K}\frac{dK}{dt}</mrow>
+              </md>.
+            </p>
+
+            <p>
+              If <m>L=81</m>, <m>K=256</m>,  <m>\frac{dK}{dt}=5</m>, then we have
+              <m>\frac{dL}{dt}=-3 *\frac{81}{256}*5 \approx -4.75</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Our production function is <m>4000=4L^.25 K^.75</m>.
+              Find <m>\frac{dK}{dt}</m> if <m>L=1000</m>, <m>K=1000</m>,  <m>\frac{dL}{dt}=10</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>

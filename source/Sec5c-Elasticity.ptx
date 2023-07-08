@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-5-3-Elasticity">
+    <title>Elasticity</title>
+    <introduction>
+      <p>
+        Elasticity of demand is a concept from economics that looks at relative rate of change rather than rate of change.
+        We want to look at how we express this as a variant of the derivative.
+      </p>
+
+      <p>
+        The law of demand states we increase demand by lowering price and lower demand by raising price.
+        The naive rate of change in that case would be the change in quantity with respect to price.
+        However that rate of change is not particularly useful.
+        If I am told that I can sell 100 more units if I lower the price by $1 a unit,
+        I don’t know if I should lower the price.
+        I would definitely want to lower the price if I sell cars for an average price of $20,000 and typically sell 200 cars a year.
+        I would not want to lower the price if I sell gasoline at $4.00 a gallon and sell 5,000,000 gallons a year.
+      </p>
+
+      <assemblage>
+        <p>
+          Rather than looking at the derivative of quantity with respect to price,
+          or the rate of change with respect to price,
+          we want to look at the relative rate of change with respect to price,
+          or the <term>Elasticity of Demand</term>.
+        </p>
+      </assemblage>
+
+      <p>
+        If a small change in price causes a big change in demand, the demand is elastic.
+        In that case, I generally want to lower the price and get a lot more customers.
+        If I need to make a big change in price to get a small change in demand,
+        the demand is inelastic.  With inelastic demand I can raise revenue by raising price.
+        Thus, elasticity of demand gives us a tool for maximizing revenue.
+        We can look at this issue is either the discrete case (arc elasticity) or the continuous case (point elasticity).
+      </p>
+    </introduction>
+
+    <subsection>
+      <title>Point Elasticity</title>
+      <p>
+        To understand elasticity we look at the simple case when the demand price function is linear.
+        In that case, we can use geometry to understand the problem.
+      </p>
+
+      <image width="60%" source="images/sec5-3-1.png"/>
+
+      <p>
+        If <m>(Q_0,P(Q_0 ))</m> is a point for a given price <m>P(Q_0)</m> and quantity <m>Q_0</m>,
+        then revenue is <m>Q_0*P(Q_0)</m>, the price times the quantity at that point,
+        or the area of the rectangle above.
+        We want to know if we should pick a different point on the demand curve to increase the area of the rectangle.
+      </p>
+
+      <p>
+        If the special case where the price and quantity are both 1,
+        the revenue rectangle is a square and we can simply look at the slope of the demand function.
+        In that case, when the demand curve is flatter than a slope of minus 1,
+        increasing the quantity increases the area because quantity increases faster than price decreases.
+        Similarly, when the demand curve is steeper than a slope of minus 1,
+        increasing the quantity causes the price to decrease even faster, so the area of the rectangle decreases.
+      </p>
+
+      <image width="60%" source="images/sec5-3-2.png"/>
+
+      <p>
+        We note that the slope of the demand curve is almost always negative.  We also note that we are reversing the normal roles, with price being the input and quantity the output.  We will
+        It is thus convenient to talk about the negative reciprocal of the slope of the normalized demand price curve.
+      </p>
+
+      <assemblage>
+        <p>
+          We refer to that quantity as <term>Elasticity of Demand</term>.
+          <me>
+            E=-\frac{d(\quantity/Q_0)}{d(\price/P(Q_0))}=-\frac{d\quantity/Q_0}{d\price/P(Q_0)}=-\frac{d\quantity}{d\price}*\frac{P(Q_0)}{Q_0}
+          </me>.
+        </p>
+      </assemblage>
+
+      <p>
+        If the elasticity is greater than 1, a small relative change in the price goes with a large relative change in the quantity.
+        We would expect high elasticity in products that can easily be substituted.
+        The demand for gasoline at one gas station, when there are 2 other gas stations at the same intersection,
+        would be highly elastic.
+      </p>
+
+      <assemblage>
+        <p>
+          When demand is elastic <m>(E \gt 1)</m>, we raise revenue by lowering price.
+        </p>
+      </assemblage>
+
+      <p>
+        We would expect low elasticity in products that are essential for which there is no reasonable substitute.
+        Wedding rings and lifesaving medicine would have highly inelastic demand.
+      </p>
+
+      <assemblage>
+        <p>When the demand is inelastic (<m>E \lt 1</m>), we increase revenue by increasing price.</p>
+      </assemblage>
+
+      <p>
+        A relatively large change in price will produce a relatively small change in demand.
+        Revenue will be at a maximum when elasticity is 1.
+        This condition is referred to as unit elasticity.
+      </p>
+
+      <p>
+        Note that we have usually described price as a function of quantity,
+        and in the definition of elasticity we use the derivative obtained from making quantity a function of price.
+        From related rates, we know that these derivatives are reciprocals of each other.
+      </p>
+
+      <example>
+        <title>Point elasticity</title>
+        <statement>
+          <p>
+            The demand price function for widgets is given in terms of quantity (<m>q</m>).
+            <me>P(q)=20-q/100</me>.
+          </p>
+
+          <p>
+            <ol marker="(A)">
+              <li>
+                <p>
+                  Find the elasticity when <m>q=800</m>.  Interpret what that means for the strategy to raise revenue.
+                </p>
+              </li>
+
+              <li><p>Compare to the situation when <m>q=1500</m>.</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(A)">
+              <li>
+                <p>
+                  The formula for elasticity is:
+                  <me>E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} </me>.
+                </p>
+
+                <p>
+                  I need to compute <m>P(Q_0 )</m> and <m>\frac{-d Q}{d P}</m>.
+                  Substituting into the demand function,
+                  <me>P(800)=20-800/100=20-8=12</me>.
+                </p>
+
+                <p>
+                  To find <m>\frac{d Q}{d P}</m>, I recall from related rates,
+                  that <m>\frac{d Q}{d P}=1/\frac{d P}{d Q}</m>.
+                  <me>\frac{d Q}{d P}=1/\left(\frac{d P}{d Q}\right)=1/\left(\frac{-1}{100}\right)=-100</me>.
+                </p>
+
+                <p>
+                  Thus
+                  <me>\Elasticity= \frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0}=-(-100)*\frac{12}{800}=1.5</me>.
+                </p>
+
+                <p>
+                  Since the demand is elastic when the quantity is 800,
+                  we should lower the price, causing a relatively large increase in quantity,
+                  to raise revenue.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  When the quantity is 1500,
+                  the demand price is 5 and the derivative of quantity with respect to price is still <m>-100</m>.
+                  <me>\Elasticity=\frac{-d\quantity}{d\price}*\frac{P(Q_0)}{Q_0} =-(-100)*\frac{5}{1500}=1/3</me>.
+                </p>
+
+                <p>
+                  Since the demand is inelastic when the quantity is 1500,
+                  we should raise the price, causing a relatively small decrease in quantity,
+                  to raise revenue.
+                </p>
+
+                <p>
+                  In this example, the revenue function is
+                  <me>\revenue=\price*\quantity=20 q-q^2/100</me>.
+                </p>
+
+                <p>
+                  We recognize that this is a downward parabola with a maximum when <m>q=1000</m>,
+                  which is consistent with our results.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+    <subsection>
+      <title>Arc Elasticity</title>
+
+      <p>
+        Point elasticity was developed for use with a continuous demand price function where we could take a derivative.
+        Often, our demand price function is a set of discrete points,
+        because our quantity has to be a whole number.
+        We would like to adapt elasticity to that case.
+      </p>
+
+      <p>
+        For arc elasticity we have two quantity-price points <m>(\quantity_1,\price_1)</m>
+        and <m>(\quantity_2,\price_2)</m>.
+        We want to adapt our formula for elasticity to the discrete case.
+        We can think of the derivative,  <m>\frac{d Q}{d P}</m>,
+        as the ratio of small changes in quantity and price.
+        The best value for price and quantity is the average value from the two points.
+      </p>
+
+      <image width="70%" source="images/sec5-3-3.png"/>
+
+      <p>
+        Our formula is converted to:
+        <md>
+          <mrow>E\amp =\frac{-\Delta \quantity}{\Delta \price}*\frac{\text{average price}}{\text{average quantity}}</mrow>
+          <mrow>\amp =-\frac{\quantity_2-\quantity_1}{\price_2-\price_1} *\frac{(\price_1+\price_2)/2}{(\quantity_1+\quantity_2)/2}</mrow>
+        </md>.
+      </p>
+
+      <assemblage>
+        <title>Arc Elasticity</title>
+        <p>
+          <me>E=-\frac{\quantity_2-\quantity_1}{\price_2-\price_1} *\frac{\price_1+\price_2}{\quantity_1+\quantity_2}</me>.
+        </p>
+      </assemblage>
+
+      <example>
+        <title>Elasticity from two points</title>
+        <statement>
+          <p>
+            Two quantity-price points for gizmos are <m>(5000, 20)</m> and <m>(5200, 18)</m>.
+            What is the arc elasticity between the two points?  Which price produces higher revenue?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The formula for arc elasticity is:
+            <md>
+              <mrow>E\amp =-\frac{\quantity_2-\quantity_1}{\price_2-\price_1} *\frac{\price_1+\price_2}{\quantity_1+\quantity_2}</mrow>
+              <mrow>E\amp =-\frac{5200-5000}{18-20}*\frac{20+18}{5000+5200} =-\frac{200}{-2}*\frac{38}{10400}\approx.373</mrow>
+            </md>
+          </p>
+
+          <p>
+            The market for gizmos is inelastic, as a price drop of about 10% only increases the market by about 4%.
+            To increase revenue, I should charge the higher price.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        Checking my work by computing the revenue at the two points, the first point,
+        with the higher price and lower quantity produces $100,000, while the second point,
+        with a lower price and higher quantity produces $93,600 in revenue.
+      </p>
+
+      <p>
+        We can use elasticity to approximate change in revenue form a change in price.
+      </p>
+
+      <example>
+        <title>Elasticity in terms of per cent change</title>
+        <statement>
+          <p>
+            The short-term elasticity for gadgets is 0.6.
+            What is the percentage change in revenue if the price is raised by 5%?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            An alternate formula for elasticity is:
+            <me>E=-\frac{\% \text{change in quantity}}{\% \text{change in price}}</me>.
+          </p>
+
+          <p>
+            Thus we see the % change in quantity is <m>-(0.6)*5\%=-3\%</m>.
+            Thus the new price is 1.05 times the old price and the new quantity is 0.97 times the old quantity.
+          </p>
+
+          <p>
+            <md>
+              <mrow>\text{NewRevenue}\amp =\text{NewPrice}*\text{NewQuantity}</mrow>
+              <mrow>\amp=(1.05*\text{OldPrice})*(0.97*\text{OldQuantity})</mrow>
+              <mrow>\amp =1.0185*\text{OldRevenue}</mrow>
+            </md>
+          </p>
+
+          <p>
+            Thus raising the price by 5% will raise revenue by 1.85%.
+          </p>
+        </solution>
+      </example>
+    </subsection>
+
+   <exercise>
+      <title>Reading check, 5.3, Elasticity</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"Elasticity of demand is a concept from economics that looks at relative rate of change rather than rate of change.  ", 
+"Elasticity of demand is the relative rate of change with respect to price.   ", 
+<!--><-->
+ "When demand is elastic (E is greater than 1), we raise revenue by lowering price.  ", 
+"When demand is inelastic (E is less than 1), we raise revenue by raising price.  ", 
+
+ "Arc elasticity is computed from two points.  ", 
+"The formula for Point elasticity is \(\frac{-dQ}{dP}*\frac{P(Q_0)}{Q_0}\).  ", 
+
+"We say elasticity is high if we can easily change the price without changing the demand.  ", 
+"We say elasticity is low  we cannot easily change the price without changing the demand.  ", 
+		],
+               "None of the above"
+              ],
+              [0, ],
+  <!-->
+             [0, 1, 2, 3, 4, 5],
+  <-->
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 5.3, Elasticity, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-5-3">
+	    <title>Exercises: Elasticity Problems</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the given demand-price function and quantity:
+            <ul>
+              <li><p>Find the price associated with the given quantity.</p></li>
+              <li><p>Find the elasticity for the given quantity.</p></li>
+              <li><p>State which pricing strategy, raising, lowering, or holding steady on prices, increases revenue.</p></li>
+              <li><p>Find the price and quantity that maximizes profit.</p></li>
+            </ul>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> \price=30-\frac{\quantity}{50};\quad \quantity=300</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li><m>\price=30-\frac{300}{50}=30-6=24</m></li>
+                <li><m>E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} = \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} = \frac{-1}{-1/50}  \frac{24}{300}=\frac{50*24}{300}=4</m></li>
+                <li><p><m>E \gt 1</m> so demand is elastic, which means we raise revenue by lowering prices.</p></li>
+                <li>
+                  <p>
+                    We can maximize revenue by finding the price and quantity when <m>E = 1</m> (unit elastic).  We want
+                    <md>
+                      <mrow>1\amp =E=\frac{-1}{dP/dQ}\frac{P(q)}{q}</mrow>
+                      <mrow>1\amp =50 \frac{30-q/50}{q}=\frac{1500-q}{q}</mrow>
+                    </md>
+                  </p>
+
+                  <p>
+                    First solve for <m>q</m>:
+                    <me>q=1500-q \Longrightarrow     2q=1500 \Longrightarrow   q=750 </me>.
+                    Next find the price:
+                    <me>\price=30-\frac{\quantity}{50},\qquad \price(750)=30-\frac{750}{50}=30-15=15</me>.
+                  </p>
+
+                  <p>
+                    Hence we have a maximum revenue when <m>\quantity=750</m> and <m>\price=\$15</m>.
+                    (The actual maximum revenue is <m>\revenue=\quantity*price=750*15=\$11,250</m>.)
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> \price=40-\frac{\quantity}{75};\quad \quantity=1600.</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> \price=50-\frac{\quantity}{100};\quad \quantity=2500.</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li><m>price=50-\frac{q}{100}=50-\frac{2500}{100}=50-25=\$25</m></li>
+                <li><m>E=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0} = \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} = \frac{-1}{-1/100}  \frac{25}{2500}=\frac{2500}{2500}=1</m></li>
+                <li>
+                  <p>
+                    When <m>E = 1</m> we have unit elasticity and the revenue is at a maximum.
+                    Hence we want to leave the price as is.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The maximum revenue occurs when <m>E = 1</m>, so we want <m>q = 2500</m> and <m>P = \$25</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> \price=30*(0.9)^{\frac{\quantity}{100} };\quad \quantity=400.</m>
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m>\price=20*(0.95)^{\frac{\quantity}{50} };\quad \quantity=800.</m>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li><m>\price=20*(.95)^{(800/50)}=\$8.80</m></li>
+                <li>
+                  <p>
+                    <md>
+                      <mrow>E\amp=\frac{-d Q}{d P}*\frac{P(Q_0 )}{Q_0}= \frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0} </mrow>
+                      <mrow>\frac{dP}{dQ}\amp = 20*(.95)^{quantity/50}\ln(.95)*\frac{1}{50}</mrow>
+                      <mrow>\left.\frac{dP}{dQ}\right|_{95}\amp = 20*(.95)^{800/50}\ln(.95)*\frac{1}{50}=-0.009</mrow>
+                      <mrow>E\amp =\frac{-1}{dP/dQ} \frac{P(Q_0 )}{Q_0}=\frac{-1}{-0.009} \frac{8.80}{800}=1.22 </mrow>
+                    </md>
+                  </p>
+                </li>
+                <li><p><m>E \gt 1</m>, so we raise revenue by lowering the price.</p></li>
+                <li>
+                  <p>
+                    We can maximize revenue by finding the price and quantity when <m>E = 1</m> (unit elastic).  We want
+                    <md>
+                      <mrow>1\amp =E=\frac{-1}{dP/dQ}\frac{P(q)}{q}</mrow>
+                      <mrow>1\amp =-\frac{1}{20*(.95)^{q/50}\ln(0.95)\frac{1}{50}}\frac{20*(.95)^{q/50}}{q}=-\frac{50}{q ln(0.95)}</mrow>
+                    </md>
+                  </p>
+
+                  <p>
+                    And hence <m>\ln(.95)  q= -50</m>, so <m>q= -50/\ln(.95)\approx 975</m>.
+                    When <m>q=975</m>, we have that <m>price=20*(.95)^{(975/50) }=\$7.36</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <m> \price=40*(0.8)^{\frac{\quantity}{50} };\quad \quantity=300.</m>
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            For the given demand-quantity points:
+            <ul>
+              <li><p>Find the elasticity for the given pair of points.</p></li>
+              <li><p>State which price-point, increases revenue.</p></li>
+            </ul>
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              First price-quantity point = ($50,1000)
+              Second price-quantity point = ($51,900).
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    <md>
+                      <mrow>E\amp =-\frac{(q_2-q_1 )}{(p_2-p_1 )}*\frac{(p_1+p_2 )}{(q_1+q_2 )}</mrow>
+                      <mrow>\amp =-\frac{(900-1000)}{(51-50)}*\frac{(50+51)}{(1000+900)}=\frac{10100}{1900}=5.32</mrow>
+                    </md>
+                  </p>
+                </li>
+                <li><p><m>E\gt 1</m>, So the market is elastic and we should choose the lower price. <m>(\$50, 1000)</m></p></li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              First price-quantity point = ($5.00,387)
+              Second price-quantity point = ($4.95,410).
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              First price-quantity point = ($1.99,2500)
+              Second price-quantity point = ($2.01,2385).
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    <md>
+                      <mrow>E\amp =-\frac{(q_2-q_1 )}{(p_2-p_1 )}*\frac{(p_1+p_2 )}{(q_1+q_2 )}</mrow>
+                      <mrow>\amp =-\frac{(2500-2385)}{(1.99-2.01)}*\frac{(1.99+2.01)}{(2500+2385)}=\frac{460}{57.7}</mrow>
+                    </md>
+                  </p>
+                </li>
+                <li><p><m>E\gt 1</m>, So the market is elastic and we should choose the lower price. <m>(\$1.99, 2500)</m></p></li>
+              </ul>
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              First price-quantity point = ($783,455)
+              Second price-quantity point = ($792,442).
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              List 3 items where you would expect the demand price to be elastic
+              and 3 items where you would expect the demand price to be inelastic.
+              Explain why you have put each item into its category.
+            </p>
+          </statement>
+          <solution>
+            <p>Hint:</p>
+            <p>
+              Elastic (<m>E \gt 1</m>)
+              The book mentions an elastic market points to something that can be easily substituted
+              and where revenue goes up when prices go down.
+              Examples are a particular cut of meat and for instance a brand of clothes.
+              If there is a sale we would choose the cheaper item. What else falls into this category?
+            </p>
+
+            <p>
+              Inelastic (<m>E \lt 1</m>) This is something where an increase in price would not decrease revenue.
+              One situation would be items that are not easily substituted. For example wedding rings or life saving medication.
+              What else falls into this category?
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Give reasons why a vendor might set a price that does not maximize revenues.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              If the short-term elasticity for widgets is 2.5 and the price is raised by 10%,
+              find the percent change in quantity and revenue.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>E=-\frac{\text{percent change in quantity}}{\text{percent change in price}}</me>
+              So we have <m>2.5=\frac{-\text{percent change in quantity}}{10 \text{ percent}}</m>,
+              and thus <m>\text{change in quantity}=-25\%</m>.
+            </p>
+            <p>And <m>\text{new revenue}=(1.10\text{ old price})(0.75\text{ old quantity})=.8250\text{ old price}</m>.</p>
+            <p>Hence we have a <m>-17.5\%</m> change in revenue.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              If the short-term elasticity for thingamabobs is 0.8 and the price is raised by 10%,
+              find the percent change in quantity and revenue.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+    </exercises>
+  </section>
+

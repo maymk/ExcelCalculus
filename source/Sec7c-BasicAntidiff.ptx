@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="sec-7-3-BasicAntidifferentiation">
+    <title>Basic Antidifferentiation</title>
+
+    <p>
+      In the last section we looked at the fundamental theorem of calculus and saw that it could be used to find definite integrals.
+      We saw:
+    </p>
+
+    <assemblage>
+      <title>Fundamental Theorem of Calculus (second version)</title>
+      <p>
+        Let <m>f(x)</m> be a continuous function on the interval <m>[a, b]</m>.
+        Suppose <m>F(x)</m> is any continuous,  differentiable function with <m>\frac{d}{dx} F(x)=f(x)</m>.
+        Then <m>\int_a^b f(t)\,dt=F(b)-F(a)</m>.
+      </p>
+    </assemblage>
+
+    <p>
+      We thus find it very useful to be able to systematically find an anti-derivative of a function.
+      The standard notation is to use an integral sign without the limits of integration to denote the general anti-derivative.
+      Thus, <m>\int_a^b f(t)dt</m> is referred to as the definite integral of <m>f(x)</m> from <m>a</m> to <m>b</m>,  and it is a number.
+      In contrast, <m>\int f(x) dx</m> is the indefinite integral of <m>f(x)</m>, and it is a function.
+      We use indefinite integrals or anti-derivatives to evaluate definite integrals or areas.
+    </p>
+
+    <p>
+      We find anti-derivatives by starting with the differentiation formulas of basic functions and manipulating them so the derivative is a nice function.
+    </p>
+
+    <p>
+      <term>Elementary Anti-derivative 1</term> <mdash/> Find a formula for <m>\int x^n\, dx</m>.
+    </p>
+
+    <p>
+      We start with the closest differentiation formula <m>\frac{d}{dx} x^n=nx^{n-1}</m>,
+      and manipulate it so <m>x^n</m> is on the right hand side.
+      We first replace <m>n</m> with <m>n+1</m> to get <m>\frac{d}{dx}  x^{n+1}=(n+1)x^n</m>.
+      We then divide both sides by <m>n+1</m> to obtain <m>x^n=\frac{d}{dx}   x^{n+1}/(n+1)</m>.
+      Finally, we note that adding a constant <m>C</m> does not change the derivative,
+      so  <m>x^n=\frac{d}{dx}  (x^{n+1}/(n+1)+C)</m>.
+      Since we have divided by <m>n+1</m>, we need to insist that <m>n+1\ne 0</m>.
+      Using the notation of indefinite integrals we obtain our power rule formula:
+    </p>
+
+    <assemblage><p><me>\int x^n\, dx=\frac{x^{n+1}}{n+1}+C, \text{ assuming } n\neq -1</me>.</p></assemblage>
+
+    <p>
+      Note that this matches the pattern we found in the last section.
+    </p>
+
+    <p>
+      <term>Elementary Anti-derivative 2</term> <mdash/> Find a formula for <m>\int 1/x \,dx</m>.
+    </p>
+
+    <p>
+      We start with the closest differentiation formula <m>\frac{d}{dx}   \ln (x)=1/x</m>.
+      In this case, we need to note that natural logarithms are only defined positive numbers and we would like a formula that is true for positive and negative numbers.
+      We can do this with an appropriate use of absolute value bars.
+      Thus, <m>\frac{d}{dx} (\ln(|x|)+C)=1/x</m>, and we have our second formula:
+    </p>
+
+    <assemblage><p><me>\int 1/x\, dx=\ln |x|+C</me>.</p></assemblage>
+
+    <p>
+      <term>Elementary Anti-derivative 3</term> <mdash/> Find a formula for <m>\int e^x\, dx</m>.
+    </p>
+
+    <p>
+      Once again, we start with the closest differentiation formula <m>\frac{d}{dx}  e^x=e^x</m>.
+      In this case we don't have to do any manipulation, and we have our formula:
+    </p>
+
+    <assemblage><p><me>\int e^x \,dx=e^x+C</me>.</p></assemblage>
+
+    <p>
+      <term>Elementary Anti-derivative 4</term> <mdash/> Find a formula for <m>\int a^x\, dx</m> for a positive number <m>a</m>.
+    </p>
+
+    <p>
+      This formula requires a bit more work.  We start with the formula <m>\frac{d}{dx}  a^x=\ln (a) a^x</m>.
+      Dividing both sides by the constant <m>\ln(a)</m> gives <m>a^x=\frac{d}{dx}  (a^x/\ln (a) +C)</m>.
+      Thus our integral is:
+    </p>
+
+    <assemblage><p><me>\int a^x  dx=\frac{a^x}{\ln (a)} +C</me>.</p></assemblage>
+
+    <p>
+      <term>Sum, Difference, and Constant Multiple rules</term> <mdash/>
+      The rules we had for taking derivatives of sums, differences, and constant multiples of functions translate into similar rules for integrals.
+    </p>
+
+    <p>The derivatives of a sum rule,
+      <m>\frac{d}{dx}(f(x)+g(x))=\frac{d}{dx}f(x)+\frac{d}{dx}g(x)</m>, becomes the
+    </p>
+
+    <assemblage>
+      <title>Integral of a Sum Rule</title>
+      <p><me>\int (f(x)+g(x))\,dx=\int f(x)\,dx+\int g(x)\,dx</me></p>
+    </assemblage>
+
+    <p>The derivatives of a difference rule,
+      <m>\frac{d}{dx}(f(x)-g(x))=\frac{d}{dx}f(x)-\frac{d}{dx}g(x)</m>,
+      becomes the
+    </p>
+
+    <assemblage>
+      <title>Integral of a Difference Rule</title>
+      <p><me>\int (f(x)-g(x))\,dx=\int f(x)\,dx-\int g(x)\,dx</me></p>
+    </assemblage>
+
+    <assemblage>
+      <title>Integral of a Constant Multiple Rule</title>
+      <p><me>\int cf(x) dx=c\int f(x)\,dx</me></p>
+    </assemblage>
+
+    <p>
+      We can use these rules to find the indefinite integrals on a lot of functions.
+      They cover all polynomials.
+    </p>
+
+    <example>
+      <title>Antiderivative of integral powers</title>
+      <statement>
+        <p>
+          Find the integral
+          <m>\int 3x^5+4x^2+5+\frac{7}{x}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>\int 3x^5+4x^2+5+\frac{7}{x}\,dx \amp =\int 3x^5\,dx+\int 4x^2\,dx+\int 5\,dx+\int \frac{7}{x}\,dx\quad\text{(sum rule)}</mrow>
+            <mrow>\amp =3\int x^5\,dx+4\int x^2\,dx+5\int \,dx+\int 7\frac{1}{x}\,dx \quad\text{(constant multiple rule)}</mrow>
+            <mrow>\amp =3\int x^5\,dx+4\int x^2\,dx+5\int \,dx+ 7\ln|x|+C \quad \text{(natural log rule)}</mrow>
+            <mrow>\amp =\frac{3}{6} x^6+\frac{4}{3}x^3+5x+ 7\ln|x|+C \quad \text{(power rule)}</mrow>
+          </md>.
+        </p>
+
+        <p>
+          One might argue that the last line should have been
+          <me>
+            =\frac{3}{6} x^6+C_1+\frac{4}{3}x^3+C_2+5x+C_3+ 7\ln|x|+C_4
+          </me>
+          since each indefinite integral gets a constant C.
+          However all of the constants used here are arbitrary constants and they can be collapsed together into a single constant <m>C</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p>We can also use these rules to find indefinite integrals for roots.</p>
+
+    <example>
+      <title>Antiderivative of fractional powers</title>
+      <statement>
+        <p>Find the integral <m>\int \sqrt{2x}+\sqrt[3]{4x}\,dx</m>.</p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>\int \sqrt{2x}+\sqrt[3]{4x}\,dx \amp = \int \sqrt{2x}\,dx+\int \sqrt[3]{4x}\,dx \quad\text{(sum rule)}</mrow>
+            <mrow>\amp =\sqrt{2}\int \sqrt{x}\,dx+\sqrt[3]{4}\int \sqrt[3]{x}\,dx \quad \text{(constant multiple rule)}</mrow>
+            <mrow>\amp=\sqrt{2}\int x^{(1/2)}\,dx+\sqrt[3]{4}\int x^{(1/3)}\,dx \quad \text{(rules of exponents)}</mrow>
+            <mrow>\amp =\sqrt{2} x^{(3/2)}(2/3)+\sqrt[3]{4}x^{(4/3)}(3/4)+C \quad \text{(power rule)}</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+
+    <p>We can also find anti-derivatives of exponential and power functions.</p>
+
+    <example>
+      <title>Antiderivative of power and exponential functions</title>
+      <statement>
+        <p>Find the integral <m>\int 2*3^x+4e^x\,dx</m>.</p>
+      </statement>
+      <solution>
+        <p>
+          <md>
+            <mrow>\int 2*3^x+4e^x\,dx \amp =\int 2*3^x\,dx+\int 4e^x\,dx \quad \text{(sum rule)}</mrow>
+            <mrow>\amp =2\int 3^x\,dx+4\int e^x\,dx\quad\text{(constant multiple rule)}</mrow>
+            <mrow>\amp=\frac{2}{\ln(3)} 3^x+4 e^x+C\quad\text{(exponential rules)}</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      As we mentioned earlier in the section,
+      the normal reason for wanting to find indefinite integrals is to be able to use them with the fundamental theorem of calculus to find definite integrals.
+    </p>
+
+    <example>
+      <title>Area under a polynomial function</title>
+      <statement>
+        <p>Evaluate the definite integral <m>\int_1^3 6x^2+2\,dx</m>.</p>
+      </statement>
+      <solution>
+        <p>
+          We first evaluate the indefinite integral to find an anti-derivative.
+          <me>\int 6x^2+2\,dx=2x^3+2x+C</me>.
+        </p>
+
+        <p>
+          Since we can use any anti-derivative, we simplify by setting <m>C = 0</m> and choosing the anti-derivative  <m>F(x)=2x^3+2x</m>.
+          <me>\int_1^3 6x^2+2\,dx=F(3)-F(1)=60-4=56</me>.
+          If we choose a different value for <m>C</m>, it cancels out when we subract the values at the endpoints.,
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Area under <m>\frac{1}{x}</m></title>
+      <statement>
+        <p>Evaluate the definite integral <m>\int_1^{100}\frac{1}{x} dx</m>.</p>
+      </statement>
+      <solution>
+        <p>
+          We first evaluate the indefinite integral to find an antiderivative.
+          <me>\int \frac{1}{x}\,dx=\ln(|x|)+C</me>.
+        </p>
+
+        <p>
+          Since we can use any antiderivative, we simplify by setting <m>C = 0</m>
+          and choosing that anti-derivative  <m>F(x)=\ln(|x|)</m>.
+          <me>\int_1^{100}\frac{1}{x}\,dx=F(100)-F(1)=\ln(100)-\ln(1)=\ln(100)</me>.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Using the FTC when the function is fit from data</title>
+      <statement>
+        <p>
+          From experience, I know that the output of an oil well follows a model of exponential decay.
+          I have the following data for the production, in barrels, for the first 5 months.
+        </p>
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+            <cell>Month</cell>
+            <cell>Jan</cell>
+            <cell>Feb</cell>
+            <cell>Mar</cell>
+            <cell>Apr</cell>
+            <cell>May</cell>
+          </row>
+          <row bottom="medium">
+            <cell>Production</cell>
+            <cell>1000</cell>
+            <cell>971</cell>
+            <cell>925</cell>
+            <cell>887</cell>
+            <cell>859</cell>
+          </row>
+        </tabular>
+
+        <p>Find the production over the first 5 years.</p>
+      </statement>
+      <solution>
+        <p>
+          The total production for 5 years will be the definite integral of the production function for the first 60 months.
+          We first use Excel to find a best fitting exponential function.
+        </p>
+
+        <image width="80%" source="images/sec7-3-1.png"/>
+
+        <p>
+          The production function (<m>P</m>) in terms of the number of months (<m>x</m>) is given by
+          <me>P(x)=1043 e^{-0.03945 x}</me>.
+        </p>
+
+        <p>
+          We would like to take an anti-derivative, but we don’t have a formula for this anti-derivative yet.
+          However, we note
+          <me> e^{-0.03945 x}=  (e^{-0.03945} )^x=0.9613^x</me>
+          and we know that <m>\ln (0.9613)=-0.03945</m>. We can now use our exponential rule, and
+          <me>\operatorname{Antideriv}P(x)=\frac{(1043*0.9613^x)}{(-0.03945)}+C</me>.
+        </p>
+
+        <p>
+          Since we can use any anti-derivative, we simplify by setting <m>C = 0</m>.
+          We can do this without creating any problems
+          because we are using the equation where two values of the anti-derivative will be subtracted from one another,
+          and hence the <m>C</m> values would cancel anyways. We now evaluate our integral.
+          <md>
+            <mrow>\operatorname{Total}P(60) \amp = \Antideriv P(60) - \Antideriv P(0)</mrow>
+            <mrow> \amp = (-2467) - (-26438) = 23962</mrow>
+          </md>.
+        </p>
+
+        <p>Thus over 5 years the well will produce 23,962 barrels.</p>
+      </solution>
+    </example>
+
+    <p>
+      Another application for anti-derivatives is solving an initial value problem.
+      In that case we want to a particular anti-derivative that has a particular value for a specified <m>x</m>.
+      In this situation we may not set <m>C</m> to zero.
+      In fact, part of the problem will be to find the appropriate value of <m>C</m>.
+    </p>
+
+    <example>
+      <title>Finding a value of <m>C</m> to match initial conditions</title>
+      <statement>
+        <p>
+          The marginal cost (MC) of producing a certain quantity (<m>q</m>) of widgets is given by
+          <me>\MC(q)=5-0.002 q</me>.
+        </p>
+
+        <p>
+          The cost of producing 1000 widgets is $6,000.
+          Assume that the derivative of the cost function is approximated closely enough by the marginal cost to be used interchangeably.
+          Find a cost function for producing widgets.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since Cost is an anti-derivative of the Marginal Cost we have
+          <m>\cost(q) = 5q - 0.001*q^2  + C</m>.
+          We also know <m>\cost(1000) = 6000</m>.  Plugging that in gives
+          <me>\cost(1000)= 5*1000 - 0.001*1000^2  + C=6000</me>.
+        </p>
+
+        <p>
+          Solving for <m>C</m> gives <m>C = 2000</m>.  Thus our cost function is
+          <me>\cost(q) = 5q - 0.001*q^2  + 2000</me>.
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <title>Building a profit function form data</title>
+      <statement>
+        <p>
+          Experience tells me that the marginal profit of producing gadgets is a linear function.
+          My start-up costs are $2 million.  I have the following data with my units being thousands of dollars per millions of units.
+        </p>
+
+        <tabular top="major" halign="center">
+          <row bottom="minor">
+            <cell>Production</cell><cell>0</cell><cell>1</cell><cell>2</cell>
+            <cell>3</cell><cell>4</cell>
+          </row>
+          <row bottom="medium">
+            <cell>Marginal Profit</cell><cell>$3,3967</cell><cell>$3,603</cell>
+            <cell>$3,236</cell><cell>$2,795</cell>
+            <cell>$2,384</cell>
+          </row>
+        </tabular>
+
+        <p>Produce a profit function, find the number of units that maximizes profit, and find the maximum profit.</p>
+      </statement>
+      <solution>
+        <p>I start by finding a best fitting line to the data. </p>
+
+        <image width="80%" source="images/sec7-3-2.png"/>
+
+        <p>
+          Excel tells me the marginal profit function is
+          <me>\MP(x) = -397.4 x + 3991.8</me>.
+          We have maximum profit when the marginal profit is zero.
+          Using Goal Seek, the Marginal Profit is zero with a production of 10.0448 millions of units.
+          The anti-derivative of this function is
+          <me>P(x)= -198.7 x^2  + 3991.8x + C</me>.
+        </p>
+
+        <p>
+          Plugging in the initial costs into the production model,
+          recalling that our function is written in thousands of dollars per millions of widgets, gives
+          <me>P(0) = -2000 = C</me>.
+          So our profit function is
+          <me>P(x)= -198.7 x^2  + 3991.8 x-2000</me>.
+        </p>
+
+        <p>
+          We saw that <m>\MP(x) = 0</m>, when <m>x = 10.0448</m>.
+          The maximum profit is the computed by evaluating <m>P(x)</m> at <m>x = 10.0448</m>.
+          A quick computation shows that the  maximum profit is $18,049 thousands of dollars, or a bit more than $18 million.
+        </p>
+      </solution>
+    </example>
+
+    <assemblage>
+      <p>
+        It is worthwhile summarizing our list of integration formulas.
+      </p>
+
+      <tabular top="major" halign="center">
+        <row bottom="minor">
+          <cell><m>f(x)</m></cell><cell><m>\int f(x)\,dx</m></cell>
+        </row>
+        <row bottom="medium">
+          <cell><m>\displaystyle x^n\text{, assuming }n\ne 1</m></cell>
+          <cell><m>\displaystyle \frac{x^{n+1}}{n+1}+C</m></cell>
+        </row>
+        <row bottom="medium">
+          <cell><m>\displaystyle \frac{1}{x}</m></cell>
+          <cell><m>\displaystyle \ln|x|+C</m></cell>
+        </row>
+        <row bottom="medium">
+          <cell><m>\displaystyle e^x</m></cell>
+          <cell><m>\displaystyle e^x+C</m></cell>
+        </row>
+        <row bottom="medium">
+          <cell><m>\displaystyle a^x</m></cell>
+          <cell><m>\displaystyle \frac{a^x}{\ln(a)}+C</m></cell>
+        </row>
+        <row bottom="medium">
+          <cell><m>\displaystyle (f+g)(x)</m></cell>
+          <cell><m>\displaystyle \int f(x)\,dx+\int g(x)dx</m></cell>
+        </row>
+        <row bottom="medium">
+          <cell><m>\displaystyle (f-g)(x)</m></cell>
+          <cell><m>\displaystyle \int f(x)\,dx-\int g(x)dx</m></cell>
+        </row>
+        <row bottom="medium">
+          <cell><m>\displaystyle c*f(x)</m></cell>
+          <cell><m>\displaystyle c*\int f(x)\,dx</m></cell>
+        </row>
+      </tabular>
+    </assemblage>
+
+    <p>
+      A word of warning <mdash/> The anti-differentiation formulas we have produced only work for the functions given,
+      allowing for changes in variables.  At this point the only way we have for finding
+      <m>\int(3x+5)^2 dx</m> is expand the integrand getting  <m>\int(9x^2+30x+25)dx</m> before applying our rules.
+      In general, the process of finding anti-derivatives symbolically is an art form that we only begin to work with in this course.
+    </p>
+
+   <exercise>
+      <title>Reading check, Basic Antidifferentiation</title>
+        <webwork>
+          <pg-code>
+            $checks = CheckboxList(
+              [
+                [
+"\(\int x^n dx = \frac{x^{n+1}}{n+1}+C\), assuming \(n\ne -1\).", 
+"\(\int 1/x dx = \ln |x|+C\).", 
+"\(\int e^x dx = e^x+C\).", 
+"\(\int a^x dx = \frac{a^x}{\ln(a)}+C\).", 
+"\(\int (f(x)+g(x))dx = \int f(x) dx + \int(g(x)dx\).",
+
+"\(\int x^n dx = \frac{x^{n+1}}{n+1}+C\), assuming \(n\ne +1\).", 
+"\(\int x^n dx = nx^{n-1}+C\).", 
+"\(\int a^x dx = \ln(a)*a^x+C\), assuming \(n\ne -1\).", 
+"\(\int (f(x)*g(x))dx = \int f(x) dx * \int(g(x)dx\).",
+"\(\int e^x dx = \frac{e^{x+1}}{x+1}+C\), assuming \(n\ne -1\).", 
+		],
+               "None of the above"
+              ],
+              [0, 1, 2, 3, 4],
+              labels => "ABC",   # "abc", "123", "roman", "Roman"
+            );
+          </pg-code>
+          <statement>
+            <p>
+              This question checks your reading comprehension of the material is section 7.3, Basic Antidifferentiation, of Business Calculus with Excel.
+              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+            </p>
+            <p>
+              <var name="$checks" form="checkboxes"/>
+            </p>
+          </statement>
+        </webwork>
+    </exercise>
+
+    <exercises xml:id="exercises-set-sec-7-3">
+	    <title>Exercises: Basic Antidifferentiation Problems</title>
+
+      <exercisegroup>
+        <introduction>
+          <p>
+            Find antiderivatives for the given functions.
+          </p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              <me>f(x)=3x+5</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>
+                F(x)=\frac{3x^2}{2}+5x+C
+              </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=5x^3+4x+3</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=x^{3,124,567}+2x^{473}+327 x^{-2,786,534}</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>F(x)=\frac{x^{3,124,568}}{3,124,568}+2 \frac{x^{474}}{474}+327 \frac{x^{-2,786,533}}{-2,786,533}+C</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=\sqrt{11x}+\frac{5}{x}</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> f(x)=e^x+\left(\frac{1}{2}\right)^x</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <me>F(x)=e^x+\frac{\left(\frac{1}{2}\right)^x}{\ln\left(\frac{1}{2}\right)}+C</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me>f(x)=\pi^x+\pi^\pi+x^\pi</me>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Evaluate the definite integrals by first finding an antiderivative.</p>
+        </introduction>
+
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_0^5 x+7\, dx</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The anti-derivative is: <m>F(x)=x^2/2+7x</m> (with these definite integrals we may choose the constant to be 0.)
+            </p>
+
+            <p>
+              <me>
+                \int_0^5 (x+7)dx=F(5)- F(0)=\frac{25}{2}+35-0=\frac{95}{2}
+              </me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_1^{10}\frac{1}{x}\, dx</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_2^{10} 3x+\frac{5}{x}\, dx</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The anti-derivative is: <m>F(x)=(3x^2)/2+5 \ln|x|</m>.
+            </p>
+            <p>
+              <md>
+                <mrow>\int_2^{10} 3x+\frac{5}{x}  dx \amp =F(10)-F(2)=\frac{300}{2}+5 \ln(10)-\left(\frac{12}{2}+5 \ln(2) \right)</mrow>
+                <mrow>\amp =150+5 \ln(10)-6-5 \ln(2)=144+5(\ln(10)-\ln(2) )</mrow>
+                <mrow>\amp = 144+5 \ln\left(\frac{10}{2}\right)=144+5 \ln(5)</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_1^{100}\left(\frac{1}{2}\right)^x\,  dx</me>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_{-10}^2 e^x+e \, dx</me>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The anti-derivative is: <m>F(x)=e^x+e x</m>.
+            </p>
+            <p>
+              <md>
+                <mrow>\int_{-10}^2 e^x+e  dx \amp =F(2)-F(-10)=e^2+2e-(e^{-10}-10 e)</mrow>
+                <mrow> \amp = e^2-\frac{1}{e^{10}} +12e</mrow>
+              </md>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              <me> \int_{-2}^5 x^{-2}+x^{-1} \, dx</me>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercisegroup>
+        <introduction>
+          <p>Solve the Initial value problem.</p>
+        </introduction>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x)=4x+3</m>.  The function <m>F(x)</m> is an antiderivative, and <m>F(0)=7</m>.
+              </p>
+            </statement>
+          <solution>
+            <p>The anti-derivative is: <m>F(x)=2x^2+3x+C</m>.</p>
+            <p><m>F(0)= 7</m> implies that <m>F(0)=0+C=7</m>, so <m>C = 7</m></p>
+            <p>Then <m>F(x)=2x^2+3x+7</m>.</p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x)=3x^2-6x+5</m>.  The function <m>F(x)</m>  is an antiderivative, and
+              <m>F(3)=17</m>.
+            </p>
+          </statement>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x)=100(0.95)^x</m>.  The function <m>F(x)</m>  is an antiderivative, and <m>F(5)=9</m>.
+              </p>
+            </statement>
+          <solution>
+            <p>
+              The anti-derivative is:
+              <me>F(x)=\frac{100 (0.95)^x }{\ln(0.95)}   +C</me>.
+            </p>
+            <p>
+              <m>F(5)= 9</m> implies that
+              <md>
+                <mrow>F(5)\amp =\frac{100 (0.95^5 )}{\ln(0.95)} +C=9</mrow>
+                <mrow>C\amp =9-\frac{100 (0.95^5 )}{\ln(0.95)}\approx 9+1508.54=1517.54</mrow>
+              </md>.
+              Then
+              <me>F(x)\approx\frac{100 (0.95^x )}{\ln(0.95)} +1517.54</me>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise>
+          <statement>
+            <p>
+              Let <m>f(x)=7/x+x^2</m>.  The function <m>F(x)</m>  is an antiderivative, and <m>F(1)=11</m>.
+            </p>
+          </statement>
+        </exercise>
+      </exercisegroup>
+
+      <exercise>
+        <statement>
+          <p>
+            An investment provides an income stream of <m>1000 (0.95)^t</m> dollars per year.  How much is received in the first 10 years?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <md>
+              <mrow>\text{Income}\amp =\int_0^{10}1000(0.95)^t\,  dt =\left.\frac{1000(0.95)^t)}{\ln(0.95)} \right|_{t=0}^{t=10}</mrow>
+              <mrow>\amp =\frac{1000(0.95)^{10}}{\ln(0.95)} -\frac{1000(0.95)^0}{\ln(0.95)} </mrow>
+              <mrow>\amp \approx -11672.81+19495.73=7822.91</mrow>
+            </md>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            A firm has a marginal profit function of <m>MP(x) = 50 - 3 x</m> in thousands of dollars per thousands of units.
+            How much is profit increased if production is shifted from 10 to 15 thousand units?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            After the first year, the rate of sales of a fad product are <m>\operatorname{sales}(t) = \frac{1000}|t|</m> with time in years.
+            How many units are sold from the end of the first year to the end of the tenth year?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <md>
+              <mrow>\text{sales}\amp =\int_1^{10}\frac{1000}{t}\, dt=1000 \ln(t) |_{t=1}^{t=10}</mrow>
+              <mrow>\amp =1000(\ln(10)-\ln(0) )</mrow>
+              <mrow>\amp =1000\ln(10)\approx 2302.58</mrow>
+            </md>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            A software company allows your company to expand the number of licenses your
+            company owns by charging a marginal rate of <m>\MR(\text{licenses})=\frac{200}{\sqrt{\text{licenses}}}</m>.
+            How much does it cost to increase your license from 1000 to 2000 licenses?
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The production function for a given oil well is <m>rate(t) = 400(0.9)^t</m> with time measured in years and production measured in millions of barrels of oil.
+            <ol marker="(a)">
+              <li><p>How much oil is produced in the first year?</p></li>
+              <li><p>How much oil is produced in the tenth year?</p></li>
+              <li><p>If I need to produce 75 thousand barrels of oil per year for the well to be financially viable, what is the life of the well?</p></li>
+              <li><p>How much oil will the well produce before being shut down?</p></li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  <md>
+                    <mrow>\text{Production}\amp =\int_0^{1}400(0.9)^t\, dt =\left.\frac{400}{\ln(0.9)}  (0.9)^t \right|_{t=0}^{t=1}</mrow>
+                    <mrow>\amp =\frac{400}{\ln(0.9)} (0.9-1)\approx 379.649 </mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <md>
+                    <mrow>\text{Production}\amp =\int_9^{10}400(0.9)^t\, dt =\left.\frac{400}{\ln(0.9)}  (0.9)^t \right|_{t=9}^{t=10}</mrow>
+                    <mrow>\amp =\frac{400}{\ln(0.9)} (0.9^{10}-0.9^{9})\approx 147.08 </mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <md>
+                    <mrow>0.075\amp =400*(0.9)^t</mrow>
+                    <mrow>t\amp =ln(0.75/400)/ln(0.9)\approx 81.451</mrow>
+                  </md>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Use Goal seek:
+                  <md>
+                    <mrow>75\amp =400(0.9^t)</mrow>
+                    <mrow>t \amp \approx 15.8881</mrow>
+                  </md>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            The expected value received from a particular revenue stream should be an exponential function.
+            I have the following data for income received over the past 5-year period.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Year</cell><cell>1</cell><cell>2</cell>
+              <cell>3</cell><cell>4</cell><cell>5</cell>
+            </row>
+            <row bottom="medium">
+              <cell>Income</cell><cell>$1,030</cell><cell>$1,078</cell>
+              <cell>$1,110</cell><cell>$1,169</cell>
+              <cell>$1,225</cell>
+            </row>
+          </tabular>
+
+          <p>How much do I expect to receive over the next 10 years?</p>
+        </statement>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            From experience, I expect the marginal revenue for my firm to be a quadratic function.
+            I have the following data on revenue at a variety of levels,
+            with production in thousands of units and marginal profit in millions of dollars.
+          </p>
+
+          <tabular top="major" halign="center">
+            <row bottom="minor">
+              <cell>Production</cell><cell>$4.90</cell><cell>$7.04</cell>
+              <cell>9.00</cell><cell>11.03</cell><cell>14.00</cell>
+            </row>
+            <row bottom="medium">
+              <cell>MProfit</cell><cell>7.40</cell><cell>9.12</cell>
+              <cell>9.90</cell><cell>9.89</cell>
+              <cell>8.40</cell>
+            </row>
+          </tabular>
+
+          <p>
+            What is the expected change in revenue as I increase production from 15 to 20 thousand units?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using trend line, my function for <m>\Mprofit</m> is
+            <me>\Mprofit=-0.01\Production^2+2\Production+0.11</me>.
+            Integrating from 15 to 20,
+            <md>
+              <mrow>\profit \amp = \int_{15}^{20}-0.01x^2+2x+0.11 \, dx</mrow>
+              <mrow> \amp = \left.-\frac{0.01}{3} x^3+x^2+0.11x\right|_{x=15}^{x=20}\approx 160.133</mrow>
+            </md>.
+            The profit is approximately $160.133 million.
+          </p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+
