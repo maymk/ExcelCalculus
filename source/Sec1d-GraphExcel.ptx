@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-  <section xml:id="sec-1-4-GraphingFunctionsExcel">
-    <title>Graphing functions with Excel</title>
+  <section xml:id="sec-1-4-GraphingFunctionsExcel"><title>Graphing functions with Excel</title>
+    <introduction>
 
     <p><url href="external/Examples/Section-1-4-Examples-Unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-4-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
     <p><url href="external/Examples/Section-1-4-Examples.xlsx"  visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-4-Examples.xlsx">Link to worksheets used in this section</url></p>
-
+   
     <p>
       One area where Excel is different from a graphing calculator is in producing the graph of a function that has been defined by a formula.
       It is not difficult, but it is not as straight forward as with a calculator. However, it is a skill worth developing .
@@ -21,9 +21,10 @@
       For the third example, we would also like to have the ability to change the domain,
       graphing over <m>\xLow \le x \le \xHigh</m>, where <m>\xLow</m> and <m>\xHigh</m> can easily be changed.
     </p>
+  </introduction>
 
-    <example><title>A basic graph</title>
-      <figure>
+    <subsection><title>A basic graph</title>
+      <figure xml:id="BasicGraphVideo">
         <caption>Video presentation of this example</caption>
         <video youtube="0zuJMZN1UoA"/>
       </figure>
@@ -41,12 +42,15 @@
       <p>
         We then use quick fill and quick copy to fill out the table.
       </p>
-
+      <figure xml:id="TableForSimpleGraph">
           <image width="60%" source="images/sec1-4-2.png"/>
+      </figure>
       <p>
         With the values of the cells filled in we highlight the cells we want to graph (<c>A14</c> through <c>B35</c>) and add a scatter plot for the highlighted values.
       </p>
+      <figure xml:id="SingleGraphTable">
           <image width="80%" source="images/sec1-4-3.png"/>
+      </figure>
 
       <p>
         (The location of the scatterplot will be a bit different with Macs.
@@ -54,11 +58,10 @@
       </p>
 
           <image width="80%" source="images/sec1-4-4.png"/>
-    </example>
+    </subsection>
 
-
-    <example><title>A graph with parameters</title>
-      <figure>
+    <subsection><title>A graph with parameters</title>
+      <figure xml:id="VideoParametersVideo">>
         <caption>Video presentation of this example</caption>
         <video youtube="PFjsfVqDorE"/>
       </figure>
@@ -84,8 +87,9 @@
         Now we set up the problem in the same way we did above, except that we are using absolute references for <m>a</m>, <m>b</m>, and <m>c</m>,
         and relative references for <m>x</m>.
       </p>
+      <figure xml:id="GraphParamtersTable">
             <image width="80%" source="images/sec1-4-5.png"/>
-
+      </figure>
       <p>
         Now, we once again do a quick fill to complete the table, and then add a scatterplot.
       </p>
@@ -97,9 +101,9 @@
       </p>
 
             <image width="80%" source="images/sec1-4-7.png"/>
-    </example>
+    </subsection>
 
-    <example><title>Controlling the viewing window</title>
+    <subsection><title>Controlling the viewing window</title>
       <figure>
         <caption>Video presentation of this example</caption>
         <video youtube="KMc0wWSgdIo"/>
@@ -136,12 +140,11 @@
 
       <image width="80%" source="images/sec1-4-9.png"/>
 
-    </example>
+    </subsection>
 
-    <example>
-      <title>Graphing more than one function</title>
+    <subsection><title>Graphing more than one function</title>
 
-      <figure>
+      <figure xml:id="MultipleFunctionsVideo">
         <caption>Video presentation of this example</caption>
         <video youtube="gMIn78ufX0g"/>
       </figure>
@@ -159,21 +162,21 @@
         We then simply select the cells for <m>x</m> and the functions we want graphed together and produce a scatterplot as before.
         (To graph <m>g(x)</m> and <m>h(x)</m> together, we want to select the columns for <m>x</m>, <m>g(x)</m>, and <m>h(x)</m>.)
       </p>
-
+      <figure xml:id="TwoFunctionsGraphed">
               <image width="80%" source="images/sec1-4-11.png"/>
-
+      </figure>
       <p>
         One problem with the graph of <m>g(x)</m> and <m>h(x)</m> together is that the functions have different orders of magnitude,
         so we do not see that <m>y = g(x)</m> is a parabola.
         One remedy is to use a secondary axis for the graph of <m>h(x)</m>.
         (Simply double click on one of the points for <m>h(x)</m>, and select secondary axis from the axes tab.)
       </p>
-
+      <figure xml:id="SecondaryAxesUsed">
               <image width="80%" source="images/sec1-4-12.png"/>
-    </example>
+      </figure>
+    </subsection>
 
-    <paragraphs>
-      <title>Formatting a chart</title>
+    <subsection xml:id="FormattingChart"><title>Formatting a chart</title>
       <p>
         Excel has a lot of ways to add formatting to a graph or chart,
         many more than we want to be concerned with at this point.
@@ -184,18 +187,16 @@
         The chart with these annotations is given below.
         The rule of thumb to follow is to add enough annotations for a reader to be able to easily understand what is happening in the chart.
       </p>
-
-                <image width="80%" source="images/sec1-4-13.png"/>
-
+      <figure xml:id="SecondaryAxisImage">
+        <image width="80%" source="images/sec1-4-13.png"/>
+    </figure>
       <p>
         It is also worthwhile to note that you can manually set the y-range of a graph by double clicking on the axis and setting the values.
         This is particularly useful of the function has a vertical asymptote.
       </p>
-    </paragraphs>
+    </subsection>
 
-    <paragraphs>
-      <title>Online graphing tools: Wolfram Alpha</title>
-
+    <subsection><title>Online graphing tools: Wolfram Alpha</title>
       <p>
         Throughout this book, we are limiting ourselves to mathematical tools that the student can reasonably expect to find in a generic work environment.
         That is one of the reasons for focusing on using spreadsheets and Excel.
@@ -210,11 +211,10 @@
                 <image width="80%" source="images/sec1-4-14.png"/>
 
       <p>We will return to Wolfram Alpha from time to time, when we have nice formulas to manipulate. </p>
-    </paragraphs>
+    </subsection>
 
 
-    <exercise>
-      <title>Reading check, Functions in the Business Setting</title>
+    <exercise><title>Reading check, Functions in the Business Setting</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(

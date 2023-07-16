@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-ExcelCalculus maymk$ xsltproc -xinclude X-stringparam html.knowl.example no  ../../xsl/mathbook-html.xsl excelcalculus.xml
+ExcelCalculus maymk$ xsltproc -xinclude X-param html.knowl.example no  ../../xsl/mathbook-html.xsl excelcalculus.xml
 to  compile
 xsltproc ../../xsl/mathbook-latex.xsl excelcalculus.xml
 to latex
@@ -36,12 +36,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!--                                                                                              -->
 <!-- (3) SageMathCloud worksheet (parameter causes a single file for output)                      -->
 <!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
-<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-smc.xsl minimal.xml          -->
+<!--     xsltproc -X-param chunk.level 0 mathbook/xsl/mathbook-smc.xsl minimal.xml          -->
 <!--     <SageMathCloud> minimal.sagews                                                           -->
 <!--                                                                                              -->
 <!-- (4) Sage doctesting                                                                          -->
 <!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
-<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-sage-doctest.xsl minimal.xml -->
+<!--     xsltproc -X-param chunk.level 0 mathbook/xsl/mathbook-sage-doctest.xsl minimal.xml -->
 <!--     <read further instructions in> minimal.py                                                -->
 <!--
  <pretext>
@@ -144,10 +144,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xi:include href="./Chap7Integration.ptx"/>
                                                                                
 
-
     <xi:include href="./backmatter.ptx" />
-                                                               
-]
+
 <!--                                                                   
     <xi:include href="./Chap0frontmatter.ptx"/>
   

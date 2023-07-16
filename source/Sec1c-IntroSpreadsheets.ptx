@@ -248,7 +248,7 @@
       </p>
     </subsection>
 
-    <subsection>
+    <subsection xml:id="NamedCellSection">
       <title>Named Cell References</title>
 
       <p>An alternative to using absolute references in formulas is to name the cells. </p>
@@ -266,14 +266,16 @@
         Better names for those cells would then be SharesGOOG, SharesMSFT, and SharesAAPL.
         We can name a cell by editing the name box at the left side of the formula bar.
       </p>
-
-      <image width="40%" source="images/sec1-3-14.png"/>
+          <figure  xml:id="NamedCellBox">
+            <image width="40%" source="images/sec1-3-14.png"/>
+          </figure>
 
       <p>
         We can then use the names in formulas.  In general, the formulas with nicely named variables are easier to read.
       </p>
-
-      <image width="80%" source="images/sec1-3-15.png"/>
+      <figure  xml:id="NamedCellFormula">
+        <image width="80%" source="images/sec1-3-15.png"/>
+      </figure>
     </subsection>
 
     <subsection>

@@ -14,8 +14,8 @@
        <p>This appendix accumulates the spreadsheet skills used in chapter 1 of this textbook.</p>
     </introduction>
 
-    <section xml:id="SppreadSkillsSection1-3">
-        <title>Section 1-3 - Entering and Copying Formulas</title>
+    <section xml:id="SpreadSkillsSection1-3">
+        <title>From Section 1-3 - Entering and Copying Formulas</title>
              <p>
                 Spreadsheet skills introduced in <xref ref="sec-1-3-IntroExcelSpreadsheets">
                 Section 1.3 Introduction to Excel Spreadsheets</xref>
@@ -57,93 +57,172 @@
                     We can also fix either the rows or columns by using dollar signs, <c>$</c>.  Moving from cell <c>A1</c> to cell <c>B3</c>, the formula <c>=F$5</c> becomes <c>=G$5</c> and <c>=$F5</c> becomes <c>=$F7</c> 
                 </p>
                 <p>     
-                     
-                    See an explanation at <xref ref="RelAbsRefTitle"> Relative and Absolute reference discussion</xref> and a video at <xref ref="sec-1-3-IntroExcelSpreadsheets">  Relative and Absolute reference video. </xref>
-                 
-                    <!-->      
                     See an explanation at <xref ref="RelAbsRefTitle"> Relative and Absolute reference discussion</xref> and a video at <xref ref="RelativeAbsoluteVideo">  Relative and Absolute reference video. </xref>
-                 <-->
+                </p>
+            </li>
+            <li>
+                <p>
+                    We can <xref ref="NamedCellSection">name a cell with a name that describes its contents.</xref>  The <xref ref="NamedCellBox">name is put in the box in the upper right corned of the worksheet</xref>.  This makes The formulas in the cells <xref ref="NamedCellFormula">easier to read and understand</xref>.
                 </p>
             </li>
           </ul>
     </section>
     <section xml:id="SpreadSkillsSection1-4">
-        <title>Section 1.4 Graphing Functions in a Spreadsheet</title>
+        <title>From Section 1.4 Graphing Functions in a Spreadsheet</title>
         
             <ul>
-                <li>
-                    <p>
-                        <term>Graph a function</term> We graph a function in Excel by foirst making a table of input and output values.  We then select the values for both the x and y values, then select the button to insert a scatter plot.  The most common error is to ouly selct the output, in which case Excel assumes the sequence 1, 2, 3, ... is the input. (Video reference)
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <term>Graph multiple functions</term> Two graph multiple functions we start with a chart that has the input and the output of the multiple functions,  Select the column for the input and the outputs to be graphed and then insett a scatterplot.  If the input variable is not included, Excel will interpret the first output varaiable as the input and give a very different graoph. (reference)
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <term>Use a secondary axis.</term>  If the scales of the graphs are noticably differnt we want to use a secondary axis for one of the graphs.  For example is we are graphung <m>f(x)=x^2</m> and <m>g(x)=x^5</m> for the interval <m>[-10,10]</m>, the scale of <m>g(x)</m> is so large that we cannot see what happens fith <m>f(x)</m>.  Use a secondary axis. (ref)
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <term>Graph multiple functions tht are not adjacent in the chart.</term>  Use the COmmand -Selest to choose table untries that are not nesxt to each other (reference)
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <term>Graph functions with parameters in the definition.</term>
-                    </p>
-                </li>
+                <li><p><term>Graph a function</term> 
+                    We graph a function in Excel by first making a table of input and output values.  We then select the values for both the x and y values, then select the button to insert a scatter plot.  The most common error is to only selct the output, in which case Excel assumes the sequence 1, 2, 3, ... is the input. 
+                        <xref ref="BasicGraphVideo"> A screencast of the production of a graph of a simple function. </xref> 
+                        <xref ref="SingleGraphTable"> An image of the table with selections made. </xref> 
+                        
+                    </p></li>
+                <li><p><term>Graph multiple functions</term> 
+                        Two graph multiple functions we start with a chart that has the input and the output of the multiple functions,  Select the column for the input and the outputs to be graphed and then insett a scatterplot.  If the input variable is not included, Excel will interpret the first output varaiable as the input and give a very different graoph. If the input and functions are not next to each other in the table, you need to right click (control-click on a Mac) to select cells that are not adjacent.
+                        <xref ref="MultipleFunctionsVideo"> A screencast of the production of a graph of with several function. </xref> 
+                        <xref ref="TwoFunctionsGraphed"> An image of the table with multiple functions selection made. </xref> 
+                    </p></li>
+                <li><p><term>Use a secondary axis.</term>
+                         If the scales of the graphs are noticably differnt we want to use a secondary axis for one of the graphs.  For example is we are graphung <m>f(x)=x^2</m> and <m>g(x)=x^5</m> for the interval <m>[-10,10]</m>, the scale of <m>g(x)</m> is so large that we cannot see what happens fith <m>f(x)</m>.  To use a secondary axis, double click a point and then select secondary axis from the axes tab.             
+                         <xref ref="SecondaryAxesUsed"> An image of two functions and secondary axes. </xref> 
+
+                    </p></li>
+                <li><p><xref ref="FormattingChart"><term>Formatting a chart.</term></xref>  Excel gives you the ability to format your chart. Clciking on a chart brings up the "Chart Design" tab.  There are menus for "Add Chart Element", "Quick Layout", and "Change Chart Type".
+                    </p></li>
+                <li><p><term>Graph functions with parameters in the definition.</term>
+                         We can add parameters to the table we are creating to either look at a variety of curves or to change the domain of the graph.  Parameters and values that will be used throguhout the table are written as absolute references.
+                        <xref ref="VideoParametersVideo"> A screencast of producing a graph with parameters. </xref> 
+                        <xref ref="GraphParamtersTable"> An image of the table with selections made. </xref> 
+                    </p></li>
             </ul>
      </section >     
     <section xml:id="SpreadSkillsSection1-5">
-            <title>Section 1.5 Adding and Using Best Fit Curves (Trendlines)</title>
+            <title>From Section 1.5 Adding and Using Best Fit Curves (Trendlines)      </title>
             <ul>
-                <li>
+                <li><p><term>Add a trendline to a chart</term>
+                        To add a trendline, we build a chart with the data, select the data and add a scatterplot, then right-click on a ploint and select <xref ref="AddTrendlineMenu">"Add Trendline" from the drop down menu</xref>.  By defualt, Excel will add the best fitting line. (pic AddTrendlineMenu )
+                    </p></li>
+                <li><p><term>Find the equation of the trendline</term>.
+                         We use the options pallette to format the trendline.  Scroll down and select the option to <xref ref="AddTrendlineOptions">Display Equation on Chart</xref>.  If you do not make this selection when creating the trendline, you can right-click (Control-click on a mac) to bring the menu up again.
+                    </p></li>
+                <li><p>Although Excel uses the term Trenline, twe can <term>Find a best fit curve for some  non-linear models</term>.
+                      Select the approriate option from the <xref ref="AddTrendlineOptions">Trendline Oprions Menu</xref>.  Options will be grayed out if the trendline model will not fit the given data.  (E.g., we cannot make an exponential fit for data that includes negative values.)
+                    </p></li>
+                <li> <p>When we try to<term>add the predicted function back to the chart</term> 
+                        we need to translate from mathematical notation to Excel notation.  (E.g., we need to use * to make multiplication explicit and ^ to make exponantiation explicit.)
+                    </p></li>
+                <li><p>Sometimes we want to <term>change the precision of the coefficients in the trendline</term>, 
+                    particularly when using the equation to make prediction far from the basepoint.  You right-click (Control-click on a mac) on the label to <xref ref="FormatTrendlineLabel">"Format Trendline Label"</xref>. Choose Number, then category Number or Scientific, and choose the number of digits.
+                    </p></li>
+            </ul>
+    </section>
+    <section xml:id="SpreadSkillsSection1-6">
+            <title>From Section 1.6 Using Goal Seek</title>
+            <introduction>
+                <p>
+                    Goal Seek is a tool for <term>What If Analysis</term>.  Given a formula <m> f(x)=y</m>, it asks what value of <m>x</m>  will produce a desired value of <m>y</m>.  It should be noted that, by defualt, it thinks values are equal if within 0.001 of each other.
+                </p>
+            </introduction>
+            <ul>
+                <li><p>To find <term>Goal Seek</term>, 
+                        select the "Data" tab, then select the "What-If Analysis" menu and the "Goal Seek" item.  You need to identify an input cell with a number in to be the variable to change.  You also need to identify an output cell to that contains a formula that depend on the input cell.
+                    </p>
                     <p>
-                        <term>Add a trendline to a chart</term>
+                        In terms of screenshots we have a <xref ref="LinearGoalSeekSetup">starting point</xref> where the input is <c>A3</c> and the output is <c>B3</c> and the mune is visible in the menu bar.  After choosing Goal Seek we are presented with a <xref ref="LinearGoalSeekMenu"> Goal Seek menu </xref> where we identify the input and output cells and the desired vaule of the output.  Excel responds with the <xref ref="LinearGoalSeekResult"> desired results</xref>.  There is also a screencast of the <xref ref="LinearGoalSeekVideo">Goal Seek example</xref>.  
                     </p>
                 </li>
                 <li>
                     <p>
-                        <term>Find non linear best fit curves.</term>
+                        We often want to use Goal Seek to find the <xref ref="IntersectionGoalSeekVideo">intersection of two curves</xref>.We simply define the difference of the fuunctions as a new formula and ust it for the output.
                     </p>
                 </li>
-                <li>
-                    <p>
-                        <term>Change the precision of the coefficients in the trendline.</term>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <term>Find the equation of the trendline.</term>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <term>Add the predicted function to the chart.</term>
+                <li><p><term>Avoiding traps of Goal Seek</term> 
+                    Since Goal Seek finds results numerically, using a variant of Newton's method, there are several cautions to keep in mind:
+                        <ul>
+                            <li>
+                                <p>
+                                    Goal Seek thinks two values are equal when they are within 0.001 of each other.  It will produce an answer to <m>\frac{1}{x^4}=0</m>.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Goal seek works best when given a starting point close to an actual solution.  On a function with several solutions, different starting points lead to different solutions.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Goal seek is confused by corners and discontinuities.
+                                </p>
+                            </li>
+                        </ul>
                     </p>
                 </li>
             </ul>
     </section>
-       
-        
-    <section xml:id="SpreadSkillsSection1-6">
-            <title>Section 1.6 Using Goal Seek</title>
+    <section xml:id="SkillsChap1Google">
+        <title>Google Sheets Notes for Chapter 1 skills</title>
+        <introduction>
+            <p>
+                This text was written with the assumption it would use Excel as the spreadsheet tool.  Other institutions may decide they want to do the same approach, but using Google sheets.  This section addresses the places where the spreadsheet instructions differ.
+            </p>
+        </introduction>
+        <p>Skills that work the same in Excel and Sheets
+        </p>
+        <p>
             <ul>
-                <li>
-                    <p>
-                        Using Goal Seek
+                <li><p><term>Basic Arithmetic in a cell</term></p></li>
+                <li><p><term>Arithmetic with commands</term></p></li>
+                <li><p><term>Quick Fill</term></p></li>
+                <li><p><term><term>Relative and absolute references</term></term></p></li>
+                <li><p><term>Naming a Cell</term></p></li>
+                <li><p><term>Graph multiple functions</term>
+                    (Given the differences for graphing a single function.)   
                     </p>
                 </li>
-                <li>
-                    <p>
-                        Avoiding traps of Goal Seek
-                    </p>
-                </li>
+                <li><p><term>Graph functions with parameters in the definition.</term></p></li>
+                <li><p><term>Add the predicted function back to the chart</term></p></li>
+                <li><p><term>Using Goal Seek.</term></p></li>
+                <li><p><term>Avoiding traps with Goal Seek.</term></p></li>
+                <li><p><term>Finding the intersection of two curves with Goal Seek.</term></p></li>
             </ul>
+        </p>
+        <p>Skills that work differently in Excel and Sheets:
+            <ul>
+                <li><p><term>Showing all the formulas on a page</term>
+                        is found by selecting the "view" tab, then the "Show" menu, and the "formulas" item.
+                    </p>
+                </li>
+                <li><p><term>Graph a function</term> 
+                    is found by selecting the "chart" item from the insert tab.  Sheets defaults to a line graph.  It brings up a chart editor.  Scatterplot is a chart type.
+                    </p>
+                </li>
+                <li><p><term>Use a secondary axis.</term> 
+                        Double click on the graph to bring up the "Chart Editor". Use the "Series" menu to selct the function that wiill use the left axis for scale.  Scroll down to find the "Axis" menu.  Choose  "Right Axis".
+                    </p>
+                </li>
+                <li><p><term>Formatting a chart.</term>  In Sheets, double click on a chart to bring up a Chart editor.  THere are a variety on menus.  You need to scroll down to see them all.
+                    </p></li>
+                <li><p><term>Showing all the formulas on a page</term> 
+                    is found by selecting the "view" tab, then the "Show" menu, and the "formulas" item.
+                    </p>
+                </li>
+                <li><p><term>Add a trendline to a chart</term> 
+                    In the "Chart editor", scroll down and select the "Trendline" option.
+                    </p>
+                </li>
+                <li><p><term>Find a best fit curve for some  non-linear models</term> 
+                    In the "Chart editor", scroll down and make a selection from the "Type" menu.
+                    </p>
+                </li>
+                <li><p><term>Change the precision of the coefficients in the trendline</term>, 
+                    Google Sheets does not seem to have a reasonable way to do this.
+                    </p>
+                </li>
+                <li><p><term>Finding Goal Seek</term> 
+                    Goal Seek is an Extension.  From the "Extensions" menu, select "Add-ons", then "Get Add-ons".  Serch for and select "Goal Seek".
+                    </p></li>
+            </ul>
+        </p>
     </section>
 
 </appendix>

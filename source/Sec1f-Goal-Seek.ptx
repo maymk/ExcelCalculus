@@ -3,11 +3,10 @@
 
   <section xml:id="sec-1-6-GoalSeek">
     <title>Finding Numerical Solutions with Goal Seek</title>
-
+    <introduction>
 
     <p><url href="external/Examples/Section-1-6-Examples-unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-6-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
     <p><url href="external/Examples/Section-1-6-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-6-Examples.xlsx">Link to worksheets used in this section</url></p>
-
     <p>
       In previous sections, we looked at deciding on a model to use for numerical data,
       and finding the best fitting curve of that model for our data.
@@ -23,6 +22,7 @@
       However, Excel gives us two tools to use to solve problems numerically, Goal Seek and Solver.
       In this section we will explore Goal Seek, the simpler of these tools.
     </p>
+  </introduction>
     <assemblage>
       <p>
         <ul>
@@ -32,10 +32,8 @@
         </ul>
       </p>
     </assemblage>
-
-    <example>
-      <title>A linear example</title>
-      <figure>
+    <subsection><title>A linear example</title>
+      <figure xml:id="LinearGoalSeekVideo">
         <caption>Video presentation of this example</caption>
         <video youtube="KPmpUjuI9gA"/>
       </figure>
@@ -48,28 +46,28 @@
         I also need to start with a guessed value, which can be any number.
         I will start by guessing a value of 5.  (I will enter that value twice so we can see before and after.)
       </p>
-
+      <figure xml:id="LinearGoalSeekSetup">
           <image width="80%" source="images/sec1-6-1.png"/>
-
+      </figure>
       <p>
         I then go to the data tab and under the What-If analysis menu choose Goal Seek.
         In the Goal Seek dialog, I want to change <c>B3</c>, to <m>f(x)</m>, to 40 by changing <c>A3</c>, or <m>x</m>.
         I then select OK.
       </p>
-
+      <figure xml:id="LinearGoalSeekMenu">
           <image width="80%" source="images/sec1-6-2.png"/>
-
+      </figure>
       <p>
         Excel finds the value and asks if it is OK to replace the initial guess with that value.
         In this case, Excel found the value of <m>11.66666667</m> or <m>35/3</m>,
         which we could also have found by simple algebra.
       </p>
-
+      <figure xml:id="LinearGoalSeekResult">
           <image width="80%" source="images/sec1-6-3.png"/>
-    </example>
+      </figure>
+    </subsection>
 
-    <example>
-      <title>A quadratic example and concern with precision</title>
+    <subsection><title>A quadratic example and concern with precision</title>
       <p>
         We move on to a quadratic example.  We let <m>f(x)=x^2</m> and want to find <m>f(x)=2</m>.
         The set up is similar, with an appropriate change in the equation.
@@ -104,11 +102,11 @@
       <p>
         This has computed the value of the square root of 2 to 10 digits.
       </p>
-    </example>
+    </subsection>
 
-    <example>
-      <title>More realistic examples: finding the intersection of two curves, or equivalently finding where two functions are equal to one another.</title>
-      <figure>
+    <subsection><title>More realistic examples: finding the intersection of two curves</title>
+      <p>Equivalently, finding where two functions are equal to one another.</p>
+      <figure xml:id="IntersectionGoalSeekVideo">
         <caption>Video presentation of this example</caption>
         <video youtube="bA5ECNm_nvA"/>
       </figure>
@@ -140,14 +138,9 @@
         <me>0 = 1000*\exp(-0.02*q) - (\ln(50 + 1000*q) + q)</me>,
         but that is not an easy problem.
       </p>
-    </example>
-
-      <p>
-        Our last example for Goal Seek looks at financial computations.
-      </p>
-
-    <example>
-      <title>Using Goal Seek for financial computations</title>
+    </subsection>
+      <p>Our last example for Goal Seek looks at financial computations.</p>
+    <subsection><title>Using Goal Seek for financial computations</title>
       <figure>
         <caption>Video presentation of this example</caption>
         <video youtube="pJdAEO1qEao"/>
@@ -188,10 +181,9 @@
         It is worthwhile to note that in this case our final balance is the result of a 120-step computation with our input variable.
         Goal Seek finds a solution without us having to reduce that 120-step computation to a single long formula.
       </p>
-    </example>
+    </subsection>
 
-    <example>
-      <title>Looking under the hood and understanding Goal Seek's limitations</title>
+    <subsection><title>Looking under the hood and understanding Goal Seek's limitations</title>     
       <p>
         As with any tool we use, it is wise to have some understanding of the method used by Goal Seek.
         That will help us understand when it is giving us an answer different from the one we were expecting,
@@ -297,11 +289,9 @@
       <p>
         As noted above, Goal Seek is most useful for problems with lots of steps where we would have difficulty reducing the problem to a single equation.
       </p>
-    </example>
+    </subsection>
 
-
-    <exercise>
-      <title>Reading check, Finding Numerical Solutions with Goal Seek</title>
+    <exercise><title>Reading check, Finding Numerical Solutions with Goal Seek</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
