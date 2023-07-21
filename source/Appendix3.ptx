@@ -8,28 +8,84 @@
 <!-- See the file COPYING for copying conditions.             -->
 
 <appendix xml:id="SpreadSkills3">
-    <title>Spreadsheet Skills Chapter 3</title>
-<section xml:id="SpreadSkillsChap3">
-    <title>Chapter 3 Skills</title>
-    <subsection xml:id="SpreadSkillsSection3-1">
-        <title>Section 3.1 Skills</title>
+    <title>Spreadsheet Skills introduced in chapter 3</title>
+    <introduction>
+       <p>This appendix accumulates the spreadsheet skills introduced in chapter 3 of this textbook.</p>
+    </introduction>
+    <section xml:id="SpreadSkillsSection3-1"><title>From Section 3.1- Comparing Functions and Related Marginal Functions</title>
+        <introduction> 
+        <p>The spreadsheet skill in this section was to make a table and graph of a function and its related marginal function.  This was done several ways.</p>
+        </introduction> 
+        <subsection xml:id="MarginalFunction1-IncreseBy1"><title>Marginal Functions with <m>q</m> increasing by 1</title>
+            <p> The easist contruction is to <xref ref="MarginalRevenueNaiveSet1">build a table where the value of <m>q</m> increases by 1</xref> from one row to the next.  Since <m>Mf(q+1)=f(q+1)-f(q)</m>, we simply <xref ref="MarginalRevenueNaiveSet2">subtract values in successive rows</xref>. <xref ref="MarginalRevenueNaiveVideo"> Screencast of eaxmaple using this approach.</xref></p> 
+        </subsection> 
+        <subsection xml:id="MarginalFunction2-NotIncreseBy1"><title>Marginal Functions using Columns</title>
+            <p> The next easist contruction is to build a table computing <m>f(q+1)</m> and <m>f(q)</m> as separate columns with <xref ref="MarginaFunctionCellRef"> the cell reference replaced by the reference plus 1</xref>.  Since <m>Mf(q+1)=f(q+1)-f(q)</m>, we simply subtract values in successive columns. <xref ref="MarginalRevenueNaiveVideo"> Screencast of eaxmaple using this approach.</xref></p>  In practice, students often make formula mistakes when using this approach.
+        </subsection> 
+        <subsection xml:id="MarginalFunction3-QuickFill"><title>Marginal Functions using Quick Fill</title>
+            <p> 
+                The preferred construction builds a template that is easy to reuse.  We set up 
+                <xref ref="MarginaFunctionQuickFill">successive colummes for , <c>q</c>, <c>q+1</c>, <c>f(q)</c> and <c>f(q+1)</c></xref>. 
+                I then only have the enter the formula for the function one, under <c>f(q)</c>.  Quick fill then provides the correct formula for <c>f(q+1)</c>.   
+                <xref ref="MarginaFunctionQuickFillVideo"> Screencast of eaxmaple using this approach.</xref>  The approach starts at the 3 minute markIn practice, students often make formula mistakes when using this approach.
+            </p>
+        </subsection>
+    </section>
+    <section xml:id="SpreadSkillsSection3-2"><title>From Section 3.2- Comparing Functions and Numeric Derivatives</title>
+        <introduction> 
+            <p>The spreadsheet skill in this section was to make a table and graph of a function and its derivative.  We use a variety of approaches to find numeric derivatives.</p>
+        </introduction>
+        <subsection xml:id="DerivativeByIntuitiveDef"><title>Derivatives from the Intuitive Approach</title>
+            <p> We build a worksheet that plots<xref ref="DerivativeByIntuitiveDefSet1"> the function and a secant curve with control over del x</xref>.  We then reduce del x until the the graphs appear to be the same <xref ref="DerivativeByIntuitiveDefSet2">the graphs appear to be the same</xref>. <xref ref="DerivativeByIntuitiveDefVideo"> Screencast of example using this approach.</xref></p> 
+        </subsection>
+        <subsection xml:id="NumDerivIntuitiveLimits"><title>Derivatives from Numerical Limits</title>
+            <p> Without using graphs, we can also look at the <xref ref="DerivativeByIntuitiveDefSet3">slope of the secant line as del x gets small. </xref>. from one row to the next. <xref ref="DerivativeByIntuitiveDefVideo"> Screencast of example using this approach.</xref></p> 
+        </subsection>
+        <subsection xml:id="NumericalDerivativeAppend"><title>Graphing a Function with its Numeric Derivative</title>
+            <p> To build a chart of a function and its derivative and to grpah the functions together, 
+                we use a variant of the approach from the previous section.  
+                We set up <xref ref="NumericDerivativeTemplate">successive colummes for 
+                <c>x</c>, <c>x+del x</c>, <c>x-del x</c>, <c>f(x)</c>, <c>f(x+del x)</c> <c>f(x-del x)</c>, and <c>f'(x)</c></xref>. 
+                I then only have the enter the formula for the function one time, under <c>f(x)</c>.  
+                Quick fill then provides the correct formula for <c>f(x+del x)</c> and <c>f(x-del x)</c>.   
+                 <xref ref="FunctionAndDerivativeVideo"> Screencast of example using this approach.</xref>
+            </p> 
+            <p> In practive, we usually set <m>del x= 0.001</m>.</p> 
+        </subsection>
+        <subsection xml:id="DerivativeFormulasFromTrendlines"><title>Using Trendline to find Derivative Formulas</title>
+            <p> If the grpah of the numerical deerivative looks like a model we know, and one that trendline will produce, we can try to obtaina  formula useing Trendline.  Add a trendline and display the formula of the trendline and <m>R^2</m>  If the model is correct, <m>R^2=1</m>. <xref ref="DerivFormTrendlineVideo"> Screencast of example using this approach.</xref></p> 
+        </subsection>
+    </section>
+    <section xml:id="SpreadSkillsSection3-3">
+        <title>From Section 3.3- Building Linear Approximations</title>
+        <p>using skills from earlier sections, I compute <m>f(a)</m> and <m>f'(a)</m> for a given function and value <m>a</m>>
+            I then use the point-slope formula:</p>
+        <me>Linearf(x)=f'(a)*(x-a)+f(a)</me>
+        <p>
+            <xref ref="LinearApproxSqrtVideo"> A screencast of linear approximation of square roots</xref>.
+        </p>
+    </section>
+    <section xml:id="SpreadSkillsSection3-5">
+        <title>From Section 3.5 - An introduction to Solver</title>
         <ul>
             <li>
                 <p>
-                    Build a template for showing a function and its numeric derivative or related marginal function
+                    Finding Solver 
+                    Constrianed Solutions 
+                    Solving Systems 
+                   
                 </p>
             </li>
         </ul>
-    </subsection>
-    <subsection xml:id="SpreadSkillsSection3-5">
-        <title>Section 3.5 Skills</title>
+    </section>
+    <section xml:id="SheetsNotesCh3">
+        <title>Google Sheets Notes for Chapter 3 Skills </title>
         <ul>
             <li>
                 <p>
-                    An Introduction to solver
+                    Solver seems to be functioanlly the same in Excel and in Sheets.  The only question is finding it.
                 </p>
             </li>
         </ul>
-    </subsection>
-</section>
+    </section>
 </appendix>

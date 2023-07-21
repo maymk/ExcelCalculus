@@ -9,9 +9,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Algebraic Functions</title>
-
+    <subsection xml:id="AlgebraicFunctions"><title>Algebraic Functions</title>
       <p>
         We start with the algebraic functions that should be familiar from previous courses.
         These functions will let us use all the models that were mentioned in <xref ref="chap-1-FunctionsGraphsExcel"/>.
@@ -68,7 +66,6 @@
         <cell><c>=ABS(A1)</c></cell>
         <cell>Absolute value</cell></row>
       </tabular>
-
       <p>
         Consider a demand function and why it is probably not linear.
         We expect demand to go up whenever we drop the price.
@@ -79,14 +76,12 @@
         we often expect the limits on available materials to make increasing the supply progressively more expensive.
       </p>
 
-      <example>
-        <title>Exponential Supply and Demand Price</title>
+      <example><title>Exponential Supply and Demand Price</title>
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
             <video youtube="Ac0q2H7dlx4"/>
           </figure>
-
           <p>
             We are interested in selling gizmos.  The most a consumer will pay is $1,000.
             If we drop the cost by 10\%, we increase demand by 100.
@@ -114,8 +109,7 @@
         </solution>
       </example>
 
-      <example>
-        <title>Nonlinear Functions From Data</title>
+      <example><title>Nonlinear Functions From Data</title>
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
@@ -183,8 +177,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Discontinuous Functions</title>
+    <subsection xml:id="DiscontinuousFunctions"><title>Discontinuous Functions</title>
 
       <p>
         All of the functions above have graphs without breaks.
@@ -268,8 +261,7 @@
         <video youtube="dH_2jZZygYw"/>
       </figure>
 
-      <example>
-        <title>Raw Materials in Blocks</title>
+      <example><title>Raw Materials in Blocks</title>
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
@@ -325,8 +317,7 @@
 
       <p>The values for true and false can be numbers, string, or formulas to evaluate.</p>
 
-      <example>
-        <title>Computing Overtime Pay</title>
+      <example><title>Computing Overtime Pay</title>
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
@@ -369,14 +360,12 @@
         Consider a simplified example to illustrate the point.
       </p>
 
-      <example>
-        <title>Market Equilibrium with Discontinuous Supply Price</title>
+      <example><title>Market Equilibrium with Discontinuous Supply Price</title>
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
             <video youtube="ci90zlHUbP8"/>
           </figure>
-
           <p>
             In the widget market, the supply is constrained.
             Obtaining more than 2 widgets means using a more expensive process.
@@ -389,7 +378,6 @@
                                            \end{cases}</mrow>
             </md>.
           </p>
-
           <p>Find the market equilibrium price.</p>
         </statement>
         <solution>

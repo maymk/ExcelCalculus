@@ -50,17 +50,15 @@
       and to find it efficiently.
     </p>
 
-    <example>
-      <title>A simple derivative at a point</title>
+    <example xml:id="SimpleDerivativeAtPoint"><title>A simple derivative at a point</title>
       <statement>
         <p>Let <m>f(x)=x^2</m>.  We would like to find <m>f'(1)</m>.</p>
-        <figure>
-          <caption>Video presentation of this example</caption>
+        <figure xml:id="DerivativeByIntuitiveDefVideo">
+          <caption>Simple Derivative at a Point</caption>
           <video youtube="7WCPeUwr8GY"/>
         </figure>
       </statement>
-      <solution>
-        <title>Solution A</title>
+      <solution><title>Solution A - Intuitive Definition</title>
         <p>
           We start with our intuitive notion.  We want to look at the graph of <m>f(x)</m>,
           zoomed in far enough that the graph looks like a straight line.
@@ -78,23 +76,23 @@
           For this example <m>x_0=1</m>. If <m>\Delta x=1</m>,
           we can see that the function and the secant line are clearly distinct.
         </p>
-
-        <image width="70%" source="images/sec3-2-1.png"/>
-
+        <figure width="70%" xml:id="DerivativeByIntuitiveDefSet0">
+          <image width="70%" source="images/sec3-2-1.png"/>
+        </figure>
         <p>
           The worksheet is designed to make it easy to change the value of <m>\Delta x</m>.
         </p>
-
-        <image width="70%" source="images/sec3-2-2.png"/>
-
+        <figure width="70%" xml:id="DerivativeByIntuitiveDefSet1">
+          <image width="70%" source="images/sec3-2-2.png"/>
+        </figure>
         <p>
           As we can see, if we let <m>\Delta x=1</m>, the slope is 3,
           but we have not zoomed in far enough for the graph of <m>f(x)</m> to look like a straight line.
           Letting <m>\Delta x=0.01</m>, the slope is 2.01, and the graphs of the function and secant line seem to be the same.
         </p>
-
-        <image width="70%" source="images/sec3-2-3.png"/>
-
+        <figure width="70%" xml:id="DerivativeByIntuitiveDefSet2">
+         <image width="70%" source="images/sec3-2-3.png"/>
+        </figure>
         <p>
           With some experimentation, taking both positive and negative values of <m>\Delta x</m>,
           we get the following table of values:
@@ -144,9 +142,7 @@
           Thus <m>f'(1)=2</m>.
         </p>
       </solution>
-
-      <solution>
-        <title>Solution B</title>
+      <solution><title>Solution B - Numerical Limit</title>
         <p>
           The method of the first solution takes too much work and requires us to reset a worksheet and keep track of the slope as we try a number of values for <m>\Delta x</m>.
           We would like to create a worksheet that simply shows the values of the slope of the secant line for values of <m>\Delta x</m> and takes the value that this approaches.

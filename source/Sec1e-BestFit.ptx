@@ -225,7 +225,6 @@
           <li><p>The graph does not look like a very good fit.  The plot of the numbers actually looks as though it represents three different graphs.</p></li>
         </ul>
       </p>
-
       <p>
         We will work through the problems one at a time.
       </p>
@@ -295,8 +294,7 @@
       <conclusion><p> </p></conclusion>
     </subsection>
 
-    <exercise>
-      <title>Reading check, Using Excel to Find Best Fit Curves</title>
+    <exercise><title>Reading check, Using Excel to Find Best Fit Curves</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -327,9 +325,6 @@
           </statement>
         </webwork>
     </exercise>
-
-
-
     <exercises xml:id="exercises-set-sec-1-5">
       <title>Exercises: Using Excel to find best fit curves</title>
 
