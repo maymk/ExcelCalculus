@@ -19,8 +19,8 @@
     <example>
       <title>Use Solver to gather information about the graph</title>
       <statement>
-        <figure>
-          <caption>Video presentation of this example</caption>
+        <figure xml:id="SolverEasyVideo">
+          <caption>Using Solver on a simple function</caption>
           <video youtube="vBGPmtXB_VY"/>
         </figure>
 
@@ -46,9 +46,9 @@
           Next, we want to make sure that Solver is installed.
           It should be on the Analysis section of the Data tab.
         </p>
-
+        <figure xml:id="SolverLocation">
         <image width="30%" source="images/sec3-5-2.png"/>
-
+        </figure>
         <p>
           If you don’t find it there, you should go to the online help for Excel,
           and look for help on Solver.  Under the topic <q>Define and solve a problem by using Solver</q>,
@@ -62,9 +62,9 @@
           (As we have set up the problem, we could use solver starting with any of the cells that give a value for <m>f(x)</m>.
           I chose the one that has <m>f(x)</m> closest to the desired result.)
         </p>
-
-        <image width="70%" source="images/sec3-5-3.png"/>
-
+        <figure xml:id="SolverRoot">
+          <image width="70%" source="images/sec3-5-3.png"/>
+        </figure>
         <p>
           Solver finds a solution with <m>x=-0.72015</m>.
           We are given a dialog box that asks if we want to keep the solver solution or restore our original value.
@@ -84,9 +84,9 @@
           define the numerical derivative, then set the derivative equal to 0.
           With Solver, we simply ask it to find the maximum.  It finds the vertex at <m>x=4.5</m>.
         </p>
-
-        <image width="70%" source="images/sec3-5-5.png"/>
-
+        <figure xml:id="SolverMax">
+          <image width="70%" source="images/sec3-5-5.png"/>
+        </figure>
         <p>
           We also would like to be able to find a minimum.
           From the picture, we know that a downward pointing parabola has no absolute minimum.
@@ -95,15 +95,15 @@
           We want the minimum to appear in cell <c>B7</c>, so we want to constrain cell <c>A7</c>.
           If we start Solver, then hit the add button, we get a dialog box to enter the first constraint, that <c>A7</c><m>\ge 0</m>.
         </p>
-
-        <image width="40%" source="images/sec3-5-6.png"/>
-
+        <figure xml:id="SolverConstraint">
+          <image width="40%" source="images/sec3-5-6.png"/>
+        </figure>
         <p>
-          In a similar manner, we add the constraint that A7 15 and ask solver for a minimum.
+          In a similar manner, we add the constraint that <m>A7\ge 15</m> and ask solver for a minimum.
         </p>
-
-        <image width="70%" source="images/sec3-5-7.png"/>
-
+        <figure xml:id="SolverMin">
+          <image width="70%" source="images/sec3-5-7.png"/>
+        </figure>
         <p>
           Since we started the search for the minimum at <m>x=0.5</m>, Solver finds the minimum at <m>x=0</m>.
           This is a <q>local minimum</q>.  Any <m>x</m> value in the interval that is close by gives a higher value for the function.
@@ -135,6 +135,12 @@
       we found has a root at <m>x=9.72015</m>, a maximum at <m>x=4.5</m>,
       and local minimums at <m>x=0</m> and <m>x=15</m>.
       We also found the values of <m>f(x)</m> at all of those points.
+    </p>
+    <p>
+      <em>It is worth pointing out that the default setting has "Make unconstrained variables non-negative.</em>
+      You generally want to turn that option off.
+    </p>
+    <p>
       However, this example was chosen because we could get the same results with work by simply using the properties of parabolas.
       Thus, we now want to ask the same questions about a problem we cannot solve algebraically.
     </p>

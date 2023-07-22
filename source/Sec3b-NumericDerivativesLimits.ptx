@@ -148,16 +148,15 @@
           We would like to create a worksheet that simply shows the values of the slope of the secant line for values of <m>\Delta x</m> and takes the value that this approaches.
           We can set up a worksheet where each line takes <m>\Delta x</m> from the previous line and divides by 10.
         </p>
-
-        <image width="70%" source="images/sec3-2-4.png"/>
-
+        <figure width="70%" xml:id="DerivativeByIntuitiveDefSet3">
+          <image width="70%" source="images/sec3-2-4.png"/>
+        </figure>
         <p>
           We get the same value whether we start <m>\Delta x</m> at 1 or -1.  Once again, we find <m>f'(1)=2</m>.
         </p>
       </solution>
 
-      <solution>
-        <title>Solution C</title>
+      <solution> <title>Solution C - Calculator Definition</title>
         <p>
           This method of finding the derivative still has a number of difficulties.
           In the example above, the exact answer we want (in this case 2) did not show up in any of our computations.
@@ -189,8 +188,7 @@
       We formalize this last approach.
     </p>
 
-    <definition>
-      <title>Calculator Approximation of the Derivative</title>
+    <definition><title>Calculator Approximation of the Derivative</title>
       <statement>
         <p>
           <me>
@@ -213,13 +211,12 @@
       This allows us to compare the graph of the function with the graph of the derivative.
     </p>
 
-    <figure>
-      <caption>Video presentation of the next two examples</caption>
+    <figure xml:id="FunctionAndDerivativeVideo">
+      <caption>Video Groahing a function and its derivative</caption>
       <video youtube="F_9rbxTwCXA"/>
     </figure>
 
-    <example>
-      <title>A Function and its Derivative</title>
+    <example><title>A Function and its Derivative</title>
       <statement>
         <p>
           Compare the graph of <m>f(x)=x^2-2 x+1</m> and the graph of its derivative,
@@ -234,9 +231,9 @@
           We start by setting up a workbook that will have the structure we need to compute a chart of values for
           <m>f(x)</m> and <m>f'(x)</m>.
         </p>
-
+        <figure xml:id="NumericDerivativeTemplate">
         <image width="70%" source="images/sec3-2-7.png"/>
-
+        </figure>
         <p>
           The picture above gives the minimal amount we need to type in.
           The rest will be done with quick filling.
@@ -276,15 +273,14 @@
       so the derivative must either be zero or undefined for the graph of the function to have a maximum or minimum.
       </p></li>
       </ul>
-      </p>
-      <p>
+    </p>
+    <p>
        Finding places where functions reach their highest and lowest values is an important activity in mathematics.
       We will look at these applications in more depth in upcoming sections.
       The reader is warned that we can have places where the derivative is zero but the function is still increasing or decreasing.
     </p>
 
-    <example>
-      <title>The derivative of a more complicated function</title>
+    <example><title>The derivative of a more complicated function</title>
       <statement>
         <p>
           Compare the graph of <m>f(x)=x^3 (x^2-36)</m> and the graph of its derivative,
@@ -325,7 +321,7 @@
     <example>
       <title>Using trendlines to get the formula of a derivative</title>
       <statement>
-        <figure>
+        <figure xml:id="DerivFormTrendlineVideo">
           <caption>Video presentation of this example</caption>
           <video youtube="AXSJ1UwTSfk"/>
         </figure>

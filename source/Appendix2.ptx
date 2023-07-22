@@ -12,16 +12,16 @@
 <p>The only new spreadsheet skill introduced in Chapter 2 is the use of nonlinear functions.</p>
 <p>Spreadsheets let you use <xref ref="AlgebraicFunctions">Algebraic functions that you have encountered in previous courses</xref>.  There are a few details to keep in mind:</p>
 <ul>
-    <li><p>Multiplication need to be explicit with <c>*</c> rather then implicit putting terms and numbers next to each other.</p>]</li>
+    <li><p>Multiplication need to be explicit with <c>*</c> rather then implicit putting terms and numbers next to each other.</p></li>
     <li><p>Exponentiation uses <c>^</c></p></li>
     <li><p>Square root uses <c>sqrt</c></p></li>
     <li><p><m>e^x</m> is <c>EXP(x)</c></p></li>
     <li><p><c>x</c> needs to be replaced by a cell reference</p></li>
-    <li><p>In reading <c>-A1^2</c>, Excel interprets the minus sign as a negation symbol which is evaluated as eponentiation.  The normal meaning of <m>-x^2</m> required parentheses, so <c>-(A1^2)</c>/p></li>
+    <li><p>In reading <c>-A1^2</c>, Excel interprets the minus sign as a negation symbol which is evaluated as eponentiation.  The normal meaning of <m>-x^2</m> required parentheses, so <c>-(A1^2)</c></p></li>
 </ul>
 <p>We also introduce <xref ref="DiscontinuousFunctions">Discontinuous functions that are common in business settings</xref>.  There are a few details to keep in mind:</p>
 <ul>
-    <li><p>Business transactions are generally in whole dollars or cents, so rounding is common.<c>ROUND</c> and its variants round to a specified number of digits before or after he decimal place.</p>]</li>
+    <li><p>Business transactions are generally in whole dollars or cents, so rounding is common.<c>ROUND</c> and its variants round to a specified number of digits before or after he decimal place.</p></li>
     <li><p>Transactions are often in terms of multiples of a unit size.  (Eggs are usually sold in dozens.)  <c>CEILING</c> and <c>FLOOR</c> round up or down to multiples of a given quatity.</p></li>
     <li><p>Transactions often have different rules for different sizes.  (Overtime hours pay at a different rate than regualr hours.)  <c>IF</c> lets you have a formula with cases..</p></li>
 </ul>

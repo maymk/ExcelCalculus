@@ -51,8 +51,7 @@
       One of the reasons for looking at the linear approximation of a function is that linear functions are easy to evaluate.
     </p>
 
-    <example>
-      <title>Estimating profit</title>
+    <example><title>Estimating profit</title>
       <statement>
         <p>
           The profit from selling 10,000 gizmos is $487,253.  We also know that marginal profit(10001)=$45.
@@ -80,8 +79,8 @@
     <example>
       <title>Estimating square roots</title>
       <statement>
-        <figure>
-          <caption>Video presentation of this example</caption>
+        <figure xml:id="LinearApproxSqrtVideo">
+          <caption>Video on linear aproximation of square roots</caption>
           <video youtube="hhl9vdXWAlk"/>
         </figure>
         <p>

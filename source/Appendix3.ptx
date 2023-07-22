@@ -65,27 +65,33 @@
             <xref ref="LinearApproxSqrtVideo"> A screencast of linear approximation of square roots</xref>.
         </p>
     </section>
-    <section xml:id="SpreadSkillsSection3-5">
-        <title>From Section 3.5 - An introduction to Solver</title>
-        <ul>
-            <li>
-                <p>
-                    Finding Solver 
-                    Constrianed Solutions 
-                    Solving Systems 
-                   
-                </p>
-            </li>
-        </ul>
+    <section xml:id="SpreadSkillsSection3-5"><title>From Section 3.5 - An introduction to <xref ref="sec-3-5-IntroductionSolver">Solver</xref></title>
+        <p>
+            Solver can be thought of as a more powerful version of <xref ref="sec-1-6-GoalSeek">GoalSeek</xref>.  
+            If it is installed, it will be on the <xref ref="SolverLocation">Analysis section of the Data tab</xref>.  
+            If is is not installed, it is easiest to google "Install solver Excel" to get instructions 
+            that work with your operating system and version of Excel
+        </p>
+        <p>
+            As with Goal Seek, we can have Excel find the input value that makes a function have a desired output value.  The <xref ref="SolverRoot">setup of Solver</xref> is a bit different thant the <xref ref="LinearGoalSeekSetup">setup of Goal Seek</xref>.  The function to be set is the "objective function".  The objective functions can depend on more than one cells.  By default, it assumes variables should have non-negative values.
+        </p>
+        <p>
+            While Goal Seek only let you find where a function reached a specified value, Solver also lets you search 
+            for a <xref ref="SolverMax">local maximum</xref> or a <xref ref="SolverMin">local minimum</xref>.  
+            There is a <xref ref="SolverEasyVideo">screencast of basic solver functionality</xref>.  
+            As with Goal Seek, Solver's algorithm can be thought of as rolling downhill to the hearest answer.  
+            It can be confused if the function has discontinuities or bends too frequently.
+        </p>
+        <p>
+            Solver allows you to <xref ref="SolverConstraint">add constraints to the problem</xref>. It should be noted, that by default Solver will assume unconstrained variables are nonnegative.  
+        </p>
     </section>
     <section xml:id="SheetsNotesCh3">
         <title>Google Sheets Notes for Chapter 3 Skills </title>
-        <ul>
-            <li>
-                <p>
-                    Solver seems to be functioanlly the same in Excel and in Sheets.  The only question is finding it.
-                </p>
-            </li>
-        </ul>
+        <p>
+            Solver works the same way on both Excel and Sheets.  In Sheets, it is an Add-in.  
+            If Solver is loaded, it is a choice in the "Extensions" menu.  If not it is added by using the 
+            extensions item "Add-Ons" and select "Get Sdd-ons"
+        </p>
     </section>
 </appendix>

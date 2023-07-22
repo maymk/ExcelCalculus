@@ -187,10 +187,10 @@
 
     <subsection><title>Fitting the Consumer Price Index (<init>CPI</init>) to a best fitting curve; an extended example</title>
       <introduction>
-      <figure>
+      <p><figure>
         <caption>Video presentation of this example</caption>
         <video youtube="1hxc1bOOS68"/>
-      </figure>
+      </figure></p>
 
       <p>
         For our second example, we will look at the consumer price index and try and fit it to a model.
@@ -244,7 +244,7 @@
 	  
           <image width="80%" source="images/sec1-5-12.png"/>
 	    </subsubsection>
-	    <subsubsection><title>Setting the base point of a variable</title>
+	  <subsubsection><title>Setting the base point of a variable</title>
       <p>
         The next issue to deal with is adjusting the year.
         Looking at the raw data, the <init>CPI</init> was 100 sometime in 1983.
