@@ -4,6 +4,6 @@
  
   <xi:include href="./Sec2a-MarketEquilib.ptx"/>
   <xi:include href="./Sec2b-RevCostProfit.ptx"/>
-  <xi:include href="./Sec2c-NonLinearFunctions.ptx"/>
+  <xi:include href="./Sec2c-NonlinearFunctions.ptx"/>
 
 </chapter>
