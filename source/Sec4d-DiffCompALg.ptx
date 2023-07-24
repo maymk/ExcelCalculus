@@ -2,7 +2,7 @@
 
   <section xml:id="sec-4-4-DIfferentiationComputerAlgebra">
     <title>Differentiation Using Computer Algebra</title>
-
+  
     <p>
       As we noted in <xref ref="chap-1-FunctionsGraphsExcel"/>,
       in this book we are limiting ourselves to mathematical tools that the student can reasonably expect to find in a generic work environment.
