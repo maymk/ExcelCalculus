@@ -32,8 +32,8 @@
       <example>
         <title>Finding a Local Minimum of a Function</title>
         <statement>
-          <figure>
-            <caption>Video presentation of this example</caption>
+          <figure xml:id="CritPointsVideo">
+            <caption>Video of finding local minimum</caption>
             <video youtube="nZdaPjC0VWQ"/>
           </figure>
 
@@ -83,16 +83,18 @@
                   If the partials are more complicated, I will want to find the critical points another way.
                   I can find the point with Solver.
                 </p>
-
-                <image width="50%" source="images/sec-6-3-1.png"/>
-
+                <figure xml:id="CritPointFormula">
+                	<caption>Critical point setup</caption>
+	                <image width="50%" source="images/sec-6-3-1.png"/>
+				</figure>
                 <p>
                   To get solver to set both partials to 0 at the same time, I ask it to solve for <m>f_y=0</m>,
                   while setting <m>f_x=0</m> as a constraint.  Make sure to uncheck the box that makes unconstrained variables non-negative.
                 </p>
-
-                <image width="80%" source="images/sec-6-3-2.png"/>
-
+                <figure xml:id="CritPointConstraints">
+                	<caption>Critical point setup</caption>
+                	<image width="80%" source="images/sec-6-3-2.png"/>
+				</figure>
                 <p>This finds our critical point within our error tolerance.</p>
 
                 <image width="40%" source="images/sec-6-3-3.png"/>

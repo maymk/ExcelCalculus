@@ -2,26 +2,44 @@
 
 <!--   This file is part of Business Calculus with Excel      -->
 <!--                                                          -->
-<!--                                   -->
-<!--                                                          -->
 <!-- Copyright (C) 2023  Mike May                -->
 <!-- See the file COPYING for copying conditions.             -->
 
 <appendix xml:id="SpreadSkills6">
-    <title>Spreadsheet Skills Chapter 6</title>
-<section xml:id="SpreadSkillsChap6">
-    <title>Chapter 6 Skills</title>
-    <subsection xml:id="SpreadSkillsSection6-1">
-        <title>Section 6.1 Skills</title>
-        <ul>
-            <li>
-                <p>
-                    Build a template for showing a function and its numeric derivative or related marginal function
-                </p>
-            </li>
-        </ul>
-    </subsection>
-</section>
+    <title>Spreadsheet Skills introduced in chapter 6</title>
+    <introduction>
+       <p>This appendix accumulates the spreadsheet skills introduced in chapter 6 of this textbook.</p>
+    </introduction>
+    <section xml:id="SpreadSkillsSection6-1"><title>From Section 6.1 - Evaluating and graphing functions of several varaibles</title>
+        <subsection ><title><term>Evaluating a function of several variables</term></title>
+            <p>
+                <xref ref="FunctionSevVarFormula">Formulas in a cell can refer to several cells</xref>, allowing you to create and evaluate functions of several variables. You  can see a <xref ref="BankBalanceVideo">screencast of the example</xref>. 
+            </p>
+        </subsection>
+        <subsection ><title><term>Making a table for a function of 2 variable</term></title>
+            <p>
+                To make a <xref ref="TwoVarTableFormulas">table of values</xref> I need to construck an array where one variable is horizontal (Row 2 in the example), and the other variable is vertical (Column A in the example).  The variabkles are then semi-absolute in the formula, with a dollar sign before either the row or column as needed.  You  can see a <xref ref="BankBalanceVideo">screencast of the example</xref>. 
+            </p>
+        </subsection>
+        <subsection ><title><term>Turning a table of a function of 2 variables into a surface graph</term></title>
+            <p>
+                Once we have made a table of of values for a function of two variables, we would like to turn it into a 3-D graph.  We start with a <xref ref ="TableForGraph1">table like found above</xref>.We then <xref ref="TableForGraph2">move the varable names out of the corner</xref> into adjacent rows and columns.  Highlight the table, including the values of hte cariables.  Then insert a chart, choosing the appropriate chart type.  You can choose <xref ref="SurfaceGraph">3-D surface chart</xref>, a <xref ref="WireFrameGraph">3_D wire frame chart</xref>, or a <xref ref="ContourGraph">contour chart</xref>.  You  can see a <xref ref="TableToGraphVideo">screencast of the example</xref>.
+            </p>
+        </subsection>
+    </section>
+    <section xml:id="SpreadSkillsSection6-3">
+        <title>From Section 6.3 - Critical points and extrema</title>
+        <p>
+            You can <term>use solver to solve a system of equations</term>.  
+            You need to set the problem up with <xref ref="CritPointFormula">the set of input variables and the equation of the system</xref>. Then you call Solver and <xref ref="CritPointConstraints">use all but one of the fromulas as constraints on the system</xref>.  You  can see a <xref ref="CritPointsVideo">screencast of the example</xref>.
+        </p>
+    </section>
+    <section xml:id="SheetsNotesCh6"><title>Google Sheets Notes for Chapter 6 Skills </title>
+        <p>
+            Sheets does not seem to hae a reasonable way of producing 3-D graphs.  For the other spreadsheet skills in this chapter, Excel and Sheets behave the same way.
+        </p>
+    </section>
+
 </appendix>
 <!-->
 

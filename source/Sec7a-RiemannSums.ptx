@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-  <section xml:id="sec-7-1-RiemannSums">
-    <title>Approximating Definite Integrals as Sums</title>
+  <section xml:id="sec-7-1-RiemannSums"><title>Approximating Definite Integrals as Sums</title>
 
     <p>
       <url href="external/Examples/Section-7-1-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-7-1-Examples.xlsx">Link to worksheets used in this section</url>
@@ -15,8 +14,7 @@
       <me>\text{distance} = \text{velocity} * \Time </me>.
     </p>
 
-    <example>
-      <title>Distance with Constant Speed</title>
+    <example><title>Distance with Constant Speed</title>
       <statement>
         <p>
           Find the distance traveled if I go 60 mph from 12:30 until 3:00.
@@ -123,11 +121,10 @@
       </statement>
     </example>
 
-    <example xml:id="area-parabola-down">
-      <title>Approximating an Area with a Riemann Sum with Excel</title>
+    <example xml:id="area-parabola-down-Excel"><title>Approximating an Area with a Riemann Sum with Excel</title>
       <statement>
-        <figure>
-          <caption>Video presentation of this example</caption>
+        <figure xml:id="RiemannSumExcelVideo">
+          <caption>Riemann Sum with Excel Video</caption>
           <video youtube="DKy519Caqys"/>
         </figure>
         <p>
@@ -139,9 +136,9 @@
           We will approximate the area with 100 rectangles.
           We set up a worksheet to find the area of the first rectangle.
         </p>
-
+	  <figure xml:id="RiemannSumExcelSetup">
         <image width="70%" source="images/sec7-1-9.png"/>
-
+	  </figure>
         <p>
           Following our standard practice, we set up the question and answer in labeled areas at the top of the worksheet.
           The width of a subinterval is the width of the whole interval divided by the number of subintervals.
@@ -154,9 +151,9 @@
         </p>
 
         <p>To find the area we quick fill our worksheet.</p>
-
+	  <figure xml:id="RiemannSumExcelFilled">
         <image width="50%" source="images/sec7-1-10.png"/>
-
+	  </figure>
         <p>For a more accurate estimate we divide into smaller rectangles.</p>
 
         <image width="50%" source="images/sec7-1-11.png"/>
@@ -200,8 +197,7 @@
       or any point in the rectangle we choose.  Choosing the right hand side for evaluation makes our formulas a little simpler.
     </p>
 
-    <example>
-      <title>Present Value of a Revenue Stream</title>
+    <example> <title>Present Value of a Revenue Stream</title>
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
@@ -231,8 +227,7 @@
       </solution>
     </example>
 
-   <exercise>
-      <title>Reading check, Approximating Definite Integrals as Sums</title>
+   <exercise><title>Reading check, Approximating Definite Integrals as Sums</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(

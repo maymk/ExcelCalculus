@@ -14,7 +14,10 @@
   <xi:include href="Appendix1.ptx"/>
   <xi:include href="Appendix2.ptx"/>
   <xi:include href="Appendix3.ptx"/>
-    <!-- 
+  <xi:include href="Appendix6.ptx"/>
+  <xi:include href="Appendix7.ptx"/>
+
+  <!-- 
    <xi:include href="Appendix1.ptx"/>
    <xi:include href="Appendix2.ptx"/>
    <xi:include href="Appendix3.ptx"/>

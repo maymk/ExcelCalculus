@@ -11,11 +11,10 @@
       We do the same for functions of several variables.  We simply have to use several cell references.
     </p>
 
-    <example>
-      <title>Bank balances</title>
+    <subsection><title>Bank balances</title>
       <statement>
-        <figure>
-          <caption>Video presentation of this example</caption>
+        <figure xml:id="BankBalanceVideo">
+          <caption>Bank Balance Video</caption>
           <video youtube="JY8lnC5VvFY"/>
         </figure>
 
@@ -38,8 +37,14 @@
         </p>
 
         <sidebyside widths="40% 40%">
+        <figure xml:id="FunctionSevVarFormula">
           <image width="40%" source="images/sec-6-1-1.png"/>
+          <caption>Show formulas version</caption>
+        </figure>
+        <figure>
           <image width="40%" source="images/sec-6-1-2.png"/>
+          <caption>Unshow formulas version</caption>
+        </figure>
         </sidebyside>
 
         <p>
@@ -48,8 +53,7 @@
           while compounding weekly increases the final amount to $1,648.33.
         </p>
       </solution>
-    </example>
-
+    </subsection>
     <p>
       In this example we have four variables. We could vary
       the initial deposit, the rate, the number of periods per year and the interest rate.
@@ -64,11 +68,10 @@
       <m>r</m> (interest rate), <m>p</m> (number of payments), and <m>y</m> (number of years).
     </p>
 
-    <example>
-      <title>Demand price from 2 points</title>
+    <subsection><title>Demand price defined by 2 points</title>
       <statement>
         <figure>
-          <caption>Video presentation of this example</caption>
+          <caption>Function from 2 points video</caption>
           <video youtube="9gUk3C5kizM"/>
         </figure>
 
@@ -97,8 +100,8 @@
           <c>Demand1</c>, <c>Demand2</c>, <c>Price1</c>, <c>Price2</c>, and <c>NewDemand</c>.
         </p>
       </solution>
-    </example>
-
+    </subsection>
+    <subsection><title>Building a table with two variables</title>
     <p>
       The next task to consider is making a table of values for a function of several variables.
       Since our screens have 2 dimensions, we first look at the case when we allow two values to change.
@@ -108,12 +111,9 @@
       We note that quick filling a formula with the reference <c>$A5</c> will keep the column, A, constant but allow the row to change.
       Similarly with the reference <c>A$5</c> the column can change, but the row is constant.
     </p>
-
-    <example>
-      <title>Building a table with two variables</title>
       <statement>
-        <figure>
-          <caption>Video presentation of this example</caption>
+        <figure xml:id="TwoVarTableVideo">
+          <caption>Video of table with two variables example</caption>
           <video youtube="TwY2oKUKo7I"/>
         </figure>
 
@@ -139,9 +139,9 @@
           The interest rate will be listed across the top of the table,
           so its reference should have a dollar sign before the number.
         </p>
-
-
-        <image width="80%" source="images/sec-6-1-5.png"/>
+        	<figure xml:id="TwoVarTableFormulas"><caption></caption>
+        		<image width="80%" source="images/sec-6-1-5.png"/>
+        	</figure>
 
         <p>
           This lets us build the table we desire.  From the complete table,
@@ -152,19 +152,16 @@
 
         <image width="70%" source="images/sec-6-1-6.png"/>
       </solution>
-    </example>
-
+    </subsection>
     <p>
       Similarly, we might want to produce a table that shows the monthly payment
       on a mortgage where both the annual interest rate and the number of years are treated as variables.
       Such a chart would be useful in deciding how big a mortgage a person can afford with different kinds of mortgages.
     </p>
-
-    <example>
-      <title>Mortgage payments</title>
+    <subsection><title>Mortgage payments</title>
       <statement>
         <figure>
-          <caption>Video presentation of this example</caption>
+          <caption>Video presentation of mortgage payments</caption>
           <video youtube="SgewfMtKNDM"/>
         </figure>
 
@@ -176,9 +173,7 @@
         <p>
           We use the <c>PMT</c> command to find the monthly payment.
         </p>
-
         <image width="80%" source="images/sec-6-1-7.png"/>
-
         <p>
           We can see that the monthly payment is $421.60 for a 30-year fixed rate mortgage at 3% compounded monthly.
           For a 10-year mortgage at 6% the payment increases to $1,110.21.
@@ -186,7 +181,7 @@
 
         <image width="70%" source="images/sec-6-1-8.png"/>
       </solution>
-    </example>
+    </subsection>
 
     <p>
       After we build a table for a function we would also like to see a graph of the function.
@@ -201,11 +196,9 @@
       We want to consider what happens with two products.
     </p>
 
-    <example xml:id="ex-multi-two-products">
-      <title>Table and graph</title>
+    <example xml:id="ex-multi-two-products"><title>Table and graph</title>
       <statement>
-        <figure>
-          <caption>Video presentation of this example</caption>
+        <figure xml:id="TableToGraphVideo"> <caption>Video Producing a graph from a table</caption>
           <video youtube="MmoLoUI-Ob4"/>
         </figure>
 
@@ -242,8 +235,9 @@
         <p>
           Next we build a build a table for the function as we have done above.
         </p>
-
-        <image width="80%" source="images/sec-6-1-9.png"/>
+        <figure xml:id="TableForGraph1"><caption>First table</caption>
+        	<image width="80%" source="images/sec-6-1-9.png"/>
+        </figure>
 
         <p>
           Finally, we would like to see a graph of the function.
@@ -253,9 +247,9 @@
           Some of these drawbacks can be overcome, but only with more work than we wish to expend in this course.
           We will only add one non-intuitive option to make the graphs work better.
         </p>
-
-        <image width="100%" source="images/sec-6-1-10.png"/>
-
+        <figure xml:id="TableForGraph2"><caption>Second table</caption>
+        	<image width="100%" source="images/sec-6-1-10.png"/>
+		</figure>
         <p>
           We will move the names of the variables out of the upper left corner of the chart and into the row above and to the side of the data.
           We leave the corner cell blank.  This will let us see the values of the variables in the graphs.
@@ -269,23 +263,23 @@
         <p>
           The 3-D Surface gives a fast picture.  It is useful in seeing local minimums and maximums.
         </p>
-
-        <image width="60%" source="images/sec-6-1-11.png"/>
-
+        <figure xml:id="SurfaceGraph"><caption>Surface chart</caption>
+        	<image width="60%" source="images/sec-6-1-11.png"/>
+		</figure>
         <p>
           The Wireframe 3-D chart emphasizes that we can build a reasonable picture from the curves obtained by treating either <m>x</m> or <m>y</m> as a constant.
           It lets us understand a function of 2 variables by putting together a collection of several functions of one variable.
           This point of view will be useful when we try to take derivatives.
         </p>
-
-        <image width="80%" source="images/sec-6-1-12.png"/>
-
+        <figure xml:id="WireFrameGraph"><caption>Wire frame chart</caption>
+        	<image width="80%" source="images/sec-6-1-12.png"/>
+		</figure>
         <p>
           The Contour chart emphasizes the level curves. The rate of change will be fastest in a direction perpendicular to the level curves.
         </p>
-
-        <image width="60%" source="images/sec-6-1-13.png"/>
-
+        <figure xml:id="ContourGraph"><caption>Contour chart</caption>
+        	<image width="60%" source="images/sec-6-1-13.png"/>
+		</figure>
         <p>
           Another alternative for seeing a graph is to use Wolfram Alpha.
           Unfortunately variable names in Alpha seem to be limited to a single letter, or a letter followed by a digit.

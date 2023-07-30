@@ -8,19 +8,30 @@
 <!-- See the file COPYING for copying conditions.             -->
 
 <appendix xml:id="SpreadSkills7">
-    <title>Spreadsheet Skills Chapter 7</title>
-<section xml:id="SpreadSkillsChap7">
-    <title>Chapter 7 Skills</title>
-    <subsection xml:id="SpreadSkillsSection7-1">
-        <title>Section 7.1 Skills</title>
-        <ul>
-            <li>
-                <p>
-                    Build a template for showing a function and its numeric derivative or related marginal function
-                </p>
-            </li>
-        </ul>
-    </subsection>
-</section>
+    <title>Spreadsheet Skills introduced in chapter 7</title>
+    <introduction>
+       <p>This appendix accumulates the spreadsheet skills introduced in chapter 7 
+        of this textbook.</p> 
+    </introduction>
+    <p>
+        The main skill in this chapter was to <term>Construct a right-hand rule Riemann sum template</term>  We recount  <xref ref="area-parabola-down-Excel">the example from the section</xref>. 
+        In the <xref ref="RiemannSumExcelSetup">set-up of the example</xref>.  We follow our standard practice of putting the question and answer in labeled areas at the top of the worksheet.  
+        We want to see the start <c>a</c> and end <c>b</c> of the interval, along with number of subintervals.
+        The width of a subinterval is the width of the whole interval divided by the number of subintervals.
+        The column <m>x_n</m> is for the x value at the right side of the n-th subinterval.
+        We calculate the value of <m>x_n</m> by taking the starting point, <m>a=x_o</m>, and adding <m>n</m> times the width of a subinterval.
+        We then evaluate the function at <m>x_n</m>, which we label <m>f(x_n)</m>.
+        The area of the n-th rectangle is the height, or <m>f(x_n)</m>, times the width of the subinterval.
+        The last column is the total area for the first n rectangles.  The sum is taken from the top of the block (with a semi-absolute reference) to the current row.
+        The area for 100 rectangles is our area estimate.  
+        Since we don't want to have to look all over for our answer, we bring the area up to cell <c>D2</c> with the OFFSET command.  The command <c>OFFSET(E6,B3,0)</c> starts in cell <c>E6</c>, goes down <c>B3</c> (the number of subintervals) rows, and goes over 0 columns.  In our case, it finds the value in cell <c>E106</c> and puts it in cell <c>D2</c>. A <xref ref="RiemannSumExcelVideo">Screencast of the Riemann sum axample</xref> is available.
+    </p>
+    <p>
+        The variant of right-hand Riemann summs is to <term>Construct a midpoint rule Riemann sum template</term>  We recount  <xref ref="FitMidpointRuleExample">the example from the section</xref>.  In the <xref ref="MidpointSumSetup">set-up of the example</xref> we added an extra colum for the midpoint.  The midpoint is the right hand edge of the interval minus half the length of the subinterval.  We then evaluate at the midpoint.
+    </p>
+    <p>
+        Excel and Sheets work identically with respect to setting up these templates.
+    </p>
+
 </appendix>
 
