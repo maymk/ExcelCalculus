@@ -91,13 +91,14 @@
 </xsl:template>
 
 <!-- now come all the options -->
+<!-- all of these options have migrated to the publication file -->
 <!-- turn off hints, answers, and solutions for divisional exercises -->
-<xsl:param name="exercise.divisional.hint" select="'no'"/>
+<!-- <xsl:param name="exercise.divisional.hint" select="'no'"/>
 <xsl:param name="exercise.divisional.answer" select="'no'"/>
-<xsl:param name="exercise.divisional.solution" select="'no'"/>
+<xsl:param name="exercise.divisional.solution" select="'no'"/> -->
 
 <!-- turn off page references so print matches electronic -->
-<xsl:param name="latex.pageref" select="'no'"/>
+<!-- <xsl:param name="latex.pageref" select="'no'"/> -->
 
 <!-- uncommenting these will omit videos -->
 <!-- <xsl:template match="video[starts-with(@xml:id, 'vid')]" />

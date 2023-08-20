@@ -9,6 +9,8 @@
     </source>
     <common>
       <tableofcontents level="3"/>
+      <exercise-inline hint="no" answer="no" solution="no"/>
+      <exercise-divisional hint="no" answer="no" solution="no"/>
     </common>
     <!-- HTML-Specific Options -->
     <html>
@@ -21,7 +23,7 @@
         <!-- <asymptote links="yes"/> -->
     </html>
     <!-- PDF-Specific Options -->
-    <latex print="yes" sides="two">
+    <latex print="yes" sides="two" pageref="no">
       <!-- <asymptote links="yes"/> -->
     </latex>
 </publication>
