@@ -25,6 +25,7 @@
     </html>
     <!-- PDF-Specific Options -->
     <latex print="no" sides="one">
+      <index-page ref="ExcelCalculus"/>
       <!-- <asymptote links="yes"/> -->
     </latex>
     <webwork server="https://webwork-ptx.aimath.org" course="anonymous" coursepassword="anonymous" user="anonymous" userpassword="anonymous" />
