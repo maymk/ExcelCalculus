@@ -298,48 +298,48 @@
       </example>
     </subsection>
 
-   <exercise>
-      <title>Reading check, 5.3, Elasticity</title>
-        <webwork>
-          <pg-code>
-            $checks = CheckboxList(
-              [
-                [
-"Elasticity of demand is a concept from economics that looks at relative rate of change rather than rate of change.  ", 
-"Elasticity of demand is the relative rate of change with respect to price.   ", 
-<!--><-->
- "When demand is elastic (E is greater than 1), we raise revenue by lowering price.  ", 
-"When demand is inelastic (E is less than 1), we raise revenue by raising price.  ", 
-
- "Arc elasticity is computed from two points.  ", 
-"The formula for Point elasticity is \(\frac{-dQ}{dP}*\frac{P(Q_0)}{Q_0}\).  ", 
-
-"We say elasticity is high if we can easily change the price without changing the demand.  ", 
-"We say elasticity is low  we cannot easily change the price without changing the demand.  ", 
-		],
-               "None of the above"
-              ],
-              [0, ],
-  <!-->
-             [0, 1, 2, 3, 4, 5],
-  <-->
-              labels => "ABC",   # "abc", "123", "roman", "Roman"
-            );
-          </pg-code>
-          <statement>
-            <p>
-              This question checks your reading comprehension of the material is section 5.3, Elasticity, of Business Calculus with Excel.
-              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
-            </p>
-            <p>
-              <var name="$checks" form="checkboxes"/>
-            </p>
-          </statement>
-        </webwork>
-    </exercise>
-
     <exercises xml:id="exercises-set-sec-5-3">
 	    <title>Exercises: Elasticity Problems</title>
+
+      <exercise>
+        <title>Reading check, 5.3, Elasticity</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "Elasticity of demand is a concept from economics that looks at relative rate of change rather than rate of change.  ", 
+  "Elasticity of demand is the relative rate of change with respect to price.   ", 
+  <!--><-->
+   "When demand is elastic (E is greater than 1), we raise revenue by lowering price.  ", 
+  "When demand is inelastic (E is less than 1), we raise revenue by raising price.  ", 
+  
+   "Arc elasticity is computed from two points.  ", 
+  "The formula for Point elasticity is \(\frac{-dQ}{dP}*\frac{P(Q_0)}{Q_0}\).  ", 
+  
+  "We say elasticity is high if we can easily change the price without changing the demand.  ", 
+  "We say elasticity is low  we cannot easily change the price without changing the demand.  ", 
+      ],
+                 "None of the above"
+                ],
+                [0, ],
+    <!-->
+               [0, 1, 2, 3, 4, 5],
+    <-->
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 5.3, Elasticity, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
 
       <exercisegroup>
         <introduction>

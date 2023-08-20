@@ -115,12 +115,14 @@
           I set up my worksheet to compute these values.
         </p>
       <figure xml:id="MarginalRevenueNaiveSet1">
+        <caption/>
         <image width="70%" source="images/sec3-1-1.png"/>
       </figure>
         <p>
           I then create additional columns for the marginal functions.
         </p>
       <figure xml:id="MarginalRevenueNaiveSet2">
+        <caption/>
         <image width="70%" source="images/sec3-1-2.png"/>
       </figure>
         <p>
@@ -361,6 +363,7 @@
         often forgetting parentheses somewhere or forgetting to change one of the copies of <m>q</m> to <m>q+1</m>.
       </p>
         <figure xml:id="MarginaFunctionCellRef">
+          <caption/>
           <image width="60%" source="images/sec3-1-12.png"/>
         </figure>
       <p>
@@ -368,6 +371,7 @@
         Then the formula for <m>\revenue(q+1)</m> is obtained by quick filling form the formula for <m>\revenue(q)</m>.
       </p>
           <figure xml:id="MarginaFunctionQuickFill">
+            <caption/>
             <image width="60%" source="images/sec3-1-13.png"/>
           </figure> 
       <p>
@@ -377,7 +381,11 @@
     </subsection>
 
 
-    <exercise><title>Reading check, Marginal Functions and Difference Quotients</title>
+    
+    <exercises xml:id="exercises-set-sec-3-1">
+      <title>Exercises: Marginal Functions and Difference Quotients Problems</title>
+
+      <exercise><title>Reading check, Marginal Functions and Difference Quotients</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -406,9 +414,6 @@
           </statement>
         </webwork>
     </exercise>
-
-    <exercises xml:id="exercises-set-sec-3-1">
-      <title>Exercises: Marginal Functions and Difference Quotients Problems</title>
 
       <exercise>
         <statement>

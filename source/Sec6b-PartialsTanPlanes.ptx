@@ -884,10 +884,11 @@
                 <li>
                   <p>
                     The approximation at <m>P_2</m> obtained from the function in d.
-                    <me>
+                    <md>
                      <mrow>  \Linear\revenue(1050,575,625) =  \frac{246700}{9}+\frac{511}{36} (50)</mrow>
                      <mrow> \amp +\frac{13}{5} (75)-\frac{763}{18} (-75)=31,495</mrow>
-                    </me>.
+                    </md>.
+                    <!-- if you have mrows then you need md, not me -->
                   </p>
                 </li>
               </ol>

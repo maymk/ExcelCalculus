@@ -3,13 +3,12 @@
   <section xml:id="sec-1-5-IntroBestFitCurves">
     <title>Using Excel to find best-fit curves</title>
     <introduction>
+      <title>Overview</title>
 
     <p><url href="external/Examples/Section-1-5-Examples-Unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
     <p><url href="external/Examples/Section-1-5-Examples.xlsx"  visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples.xlsx">Link to worksheets used in this section</url></p>
-    </introduction>
-    <paragraphs>
-      <title>Overview</title>
-
+    
+    
       <p>
         In <xref first="sec-1-1-LinearFunctionsAndModels" last="sec-1-2-FunctionsBusinessSetting"/>
         we looked at useful mathematical models and formulas that we anticipate seeing repeatedly in the business environment.
@@ -75,14 +74,15 @@
         We will show how to find an equation for a data set,
         assuming we know what model would be the best one to represent the data.
       </p>
-    </paragraphs>
+    </introduction>
+    
     <subsection xml:id="BestFitLinearCurve"><title>Using Excel to find a best-fit line</title>
-        <introduction><p>
+        <introduction>
           <figure  xml:id="BestFitLinearVideo">
           <caption>Video presentation of this example</caption>
              <video youtube="ZI9hS12tHoc"/>
           </figure>
-      </p></introduction>
+      </introduction>
       <subsubsection><title>Find the line</title>
       <p>
         For a first example, we are running a widget factory and have the following data on employee performance:
@@ -111,6 +111,7 @@
         We select <term>Add Trendline</term>.
       </p>
       <figure xml:id="AddTrendlineMenu">
+        <caption/>
           <image width="80%" source="images/sec1-5-3.png"/>
       </figure>
       </subsubsection>
@@ -122,6 +123,7 @@
         we want to use a linear model, so we make that choice.  Under options, we want to display the equation on the chart.
       </p>
       <figure xml:id="AddTrendlineOptions">
+        <caption/>
           <image width="80%" source="images/sec1-5-4.png"/>
       </figure>
       <p>
@@ -143,13 +145,13 @@
           <image width="80%" source="images/sec1-5-6.png"/>
 	    </subsubsection>
 	  </subsection>
-    <subsection><title>Checking and improving our equations</title>
-      <introduction>
-      <p><figure>
+    <subsection>
+      <title>Checking and improving our equations</title>
+      <!-- unless you are going to have subsubsections, there should not be an introduction -->
+      <figure>
         <caption>Video presentation of this example</caption>
         <video youtube="wAy0kfdToTA"/>
-      </figure></p>
-      </introduction>
+      </figure>
       <p>
         When finding the best fitting curve to data we have gathered,
         we need to pay attention to the model we have chosen and to the range to which we want to apply it.
@@ -186,12 +188,13 @@
     </subsection>
 
     <subsection><title>Fitting the Consumer Price Index (<init>CPI</init>) to a best fitting curve; an extended example</title>
+      
+      <!-- figures cannot go in a paragraph -->
       <introduction>
-      <p><figure>
+      <figure>
         <caption>Video presentation of this example</caption>
         <video youtube="1hxc1bOOS68"/>
-      </figure></p>
-
+      </figure>
       <p>
         For our second example, we will look at the consumer price index and try and fit it to a model.
         This example will illustrate several issues we need to keep in mind when building models.
@@ -203,8 +206,9 @@
       <p>
         The data from 1960 to 2011 is in the worksheet <url href="external/Examples/Section-1-5-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples.xlsx">Section-1-5-Examples.xlsx</url>.
       </p>
-      </introduction>
+      
       <figure>
+        <caption/>
           <image width="80%" source="images/sec1-5-9.png"/>
       </figure>
       <p>
@@ -214,6 +218,7 @@
         We will always select the option to show the equation on the chart.
       </p>
       <figure>
+        <caption/>
           <image width="80%" source="images/sec1-5-10.png"/>
       </figure>
       <p>
@@ -228,6 +233,7 @@
       <p>
         We will work through the problems one at a time.
       </p>
+      </introduction>
       <subsubsection><title>Number of significant digits for equation constants</title>
       <p>
         The first problem is that the equation Excel has given us does not have enough significant digits to make useful predictions.
@@ -236,6 +242,7 @@
         We choose 4 digits beyond the decimal point in that notation.
       </p>
       <figure xml:id="FormatTrendlineLabel">
+        <caption/>
           <image width="80%" source="images/sec1-5-11.png"/>
       </figure>
       <p>
@@ -294,7 +301,11 @@
       <conclusion><p> </p></conclusion>
     </subsection>
 
-    <exercise><title>Reading check, Using Excel to Find Best Fit Curves</title>
+    
+    <exercises xml:id="exercises-set-sec-1-5">
+      <title>Exercises: Using Excel to find best fit curves</title>
+
+      <exercise><title>Reading check, Using Excel to Find Best Fit Curves</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -325,8 +336,6 @@
           </statement>
         </webwork>
     </exercise>
-    <exercises xml:id="exercises-set-sec-1-5">
-      <title>Exercises: Using Excel to find best fit curves</title>
 
       <exercise>
         <statement>

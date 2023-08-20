@@ -365,44 +365,45 @@
     </subsection>
 
 
-    <exercise>
-      <title>Reading check, Derivative Rules for Combinations of Functions</title>
-        <webwork>
-          <pg-code>
-            $checks = CheckboxList(
-              [
-                [
-"The derivative of \(c*f(x)\) is \(c*f'(x)\).  ", 
-"The derivative of \(f(x)+g(x)\) is \(f'(x)+g'(x)\).  ", 
-"The derivative of \(f(x)-g(x)\) is \(f'(x)-g'(x)\).  ", 
-"The derivative of \(f(x)*g(x)\) is \(f'(x)*g(x)+f(x)*g'(x)\).  ", 
-"The derivative of \(f(x)/g(x)\) is \(\frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x)^2}\).  ", 
-
-"The derivative of \(f(x)/g(x)\) is \(\frac{f(x)*g'(x)-f'(x)*g(x)}{(g(x)^2}\).  ", 
-"The derivative of \(f(x)*g(x)\) is \(f'(x)*g'(x)\).  ", 
-"The derivative of \(f(x)/g(x)\) is \(f'(x)/g'(x)\).  " 
-		],
-               "None of the above"
-              ],
-              [0, 1, 2, 3, 4],
-              labels => "ABC",   # "abc", "123", "roman", "Roman"
-            );
-          </pg-code>
-          <statement>
-            <p>
-              This question checks your reading comprehension of the material is section 4.2, Derivative Rules for Combinations of Functions, of Business Calculus with Excel.
-              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
-            </p>
-            <p>
-              <var name="$checks" form="checkboxes"/>
-            </p>
-          </statement>
-        </webwork>
-    </exercise>
-
+    
     <exercises xml:id="exercises-set-sec-4-2">
 	    <title>Exercises: Derivative Rules for Combinations of Functions Problems</title>
 
+      <exercise>
+        <title>Reading check, Derivative Rules for Combinations of Functions</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "The derivative of \(c*f(x)\) is \(c*f'(x)\).  ", 
+  "The derivative of \(f(x)+g(x)\) is \(f'(x)+g'(x)\).  ", 
+  "The derivative of \(f(x)-g(x)\) is \(f'(x)-g'(x)\).  ", 
+  "The derivative of \(f(x)*g(x)\) is \(f'(x)*g(x)+f(x)*g'(x)\).  ", 
+  "The derivative of \(f(x)/g(x)\) is \(\frac{f'(x)*g(x)-f(x)*g'(x)}{(g(x)^2}\).  ", 
+  
+  "The derivative of \(f(x)/g(x)\) is \(\frac{f(x)*g'(x)-f'(x)*g(x)}{(g(x)^2}\).  ", 
+  "The derivative of \(f(x)*g(x)\) is \(f'(x)*g'(x)\).  ", 
+  "The derivative of \(f(x)/g(x)\) is \(f'(x)/g'(x)\).  " 
+      ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3, 4],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 4.2, Derivative Rules for Combinations of Functions, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
+  
       <exercisegroup>
         <introduction>
           <p>

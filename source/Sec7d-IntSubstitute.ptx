@@ -241,41 +241,43 @@
       </example>
     </subsection>
 
-   <exercise>
-      <title>Reading check, Integration by Change of Variable or Substitution</title>
-        <webwork>
-          <pg-code>
-            $checks = CheckboxList(
-              [
-                [
-"One of the methods in this section is called Guess and Check. ", 
-"Substitution for integration is related to the chain rule for integration. ", 
-"For the method of substitution, we want to make both \(u\) and 
-\(du\) explicit. ", 
-"We can also do change of variables with definite integrals. ", 
-
-"We can pick any expression for \(u\) when doing substitution. ", 
-		],
-               "None of the above"
-              ],
-              [0, 1, 2, 3],
-              labels => "ABC",   # "abc", "123", "roman", "Roman"
-            );
-          </pg-code>
-          <statement>
-            <p>
-              This question checks your reading comprehension of the material is section 7.4, Integration by Change of Variable or Substitution, of Business Calculus with Excel.
-              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
-            </p>
-            <p>
-              <var name="$checks" form="checkboxes"/>
-            </p>
-          </statement>
-        </webwork>
-    </exercise>
-
+   
     <exercises xml:id="exercises-set-sec-7-4">
       <title>Exercises: Integration by Change of Variables or Substitution Problems</title>
+
+      <exercise>
+        <title>Reading check, Integration by Change of Variable or Substitution</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "One of the methods in this section is called Guess and Check. ", 
+  "Substitution for integration is related to the chain rule for integration. ", 
+  "For the method of substitution, we want to make both \(u\) and 
+  \(du\) explicit. ", 
+  "We can also do change of variables with definite integrals. ", 
+  
+  "We can pick any expression for \(u\) when doing substitution. ", 
+      ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 7.4, Integration by Change of Variable or Substitution, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
+  
 
       <exercisegroup>
         <introduction>

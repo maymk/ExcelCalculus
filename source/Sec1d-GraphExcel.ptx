@@ -42,13 +42,15 @@
       <p>
         We then use quick fill and quick copy to fill out the table.
       </p>
-      <figure xml:id="TableForSimpleGraph">
-          <image width="60%" source="images/sec1-4-2.png"/>
+      <figure>
+        <caption/>
+          <image width="60%" source="images/sec1-4-2.png"  xml:id="TableForSimpleGraph"/>
       </figure>
       <p>
         With the values of the cells filled in we highlight the cells we want to graph (<c>A14</c> through <c>B35</c>) and add a scatter plot for the highlighted values.
       </p>
       <figure xml:id="SingleGraphTable">
+        <caption/>
           <image width="80%" source="images/sec1-4-3.png"/>
       </figure>
 
@@ -61,7 +63,7 @@
     </subsection>
 
     <subsection><title>A graph with parameters</title>
-      <figure xml:id="VideoParametersVideo">>
+      <figure xml:id="VideoParametersVideo">
         <caption>Video presentation of this example</caption>
         <video youtube="PFjsfVqDorE"/>
       </figure>
@@ -88,6 +90,7 @@
         and relative references for <m>x</m>.
       </p>
       <figure xml:id="GraphParamtersTable">
+        <caption/>
             <image width="80%" source="images/sec1-4-5.png"/>
       </figure>
       <p>
@@ -163,6 +166,7 @@
         (To graph <m>g(x)</m> and <m>h(x)</m> together, we want to select the columns for <m>x</m>, <m>g(x)</m>, and <m>h(x)</m>.)
       </p>
       <figure xml:id="TwoFunctionsGraphed">
+        <caption/>
               <image width="80%" source="images/sec1-4-11.png"/>
       </figure>
       <p>
@@ -172,6 +176,7 @@
         (Simply double click on one of the points for <m>h(x)</m>, and select secondary axis from the axes tab.)
       </p>
       <figure xml:id="SecondaryAxesUsed">
+        <caption/>
               <image width="80%" source="images/sec1-4-12.png"/>
       </figure>
     </subsection>
@@ -188,6 +193,7 @@
         The rule of thumb to follow is to add enough annotations for a reader to be able to easily understand what is happening in the chart.
       </p>
       <figure xml:id="SecondaryAxisImage">
+        <caption/>
         <image width="80%" source="images/sec1-4-13.png"/>
     </figure>
       <p>
@@ -214,7 +220,10 @@
     </subsection>
 
 
-    <exercise><title>Reading check, Functions in the Business Setting</title>
+    <exercises xml:id="exercises-set-sec-1-4">
+      <title>Exercises 1.4 Graphing functions with Excel</title>
+
+      <exercise><title>Reading check, Functions in the Business Setting</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -246,10 +255,6 @@
           </statement>
         </webwork>
     </exercise>
-
-
-    <exercises xml:id="exercises-set-sec-1-4">
-      <title>Exercises 1.4 Graphing functions with Excel</title>
 
       <exercise>
         <statement>

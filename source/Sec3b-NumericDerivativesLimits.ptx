@@ -76,13 +76,15 @@
           For this example <m>x_0=1</m>. If <m>\Delta x=1</m>,
           we can see that the function and the secant line are clearly distinct.
         </p>
-        <figure width="70%" xml:id="DerivativeByIntuitiveDefSet0">
+        <figure xml:id="DerivativeByIntuitiveDefSet0">
+          <caption/>
           <image width="70%" source="images/sec3-2-1.png"/>
         </figure>
         <p>
           The worksheet is designed to make it easy to change the value of <m>\Delta x</m>.
         </p>
-        <figure width="70%" xml:id="DerivativeByIntuitiveDefSet1">
+        <figure xml:id="DerivativeByIntuitiveDefSet1">
+          <caption/>
           <image width="70%" source="images/sec3-2-2.png"/>
         </figure>
         <p>
@@ -90,7 +92,8 @@
           but we have not zoomed in far enough for the graph of <m>f(x)</m> to look like a straight line.
           Letting <m>\Delta x=0.01</m>, the slope is 2.01, and the graphs of the function and secant line seem to be the same.
         </p>
-        <figure width="70%" xml:id="DerivativeByIntuitiveDefSet2">
+        <figure xml:id="DerivativeByIntuitiveDefSet2">
+          <caption/>
          <image width="70%" source="images/sec3-2-3.png"/>
         </figure>
         <p>
@@ -148,7 +151,8 @@
           We would like to create a worksheet that simply shows the values of the slope of the secant line for values of <m>\Delta x</m> and takes the value that this approaches.
           We can set up a worksheet where each line takes <m>\Delta x</m> from the previous line and divides by 10.
         </p>
-        <figure width="70%" xml:id="DerivativeByIntuitiveDefSet3">
+        <figure xml:id="DerivativeByIntuitiveDefSet3">
+          <caption/>
           <image width="70%" source="images/sec3-2-4.png"/>
         </figure>
         <p>
@@ -232,6 +236,7 @@
           <m>f(x)</m> and <m>f'(x)</m>.
         </p>
         <figure xml:id="NumericDerivativeTemplate">
+          <caption/>
         <image width="70%" source="images/sec3-2-7.png"/>
         </figure>
         <p>

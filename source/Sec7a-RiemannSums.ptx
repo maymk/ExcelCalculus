@@ -137,6 +137,7 @@
           We set up a worksheet to find the area of the first rectangle.
         </p>
 	  <figure xml:id="RiemannSumExcelSetup">
+      <caption/>
         <image width="70%" source="images/sec7-1-9.png"/>
 	  </figure>
         <p>
@@ -152,6 +153,7 @@
 
         <p>To find the area we quick fill our worksheet.</p>
 	  <figure xml:id="RiemannSumExcelFilled">
+      <caption/>
         <image width="50%" source="images/sec7-1-10.png"/>
 	  </figure>
         <p>For a more accurate estimate we divide into smaller rectangles.</p>
