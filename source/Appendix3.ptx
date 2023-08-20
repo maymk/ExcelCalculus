@@ -20,7 +20,9 @@
             <p> The easist contruction is to <xref ref="MarginalRevenueNaiveSet1">build a table where the value of <m>q</m> increases by 1</xref> from one row to the next.  Since <m>Mf(q+1)=f(q+1)-f(q)</m>, we simply <xref ref="MarginalRevenueNaiveSet2">subtract values in successive rows</xref>. <xref ref="MarginalRevenueNaiveVideo"> Screencast of eaxmaple using this approach.</xref></p> 
         </subsection> 
         <subsection xml:id="MarginalFunction2-NotIncreseBy1"><title>Marginal Functions using Columns</title>
-            <p> The next easist contruction is to build a table computing <m>f(q+1)</m> and <m>f(q)</m> as separate columns with <xref ref="MarginaFunctionCellRef"> the cell reference replaced by the reference plus 1</xref>.  Since <m>Mf(q+1)=f(q+1)-f(q)</m>, we simply subtract values in successive columns. <xref ref="MarginalRevenueNaiveVideo"> Screencast of eaxmaple using this approach.</xref></p>  In practice, students often make formula mistakes when using this approach.
+            <p> The next easist contruction is to build a table computing <m>f(q+1)</m> and <m>f(q)</m> as separate columns with <xref ref="MarginaFunctionCellRef"> the cell reference replaced by the reference plus 1</xref>.  Since <m>Mf(q+1)=f(q+1)-f(q)</m>, we simply subtract values in successive columns. <xref ref="MarginalRevenueNaiveVideo"> Screencast of eaxmaple using this approach.</xref></p>  
+            <p> In practice, students often make formula mistakes when using this approach.</p>
+            <!-- text has to be in a paragraph -->
         </subsection> 
         <subsection xml:id="MarginalFunction3-QuickFill"><title>Marginal Functions using Quick Fill</title>
             <p> 
@@ -59,8 +61,10 @@
     <section xml:id="SpreadSkillsSection3-3">
         <title>From Section 3.3- Building Linear Approximations</title>
         <p>using skills from earlier sections, I compute <m>f(a)</m> and <m>f'(a)</m> for a given function and value <m>a</m>>
-            I then use the point-slope formula:</p>
+            I then use the point-slope formula:
         <me>Linearf(x)=f'(a)*(x-a)+f(a)</me>
+        </p>
+        <!-- formula is *inside* the paragraph, not outside -->
         <p>
             <xref ref="LinearApproxSqrtVideo"> A screencast of linear approximation of square roots</xref>.
         </p>

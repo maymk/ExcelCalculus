@@ -20,6 +20,8 @@
                 Spreadsheet skills introduced in <xref ref="sec-1-3-IntroExcelSpreadsheets">
                 Section 1.3 Introduction to Excel Spreadsheets</xref>
             </p>
+            <!-- you need paragraphs... -->
+        <p>
           <ul>
             <li>
                 <p>
@@ -66,10 +68,11 @@
                 </p>
             </li>
           </ul>
+        </p>
     </section>
     <section xml:id="SpreadSkillsSection1-4">
         <title>From Section 1.4 Graphing Functions in a Spreadsheet</title>
-        
+        <p>        
             <ul>
                 <li><p><term>Graph a function</term> 
                     We graph a function in Excel by first making a table of input and output values.  We then select the values for both the x and y values, then select the button to insert a scatter plot.  The most common error is to only selct the output, in which case Excel assumes the sequence 1, 2, 3, ... is the input. 
@@ -95,9 +98,11 @@
                         <xref ref="GraphParamtersTable"> An image of the table with selections made. </xref> 
                     </p></li>
             </ul>
+        </p>
      </section >     
     <section xml:id="SpreadSkillsSection1-5">
             <title>From Section 1.5 Adding and Using Best Fit Curves (Trendlines)      </title>
+        <p>
             <ul>
                 <li><p><term>Add a trendline to a chart</term>
                         To add a trendline, we build a chart with the data, select the data and add a scatterplot, then right-click on a ploint and select <xref ref="AddTrendlineMenu">"Add Trendline" from the drop down menu</xref>.  By defualt, Excel will add the best fitting line. (pic AddTrendlineMenu )
@@ -115,14 +120,17 @@
                     particularly when using the equation to make prediction far from the basepoint.  You right-click (Control-click on a mac) on the label to <xref ref="FormatTrendlineLabel">"Format Trendline Label"</xref>. Choose Number, then category Number or Scientific, and choose the number of digits.
                     </p></li>
             </ul>
+        </p>
     </section>
     <section xml:id="SpreadSkillsSection1-6">
             <title>From Section 1.6 Using Goal Seek</title>
-            <introduction>
+            <!-- you can't have an introduction if you're not going to have a subsection -->
+            <!-- <introduction> -->
                 <p>
                     Goal Seek is a tool for <term>What If Analysis</term>.  Given a formula <m> f(x)=y</m>, it asks what value of <m>x</m>  will produce a desired value of <m>y</m>.  It should be noted that, by defualt, it thinks values are equal if within 0.001 of each other.
                 </p>
-            </introduction>
+            <!-- </introduction> -->
+        <p>
             <ul>
                 <li><p>To find <term>Goal Seek</term>, 
                         select the "Data" tab, then select the "What-If Analysis" menu and the "Goal Seek" item.  You need to identify an input cell with a number in to be the variable to change.  You also need to identify an output cell to that contains a formula that depend on the input cell.
@@ -158,14 +166,15 @@
                     </p>
                 </li>
             </ul>
+        </p>
     </section>
     <section xml:id="SkillsChap1Google">
         <title>Google Sheets Notes for Chapter 1 skills</title>
-        <introduction>
+        <!-- <introduction> -->
             <p>
                 This text was written with the assumption it would use Excel as the spreadsheet tool.  Other institutions may decide they want to do the same approach, but using Google sheets.  This section addresses the places where the spreadsheet instructions differ.
             </p>
-        </introduction>
+        <!-- </introduction> -->
         <p>Skills that work the same in Excel and Sheets
         </p>
         <p>

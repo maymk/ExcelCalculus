@@ -309,41 +309,43 @@
       </example>
     </subsection>
 
-   <exercise>
-      <title>Reading check, Integration Using Computer Algebra</title>
-        <webwork>
-          <pg-code>
-            $checks = CheckboxList(
-              [
-                [
-"The section uses Wolfram|Alpha as a computer algebra system that will do integration. ", 
-"The section uses Symbolab as a computer algebra system that will do integration.  ", 
-"Wolfram|Alpha will also do definite integrals.  ", 
-"In initial value problems, we have to solve for the value of the integration constant \(C\). ", 
-
-"The section uses GeoGebra as a computer algebra system that will do integration.  ", 
-"The computer algebra systems used in this section cannot do Riemann sums.  ", 
-		],
-               "None of the above"
-              ],
-              [0, 1, 2, 3],
-              labels => "ABC",   # "abc", "123", "roman", "Roman"
-            );
-          </pg-code>
-          <statement>
-            <p>
-              This question checks your reading comprehension of the material is section 7.5, Integration Using Computer Algebra, of Business Calculus with Excel.
-              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
-            </p>
-            <p>
-              <var name="$checks" form="checkboxes"/>
-            </p>
-          </statement>
-        </webwork>
-    </exercise>
+   
 
     <exercises xml:id="exercises-set-sec-7-5">
 	    <title>Exercises: Integration using Computer Algebra Problems</title>
+
+      <exercise>
+        <title>Reading check, Integration Using Computer Algebra</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "The section uses Wolfram|Alpha as a computer algebra system that will do integration. ", 
+  "The section uses Symbolab as a computer algebra system that will do integration.  ", 
+  "Wolfram|Alpha will also do definite integrals.  ", 
+  "In initial value problems, we have to solve for the value of the integration constant \(C\). ", 
+  
+  "The section uses GeoGebra as a computer algebra system that will do integration.  ", 
+  "The computer algebra systems used in this section cannot do Riemann sums.  ", 
+      ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 7.5, Integration Using Computer Algebra, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
       <exercisegroup>
         <introduction>
           <p>

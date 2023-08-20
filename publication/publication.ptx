@@ -8,6 +8,7 @@
     <common>
       <tableofcontents level="2"/>
       <exercise-inline hint="no" answer="no" solution="no"/>
+      <exercise-divisional hint="no" answer="no" solution="no"/>
  </common>
     <source>
       <directories external="../assets" generated="../generated-assets"/>

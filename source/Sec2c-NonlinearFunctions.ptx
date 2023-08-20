@@ -420,45 +420,47 @@
 
 
 
-    <exercise>
-      <title>Reading check, Nonlinear Functions</title>
-        <webwork>
-          <pg-code>
-            $checks = CheckboxList(
-              [
-                [
-"In the real world, the demand function is probably not linear. ", 
-"ln(x) is used for the natural log of x, or log base e. ", 
-"In Excel \(e^x\) is written EXP(x).  ",                 
-"Excel does negation before exponentiation. ", 
-"The if construction can be used in Excel for a function with branches. ", 
-"For the ROUND command we specify the number of digits past the decimal point in the rounded number. ",  
-
-"All real world cost functions are continuous.  ", 
-"The commands ROUND, ROUNDUP, and ROUNDDOWN can be used interchangeably. ", 
-"For the FLOOR command we specify the number of digits past the decimal point in the rounded number. ", 
-"The CEIL command can be used to roundup. "
-		],
-               "None of the above"
-              ],
-              [0, 1, 2, 3, 4, 5],
-              labels => "ABC",   # "abc", "123", "roman", "Roman"
-            );
-          </pg-code>
-          <statement>
-            <p>
-              This question checks your reading comprehension of the material is section 2.3, Nonlinear Functions, Costs, and Profit, of Business Calculus with Excel.
-              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
-            </p>
-            <p>
-              <var name="$checks" form="checkboxes"/>
-            </p>
-          </statement>
-        </webwork>
-    </exercise>
+    
 
     <exercises xml:id="exercises-set-sec-2-3">
       <title>Exercises 2.3 Nonlinear functions</title>
+
+      <exercise>
+        <title>Reading check, Nonlinear Functions</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "In the real world, the demand function is probably not linear. ", 
+  "ln(x) is used for the natural log of x, or log base e. ", 
+  "In Excel \(e^x\) is written EXP(x).  ",                 
+  "Excel does negation before exponentiation. ", 
+  "The if construction can be used in Excel for a function with branches. ", 
+  "For the ROUND command we specify the number of digits past the decimal point in the rounded number. ",  
+  
+  "All real world cost functions are continuous.  ", 
+  "The commands ROUND, ROUNDUP, and ROUNDDOWN can be used interchangeably. ", 
+  "For the FLOOR command we specify the number of digits past the decimal point in the rounded number. ", 
+  "The CEIL command can be used to roundup. "
+      ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3, 4, 5],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 2.3, Nonlinear Functions, Costs, and Profit, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
 
       <exercisegroup>
         <introduction>

@@ -91,10 +91,11 @@
 </xsl:template>
 
 <!-- now come all the options -->
+<!-- these are now controlled in the publication file -->
 <!-- turn off hints, answers, and solutions for divisional exercises -->
-<xsl:param name="exercise.divisional.hint" select="'no'"/>
+<!-- <xsl:param name="exercise.divisional.hint" select="'no'"/>
 <xsl:param name="exercise.divisional.answer" select="'no'"/>
-<xsl:param name="exercise.divisional.solution" select="'no'"/>
+<xsl:param name="exercise.divisional.solution" select="'no'"/> -->
 
 
 <!-- uncommenting these will omit videos -->

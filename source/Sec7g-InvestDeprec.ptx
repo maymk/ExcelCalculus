@@ -363,42 +363,44 @@
       </example>
     </subsection>
 
-   <exercise>
-      <title>Reading check, Applications of the Integral, Investment and Depreciation</title>
-        <webwork>
-          <pg-code>
-            $checks = CheckboxList(
-              [
-                [
-"Accumulating a function over time is simply taking a definite integral. ", 
-"We can accumulate marginal cost over time to find change in cost. ", 
-"The example on oil production took the integral of an exponential function. ", 
-"to find the current value of a revenue stream we take the integral of the revenue stream times a discounting functions that represents how much a future payment is worth today.  ", 
-"If we can set up the integral of an application, we can use CAS to evaluate the integral. ", 
-
-"This section explained how to use calculus to predict the future value of the stock market. ", 
-		],
-               "None of the above"
-              ],
-              [0, 1, 2, 3, 4],
-              labels => "ABC",   # "abc", "123", "roman", "Roman"
-            );
-          </pg-code>
-          <statement>
-            <p>
-              This question checks your reading comprehension of the material is section 7.7, Applications of the Integral, Investment and Depreciation, of Business Calculus with Excel.
-              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
-            </p>
-            <p>
-              <var name="$checks" form="checkboxes"/>
-            </p>
-          </statement>
-        </webwork>
-    </exercise>
-
+   
     <exercises xml:id="exercises-set-sec-7-7">
 	    <title>Exercises: Applications of the integral: Investment and depreciation Problems</title>
 
+      <exercise>
+        <title>Reading check, Applications of the Integral, Investment and Depreciation</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "Accumulating a function over time is simply taking a definite integral. ", 
+  "We can accumulate marginal cost over time to find change in cost. ", 
+  "The example on oil production took the integral of an exponential function. ", 
+  "to find the current value of a revenue stream we take the integral of the revenue stream times a discounting functions that represents how much a future payment is worth today.  ", 
+  "If we can set up the integral of an application, we can use CAS to evaluate the integral. ", 
+  
+  "This section explained how to use calculus to predict the future value of the stock market. ", 
+      ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3, 4],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 7.7, Applications of the Integral, Investment and Depreciation, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
+
+      
       <exercise>
         <statement>
           <p>

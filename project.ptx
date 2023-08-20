@@ -25,7 +25,7 @@
       <output-dir>output/latex</output-dir>
       <xsl>style/ExcelCalculus-color.xsl</xsl>
     </target>
-    <target name="pdf" pdf-method="pdflatex">
+    <target name="pdf" pdf-method="xelatex">
       <format>pdf</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
@@ -39,7 +39,7 @@
       <output-dir>output/latex</output-dir>
       <xsl>style/ExcelCalculus-print.xsl</xsl>
     </target>
-    <target name="pdf" pdf-method="pdflatex">
+    <target name="pdf-print" pdf-method="xelatex">
       <format>pdf</format>
       <source>source/main.ptx</source>
       <publication>publication/publication-print.ptx</publication>

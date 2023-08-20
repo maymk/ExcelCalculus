@@ -47,6 +47,7 @@
           It should be on the Analysis section of the Data tab.
         </p>
         <figure xml:id="SolverLocation">
+          <caption/>
         <image width="30%" source="images/sec3-5-2.png"/>
         </figure>
         <p>
@@ -63,6 +64,7 @@
           I chose the one that has <m>f(x)</m> closest to the desired result.)
         </p>
         <figure xml:id="SolverRoot">
+          <caption/>
           <image width="70%" source="images/sec3-5-3.png"/>
         </figure>
         <p>
@@ -85,6 +87,7 @@
           With Solver, we simply ask it to find the maximum.  It finds the vertex at <m>x=4.5</m>.
         </p>
         <figure xml:id="SolverMax">
+          <caption/>
           <image width="70%" source="images/sec3-5-5.png"/>
         </figure>
         <p>
@@ -96,12 +99,14 @@
           If we start Solver, then hit the add button, we get a dialog box to enter the first constraint, that <c>A7</c><m>\ge 0</m>.
         </p>
         <figure xml:id="SolverConstraint">
+          <caption/>
           <image width="40%" source="images/sec3-5-6.png"/>
         </figure>
         <p>
           In a similar manner, we add the constraint that <m>A7\ge 15</m> and ask solver for a minimum.
         </p>
         <figure xml:id="SolverMin">
+          <caption/>
           <image width="70%" source="images/sec3-5-7.png"/>
         </figure>
         <p>

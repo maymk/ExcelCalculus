@@ -459,45 +459,47 @@
     </subsection>
 
 
-    <exercise>
-      <title>Reading check, Modeling Revenue, Costs, and Profit</title>
-        <webwork>
-          <pg-code>
-            $checks = CheckboxList(
-              [
-                [
-"The simple model for revenue is revenue =quantity*price. ", 
-"We typically use the demand price in computing revenue. ", 
-"In real world cases the revenue function has a negative coefficient for the quadratic term and is a downward facing parabola.  ",                 
-"For our simplified model, costs= fixed costs + unit costs*quantity. ", 
-"The point at which revenues equal expenses (cost) is called the break-even point. ", 
-"Fixed costs include the costs of being in business. They might include license fees, rent for a store or plant, and the cost of furnishings and equipment. ", 
-"We typically use the supply price in computing revenue.  ", 
-"In the real world variable costs are proportional to quantity. ", 
-"Profit = Costs - Revenue. ", 
-"In our simplified model, the profit function is linear. "
-				],
-               "None of the above"
-              ],
-              [0, 1, 2, 3, 4, 5],
-              labels => "ABC",   # "abc", "123", "roman", "Roman"
-            );
-          </pg-code>
-          <statement>
-            <p>
-              This question checks your reading comprehension of the material is section 2.2, Modeling Revenue, Costs, and Profit, of Business Calculus with Excel.
-              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
-            </p>
-            <p>
-              <var name="$checks" form="checkboxes"/>
-            </p>
-          </statement>
-        </webwork>
-    </exercise>
-
-
+    
     <exercises xml:id="exercises-set-sec-2-2">
       <title>Exercises: Modeling Revenue, Costs, and Profit</title>
+
+      <exercise>
+        <title>Reading check, Modeling Revenue, Costs, and Profit</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "The simple model for revenue is revenue =quantity*price. ", 
+  "We typically use the demand price in computing revenue. ", 
+  "In real world cases the revenue function has a negative coefficient for the quadratic term and is a downward facing parabola.  ",                 
+  "For our simplified model, costs= fixed costs + unit costs*quantity. ", 
+  "The point at which revenues equal expenses (cost) is called the break-even point. ", 
+  "Fixed costs include the costs of being in business. They might include license fees, rent for a store or plant, and the cost of furnishings and equipment. ", 
+  "We typically use the supply price in computing revenue.  ", 
+  "In the real world variable costs are proportional to quantity. ", 
+  "Profit = Costs - Revenue. ", 
+  "In our simplified model, the profit function is linear. "
+          ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3, 4, 5],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 2.2, Modeling Revenue, Costs, and Profit, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
+  
+  
 
       <exercisegroup>
         <introduction>

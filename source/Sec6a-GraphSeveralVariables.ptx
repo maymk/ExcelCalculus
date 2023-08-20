@@ -11,7 +11,9 @@
       We do the same for functions of several variables.  We simply have to use several cell references.
     </p>
 
-    <subsection><title>Bank balances</title>
+      <!-- These are marked up as 'subsection' but structured like an example or exercise
+      I've decided to guess they are examples -->
+    <example><title>Bank balances</title>
       <statement>
         <figure xml:id="BankBalanceVideo">
           <caption>Bank Balance Video</caption>
@@ -36,14 +38,15 @@
           so we can easily change the values for any of the 4 variables.
         </p>
 
+        <!-- captions have to come BEFORE the image -->
         <sidebyside widths="40% 40%">
         <figure xml:id="FunctionSevVarFormula">
-          <image width="40%" source="images/sec-6-1-1.png"/>
           <caption>Show formulas version</caption>
+          <image width="40%" source="images/sec-6-1-1.png"/>
         </figure>
         <figure>
-          <image width="40%" source="images/sec-6-1-2.png"/>
           <caption>Unshow formulas version</caption>
+          <image width="40%" source="images/sec-6-1-2.png"/>
         </figure>
         </sidebyside>
 
@@ -53,7 +56,7 @@
           while compounding weekly increases the final amount to $1,648.33.
         </p>
       </solution>
-    </subsection>
+    </example>
     <p>
       In this example we have four variables. We could vary
       the initial deposit, the rate, the number of periods per year and the interest rate.
@@ -68,7 +71,7 @@
       <m>r</m> (interest rate), <m>p</m> (number of payments), and <m>y</m> (number of years).
     </p>
 
-    <subsection><title>Demand price defined by 2 points</title>
+    <example><title>Demand price defined by 2 points</title>
       <statement>
         <figure>
           <caption>Function from 2 points video</caption>
@@ -100,8 +103,12 @@
           <c>Demand1</c>, <c>Demand2</c>, <c>Price1</c>, <c>Price2</c>, and <c>NewDemand</c>.
         </p>
       </solution>
-    </subsection>
-    <subsection><title>Building a table with two variables</title>
+    </example>
+
+    <!-- there was a paragraph that appeared before the statement in the next example
+    I don't know if it was supposed to come before the example, or be part of the statement.
+    I'm putting it before. -->
+
     <p>
       The next task to consider is making a table of values for a function of several variables.
       Since our screens have 2 dimensions, we first look at the case when we allow two values to change.
@@ -111,6 +118,9 @@
       We note that quick filling a formula with the reference <c>$A5</c> will keep the column, A, constant but allow the row to change.
       Similarly with the reference <c>A$5</c> the column can change, but the row is constant.
     </p>
+
+    <example><title>Building a table with two variables</title>
+    
       <statement>
         <figure xml:id="TwoVarTableVideo">
           <caption>Video of table with two variables example</caption>
@@ -152,13 +162,13 @@
 
         <image width="70%" source="images/sec-6-1-6.png"/>
       </solution>
-    </subsection>
+    </example>
     <p>
       Similarly, we might want to produce a table that shows the monthly payment
       on a mortgage where both the annual interest rate and the number of years are treated as variables.
       Such a chart would be useful in deciding how big a mortgage a person can afford with different kinds of mortgages.
     </p>
-    <subsection><title>Mortgage payments</title>
+    <example><title>Mortgage payments</title>
       <statement>
         <figure>
           <caption>Video presentation of mortgage payments</caption>
@@ -181,11 +191,11 @@
 
         <image width="70%" source="images/sec-6-1-8.png"/>
       </solution>
-    </subsection>
+    </example>
 
     <p>
       After we build a table for a function we would also like to see a graph of the function.
-      Excel’s abilities to graph surfaces in not one of the program’s strong points.
+      Excel's abilities to graph surfaces in not one of the program's strong points.
       Nevertheless, it is useful to be “able to see the big picture” by looking at a graph.
       We will also note how to draw a graph of a surface with Wolfram Alpha.
     </p>
@@ -295,6 +305,7 @@
       In the next section we explore techniques for understanding functions of several variables by treating some of the variables as constants.
     </p>
 
+    <!-- I don't think you can put math markup in a checkbox list -->
     <exercise>
       <title>Reading check, Evaluating and Graphing Functions of Several Variables</title>
         <webwork>
@@ -307,7 +318,7 @@
 "The book showed how to make a table for functions of two variables.  ", 
 "Wolfram Alpha will plot functions of two variables.  ", 
 
-"All functions have a single input variable, <m>x</m>  ", 
+"All functions have a single input variable, x", 
 "Excel easily graphs functions of three variables.  ", 
 		],
                "None of the above"

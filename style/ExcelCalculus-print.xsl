@@ -17,7 +17,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
 <!-- next line will fail if this file is not in mathbook/user -->
-<xsl:import pretext-href="pretext-latex.xsl"/>
+<xsl:import href="./core/pretext-latex.xsl"/>
 
 <xsl:output method="text" />
 
@@ -91,13 +91,14 @@
 </xsl:template>
 
 <!-- now come all the options -->
+<!-- all of these options have migrated to the publication file -->
 <!-- turn off hints, answers, and solutions for divisional exercises -->
-<xsl:param name="exercise.divisional.hint" select="'no'"/>
+<!-- <xsl:param name="exercise.divisional.hint" select="'no'"/>
 <xsl:param name="exercise.divisional.answer" select="'no'"/>
-<xsl:param name="exercise.divisional.solution" select="'no'"/>
+<xsl:param name="exercise.divisional.solution" select="'no'"/> -->
 
 <!-- turn off page references so print matches electronic -->
-<xsl:param name="latex.pageref" select="'no'"/>
+<!-- <xsl:param name="latex.pageref" select="'no'"/> -->
 
 <!-- uncommenting these will omit videos -->
 <!-- <xsl:template match="video[starts-with(@xml:id, 'vid')]" />

@@ -118,28 +118,52 @@ to the courses in their major.</p></li>
 	<preface><title>Notes for Instructors</title>
 <p>This text continues to be a work in progress, with features being added as we get requests and have time.</p>
 <p> Recent improvements.
-<ul>
-<li><p>Excel worksheets were attached to sections where Excel was used in the text.  This allows students to examine the worksheet and the  underlying code. </p></li>
-<li><p>Unworked versions of the Excel worksheets were attached to sections where Excel was used in the text.
-This allows the student to follow along.</p></li>
-<li><p>Screencast videos of the Excel problems are being added.
-</p></li>
-<li><p>A significant number of the problems have been converted to WeBWorK.
-This allows individualized problems for the students with automatic grading.
-A library of problems is available from the author.
-</p></li>
-<li><p>WeBWorK hosting is available through Edfinity and Runestone.
-</p></li>
-<li><p>Teaching materials, like calendars, sample quizzes, and sample tests are available to instructors on request.
-</p></li>
-<li><p>A landing page (<url href="https://mathstat.slu.edu/~may/ExcelCalculus/LandingPage.html" visual="https://mathstat.slu.edu/~may/ExcelCalculus/LandingPage.html"> https://mathstat.slu.edu/~may/ExcelCalculus/LandingPage.html</url>) was established with resources that useful for offline work</p>
-<ul>
-<li><p>There is a pdf version of the book that can be downloaded.</p></li>
-<li><p>There is a compressed collection of the Excel files used in the text  that can be downloaded.</p></li>
-</ul></li></ul>
-<p>The text was designed for a particular syllabus at a particular institution.
-Let us know if a few additional optional topics would better suit your needs.
+  <ul>
+    <li>
+      <p>
+        Excel worksheets were attached to sections where Excel was used in the text.
+        This allows students to examine the worksheet and the  underlying code.
+      </p>
+    </li>
+    <li>
+      <p>
+        Unworked versions of the Excel worksheets were attached to sections where Excel was used in the text.
+        This allows the student to follow along.
+      </p>
+    </li>
+    <li>
+      <p>Screencast videos of the Excel problems are being added.</p>
+    </li>
+    <li>
+      <p>
+        A significant number of the problems have been converted to WeBWorK.
+        This allows individualized problems for the students with automatic grading.
+        A library of problems is available from the author.
+      </p>
+    </li>
+    <li>
+      <p>WeBWorK hosting is available through Edfinity and Runestone.</p>
+    </li>
+    <li>
+      <p>
+        Teaching materials, like calendars, sample quizzes, and sample tests are available to instructors on request.
+      </p>
+    </li>
+    <li>
+      <p>
+        A landing page (<url href="https://mathstat.slu.edu/~may/ExcelCalculus/LandingPage.html" visual="https://mathstat.slu.edu/~may/ExcelCalculus/LandingPage.html"> https://mathstat.slu.edu/~may/ExcelCalculus/LandingPage.html</url>)
+        was established with resources that useful for offline work:
+        <ul>
+          <li><p>There is a pdf version of the book that can be downloaded.</p></li>
+          <li><p>There is a compressed collection of the Excel files used in the text  that can be downloaded.</p></li>
+        </ul>
+      </p>
+    </li>
+  </ul>
 </p>
+<p>
+  The text was designed for a particular syllabus at a particular institution.
+  Let us know if a few additional optional topics would better suit your needs.
 </p>
 
 <p> We welcome suggestions, comments, and corrections.</p>

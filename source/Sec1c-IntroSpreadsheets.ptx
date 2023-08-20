@@ -59,8 +59,9 @@
         the monthly profit (revenues-cost), and the monthly unit costs (costs/ units sold).
       </p>
 
+      <!-- removed xml:id="ShowFormulasTerm" which is not allowed. Perhaps replace with an index entry? -->
       <p>
-        With the formula ribbon, we go to show and select <term xml:id="ShowFormulasTerm">Show Formulas</term>.
+        With the formula ribbon, we go to show and select <term>Show Formulas</term>.
         Since we want the worksheet to be readable by others, we add labels for the quantities we are computing,
         and in each cell we enter the formula for the quantity.   The formula bar tells us which cell has been selected and the formula for that cell.
         It is generally easier to edit a formula by using the formula bar.
@@ -84,9 +85,14 @@
         In cell <c>E4</c>, we are taking the sum of the values in the cells from <c>B4</c> through <c>D4</c>.
         We will come back to commands in Excel later in the section.
       </p>
-         <figure  xml:id="ShowFormulasImage">
-          <image width="80%" source="images/sec1-3-2ShowFormulas.png"/>
-        </figure>
+      
+      <!-- An image should not be in a figure unless you are going to supply a caption.
+      Otherwise, a 'naked' image can be used. -->
+      <figure  xml:id="ShowFormulasImage">
+        <caption/>
+        <image width="80%" source="images/sec1-3-2ShowFormulas.png"/>
+      </figure>
+
       <p>
         If we unselect <term>Show Formulas</term>, we see the values that Excel computes.
       </p>
@@ -267,13 +273,16 @@
         We can name a cell by editing the name box at the left side of the formula bar.
       </p>
           <figure  xml:id="NamedCellBox">
+            <caption/>
             <image width="40%" source="images/sec1-3-14.png"/>
           </figure>
 
       <p>
         We can then use the names in formulas.  In general, the formulas with nicely named variables are easier to read.
       </p>
-      <figure  xml:id="NamedCellFormula">
+        
+      <figure xml:id="NamedCellFormula">
+        <caption/>
         <image width="80%" source="images/sec1-3-15.png"/>
       </figure>
     </subsection>
@@ -361,45 +370,48 @@
           </li>
         </ul>
       </p>
+      
+  
     </subsection>
 
 
-    <exercise>
-      <title>Reading check, Functions in the Business Setting</title>
-        <webwork>
-          <pg-code>
-            $checks = CheckboxList(
-              [
-                [
-"Absolute references refer to a particular column and/or row. The dollar sign '$DOLLAR' is used to fix the reference.", 
-"Relative references refer to the cell the same distance away from the cell containing the formula.", 
-"We can name cells to make formulas easier to read. ",                 
-"In Excel, \(e^x\) is written EXP(x).", 
-"Excel can format an answer as currency.", 
- "Absolute and relative cell references can be used interchangeably. ", 
-"We can only check the underlying functions one cell at a time.", 
-"There is only one correct way to add up three quantities with Excel."
-                ],
-               "None of the above"
-              ],
-              [0, 1, 2, 3, 4],
-              labels => "ABC",   # "abc", "123", "roman", "Roman"
-            );
-          </pg-code>
-          <statement>
-            <p>
-              This question checks your reading comprehension of the material is section 1.3, Introduction to Excel Spreadsheets, of Business Calculus with Excel.
-              Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
-            </p>
-            <p>
-              <var name="$checks" form="checkboxes"/>
-            </p>
-          </statement>
-        </webwork>
-    </exercise>
-
+    
     <exercises xml:id="exercises-set-sec-1-3">
       <title>Exercises Introduction to Excel Spreadsheets</title>
+
+      <exercise>
+        <title>Reading check, Functions in the Business Setting</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "Absolute references refer to a particular column and/or row. The dollar sign '$DOLLAR' is used to fix the reference.", 
+  "Relative references refer to the cell the same distance away from the cell containing the formula.", 
+  "We can name cells to make formulas easier to read. ",                 
+  "In Excel, \(e^x\) is written EXP(x).", 
+  "Excel can format an answer as currency.", 
+   "Absolute and relative cell references can be used interchangeably. ", 
+  "We can only check the underlying functions one cell at a time.", 
+  "There is only one correct way to add up three quantities with Excel."
+                  ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3, 4],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 1.3, Introduction to Excel Spreadsheets, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
 
       <exercise>
         <statement>

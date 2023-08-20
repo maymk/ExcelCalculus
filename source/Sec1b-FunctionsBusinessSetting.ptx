@@ -236,9 +236,14 @@
       <image width="50%" source="images/sec1-2-LogCurve.png"  xml:id="LogFunctionImage">
           <description>A logarithmic function graph</description>
       </image>
+
     </subsection>
 
 
+    <exercises xml:id="exercises-set-sec-1-2">
+    <title>Exercises  Functions in the Business Setting</title>
+
+      
     <exercise>
       <title>Reading check, Functions in the Business Setting</title>
         <webwork>
@@ -274,10 +279,7 @@
           </statement>
         </webwork>
     </exercise>
-
-
-    <exercises xml:id="exercises-set-sec-1-2">
-    <title>Exercises  Functions in the Business Setting</title>
+    
       <exercisegroup>
         <introduction>
           <p>

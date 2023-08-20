@@ -21,7 +21,7 @@
       However, Excel gives us two tools to use to solve problems numerically, Goal Seek and Solver.
       In this section we will explore Goal Seek, the simpler of these tools.
     </p>
-  </introduction>
+
     <assemblage>
       <p>
         <ul>
@@ -31,6 +31,8 @@
         </ul>
       </p>
     </assemblage>
+  </introduction>
+    
     <subsection><title>A linear example</title>
       <figure xml:id="LinearGoalSeekVideo">
         <caption>Video presentation of this example</caption>
@@ -46,6 +48,7 @@
         I will start by guessing a value of 5.  (I will enter that value twice so we can see before and after.)
       </p>
       <figure xml:id="LinearGoalSeekSetup">
+        <caption/>
           <image width="80%" source="images/sec1-6-1.png"/>
       </figure>
       <p>
@@ -54,6 +57,7 @@
         I then select OK.
       </p>
       <figure xml:id="LinearGoalSeekMenu">
+        <caption/>
           <image width="80%" source="images/sec1-6-2.png"/>
       </figure>
       <p>
@@ -62,6 +66,7 @@
         which we could also have found by simple algebra.
       </p>
       <figure xml:id="LinearGoalSeekResult">
+        <caption/>
           <image width="80%" source="images/sec1-6-3.png"/>
       </figure>
     </subsection>
@@ -137,8 +142,10 @@
         <me>0 = 1000*\exp(-0.02*q) - (\ln(50 + 1000*q) + q)</me>,
         but that is not an easy problem.
       </p>
-    </subsection>
+
       <p>Our last example for Goal Seek looks at financial computations.</p>
+    </subsection>
+      
     <subsection><title>Using Goal Seek for financial computations</title>
       <figure>
         <caption>Video presentation of this example</caption>
@@ -290,7 +297,11 @@
       </p>
     </subsection>
 
-    <exercise><title>Reading check, Finding Numerical Solutions with Goal Seek</title>
+    
+    <exercises xml:id="exercises-set-sec-1-6">
+      <title> Finding Numerical Solutions with Goal Seek</title>
+
+      <exercise><title>Reading check, Finding Numerical Solutions with Goal Seek</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -323,8 +334,6 @@
     </exercise>
 
 
-    <exercises xml:id="exercises-set-sec-1-6">
-      <title> Finding Numerical Solutions with Goal Seek</title>
       <exercisegroup>
         <introduction>
           <p>
