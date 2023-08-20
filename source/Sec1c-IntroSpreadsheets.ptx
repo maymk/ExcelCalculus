@@ -272,8 +272,10 @@
         Better names for those cells would then be SharesGOOG, SharesMSFT, and SharesAAPL.
         We can name a cell by editing the name box at the left side of the formula bar.
       </p>
-          <!-- Again, figure removed since there is no caption -->
-            <image width="40%" source="images/sec1-3-14.png" xml:id="NamedCellBox"/>
+          <figure  xml:id="NamedCellBox">
+            <caption/>
+            <image width="40%" source="images/sec1-3-14.png"/>
+          </figure>
 
       <p>
         We can then use the names in formulas.  In general, the formulas with nicely named variables are easier to read.
