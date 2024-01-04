@@ -2,8 +2,7 @@
 
   <section xml:id="sec-6-3-CriticalPointsExtrema">
     <title>Critical Points and Extrema</title>
-    <subsection>
-      <title>Critical Points</title>
+    <subsection>  <title>Critical Points</title>
 
       <p><url href="external/Examples/Section-6-3-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-6-3-Examples.xlsx">Link to worksheets used in this section</url></p>
 
@@ -34,7 +33,7 @@
         <statement>
           <figure xml:id="CritPointsVideo">
             <caption>Video of finding local minimum</caption>
-            <video youtube="nZdaPjC0VWQ"/>
+            <video label="youtube_Sec6.3_Critical_Points"  youtube="nZdaPjC0VWQ"/>
           </figure>
 
           <p>Use the partial derivatives of <m>f(x,y)=x^2+ 2xy+3y^2-4x-3y</m> to find the minimum of the graph. </p>
@@ -138,7 +137,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="ThmQTWWOvYw"/>
+            <video label="youtube_Sec6.3_Saddle_Point"  youtube="ThmQTWWOvYw"/>
           </figure>
 
           <p>
@@ -175,8 +174,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Second Partial Derivatives</title>
+    <subsection>  <title>Second Partial Derivatives</title>
 
       <p>
         With only first derivatives, we can just find the critical points.
@@ -237,8 +235,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Using the Discriminant to Test Critical Points</title>
+    <subsection>  <title>Using the Discriminant to Test Critical Points</title>
 
       <p>
         To test if a critical point is a maximum, minimum, or saddle point we compute the discriminant of the function.
@@ -482,11 +479,8 @@
       </example>
     </subsection>
 
-    
-    <exercises xml:id="exercises-set-sec-6-3">
-      <title>Exercises: Critical Points and Extrema Problems</title>
-
-      <exercise>
+    <reading-questions xml:id="rq-s6-3">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec6.3">
         <title>Reading check, Wire Frames, Critical Points and Extrema</title>
           <webwork>
             <pg-code>
@@ -522,6 +516,13 @@
           </webwork>
       </exercise>
   
+    </reading-questions>
+
+
+    <exercises xml:id="exercises-set-sec-6-3">
+      <title>Exercises: Critical Points and Extrema Problems</title>
+
+    
       <exercisegroup>
         <introduction>
           <p>

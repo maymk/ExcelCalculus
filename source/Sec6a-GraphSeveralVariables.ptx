@@ -17,7 +17,7 @@
       <statement>
         <figure xml:id="BankBalanceVideo">
           <caption>Bank Balance Video</caption>
-          <video youtube="JY8lnC5VvFY"/>
+          <video label="youtube_Sec6.1_Bank_Balances"  youtube="JY8lnC5VvFY"/>
         </figure>
 
         <p>
@@ -75,7 +75,7 @@
       <statement>
         <figure>
           <caption>Function from 2 points video</caption>
-          <video youtube="9gUk3C5kizM"/>
+          <video label="youtube_Sec6.1_Demand_Two_Points"  youtube="9gUk3C5kizM"/>
         </figure>
 
         <p>
@@ -124,7 +124,7 @@
       <statement>
         <figure xml:id="TwoVarTableVideo">
           <caption>Video of table with two variables example</caption>
-          <video youtube="TwY2oKUKo7I"/>
+          <video label="youtube_Sec6.1_Two_Variable_Table"  youtube="TwY2oKUKo7I"/>
         </figure>
 
         <p>
@@ -172,7 +172,7 @@
       <statement>
         <figure>
           <caption>Video presentation of mortgage payments</caption>
-          <video youtube="SgewfMtKNDM"/>
+          <video label="youtube_Sec6.1_Mortgage_Payments"  youtube="SgewfMtKNDM"/>
         </figure>
 
         <p>
@@ -209,7 +209,7 @@
     <example xml:id="ex-multi-two-products"><title>Table and graph</title>
       <statement>
         <figure xml:id="TableToGraphVideo"> <caption>Video Producing a graph from a table</caption>
-          <video youtube="MmoLoUI-Ob4"/>
+          <video  label="youtube_Sec6.1_Three_Dim_Graph" youtube="MmoLoUI-Ob4"/>
         </figure>
 
         <p>
@@ -306,7 +306,8 @@
     </p>
 
     <!-- I don't think you can put math markup in a checkbox list -->
-    <exercise>
+    <reading-questions xml:id="rq-s6-1">     <title>Reading Check</title>
+    <exercise label="Reading_Check_Sec6.1">
       <title>Reading check, Evaluating and Graphing Functions of Several Variables</title>
         <webwork>
           <pg-code>
@@ -338,6 +339,7 @@
           </statement>
         </webwork>
     </exercise>
+    </reading-questions>
 
     <exercises xml:id="exercises-set-sec-6-1">
 	     <title>Exercises: Evaluating and Graphing Functions of Several Variables Problems</title>

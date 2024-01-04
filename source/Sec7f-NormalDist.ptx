@@ -21,8 +21,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Background from probability</title>
+    <subsection> <title>Background from probability</title>
 
       <p>
         We want to pull some definitions and results from the theory of probability.
@@ -91,8 +90,7 @@
       </p>
     </subsection>
 
-    <subsection>
-      <title>Examples</title>
+    <subsection>  <title>Examples</title>
 
       <example>
         <title>Tall men in an area</title>
@@ -111,8 +109,7 @@
         <solution>
           <p>
             <ul>
-              <li>
-                <title>Set up</title>
+              <li>  <title>Set up</title>
                 <p>
                   My distribution function is
                   <m>\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^3}\right)</m>.
@@ -135,8 +132,7 @@
                 </p>
               </li>
 
-              <li>
-                <title>Using Excel and Riemann Sums</title>
+              <li> <title>Using Excel and Riemann Sums</title>
                 <p>
                   I want to set up a spreadsheet to find the area under the curve.
                   Since I think I may do this for several problems,
@@ -160,8 +156,7 @@
                 <image width="50%" source="images/sec7-6-3.png"/>
               </li>
 
-              <li>
-                <title>Using Excel Statistics Commands</title>
+              <li> <title>Using Excel Statistics Commands</title>
                 <p>
                   By this point in the course you should expect that if we claim a computation is important and done by business many times,
                   that there is an Excel command to do the computation.
@@ -198,8 +193,7 @@
                 <image width="50%" source="images/sec7-6-5.png"/>
               </li>
 
-              <li>
-                <title>Using Wolfram alpha</title>
+              <li> <title>Using Wolfram alpha</title>
                 <p>
                   Once I have reduced the problem to evaluating a definite integral,
                   I can find a numeric solution with a CAS package like Wolfram|Alpha.
@@ -330,12 +324,8 @@
       </p>
     </subsection>
 
-   
-
-    <exercises xml:id="exercises-set-sec-7-6">
-	    <title>Exercises: Normal Distribution Problems</title>
-
-      <exercise>
+    <reading-questions xml:id="rq-s7-6">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec7.6">
         <title>Reading check, The Normal Distribution: An Extended Numeric Example</title>
           <webwork>
             <pg-code>
@@ -370,6 +360,11 @@
             </statement>
           </webwork>
       </exercise>
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-sec-7-6">
+	    <title>Exercises: Normal Distribution Problems</title>
+
       
       <exercise>
         <statement>

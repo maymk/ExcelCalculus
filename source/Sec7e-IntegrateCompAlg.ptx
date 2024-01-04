@@ -271,8 +271,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Riemann Sums</title>
+    <subsection>  <title>Riemann Sums</title>
 
       <p>
         We can also use Alpha to do Riemann sums.
@@ -309,12 +308,8 @@
       </example>
     </subsection>
 
-   
-
-    <exercises xml:id="exercises-set-sec-7-5">
-	    <title>Exercises: Integration using Computer Algebra Problems</title>
-
-      <exercise>
+    <reading-questions xml:id="rq-s7-5">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec7.5">
         <title>Reading check, Integration Using Computer Algebra</title>
           <webwork>
             <pg-code>
@@ -346,6 +341,11 @@
             </statement>
           </webwork>
       </exercise>
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-sec-7-5">
+	    <title>Exercises: Integration using Computer Algebra Problems</title>
+
       <exercisegroup>
         <introduction>
           <p>

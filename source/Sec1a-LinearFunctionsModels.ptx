@@ -17,8 +17,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Equations of a line</title>
+    <subsection><title>Equations of a line</title>
 
       <p>
         From prior courses, such as college algebra,
@@ -318,11 +317,10 @@
       
     </subsection>
 
+    <reading-questions xml:id="basics-reading-questions-1-1b">
+      <title>Reading Check</title>
 
-    <exercises xml:id="exercises-set-sec-1-1">
-      <title>Exercises 1.1 Linear Functions and models</title>
-
-      <exercise>
+      <exercise label="Reading_Check_Sec1-1b">
         <title>Reading check, Linear Functions and Models</title>
           <webwork>
             <pg-code>
@@ -355,21 +353,21 @@
               </p>
             </statement>
           </webwork>
-      </exercise>  
-<!-->
-<exercise><title>WeBWorK - Computing Percentiles</title>
-	<webwork source="Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg">
-	</webwork>
+      </exercise> 
+ 
+    
+    </reading-questions>
+    
+<!-- 
 
-</exercise>
 
-
-<exercise><title>WeBWorK - Computing Percentiles</title>
-	<webwork source="Contrib/SLU/excelcalculus/ch1/rqC1/Ch1Sec1Q1pg">
-	</webwork>
-
-</exercise>
-<-->
+      <exercise label="SLU2" >
+        <webwork source="Contrib/SLU/excelcalculus/ch1/sec1/ch1.sec1.q1-6.pg"/>
+      </exercise>
+ -->
+      <exercises xml:id="exercises-set-sec-1-1">
+        <title>Exercises 1.1 Linear Functions and models</title>
+  
       <exercisegroup>
         <introduction>
           <p>Given two points in the <m>(q,p)</m> plane and a value <m>q_0</m>:</p>

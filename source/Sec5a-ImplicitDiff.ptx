@@ -122,10 +122,10 @@
 
         <p>
           Since quantity is in thousands of units, if we are selling 20,000 widgets,
-          <m>\quantity:q=20</m> and <m>\price:p=14.64</m>.
+          <m>\quantity:q=20</m> and <m>\price:p=12.00</m>.
           Substituting those values into the formula for the derivative of price with respect to quantity, we see
-          <me>\frac{d\price}{d\quantity}=\frac{-2(14.64+20)}{(10+2*20) }=-1.386</me>.
-          We increase sales by 1000 by dropping price by $1.386.
+          <me>\frac{d\price}{d\quantity}=\frac{-2(12.00 +20)}{(10+2*20) }=-1.28</me>.
+          We increase sales by 1000 by dropping price by $1.28.
         </p>
       </solution>
     </example>
@@ -259,8 +259,8 @@
       </p>
     </paragraphs>
 
-
-    <exercise>
+    <reading-questions xml:id="rq-s5-1">     <title>Reading Check</title>
+    <exercise  label="Reading_Check_Sec5.1">
       <title>Reading check, Implicit Differentiation</title>
         <webwork>
           <pg-code>
@@ -293,7 +293,8 @@
           </statement>
         </webwork>
     </exercise>
-
+    </reading-questions>
+    
     <exercises xml:id="exercises-set-sec-5-1">
   	   <title>Exercises: Implicit Differentiation Problems</title>
 

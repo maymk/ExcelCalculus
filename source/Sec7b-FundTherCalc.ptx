@@ -104,7 +104,7 @@
       <statement>
         <figure xml:id="FitMidpointRuleVideo">
           <caption>Trendline to area function Video</caption>
-          <video youtube="8j5_ara-niQ"/>
+          <video  label="youtube_Sec7.2_Midpoint_Riemann_Sums" youtube="8j5_ara-niQ"/>
         </figure>
 
         <p>
@@ -143,7 +143,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="LD6coDN7Hm8"/>
+          <video  label="youtube_Sec7.2_Quadratic_area_Riemann_Sums" youtube="LD6coDN7Hm8"/>
         </figure>
 
         <p>
@@ -173,7 +173,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="_jJv47pi3II"/>
+          <video label="youtube_Sec7.2_Cubic_Area_Riemann_Sums"  youtube="_jJv47pi3II"/>
         </figure>
 
         <p>
@@ -315,8 +315,7 @@
       </solution>
     </example>
 
-    <example>
-      <title>Verifying the best fitting function for area under a cubic function</title>
+    <example>  <title>Verifying the best fitting function for area under a cubic function</title>
       <statement>
         <p>
           Find the area when <m>f(x) = 6 x^3</m>.
@@ -338,7 +337,8 @@
       We will look at methods of finding anti-derivatives in the next several sections.
     </p>
 
-   <exercise>
+    <reading-questions xml:id="rq-s7-2">     <title>Reading Check</title>
+   <exercise label="Reading_Check_Sec7.2">
       <title>Reading check, The Fundamental Theorem of Calculus</title>
         <webwork>
           <pg-code>
@@ -374,6 +374,7 @@
           </statement>
         </webwork>
     </exercise>
+    </reading-questions>
 
     <exercises xml:id="exercises-set-sec-7-2">
 	    <title>Exercises: The Fundamental Theorem of Calculus Problems</title>

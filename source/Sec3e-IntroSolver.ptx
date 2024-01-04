@@ -16,12 +16,11 @@
       It will be easiest to walk through the use of Solver while working an example.
     </p>
 
-    <example>
-      <title>Use Solver to gather information about the graph</title>
+    <example>  <title>Use Solver to gather information about the graph</title>
       <statement>
         <figure xml:id="SolverEasyVideo">
           <caption>Using Solver on a simple function</caption>
-          <video youtube="vBGPmtXB_VY"/>
+          <video  label="youtube_Sec3.5_Easy_Solver" youtube="vBGPmtXB_VY"/>
         </figure>
 
         <p>
@@ -150,12 +149,11 @@
       Thus, we now want to ask the same questions about a problem we cannot solve algebraically.
     </p>
 
-    <example xml:id="eg-deceptive-graph">
-      <title>A deceptive graph</title>
+    <example xml:id="eg-deceptive-graph"> <title>A deceptive graph</title>
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="80rgSBoubTk"/>
+          <video  label="youtube_Sec3.5_Deceptive_Graph" youtube="80rgSBoubTk"/>
         </figure>
         <p>
           Use solver to gather information, on the interval <m>0\le x\le 15</m>,
@@ -213,12 +211,11 @@
       Consider the following example.
     </p>
 
-    <example>
-      <title>Deceiving Solver</title>
+    <example>  <title>Deceiving Solver</title>
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="Bc9CGnk9X8I"/>
+          <video  label="youtube_Sec3.5_Deceiving_Solver" youtube="Bc9CGnk9X8I"/>
         </figure>
         <p>
           Use solver to gather information, on the interval <m>-2\le x\le 2</m>, on the graph of
@@ -277,7 +274,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="EAMhm1ALbv0"/>
+            <video  label="youtube_Sec3.5_Best_Fit_Solver"   youtube="EAMhm1ALbv0"/>
           </figure>
 
           <p>
@@ -333,8 +330,8 @@
       </p>
     </paragraphs>
 
-
-    <exercise>
+ <reading-questions xml:id="rq-s3-5">     <title>Reading Check</title>
+    <exercise  label="Reading_Check_Sec3.5">
       <title>Reading check, Optimization</title>
         <webwork>
           <pg-code>
@@ -367,7 +364,7 @@
           </statement>
         </webwork>
     </exercise>
-
+ </reading-questions>
 
     <exercises xml:id="exercises-set-sec-3-5">
       <title>Exercises: An Introduction to Solver</title>

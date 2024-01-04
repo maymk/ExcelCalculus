@@ -15,8 +15,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Supply and Demand and Market Equilibrium</title>
+    <subsection>  <title>Supply and Demand and Market Equilibrium</title>
 
       <p>
         The normal laws of supply and demand assume we are in a market with many producers and consumers,
@@ -108,7 +107,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="ulx0bKHKrVY"/>
+            <video  label="youtube_Sec2.1_Equilibrium_From_Formulas" youtube="ulx0bKHKrVY"/>
           </figure>
 
           <p>
@@ -173,7 +172,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="ZYZhgmFvvtc"/>
+            <video  label="youtube_Sec2.1_Equilibrium_From_Data" youtube="ZYZhgmFvvtc"/>
           </figure>
 
           <p>
@@ -234,7 +233,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="yBqKOI11Bds"/>
+            <video  label="youtube_Sec2.1_Computing_Sales" youtube="yBqKOI11Bds"/>
           </figure>
 
           <p>
@@ -316,13 +315,8 @@
       </example>
     </subsection>
 
-
-    
-
-    <exercises xml:id="exercises-set-sec-2-1">
-  	   <title>Exercises 2.1 Equilibrium Problems</title>
-
-       <exercise>
+    <reading-questions xml:id="rq-s2-1">     <title>Reading Check</title>
+      <exercise  label="Reading_Check_Sec2.1">
         <title>Reading check, Market Equilibrium Problems</title>
           <webwork>
             <pg-code>
@@ -355,6 +349,12 @@
             </statement>
           </webwork>
       </exercise>
+    </reading-questions> 
+
+    <exercises xml:id="exercises-set-sec-2-1">
+  	   <title>Exercises 2.1 Equilibrium Problems</title>
+
+   
        <exercisegroup>
          <introduction>
            <p>

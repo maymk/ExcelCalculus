@@ -74,7 +74,7 @@
 
     <figure>
       <caption>Video presentation of the first two examples></caption>
-      <video youtube="oBFOOrFfN1I"/>
+      <video  label="youtube_Sec6.4_Best_Fit_Trendline" youtube="oBFOOrFfN1I"/>
     </figure>
 
     <example>
@@ -250,7 +250,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="SArudnSafCE"/>
+          <video  label="youtube_Sec6.4_Solver_Larger_Data_Set" youtube="SArudnSafCE"/>
         </figure>
 
         <p>
@@ -356,7 +356,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="OzLKA8GnUiE"/>
+          <video  label="youtube_Sec6.4_Best_Fit_Nonstandard" youtube="OzLKA8GnUiE"/>
         </figure>
 
         <p>We are given the following data on the value of a portfolio over time:</p>
@@ -441,7 +441,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="6JNwHvtAJjA"/>
+          <video  label="youtube_Sec6.4_Best_Fit_Logistic" youtube="6JNwHvtAJjA"/>
         </figure>
 
         <p>
@@ -554,7 +554,8 @@
       </p>
     </paragraphs>
 
-   <exercise>
+    <reading-questions xml:id="rq-s6-4">     <title>Reading Check</title>
+   <exercise label="Reading_Check_Sec6.4">
       <title>Reading check, Optimization and Best Fitting Curves</title>
         <webwork>
           <pg-code>
@@ -587,7 +588,8 @@
           </statement>
         </webwork>
     </exercise>
-
+    </reading-questions>
+    
     <exercises xml:id="exercises-set-sec-6-4">
 	     <title>Exercises: Optimization and Best Fitting Curves Problems</title>
        <exercisegroup>

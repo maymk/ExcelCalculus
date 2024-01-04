@@ -83,7 +83,7 @@
         <title>Marginal functions for widgets</title>
           <figure xml:id="MarginalRevenueNaiveVideo">
             <caption>Video presentation of marginal revenue for widgets</caption>
-            <video youtube="ieyBmPqUBE4"/>
+            <video  label="youtube_Sec3.1_Marginal_Revenue_Naive" youtube="ieyBmPqUBE4"/>
           </figure>
         <p>
           For my widget company, I have determined that the cost and demand price functions are:
@@ -169,7 +169,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="P-Y47M9eONI"/>
+            <video  label="youtube_Sec3.1_Profit_Marginal_Profit" youtube="P-Y47M9eONI"/>
           </figure>
 
           <p>
@@ -219,7 +219,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="Vk-lG9Lysgo"/>
+            <video  label="youtube_Sec3.1_Profit_Marginal_Data" youtube="Vk-lG9Lysgo"/>
           </figure>
 
           <p>
@@ -306,7 +306,7 @@
         <title>Rate of Change when denominator is not 1</title>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="KZ8qy3Q4GWk"/>
+          <video  label="youtube_Sec3.1_DiffQuotient_DenomNot1"  youtube="KZ8qy3Q4GWk"/>
         </figure>
 
         <p>
@@ -346,7 +346,7 @@
     <subsection> <title>An Excel Trick for Difference Quotients</title>
       <figure xml:id="MarginaFunctionQuickFillVideo">
         <caption>Video presentation of this topic</caption>
-        <video youtube="N50HlMfvYSc"/>
+        <video  label="youtube_Sec3.1_Excel_trick_Diff_Quotients" youtube="N50HlMfvYSc"/>
       </figure>
 
       <p>
@@ -380,12 +380,8 @@
       </p>
     </subsection>
 
-
-    
-    <exercises xml:id="exercises-set-sec-3-1">
-      <title>Exercises: Marginal Functions and Difference Quotients Problems</title>
-
-      <exercise><title>Reading check, Marginal Functions and Difference Quotients</title>
+    <reading-questions xml:id="rq-s3-1">     <title>Reading Check</title>
+      <exercise  label="Reading_Check_Sec3.1"><title>Reading check, Marginal Functions and Difference Quotients</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -415,6 +411,12 @@
         </webwork>
     </exercise>
 
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-sec-3-1">
+      <title>Exercises: Marginal Functions and Difference Quotients Problems</title>
+
+  
       <exercise>
         <statement>
           <p>

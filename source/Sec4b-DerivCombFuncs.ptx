@@ -30,8 +30,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Derivatives of scalar products</title>
+    <subsection> <title>Derivatives of scalar products</title>
 
       <p>
         We start by differentiating a constant times a function.
@@ -75,8 +74,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Derivatives of sums and differences</title>
+    <subsection>  <title>Derivatives of sums and differences</title>
 
       <p>
         Next we want to look at the sum or difference of two functions.
@@ -167,8 +165,7 @@
       </paragraphs>
     </subsection>
 
-    <subsection>
-      <title>Derivatives of products</title>
+    <subsection> <title>Derivatives of products</title>
 
       <p>We now turn our attention to the product of two functions.</p>
 
@@ -267,8 +264,7 @@
       </paragraphs>
     </subsection>
 
-    <subsection>
-      <title>Derivatives of quotients</title>
+    <subsection> <title>Derivatives of quotients</title>
 
       <p>
         Finally, we turn our attention to the quotient of two functions.
@@ -364,12 +360,8 @@
       </paragraphs>
     </subsection>
 
-
-    
-    <exercises xml:id="exercises-set-sec-4-2">
-	    <title>Exercises: Derivative Rules for Combinations of Functions Problems</title>
-
-      <exercise>
+    <reading-questions xml:id="rq-s4-2">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec4.2">
         <title>Reading check, Derivative Rules for Combinations of Functions</title>
           <webwork>
             <pg-code>
@@ -403,6 +395,12 @@
             </statement>
           </webwork>
       </exercise>
+
+    </reading-questions>
+    
+    <exercises xml:id="exercises-set-sec-4-2">
+	    <title>Exercises: Derivative Rules for Combinations of Functions Problems</title>
+
   
       <exercisegroup>
         <introduction>

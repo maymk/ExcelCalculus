@@ -55,7 +55,7 @@
         <p>Let <m>f(x)=x^2</m>.  We would like to find <m>f'(1)</m>.</p>
         <figure xml:id="DerivativeByIntuitiveDefVideo">
           <caption>Simple Derivative at a Point</caption>
-          <video youtube="7WCPeUwr8GY"/>
+          <video  label="youtube_Sec3.2_Derivative_Point" youtube="7WCPeUwr8GY"/>
         </figure>
       </statement>
       <solution><title>Solution A - Intuitive Definition</title>
@@ -216,8 +216,8 @@
     </p>
 
     <figure xml:id="FunctionAndDerivativeVideo">
-      <caption>Video Groahing a function and its derivative</caption>
-      <video youtube="F_9rbxTwCXA"/>
+      <caption>Video Grophing a function and its derivative</caption>
+      <video  label="youtube_Sec3.2_Graph_Function_Derivative" youtube="F_9rbxTwCXA"/>
     </figure>
 
     <example><title>A Function and its Derivative</title>
@@ -328,7 +328,7 @@
       <statement>
         <figure xml:id="DerivFormTrendlineVideo">
           <caption>Video presentation of this example</caption>
-          <video youtube="AXSJ1UwTSfk"/>
+          <video label="youtube_Sec3.2_Trendlines_Derivative_Formula" youtube="AXSJ1UwTSfk"/>
         </figure>
         <p>
           Use trendlines to find a formula for the derivative of <m>f(x)=2x^2+5x-7</m>.
@@ -411,8 +411,9 @@
       </p>
     </paragraphs>
 
+    <reading-questions xml:id="rq-s3-2">     <title>Reading Check</title>
 
-    <exercise>
+    <exercise  label="Reading_Check_Sec3.2">
       <title>Reading check, 3.2, Numeric Derivatives and Limits,</title>
         <webwork>
           <pg-code>
@@ -447,7 +448,7 @@
         </webwork>
     </exercise>
 
-
+    </reading-questions>
 
     <exercises xml:id="exercises-set-sec-3-2">
 	    <title>Exercises: Numeric Derivatives and Limits</title>

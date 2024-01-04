@@ -2,8 +2,7 @@
 
   <section xml:id="sec-4-1-ElementaryDerivatives">
     <title>Elementary Derivatives</title>
-    <subsection>
-      <title>Definition and Notation</title>
+    <subsection> <title>Definition and Notation</title>
       <p><url href="external/Examples/Section-4-1-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-4-1-Examples.xlsx">Link to worksheets used in this section</url></p>
 
       <p>
@@ -49,8 +48,7 @@
       </p>
     </subsection>
 
-    <subsection>
-      <title>Derivatives of monomials</title>
+    <subsection> <title>Derivatives of monomials</title>
 
       <p>
         Our first rule for symbolic differentiation gives the derivative of a monomial.
@@ -206,8 +204,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Derivatives of Exponential Functions</title>
+    <subsection>  <title>Derivatives of Exponential Functions</title>
 
       <claim  xml:id="ExponentialRuleDeriv">
         <title>Exponential Rule</title>
@@ -354,8 +351,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Derivatives of Logarithmic Functions</title>
+    <subsection>  <title>Derivatives of Logarithmic Functions</title>
 
       <p>
         For a last rule for this section we want to find the derivative of <m>f(x)=a \ln(x)</m>.
@@ -439,12 +435,8 @@
       </example>
     </subsection>
 
-    
-
-    <exercises xml:id="exercises-set-ElementaryDerivaitives">
-      <title>Exercises: Elementary Derivatives Problems</title>
-
-      <exercise>
+    <reading-questions xml:id="rq-s4-1">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec4.1">
         <title>Reading check, Elementary Derivatives</title>
           <webwork>
             <pg-code>
@@ -477,6 +469,11 @@
             </statement>
           </webwork>
       </exercise>
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-ElementaryDerivaitives">
+      <title>Exercises: Elementary Derivatives Problems</title>
+
   
       <exercisegroup xml:id="exerciseGoup-1-ElementaryDerivaitives">
         <introduction>

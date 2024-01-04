@@ -40,8 +40,7 @@
       I can find area by using the area formula of a triangle, one half base time height.
     </p>
 
-    <example xml:id="area-parabola-down-GeoGebra">
-      <title>Approximating Area under a Quadratic Functions</title>
+    <example xml:id="area-parabola-down-GeoGebra">  <title>Approximating Area under a Quadratic Functions</title>
       <statement>
         <p>
           The question becomes more difficult when I want to find the area under a curve that is not linear.
@@ -125,7 +124,7 @@
       <statement>
         <figure xml:id="RiemannSumExcelVideo">
           <caption>Riemann Sum with Excel Video</caption>
-          <video youtube="DKy519Caqys"/>
+          <video  label="youtube_Sec7.1_Riemann_Sums" youtube="DKy519Caqys"/>
         </figure>
         <p>
           Find the area under the curve <m>y=x*(4-x)</m> with <m>x</m> between 0 and 4 with Excel
@@ -203,7 +202,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="XNvyuCO-9eE"/>
+          <video  label="youtube_Sec7.1_Present_Value_Riemann_Sums" youtube="XNvyuCO-9eE"/>
         </figure>
 
         <p>
@@ -228,8 +227,9 @@
         </p>
       </solution>
     </example>
-
-   <exercise><title>Reading check, Approximating Definite Integrals as Sums</title>
+  
+  <reading-questions xml:id="rq-s7-1">     <title>Reading Check</title>
+   <exercise  label="Reading_Check_Sec7.1"><title>Reading check, Approximating Definite Integrals as Sums</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -261,6 +261,7 @@
           </statement>
         </webwork>
     </exercise>
+  </reading-questions>
 
     <exercises xml:id="exercises-set-sec-7-1">
 	     <title>Exercises: Approximating Definite Integrals as Sums Problems</title>

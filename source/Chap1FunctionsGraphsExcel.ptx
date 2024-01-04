@@ -3,10 +3,11 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap-1-FunctionsGraphsExcel">
   <title>Functions Graphs and Excel</title>
 
-  <xi:include href="./Sec1a-LinearFunctionsModels.ptx"/>  
+  <xi:include href="./Sec1a-LinearFunctionsModels.ptx"/>   
   <xi:include href="./Sec1b-FunctionsBusinessSetting.ptx"/>   
   <xi:include href="./Sec1c-IntroSpreadsheets.ptx"/>  
   <xi:include href="./Sec1d-GraphExcel.ptx"/>  
   <xi:include href="./Sec1e-BestFit.ptx"/>
   <xi:include href="./Sec1f-Goal-Seek.ptx"/>
+  
 </chapter>

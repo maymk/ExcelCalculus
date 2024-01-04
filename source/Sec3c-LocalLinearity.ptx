@@ -81,7 +81,7 @@
       <statement>
         <figure xml:id="LinearApproxSqrtVideo">
           <caption>Video on linear aproximation of square roots</caption>
-          <video youtube="hhl9vdXWAlk"/>
+          <video label="youtube_Sec3.3_Linear_Aprox_Sqrt"  youtube="hhl9vdXWAlk"/>
         </figure>
         <p>
           Use information about <m>f(x)=\sqrt{x}</m> near <m>x_0=100</m> to estimate the square roots of 96 through 104.
@@ -122,12 +122,11 @@
       </solution>
     </example>
 
-    <example>
-      <title>Estimating reciprocals</title>
+    <example>  <title>Estimating reciprocals</title>
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="yP4rEOI5xnM"/>
+          <video  label="youtube_Sec3.3_Estimating_Reciprocals" youtube="yP4rEOI5xnM"/>
         </figure>
 
         <p>
@@ -161,12 +160,11 @@
       </solution>
     </example>
 
-    <example>
-      <title>Estimating exponential functions</title>
+    <example>  <title>Estimating exponential functions</title>
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="O4vpT6wOgoE"/>
+          <video label="youtube_Sec3.3_Estimating_Exponentials"  youtube="O4vpT6wOgoE"/>
         </figure>
 
         <p>
@@ -228,8 +226,8 @@
       The good domain will also depend on how far the graph is from linear, or how fast it is bending.
     </p>
 
-
-    <exercise>
+    <reading-questions xml:id="rq-s3-3">     <title>Reading Check</title>
+    <exercise  label="Reading_Check_Sec3.3">
       <title>Reading check, Local Linearitys</title>
         <webwork>
           <pg-code>
@@ -261,7 +259,7 @@
           </statement>
         </webwork>
     </exercise>
-
+    </reading-questions>
 
     <exercises xml:id="exercises-set-sec-3-3">
        <title>Exercises: Local Linearity</title>

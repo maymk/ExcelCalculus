@@ -36,7 +36,7 @@
     <subsection><title>A linear example</title>
       <figure xml:id="LinearGoalSeekVideo">
         <caption>Video presentation of this example</caption>
-        <video youtube="KPmpUjuI9gA"/>
+        <video label="youtube_Sec1.6_Linear_Example" youtube="KPmpUjuI9gA"/>
       </figure>
 
       <p>
@@ -107,12 +107,11 @@
         This has computed the value of the square root of 2 to 10 digits.
       </p>
     </subsection>
-
     <subsection><title>More realistic examples: finding the intersection of two curves</title>
       <p>Equivalently, finding where two functions are equal to one another.</p>
       <figure xml:id="IntersectionGoalSeekVideo">
         <caption>Video presentation of this example</caption>
-        <video youtube="bA5ECNm_nvA"/>
+        <video label="youtube_Sec1.6_Supply_and_Demand" youtube="bA5ECNm_nvA"/>
       </figure>
 
       <p>
@@ -149,7 +148,7 @@
     <subsection><title>Using Goal Seek for financial computations</title>
       <figure>
         <caption>Video presentation of this example</caption>
-        <video youtube="pJdAEO1qEao"/>
+        <video label="youtube_Sec1.6_Financial_Planning" youtube="pJdAEO1qEao"/>
       </figure>
 
       <p>
@@ -198,7 +197,7 @@
 
       <figure>
         <caption>Video presentation of this example</caption>
-        <video youtube="vIfIFoM1GA0"/>
+        <video label="youtube_Sec1.6_Goal_Seek_Errors" youtube="vIfIFoM1GA0"/>
       </figure>
 
       <p>
@@ -236,7 +235,7 @@
 
       <figure>
         <caption>Further video for this example</caption>
-        <video youtube="zIIm0H1t8Vs"/>
+        <video label="youtube_Sec1.6_Multiple_Answers" youtube="zIIm0H1t8Vs"/>
       </figure>
 
       <p>
@@ -297,11 +296,8 @@
       </p>
     </subsection>
 
-    
-    <exercises xml:id="exercises-set-sec-1-6">
-      <title> Finding Numerical Solutions with Goal Seek</title>
-
-      <exercise><title>Reading check, Finding Numerical Solutions with Goal Seek</title>
+    <reading-questions xml:id="rq-s1-6">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec1.6"><title>Reading check, Finding Numerical Solutions with Goal Seek</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -332,7 +328,10 @@
           </statement>
         </webwork>
     </exercise>
-
+    </reading-questions>
+    
+    <exercises xml:id="exercises-set-sec-1-6">
+      <title> Finding Numerical Solutions with Goal Seek</title>
 
       <exercisegroup>
         <introduction>

@@ -239,12 +239,8 @@
 
     </subsection>
 
-
-    <exercises xml:id="exercises-set-sec-1-2">
-    <title>Exercises  Functions in the Business Setting</title>
-
-      
-    <exercise>
+    <reading-questions xml:id="rq-s1-2">     <title>Reading Check</title>  
+    <exercise label="Reading_Check_Sec1.2">
       <title>Reading check, Functions in the Business Setting</title>
         <webwork>
           <pg-code>
@@ -279,6 +275,12 @@
           </statement>
         </webwork>
     </exercise>
+   
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-sec-1-2">
+    <title>Exercises  Functions in the Business Setting</title>
+
     
       <exercisegroup>
         <introduction>

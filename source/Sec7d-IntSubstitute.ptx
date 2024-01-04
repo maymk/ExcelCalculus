@@ -14,8 +14,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Change of variables for indefinite integrals</title>
+    <subsection>  <title>Change of variables for indefinite integrals</title>
       <p>We start by exploring some examples where we can get the desired result by the guess and check technique.</p>
 
       <example xml:id="power-of-linear">
@@ -166,8 +165,7 @@
       </p>
     </subsection>
 
-    <subsection>
-      <title>Change of variables for definite integrals</title>
+    <subsection>  <title>Change of variables for definite integrals</title>
 
       <p>
         In the definite integral, we understand that <m>a</m> and <m>b</m> are the <m>x</m>-values of the ends of the integral.
@@ -241,11 +239,8 @@
       </example>
     </subsection>
 
-   
-    <exercises xml:id="exercises-set-sec-7-4">
-      <title>Exercises: Integration by Change of Variables or Substitution Problems</title>
-
-      <exercise>
+    <reading-questions xml:id="rq-s7-4">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec7.4">
         <title>Reading check, Integration by Change of Variable or Substitution</title>
           <webwork>
             <pg-code>
@@ -277,7 +272,12 @@
             </statement>
           </webwork>
       </exercise>
-  
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-sec-7-4">
+      <title>Exercises: Integration by Change of Variables or Substitution Problems</title>
+
+       
 
       <exercisegroup>
         <introduction>

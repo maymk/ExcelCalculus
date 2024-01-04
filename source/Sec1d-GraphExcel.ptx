@@ -26,7 +26,7 @@
     <subsection><title>A basic graph</title>
       <figure xml:id="BasicGraphVideo">
         <caption>Video presentation of this example</caption>
-        <video youtube="0zuJMZN1UoA"/>
+        <video label="youtube_Sec1.4_First_Graph" youtube="0zuJMZN1UoA"/>
       </figure>
 
       <p>Graphing <m>y=x^2-6 x</m> over <m>-10 \le x \le 10</m></p>
@@ -65,7 +65,7 @@
     <subsection><title>A graph with parameters</title>
       <figure xml:id="VideoParametersVideo">
         <caption>Video presentation of this example</caption>
-        <video youtube="PFjsfVqDorE"/>
+        <video label="youtube_Sec1.4_adding_Parameters" youtube="PFjsfVqDorE"/>
       </figure>
 
       <p>
@@ -109,7 +109,7 @@
     <subsection><title>Controlling the viewing window</title>
       <figure>
         <caption>Video presentation of this example</caption>
-        <video youtube="KMc0wWSgdIo"/>
+        <video label="youtube_Sec1.64_Graphing_Window" youtube="KMc0wWSgdIo"/>
       </figure>
 
       <p>
@@ -149,7 +149,7 @@
 
       <figure xml:id="MultipleFunctionsVideo">
         <caption>Video presentation of this example</caption>
-        <video youtube="gMIn78ufX0g"/>
+        <video label="youtube_Sec1.4_Graph_2_Functions" youtube="gMIn78ufX0g"/>
       </figure>
 
       <p>
@@ -219,11 +219,9 @@
       <p>We will return to Wolfram Alpha from time to time, when we have nice formulas to manipulate. </p>
     </subsection>
 
+    <reading-questions xml:id="rq-s1-4">     <title>Reading Check</title>
 
-    <exercises xml:id="exercises-set-sec-1-4">
-      <title>Exercises 1.4 Graphing functions with Excel</title>
-
-      <exercise><title>Reading check, Functions in the Business Setting</title>
+      <exercise label="Reading_Check_Sec1.4"><title>Reading check, Functions in the Business Setting</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -255,6 +253,11 @@
           </statement>
         </webwork>
     </exercise>
+
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-sec-1-4">
+      <title>Exercises 1.4 Graphing functions with Excel</title>
 
       <exercise>
         <statement>

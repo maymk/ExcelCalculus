@@ -222,8 +222,8 @@
 
     <p>You may find other websites for doing derivatives as well.</p>
 
-
-    <exercise>
+    <reading-questions xml:id="rq-s4-4">     <title>Reading Check</title>
+    <exercise label="Reading_Check_Sec4.4">
       <title>Reading check, Differentiation Using Computer Algebra</title>
         <webwork>
           <pg-code>
@@ -255,7 +255,8 @@
           </statement>
         </webwork>
     </exercise>
-
+    </reading-questions>
+    
     <exercises xml:id="exercises-set-sec-4-4">
 	     <title>Exercises: Differentiation Using Computer Algebra Problems</title>
 

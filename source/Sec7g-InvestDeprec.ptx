@@ -16,8 +16,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Basic Accumulation</title>
+    <subsection> <title>Basic Accumulation</title>
       <p>
         The most straightforward problem for integration is one where I have a function for some value,
         like an income stream, or materials produced, or a cost,
@@ -138,8 +137,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Boundary value problems</title>
+    <subsection>  <title>Boundary value problems</title>
       <p>
         The accumulation problems asked you to find the area under a curve between two specific points.
         For those problems, we are not interested in a formulation of a general area function.
@@ -188,8 +186,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Depreciation</title>
+    <subsection>  <title>Depreciation</title>
 
       <p>
         When computing costs of a business, we need to evaluate the depreciation cost of capital equipment.
@@ -363,11 +360,8 @@
       </example>
     </subsection>
 
-   
-    <exercises xml:id="exercises-set-sec-7-7">
-	    <title>Exercises: Applications of the integral: Investment and depreciation Problems</title>
-
-      <exercise>
+    <reading-questions xml:id="rq-s7-7">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec7.7">
         <title>Reading check, Applications of the Integral, Investment and Depreciation</title>
           <webwork>
             <pg-code>
@@ -399,8 +393,11 @@
             </statement>
           </webwork>
       </exercise>
+    </reading-questions>
 
-      
+    <exercises xml:id="exercises-set-sec-7-7">
+	    <title>Exercises: Applications of the integral: Investment and depreciation Problems</title>
+
       <exercise>
         <statement>
           <p>

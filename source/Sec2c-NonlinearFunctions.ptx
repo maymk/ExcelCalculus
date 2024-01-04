@@ -80,7 +80,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="Ac0q2H7dlx4"/>
+            <video label="youtube_Sec2.3_ExponentialFunctions" youtube="Ac0q2H7dlx4"/>
           </figure>
           <p>
             We are interested in selling gizmos.  The most a consumer will pay is $1,000.
@@ -113,7 +113,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="Q0nJctuVNVc"/>
+            <video label="youtube_Sec2.3_FitFromTable"  youtube="Q0nJctuVNVc"/>
           </figure>
 
           <p>
@@ -258,14 +258,14 @@
 
       <figure>
         <caption>Video discussion of discontinuous functions in Excel</caption>
-        <video youtube="dH_2jZZygYw"/>
+        <video  label="youtube_Sec2.3_Discontinuous_Functions"  youtube="dH_2jZZygYw"/>
       </figure>
 
       <example><title>Raw Materials in Blocks</title>
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="x_gEP5xo04w"/>
+            <video  label="youtube_Sec2.3_Material_In_Blocks" youtube="x_gEP5xo04w"/>
           </figure>
 
           <p>
@@ -321,7 +321,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="6O5cSUxwDcU"/>
+            <video label="youtube_Sec2.3_Overtime_Pay"  youtube="6O5cSUxwDcU"/>
           </figure>
 
           <p>
@@ -364,7 +364,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="ci90zlHUbP8"/>
+            <video  label="youtube_Sec2.3_Discontinuous_Supply" youtube="ci90zlHUbP8"/>
           </figure>
           <p>
             In the widget market, the supply is constrained.
@@ -418,14 +418,9 @@
       </p>
     </subsection>
 
+    <reading-questions xml:id="rq-s2-3">     <title>Reading Check</title>
 
-
-    
-
-    <exercises xml:id="exercises-set-sec-2-3">
-      <title>Exercises 2.3 Nonlinear functions</title>
-
-      <exercise>
+      <exercise label="Reading_Check_Sec2.3">
         <title>Reading check, Nonlinear Functions</title>
           <webwork>
             <pg-code>
@@ -461,6 +456,11 @@
             </statement>
           </webwork>
       </exercise>
+
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-sec-2-3">
+      <title>Exercises 2.3 Nonlinear functions</title>
 
       <exercisegroup>
         <introduction>

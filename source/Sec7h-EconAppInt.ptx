@@ -20,8 +20,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Consumer and Producer Surplus</title>
+    <subsection>  <title>Consumer and Producer Surplus</title>
 
       <p>
         When we looked at supply and demand curves we found an equilibrium point where the amount being offered for sale was equal to the amount people wanted to buy.
@@ -268,8 +267,7 @@
       </p>
     </subsection>
 
-    <subsection>
-      <title>Lorenz Curves and the Gini Index</title>
+    <subsection>    <title>Lorenz Curves and the Gini Index</title>
 
       <p>
         A question that arises in economics looks at the equity of income or wealth distribution in a country.
@@ -391,12 +389,8 @@
       </example>
     </subsection>
 
-   
-
-    <exercises xml:id="exercises-set-sec-7-8">
-      <title>Exercises Business Applications of the Integral Problems</title>
-
-      <exercise>
+    <reading-questions xml:id="rq-s7-8">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec7.8">
         <title>Reading check, Economics Applications of the integral</title>
           <webwork>
             <pg-code>
@@ -427,7 +421,13 @@
               </p>
             </statement>
           </webwork>
-      </exercise>
+      </exercise>  
+    </reading-questions>
+
+
+    <exercises xml:id="exercises-set-sec-7-8">
+      <title>Exercises Business Applications of the Integral Problems</title>
+
 
       <exercisegroup>
         <introduction>

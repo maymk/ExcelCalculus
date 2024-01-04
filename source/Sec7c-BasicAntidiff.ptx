@@ -429,7 +429,8 @@
       In general, the process of finding anti-derivatives symbolically is an art form that we only begin to work with in this course.
     </p>
 
-   <exercise>
+    <reading-questions xml:id="rq-s7-3">     <title>Reading Check</title>
+   <exercise label="Reading_Check_Sec7.3">
       <title>Reading check, Basic Antidifferentiation</title>
         <webwork>
           <pg-code>
@@ -465,6 +466,7 @@
           </statement>
         </webwork>
     </exercise>
+    </reading-questions>
 
     <exercises xml:id="exercises-set-sec-7-3">
 	    <title>Exercises: Basic Antidifferentiation Problems</title>

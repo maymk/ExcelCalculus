@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-  <section xml:id="sec-6-2-PartialDerivatives">
+  <section xml:id="sec-6-2-PartialDeriva8tives">
     <title>Wire Frames, Partial Derivatives, and Tangent Planes</title>
 
     <introduction>
@@ -14,8 +14,7 @@
       </p>
     </introduction>
 
-    <subsection>
-      <title>Wire frames</title>
+    <subsection> <title>Wire frames</title>
       <p>
         We start by returning to <xref ref="ex-multi-two-products"/> from <xref ref="sec-6-1-EvaluatingFunctionsSeveralVariables"/>,
         and seeing what information can be obtained by looking at one variable at a time.
@@ -27,7 +26,7 @@
         <statement>
           <figure>
             <caption>Video presentation this example</caption>
-            <video youtube="ibcRFnM6fn8"/>
+            <video  label="youtube_Sec6.2_Revenue_Two_Products" youtube="ibcRFnM6fn8"/>
           </figure>
 
           <p>
@@ -117,8 +116,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Partial Derivatives</title>
+    <subsection> <title>Partial Derivatives</title>
 
       <p>
         The procedure we used in the first example of replacing one variable with a constant
@@ -181,8 +179,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Tangent Planes and Linear Approximation</title>
+    <subsection>  <title>Tangent Planes and Linear Approximation</title>
 
       <p>
         For functions of one variable, we had two main uses of the derivative.
@@ -283,6 +280,43 @@
         </p>
       </paragraphs>
     </subsection>
+
+  <reading-questions xml:id="rq-s6-2">     <title>Reading Check</title>
+      <exercise label="Reading_Check_Sec6.2">
+        <title>Reading check, Wire Frames, Partial Derivatives, and Tangent Planes</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+"A partial derivative is obtained by treating all but one variable as a constant. $BR", 
+"The partial derivative of \(f\) with respect to \(x\) is represented as \(f_x\).   $BR", 
+"The partial derivative of \(f\) with respect to \(x\) is represented as \(\frac{\partial}{\partial x} f\).   $BR", 
+"A tangent plane can be used for a linear approximation of a function of two variables.  $BR", 
+"Partial derivatives give the slope of the tangent line for the curve obtained by holding one variable constant.  $BR", 
+  
+ "Partial derivatives are not defined for functions of three variables.  $BR", 
+"We cannot graph functions of two variables.  $BR", 
+      ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3, 4],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 6.2, Wire Frames, Partial Derivatives, and Tangent Planes, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
+
+    </reading-questions>
 
 
     <exercises xml:id="exercises-set-sec-6-2">

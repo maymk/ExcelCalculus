@@ -61,7 +61,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="c8wOmYDtQPE"/>
+            <video  label="youtube_Sec2.2_Revenue_Linear_Demand" youtube="c8wOmYDtQPE"/>
           </figure>
 
           <p>
@@ -91,8 +91,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Cost</title>
+    <subsection> <title>Cost</title>
 
       <p>
         Once again we will start with a simplified model for cost.
@@ -171,8 +170,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Profit</title>
+    <subsection>  <title>Profit</title>
       <p>
         For the third piece of the model, we look at profit.  We have the simple formula
       </p>
@@ -195,7 +193,7 @@
 
       <figure>
         <caption>Video presentation of the next two examples</caption>
-        <video youtube="pgLZENVOjLo"/>
+        <video  label="youtube_Sec2.2_Finding_Profit"  youtube="pgLZENVOjLo"/>
       </figure>
 
       <example>
@@ -244,8 +242,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Break-Even Point</title>
+    <subsection>  <title>Break-Even Point</title>
       <p>
         The last example illustrates a reality of manufacturing and retail.
         If a business has a fixed cost or startup expense, it will have a loss if it does not sell enough.
@@ -295,7 +292,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="21NfE3S7EQs"/>
+            <video  label="youtube_Sec2.2_Revenue_From_Data" youtube="21NfE3S7EQs"/>
           </figure>
 
           <p>
@@ -358,8 +355,7 @@
       </example>
     </subsection>
 
-    <subsection>
-      <title>Technical note</title>
+    <subsection> <title>Technical note</title>
       <p>
         In business situations we often have cases where a change of
         quantity in the thousands only changes prices by pennies.  Then, our coefficients are close
@@ -372,7 +368,7 @@
         <statement>
           <figure>
             <caption>Video presentation of this example</caption>
-            <video youtube="5gQrHSDUwlU"/>
+            <video  label="youtube_Sec2.2_Big_Number_Problems" youtube="5gQrHSDUwlU"/>
           </figure>
 
           <p>
@@ -458,12 +454,49 @@
       </example>
     </subsection>
 
+    <reading-questions xml:id="rq-s2-2">     <title>Reading Check</title>
 
+      <exercise> label="Reading_Check_Sec2.2">  <title>Reading check, Modeling Revenue, Costs, and Profit</title>
+          <webwork>
+            <pg-code>
+              $checks = CheckboxList(
+                [
+                  [
+  "The simple model for revenue is revenue =quantity*price. ", 
+  "We typically use the demand price in computing revenue. ", 
+  "In real world cases the revenue function has a negative coefficient for the quadratic term and is a downward facing parabola.  ",                 
+  "For our simplified model, costs= fixed costs + unit costs*quantity. ", 
+  "The point at which revenues equal expenses (cost) is called the break-even point. ", 
+  "Fixed costs include the costs of being in business. They might include license fees, rent for a store or plant, and the cost of furnishings and equipment. ", 
+  "We typically use the supply price in computing revenue.  ", 
+  "In the real world variable costs are proportional to quantity. ", 
+  "Profit = Costs - Revenue. ", 
+  "In our simplified model, the profit function is linear. "
+          ],
+                 "None of the above"
+                ],
+                [0, 1, 2, 3, 4, 5],
+                labels => "ABC",   # "abc", "123", "roman", "Roman"
+              );
+            </pg-code>
+            <statement>
+              <p>
+                This question checks your reading comprehension of the material is section 2.2, Modeling Revenue, Costs, and Profit, of Business Calculus with Excel.
+                Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.
+              </p>
+              <p>
+                <var name="$checks" form="checkboxes"/>
+              </p>
+            </statement>
+          </webwork>
+      </exercise>
+  
+</reading-questions>
     
     <exercises xml:id="exercises-set-sec-2-2">
       <title>Exercises: Modeling Revenue, Costs, and Profit</title>
 
-      <exercise>
+      <exercise> label="Reading_Check_Sec2.2"
         <title>Reading check, Modeling Revenue, Costs, and Profit</title>
           <webwork>
             <pg-code>

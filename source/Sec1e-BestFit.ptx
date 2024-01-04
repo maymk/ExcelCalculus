@@ -80,7 +80,7 @@
         <introduction>
           <figure  xml:id="BestFitLinearVideo">
           <caption>Video presentation of this example</caption>
-             <video youtube="ZI9hS12tHoc"/>
+             <video label="youtube_Sec1.5_Fitting_Data" youtube="ZI9hS12tHoc"/>
           </figure>
       </introduction>
       <subsubsection><title>Find the line</title>
@@ -150,7 +150,7 @@
       <!-- unless you are going to have subsubsections, there should not be an introduction -->
       <figure>
         <caption>Video presentation of this example</caption>
-        <video youtube="wAy0kfdToTA"/>
+        <video label="youtube_Sec1.5_Range_For_Fit" youtube="wAy0kfdToTA"/>
       </figure>
       <p>
         When finding the best fitting curve to data we have gathered,
@@ -193,7 +193,7 @@
       <introduction>
       <figure>
         <caption>Video presentation of this example</caption>
-        <video youtube="1hxc1bOOS68"/>
+        <video label="youtube_Sec1.5_Fitting_CPI" youtube="1hxc1bOOS68"/>
       </figure>
       <p>
         For our second example, we will look at the consumer price index and try and fit it to a model.
@@ -263,7 +263,7 @@
 
       <figure>
         <caption>Continued video presentation of this example</caption>
-        <video youtube="5W3OvF8VNEs"/>
+        <video label="youtube_Sec1.5_Selecting_Data" youtube="5W3OvF8VNEs"/>
       </figure>
       </subsubsection>
       <subsubsection><title> Selecting data for one model</title>
@@ -301,11 +301,10 @@
       <conclusion><p> </p></conclusion>
     </subsection>
 
-    
-    <exercises xml:id="exercises-set-sec-1-5">
-      <title>Exercises: Using Excel to find best fit curves</title>
 
-      <exercise><title>Reading check, Using Excel to Find Best Fit Curves</title>
+    <reading-questions xml:id="rq-s1-5">     <title>Reading Check</title>
+
+      <exercise label="Reading_Check_Sec1.5"><title>Reading check, Using Excel to Find Best Fit Curves</title>
         <webwork>
           <pg-code>
             $checks = CheckboxList(
@@ -336,7 +335,11 @@
           </statement>
         </webwork>
     </exercise>
+    </reading-questions>
 
+    
+    <exercises xml:id="exercises-set-sec-1-5">
+      <title>Exercises: Using Excel to find best fit curves</title>
       <exercise>
         <statement>
           <p>

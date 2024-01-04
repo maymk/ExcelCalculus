@@ -242,8 +242,8 @@
       </p>
     </paragraphs>
 
-
-    <exercise>
+    <reading-questions xml:id="rq-s4-5">     <title>Reading Check</title>
+    <exercise label="Reading_Check_Sec4.5">
       <title>Reading check, The Second Derivative and Concavity</title>
         <webwork>
           <pg-code>
@@ -277,7 +277,8 @@
           </statement>
         </webwork>
     </exercise>
-
+    </reading-questions>
+    
     <exercises xml:id="exercises-set-sec-4-5">
       <title>Exercises: The Second Derivative and Concavity Problems</title>
 

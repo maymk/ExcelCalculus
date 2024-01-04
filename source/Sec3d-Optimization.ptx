@@ -37,7 +37,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="Q8w-CjhtcQE"/>
+          <video  label="youtube_Sec3.4_Profit_Function_Widgets" youtube="Q8w-CjhtcQE"/>
         </figure>
 
         <p>
@@ -94,7 +94,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="6ICUxS6-g0Q"/>
+          <video label="youtube_Sec3.4_Cumquat_Oil"  youtube="6ICUxS6-g0Q"/>
         </figure>
 
         <p>
@@ -169,7 +169,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example></caption>
-          <video youtube="BG0W-F1oeXk"/>
+          <video  label="youtube_Sec3.4_Gizmo_Profits" youtube="BG0W-F1oeXk"/>
         </figure>
 
         <p>
@@ -206,7 +206,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="5MO904y3fOw"/>
+          <video  label="youtube_Sec3.4_Minimizing_Costs" youtube="5MO904y3fOw"/>
         </figure>
 
         <p>
@@ -280,7 +280,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="wimpz29YypU"/>
+          <video label="youtube_Sec3.4_Maximizing_Profits"  youtube="wimpz29YypU"/>
         </figure>
 
         <p>
@@ -346,7 +346,7 @@
       <statement>
         <figure>
           <caption>Video presentation of this example</caption>
-          <video youtube="ioyz19BK6Vk"/>
+          <video  label="youtube_Sec3.4_MINIMIZING_EXPENSE" youtube="ioyz19BK6Vk"/>
         </figure>
 
         <p>
@@ -380,8 +380,8 @@
       </solution>
     </example>
 
-
-    <exercise>
+    <reading-questions xml:id="rq-s3-4">     <title>Reading Check</title>
+    <exercise  label="Reading_Check_Sec3.4">
       <title>Reading check, Optimization</title>
         <webwork>
           <pg-code>
@@ -415,7 +415,7 @@
           </statement>
         </webwork>
     </exercise>
-
+    </reading-questions>
 
     <exercises xml:id="exercises-set-sec-3-4">
        <title>Exercises: Optimization</title>

@@ -298,10 +298,9 @@
       </example>
     </subsection>
 
-    <exercises xml:id="exercises-set-sec-5-3">
-	    <title>Exercises: Elasticity Problems</title>
+    <reading-questions xml:id="rq-s5-3">     <title>Reading Check</title>
 
-      <exercise>
+      <exercise  label="Reading_Check_Sec5.3">
         <title>Reading check, 5.3, Elasticity</title>
           <webwork>
             <pg-code>
@@ -340,6 +339,11 @@
             </statement>
           </webwork>
       </exercise>
+
+    </reading-questions>
+
+    <exercises xml:id="exercises-set-sec-5-3">
+	    <title>Exercises: Elasticity Problems</title>
 
       <exercisegroup>
         <introduction>

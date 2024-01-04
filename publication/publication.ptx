@@ -8,22 +8,28 @@
     <common>
       <tableofcontents level="2"/>
       <exercise-inline hint="no" answer="no" solution="no"/>
-      <exercise-divisional hint="no" answer="no" solution="no"/>
+      <exercise-divisional hint="yes" answer="yes" solution="yes"/>
+      <exercise-reading    statement="yes" hint="no"  answer="no"  solution="no"/>
+
  </common>
     <source>
       <directories external="../assets" generated="../generated-assets"/>
     </source>
     <!-- HTML-Specific Options -->
+    <!-- <web> -->
     <html>
         <calculator model="geogebra-graphing"/>
         <webwork divisional="dynamic"/>
+        <webwork reading="dynamic"/>
         <index-page ref="ExcelCalculus"/>
         <video privacy="yes"/>
         <!-- baseurl should not have a trailing slash -->
         <baseurl href="https://mathstat.slu.edu/~may/ExcelCalculus"/>
         <knowl example="no"/>
         <!-- <asymptote links="yes"/> -->
-    </html>
+    <!--
+    </web>  -->
+</html>
     <!-- PDF-Specific Options -->
     <latex print="no" sides="one">
       <index-page ref="ExcelCalculus"/>
