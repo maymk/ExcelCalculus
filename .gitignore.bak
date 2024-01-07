@@ -1,0 +1,12 @@
+generated-assets/
+output/
+.error_schema.log
+build/
+published/
+*~
+.DS_Store
+TerminalCommands.txt
+validate
+validation-report.txt
+publication-old.ptx
+cli.log
