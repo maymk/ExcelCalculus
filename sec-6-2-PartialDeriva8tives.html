@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Wire Frames, Partial Derivatives, and Tangent Planes</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Business Calculus with Excel">
+<meta property="book:author" content="Mike May, S.J.">
+<meta property="book:author" content="Anneke Bart">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.33/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="ExcelCalculus" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ExcelCalculus.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="calculator-toggle" class="calculator-toggle button" title="Show calculator" aria-expanded="false" aria-controls="calculator-container"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calc</span></button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script></span><span class="treebuttons"><a class="previous-button button" href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-6-FunctionsSeveralVariables.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-6-3-CriticalPointsExtrema.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Volume}{\mathrm{Volume}}
+\newcommand{\xLow}{\mathrm{xLow}}
+\newcommand{\xHigh}{\mathrm{xHigh}}
+\newcommand{\Mcost}{\operatorname{Marginal Cost}}
+\newcommand{\cost}{\operatorname{Cost}}
+\newcommand{\Mrev}{\operatorname{Marginal Revenue}}
+\newcommand{\revenue}{\operatorname{Revenue}}
+\newcommand{\profit}{\operatorname{Profit}}
+\newcommand{\Mprofit}{\operatorname{Marginal Profit}}
+\newcommand{\Pprofit}{\operatorname{Predicted Profit}}
+\newcommand{\price}{\operatorname{Price}}
+\newcommand{\Dprice}{\operatorname{Demand Price}}
+\newcommand{\Pprice}{\operatorname{Purchase Price}}
+\newcommand{\Sprice}{\operatorname{Supply Price}}
+\newcommand{\marginal}{\operatorname{Marginal}\,}
+\newcommand{\linear}{\operatorname{Linear}\,}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\quantity}{\mathrm{Quantity}}
+\newcommand{\AnnualCost}{\operatorname{Annual Cost}}
+\newcommand{\AnnualExpense}{\operatorname{Annual Expense}}
+\newcommand{\RepairFactor}{\mathrm{Repair Factor}}
+\newcommand{\Sales}{\operatorname{Sales}}
+\newcommand{\prediction}{\operatorname{prediction}}
+\newcommand{\FutureValue}{\operatorname{Future Value}}
+\newcommand{\demand}{\operatorname{Demand}}
+\newcommand{\val}{\operatorname{Value}}
+\newcommand{\raw}{\mathrm{raw}}
+\newcommand{\gizmos}{\operatorname{gizmos}}
+\newcommand{\intermediate}{\mathrm{intermediate}}
+\newcommand{\tax}{\operatorname{tax}}
+\newcommand{\FaceValue}{\operatorname{Face Value}}
+\newcommand{\rate}{\mathrm{rate}}
+\newcommand{\years}{\mathrm{years}}
+\newcommand{\expense}{\operatorname{expense}}
+\newcommand{\FutureAmount}{\operatorname{FutureAmount}}
+\newcommand{\InitialDeposit}{\mathrm{InitialDeposit}}
+\newcommand{\ppy}{\mathrm{ppy}}
+\newcommand{\PresentAmount}{\operatorname{PresentAmount}}
+\newcommand{\PriceGizmo}{\mathrm{PriceGizmos}}
+\newcommand{\QuantityGizmo}{\mathrm{QuantityGizmos}}
+\newcommand{\QuantityGadget}{\mathrm{QuantityGadgets}}
+\newcommand{\QuantityWidget}{\mathrm{QuantityWidgets}}
+\newcommand{\PriceWidget}{\mathrm{PriceWidgets}}
+\newcommand{\PriceGadget}{\mathrm{PriceGadgets}}
+\newcommand{\QW}{\mathrm{QW}}
+\newcommand{\QG}{\mathrm{QG}}
+\newcommand{\PW}{\mathrm{PW}}
+\newcommand{\PG}{\mathrm{PG}}
+\newcommand{\Production}{\operatorname{Production}}
+\newcommand{\Labor}{\mathrm{Labor}}
+\newcommand{\Capital}{\mathrm{Capital}}
+\newcommand{\Linear}{\operatorname{Linear}\,}
+\newcommand{\PriceX}{\mathrm{PriceX}}
+\newcommand{\PriceY}{\mathrm{PriceY}}
+\newcommand{\predicted}{\operatorname{predicted}}
+\newcommand{\Time}{\mathrm{time}}
+\newcommand{\TotalAmount}{\operatorname{TotalAmount}}
+\newcommand{\TotalValue}{\operatorname{TotalValue}}
+\newcommand{\CashAmount}{\mathrm{CashAmount}}
+\newcommand{\DepositAmount}{\mathrm{DepositAmount}}
+\newcommand{\AvailableTrees}{\operatorname{AvailableTrees}}
+\newcommand{\Capacity}{\mathrm{Capacity}}
+\newcommand{\Amount}{\operatorname{Amount}}
+\newcommand{\InitialAmount}{\mathrm{InitialAmount}}
+\newcommand{\InvestmentAmount}{\mathrm{InvestmentAmount}}
+\newcommand{\Return}{\operatorname{Return}}
+\newcommand{\SD}{\mathrm{SD}}
+\newcommand{\Antideriv}{\operatorname{Antideriv}}
+\newcommand{\MC}{\operatorname{MC}}
+\newcommand{\MP}{\operatorname{MP}}
+\newcommand{\MR}{\operatorname{MR}}
+\newcommand{\CDFf}{\operatorname{CDFf}}
+\newcommand{\Principal}{\operatorname{Principal}}
+\newcommand{\ProducerSurplus}{\mathrm{ProducerSurplus}}
+\newcommand{\ConsumerSurplus}{\mathrm{ConsumerSurplus}}
+\newcommand{\TotalSocialGain}{\mathrm{TotalSocialGain}}
+\newcommand{\Elasticity}{\operatorname{Elasticity}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="ExcelCalculus-2.html" class="internal"><span class="title">Frontmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="ExcelCalculus-2-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="ExcelCalculus-2-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-6.html" class="internal"><span class="title">Notes for Instructors</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-7.html" class="internal"><span class="title">Notes for Students</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-1-FunctionsGraphsExcel.html" class="internal"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Linear Functions and models</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#sec-1-1-LinearFunctionsAndModels-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Equations of a line</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#basics-reading-questions-1-1b" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#exercises-set-sec-1-1" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises 1.1 Linear Functions and models</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functions in the Business setting</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Quadratic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exponential functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-5" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Logistic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-6" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Sinusoidal Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-7" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Normal Distribution Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-8" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Inversely Proportional Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-9" class="internal"><span class="codenumber">1.2.7</span> <span class="title">Logarithmic Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#rq-s1-2" class="internal"><span class="codenumber">1.2.8</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#exercises-set-sec-1-2" class="internal"><span class="codenumber">1.2.9</span> <span class="title">Exercises  Functions in the Business Setting</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Introduction to Excel Spreadsheets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#BasicArithmeticSubsection" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Basic Arithmetic, show formulas and quick fill.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#RelAbsRefTitle" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Absolute and Relative Cell References</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#NamedCellSection" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Named Cell References</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#sec-1-3-IntroExcelSpreadsheets-6" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Getting Help</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#sec-1-3-IntroExcelSpreadsheets-7" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Other Details</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#rq-s1-3" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#exercises-set-sec-1-3" class="internal"><span class="codenumber">1.3.7</span> <span class="title">Exercises Introduction to Excel Spreadsheets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Graphing functions with Excel</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-3" class="internal"><span class="codenumber">1.4.1</span> <span class="title">A basic graph</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-4" class="internal"><span class="codenumber">1.4.2</span> <span class="title">A graph with parameters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Controlling the viewing window</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-6" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Graphing more than one function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#FormattingChart" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Formatting a chart</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-8" class="internal"><span class="codenumber">1.4.6</span> <span class="title">Online graphing tools: Wolfram Alpha</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#rq-s1-4" class="internal"><span class="codenumber">1.4.7</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#exercises-set-sec-1-4" class="internal"><span class="codenumber">1.4.8</span> <span class="title">Exercises 1.4 Graphing functions with Excel</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Using Excel to find best-fit curves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Using Excel to find a best-fit line</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-3" class="internal"><span class="codenumber">1.5.1.1</span> <span class="title">Find the line</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-4" class="internal"><span class="codenumber">1.5.1.2</span> <span class="title">Produce the equation of the line</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-5" class="internal"><span class="codenumber">1.5.1.3</span> <span class="title">Bring the equation of the line back to the chart</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-4" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Checking and improving our equations</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Fitting the Consumer Price Index (<abbr class="initialism">CPI</abbr>) to a best fitting curve; an extended example</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-3" class="internal"><span class="codenumber">1.5.3.1</span> <span class="title">Number of significant digits for equation constants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-4" class="internal"><span class="codenumber">1.5.3.2</span> <span class="title">Setting the base point of a variable</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-5" class="internal"><span class="codenumber">1.5.3.3</span> <span class="title">Selecting data for one model</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#rq-s1-5" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#exercises-set-sec-1-5" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Exercises: Using Excel to find best fit curves</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-6-GoalSeek.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Finding Numerical Solutions with Goal Seek</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-3" class="internal"><span class="codenumber">1.6.1</span> <span class="title">A linear example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-4" class="internal"><span class="codenumber">1.6.2</span> <span class="title">A quadratic example and concern with precision</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-5" class="internal"><span class="codenumber">1.6.3</span> <span class="title">More realistic examples: finding the intersection of two curves</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-6" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Using Goal Seek for financial computations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-7" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Looking under the hood and understanding Goal Seek’s limitations</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#rq-s1-6" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#exercises-set-sec-1-6" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Finding Numerical Solutions with Goal Seek</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-2-BusinessApplications.html" class="internal"><span class="codenumber">2</span> <span class="title">Business Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Market Equilibrium Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#sec-2-1-MarketEquilibriumProblems-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Supply and Demand and Market Equilibrium</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#rq-s2-1" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#exercises-set-sec-2-1" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercises 2.1 Equilibrium Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Modeling Revenue, Costs, and Profit</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-3" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Revenue and a review of demand price</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-4" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cost</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-5" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Profit</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-6" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Break-Even Point</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-7" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Technical note</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#rq-s2-2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#exercises-set-sec-2-2" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Exercises: Modeling Revenue, Costs, and Profit</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Nonlinear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#AlgebraicFunctions" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Algebraic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#DiscontinuousFunctions" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Discontinuous Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#rq-s2-3" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#exercises-set-sec-2-3" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises 2.3 Nonlinear functions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-3-RateChangeDerivatives.html" class="internal"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Marginal Functions and Difference Quotients</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-3" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Marginal Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-4" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Difference Quotients and Average Rate of Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-5" class="internal"><span class="codenumber">3.1.3</span> <span class="title">An Excel Trick for Difference Quotients</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#rq-s3-1" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#exercises-set-sec-3-1" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Exercises: Marginal Functions and Difference Quotients Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Numeric Derivatives and Limits</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html#rq-s3-2" class="internal"><span class="codenumber">3.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html#exercises-set-sec-3-2" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises: Numeric Derivatives and Limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Local Linearity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html#rq-s3-3" class="internal"><span class="codenumber">3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html#exercises-set-sec-3-3" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises: Local Linearity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-4-Optimization.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Optimization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-4-Optimization.html#rq-s3-4" class="internal"><span class="codenumber">3.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-4-Optimization.html#exercises-set-sec-3-4" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises: Optimization</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html" class="internal"><span class="codenumber">3.5</span> <span class="title">An Introduction to Solver</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html#rq-s3-5" class="internal"><span class="codenumber">3.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html#exercises-set-sec-3-5" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises: An Introduction to Solver</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-4-SymbolicDifferentiation.html" class="internal"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Elementary Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-2" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Derivatives of monomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-4" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Derivatives of Exponential Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-5" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Derivatives of Logarithmic Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#rq-s4-1" class="internal"><span class="codenumber">4.1.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#exercises-set-ElementaryDerivaitives" class="internal"><span class="codenumber">4.1.6</span> <span class="title">Exercises: Elementary Derivatives Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Derivative Rules for Combinations of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Derivatives of scalar products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-4" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Derivatives of sums and differences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Derivatives of products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Derivatives of quotients</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#rq-s4-2" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#exercises-set-sec-4-2" class="internal"><span class="codenumber">4.2.6</span> <span class="title">Exercises: Derivative Rules for Combinations of Functions Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-3-ChainRule.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Chain Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-3-ChainRule.html#rq-s4-3" class="internal"><span class="codenumber">4.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-3-ChainRule.html#exercises-set-sec-4-3" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises: The Chain Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Differentiation Using Computer Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html#rq-s4-4" class="internal"><span class="codenumber">4.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html#exercises-set-sec-4-4" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises: Differentiation Using Computer Algebra Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">The Second Derivative and Concavity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html#rq-s4-5" class="internal"><span class="codenumber">4.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html#exercises-set-sec-4-5" class="internal"><span class="codenumber">4.5</span> <span class="title">Exercises: The Second Derivative and Concavity Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-5-DIfferentiationApplications.html" class="internal"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Implicit Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html#rq-s5-1" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html#exercises-set-sec-5-1" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises: Implicit Differentiation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-2-RelatedRates.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Related Rates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-2-RelatedRates.html#rq-s5-2" class="internal"><span class="codenumber">5.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-2-RelatedRates.html#exercises-set-sec-5-2" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises: Related Rates Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-3-Elasticity.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Elasticity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#sec-5-3-Elasticity-3" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Point Elasticity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#sec-5-3-Elasticity-4" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Arc Elasticity</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#rq-s5-3" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#exercises-set-sec-5-3" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises: Elasticity Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap-6-FunctionsSeveralVariables.html" class="internal"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Evaluating and Graphing Functions of Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html#rq-s6-1" class="internal"><span class="codenumber">6.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html#exercises-set-sec-6-1" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises: Evaluating and Graphing Functions of Several Variables Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Wire Frames, Partial Derivatives, and Tangent Planes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Wire frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Tangent Planes and Linear Approximation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#rq-s6-2" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#exercises-set-sec-6-2" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Critical Points and Extrema</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Critical Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Second Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Using the Discriminant to Test Critical Points</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#rq-s6-3" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#exercises-set-sec-6-3" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Exercises: Critical Points and Extrema Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Optimization and Best Fitting Curves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html#rq-s6-4" class="internal"><span class="codenumber">6.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html#exercises-set-sec-6-4" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises: Optimization and Best Fitting Curves Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-7-Intergration.html" class="internal"><span class="codenumber">7</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-1-RiemannSums.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Approximating Definite Integrals as Sums</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-1-RiemannSums.html#rq-s7-1" class="internal"><span class="codenumber">7.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-1-RiemannSums.html#exercises-set-sec-7-1" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises: Approximating Definite Integrals as Sums Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html#rq-s7-2" class="internal"><span class="codenumber">7.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html#exercises-set-sec-7-2" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises: The Fundamental Theorem of Calculus Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Basic Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html#rq-s7-3" class="internal"><span class="codenumber">7.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html#exercises-set-sec-7-3" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises: Basic Antidifferentiation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Integration by Change of Variables or Substitution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#sec-7-4-ChangeVariables-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Change of variables for indefinite integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#sec-7-4-ChangeVariables-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Change of variables for definite integrals</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#rq-s7-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#exercises-set-sec-7-4" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises: Integration by Change of Variables or Substitution Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Integration using Computer Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-3" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Definite integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-4" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Initial value problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-5" class="internal"><span class="codenumber">7.5.3</span> <span class="title">Riemann Sums</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#rq-s7-5" class="internal"><span class="codenumber">7.5.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#exercises-set-sec-7-5" class="internal"><span class="codenumber">7.5.5</span> <span class="title">Exercises: Integration using Computer Algebra Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html" class="internal"><span class="codenumber">7.6</span> <span class="title">The Normal Distribution: An extended numeric example</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#sec-7-6-NormalDistribution-3" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Background from probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#sec-7-6-NormalDistribution-4" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#rq-s7-6" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#exercises-set-sec-7-6" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Exercises: Normal Distribution Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Applications of the integral: Investment and depreciation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Basic Accumulation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Boundary value problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-5" class="internal"><span class="codenumber">7.7.3</span> <span class="title">Depreciation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#rq-s7-7" class="internal"><span class="codenumber">7.7.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#exercises-set-sec-7-7" class="internal"><span class="codenumber">7.7.5</span> <span class="title">Exercises: Applications of the integral: Investment and depreciation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html" class="internal"><span class="codenumber">7.8</span> <span class="title">Economics Applications of the Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#sec-7-8-BusinessApplicationsIntegral-3" class="internal"><span class="codenumber">7.8.1</span> <span class="title">Consumer and Producer Surplus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#sec-7-8-BusinessApplicationsIntegral-4" class="internal"><span class="codenumber">7.8.2</span> <span class="title">Lorenz Curves and the Gini Index</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#rq-s7-8" class="internal"><span class="codenumber">7.8.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#exercises-set-sec-7-8" class="internal"><span class="codenumber">7.8.4</span> <span class="title">Exercises Business Applications of the Integral Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Spreadsheet Appendices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills.html" class="internal"><span class="codenumber">A</span> <span class="title">Spreadsheet Skills introduced in chapter 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-3.html" class="internal"><span class="codenumber">A.1</span> <span class="title">From Section 1-3 - Entering and Copying Formulas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-4.html" class="internal"><span class="codenumber">A.2</span> <span class="title">From Section 1.4 Graphing Functions in a Spreadsheet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-5.html" class="internal"><span class="codenumber">A.3</span> <span class="title">From Section 1.5 Adding and Using Best Fit Curves (Trendlines)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-6.html" class="internal"><span class="codenumber">A.4</span> <span class="title">From Section 1.6 Using Goal Seek</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SkillsChap1Google.html" class="internal"><span class="codenumber">A.5</span> <span class="title">Google Sheets Notes for Chapter 1 skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="SpreadSkills2.html" class="internal"><span class="codenumber">B</span> <span class="title">Spreadsheet Skills Introduced in Chapter 2</span></a></div></li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills3.html" class="internal"><span class="codenumber">C</span> <span class="title">Spreadsheet Skills introduced in chapter 3</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection3-1.html" class="internal"><span class="codenumber">C.1</span> <span class="title">From Section 3.1- Comparing Functions and Related Marginal Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction1-IncreseBy1" class="internal"><span class="codenumber">C.1.1</span> <span class="title">Marginal Functions with <span class="process-math">\(q\)</span> increasing by 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction2-NotIncreseBy1" class="internal"><span class="codenumber">C.1.2</span> <span class="title">Marginal Functions using Columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction3-QuickFill" class="internal"><span class="codenumber">C.1.3</span> <span class="title">Marginal Functions using Quick Fill</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection3-2.html" class="internal"><span class="codenumber">C.2</span> <span class="title">From Section 3.2- Comparing Functions and Numeric Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#DerivativeByIntuitiveDef" class="internal"><span class="codenumber">C.2.1</span> <span class="title">Derivatives from the Intuitive Approach</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#NumDerivIntuitiveLimits" class="internal"><span class="codenumber">C.2.2</span> <span class="title">Derivatives from Numerical Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#NumericalDerivativeAppend" class="internal"><span class="codenumber">C.2.3</span> <span class="title">Graphing a Function with its Numeric Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#DerivativeFormulasFromTrendlines" class="internal"><span class="codenumber">C.2.4</span> <span class="title">Using Trendline to find Derivative Formulas</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection3-3.html" class="internal"><span class="codenumber">C.3</span> <span class="title">From Section 3.3- Building Linear Approximations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection3-5.html" class="internal"><span class="codenumber">C.4</span> <span class="title">From Section 3.5 - An introduction to Solver 3.5</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SheetsNotesCh3.html" class="internal"><span class="codenumber">C.5</span> <span class="title">Google Sheets Notes for Chapter 3 Skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills6.html" class="internal"><span class="codenumber">D</span> <span class="title">Spreadsheet Skills introduced in chapter 6</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection6-1.html" class="internal"><span class="codenumber">D.1</span> <span class="title">From Section 6.1 - Evaluating and graphing functions of several varaibles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-2" class="internal"><span class="codenumber">D.1.1</span> <span class="title"><dfn class="terminology">Evaluating a function of several variables</dfn></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-3" class="internal"><span class="codenumber">D.1.2</span> <span class="title"><dfn class="terminology">Making a table for a function of 2 variable</dfn></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-4" class="internal"><span class="codenumber">D.1.3</span> <span class="title"><dfn class="terminology">Turning a table of a function of 2 variables into a surface graph</dfn></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection6-3.html" class="internal"><span class="codenumber">D.2</span> <span class="title">From Section 6.3 - Critical points and extrema</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SheetsNotesCh6.html" class="internal"><span class="codenumber">D.3</span> <span class="title">Google Sheets Notes for Chapter 6 Skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="SpreadSkills7.html" class="internal"><span class="codenumber">E</span> <span class="title">Spreadsheet Skills introduced in chapter 7</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-6-2-PartialDeriva8tives"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">6.2</span><span class="space"> </span><span class="title">Wire Frames, Partial Derivatives, and Tangent Planes</span>
+</h2>
+<section class="introduction" id="sec-6-2-PartialDeriva8tives-2"><div class="para" id="sec-6-2-PartialDeriva8tives-2-1">
+<a class="external" href="external/Examples/Section-6-2-Examples.xlsx" target="_blank">Link to worksheets used in this section</a><a class="xref" id="sec-6-2-PartialDeriva8tives-2-1-2" href="" data-knowl="./knowl/fn/sec-6-2-PartialDeriva8tives-2-1-2.html" title="Footnote 6.2.1"><sup> 1 </sup></a>
+</div> <div class="para" id="sec-6-2-PartialDeriva8tives-2-2">A standard technique in mathematics courses is to try to break a complicated problem into smaller and easier problems. For functions of several variables this can be done by looking at the variables one at a time, and treating the other variables as constants. Then we are back to considering functions of a single variable.</div></section><section class="subsection" id="sec-6-2-PartialDeriva8tives-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="space"> </span><span class="title">Wire frames</span>
+</h3>
+<div class="para" id="sec-6-2-PartialDeriva8tives-3-2">We start by returning to <a href="" class="xref" data-knowl="./knowl/xref/ex-multi-two-products.html" title="Example 6.1.12: Table and graph">Example 6.1.12</a> from <a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" class="internal" title="Section 6.1: Evaluating and Graphing Functions of Several Variables">Section 6.1</a>, and seeing what information can be obtained by looking at one variable at a time.</div>
+<article class="example example-like" id="sec-6-2-PartialDeriva8tives-3-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Optimizing Revenue with Two Products.</span>
+</h4>
+<figure class="figure figure-like" id="sec-6-2-PartialDeriva8tives-3-3-2-1"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/ibcRFnM6fn8?&amp;modestbranding=1&amp;rel=0" id="youtube_Sec6.2_Revenue_Two_Products"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.2<span class="period">.</span></span><span class="space"> </span>Video presentation this example</figcaption></figure> <div class="para logical" id="sec-6-2-PartialDeriva8tives-3-3-2-2">
+<div class="para">I have a company that produces two products, widgets and gizmos.  The two demand functions are:</div>
+<div class="displaymath process-math" id="sec-6-2-PartialDeriva8tives-3-3-2-2-1">
+\begin{align*}
+\PriceGizmo\amp =10-\frac{\QuantityGizmo}{50}=10-\frac{\text{QG}}{50}\\
+\PriceWidget\amp =20-\frac{\QuantityWidget}{40}=20-\frac{\text{QW}}{40}\text{.}
+\end{align*}
+</div>
+<div class="para">This gives me the following revenue function:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\revenue(\QG,\QW)=10QG-\frac{\QG^2}{50}+20\QW-\frac{\QW^2}{40}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="sec-6-2-PartialDeriva8tives-3-3-2-3">Look at the functions of one variable obtained by treating either QG or QW as a constant. Use this information to find where we maximize revenue.</div>
+<div class="solutions"><details id="sec-6-2-PartialDeriva8tives-3-3-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sec-6-2-PartialDeriva8tives-3-3-3-1">In terms of the last example, we want to start with a table and a wire frame chart.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec-6-2-1.png" class="contained"></div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec-6-2-2.png" class="contained"></div> <div class="para" id="sec-6-2-PartialDeriva8tives-3-3-3-4">The wires are obtained by intersecting the graph of the function with a plane where QW or QG is held constant.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec-6-2-3.png" class="contained"></div> <div class="para logical" id="sec-6-2-PartialDeriva8tives-3-3-3-6">
+<div class="para">Thus, when we treat either QW or QG as a constant we effectively are looking at one of the wires of the wire frame. To illustrate this, we will look at the wires corresponding to <span class="process-math">\(\QW=400\)</span> and <span class="process-math">\(\QG=300\text{.}\)</span> When <span class="process-math">\(\QG=300\text{,}\)</span> our revenue function simplifies to</div>
+<div class="displaymath process-math" id="sec-6-2-PartialDeriva8tives-3-3-3-6-4">
+\begin{align*}
+\revenue(300,\QW) \amp =3000-1800+20\text{QW}-\frac{\text{QW}^2}{40}\\
+\amp =1200+20\QW-\frac{\QW^2}{40}\text{.}
+\end{align*}
+</div>
+<div class="para">Thus, the wire corresponding to <span class="process-math">\(\QG=300\)</span> is a parabola that bends down.</div>
+</div> <div class="para" id="sec-6-2-PartialDeriva8tives-3-3-3-7">The interactive below shows how the wireframe is built from cuves defined by slice curves defined by cut planes.</div> <figure class="figure figure-like" id="sec-6-2-PartialDeriva8tives-3-3-3-8"><iframe id="geogebra-wire-mesh" width="480" height="768" src="geogebra-wire-mesh-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.3<span class="period">.</span></span><span class="space"> </span>Wire mesh</figcaption></figure> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec-6-2-4.png" class="contained"></div> <div class="para logical" id="sec-6-2-PartialDeriva8tives-3-3-3-10">
+<div class="para">To find the vertex of the parabola, we take the derivative of our function of QW and set it equal to zero.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{d}{d\QW} \revenue(300,\QW)=20-\frac{\QW}{20}\text{.}
+\end{equation*}
+</div>
+<div class="para">This derivative is zero when <span class="process-math">\(\QW=400\text{.}\)</span>  That is the only possible place on this wire where we can have a maximum.</div>
+</div> <div class="para logical" id="sec-6-2-PartialDeriva8tives-3-3-3-11">
+<div class="para">Similarly, when <span class="process-math">\(\QW=400\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-6-2-PartialDeriva8tives-3-3-3-11-2">
+\begin{align*}
+\revenue(\QG,400) \amp =10\QG-\frac{\QG^2}{50}+4000\\
+\frac{d}{d\QG} \revenue(\QG,400)\amp =10-\frac{\QG}{25}\text{.}
+\end{align*}
+</div>
+<div class="para">This derivative is zero when <span class="process-math">\(\QG=250\text{.}\)</span>  That is the only possible place on this wire where we can have a maximum.</div>
+</div> <div class="para" id="sec-6-2-PartialDeriva8tives-3-3-3-12">Putting the information together, the maximum must occur at <span class="process-math">\((250,400)\text{.}\)</span> Putting these values back in the original equation gives a maximum of $5250 for the revenue function.</div>
+</div></details></div></article></section><section class="subsection" id="sec-6-2-PartialDeriva8tives-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="space"> </span><span class="title">Partial Derivatives</span>
+</h3>
+<div class="para" id="sec-6-2-PartialDeriva8tives-4-2">The procedure we used in the first example of replacing one variable with a constant and then taking the derivative of the resulting single variable function is a bit cumbersome. We can simplify the process by taking the derivative of the original function with respect to one variable while treating the other variables as constants. This is referred to as taking a partial derivative.  There is also a change in notation. The familiar derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> uses the symbol <span class="process-math">\(\frac{d}{dx} f\text{,}\)</span> while the partial derivative with respect to <span class="process-math">\(x\)</span> uses the symbol <span class="process-math">\(\frac{\partial }{\partial x} f\text{,}\)</span> or <span class="process-math">\(f_x\text{.}\)</span> Similarly, the partial derivative with respect to <span class="process-math">\(y\)</span> uses the symbol<span class="process-math">\(\frac{\partial }{\partial y} f\text{,}\)</span> or <span class="process-math">\(f_y\text{.}\)</span>
+</div>
+<article class="example example-like" id="sec-6-2-PartialDeriva8tives-4-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Finding and Interpreting Partial Derivatives.</span>
+</h4>
+<div class="para" id="sec-6-2-PartialDeriva8tives-4-3-2-1">Find the partial derivatives of <span class="process-math">\(f(x,y)=x^2+ 2xy+3y^2-4x-3y\)</span> at  <span class="process-math">\((x,y)=(3.5,-0.5)\text{.}\)</span> Explain what the partial derivatives mean in terms of the graph.</div>
+<div class="solutions"><details id="sec-6-2-PartialDeriva8tives-4-3-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sec-6-2-PartialDeriva8tives-4-3-3-1">It is useful to look at a picture with the graph, the two curves obtained by keeping <span class="process-math">\(x=3.5\)</span> and <span class="process-math">\(y=1.5\text{,}\)</span> and the tangent lines to those curves.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec-6-2-5.png" class="contained"></div> <div class="para" id="sec-6-2-PartialDeriva8tives-4-3-3-3">We also want to look at the slices corresponding keeping <span class="process-math">\(x=-3.5\)</span> and <span class="process-math">\(y=.5\text{.}\)</span>
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/sec-6-2-6.png" class="contained"></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/sec-6-2-7.png" class="contained"></div>
+</div></div> <div class="para logical" id="sec-6-2-PartialDeriva8tives-4-3-3-5">
+<div class="para">The yellow curve is obtained by fixing <span class="process-math">\(y\)</span> and letting <span class="process-math">\(x\)</span> vary. The blue curve is obtained by fixing <span class="process-math">\(y\)</span> and letting <span class="process-math">\(x\)</span> vary. We now take the partial derivatives with respect to both variables.</div>
+<div class="displaymath process-math" id="sec-6-2-PartialDeriva8tives-4-3-3-5-5">
+\begin{align*}
+\frac{\partial }{\partial x} f(x,y)\amp =2x+ 2y+0-4-0=2x+2y-4\\
+\frac{\partial }{\partial x} f(3.5,-0.5)\amp =7- 1-4=2\\
+\frac{\partial }{\partial y} f(x,y)\amp =0+2x+6y+0-3=2x+6y-3\\
+\frac{\partial }{\partial y} f(3.5,-0.5)\amp =7-3-3=1\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="sec-6-2-PartialDeriva8tives-4-3-3-6">The partial derivatives give the slopes of the purple and red lines above. At the point <span class="process-math">\((3.5,-0.5)\text{,}\)</span> the (yellow) curves obtained by treating y as a constant and letting <span class="process-math">\(x\)</span> vary has a (magenta) tangent line with a slope of <span class="process-math">\(2\text{,}\)</span> the value <span class="process-math">\(\frac{\partial }{\partial x} f(3.5,-0.5)\text{.}\)</span> At the point <span class="process-math">\((3.5,-0.5)\text{,}\)</span> the (blue) curves obtained by treating <span class="process-math">\(x\)</span> as a constant and letting <span class="process-math">\(y\)</span> vary has a (red) tangent line with a slope of 1, the value <span class="process-math">\(\frac{\partial }{\partial y} f(3.5,-0.5)\text{.}\)</span>
+</div>
+</div></details></div></article></section><section class="subsection" id="sec-6-2-PartialDeriva8tives-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="space"> </span><span class="title">Tangent Planes and Linear Approximation</span>
+</h3>
+<div class="para" id="sec-6-2-PartialDeriva8tives-5-2">For functions of one variable, we had two main uses of the derivative. One was to identify candidate points for maxima and minima. We will look at critical points and extrema in the next section. The other use of the derivative was to produce a linear approximation or tangent line. We can generalize the tangent line for one variable to a tangent plane for two variables. For a function <span class="process-math">\(f(x)\text{,}\)</span> we used the value of the point, <span class="process-math">\((x_0,f(x_0))\)</span> and the slope <span class="process-math">\(f(x_0)\)</span> to get the equation of the tangent line approximation near <span class="process-math">\(x_0\text{.}\)</span>
+</div>
+<article class="assemblage assemblage-like" id="sec-6-2-PartialDeriva8tives-5-3"><h4 class="heading"><span class="title">Tangent line.</span></h4>
+<div class="para logical" id="sec-6-2-PartialDeriva8tives-5-3-2"><div class="displaymath process-math">
+\begin{equation*}
+\text{Linear }f(x)=f' (x_0 )(x-x_0 )+f(x_0 )\text{.}
+\end{equation*}
+</div></div></article><div class="para" id="sec-6-2-PartialDeriva8tives-5-4">For a function, <span class="process-math">\(f(x,y)\text{,}\)</span> of two variables, we simply use partials for the slopes.</div>
+<article class="assemblage assemblage-like" id="sec-6-2-PartialDeriva8tives-5-5"><h4 class="heading"><span class="title">Tangent Plane.</span></h4>
+<div class="para logical" id="sec-6-2-PartialDeriva8tives-5-5-2"><div class="displaymath process-math">
+\begin{equation*}
+\text{Linear }f(x ,y)=f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0)+f(x_0,y_0 )\text{.}
+\end{equation*}
+</div></div></article><article class="example example-like" id="sec-6-2-PartialDeriva8tives-5-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating with a Tangent Plane.</span>
+</h4>
+<div class="para logical" id="sec-6-2-PartialDeriva8tives-5-6-2-1">
+<div class="para">The general Cobb-Douglas production function determines the Production (P), in terms of the variables Labor (L) and Capital (C):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Production(Labor,Capital)}=c \text{Labor}^{\alpha}  \text{Capital}^{\beta}\text{,}
+\end{equation*}
+</div>
+<div class="para">or using short-hand notation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(L,C)=c L^{\alpha}  C^\beta\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(c\text{,}\)</span> <span class="process-math">\(\alpha\text{,}\)</span> and <span class="process-math">\(\beta\)</span> are constants. For our widget factory, this becomes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Production(Labor,Capital)}=10 L^{0.75}  C^{0.25}\text{,}
+\end{equation*}
+</div>
+<div class="para">with labor production and capital in the appropriate units.</div>
+</div> <div class="para" id="sec-6-2-PartialDeriva8tives-5-6-2-2">Find <span class="process-math">\(\Production(81,16)\text{.}\)</span>  Use a linear approximation to estimate <span class="process-math">\(\Production(85,14)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="sec-6-2-PartialDeriva8tives-5-6-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="sec-6-2-PartialDeriva8tives-5-6-3-1">
+<div class="para">We answer the first question by substituting the values into the equation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Production(81,16)=10*81^{0.75}*16^{0.25}=10*27*2=540\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-6-2-PartialDeriva8tives-5-6-3-2">
+<div class="para">To produce the tangent plane we take the partial derivatives and evaluate them at our base point.</div>
+<div class="displaymath process-math" id="sec-6-2-PartialDeriva8tives-5-6-3-2-1">
+\begin{align*}
+\Production_{\Labor} (\Labor,\Capital)\amp =10*.75 \Labor^{-0.25}  \Capital^{0.25}\\
+\Production_{\Labor} (81,16)\amp =10*.75 (1/3) *2=5\\
+\Production_{\Capital} (\Labor,\Capital)\amp =10*{0.25} \Labor^{0.75 }  \Capital^{-0.75}\\
+\Production_{\Capital} (81,16)\amp =10*.25 *27 (1/8)=8.4375\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec-6-2-PartialDeriva8tives-5-6-3-3">
+<div class="para">This gives us our tangent plane:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Production(\Labor,\Capital)\approx 5(\Labor-81)+8.4375(\Capital-16)+540\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-6-2-PartialDeriva8tives-5-6-3-4">
+<div class="para">Substituting in values gives our estimate.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Production(85,14)\approx 5(85-81)+8.4375(14-16)+540=543.125\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><div class="para" id="sec-6-2-PartialDeriva8tives-5-7">In the case of the last example, evaluating the linear approximation was nicer than evaluating the function directly because the 4th roots of 16 and 81 are whole numbers, while the 4th roots of 85 and 14 are harder to compute. For real world functions, evaluating functions may involve a substantial investment of time and money, depending on the nature of the function.</div>
+<section class="paragraphs" id="sec-6-2-PartialDeriva8tives-5-8"><h4 class="heading"><span class="title">Linear Approximations of Functions of More than Two Variables.</span></h4> <div class="para" id="sec-6-2-PartialDeriva8tives-5-8-2">In this section we have focused on functions of 2 variables since their graphs are surfaces in 3 dimensions, which is a familiar concept. For real world functions, we are often concerned with functions of many variables. The concept of partial derivative easily extends, with one variable and multiple parameters. Finding the linear approximation also extends without difficulty.  We simply have a linear term for each variable.</div></section></section><section class="reading-questions" id="rq-s6-2"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="space"> </span><span class="title">Reading Check</span>
+</h3>
+<article class="exercise exercise-like" id="Reading_Check_Sec6.2"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Reading check, Wire Frames, Partial Derivatives, and Tangent Planes.</span>
+</h4>
+<div id="webwork-25" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="25" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyQ2hlY2tib3hMaXN0LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsgICAgICAgICAgICAgICRjaGVja3MgPSBDaGVja2JveExpc3QoCiAgICAgICAgICAgICAgICBbCiAgICAgICAgICAgICAgICAgIFsKIkEgcGFydGlhbCBkZXJpdmF0aXZlIGlzIG9idGFpbmVkIGJ5IHRyZWF0aW5nIGFsbCBidXQgb25lIHZhcmlhYmxlIGFzIGEgY29uc3RhbnQuICRCUiIsIAoiVGhlIHBhcnRpYWwgZGVyaXZhdGl2ZSBvZiBcKGZcKSB3aXRoIHJlc3BlY3QgdG8gXCh4XCkgaXMgcmVwcmVzZW50ZWQgYXMgXChmX3hcKS4gICAkQlIiLCAKIlRoZSBwYXJ0aWFsIGRlcml2YXRpdmUgb2YgXChmXCkgd2l0aCByZXNwZWN0IHRvIFwoeFwpIGlzIHJlcHJlc2VudGVkIGFzIFwoXGZyYWN7XHBhcnRpYWx9e1xwYXJ0aWFsIHh9IGZcKS4gICAkQlIiLCAKIkEgdGFuZ2VudCBwbGFuZSBjYW4gYmUgdXNlZCBmb3IgYSBsaW5lYXIgYXBwcm94aW1hdGlvbiBvZiBhIGZ1bmN0aW9uIG9mIHR3byB2YXJpYWJsZXMuICAkQlIiLCAKIlBhcnRpYWwgZGVyaXZhdGl2ZXMgZ2l2ZSB0aGUgc2xvcGUgb2YgdGhlIHRhbmdlbnQgbGluZSBmb3IgdGhlIGN1cnZlIG9idGFpbmVkIGJ5IGhvbGRpbmcgb25lIHZhcmlhYmxlIGNvbnN0YW50LiAgJEJSIiwgCiAgCiAiUGFydGlhbCBkZXJpdmF0aXZlcyBhcmUgbm90IGRlZmluZWQgZm9yIGZ1bmN0aW9ucyBvZiB0aHJlZSB2YXJpYWJsZXMuICAkQlIiLCAKIldlIGNhbm5vdCBncmFwaCBmdW5jdGlvbnMgb2YgdHdvIHZhcmlhYmxlcy4gICRCUiIsIAogICAgICBdLAogICAgICAgICAgICAgICAgICJOb25lIG9mIHRoZSBhYm92ZSIKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICBbMCwgMSwgMiwgMywgNF0sCiAgICAgICAgICAgICAgICBsYWJlbHMgPT4gIkFCQyIsICAgIyAiYWJjIiwgIjEyMyIsICJyb21hbiIsICJSb21hbiIKICAgICAgICAgICAgICApOwoKQkVHSU5fUEdNTApUaGlzIHF1ZXN0aW9uIGNoZWNrcyB5b3VyIHJlYWRpbmcgY29tcHJlaGVuc2lvbiBvZiB0aGUgbWF0ZXJpYWwgaXMgc2VjdGlvbiA2LjIsIFdpcmUgRnJhbWVzLCBQYXJ0aWFsIERlcml2YXRpdmVzLCBhbmQgVGFuZ2VudCBQbGFuZXMsIG9mIEJ1c2luZXNzIENhbGN1bHVzIHdpdGggRXhjZWwuIEJhc2VkIG9uIHlvdXIgcmVhZGluZywgc2VsZWN0IGFsbCBzdGF0ZW1lbnRzIHRoYXQgYXJlIGNvcnJlY3QuICBUaGVyZSBtYXkgYmUgbW9yZSB0aGFuIG9uZSBjb3JyZWN0IGFuc3dlci4gVGhlIHN0YXRlbWVudHMgbWF5IGFwcGVhciBpbiB3aGF0IHNlZW1zIHRvIGJlIGEgcmFuZG9tIG9yZGVyLgoKW19deyRjaGVja3N9ezV9CgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-25')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-25-1-1-1">This question checks your reading comprehension of the material is section 6.2, Wire Frames, Partial Derivatives, and Tangent Planes, of Business Calculus with Excel. Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.</div> <div class="para logical" id="extracted-webwork-25-1-1-2"><ol class="upper-alpha">
+<li id="extracted-webwork-25-1-1-2-1-1"><div class="para" id="extracted-webwork-25-1-1-2-1-1-1">Partial derivatives are not defined for functions of three variables.</div></li>
+<li id="extracted-webwork-25-1-1-2-1-2"><div class="para" id="extracted-webwork-25-1-1-2-1-2-1">The partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> is represented as <span class="process-math">\(\frac{\partial}{\partial x} f\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-25-1-1-2-1-3"><div class="para" id="extracted-webwork-25-1-1-2-1-3-1">A partial derivative is obtained by treating all but one variable as a constant.</div></li>
+<li id="extracted-webwork-25-1-1-2-1-4"><div class="para" id="extracted-webwork-25-1-1-2-1-4-1">A tangent plane can be used for a linear approximation of a function of two variables.</div></li>
+<li id="extracted-webwork-25-1-1-2-1-5"><div class="para" id="extracted-webwork-25-1-1-2-1-5-1">Partial derivatives give the slope of the tangent line for the curve obtained by holding one variable constant.</div></li>
+<li id="extracted-webwork-25-1-1-2-1-6"><div class="para" id="extracted-webwork-25-1-1-2-1-6-1">The partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> is represented as <span class="process-math">\(f_x\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-25-1-1-2-1-7"><div class="para" id="extracted-webwork-25-1-1-2-1-7-1">We cannot graph functions of two variables.</div></li>
+<li id="extracted-webwork-25-1-1-2-1-8"><div class="para" id="extracted-webwork-25-1-1-2-1-8-1">None of the above</div></li>
+</ol></div>
+</div>
+</div></article></section><section class="exercises" id="exercises-set-sec-6-2"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">6.2.5</span><span class="space"> </span><span class="title">Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</span>
+</h3>
+<div class="exercisegroup" id="exercises-set-sec-6-2-2">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="exercises-set-sec-6-2-2-1"><div class="para logical" id="exercises-set-sec-6-2-2-1-1">
+<div class="para">For the given functions and points <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\text{:}\)</span>
+</div>
+<ol class="lower-alpha">
+<li id="exercises-set-sec-6-2-2-1-1-3-1"><div class="para" id="exercises-set-sec-6-2-2-1-1-3-1-1">Give the 2 functions of one variable through <span class="process-math">\(P_1\)</span> obtained by holding each variable constant.</div></li>
+<li id="exercises-set-sec-6-2-2-1-1-3-2"><div class="para" id="exercises-set-sec-6-2-2-1-1-3-2-1">Find the partial derivatives of the original function.</div></li>
+<li id="exercises-set-sec-6-2-2-1-1-3-3"><div class="para" id="exercises-set-sec-6-2-2-1-1-3-3-1">Evaluate the partial derivatives at <span class="process-math">\(P_1\text{.}\)</span>
+</div></li>
+<li id="exercises-set-sec-6-2-2-1-1-3-4"><div class="para" id="exercises-set-sec-6-2-2-1-1-3-4-1">Give the equation of the tangent plane through <span class="process-math">\(P_1\text{.}\)</span>
+</div></li>
+<li id="exercises-set-sec-6-2-2-1-1-3-5"><div class="para" id="exercises-set-sec-6-2-2-1-1-3-5-1">The approximation at <span class="process-math">\(P_2\)</span> obtained from the tangent plane.</div></li>
+</ol>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercises-set-sec-6-2-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-6-2-2-2-1-1">The function is <span class="process-math">\(f(x,y)=x^2+3xy+4y^2\text{,}\)</span> <span class="process-math">\(P_1=(4,2)\text{,}\)</span> and <span class="process-math">\(P_2=(3,2.5)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises-set-sec-6-2-2-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-6-2-2-2-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-6-2-2-2-2-1-1-1"><div class="para logical" id="exercises-set-sec-6-2-2-2-2-1-1-1-1">
+<div class="para">Give the 2 functions of one variable through <span class="process-math">\(P_1\)</span> obtained by holding each variable constant.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-2-2-1-1-1-1-2">
+\begin{align*}
+f(4,y)\amp =16+12y+4y^2\\
+f(x,2)\amp =x^2+6x+16\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-2-2-1-1-2"><div class="para logical" id="exercises-set-sec-6-2-2-2-2-1-1-2-1">
+<div class="para">Find the partial derivatives of the original function.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-2-2-1-1-2-1-1">
+\begin{align*}
+f_x  (x,y) \amp = 2x+3y\\
+f_y  (x,y) \amp = 3x+8y\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-2-2-1-1-3"><div class="para logical" id="exercises-set-sec-6-2-2-2-2-1-1-3-1">
+<div class="para">Evaluate the partial derivatives at <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-2-2-1-1-3-1-2">
+\begin{align*}
+f_x  (4,2) \amp = 8+6=14\\
+f_y  (4,2) \amp = 12+16=28\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-2-2-1-1-4">
+<div class="para" id="exercises-set-sec-6-2-2-2-2-1-1-4-1">Give the equation of the tangent plane through <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="para logical" id="exercises-set-sec-6-2-2-2-2-1-1-4-2">
+<div class="para">We need <span class="process-math">\(f(4,2)=16+24+16=56\)</span> for the equation of the tangent plane.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-2-2-1-1-4-2-2">
+\begin{align*}
+\Linear f(x ,y) \amp = f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0 )+f(x_0,y_0 )\\
+\Linear f(x,y) \amp = 14(x-4)+28(y-2)+56\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+<li id="exercises-set-sec-6-2-2-2-2-1-1-5"><div class="para logical" id="exercises-set-sec-6-2-2-2-2-1-1-5-1">
+<div class="para">The approximation at <span class="process-math">\(P_2\)</span> obtained from the tangent plane.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-2-2-1-1-5-1-2">
+\begin{align*}
+\Linear f(3,2.5) \amp = 14(3-4)+28(2.5-2)+56\\
+\amp =  -14+14+56=56\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-2-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-6-2-2-3-1-1">The function is <span class="process-math">\(f(x,y)=(x+3y)/(x^2+y^2 )\text{,}\)</span> <span class="process-math">\(P_1=(2,3)\text{,}\)</span> and <span class="process-math">\(P_2=(3,2.5)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-2-4"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-6-2-2-4-1-1">The function is <span class="process-math">\(f(x,y)=(x^2)(x+2^y)\text{,}\)</span> <span class="process-math">\(P_1=(3,-1)\text{,}\)</span> and <span class="process-math">\(P_2=(3,0)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises-set-sec-6-2-2-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-6-2-2-4-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-6-2-2-4-2-1-1-1"><div class="para logical" id="exercises-set-sec-6-2-2-4-2-1-1-1-1">
+<div class="para">Give the 2 functions of one variable through <span class="process-math">\(P_1\)</span> obtained by holding each variable constant.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-4-2-1-1-1-1-2">
+\begin{align*}
+f(3,y) \amp = 9(3+2^y)\\
+f(x,-1) \amp = (x^2 )(x+2^{-1} )= x^3+\frac{1}{2} x^2\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-4-2-1-1-2"><div class="para logical" id="exercises-set-sec-6-2-2-4-2-1-1-2-1">
+<div class="para">Find the partial derivatives of the original function.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-4-2-1-1-2-1-1">
+\begin{align*}
+f_x  (x,y) \amp = (2x)(x+2^y )+(x^2 )(1+0 )  \text{ (product rule)}\\
+\amp =  2x^2+2x 2^y+x^2=3x^2+(2x)2^y\\
+f_y  (x,y) \amp = \frac{\partial}{\partial y} (x^2 )(x+2^y ) \quad (\text{ Take partial derivative wrt }y)\\
+\amp = \frac{\partial}{\partial y}(x^3+x^2 2^y ) \qquad\text{ (Simplify the expression)}\\
+\amp = x^2 2^y  \ln(2)  \qquad  (x \text{ is treated as a constant so the }x^3\text{ term drops out)}\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-4-2-1-1-3"><div class="para logical" id="exercises-set-sec-6-2-2-4-2-1-1-3-1">
+<div class="para">Evaluate the partial derivatives at <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-4-2-1-1-3-1-2">
+\begin{align*}
+f_x  (3,-1) \amp = 27+(6) 2^{-1}=27+3=30\\
+f_y  (3,-1) \amp =  9*\frac{1}{2}  \ln(2)=\frac{9}{2} \ln(2)\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-4-2-1-1-4">
+<div class="para" id="exercises-set-sec-6-2-2-4-2-1-1-4-1">Give the equation of the tangent plane through <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="para logical" id="exercises-set-sec-6-2-2-4-2-1-1-4-2">
+<div class="para">We need <span class="process-math">\(f(3,-1)=9*\frac{7}{2}=\frac{63}{2}\)</span> for the equation of the tangent plane</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-4-2-1-1-4-2-2">
+\begin{align*}
+\Linear f(x ,y) \amp = f_x (x_0,y_0 )(x-x_0 )+f_y (x_0,y_0 )(y-y_0 )+f(x_0,y_0 )\\
+\Linear f(x ,y) \amp = 30 (x-3)+\frac{9}{2}  \ln(2) (y+1)+\frac{63}{2}\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+<li id="exercises-set-sec-6-2-2-4-2-1-1-5"><div class="para logical" id="exercises-set-sec-6-2-2-4-2-1-1-5-1">
+<div class="para">The approximation at <span class="process-math">\(P_2\)</span> obtained from the tangent plane.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Linear f(3,0)=30* (0)+\frac{9}{2} \ln(2) *(1)+\frac{63}{2}=\frac{9}{2}  \ln(2)+\frac{63}{2}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-2-5"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para logical" id="exercises-set-sec-6-2-2-5-1-1">
+<div class="para">The function is the revenue function for selling widgets and gizmos with demand price functions</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-5-1-1-1">
+\begin{align*}
+\PriceGizmo \amp = 30-\frac{\QuantityGizmo}{50}-\frac{\QuantityWidget}{300}\\
+\PriceWidget \amp = 20-\frac{\QuantityWidget}{40}-\frac{\QuantityGizmo}{500}\text{,}
+\end{align*}
+</div>
+<div class="para">and <span class="process-math">\(P_1=(\QuantityGizmo,\QuantityWidget)=(1000,500)\text{,}\)</span> and <span class="process-math">\(P_2=(1050,575)\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-2-6"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para logical" id="exercises-set-sec-6-2-2-6-1-1">
+<div class="para">The function is the revenue function for selling widgets and gizmos with demand price functions</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-6-1-1-1">
+\begin{align*}
+\PriceGizmo \amp = 30(0.95)^{(\QuantityGizmo/100)}-\frac{\QuantityWidget}{300}\\
+\PriceWidget \amp = 20(0.9)^{(\QuantityWidget/150)}-\frac{\QuantityGizmo}{250}\text{,}
+\end{align*}
+</div>
+<div class="para">and <span class="process-math">\(P_1=(\QuantityGizmo,\QuantityWidget)=(800,400)\text{,}\)</span> and <span class="process-math">\(P_2=(750,425)\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="exercises-set-sec-6-2-2-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-1">
+<div class="para">For the sake of notation we will use the following abbreviations:</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-6-2-1-1">
+\begin{align*}
+\PG \amp = 30(0.95)^{\left(\frac{\QG}{100}\right)}-\frac{\QW}{300}\\
+\PW \amp = 20(0.9)^{\left(\frac{\QW}{150}\right)} -\frac{\QG}{250}\text{,}
+\end{align*}
+</div>
+<div class="para">and <span class="process-math">\(P_1=(\QG,\QW)=(800,400)\text{,}\)</span> and <span class="process-math">\(P_2=(750,425)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="exercises-set-sec-6-2-2-6-2-2">
+<div class="para">We need to find the Revenue function to solve the problem:</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-6-2-2-1">
+\begin{align*}
+\revenue (\QG,\QW) \amp = \QG*\PG+\QW*\PW\\
+\amp = \QG\left[30(0.95)^{\left(\frac{\QG}{100}\right)}-\frac{\QW}{300}\right]+\QW\left[20(0.9)^{\left(\frac{\QW}{150}\right)}-\frac{\QG}{250}\right]\\
+\revenue(\QG,\QW) \amp =  30 \QG (0.95)^{\left(\frac{\QG}{100}\right)}-\frac{\QG *\QW}{5×6×10}+20 \QW (0.9)^{\left(\frac{\QW}{150}\right)}-\frac{\QG *\QW}{5×5×10}\\
+\amp =  30 \QG (0.95)^{\left(\frac{\QG}{100}\right)}+20 \QW (0.9)^{\left(\frac{\QW}{150}\right)}-\frac{11 \QG*\QW}{1500}\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="exercises-set-sec-6-2-2-6-2-3"><ol class="lower-alpha">
+<li id="exercises-set-sec-6-2-2-6-2-3-1-1">
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-3-1-1-1">
+<div class="para">Give the 2 functions of one variable through <span class="process-math">\(P_1\)</span> obtained by holding each variable constant.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\revenue(800,\QW)= 24,000 (0.95)^8+20 \QW (0.9)^{\left(\frac{\QW}{150}\right)}-\frac{88 \QW}{15}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="exercises-set-sec-6-2-2-6-2-3-1-1-2">This function gives us information about the revenue in terns of Widgets near a production level of 400 widgets and 800 gizmos. We can use Wolfram Alpha to graph this. Assuming there are 800 gizmos the widget influence on the revenue looks like this:</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec6-2-sol5a.png" class="contained"></div>
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-3-1-1-4">
+<div class="para">The slope is about <span class="process-math">\(m = 4\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\revenue(\QG,400)= 30 \QG (0.95)^{\left(\frac{\QG}{100}\right)}+8,000 (0.9)^{\left(\frac{40}{15} \right)}-\frac{44 \QG }{15}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="exercises-set-sec-6-2-2-6-2-3-1-1-5">The revenue generated by the gizmos assuming the number of widgets equals 400 and the number of gizmos is near 800 gives the following picture:</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/sec6-2-sol5b.png" class="contained"></div>
+<div class="para" id="exercises-set-sec-6-2-2-6-2-3-1-1-7">The slope is about <span class="process-math">\(m=8\text{.}\)</span>
+</div>
+</li>
+<li id="exercises-set-sec-6-2-2-6-2-3-1-2">
+<div class="para" id="exercises-set-sec-6-2-2-6-2-3-1-2-1">Find the partial derivatives of the original function.</div>
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-3-1-2-2">
+<div class="para">In part a we saw that the revenue function seems to be growing faster for the gizmo variable, then for the widget variable. To get more information we can compute the partial derivatives (b) and then evaluate them at <span class="process-math">\(P_1\)</span> (c).</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-6-2-3-1-2-2-2">
+\begin{align*}
+\revenue_{\QG}  (\QG,\QW) \amp =  \frac{\partial}{\partial \QG} 30 QG (0.95)^{\left(\frac{\QG}{100}\right)}\\
+\amp \quad +\frac{\partial}{\partial \QG} 20 \QW (0.9)^{\left(\frac{\QW}{150} \right)}-\frac{\partial}{\partial \QG}  \frac{11*\QG*\QW}{1500}\\
+\amp = \left[30 (0.95)^{\left(\frac{\QG}{100}\right)}\right.\\
+\amp  \quad \left.+ 30 \QG (0.95)^{\left(\frac{\QG}{100}\right)}\frac{\ln(0.95)}{100}\right]+0-  \frac{11*\QW}{1500}\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-3-1-2-3">
+<div class="para">Note that the first part requires a product rule and then a chain rule to deal with the exponential part of the formula.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-6-2-3-1-2-3-1">
+\begin{align*}
+\revenue_{\QW}  (\QG,\QW)\amp =  \frac{\partial}{\partial \QW} 30 QG (0.95)^{\left(\frac{\QG}{100}\right)}\\
+\amp \quad + \frac{\partial}{\partial \QW} 20 \QW (0.9)^{\left(\frac{QW}{150} \right)}-\frac{\partial}{\partial \QW}  \frac{11*\QG*\QW}{1500}\\
+\amp = 0+\left[20 (0.9)^{\left(\frac{\QW}{150}\right)}+20 \QW (0.9)^{\left(\frac{\QW}{150}\right)}\frac{\ln(0.9)}{150}\right]-  \frac{11*\QG}{1500}\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+<li id="exercises-set-sec-6-2-2-6-2-3-1-3">
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-3-1-3-1">
+<div class="para">Evaluate the partial derivatives at <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-6-2-3-1-3-1-2">
+\begin{align*}
+\revenue_{\QG}  (800, 400) \amp = \left[30 (0.95)^{\left(\frac{800}{100}\right)}+24000 (0.95)^{\left(\frac{800}{100}\right)}\frac{\ln(0.95)}{100}\right]\\
+\amp -  \frac{8800}{1500}\approx 5.86898\\
+\revenue_{\QW}  (800, 400) \amp = \left[20 (0.9)^{\left(\frac{400}{150}\right)}+20 \QW (0.9)^{\left(\frac{400}{150}\right)}\frac{\ln(0.9)}{150}\right]\\
+\amp \quad -  \frac{4400}{1500}\approx 4.99164\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para" id="exercises-set-sec-6-2-2-6-2-3-1-3-2">The estimates we observed in part a were fairly close to the actual rates of change.</div>
+</li>
+<li id="exercises-set-sec-6-2-2-6-2-3-1-4">
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-3-1-4-1">
+<div class="para">Give the equation of the tangent plane through <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-6-2-3-1-4-1-2">
+\begin{align*}
+\Linear \revenue(\QG,\QW) \amp = \revenue_{\QG} (\QG_0,\QW_0 )(\QG-\QG_0 )\\
+\amp \quad + revenue_{\QW} (\QG_0,\QW_0 )(\QW-\QW_0 )+ \revenue(\QG_0,\QW_0 )\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-3-1-4-2">
+<div class="para">We need to find <span class="process-math">\(\revenue(800,400)\text{.}\)</span> Using Wolfram Alpha (or calculator) we get</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-6-2-3-1-4-2-2">
+\begin{align*}
+\revenue(800,400) \amp = 19,615.88\\
+\Linear \revenue(\QG,\QW) \amp = 5.86898(\QG-800)+4.99(\QW-400)+19,615.88\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+<li id="exercises-set-sec-6-2-2-6-2-3-1-5">
+<div class="para" id="exercises-set-sec-6-2-2-6-2-3-1-5-1">The approximation at <span class="process-math">\(P_2\)</span> obtained from the tangent plane.</div>
+<div class="para logical" id="exercises-set-sec-6-2-2-6-2-3-1-5-2">
+<div class="para">The estimated revenue when <span class="process-math">\(P_2=(750,425)\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Linear \revenue(750,425)=5.86898(-50)+4.99(25)+19,615.88=19,300.63\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="exercises-set-sec-6-2-2-6-2-3-1-5-3">In this case the change in production would result in a loss in revenue. This is mainly due to the impact of the lower production in gizmos.</div>
+</li>
+</ol></div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-2-7"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para logical" id="exercises-set-sec-6-2-2-7-1-1">
+<div class="para">The function is the Cobb-Douglas production function in a widget factory,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Production(\Labor,\Capital)=10 \Labor^{0.8}  \Capital^{0.2}\text{,}
+\end{equation*}
+</div>
+<div class="para">where labor is in workers, capital equipment is in units of $20,000, and production is in units of 200 widgets produced per month. In the <span class="process-math">\((\Labor,\Capital)\)</span> plane, let <span class="process-math">\(P_1=(100,30)\text{,}\)</span> and <span class="process-math">\(P_2=(110,25)\text{.}\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-2-8"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para logical" id="exercises-set-sec-6-2-2-8-1-1">
+<div class="para">The function is the Cobb-Douglas production function in a country,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Production(\Labor,\Capital)=10 \Labor^{0.74}\Capital^{0.26}\text{,}
+\end{equation*}
+</div>
+<div class="para">where labor is in millions of workers, capital equipment is in units of billions of dollars, and production is in units of billions of dollars per year. In the <span class="process-math">\((\Labor,\Capital)\)</span> plane, let <span class="process-math">\(P_1=(300,30)\text{,}\)</span> and <span class="process-math">\(P_2=(310,32)\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="exercises-set-sec-6-2-2-8-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-6-2-2-8-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-6-2-2-8-2-1-1-1"><div class="para logical" id="exercises-set-sec-6-2-2-8-2-1-1-1-1">
+<div class="para">Give the 2 functions of one variable through <span class="process-math">\(P_1\)</span> obtained by holding each variable constant.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-8-2-1-1-1-1-2">
+\begin{align*}
+\Production(300,C) \amp = 10*300^{0.74}  C^{0.26}=680.879 C^{0.26}  \\
+\Production(L,30) \amp = 10 L^{0.74}  30^{0.26}=24.2132 L^{0.74} \text{.}
+\end{align*}
+</div>
+<div class="para">Hence both cross sections are exponential function.</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-8-2-1-1-2">
+<div class="para logical" id="exercises-set-sec-6-2-2-8-2-1-1-2-1">
+<div class="para">Find the partial derivatives of the original function.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-8-2-1-1-2-1-1">
+\begin{align*}
+\Production_L  (L,C)\amp =\frac{\partial}{\partial L} 10 L^{0.74}  C^{0.26}\\
+\amp \text{(Take the partial derivative wrt }L\text{; Treat }C\text{ as a constant.)}\\
+\amp =10 (0.74) L^{-0.26}  C^{0.26}\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="exercises-set-sec-6-2-2-8-2-1-1-2-2">
+<div class="para">Then we  have</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-8-2-1-1-2-2-1">
+\begin{align*}
+\Production_L  (L,C) \amp = \frac{7.4 C^{0.26}}{L^{0.26}}\\
+\Production_C  (L,C) \amp = \frac{\partial}{\partial C} 10 L^{0.74}  C^{0.26}\\
+\amp \text{(Take the partial derivative wrt }C\text{; Treat }L\text{ as a constant.)}\\
+\amp =10 L^{0.74} (0.26) C^{-0.74}\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="exercises-set-sec-6-2-2-8-2-1-1-2-3">
+<div class="para">Then we  have that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Production_C  (L,C)=2.6 \frac{L^{0.74}}{C^{0.74}}\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+<li id="exercises-set-sec-6-2-2-8-2-1-1-3"><div class="para logical" id="exercises-set-sec-6-2-2-8-2-1-1-3-1">
+<div class="para">Evaluate the partial derivatives at <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-8-2-1-1-3-1-2">
+\begin{align*}
+\Production_L  (300, 30)\amp =\frac{7.4 30^{0.26}}{300^{0.26}} \approx 4.07\\
+\Production_C  (300, 30)\amp =2.6 \frac{300^{0.74}}{30^{0.74}} \approx 14.29\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-8-2-1-1-4"><div class="para logical" id="exercises-set-sec-6-2-2-8-2-1-1-4-1">
+<div class="para">Give the equation of the tangent plane through <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-2-8-2-1-1-4-1-2">
+\begin{align*}
+\Production(300,30)\amp =10*30^{0.74}  30^{0.26}\approx 1648.62\\
+\Linear \Production(L,C) \amp = Prod_L (L_0,C_0 )(L-L_0 )+Prod_C (L_0,C_0 )(C-C_0 )+Prod(L_0,C_0 )\\
+\amp = 4.07(L-300)+14.29(C-30)+1648.62\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-2-8-2-1-1-5">
+<div class="para logical" id="exercises-set-sec-6-2-2-8-2-1-1-5-1">
+<div class="para">The approximation at <span class="process-math">\(P_2\)</span> obtained from the tangent plane.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Linear \Production(310, 32)   =4.07(310-300)+14.29(32-30)+1648.62=1717.9\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="exercises-set-sec-6-2-2-8-2-1-1-5-2">So as both <span class="process-math">\(L\)</span> and <span class="process-math">\(C\)</span> increase, so does the production. Specifically increasing <span class="process-math">\(L\)</span> by 10 million workers and <span class="process-math">\(C\)</span> by 2 billion dollars would give an estimated increase in production of <span class="process-math">\(1717.9-1648.62=69.28\)</span> billions of dollars worth of units.</div>
+</li>
+</ol></div></div></details></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercises-set-sec-6-2-3">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="exercises-set-sec-6-2-3-1"><div class="para logical" id="exercises-set-sec-6-2-3-1-1">
+<div class="para">For the given functions and points <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\text{:}\)</span>
+</div>
+<ol class="lower-alpha">
+<li id="exercises-set-sec-6-2-3-1-1-3-1"><div class="para" id="exercises-set-sec-6-2-3-1-1-3-1-1">Give the 3 functions of one variable through <span class="process-math">\(P_1\)</span> obtained by holding each variable constant.</div></li>
+<li id="exercises-set-sec-6-2-3-1-1-3-2"><div class="para" id="exercises-set-sec-6-2-3-1-1-3-2-1">Find the partial derivatives of the original function.</div></li>
+<li id="exercises-set-sec-6-2-3-1-1-3-3"><div class="para" id="exercises-set-sec-6-2-3-1-1-3-3-1">Evaluate the partial derivatives at <span class="process-math">\(P_1\text{.}\)</span>
+</div></li>
+<li id="exercises-set-sec-6-2-3-1-1-3-4"><div class="para" id="exercises-set-sec-6-2-3-1-1-3-4-1">Give the equation of the linear approximating function through <span class="process-math">\(P_1\text{.}\)</span>
+</div></li>
+<li id="exercises-set-sec-6-2-3-1-1-3-5"><div class="para" id="exercises-set-sec-6-2-3-1-1-3-5-1">The approximation at <span class="process-math">\(P_2\)</span> obtained from the function in d.</div></li>
+</ol>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercises-set-sec-6-2-3-2"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-6-2-3-2-1-1">The function is <span class="process-math">\(f(x,y,z)=x^2+3xy+4y^2+2z^2+5xz\text{,}\)</span> <span class="process-math">\(P_1=(4,2,1)\text{,}\)</span> and <span class="process-math">\(P_2=(3,2.5,2)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-3-3"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-6-2-3-3-1-1">The function is <span class="process-math">\(f(x,y,z)=(x+3y-2z)/(x^2+y^2+z^2 )\text{,}\)</span> <span class="process-math">\(P_1=(2,3,-1)\text{,}\)</span> and <span class="process-math">\(P_2=(3,2.5,0)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises-set-sec-6-2-3-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-6-2-3-3-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-6-2-3-3-2-1-1-1"><div class="para logical" id="exercises-set-sec-6-2-3-3-2-1-1-1-1">
+<div class="para">Give the 3 functions of one variable through <span class="process-math">\(P_1\)</span> obtained by holding each variable constant.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-3-2-1-1-1-1-2">
+\begin{align*}
+f(x,3,-1) \amp = \frac{x+9+2}{x^2+9+1}=\frac{x+11}{x^2+10}\\
+f(2,y,-1) \amp = \frac{2+3y+2}{4+y^2+1}=\frac{3y+4}{y^2+5}\\
+f(2,3,z) \amp =\frac{2+9-2z}{4+9+z^2 }=\frac{11-2z}{13+z^2 }\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-3-3-2-1-1-2"><div class="para logical" id="exercises-set-sec-6-2-3-3-2-1-1-2-1">
+<div class="para">Find the partial derivatives of the original function.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-3-2-1-1-2-1-1">
+\begin{align*}
+f_x  (x,y,z)  \amp = \frac{(1)(x^2+y^2+z^2 )-(x+3y-2z)(2x)}{(x^2+y^2+z^2 )^2} \\
+\amp = \frac{(x^2+y^2+z^2 )-(2x^2+6xy-4xz)}{(x^2+y^2+z^2 )^2 }  \\
+\amp =\frac{(-x^2+y^2+z^2-6xy+4xz)}{(x^2+y^2+z^2 )^2} \\
+f_y  (x,y,z) \amp = \frac{(3)(x^2+y^2+z^2 )-(x+3y-2z)(2y)}{(x^2+y^2+z^2 )^2 } \\
+\amp = \frac{(3x^2+3y^2+3z^2 )-(2xy+6y^2-4yz)}{(x^2+y^2+z^2 )^2}  \\
+\amp =\frac{3x^2-3y^2+3z^2-2xy+4yz}{(x^2+y^2+z^2 )^2}  \\
+f_z  (x,y,z) \amp = \frac{(-2)(x^2+y^2+z^2 )-(x+3y-2z)(2z)}{(x^2+y^2+z^2 )^2}\\
+\amp = \frac{(-2x^2-2y^2-2z^2 )-(2xz+6yz-4z^2 )}{(x^2+y^2+z^2 )^2}  \\
+\amp =\frac{-2x^2-2y^2+2z^2-2xz-6yz}{(x^2+y^2+z^2 )^2}  \text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-3-3-2-1-1-3"><div class="para logical" id="exercises-set-sec-6-2-3-3-2-1-1-3-1">
+<div class="para">Evaluate the partial derivatives at <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-3-2-1-1-3-1-2">
+\begin{align*}
+f_x (2,3,-1) \amp = \frac{(-4+9+1-36-8)}{(4+9+1)^2} = -\frac{38}{196}= -\frac{19}{98}\\
+f_y (2,3,-1)  \amp = \frac{12-27+3-12-12}{196} =-\frac{-36}{196} =-\frac{-9}{49}\\
+f_z (2,3,-1)\amp =\frac{-8-18+2+4+18}{196}= -\frac{2}{196}=-\frac{1}{98}\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-3-3-2-1-1-4"><div class="para logical" id="exercises-set-sec-6-2-3-3-2-1-1-4-1">
+<div class="para">Give the equation of the linear approximating function through <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-3-2-1-1-4-1-2">
+\begin{align*}
+\Linear f(x,y,z)\amp = f(2,3,-1)+f_x  (2,3,-1)  (x-2)+f_y  (2,3,-1)(y-3)+f_z  (2,3,-1)(z+1)\\
+\amp =  \frac{13}{14}-\frac{19}{98}  (x-2)-\frac{9}{49} (y-3)-\frac{1}{98}(z+1)\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-3-3-2-1-1-5"><div class="para logical" id="exercises-set-sec-6-2-3-3-2-1-1-5-1">
+<div class="para">The approximation at <span class="process-math">\(P_2\)</span> obtained from the function in d.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-3-2-1-1-5-1-2">
+\begin{align*}
+\Linear f(3,2.5,0)\amp =  \frac{13}{14}-\frac{19}{98}  (1)-\frac{9}{49} \left(-\frac{1}{2}\right)-\frac{1}{98} (1)\\
+\amp =\frac{13*7}{14*7}+\frac{-19+9-1}{98}=\frac{91-11}{98}=\frac{80}{98}=\frac{40}{49}\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-3-4"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-6-2-3-4-1-1">The function is <span class="process-math">\(f(x,y,z)=(x^2 z)(x+2^y+z^3)\)</span> <span class="process-math">\(P_1=(3,-1,1)\text{,}\)</span> and <span class="process-math">\(P_2=(2,0,1)\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercises-set-sec-6-2-3-5"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div class="para logical" id="exercises-set-sec-6-2-3-5-1-1">
+<div class="para">The function is the revenue function for selling widgets, gizmos, and gadgets with demand price functions</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-5-1-1-1">
+\begin{align*}
+\PriceGizmo \amp = 30-\frac{\QuantityGizmo}{50}-\frac{\QuantityWidget}{300}-\frac{\QuantityGadget}{500}\\
+\PriceWidget \amp = 20-\frac{\QuantityWidget}{40}-\frac{\QuantityGizmo}{500}-\frac{\QuantityGadget}{400}\\
+\PriceGadget \amp =40-\frac{\QuantityWidget}{45}-\frac{\QuantityGizmo}{600}-\frac{\QuantityGadget}{300}\text{,}
+\end{align*}
+</div>
+<div class="para">and in <span class="process-math">\((\QuantityGizmo,\QuantityWidget,\QuantityGadget)\)</span> space, <span class="process-math">\(P_1=(1000,500,700)\text{,}\)</span> and <span class="process-math">\(P_2=(1050,575,625)\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="exercises-set-sec-6-2-3-5-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="exercises-set-sec-6-2-3-5-2-1">
+<div class="para">We can do the entire problem in terms of gadgets, gizmos and widgets, but for notation sake we will replace them (alphabetically) as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=\text{gadgets},\quad y=\text{gizmos},\quad z=\text{widgets}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="exercises-set-sec-6-2-3-5-2-2">
+<div class="para">We need the revenue function and we have the price functions, so we have that</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-5-2-2-1">
+\begin{align*}
+\revenue \amp =R(x,y,z)= x \price_x+y \price_y+z \price_z\\
+\amp =x \left(40-\frac{z}{45}-\frac{y}{600}-\frac{x}{300}\right)+y\left(30-\frac{y}{50}-\frac{z}{300}-\frac{x}{500}\right)\\
+\amp \quad +z\left(20-\frac{z}{40}-\frac{y}{500}-\frac{x}{400}\right)\\
+\amp =  -\frac{x^2}{300}-\frac{11 x y}{3000}-\frac{89 x z}{3600}+40 x-\frac{y^2}{50}-\frac{2 y z}{375}+30 y-\frac{z^2}{40}+20 z\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="exercises-set-sec-6-2-3-5-2-3">(Note: the last step/simplification was done in Wolfram Alpha)</div> <div class="para logical" id="exercises-set-sec-6-2-3-5-2-4"><ol class="lower-alpha">
+<li id="exercises-set-sec-6-2-3-5-2-4-1-1"><div class="para logical" id="exercises-set-sec-6-2-3-5-2-4-1-1-1">
+<div class="para">Give the 3 functions of one variable through <span class="process-math">\(P_1\)</span> obtained by holding each variable constant.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-5-2-4-1-1-1-2">
+\begin{align*}
+R(x,500,700) \amp =  \frac{1}{900}  (-3 x^2+18775 x+8895000)\\
+R(1000,y,700) \amp =  \frac{1}{450}  (-9 y^2+10170 y+9500000)\\
+R(1000,500,z) \amp = \frac{1}{360}  (-9 z^2-2660 z+16140000)\text{,}
+\end{align*}
+</div>
+<div class="para">so the cross sectional function are all quadratic (parabolas) that open downwards.</div>
+</div></li>
+<li id="exercises-set-sec-6-2-3-5-2-4-1-2">
+<div class="para" id="exercises-set-sec-6-2-3-5-2-4-1-2-1">Find the partial derivatives of the original function.</div>
+<div class="para logical" id="exercises-set-sec-6-2-3-5-2-4-1-2-2">
+<div class="para">Finding the partial derivatives when dealing with three variables is very similar to the procedure we use when we have two variables. We treat the other variables as constants.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-5-2-4-1-2-2-1">
+\begin{align*}
+R_x  (x,y,z) \amp =   -\frac{x}{150}-\frac{11  y}{3000}-\frac{89  z}{3600}+40 \\
+R_y  (x,y,z) \amp =   -\frac{11 x }{3000}-\frac{y}{25}-\frac{2  z}{375}+30 \\
+R_z  (x,y,z) \amp =  -\frac{89 x }{3600}-\frac{2 y}{375}-\frac{z}{20}+20 \text{.}
+\end{align*}
+</div>
+</div>
+</li>
+<li id="exercises-set-sec-6-2-3-5-2-4-1-3"><div class="para logical" id="exercises-set-sec-6-2-3-5-2-4-1-3-1">
+<div class="para">Evaluate the partial derivatives at <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-5-2-4-1-3-1-2">
+\begin{align*}
+R_x  (1000,500,700) \amp =   -\frac{1000}{150}-\frac{5500}{3000}-\frac{89  (700)}{3600}+40=\frac{511}{36}\\
+R_y  (1000,500,700) \amp =   -\frac{11000 }{3000}-\frac{500}{25}-\frac{1400}{375}+30=\frac{13}{5}\\
+R_z  (1000,500,700) \amp =  -\frac{89000 }{3600}-\frac{1000 }{375}-\frac{700}{20}+20=-\frac{76}{18}\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-3-5-2-4-1-4"><div class="para logical" id="exercises-set-sec-6-2-3-5-2-4-1-4-1">
+<div class="para">Give the equation of the linear approximating function through <span class="process-math">\(P_1\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R(1000,500,700)=\frac{246700}{9}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then the linear approximation is given by</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-5-2-4-1-4-1-3">
+\begin{align*}
+\Linear\revenue(x,y,z) \amp = R(1000,500,700)\\
+\amp+R_x  (1000,500,700)  (x-1000)\\
+\amp +  R_y  (1000,500,700)(y-500)\\
+\amp+  R_z  (1000,500,700)(z-700) \\
+\amp =  \frac{246700}{9}+\frac{511}{36} (x-1000)+\frac{13}{5} (y-500)\\
+\amp-\frac{763}{18}(z-700)\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="exercises-set-sec-6-2-3-5-2-4-1-5"><div class="para logical" id="exercises-set-sec-6-2-3-5-2-4-1-5-1">
+<div class="para">The approximation at <span class="process-math">\(P_2\)</span> obtained from the function in d.</div>
+<div class="displaymath process-math" id="exercises-set-sec-6-2-3-5-2-4-1-5-1-2">
+\begin{align*}
+\Linear\revenue(1050,575,625) =  \frac{246700}{9}+\frac{511}{36} (50)\\
+\amp +\frac{13}{5} (75)-\frac{763}{18} (-75)=31,495\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div>
+</div></details></div></article>
+</div>
+</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-6-3-CriticalPointsExtrema.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

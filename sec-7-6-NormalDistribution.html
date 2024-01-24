@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Normal Distribution: An extended numeric example</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Business Calculus with Excel">
+<meta property="book:author" content="Mike May, S.J.">
+<meta property="book:author" content="Anneke Bart">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.33/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="ExcelCalculus" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ExcelCalculus.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="calculator-toggle" class="calculator-toggle button" title="Show calculator" aria-expanded="false" aria-controls="calculator-container"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calc</span></button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script></span><span class="treebuttons"><a class="previous-button button" href="sec-7-5-IntroductionComputerAlgebra.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-7-Intergration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-7-7-InvestmentDepreciation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Volume}{\mathrm{Volume}}
+\newcommand{\xLow}{\mathrm{xLow}}
+\newcommand{\xHigh}{\mathrm{xHigh}}
+\newcommand{\Mcost}{\operatorname{Marginal Cost}}
+\newcommand{\cost}{\operatorname{Cost}}
+\newcommand{\Mrev}{\operatorname{Marginal Revenue}}
+\newcommand{\revenue}{\operatorname{Revenue}}
+\newcommand{\profit}{\operatorname{Profit}}
+\newcommand{\Mprofit}{\operatorname{Marginal Profit}}
+\newcommand{\Pprofit}{\operatorname{Predicted Profit}}
+\newcommand{\price}{\operatorname{Price}}
+\newcommand{\Dprice}{\operatorname{Demand Price}}
+\newcommand{\Pprice}{\operatorname{Purchase Price}}
+\newcommand{\Sprice}{\operatorname{Supply Price}}
+\newcommand{\marginal}{\operatorname{Marginal}\,}
+\newcommand{\linear}{\operatorname{Linear}\,}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\quantity}{\mathrm{Quantity}}
+\newcommand{\AnnualCost}{\operatorname{Annual Cost}}
+\newcommand{\AnnualExpense}{\operatorname{Annual Expense}}
+\newcommand{\RepairFactor}{\mathrm{Repair Factor}}
+\newcommand{\Sales}{\operatorname{Sales}}
+\newcommand{\prediction}{\operatorname{prediction}}
+\newcommand{\FutureValue}{\operatorname{Future Value}}
+\newcommand{\demand}{\operatorname{Demand}}
+\newcommand{\val}{\operatorname{Value}}
+\newcommand{\raw}{\mathrm{raw}}
+\newcommand{\gizmos}{\operatorname{gizmos}}
+\newcommand{\intermediate}{\mathrm{intermediate}}
+\newcommand{\tax}{\operatorname{tax}}
+\newcommand{\FaceValue}{\operatorname{Face Value}}
+\newcommand{\rate}{\mathrm{rate}}
+\newcommand{\years}{\mathrm{years}}
+\newcommand{\expense}{\operatorname{expense}}
+\newcommand{\FutureAmount}{\operatorname{FutureAmount}}
+\newcommand{\InitialDeposit}{\mathrm{InitialDeposit}}
+\newcommand{\ppy}{\mathrm{ppy}}
+\newcommand{\PresentAmount}{\operatorname{PresentAmount}}
+\newcommand{\PriceGizmo}{\mathrm{PriceGizmos}}
+\newcommand{\QuantityGizmo}{\mathrm{QuantityGizmos}}
+\newcommand{\QuantityGadget}{\mathrm{QuantityGadgets}}
+\newcommand{\QuantityWidget}{\mathrm{QuantityWidgets}}
+\newcommand{\PriceWidget}{\mathrm{PriceWidgets}}
+\newcommand{\PriceGadget}{\mathrm{PriceGadgets}}
+\newcommand{\QW}{\mathrm{QW}}
+\newcommand{\QG}{\mathrm{QG}}
+\newcommand{\PW}{\mathrm{PW}}
+\newcommand{\PG}{\mathrm{PG}}
+\newcommand{\Production}{\operatorname{Production}}
+\newcommand{\Labor}{\mathrm{Labor}}
+\newcommand{\Capital}{\mathrm{Capital}}
+\newcommand{\Linear}{\operatorname{Linear}\,}
+\newcommand{\PriceX}{\mathrm{PriceX}}
+\newcommand{\PriceY}{\mathrm{PriceY}}
+\newcommand{\predicted}{\operatorname{predicted}}
+\newcommand{\Time}{\mathrm{time}}
+\newcommand{\TotalAmount}{\operatorname{TotalAmount}}
+\newcommand{\TotalValue}{\operatorname{TotalValue}}
+\newcommand{\CashAmount}{\mathrm{CashAmount}}
+\newcommand{\DepositAmount}{\mathrm{DepositAmount}}
+\newcommand{\AvailableTrees}{\operatorname{AvailableTrees}}
+\newcommand{\Capacity}{\mathrm{Capacity}}
+\newcommand{\Amount}{\operatorname{Amount}}
+\newcommand{\InitialAmount}{\mathrm{InitialAmount}}
+\newcommand{\InvestmentAmount}{\mathrm{InvestmentAmount}}
+\newcommand{\Return}{\operatorname{Return}}
+\newcommand{\SD}{\mathrm{SD}}
+\newcommand{\Antideriv}{\operatorname{Antideriv}}
+\newcommand{\MC}{\operatorname{MC}}
+\newcommand{\MP}{\operatorname{MP}}
+\newcommand{\MR}{\operatorname{MR}}
+\newcommand{\CDFf}{\operatorname{CDFf}}
+\newcommand{\Principal}{\operatorname{Principal}}
+\newcommand{\ProducerSurplus}{\mathrm{ProducerSurplus}}
+\newcommand{\ConsumerSurplus}{\mathrm{ConsumerSurplus}}
+\newcommand{\TotalSocialGain}{\mathrm{TotalSocialGain}}
+\newcommand{\Elasticity}{\operatorname{Elasticity}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="ExcelCalculus-2.html" class="internal"><span class="title">Frontmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="ExcelCalculus-2-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="ExcelCalculus-2-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-6.html" class="internal"><span class="title">Notes for Instructors</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-7.html" class="internal"><span class="title">Notes for Students</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-1-FunctionsGraphsExcel.html" class="internal"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Linear Functions and models</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#sec-1-1-LinearFunctionsAndModels-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Equations of a line</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#basics-reading-questions-1-1b" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#exercises-set-sec-1-1" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises 1.1 Linear Functions and models</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functions in the Business setting</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Quadratic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exponential functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-5" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Logistic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-6" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Sinusoidal Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-7" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Normal Distribution Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-8" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Inversely Proportional Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-9" class="internal"><span class="codenumber">1.2.7</span> <span class="title">Logarithmic Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#rq-s1-2" class="internal"><span class="codenumber">1.2.8</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#exercises-set-sec-1-2" class="internal"><span class="codenumber">1.2.9</span> <span class="title">Exercises  Functions in the Business Setting</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Introduction to Excel Spreadsheets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#BasicArithmeticSubsection" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Basic Arithmetic, show formulas and quick fill.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#RelAbsRefTitle" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Absolute and Relative Cell References</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#NamedCellSection" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Named Cell References</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#sec-1-3-IntroExcelSpreadsheets-6" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Getting Help</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#sec-1-3-IntroExcelSpreadsheets-7" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Other Details</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#rq-s1-3" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#exercises-set-sec-1-3" class="internal"><span class="codenumber">1.3.7</span> <span class="title">Exercises Introduction to Excel Spreadsheets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Graphing functions with Excel</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-3" class="internal"><span class="codenumber">1.4.1</span> <span class="title">A basic graph</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-4" class="internal"><span class="codenumber">1.4.2</span> <span class="title">A graph with parameters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Controlling the viewing window</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-6" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Graphing more than one function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#FormattingChart" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Formatting a chart</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-8" class="internal"><span class="codenumber">1.4.6</span> <span class="title">Online graphing tools: Wolfram Alpha</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#rq-s1-4" class="internal"><span class="codenumber">1.4.7</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#exercises-set-sec-1-4" class="internal"><span class="codenumber">1.4.8</span> <span class="title">Exercises 1.4 Graphing functions with Excel</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Using Excel to find best-fit curves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Using Excel to find a best-fit line</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-3" class="internal"><span class="codenumber">1.5.1.1</span> <span class="title">Find the line</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-4" class="internal"><span class="codenumber">1.5.1.2</span> <span class="title">Produce the equation of the line</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-5" class="internal"><span class="codenumber">1.5.1.3</span> <span class="title">Bring the equation of the line back to the chart</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-4" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Checking and improving our equations</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Fitting the Consumer Price Index (<abbr class="initialism">CPI</abbr>) to a best fitting curve; an extended example</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-3" class="internal"><span class="codenumber">1.5.3.1</span> <span class="title">Number of significant digits for equation constants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-4" class="internal"><span class="codenumber">1.5.3.2</span> <span class="title">Setting the base point of a variable</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-5" class="internal"><span class="codenumber">1.5.3.3</span> <span class="title">Selecting data for one model</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#rq-s1-5" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#exercises-set-sec-1-5" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Exercises: Using Excel to find best fit curves</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-6-GoalSeek.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Finding Numerical Solutions with Goal Seek</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-3" class="internal"><span class="codenumber">1.6.1</span> <span class="title">A linear example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-4" class="internal"><span class="codenumber">1.6.2</span> <span class="title">A quadratic example and concern with precision</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-5" class="internal"><span class="codenumber">1.6.3</span> <span class="title">More realistic examples: finding the intersection of two curves</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-6" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Using Goal Seek for financial computations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-7" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Looking under the hood and understanding Goal Seek’s limitations</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#rq-s1-6" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#exercises-set-sec-1-6" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Finding Numerical Solutions with Goal Seek</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-2-BusinessApplications.html" class="internal"><span class="codenumber">2</span> <span class="title">Business Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Market Equilibrium Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#sec-2-1-MarketEquilibriumProblems-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Supply and Demand and Market Equilibrium</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#rq-s2-1" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#exercises-set-sec-2-1" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercises 2.1 Equilibrium Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Modeling Revenue, Costs, and Profit</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-3" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Revenue and a review of demand price</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-4" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cost</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-5" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Profit</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-6" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Break-Even Point</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-7" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Technical note</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#rq-s2-2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#exercises-set-sec-2-2" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Exercises: Modeling Revenue, Costs, and Profit</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Nonlinear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#AlgebraicFunctions" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Algebraic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#DiscontinuousFunctions" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Discontinuous Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#rq-s2-3" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#exercises-set-sec-2-3" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises 2.3 Nonlinear functions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-3-RateChangeDerivatives.html" class="internal"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Marginal Functions and Difference Quotients</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-3" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Marginal Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-4" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Difference Quotients and Average Rate of Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-5" class="internal"><span class="codenumber">3.1.3</span> <span class="title">An Excel Trick for Difference Quotients</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#rq-s3-1" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#exercises-set-sec-3-1" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Exercises: Marginal Functions and Difference Quotients Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Numeric Derivatives and Limits</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html#rq-s3-2" class="internal"><span class="codenumber">3.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html#exercises-set-sec-3-2" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises: Numeric Derivatives and Limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Local Linearity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html#rq-s3-3" class="internal"><span class="codenumber">3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html#exercises-set-sec-3-3" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises: Local Linearity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-4-Optimization.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Optimization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-4-Optimization.html#rq-s3-4" class="internal"><span class="codenumber">3.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-4-Optimization.html#exercises-set-sec-3-4" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises: Optimization</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html" class="internal"><span class="codenumber">3.5</span> <span class="title">An Introduction to Solver</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html#rq-s3-5" class="internal"><span class="codenumber">3.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html#exercises-set-sec-3-5" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises: An Introduction to Solver</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-4-SymbolicDifferentiation.html" class="internal"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Elementary Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-2" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Derivatives of monomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-4" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Derivatives of Exponential Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-5" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Derivatives of Logarithmic Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#rq-s4-1" class="internal"><span class="codenumber">4.1.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#exercises-set-ElementaryDerivaitives" class="internal"><span class="codenumber">4.1.6</span> <span class="title">Exercises: Elementary Derivatives Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Derivative Rules for Combinations of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Derivatives of scalar products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-4" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Derivatives of sums and differences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Derivatives of products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Derivatives of quotients</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#rq-s4-2" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#exercises-set-sec-4-2" class="internal"><span class="codenumber">4.2.6</span> <span class="title">Exercises: Derivative Rules for Combinations of Functions Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-3-ChainRule.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Chain Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-3-ChainRule.html#rq-s4-3" class="internal"><span class="codenumber">4.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-3-ChainRule.html#exercises-set-sec-4-3" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises: The Chain Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Differentiation Using Computer Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html#rq-s4-4" class="internal"><span class="codenumber">4.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html#exercises-set-sec-4-4" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises: Differentiation Using Computer Algebra Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">The Second Derivative and Concavity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html#rq-s4-5" class="internal"><span class="codenumber">4.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html#exercises-set-sec-4-5" class="internal"><span class="codenumber">4.5</span> <span class="title">Exercises: The Second Derivative and Concavity Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-5-DIfferentiationApplications.html" class="internal"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Implicit Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html#rq-s5-1" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html#exercises-set-sec-5-1" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises: Implicit Differentiation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-2-RelatedRates.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Related Rates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-2-RelatedRates.html#rq-s5-2" class="internal"><span class="codenumber">5.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-2-RelatedRates.html#exercises-set-sec-5-2" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises: Related Rates Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-3-Elasticity.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Elasticity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#sec-5-3-Elasticity-3" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Point Elasticity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#sec-5-3-Elasticity-4" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Arc Elasticity</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#rq-s5-3" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#exercises-set-sec-5-3" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises: Elasticity Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-6-FunctionsSeveralVariables.html" class="internal"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Evaluating and Graphing Functions of Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html#rq-s6-1" class="internal"><span class="codenumber">6.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html#exercises-set-sec-6-1" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises: Evaluating and Graphing Functions of Several Variables Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Wire Frames, Partial Derivatives, and Tangent Planes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Wire frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Tangent Planes and Linear Approximation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#rq-s6-2" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#exercises-set-sec-6-2" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Critical Points and Extrema</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Critical Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Second Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Using the Discriminant to Test Critical Points</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#rq-s6-3" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#exercises-set-sec-6-3" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Exercises: Critical Points and Extrema Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Optimization and Best Fitting Curves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html#rq-s6-4" class="internal"><span class="codenumber">6.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html#exercises-set-sec-6-4" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises: Optimization and Best Fitting Curves Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap-7-Intergration.html" class="internal"><span class="codenumber">7</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-1-RiemannSums.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Approximating Definite Integrals as Sums</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-1-RiemannSums.html#rq-s7-1" class="internal"><span class="codenumber">7.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-1-RiemannSums.html#exercises-set-sec-7-1" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises: Approximating Definite Integrals as Sums Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html#rq-s7-2" class="internal"><span class="codenumber">7.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html#exercises-set-sec-7-2" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises: The Fundamental Theorem of Calculus Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Basic Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html#rq-s7-3" class="internal"><span class="codenumber">7.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html#exercises-set-sec-7-3" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises: Basic Antidifferentiation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Integration by Change of Variables or Substitution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#sec-7-4-ChangeVariables-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Change of variables for indefinite integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#sec-7-4-ChangeVariables-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Change of variables for definite integrals</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#rq-s7-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#exercises-set-sec-7-4" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises: Integration by Change of Variables or Substitution Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Integration using Computer Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-3" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Definite integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-4" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Initial value problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-5" class="internal"><span class="codenumber">7.5.3</span> <span class="title">Riemann Sums</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#rq-s7-5" class="internal"><span class="codenumber">7.5.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#exercises-set-sec-7-5" class="internal"><span class="codenumber">7.5.5</span> <span class="title">Exercises: Integration using Computer Algebra Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html" class="internal"><span class="codenumber">7.6</span> <span class="title">The Normal Distribution: An extended numeric example</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#sec-7-6-NormalDistribution-3" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Background from probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#sec-7-6-NormalDistribution-4" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#rq-s7-6" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#exercises-set-sec-7-6" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Exercises: Normal Distribution Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Applications of the integral: Investment and depreciation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Basic Accumulation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Boundary value problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-5" class="internal"><span class="codenumber">7.7.3</span> <span class="title">Depreciation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#rq-s7-7" class="internal"><span class="codenumber">7.7.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#exercises-set-sec-7-7" class="internal"><span class="codenumber">7.7.5</span> <span class="title">Exercises: Applications of the integral: Investment and depreciation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html" class="internal"><span class="codenumber">7.8</span> <span class="title">Economics Applications of the Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#sec-7-8-BusinessApplicationsIntegral-3" class="internal"><span class="codenumber">7.8.1</span> <span class="title">Consumer and Producer Surplus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#sec-7-8-BusinessApplicationsIntegral-4" class="internal"><span class="codenumber">7.8.2</span> <span class="title">Lorenz Curves and the Gini Index</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#rq-s7-8" class="internal"><span class="codenumber">7.8.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#exercises-set-sec-7-8" class="internal"><span class="codenumber">7.8.4</span> <span class="title">Exercises Business Applications of the Integral Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Spreadsheet Appendices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills.html" class="internal"><span class="codenumber">A</span> <span class="title">Spreadsheet Skills introduced in chapter 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-3.html" class="internal"><span class="codenumber">A.1</span> <span class="title">From Section 1-3 - Entering and Copying Formulas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-4.html" class="internal"><span class="codenumber">A.2</span> <span class="title">From Section 1.4 Graphing Functions in a Spreadsheet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-5.html" class="internal"><span class="codenumber">A.3</span> <span class="title">From Section 1.5 Adding and Using Best Fit Curves (Trendlines)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-6.html" class="internal"><span class="codenumber">A.4</span> <span class="title">From Section 1.6 Using Goal Seek</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SkillsChap1Google.html" class="internal"><span class="codenumber">A.5</span> <span class="title">Google Sheets Notes for Chapter 1 skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="SpreadSkills2.html" class="internal"><span class="codenumber">B</span> <span class="title">Spreadsheet Skills Introduced in Chapter 2</span></a></div></li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills3.html" class="internal"><span class="codenumber">C</span> <span class="title">Spreadsheet Skills introduced in chapter 3</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection3-1.html" class="internal"><span class="codenumber">C.1</span> <span class="title">From Section 3.1- Comparing Functions and Related Marginal Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction1-IncreseBy1" class="internal"><span class="codenumber">C.1.1</span> <span class="title">Marginal Functions with <span class="process-math">\(q\)</span> increasing by 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction2-NotIncreseBy1" class="internal"><span class="codenumber">C.1.2</span> <span class="title">Marginal Functions using Columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction3-QuickFill" class="internal"><span class="codenumber">C.1.3</span> <span class="title">Marginal Functions using Quick Fill</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection3-2.html" class="internal"><span class="codenumber">C.2</span> <span class="title">From Section 3.2- Comparing Functions and Numeric Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#DerivativeByIntuitiveDef" class="internal"><span class="codenumber">C.2.1</span> <span class="title">Derivatives from the Intuitive Approach</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#NumDerivIntuitiveLimits" class="internal"><span class="codenumber">C.2.2</span> <span class="title">Derivatives from Numerical Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#NumericalDerivativeAppend" class="internal"><span class="codenumber">C.2.3</span> <span class="title">Graphing a Function with its Numeric Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#DerivativeFormulasFromTrendlines" class="internal"><span class="codenumber">C.2.4</span> <span class="title">Using Trendline to find Derivative Formulas</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection3-3.html" class="internal"><span class="codenumber">C.3</span> <span class="title">From Section 3.3- Building Linear Approximations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection3-5.html" class="internal"><span class="codenumber">C.4</span> <span class="title">From Section 3.5 - An introduction to Solver 3.5</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SheetsNotesCh3.html" class="internal"><span class="codenumber">C.5</span> <span class="title">Google Sheets Notes for Chapter 3 Skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills6.html" class="internal"><span class="codenumber">D</span> <span class="title">Spreadsheet Skills introduced in chapter 6</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection6-1.html" class="internal"><span class="codenumber">D.1</span> <span class="title">From Section 6.1 - Evaluating and graphing functions of several varaibles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-2" class="internal"><span class="codenumber">D.1.1</span> <span class="title"><dfn class="terminology">Evaluating a function of several variables</dfn></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-3" class="internal"><span class="codenumber">D.1.2</span> <span class="title"><dfn class="terminology">Making a table for a function of 2 variable</dfn></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-4" class="internal"><span class="codenumber">D.1.3</span> <span class="title"><dfn class="terminology">Turning a table of a function of 2 variables into a surface graph</dfn></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection6-3.html" class="internal"><span class="codenumber">D.2</span> <span class="title">From Section 6.3 - Critical points and extrema</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SheetsNotesCh6.html" class="internal"><span class="codenumber">D.3</span> <span class="title">Google Sheets Notes for Chapter 6 Skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="SpreadSkills7.html" class="internal"><span class="codenumber">E</span> <span class="title">Spreadsheet Skills introduced in chapter 7</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-7-6-NormalDistribution"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.6</span><span class="space"> </span><span class="title">The Normal Distribution: An extended numeric example</span>
+</h2>
+<section class="introduction" id="sec-7-6-NormalDistribution-2"><div class="para" id="sec-7-6-NormalDistribution-2-1">
+<a class="external" href="external/Examples/Section-7-6-Examples.xlsx" target="_blank">Link to worksheets used in this section</a><a class="xref" id="sec-7-6-NormalDistribution-2-1-2" href="" data-knowl="./knowl/fn/sec-7-6-NormalDistribution-2-1-2.html" title="Footnote 7.6.1"><sup> 1 </sup></a>
+</div> <div class="para" id="sec-7-6-NormalDistribution-2-2">We want to look at an extended example where we realistically want to find a definite integral, but need to use numerical methods rather than solving for the antiderivative and using the fundamental theorem of calculus. Most students are familiar with the concept of a course that is graded on a curve. Formally, that means that there is a preset distribution of grades available in the class, with a certain percentage of the students getting an A, a certain percentage getting a B, and so forth. Most college students are also familiar with the ACT, SAT, or other standardized tests, where the score typically follow a normal or "bell" curve. The result we pull from more advanced mathematics is that many phenomena such as height, weight, and hat size, also follow a bell curve. In a business setting, we are often concerned whether or not a portion of a market will be big enough to support a specialty store. We also want to know how much of my production should be allocated to a range of sizes of a product. This question often boils down to finding the area under a specified portion of the normal curve.</div></section><section class="subsection" id="sec-7-6-NormalDistribution-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.6.1</span><span class="space"> </span><span class="title">Background from probability</span>
+</h3>
+<div class="para" id="sec-7-6-NormalDistribution-3-2">We want to pull some definitions and results from the theory of probability. In particular we want a description of the function we are finding the area under and also of the related area function.</div>
+<article class="definition definition-like" id="sec-7-6-NormalDistribution-3-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.6.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-7-6-NormalDistribution-3-3-1-1">A <dfn class="terminology">Probability Density Function</dfn> is a function that spreads the area 1 over the entire real line, with the obvious understanding that no value can have a negative probability.</div> <div class="para" id="sec-7-6-NormalDistribution-3-3-1-2">In calculus terms, a <dfn class="terminology">Probability Density Function</dfn> is a function <span class="process-math">\(f(x)\)</span> defined for <span class="process-math">\(-\infty\lt x \lt \infty \)</span>  such that <span class="process-math">\(f(x)\ge 0\)</span> and  <span class="process-math">\(\int_{-\infty}^{\infty}f(x)\,dx=1\text{.}\)</span>
+</div></article><div class="para logical" id="sec-7-6-NormalDistribution-3-4">
+<div class="para">A probability density function is also called a continuous distribution function. The probability density function that is of most interest to us is the normal distribution. The normal density function is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-(x-\mu)^2}{2\sigma^2}\right)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\sigma\)</span> (sigma), and <span class="process-math">\(\mu\)</span> (mu), are respectively the standard deviation and mean of the distribution. For this course the mean is the center of the distribution and the standard deviation is a measure of how tightly packed the distribution is. If we set the mean to 0 and the standard deviation to 1 we have the standardized normal distribution, or the familiar bell curve.</div>
+</div>
+<div class="para logical" id="sec-7-6-NormalDistribution-3-5">
+<div class="para">Thus, when I note that the adult men in the United States have a height distribution that is normal with a mean of 70 inches and a standard deviation of 3 inches, the distribution is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^2}\right)\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-6-1.png" class="contained"></div>
+<div class="para" id="sec-7-6-NormalDistribution-3-7">Thus finding the percentage of men less than 5 feet tall, reduces to evaluating the appropriate integral. Since finding the percentage of the population that fits in our market reduces to finding the area under a specified portion of this curve, we are also interested in the anti-derivative of the distribution.</div>
+<article class="definition definition-like" id="sec-7-6-NormalDistribution-3-8"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.6.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-7-6-NormalDistribution-3-8-1-1">Given a probability density function, <span class="process-math">\(f(x)\text{,}\)</span> the related <dfn class="terminology">Cumulative Distribution Function</dfn>, <span class="process-math">\(\CDFf(x)\text{,}\)</span> is a function that measures how much area is over the interval  <span class="process-math">\((-\infty,x]\text{.}\)</span>
+</div> <div class="para" id="sec-7-6-NormalDistribution-3-8-1-2">In calculus terms, <span class="process-math">\(\CDFf(x)\text{,}\)</span> the <dfn class="terminology">Cumulative Distribution Function</dfn> of  <span class="process-math">\(f(x)\text{,}\)</span> is  <span class="process-math">\(\int_{-\infty}^x f(t)dt\text{.}\)</span>
+</div></article><div class="para" id="sec-7-6-NormalDistribution-3-9">You will notice the techniques we have for anti-differentiation will not work with the normal distribution. In fact, the normal distribution has no closed form anti-derivative using the functions we are familiar with. Thus we need to use numeric methods.</div></section><section class="subsection" id="sec-7-6-NormalDistribution-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.6.2</span><span class="space"> </span><span class="title">Examples</span>
+</h3>
+<article class="example example-like" id="sec-7-6-NormalDistribution-4-2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Tall men in an area.</span>
+</h4>
+<figure class="figure figure-like" id="sec-7-6-NormalDistribution-4-2-2-1"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/NItxIRjOmZk?&amp;modestbranding=1&amp;rel=0" id="sec-7-6-NormalDistribution-4-2-2-1-2"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.6.4<span class="period">.</span></span><span class="space"> </span>Video presentation of this example</figcaption></figure> <div class="para" id="sec-7-6-NormalDistribution-4-2-2-2">In the United States, the height of men follows a normal distribution with a mean of 70 inches (5’ 10") and a standard deviation of 3 inches. I want to set up a specialty shop for men who are at least 6’ tall, but no more than 7’ tall. In an area with 100,000 adult men, how big is my potential market?</div>
+<div class="solutions"><details id="sec-7-6-NormalDistribution-4-2-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-7-6-NormalDistribution-4-2-3-1"><ul class="disc">
+<li id="sec-7-6-NormalDistribution-4-2-3-1-1-1">
+<span class="heading"><span class="title">Set up.</span></span><div class="para logical" id="sec-7-6-NormalDistribution-4-2-3-1-1-1-2">
+<div class="para">My distribution function is <span class="process-math">\(\frac{1}{3\sqrt{2\pi}}\exp\left(\frac{-(x-70)^2}{2*3^3}\right)\text{.}\)</span> Since I have a population of 100,000 and am interested in the men who are between 72 and 84 inches tall, my potential market is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+100000\int_{72}^{84} \frac{1}{3\sqrt{2\pi}} \exp\left(\frac{-(x-70)^2}{2*3^2} \right)dx\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec-7-6-NormalDistribution-4-2-3-1-1-1-3">
+<div class="para">As an alternative, I can convert the problem so it is expressed in terms of standard deviations. Then I use the standardized normal distribution and my limits of integration are</div>
+<div class="displaymath process-math" id="sec-7-6-NormalDistribution-4-2-3-1-1-1-3-1">
+\begin{align*}
+\text{low bound in SD} \amp = (\text{low bound} - \text{mean})/(\SD) = (72-70)/3 = 2/3\\
+\text{upper bound in SD} \amp = (\text{upper bound} - \text{mean})/(\SD) = (84-70)/3 = 14/3\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="sec-7-6-NormalDistribution-4-2-3-1-1-1-4">
+<div class="para">Then my potential market is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+<li id="sec-7-6-NormalDistribution-4-2-3-1-1-2">
+<span class="heading"><span class="title">Using Excel and Riemann Sums.</span></span><div class="para" id="sec-7-6-NormalDistribution-4-2-3-1-1-2-2">I want to set up a spreadsheet to find the area under the curve. Since I think I may do this for several problems, I want to set up the worksheet as a template that I can simply fill in. It will make my life easier if I recast the problem in terms of standard deviations. My potential market is <span class="process-math">\(100000\int_{2/3}^{14/3} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)dx\text{.}\)</span> I am ready to set up a Riemann sum worksheet as we did in <a href="sec-7-1-RiemannSums.html" class="internal" title="Section 7.1: Approximating Definite Integrals as Sums">Section 7.1</a>.</div>
+<div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/sec7-6-2.png" class="contained"></div>
+<div class="para" id="sec-7-6-NormalDistribution-4-2-3-1-1-2-4">In cells <code class="code-inline tex2jax_ignore">F3</code> through <code class="code-inline tex2jax_ignore">F5</code> we convert the lower bound, upper bound, and del x to standard deviations. We recall that we get better accuracy by evaluating the rectangles with a midpoint. The midpoint of the nth rectangle is (n-0.5)*del x above the lower bound. As we did in previous sections, we use the offset command to bring our answer into the top region. When we look at the numbers we see that the potential market is 25,249.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-6-3.png" class="contained"></div>
+</li>
+<li id="sec-7-6-NormalDistribution-4-2-3-1-1-3">
+<span class="heading"><span class="title">Using Excel Statistics Commands.</span></span><div class="para" id="sec-7-6-NormalDistribution-4-2-3-1-1-3-2">By this point in the course you should expect that if we claim a computation is important and done by business many times, that there is an Excel command to do the computation.</div>
+<div class="para logical" id="sec-7-6-NormalDistribution-4-2-3-1-1-3-3">
+<div class="para">The function we are interested in is</div>
+<pre class="code-display tex2jax_ignore">NORM.DIST(x, mean, standard deviation, cumulative).</pre>
+<div class="para">.</div>
+</div>
+<div class="para logical" id="sec-7-6-NormalDistribution-4-2-3-1-1-3-4">
+<div class="para">Where <span class="process-math">\(x\text{,}\)</span> mean, and standard deviation have the obvious meanings. The cumulative parameter is either true or false. If it is true we get the cumulative distribution function. If it is false we get the probability density function. If we are working with the standardized normal distribution, where the mean is 0 and the standard deviation is 1, the command is</div>
+<pre class="code-display tex2jax_ignore">NORM.S.DIST(x, cumulative).</pre>
+</div>
+<div class="para" id="sec-7-6-NormalDistribution-4-2-3-1-1-3-5">(If you are using older versions of Excel, the syntax of the command is a little different. Check the appropriate help page if you are using an older version of Excel.) With these commands, our spreadsheet is noticeably simpler.</div>
+<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/sec7-6-4.png" class="contained"></div>
+<div class="para" id="sec-7-6-NormalDistribution-4-2-3-1-1-3-7">When we look at the values, we get a target population of 25,249. This agrees with our estimate to 5 significant figures.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-6-5.png" class="contained"></div>
+</li>
+<li id="sec-7-6-NormalDistribution-4-2-3-1-1-4">
+<span class="heading"><span class="title">Using Wolfram alpha.</span></span><div class="para logical" id="sec-7-6-NormalDistribution-4-2-3-1-1-4-2">
+<div class="para">Once I have reduced the problem to evaluating a definite integral, I can find a numeric solution with a CAS package like Wolfram|Alpha.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+100000\int_{72}^{84} \frac{1}{3\sqrt{2\pi}} \exp\left(\frac{-(x-70)^2}{2*3^2 }\right)\,dx
+\end{equation*}
+</div>
+<div class="para">becomes</div>
+<pre class="code-display tex2jax_ignore">100000*integrate(exp(-(x-70)^2/(2*3^2))/(3*sqrt(2*pi))) from 72 to 84.</pre>
+</div>
+<div class="para" id="sec-7-6-NormalDistribution-4-2-3-1-1-4-3">We get our familiar answer of 25,249.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec7-6-6.png" class="contained"></div>
+<div class="para logical" id="sec-7-6-NormalDistribution-4-2-3-1-1-4-5">
+<div class="para">When we compute a target population, we sometimes want to include the tail of the distribution. We might, for example be concerned with all women who are 5 feet tall or less. This sets up an integral over an infinite interval, which we can’t do as a Riemann sum. The first workaround notes that the tails are very small. If all humans who have ever lived are normally distributed, less than 1 is more than 7 standard deviations from the mean. Taking the integral down to <span class="process-math">\(-7\)</span> will practically be the same as integrating down to <span class="process-math">\(-\infty\text{.}\)</span> The second workaround uses the symmetry of the normal distribution.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{-\infty}^a SND(x)dx=\int_{-\infty}^0 SND(x)dx+\int_0^a SND(x)dx=.5+\int_0^a SND(x)dx\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+</ul></div></div></details></div></article><article class="example example-like" id="sec-7-6-NormalDistribution-4-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Finding short women.</span>
+</h4>
+<figure class="figure figure-like" id="sec-7-6-NormalDistribution-4-3-2-1"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/t4XABMbHO4k?&amp;modestbranding=1&amp;rel=0" id="sec-7-6-NormalDistribution-4-3-2-1-2"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.6.6<span class="period">.</span></span><span class="space"> </span>Video presentation of this example</figcaption></figure> <div class="para" id="sec-7-6-NormalDistribution-4-3-2-2">In the United States, the height of women follows a normal distribution with a mean of 64 inches (5’ 4") and a standard deviation of 2.75 inches. I want to set up a specialty shop for women who are no more than 5’ tall. In an area with 500,000 adult women, how big is my potential market?</div>
+<div class="solutions"><details id="sec-7-6-NormalDistribution-4-3-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="sec-7-6-NormalDistribution-4-3-3-1"><ul class="disc">
+<li id="sec-7-6-NormalDistribution-4-3-3-1-1-1">
+<span class="heading"><span class="title">Set up.</span></span><div class="para" id="sec-7-6-NormalDistribution-4-3-3-1-1-1-2">Using the reasoning as above, I want to estimate my market if it is 50% of the population plus the percentage between 0 and (<span class="process-math">\(-4/2.75\)</span>) standard deviations below the mean.</div>
+</li>
+<li id="sec-7-6-NormalDistribution-4-3-3-1-1-2">
+<span class="heading"><span class="title">Using Excel and Riemann Sums.</span></span><div class="para" id="sec-7-6-NormalDistribution-4-3-3-1-1-2-2">One advantage of having set up the first exercise well, is the Riemann sum problem is now a matter of changing the parameters and subtracting from 0.5 before multiplying by the market size.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-6-7.png" class="contained"></div>
+<div class="para" id="sec-7-6-NormalDistribution-4-3-3-1-1-2-4">We notice that since we are finding the area under the standardized normal distribution from 0 to a negative number, we get a negative area.  Our potential market is composed of 3,645 women.</div>
+</li>
+<li id="sec-7-6-NormalDistribution-4-3-3-1-1-3">
+<span class="heading"><span class="title">Using Excel Statistics Commands.</span></span><div class="para" id="sec-7-6-NormalDistribution-4-3-3-1-1-3-2">When using the statistics commands, the area function is zero at <span class="process-math">\(-\infty\text{.}\)</span> Thus we simply have to evaluate <code class="code-inline tex2jax_ignore">NORM.S.DIST(right hand limit, cumulative)</code>.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec7-6-8.png" class="contained"></div>
+<div class="para" id="sec-7-6-NormalDistribution-4-3-3-1-1-3-4">Once again, we get a potential market of 3,645 women.</div>
+</li>
+</ul></div></div></details></div></article><div class="para" id="sec-7-6-NormalDistribution-4-4">While the normal distribution spreads a population over the real numbers, most objects come in discrete sizes.  Depending on the kind of shoes, the sizes are either whole or half numbers.  You can’t buy a shoe of size 8.764. The normal procedure is to divide the population at the middle between the sizes.</div>
+<article class="example example-like" id="sec-7-6-NormalDistribution-4-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Women’s shoes.</span>
+</h4>
+<figure class="figure figure-like" id="sec-7-6-NormalDistribution-4-5-2-1"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/QI-BKnONrRE?&amp;modestbranding=1&amp;rel=0" id="sec-7-6-NormalDistribution-4-5-2-1-2"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.6.8<span class="period">.</span></span><span class="space"> </span>Video presentation of this example</figcaption></figure> <div class="para" id="sec-7-6-NormalDistribution-4-5-2-2">In the United States, the shoe sizes of women follows a normal distribution with a mean of 8 and a standard deviation of 1.5. I want to order 1000 pairs of shoes.  If the shoes are only available in full sizes, how many pairs should I order of size 7?</div>
+<div class="solutions"><details id="sec-7-6-NormalDistribution-4-5-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sec-7-6-NormalDistribution-4-5-3-1">I want the portion of the population between size 6.5 and 7.5. I fit it into my worksheet for Riemann sums.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-6-7.png" class="contained"></div> <div class="para" id="sec-7-6-NormalDistribution-4-5-3-3">Of the 1000 pairs of shoes, 211 should be size 7.</div>
+</div></details></div></article><div class="para" id="sec-7-6-NormalDistribution-4-6">We have looked at three methods for finding a portion of a normally distributed population, which we describe as Excel with Riemann sums, Excel with statistics commands, and CAS. It is worthwhile to consider the advantages and disadvantages of the methods. The Riemann sums method takes the most work to set up.  It is also conceptually the most straightforward and the most flexible. It is the easiest to adapt if we are doing some nonstandard distribution of a population. It also shows intermediate values if we have a less sharp question and are trying to see what is going on and are still deciding on the business question we want to ask. The Excel with statistics command approach requires us to learn special commands. It is also less work.  It would probably be the favored method if we were doing a lot of these computations. It should be noted that Excel has corresponding commands for the other standard probability distributions. The CAS method does not require special commands, but it takes us out of our Excel environment. It does not let us leave a worksheet that is well documented and that can be easily modified by someone else asking similar questions.</div></section><section class="reading-questions" id="rq-s7-6"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">7.6.3</span><span class="space"> </span><span class="title">Reading Check</span>
+</h3>
+<article class="exercise exercise-like" id="Reading_Check_Sec7.6"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Reading check, The Normal Distribution: An Extended Numeric Example.</span>
+</h4>
+<div id="webwork-33" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="33" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyQ2hlY2tib3hMaXN0LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsgICAgICAgICAgICAkY2hlY2tzID0gQ2hlY2tib3hMaXN0KAogICAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgIFsKIk9uZSBtZXRob2QgaW4gdGhlIHNlY3Rpb25zIHdhcyBkZXNjcmliZWQgYXMgRXhjZWwgd2l0aCBSaWVtYW5uIHN1bXMuICIsIAoiT25lIG1ldGhvZCBpbiB0aGUgc2VjdGlvbnMgd2FzIGRlc2NyaWJlZCBhcyBFeGNlbCB3aXRoIGZvcm11bGFzLiAiLCAKIk9uZSBtZXRob2QgaW4gdGhlIHNlY3Rpb25zIHdhcyBkZXNjcmliZWQgYXMgQ0FTLiAiLCAKIlRoZSBzZWN0aW9uIHVzZXMgU3ltYm9sYWIgYXMgYSBjb21wdXRlciBhbGdlYnJhIHN5c3RlbSB0aGF0IHdpbGwgZG8gaW50ZWdyYXRpb24uICAiLCAKIkVhY2ggbWV0aG9kIGRlc2NyaWJlZCBoYXMgYWR2YW50YWdlcyBhbmQgZGlzYWR2YW50YWdlcy4gXChDXCkuICIsIAoKIk9uZSBtZXRob2QgaW4gdGhlIHNlY3Rpb25zIHdhcyBkZXNjcmliZWQgYXMgU3RhdGlzdGljYWwgQXZlcmFnaW5nLiAiLCAKIk9uZSBtZXRob2QgaW4gdGhlIHNlY3Rpb25zIHdhcyBkZXNjcmliZWQgYXMgSW50ZWdyYXRpb24gYnkgcGFydHMuICIsIAoiVGhlIG1ldGhvZCBvZiB1c2luZyBFeGNlbCB3aXRoIFJpZW1hbm4gc3VtcyBpcyBhbHdheXMgdGhlIGJlc3QgbWV0aG9kLiAgIiwgCiJUaGUgbWV0aG9kIG9mIHVzaW5nIENBUyBpcyBhbHdheXMgdGhlIGJlc3QgbWV0aG9kLiAgIiwgCiAgICBdLAogICAgICAgICAgICAgICAiTm9uZSBvZiB0aGUgYWJvdmUiCiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICBbMCwgMSwgMiwgMywgNF0sCiAgICAgICAgICAgICAgbGFiZWxzID0+ICJBQkMiLCAgICMgImFiYyIsICIxMjMiLCAicm9tYW4iLCAiUm9tYW4iCiAgICAgICAgICAgICk7CgpCRUdJTl9QR01MClRoaXMgcXVlc3Rpb24gY2hlY2tzIHlvdXIgcmVhZGluZyBjb21wcmVoZW5zaW9uIG9mIHRoZSBtYXRlcmlhbCBpcyBzZWN0aW9uIDcuNiwgVGhlIE5vcm1hbCBEaXN0cmlidXRpb246IEFuIEV4dGVuZGVkIE51bWVyaWMgRXhhbXBsZSwgb2YgQnVzaW5lc3MgQ2FsY3VsdXMgd2l0aCBFeGNlbC4gQmFzZWQgb24geW91ciByZWFkaW5nLCBzZWxlY3QgYWxsIHN0YXRlbWVudHMgdGhhdCBhcmUgY29ycmVjdC4gIFRoZXJlIG1heSBiZSBtb3JlIHRoYW4gb25lIGNvcnJlY3QgYW5zd2VyLiBUaGUgc3RhdGVtZW50cyBtYXkgYXBwZWFyIGluIHdoYXQgc2VlbXMgdG8gYmUgYSByYW5kb20gb3JkZXIuCgpbX117JGNoZWNrc317NX0KCgpFTkRfUEdNTAoKRU5ERE9DVU1FTlQoKTs=" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-33')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-33-1-1-1">This question checks your reading comprehension of the material is section 7.6, The Normal Distribution: An Extended Numeric Example, of Business Calculus with Excel. Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.</div> <div class="para logical" id="extracted-webwork-33-1-1-2"><ol class="upper-alpha">
+<li id="extracted-webwork-33-1-1-2-1-1"><div class="para" id="extracted-webwork-33-1-1-2-1-1-1">One method in the sections was described as Statistical Averaging.</div></li>
+<li id="extracted-webwork-33-1-1-2-1-2"><div class="para" id="extracted-webwork-33-1-1-2-1-2-1">One method in the sections was described as Integration by parts.</div></li>
+<li id="extracted-webwork-33-1-1-2-1-3"><div class="para" id="extracted-webwork-33-1-1-2-1-3-1">The section uses Symbolab as a computer algebra system that will do integration.</div></li>
+<li id="extracted-webwork-33-1-1-2-1-4"><div class="para" id="extracted-webwork-33-1-1-2-1-4-1">One method in the sections was described as Excel with Riemann sums.</div></li>
+<li id="extracted-webwork-33-1-1-2-1-5"><div class="para" id="extracted-webwork-33-1-1-2-1-5-1">Each method described has advantages and disadvantages. <span class="process-math">\(C\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-33-1-1-2-1-6"><div class="para" id="extracted-webwork-33-1-1-2-1-6-1">One method in the sections was described as CAS.</div></li>
+<li id="extracted-webwork-33-1-1-2-1-7"><div class="para" id="extracted-webwork-33-1-1-2-1-7-1">One method in the sections was described as Excel with formulas.</div></li>
+<li id="extracted-webwork-33-1-1-2-1-8"><div class="para" id="extracted-webwork-33-1-1-2-1-8-1">The method of using CAS is always the best method.</div></li>
+<li id="extracted-webwork-33-1-1-2-1-9"><div class="para" id="extracted-webwork-33-1-1-2-1-9-1">The method of using Excel with Riemann sums is always the best method.</div></li>
+<li id="extracted-webwork-33-1-1-2-1-10"><div class="para" id="extracted-webwork-33-1-1-2-1-10-1">None of the above</div></li>
+</ol></div>
+</div>
+</div></article></section><section class="exercises" id="exercises-set-sec-7-6"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">7.6.4</span><span class="space"> </span><span class="title">Exercises: Normal Distribution Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercises-set-sec-7-6-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-2-1-1">Assume that women’s shoe sizes are normally distributed with a mean of 8 and a standard deviation of 1.5. A particular style of shoes in available in full and half sizes. I plan to make 10,000 pairs of this style.</div> <div class="para logical" id="exercises-set-sec-7-6-2-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-2-1-2-1-1"><div class="para" id="exercises-set-sec-7-6-2-1-2-1-1-1">Express, as an integral, the number of pairs I should make of size 9.</div></li>
+<li id="exercises-set-sec-7-6-2-1-2-1-2"><div class="para" id="exercises-set-sec-7-6-2-1-2-1-2-1">How many pairs of size 9 shoes should I make?</div></li>
+<li id="exercises-set-sec-7-6-2-1-2-1-3"><div class="para" id="exercises-set-sec-7-6-2-1-2-1-3-1">How do your answers change if the shoes are only to be made in full sizes?</div></li>
+</ol></div>
+<div class="solutions"><details id="exercises-set-sec-7-6-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-7-6-2-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-2-2-1-1-1"><div class="para" id="p-derived-exercises-set-sec-7-6-2-2-1-1-1"><span class="process-math">\(\displaystyle \text{pairs size 9}=10000\int_{8.75}^{9.25}\frac{1}{1.5\sqrt{2\pi}}e^{\left({\frac{-(x-9)^2}{2*1.5^2}}\right)}\,dx\)</span></div></li>
+<li id="exercises-set-sec-7-6-2-2-1-1-2"><div class="para" id="p-derived-exercises-set-sec-7-6-2-2-1-1-2"><span class="process-math">\(\displaystyle 10000\int_{8.75}^{9.25} \frac{1}{1.5\sqrt{2\pi}} e^{\left({\frac{-(x-9)^2}{2*1.5^2}}\right)}\,dx=1062.\)</span></div></li>
+<li id="exercises-set-sec-7-6-2-2-1-1-3"><div class="para" id="exercises-set-sec-7-6-2-2-1-1-3-1">If we only have full sizes the limits of integration go from 8.5 to 9.5.  I then need 2108 pairs of size 9.</div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-3-1-1">Men’s shoes in Europe are made if full sizes with a different measuring system than we use in the United States. They are normally distributed with a mean of 43 and a standard deviation of 2/3. I plan to buy 1,000 pairs of shoes for my store.</div> <div class="para logical" id="exercises-set-sec-7-6-3-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-3-1-2-1-1"><div class="para" id="exercises-set-sec-7-6-3-1-2-1-1-1">Express, as an integral, the number of pairs I should order of size 45.</div></li>
+<li id="exercises-set-sec-7-6-3-1-2-1-2"><div class="para" id="exercises-set-sec-7-6-3-1-2-1-2-1">Express, as an Excel command, the number of pairs I should order of size 45.</div></li>
+<li id="exercises-set-sec-7-6-3-1-2-1-3"><div class="para" id="exercises-set-sec-7-6-3-1-2-1-3-1">How many pairs should I order of size 44?  (Give a number, not an equation.)</div></li>
+</ol></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-4-1-1">Assume that women’s dress sizes are normally distributed with a mean of 14 and a standard deviation of 3. For a particular style, 5000 dresses will be made, and they are available in even integer sizes.  (2, 4,…).</div> <div class="para logical" id="exercises-set-sec-7-6-4-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-4-1-2-1-1"><div class="para" id="exercises-set-sec-7-6-4-1-2-1-1-1">Express, as an integral, the number of dresses I should make of size 10.</div></li>
+<li id="exercises-set-sec-7-6-4-1-2-1-2"><div class="para" id="exercises-set-sec-7-6-4-1-2-1-2-1">How many size 6 dresses should I make?</div></li>
+<li id="exercises-set-sec-7-6-4-1-2-1-3"><div class="para" id="exercises-set-sec-7-6-4-1-2-1-3-1">How many size 10 dresses should I make?</div></li>
+</ol></div>
+<div class="solutions"><details id="exercises-set-sec-7-6-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-7-6-4-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-4-2-1-1-1"><div class="para" id="p-derived-exercises-set-sec-7-6-4-2-1-1-1"><span class="process-math">\(\displaystyle \text{size 10 dresses}=5000\int_{9}^{11}\frac{1}{3\sqrt{2\pi}}e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\,dx\)</span></div></li>
+<li id="exercises-set-sec-7-6-4-2-1-1-2"><div class="para" id="p-derived-exercises-set-sec-7-6-4-2-1-1-2"><span class="process-math">\(\displaystyle 5000\int_{5}^{7}\frac{1}{3\sqrt{2\pi}} e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\,dx = 43\)</span></div></li>
+<li id="exercises-set-sec-7-6-4-2-1-1-3"><div class="para" id="p-derived-exercises-set-sec-7-6-4-2-1-1-3"><span class="process-math">\(\displaystyle 5000\int_{9}^{11}\frac{1}{3\sqrt{2\pi}} e^{\left({\frac{-(x-14)^2}{2*3^2}}\right)}\,dx = 555\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-5"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-5-1-1">Assume that men’s suit coat sizes are normally distributed with a mean of 44 and a standard deviation of 4. For a particular style, 2000 suit coats will be made, and they are available in even integer sizes.  (2, 4 …).</div> <div class="para logical" id="exercises-set-sec-7-6-5-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-5-1-2-1-1"><div class="para" id="exercises-set-sec-7-6-5-1-2-1-1-1">Express, as an integral, the number of suit coats I should make of size 44.</div></li>
+<li id="exercises-set-sec-7-6-5-1-2-1-2"><div class="para" id="exercises-set-sec-7-6-5-1-2-1-2-1">How many size 44 suit coats should I make?</div></li>
+</ol></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-6"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-6-1-1">A study of the size of male soldiers found the headband lengths were normally distributed with a mean of 22.1 inches and a standard deviation of 0.85 inches. Standard sized caps will fit headbands lengths of 20-25 inches.</div> <div class="para logical" id="exercises-set-sec-7-6-6-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-6-1-2-1-1"><div class="para" id="exercises-set-sec-7-6-6-1-2-1-1-1">Express, as an integral, the percentage of soldiers for who will fit the standard sized caps.</div></li>
+<li id="exercises-set-sec-7-6-6-1-2-1-2"><div class="para" id="exercises-set-sec-7-6-6-1-2-1-2-1">Cap sizes come in quarter sizes with a full size corresponding to a change in headband size of 3 inches, with a size 8 corresponding to 25 inches.  Out of 1,000 soldiers, how many need a size 8 cap?</div></li>
+</ol></div>
+<div class="solutions"><details id="exercises-set-sec-7-6-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-7-6-6-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-6-2-1-1-1"><div class="para" id="p-derived-exercises-set-sec-7-6-6-2-1-1-1"><span class="process-math">\(\displaystyle \text{pecentage fit}=100\int_{20}^{25}\frac{1}{0.85\sqrt{2\pi}} e^{\left({\frac{-(x-22.1)^2}{2*0.85^2}}\right)}\,dx =99.29\)</span></div></li>
+<li id="exercises-set-sec-7-6-6-2-1-1-2"><div class="para" id="p-derived-exercises-set-sec-7-6-6-2-1-1-2"><span class="process-math">\(\displaystyle \text{size 8 caps}=1000\int_{24.625}^{25.375}\frac{1}{0.85\sqrt{2\pi}} e^{\left({\frac{-(x-22.1)^2}{2*0.85^2}}\right)}\,dx =1.42\)</span></div></li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-7"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-7-1-1">A study of the size of male soldiers found the hip breadths were normally distributed with a mean of 13.45 inches and a standard deviation of 0.64 inches. Seats on one airline measure 17 inches between the armrests. Express, as an integral, the percentage of soldiers who hips are too wide for the seats.</div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-8-1-1">Assume that women’s shoe sizes are normally distributed with a mean of 8 and a standard deviation of 1.5. A particular style of shoes is available in full and half sizes.  I plan to make 1,000 pairs of this style. Using the Excel statistics commands, make a chart telling me many pairs I should make of each size.</div>
+<div class="solutions"><details id="exercises-set-sec-7-6-8-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="exercises-set-sec-7-6-8-2-1">Since the shoes come in half sizes, we want the area under the normal distribution function from 0.25 before the given size to 0.25 after the given size.</div> <div class="para logical" id="exercises-set-sec-7-6-8-2-2">
+<div class="para">The desired syntax is</div>
+<pre class="code-display tex2jax_ignore">Population size * (NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) - NORM.DIST(Size+0.25, Mean, Standard Deviation, TRUE) )</pre>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/sec7-6-sol7a.png" class="contained"></div> <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/sec7-6-sol7b.png" class="contained"></div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-9"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-9-1-1">Assume that men’s suit coat sizes are normally distributed with a mean of 44 and a standard deviation of 4. For a particular style, 2,000 suit coats will be made, and they are available in even integer sizes. (2, 4, …). Using the Excel statistics commands, make a chart telling me many suits I should make of each size.</div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-10-1-1">Assume that results on an intelligence test are normally distributed with a mean of 100 and a standard deviation of 15. Using the Excel statistics commands, make a chart distributing 1,000,000 people between intervals of size 10 (90-100, 100-110, etc.). What is the highest IQ score I should expect to find in my population of 1 million?</div>
+<div class="solutions"><details id="exercises-set-sec-7-6-10-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="exercises-set-sec-7-6-10-2-1">We set the ranges with a high value and a low value.</div> <div class="para logical" id="exercises-set-sec-7-6-10-2-2">
+<div class="para">The desired syntax is</div>
+<pre class="code-display tex2jax_ignore">Population size * (NORM.DIST(High value, Mean, Standard Deviation, TRUE) - NORM.DIST(Low value, Mean, Standard Deviation, TRUE) )</pre>
+</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/sec7-6-sol9a.png" class="contained"></div> <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/images/sec7-6-sol9b.png" class="contained"></div> <div class="para" id="exercises-set-sec-7-6-10-2-5">With a million people, the high IQ should be between 170 and 180.</div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-11-1-1">I have been informed that the distance from the back of a chair to the front of the knee of a man sitting is normally distributed with a mean of 24 inches and a standard deviation of 1.3 inches. I want to design airline chairs to fit 99% of the male passengers with 1 inch between the knee and the back of the next chair. How much distance do I need between the front of one chair seat and the back of the next?</div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-12"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-12-1-1">I have been informed that the breadth at the shoulders of an adult male is normally distributed with a mean of 17.9 inches and a standard deviation of 1 inch. The standard coach seat on a plane is 17.2 inches wide.  What percentage of adult males fit in such a seat without overflow?</div>
+<div class="solutions"><details id="exercises-set-sec-7-6-12-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="exercises-set-sec-7-6-12-2-1"><span class="process-math">\(\text{pecentage fit}=100\int_{0}^{17.2}\frac{1}{1\sqrt{2\pi}} e^{\left({\frac{-(x-17.9)^2}{2*1^2}}\right)}\,dx =24.196\)</span></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-13"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para logical" id="exercises-set-sec-7-6-13-1-1">
+<div class="para">The techniques used in this section can easily be adapted to other distributions. For example, the mean time to failure of a brand of hard drives, measured in units of 10,000 hours, has been found to follow a Weibull distribution with shape variable 3 and scale variable 5. The probability density function of failure is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{FailureDensity}(x)=(3/5) (x/5)^2 \exp(-(x/5)^3 )\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="exercises-set-sec-7-6-13-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-6-13-1-2-1-1"><div class="para" id="exercises-set-sec-7-6-13-1-2-1-1-1">Our warranty is for 10,000 hours of use.  (This is approximately 1 year.) What percentage of drives get replaced under warrantee?</div></li>
+<li id="exercises-set-sec-7-6-13-1-2-1-2"><div class="para" id="exercises-set-sec-7-6-13-1-2-1-2-1">We offer an extended warrantee that replaces the hard drive if it fails in under 30,000 hours of use. What percentage of users who buy the extended warranty will have their hard drive fail in the period of time between the expiration of the original warrantee and the end of the extended warranty?</div></li>
+<li id="exercises-set-sec-7-6-13-1-2-1-3"><div class="para" id="exercises-set-sec-7-6-13-1-2-1-3-1">Some credit cards double the manufacturer’s warranty. What percentage of the people who use this plan will have their hard drive replaced by the credit card company?</div></li>
+<li id="exercises-set-sec-7-6-13-1-2-1-4"><div class="para" id="exercises-set-sec-7-6-13-1-2-1-4-1">What percentage of customers see their hard drives last for 100,000 hours of use?</div></li>
+</ol></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-6-14"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-6-14-1-1">
+<em class="emphasis">Project</em> — Pick a product and find evidence on the kind of function that describes its failure rate. Based on that data, determine how long we expect it to take until 10% , 50% , and 90%  of the products fail.</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-7-5-IntroductionComputerAlgebra.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-7-7-InvestmentDepreciation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
