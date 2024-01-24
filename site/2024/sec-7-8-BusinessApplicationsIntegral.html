@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Economics Applications of the Integral</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Business Calculus with Excel">
+<meta property="book:author" content="Mike May, S.J.">
+<meta property="book:author" content="Anneke Bart">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.33/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="ExcelCalculus" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ExcelCalculus.html"><span class="title">Business Calculus with Excel</span></a></h1>
+<p class="byline">Mike May, S.J., Anneke Bart</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="calculator-toggle" class="calculator-toggle button" title="Show calculator" aria-expanded="false" aria-controls="calculator-container"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calc</span></button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "graphing",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script></span><span class="treebuttons"><a class="previous-button button" href="sec-7-7-InvestmentDepreciation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-7-Intergration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Volume}{\mathrm{Volume}}
+\newcommand{\xLow}{\mathrm{xLow}}
+\newcommand{\xHigh}{\mathrm{xHigh}}
+\newcommand{\Mcost}{\operatorname{Marginal Cost}}
+\newcommand{\cost}{\operatorname{Cost}}
+\newcommand{\Mrev}{\operatorname{Marginal Revenue}}
+\newcommand{\revenue}{\operatorname{Revenue}}
+\newcommand{\profit}{\operatorname{Profit}}
+\newcommand{\Mprofit}{\operatorname{Marginal Profit}}
+\newcommand{\Pprofit}{\operatorname{Predicted Profit}}
+\newcommand{\price}{\operatorname{Price}}
+\newcommand{\Dprice}{\operatorname{Demand Price}}
+\newcommand{\Pprice}{\operatorname{Purchase Price}}
+\newcommand{\Sprice}{\operatorname{Supply Price}}
+\newcommand{\marginal}{\operatorname{Marginal}\,}
+\newcommand{\linear}{\operatorname{Linear}\,}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\quantity}{\mathrm{Quantity}}
+\newcommand{\AnnualCost}{\operatorname{Annual Cost}}
+\newcommand{\AnnualExpense}{\operatorname{Annual Expense}}
+\newcommand{\RepairFactor}{\mathrm{Repair Factor}}
+\newcommand{\Sales}{\operatorname{Sales}}
+\newcommand{\prediction}{\operatorname{prediction}}
+\newcommand{\FutureValue}{\operatorname{Future Value}}
+\newcommand{\demand}{\operatorname{Demand}}
+\newcommand{\val}{\operatorname{Value}}
+\newcommand{\raw}{\mathrm{raw}}
+\newcommand{\gizmos}{\operatorname{gizmos}}
+\newcommand{\intermediate}{\mathrm{intermediate}}
+\newcommand{\tax}{\operatorname{tax}}
+\newcommand{\FaceValue}{\operatorname{Face Value}}
+\newcommand{\rate}{\mathrm{rate}}
+\newcommand{\years}{\mathrm{years}}
+\newcommand{\expense}{\operatorname{expense}}
+\newcommand{\FutureAmount}{\operatorname{FutureAmount}}
+\newcommand{\InitialDeposit}{\mathrm{InitialDeposit}}
+\newcommand{\ppy}{\mathrm{ppy}}
+\newcommand{\PresentAmount}{\operatorname{PresentAmount}}
+\newcommand{\PriceGizmo}{\mathrm{PriceGizmos}}
+\newcommand{\QuantityGizmo}{\mathrm{QuantityGizmos}}
+\newcommand{\QuantityGadget}{\mathrm{QuantityGadgets}}
+\newcommand{\QuantityWidget}{\mathrm{QuantityWidgets}}
+\newcommand{\PriceWidget}{\mathrm{PriceWidgets}}
+\newcommand{\PriceGadget}{\mathrm{PriceGadgets}}
+\newcommand{\QW}{\mathrm{QW}}
+\newcommand{\QG}{\mathrm{QG}}
+\newcommand{\PW}{\mathrm{PW}}
+\newcommand{\PG}{\mathrm{PG}}
+\newcommand{\Production}{\operatorname{Production}}
+\newcommand{\Labor}{\mathrm{Labor}}
+\newcommand{\Capital}{\mathrm{Capital}}
+\newcommand{\Linear}{\operatorname{Linear}\,}
+\newcommand{\PriceX}{\mathrm{PriceX}}
+\newcommand{\PriceY}{\mathrm{PriceY}}
+\newcommand{\predicted}{\operatorname{predicted}}
+\newcommand{\Time}{\mathrm{time}}
+\newcommand{\TotalAmount}{\operatorname{TotalAmount}}
+\newcommand{\TotalValue}{\operatorname{TotalValue}}
+\newcommand{\CashAmount}{\mathrm{CashAmount}}
+\newcommand{\DepositAmount}{\mathrm{DepositAmount}}
+\newcommand{\AvailableTrees}{\operatorname{AvailableTrees}}
+\newcommand{\Capacity}{\mathrm{Capacity}}
+\newcommand{\Amount}{\operatorname{Amount}}
+\newcommand{\InitialAmount}{\mathrm{InitialAmount}}
+\newcommand{\InvestmentAmount}{\mathrm{InvestmentAmount}}
+\newcommand{\Return}{\operatorname{Return}}
+\newcommand{\SD}{\mathrm{SD}}
+\newcommand{\Antideriv}{\operatorname{Antideriv}}
+\newcommand{\MC}{\operatorname{MC}}
+\newcommand{\MP}{\operatorname{MP}}
+\newcommand{\MR}{\operatorname{MR}}
+\newcommand{\CDFf}{\operatorname{CDFf}}
+\newcommand{\Principal}{\operatorname{Principal}}
+\newcommand{\ProducerSurplus}{\mathrm{ProducerSurplus}}
+\newcommand{\ConsumerSurplus}{\mathrm{ConsumerSurplus}}
+\newcommand{\TotalSocialGain}{\mathrm{TotalSocialGain}}
+\newcommand{\Elasticity}{\operatorname{Elasticity}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="ExcelCalculus-2.html" class="internal"><span class="title">Frontmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="ExcelCalculus-2-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="ExcelCalculus-2-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-5.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-6.html" class="internal"><span class="title">Notes for Instructors</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ExcelCalculus-2-7.html" class="internal"><span class="title">Notes for Students</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-1-FunctionsGraphsExcel.html" class="internal"><span class="codenumber">1</span> <span class="title">Functions Graphs and Excel</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Linear Functions and models</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#sec-1-1-LinearFunctionsAndModels-3" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Equations of a line</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#basics-reading-questions-1-1b" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-1-LinearFunctionsAndModels.html#exercises-set-sec-1-1" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises 1.1 Linear Functions and models</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Functions in the Business setting</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-3" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Quadratic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-4" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Exponential functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-5" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Logistic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-6" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Sinusoidal Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-7" class="internal"><span class="codenumber">1.2.5</span> <span class="title">Normal Distribution Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-8" class="internal"><span class="codenumber">1.2.6</span> <span class="title">Inversely Proportional Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#sec-1-2-FunctionsBusinessSetting-9" class="internal"><span class="codenumber">1.2.7</span> <span class="title">Logarithmic Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#rq-s1-2" class="internal"><span class="codenumber">1.2.8</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-2-FunctionsBusinessSetting.html#exercises-set-sec-1-2" class="internal"><span class="codenumber">1.2.9</span> <span class="title">Exercises  Functions in the Business Setting</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Introduction to Excel Spreadsheets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#BasicArithmeticSubsection" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Basic Arithmetic, show formulas and quick fill.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#RelAbsRefTitle" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Absolute and Relative Cell References</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#NamedCellSection" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Named Cell References</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#sec-1-3-IntroExcelSpreadsheets-6" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Getting Help</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#sec-1-3-IntroExcelSpreadsheets-7" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Other Details</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#rq-s1-3" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-3-IntroExcelSpreadsheets.html#exercises-set-sec-1-3" class="internal"><span class="codenumber">1.3.7</span> <span class="title">Exercises Introduction to Excel Spreadsheets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Graphing functions with Excel</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-3" class="internal"><span class="codenumber">1.4.1</span> <span class="title">A basic graph</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-4" class="internal"><span class="codenumber">1.4.2</span> <span class="title">A graph with parameters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Controlling the viewing window</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-6" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Graphing more than one function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#FormattingChart" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Formatting a chart</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#sec-1-4-GraphingFunctionsExcel-8" class="internal"><span class="codenumber">1.4.6</span> <span class="title">Online graphing tools: Wolfram Alpha</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#rq-s1-4" class="internal"><span class="codenumber">1.4.7</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-4-GraphingFunctionsExcel.html#exercises-set-sec-1-4" class="internal"><span class="codenumber">1.4.8</span> <span class="title">Exercises 1.4 Graphing functions with Excel</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Using Excel to find best-fit curves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Using Excel to find a best-fit line</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-3" class="internal"><span class="codenumber">1.5.1.1</span> <span class="title">Find the line</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-4" class="internal"><span class="codenumber">1.5.1.2</span> <span class="title">Produce the equation of the line</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#BestFitLinearCurve-5" class="internal"><span class="codenumber">1.5.1.3</span> <span class="title">Bring the equation of the line back to the chart</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-4" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Checking and improving our equations</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Fitting the Consumer Price Index (<abbr class="initialism">CPI</abbr>) to a best fitting curve; an extended example</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-3" class="internal"><span class="codenumber">1.5.3.1</span> <span class="title">Number of significant digits for equation constants</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-4" class="internal"><span class="codenumber">1.5.3.2</span> <span class="title">Setting the base point of a variable</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#sec-1-5-IntroBestFitCurves-5-5" class="internal"><span class="codenumber">1.5.3.3</span> <span class="title">Selecting data for one model</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#rq-s1-5" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-5-IntroBestFitCurves.html#exercises-set-sec-1-5" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Exercises: Using Excel to find best fit curves</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-1-6-GoalSeek.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Finding Numerical Solutions with Goal Seek</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-3" class="internal"><span class="codenumber">1.6.1</span> <span class="title">A linear example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-4" class="internal"><span class="codenumber">1.6.2</span> <span class="title">A quadratic example and concern with precision</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-5" class="internal"><span class="codenumber">1.6.3</span> <span class="title">More realistic examples: finding the intersection of two curves</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-6" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Using Goal Seek for financial computations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#sec-1-6-GoalSeek-7" class="internal"><span class="codenumber">1.6.5</span> <span class="title">Looking under the hood and understanding Goal Seek’s limitations</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#rq-s1-6" class="internal"><span class="codenumber">1.6.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-1-6-GoalSeek.html#exercises-set-sec-1-6" class="internal"><span class="codenumber">1.6.7</span> <span class="title">Finding Numerical Solutions with Goal Seek</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-2-BusinessApplications.html" class="internal"><span class="codenumber">2</span> <span class="title">Business Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Market Equilibrium Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#sec-2-1-MarketEquilibriumProblems-3" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Supply and Demand and Market Equilibrium</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#rq-s2-1" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-1-MarketEquilibriumProblems.html#exercises-set-sec-2-1" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercises 2.1 Equilibrium Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Modeling Revenue, Costs, and Profit</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-3" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Revenue and a review of demand price</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-4" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cost</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-5" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Profit</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-6" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Break-Even Point</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#sec-2-2-ModelingRevenueCostProfit-7" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Technical note</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#rq-s2-2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-2-ModelingRevenueCostProfit.html#exercises-set-sec-2-2" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Exercises: Modeling Revenue, Costs, and Profit</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Nonlinear Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#AlgebraicFunctions" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Algebraic Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#DiscontinuousFunctions" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Discontinuous Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#rq-s2-3" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-2-3-NonlinearFunctions.html#exercises-set-sec-2-3" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises 2.3 Nonlinear functions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-3-RateChangeDerivatives.html" class="internal"><span class="codenumber">3</span> <span class="title">Rate of Change and Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Marginal Functions and Difference Quotients</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-3" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Marginal Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-4" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Difference Quotients and Average Rate of Change</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#sec-3-1-MarginalFunctions-5" class="internal"><span class="codenumber">3.1.3</span> <span class="title">An Excel Trick for Difference Quotients</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#rq-s3-1" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-1-MarginalFunctions.html#exercises-set-sec-3-1" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Exercises: Marginal Functions and Difference Quotients Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Numeric Derivatives and Limits</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html#rq-s3-2" class="internal"><span class="codenumber">3.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-2-NumericDerivativesLimits.html#exercises-set-sec-3-2" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises: Numeric Derivatives and Limits</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Local Linearity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html#rq-s3-3" class="internal"><span class="codenumber">3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-3-LocalLinearity.html#exercises-set-sec-3-3" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises: Local Linearity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-4-Optimization.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Optimization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-4-Optimization.html#rq-s3-4" class="internal"><span class="codenumber">3.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-4-Optimization.html#exercises-set-sec-3-4" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises: Optimization</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html" class="internal"><span class="codenumber">3.5</span> <span class="title">An Introduction to Solver</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html#rq-s3-5" class="internal"><span class="codenumber">3.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-3-5-IntroductionSolver.html#exercises-set-sec-3-5" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises: An Introduction to Solver</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-4-SymbolicDifferentiation.html" class="internal"><span class="codenumber">4</span> <span class="title">Symbolic Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Elementary Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-2" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-3" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Derivatives of monomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-4" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Derivatives of Exponential Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#sec-4-1-ElementaryDerivatives-5" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Derivatives of Logarithmic Functions</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#rq-s4-1" class="internal"><span class="codenumber">4.1.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-1-ElementaryDerivatives.html#exercises-set-ElementaryDerivaitives" class="internal"><span class="codenumber">4.1.6</span> <span class="title">Exercises: Elementary Derivatives Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Derivative Rules for Combinations of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Derivatives of scalar products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-4" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Derivatives of sums and differences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Derivatives of products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#sec-4-2DerivativesCombinationFunctions-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Derivatives of quotients</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#rq-s4-2" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-2DerivativesCombinationFunctions.html#exercises-set-sec-4-2" class="internal"><span class="codenumber">4.2.6</span> <span class="title">Exercises: Derivative Rules for Combinations of Functions Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-3-ChainRule.html" class="internal"><span class="codenumber">4.3</span> <span class="title">The Chain Rule</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-3-ChainRule.html#rq-s4-3" class="internal"><span class="codenumber">4.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-3-ChainRule.html#exercises-set-sec-4-3" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises: The Chain Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Differentiation Using Computer Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html#rq-s4-4" class="internal"><span class="codenumber">4.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-4-DifferentiationComputerAlgebra.html#exercises-set-sec-4-4" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises: Differentiation Using Computer Algebra Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">The Second Derivative and Concavity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html#rq-s4-5" class="internal"><span class="codenumber">4.5</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-4-5-SecondDerivativeConcavity.html#exercises-set-sec-4-5" class="internal"><span class="codenumber">4.5</span> <span class="title">Exercises: The Second Derivative and Concavity Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-5-DIfferentiationApplications.html" class="internal"><span class="codenumber">5</span> <span class="title">Differentiation Techniques and Applications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Implicit Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html#rq-s5-1" class="internal"><span class="codenumber">5.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-1-ImplicitDifferentiation.html#exercises-set-sec-5-1" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises: Implicit Differentiation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-2-RelatedRates.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Related Rates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-2-RelatedRates.html#rq-s5-2" class="internal"><span class="codenumber">5.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-2-RelatedRates.html#exercises-set-sec-5-2" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises: Related Rates Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-5-3-Elasticity.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Elasticity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#sec-5-3-Elasticity-3" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Point Elasticity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#sec-5-3-Elasticity-4" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Arc Elasticity</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#rq-s5-3" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-5-3-Elasticity.html#exercises-set-sec-5-3" class="internal"><span class="codenumber">5.3.4</span> <span class="title">Exercises: Elasticity Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-6-FunctionsSeveralVariables.html" class="internal"><span class="codenumber">6</span> <span class="title">Functions of Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Evaluating and Graphing Functions of Several Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html#rq-s6-1" class="internal"><span class="codenumber">6.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-1-EvaluatingFunctionsSeveralVariables.html#exercises-set-sec-6-1" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises: Evaluating and Graphing Functions of Several Variables Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Wire Frames, Partial Derivatives, and Tangent Planes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-3" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Wire frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-4" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#sec-6-2-PartialDeriva8tives-5" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Tangent Planes and Linear Approximation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#rq-s6-2" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-2-PartialDeriva8tives.html#exercises-set-sec-6-2" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Exercises: Wire Frames, Partial Derivatives, and Tangent Planes Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Critical Points and Extrema</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-2" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Critical Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-3" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Second Partial Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#sec-6-3-CriticalPointsExtrema-4" class="internal"><span class="codenumber">6.3.3</span> <span class="title">Using the Discriminant to Test Critical Points</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#rq-s6-3" class="internal"><span class="codenumber">6.3.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-3-CriticalPointsExtrema.html#exercises-set-sec-6-3" class="internal"><span class="codenumber">6.3.5</span> <span class="title">Exercises: Critical Points and Extrema Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Optimization and Best Fitting Curves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html#rq-s6-4" class="internal"><span class="codenumber">6.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-6-4-OptimizationBestFitCurves.html#exercises-set-sec-6-4" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises: Optimization and Best Fitting Curves Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap-7-Intergration.html" class="internal"><span class="codenumber">7</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-1-RiemannSums.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Approximating Definite Integrals as Sums</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-1-RiemannSums.html#rq-s7-1" class="internal"><span class="codenumber">7.1</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-1-RiemannSums.html#exercises-set-sec-7-1" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises: Approximating Definite Integrals as Sums Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html" class="internal"><span class="codenumber">7.2</span> <span class="title">The Fundamental Theorem of Calculus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html#rq-s7-2" class="internal"><span class="codenumber">7.2</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-2-FundamentalTheoremCalculus.html#exercises-set-sec-7-2" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises: The Fundamental Theorem of Calculus Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Basic Antidifferentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html#rq-s7-3" class="internal"><span class="codenumber">7.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-3-BasicAntidifferentiation.html#exercises-set-sec-7-3" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises: Basic Antidifferentiation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Integration by Change of Variables or Substitution</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#sec-7-4-ChangeVariables-3" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Change of variables for indefinite integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#sec-7-4-ChangeVariables-4" class="internal"><span class="codenumber">7.4.2</span> <span class="title">Change of variables for definite integrals</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#rq-s7-4" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-4-ChangeVariables.html#exercises-set-sec-7-4" class="internal"><span class="codenumber">7.4.4</span> <span class="title">Exercises: Integration by Change of Variables or Substitution Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Integration using Computer Algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-3" class="internal"><span class="codenumber">7.5.1</span> <span class="title">Definite integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-4" class="internal"><span class="codenumber">7.5.2</span> <span class="title">Initial value problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#sec-7-5-IntroductionComputerAlgebra-5" class="internal"><span class="codenumber">7.5.3</span> <span class="title">Riemann Sums</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#rq-s7-5" class="internal"><span class="codenumber">7.5.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-5-IntroductionComputerAlgebra.html#exercises-set-sec-7-5" class="internal"><span class="codenumber">7.5.5</span> <span class="title">Exercises: Integration using Computer Algebra Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html" class="internal"><span class="codenumber">7.6</span> <span class="title">The Normal Distribution: An extended numeric example</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#sec-7-6-NormalDistribution-3" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Background from probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#sec-7-6-NormalDistribution-4" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#rq-s7-6" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-6-NormalDistribution.html#exercises-set-sec-7-6" class="internal"><span class="codenumber">7.6.4</span> <span class="title">Exercises: Normal Distribution Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Applications of the integral: Investment and depreciation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Basic Accumulation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Boundary value problems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#sec-7-7-InvestmentDepreciation-5" class="internal"><span class="codenumber">7.7.3</span> <span class="title">Depreciation</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#rq-s7-7" class="internal"><span class="codenumber">7.7.4</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-7-InvestmentDepreciation.html#exercises-set-sec-7-7" class="internal"><span class="codenumber">7.7.5</span> <span class="title">Exercises: Applications of the integral: Investment and depreciation Problems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html" class="internal"><span class="codenumber">7.8</span> <span class="title">Economics Applications of the Integral</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#sec-7-8-BusinessApplicationsIntegral-3" class="internal"><span class="codenumber">7.8.1</span> <span class="title">Consumer and Producer Surplus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#sec-7-8-BusinessApplicationsIntegral-4" class="internal"><span class="codenumber">7.8.2</span> <span class="title">Lorenz Curves and the Gini Index</span></a></div></li>
+<li class="toc-item toc-reading-questions"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#rq-s7-8" class="internal"><span class="codenumber">7.8.3</span> <span class="title">Reading Check</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-7-8-BusinessApplicationsIntegral.html#exercises-set-sec-7-8" class="internal"><span class="codenumber">7.8.4</span> <span class="title">Exercises Business Applications of the Integral Problems</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Spreadsheet Appendices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills.html" class="internal"><span class="codenumber">A</span> <span class="title">Spreadsheet Skills introduced in chapter 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-3.html" class="internal"><span class="codenumber">A.1</span> <span class="title">From Section 1-3 - Entering and Copying Formulas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-4.html" class="internal"><span class="codenumber">A.2</span> <span class="title">From Section 1.4 Graphing Functions in a Spreadsheet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-5.html" class="internal"><span class="codenumber">A.3</span> <span class="title">From Section 1.5 Adding and Using Best Fit Curves (Trendlines)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection1-6.html" class="internal"><span class="codenumber">A.4</span> <span class="title">From Section 1.6 Using Goal Seek</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SkillsChap1Google.html" class="internal"><span class="codenumber">A.5</span> <span class="title">Google Sheets Notes for Chapter 1 skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="SpreadSkills2.html" class="internal"><span class="codenumber">B</span> <span class="title">Spreadsheet Skills Introduced in Chapter 2</span></a></div></li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills3.html" class="internal"><span class="codenumber">C</span> <span class="title">Spreadsheet Skills introduced in chapter 3</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection3-1.html" class="internal"><span class="codenumber">C.1</span> <span class="title">From Section 3.1- Comparing Functions and Related Marginal Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction1-IncreseBy1" class="internal"><span class="codenumber">C.1.1</span> <span class="title">Marginal Functions with <span class="process-math">\(q\)</span> increasing by 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction2-NotIncreseBy1" class="internal"><span class="codenumber">C.1.2</span> <span class="title">Marginal Functions using Columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-1.html#MarginalFunction3-QuickFill" class="internal"><span class="codenumber">C.1.3</span> <span class="title">Marginal Functions using Quick Fill</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection3-2.html" class="internal"><span class="codenumber">C.2</span> <span class="title">From Section 3.2- Comparing Functions and Numeric Derivatives</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#DerivativeByIntuitiveDef" class="internal"><span class="codenumber">C.2.1</span> <span class="title">Derivatives from the Intuitive Approach</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#NumDerivIntuitiveLimits" class="internal"><span class="codenumber">C.2.2</span> <span class="title">Derivatives from Numerical Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#NumericalDerivativeAppend" class="internal"><span class="codenumber">C.2.3</span> <span class="title">Graphing a Function with its Numeric Derivative</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection3-2.html#DerivativeFormulasFromTrendlines" class="internal"><span class="codenumber">C.2.4</span> <span class="title">Using Trendline to find Derivative Formulas</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection3-3.html" class="internal"><span class="codenumber">C.3</span> <span class="title">From Section 3.3- Building Linear Approximations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection3-5.html" class="internal"><span class="codenumber">C.4</span> <span class="title">From Section 3.5 - An introduction to Solver 3.5</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SheetsNotesCh3.html" class="internal"><span class="codenumber">C.5</span> <span class="title">Google Sheets Notes for Chapter 3 Skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="SpreadSkills6.html" class="internal"><span class="codenumber">D</span> <span class="title">Spreadsheet Skills introduced in chapter 6</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="SpreadSkillsSection6-1.html" class="internal"><span class="codenumber">D.1</span> <span class="title">From Section 6.1 - Evaluating and graphing functions of several varaibles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-2" class="internal"><span class="codenumber">D.1.1</span> <span class="title"><dfn class="terminology">Evaluating a function of several variables</dfn></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-3" class="internal"><span class="codenumber">D.1.2</span> <span class="title"><dfn class="terminology">Making a table for a function of 2 variable</dfn></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="SpreadSkillsSection6-1.html#SpreadSkillsSection6-1-4" class="internal"><span class="codenumber">D.1.3</span> <span class="title"><dfn class="terminology">Turning a table of a function of 2 variables into a surface graph</dfn></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SpreadSkillsSection6-3.html" class="internal"><span class="codenumber">D.2</span> <span class="title">From Section 6.3 - Critical points and extrema</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="SheetsNotesCh6.html" class="internal"><span class="codenumber">D.3</span> <span class="title">Google Sheets Notes for Chapter 6 Skills</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="SpreadSkills7.html" class="internal"><span class="codenumber">E</span> <span class="title">Spreadsheet Skills introduced in chapter 7</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-7-8-BusinessApplicationsIntegral"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.8</span><span class="space"> </span><span class="title">Economics Applications of the Integral</span>
+</h2>
+<section class="introduction" id="sec-7-8-BusinessApplicationsIntegral-2"><div class="para" id="sec-7-8-BusinessApplicationsIntegral-2-1">
+<a class="external" href="external/Examples/Section-7-8-Examples.xlsx" target="_blank">Link to worksheets used in this section</a><a class="xref" id="sec-7-8-BusinessApplicationsIntegral-2-1-2" href="" data-knowl="./knowl/fn/sec-7-8-BusinessApplicationsIntegral-2-1-2.html" title="Footnote 7.8.1"><sup> 1 </sup></a>
+</div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-2-2">We have looked at the definite integral as the signed area under a curve. This lets us compute total profit, or revenue, or cost, from the related marginal functions. We have looked at a number of applications where this was interpreted as an accumulation over time, including total production of an oil well and present value of a revenue stream. For some applications we want to look at the area between two curves. For example, considering profit as the area between the cost and revenue curves.</div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-2-3">In this section we will look at more applications from finance and economics where the concepts can easily be described in terms as of the area between curves.</div></section><section class="subsection" id="sec-7-8-BusinessApplicationsIntegral-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.8.1</span><span class="space"> </span><span class="title">Consumer and Producer Surplus</span>
+</h3>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-2">When we looked at supply and demand curves we found an equilibrium point where the amount being offered for sale was equal to the amount people wanted to buy.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-8-1.png" class="contained"></div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-4">However, in that model, there were people who were willing to sell for less than the equilibrium price and people who were willing to buy for more than the equilibrium price. These people got an exceptionally good deal in the transaction. We would like to measure that benefit, since we can think of it as the extra profit the suppliers and buyers make on the transaction. We note that each side will have an incentive to maximize that benefit.</div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-5">Focus first on the consumer side.  The area under the demand function, from 0 to the quantity sold, measures the consumers’ willingness to spend. The area in the rectangle with that same base and height equal to the sale price measures the actual consumer expenditure. The difference between the two is a quantity we will call <dfn class="terminology">consumer surplus</dfn>.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-8-2.png" class="contained"></div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-7">In calculus terms:</div>
+<article class="assemblage assemblage-like" id="sec-7-8-BusinessApplicationsIntegral-3-8"><div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-8-1"><div class="displaymath process-math">
+\begin{equation*}
+\text{Willingness To Spend} = \int_0^{q_s} \text{demand function}(q)\, dq
+\end{equation*}
+</div></div>
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-8-2"><div class="displaymath process-math">
+\begin{equation*}
+\text{consumer expenditure} = \int_0^{q_s} p_s \, dq
+\end{equation*}
+</div></div>
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-8-3"><div class="displaymath process-math">
+\begin{equation*}
+\text{consumer surplus}= \int_0^{q_s} (\text{demand function}(q)- p_s )\,  dq
+\end{equation*}
+</div></div></article><div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-9">As long as the price stays on the demand function curve, a lower price means a greater quantity sold, and a greater consumer surplus.</div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-10">In a similar manner, we can focus on the producer side. The area under the supply function, from 0 to the quantity sold, measures the producers’ need for revenue. The area in the rectangle with that same base and height equal to the sale price measures the actual producer revenue. The difference between the two is a quantity we will call <dfn class="terminology">producer surplus</dfn>.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-8-3.png" class="contained"></div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-12">In calculus terms:</div>
+<article class="assemblage assemblage-like" id="sec-7-8-BusinessApplicationsIntegral-3-13"><div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-13-1"><div class="displaymath process-math">
+\begin{equation*}
+\text{Needed revenue}= \int_0^{q_s} \text{supply function}(q)\, dq
+\end{equation*}
+</div></div>
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-13-2"><div class="displaymath process-math">
+\begin{equation*}
+\text{producer revenue}= \int_0^{q_s} p_s \,  dq
+\end{equation*}
+</div></div>
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-13-3"><div class="displaymath process-math">
+\begin{equation*}
+\text{producer surplus}= \int_0^{q_s} ( p_s-\text{supply function}(q)) \, dq
+\end{equation*}
+</div></div></article><div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-14">As long as the price stays on the supply function curve, a higher price means a greater quantity sold, and a greater producer surplus. Consider first an example where the supply and demand functions are simple enough that the computations can all be done by hand.</div>
+<article class="example example-like" id="sec-7-8-BusinessApplicationsIntegral-3-15"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Producer surplus with linear functions.</span>
+</h4>
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-15-2-1">
+<div class="para">I am trying to sell widgets and have determined the supply and demand functions to be:</div>
+<div class="displaymath process-math" id="sec-7-8-BusinessApplicationsIntegral-3-15-2-1-1">
+\begin{align*}
+\text{supply price}(\quantity) \amp = 4+\quantity\\
+\text{demand price}(\quantity) \amp = 106- 2*\quantity\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-15-2-2">Find the equilibrium price and quantity. Find the producer and consumer surpluses when the shirts are sold at the equilibrium price. If the producers form a cartel, find the price that maximizes producer surplus.</div>
+<div class="solutions"><details id="sec-7-8-BusinessApplicationsIntegral-3-15-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-15-3-1">
+<div class="para">By setting supply price and demand price equal to each other we find an equilibrium quantity of 34 and an equilibrium price of 38. The formulas for the consumer and producer surpluses become:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{consumer surplus}= \int_0^{34} ((106-2q)-38)\,  dq
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{producer surplus}= \int_0^{34} ( 38-(4+q)) \, dq
+\end{equation*}
+</div>
+</div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-15-3-2">To evaluate the integrals we can notice that each is a triangle of base 34. One has height of 34 and the other has a height of 68. Using geometry, the consumer surplus is $1,156 and the producer surplus is $578.</div> <div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-15-3-3">
+<div class="para">To find the maximum producer surplus, we need to turn the endpoint into a variable. If the producers act as a cartel,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{producer surplus}= \int_0^x ( (106-2x)-(4+q))\,  dq=\int_0^x ( 102-2x-q)\,  dq
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+=\left.\left((102-2x)q-\frac{q^2}{2}\right) \right|_0^x=((102-2x)x-\frac{x^2}{2}=102x-\frac{5x^2}{2}
+\end{equation*}
+</div>
+</div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-15-3-4">We can find the maximum of this by taking its derivative and setting it equal to 0. The maximum occurs when <span class="process-math">\(x=\frac{102}{5}=20.4\text{.}\)</span>  At that point the producer surplus is $1,040.40.</div>
+</div></details></div></article><div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-16">We now try an example where we need other techniques to evaluate the integrals.</div>
+<article class="example example-like" id="ex-surplus-numeric"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Producer surplus with numeric integration.</span>
+</h4>
+<div class="para logical" id="ex-surplus-numeric-2-1">
+<div class="para">A store trying to sell t-shirts on campus has determined the supply and demand functions to be:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{supply price}(\quantity)=5+\ln (\quantity+10)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{demand price}(\quantity)=10+100/(\quantity+2)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="ex-surplus-numeric-2-2">Find the equilibrium price and quantity. Find the producer and consumer surpluses when the shirts are sold at the equilibrium price.</div>
+<div class="solutions"><details id="ex-surplus-numeric-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="ex-surplus-numeric-3-1">We load the supply and demand price functions into excel and use Goal Seek to find an equilibrium price. Rounding to the nearest unit for quantity and cent for price, we have an equilibrium price of $10.45 for a quantity of 222 shirts.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/sec7-8-4.png" class="contained"></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/sec7-8-5.png" class="contained"></div>
+</div></div> <div class="para logical" id="ex-surplus-numeric-3-3">
+<div class="para">We then substitute these values into the equations for consumer and producer surplus.</div>
+<div class="displaymath process-math" id="ex-surplus-numeric-3-3-1">
+\begin{align*}
+\text{consumer surplus}\amp = \int_0^{q_s} (\text{demand function}(q)- p_s )\,  dq\\
+\text{consumer surplus}\amp = \int_0^{222} ((10+100/(\quantity+2))- 10.45)\,  dq\\
+\text{producer surplus}\amp =\int_0^{q_s} ( p_s-\text{supply function}(q)) \, dq\\
+\text{producer surplus}\amp =\int_0^{222} ( 10.45-(5+\ln (\quantity+10))) \, dq\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="ex-surplus-numeric-3-4">To evaluate these integrals we either use a Riemann sum approximation, like the one found on the example worksheet, or use Wolfram Alpha. In either case, rounded to the nearest dollar, we have a consumer surplus of $372 and a producer surplus of $191.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/sec7-8-6.png" class="contained"></div>
+<div class="sbspanel top" style="width:44.4444444444444%;"><img src="external/images/sec7-8-7.png" class="contained"></div>
+</div></div>
+</div></details></div></article><div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-18">The sum of the consumer surplus and the producer surplus is referred to as the <dfn class="terminology">total social gain</dfn>. As we looked at consumers’ surplus, we assumed that the sales were determined by supply and the price-quantity point was on the supply curve. Similarly, when looking at producers’ surplus we assume price is set by demand and the price-quantity point was on the demand curve. If both sides are made up of many individuals acting independently, the price-quantity point is the equilibrium point, which is on both curves. Selling at that point also maximizes the total social gain.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec7-8-8.png" class="contained"></div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-20">If however, either the producers or consumers can organize and act as a unit, they can form a cartel and limit the amount sold. If the producers form a cartel, they can lower production and raise the price.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec7-8-9.png" class="contained"></div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-22">As we can see from the picture, this always lowers the total social gain. However for some reduction of quantity the producers’ surplus is increased. In the equation for producer surplus the price <span class="process-math">\(p_s\)</span> is <span class="process-math">\(\text{demand function} (q_s)\)</span> rather than <span class="process-math">\(\text{supply function} (q_s)\text{.}\)</span> If the quantity goes down too far the producer surplus will also go down.</div>
+<article class="example example-like" id="sec-7-8-BusinessApplicationsIntegral-3-23"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Computing loss of social gain.</span>
+</h4>
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-3-23-2-1">
+<div class="para">A store trying to sell t-shirts on campus has determined the supply and demand functions to be:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{supply price}(\quantity)=5+\ln (\quantity+10)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{demand price}(\quantity)=10+100/(\quantity+2)
+\end{equation*}
+</div>
+</div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-23-2-2">The store owner has a monopoly on campus and decides to limit the quantity sold to 200 shirts and charge what the market will bear. Find the price, the producer surplus, and consumer surpluses. Find these numbers if the owner decides to limit sales to 50. How many shirts should the owner sell at what price to maximize producer surplus? If producer surplus is maximized, how much is the total social gain reduced?</div>
+<div class="solutions"><details id="sec-7-8-BusinessApplicationsIntegral-3-23-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-23-3-1">The formulas involved for supply and demand are the same ones we used in <a href="" class="xref" data-knowl="./knowl/xref/ex-surplus-numeric.html" title="Example 7.8.2: Producer surplus with numeric integration">Example 7.8.2</a>. With a slight modification if the worksheet from that example we can set it to compute the Riemann sums approximating the surpluses. In particular, we use the demand function for finding the height of producer surplus.  (See cell D7.)</div> <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/sec7-8-10.png" class="contained"></div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-23-3-3">If we only want to sell 200 shirts, we can raise the price to from $10.45 to $10.50. The producer surplus rises from $191 to $199.  However the consumer surplus falls from $372 to $362.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-8-11.png" class="contained"></div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-23-3-5">If we only want to sell 50 shirts, we can raise the price from$10.45 to $11.92. The producer surplus falls from $191 to $174.  The consumer surplus falls from $372 to $230.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-8-12.png" class="contained"></div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-23-3-7">We can use solver to maximize the Producer surplus by varying the quantity. A quantity of 140 maximizes the producer surplus at $210, but is doing that the total social gain is down to $537 from $563.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-8-13.png" class="contained"></div>
+</div></details></div></article><div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-24">Similarly, if the consumers form a cartel, they can artificially reduce the demand. Since they will then pay the supply price the total social gain will be decreased, but the consumers’ surplus may be increased. In this case the consumer surplus is the integral of the difference between the demand function and the supply price of the quantity that will be sold.</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec7-8-14.png" class="contained"></div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-3-26">In the example we just looked at, both the supply and demand curves have a small slope, so the market is quite elastic from both the producers and consumers point of view. Is such a case there is less incentive to form a cartel. In other markets, like gas and oil, where the market is more inelastic, there is more incentive to engage in monopolistic practices.</div></section><section class="subsection" id="sec-7-8-BusinessApplicationsIntegral-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.8.2</span><span class="space"> </span><span class="title">Lorenz Curves and the Gini Index</span>
+</h3>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-2">A question that arises in economics looks at the equity of income or wealth distribution in a country. In standard economic theories either too much or too little equity indicates a lack of opportunity and is a hindrance to growth. However, before being able to address the advantages or disadvantages of a level of inequity we need to be able to quantify the level of equity or inequity. The standard method is to use the <dfn class="terminology">Lorenz curve</dfn> and the <dfn class="terminology">Gini index</dfn>.</div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-3">The Lorenz curve is defined by a function <span class="process-math">\(L(x)\text{,}\)</span> with <span class="process-math">\(0\leq x\leq 1\text{,}\)</span> that measures the proportion of something is held by the bottom <span class="process-math">\(x\)</span> proportion of the population. Thus, if <span class="process-math">\(L(0.2)=.1\text{,}\)</span> for the Lorenz function for income in a country, then the bottom 20% of the population earns 10% of the income in the country. Since, under usual definitions, a person cannot have negative income, the Lorenz functions are nonnegative and increasing. Since the Lorenz functions are measured from the bottom, we also have <span class="process-math">\(L(x)\leq x\)</span> for all <span class="process-math">\(x\text{.}\)</span>
+</div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-4">We can make a few more observations. The population as a whole has the entire income of the population. An empty set of the population has none of the population’s income. Any bottom segment will have nonnegative income. In formulas these observations become <span class="process-math">\(L(1)=1\text{,}\)</span> <span class="process-math">\(L(0)=0\text{,}\)</span> and <span class="process-math">\(L(x)\ge 0\text{,}\)</span> for all <span class="process-math">\(x\text{,}\)</span> respectively.</div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-5">If we had perfect equity, our Lorenz function would be <span class="process-math">\(L(x)=x\text{.}\)</span> Any Lorenz curve we find for a real population will be below this curve. The Gini index (or Gini coefficient) measures the percentage that a real Lorenz curve is below the ideal curve.</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-8-15.png" class="contained"></div>
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-4-7">
+<div class="para">Computationally,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+G=\frac{\int_0^1 (x-L(x))dx}{\int_0^1 x  dx}=2\int_0^1 (x-L(x))dx\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-8">In practice this number is often multiply by 100, reporting the percentage (0 to 100) rather than proportion (0 to 1) of the area under the ideal function and above the measured function.</div>
+<article class="example example-like" id="sec-7-8-BusinessApplicationsIntegral-4-9"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Gini index with a formula for income distribution.</span>
+</h4>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-9-2-1">The Lorenz curve for income in a certain country is given by <span class="process-math">\(L(x)=.8x^3+.2x\text{.}\)</span>  What proportion of the income is earned by the bottom half of the population? Find the Gini index.</div>
+<div class="solutions"><details id="sec-7-8-BusinessApplicationsIntegral-4-9-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-4-9-3-1">
+<div class="para">To find the proportion earned by the bottom half of the population we substitute 0.5 in the equation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L(0.5)=(0.8) (0.5)^3+(0.2)(0.5)=0.1+0.1=0.2\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-7-8-BusinessApplicationsIntegral-4-9-3-2">
+<div class="para">Thus the bottom 50% of the population earns 20.% of the total income. To compute the Gini index, we compute:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+G=2\int_0^1 (x-0.8x^3-0.2x)dx=(2)(0.4x^2-0.2x^4 ) |_0^1=.4\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-9-3-3">So the Gini index in this hypothetical country is 40. To put this number in context, the reported Gini index for the United States in 2009 was 46.8.</div>
+</div></details></div></article><div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-10">In practice, the Gini index is an application where a numeric approximation of an integral is the method most likely to be used. We are unlikely to get a formula for income distribution. Instead we are likely to find data points. Since there is no good model for how the income will be distributed, we can simply connect the points with line segments and find the area using the area formula for a trapezoid.</div>
+<article class="example example-like" id="sec-7-8-BusinessApplicationsIntegral-4-11"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gini index with a chart for income distribution.</span>
+</h4>
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-11-2-1">We have the following data from the census bureau on income distribution in the US in 2008. Compute the Gini index.</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Population %tile</td>
+<td class="c m b1 r0 l0 t3 lines">0</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines">60</td>
+<td class="c m b1 r0 l0 t3 lines">80</td>
+<td class="c m b1 r0 l0 t3 lines">90</td>
+<td class="c m b1 r0 l0 t3 lines">100</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Income %tile</td>
+<td class="c m b2 r0 l0 t0 lines">0</td>
+<td class="c m b2 r0 l0 t0 lines">3.4</td>
+<td class="c m b2 r0 l0 t0 lines">12.0</td>
+<td class="c m b2 r0 l0 t0 lines">26.7</td>
+<td class="c m b2 r0 l0 t0 lines">50.0</td>
+<td class="c m b2 r0 l0 t0 lines">78.5</td>
+<td class="c m b2 r0 l0 t0 lines">100</td>
+</tr>
+</table></div>
+<div class="solutions"><details id="sec-7-8-BusinessApplicationsIntegral-4-11-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-11-3-1">We recall that the area of a trapezoid is (width)(average height). We put the data into a spreadsheet.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec7-8-16.png" class="contained"></div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-11-3-3">Then we evaluate the formulas.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec7-8-17.png" class="contained"></div> <div class="para" id="sec-7-8-BusinessApplicationsIntegral-4-11-3-5">In percentages, the Gini index is approximated at 45.</div>
+</div></details></div></article></section><section class="reading-questions" id="rq-s7-8"><h3 class="heading hide-type">
+<span class="type">Reading Questions</span><span class="space"> </span><span class="codenumber">7.8.3</span><span class="space"> </span><span class="title">Reading Check</span>
+</h3>
+<article class="exercise exercise-like" id="Reading_Check_Sec7.8"><h4 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Reading check, Economics Applications of the integral.</span>
+</h4>
+<div id="webwork-35" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="35" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwicGFyc2VyQ2hlY2tib3hMaXN0LnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoJ051bWVyaWMnKTsgICAgICAgICAgICAkY2hlY2tzID0gQ2hlY2tib3hMaXN0KAogICAgICAgICAgICAgIFsKICAgICAgICAgICAgICAgIFsKIkFjY3VtdWxhdGluZyBhIGZ1bmN0aW9uIG92ZXIgdGltZSBpcyBzaW1wbHkgdGFraW5nIGEgZGVmaW5pdGUgaW50ZWdyYWwuICIsIAoiV2UgY2FuIGFjY3VtdWxhdGUgbWFyZ2luYWwgY29zdCBvdmVyIHRpbWUgdG8gZmluZCBjaGFuZ2UgaW4gY29zdC4gIiwgCiJUaGUgZXhhbXBsZSBvbiBvaWwgcHJvZHVjdGlvbiB0b29rIHRoZSBpbnRlZ3JhbCBvZiBhbiBleHBvbmVudGlhbCBmdW5jdGlvbi4gIiwgCiJ0byBmaW5kIHRoZSBjdXJyZW50IHZhbHVlIG9mIGEgcmV2ZW51ZSBzdHJlYW0gd2UgdGFrZSB0aGUgaW50ZWdyYWwgb2YgdGhlIHJldmVudWUgc3RyZWFtIHRpbWVzIGEgZGlzY291bnRpbmcgZnVuY3Rpb25zIHRoYXQgcmVwcmVzZW50cyBob3cgbXVjaCBhIGZ1dHVyZSBwYXltZW50IGlzIHdvcnRoIHRvZGF5LiAgIiwgCiJJZiB3ZSBjYW4gc2V0IHVwIHRoZSBpbnRlZ3JhbCBvZiBhbiBhcHBsaWNhdGlvbiwgd2UgY2FuIHVzZSBDQVMgdG8gZXZhbHVhdGUgdGhlIGludGVncmFsLiAiLCAKCiJUaGlzIHNlY3Rpb24gZXhwbGFpbmVkIGhvdyB0byB1c2UgY2FsY3VsdXMgdG8gcHJlZGljdCB0aGUgZnV0dXJlIHZhbHVlIG9mIHRoZSBzdG9jayBtYXJrZXQuICIsIAogICAgXSwKICAgICAgICAgICAgICAgIk5vbmUgb2YgdGhlIGFib3ZlIgogICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgWzAsIDEsIDIsIDMsIDRdLAogICAgICAgICAgICAgIGxhYmVscyA9PiAiQUJDIiwgICAjICJhYmMiLCAiMTIzIiwgInJvbWFuIiwgIlJvbWFuIgogICAgICAgICAgICApOwoKQkVHSU5fUEdNTApUaGlzIHF1ZXN0aW9uIGNoZWNrcyB5b3VyIHJlYWRpbmcgY29tcHJlaGVuc2lvbiBvZiB0aGUgbWF0ZXJpYWwgaXMgc2VjdGlvbiA3LjgsIEVjb25vbWljcyBBcHBsaWNhdGlvbnMgb2YgdGhlIGludGVncmFsLCBvZiBCdXNpbmVzcyBDYWxjdWx1cyB3aXRoIEV4Y2VsLiBCYXNlZCBvbiB5b3VyIHJlYWRpbmcsIHNlbGVjdCBhbGwgc3RhdGVtZW50cyB0aGF0IGFyZSBjb3JyZWN0LiAgVGhlcmUgbWF5IGJlIG1vcmUgdGhhbiBvbmUgY29ycmVjdCBhbnN3ZXIuIFRoZSBzdGF0ZW1lbnRzIG1heSBhcHBlYXIgaW4gd2hhdCBzZWVtcyB0byBiZSBhIHJhbmRvbSBvcmRlci4KCltfXXskY2hlY2tzfXs1fQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw==" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-35')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-35-1-1-1">This question checks your reading comprehension of the material is section 7.8, Economics Applications of the integral, of Business Calculus with Excel. Based on your reading, select all statements that are correct.  There may be more than one correct answer. The statements may appear in what seems to be a random order.</div> <div class="para logical" id="extracted-webwork-35-1-1-2"><ol class="upper-alpha">
+<li id="extracted-webwork-35-1-1-2-1-1"><div class="para" id="extracted-webwork-35-1-1-2-1-1-1">This section explained how to use calculus to predict the future value of the stock market.</div></li>
+<li id="extracted-webwork-35-1-1-2-1-2"><div class="para" id="extracted-webwork-35-1-1-2-1-2-1">If we can set up the integral of an application, we can use CAS to evaluate the integral.</div></li>
+<li id="extracted-webwork-35-1-1-2-1-3"><div class="para" id="extracted-webwork-35-1-1-2-1-3-1">We can accumulate marginal cost over time to find change in cost.</div></li>
+<li id="extracted-webwork-35-1-1-2-1-4"><div class="para" id="extracted-webwork-35-1-1-2-1-4-1">The example on oil production took the integral of an exponential function.</div></li>
+<li id="extracted-webwork-35-1-1-2-1-5"><div class="para" id="extracted-webwork-35-1-1-2-1-5-1">Accumulating a function over time is simply taking a definite integral.</div></li>
+<li id="extracted-webwork-35-1-1-2-1-6"><div class="para" id="extracted-webwork-35-1-1-2-1-6-1">to find the current value of a revenue stream we take the integral of the revenue stream times a discounting functions that represents how much a future payment is worth today.</div></li>
+<li id="extracted-webwork-35-1-1-2-1-7"><div class="para" id="extracted-webwork-35-1-1-2-1-7-1">None of the above</div></li>
+</ol></div>
+</div>
+</div></article></section><section class="exercises" id="exercises-set-sec-7-8"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">7.8.4</span><span class="space"> </span><span class="title">Exercises Business Applications of the Integral Problems</span>
+</h3>
+<div class="exercisegroup" id="exercises-set-sec-7-8-2">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="exercises-set-sec-7-8-2-1"><div class="para" id="exercises-set-sec-7-8-2-1-1">For the following exercises, assume we have a free market and that goods are sold at market equilibrium. Find the consumer surplus, producer surplus, and total social gain.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercises-set-sec-7-8-2-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-7-8-2-2-1-1">
+<span class="process-math">\(\Sprice(q)= 50+q/2\)</span> and <span class="process-math">\(\Dprice(q)= 150-q/5\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises-set-sec-7-8-2-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="exercises-set-sec-7-8-2-2-2-1">The two curves intersect at the point of market equilibrium, <span class="process-math">\(\left({\frac{1000}{7},\frac{850}{7}}\right)\text{.}\)</span>
+</div> <div class="para logical" id="exercises-set-sec-7-8-2-2-2-2"><div class="displaymath process-math" id="exercises-set-sec-7-8-2-2-2-2-1">
+\begin{align*}
+\text{ProducerSurplus}\amp =\int_0^{1000/7}\left({\frac{850}{7}}\right)-\left({50+\frac{x}{2}}\right)\,dx=5102.04\\
+\text{ConsumerSurplus}\amp =\int_0^{1000/7}\left({150-\frac{x}{5}}\right)-\left({\frac{850}{7}}\right)\,dx=2040.82\\
+\text{TotalSocialGain}\amp =\text{ProducerSurplus}+\text{ConsumerSurplus}=7142.86\text{.}
+\end{align*}
+</div></div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-2-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-7-8-2-3-1-1">
+<span class="process-math">\(\Sprice(q)=\ln (q+10)\)</span> and <span class="process-math">\(\Dprice(q)= 100-q\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-2-4"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-7-8-2-4-1-1">
+<span class="process-math">\(\Sprice(q)= 50(1-(0.99)^q)\)</span> and <span class="process-math">\(\Dprice(q)= 100(0.99)^q\text{.}\)</span>
+</div>
+<div class="solutions"><details id="exercises-set-sec-7-8-2-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="exercises-set-sec-7-8-2-4-2-1">The two curves intersect at the point of market equilibrium, <span class="process-math">\((109.31, 33.33)\text{.}\)</span>
+</div> <div class="para logical" id="exercises-set-sec-7-8-2-4-2-2"><div class="displaymath process-math" id="exercises-set-sec-7-8-2-4-2-2-1">
+\begin{align*}
+\ProducerSurplus\amp =\int_0^{109.31}(33.33)-\left({50(1-(0.99)^q)}\right)\,dx=1494.79\\
+\ConsumerSurplus\amp =\int_0^{109.31}\left({100(0.99)^q}\right)-33.33)\,dx=2989.58\\
+\TotalSocialGain\amp=\ProducerSurplus+\ConsumerSurplus=4484.37\text{.}
+\end{align*}
+</div></div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-2-5"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="exercises-set-sec-7-8-2-5-1-1">
+<span class="process-math">\(\Sprice(q)= 50(1-(0.95)^{q/10}\)</span> and <span class="process-math">\(\Dprice(q)= 150(0.95)^{q/10}\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-2-6"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para logical" id="exercises-set-sec-7-8-2-6-1-1">
+<div class="displaymath process-math">
+\begin{equation*}
+\Sprice(q)=\begin{cases} 5\amp q\le 10\\
+q^2/20\amp q \gt 10\\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Dprice(q)=\begin{cases}
+100\amp q\le 10\\
+110-q\amp q\gt 10\\
+\end{cases}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="exercises-set-sec-7-8-2-6-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="exercises-set-sec-7-8-2-6-2-1">The two curve intersect at the point of market equilibrium, <span class="process-math">\((37.958, 72.042)\text{.}\)</span>
+</div> <div class="para logical" id="exercises-set-sec-7-8-2-6-2-2">
+<div class="displaymath process-math">
+\begin{equation*}
+\ProducerSurplus=\int_0^{37.958}(72.042)-(\Sprice(q))\,dx=1789.732\text{.}
+\end{equation*}
+</div>
+<div class="para">The integral needs to be done in two parts with the break at 10.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ConsumerSurplus=\int_0^{37.958}\Dprice(q)-72.042\,dx=670.405\text{.}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\TotalSocialGain=\ProducerSurplus+\ConsumerSurplus=2460.137\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-2-7"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para logical" id="exercises-set-sec-7-8-2-7-1-1">
+<div class="para">
+<span class="process-math">\(\Sprice(q)= q/2\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Dprice(q)=\begin{cases}
+200\amp q\le 10\\
+250*.8^{q/10}\amp q\gt 10\\
+\end{cases}\text{.}
+\end{equation*}
+</div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercises-set-sec-7-8-3"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-8-3-1-1">Assume <span class="process-math">\(\Sprice(q)= 30+q\)</span> and <span class="process-math">\(\Dprice(q)= 170-q\text{.}\)</span>
+</div> <div class="para logical" id="exercises-set-sec-7-8-3-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-8-3-1-2-1-1"><div class="para" id="exercises-set-sec-7-8-3-1-2-1-1-1">Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</div></li>
+<li id="exercises-set-sec-7-8-3-1-2-1-2"><div class="para" id="exercises-set-sec-7-8-3-1-2-1-2-1">If the producers can form a cartel and restrict the available quantity to 50, selling at the supply price for 50, what are the consumer surplus, producer surplus, and total social gain?</div></li>
+<li id="exercises-set-sec-7-8-3-1-2-1-3"><div class="para" id="exercises-set-sec-7-8-3-1-2-1-3-1">Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</div></li>
+</ol></div>
+<div class="solutions"><details id="exercises-set-sec-7-8-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-7-8-3-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-8-3-2-1-1-1">
+<div class="para" id="exercises-set-sec-7-8-3-2-1-1-1-1">The two curve intersect at the point of market equilibrium, <span class="process-math">\((70, 100)\text{.}\)</span>
+</div>
+<div class="para logical" id="exercises-set-sec-7-8-3-2-1-1-1-2"><div class="displaymath process-math" id="exercises-set-sec-7-8-3-2-1-1-1-2-1">
+\begin{align*}
+\ProducerSurplus \amp =\int_0^{70}(100)-(30+q)\,dx=2450\\
+\ConsumerSurplus \amp =\int_0^{70}(170-q)-100\,dx=2450\\
+\TotalSocialGain \amp =\ProducerSurplus+\ConsumerSurplus=4900\text{.}
+\end{align*}
+</div></div>
+</li>
+<li id="exercises-set-sec-7-8-3-2-1-1-2"><div class="para logical" id="exercises-set-sec-7-8-3-2-1-1-2-1"><div class="displaymath process-math" id="exercises-set-sec-7-8-3-2-1-1-2-1-1">
+\begin{align*}
+\Dprice(50) \amp =120\\
+\ProducerSurplus \amp = \int_0^{50}(120)-(30+q)\,dx=3250\\
+\ConsumerSurplus \amp = \int_0^{50}(170-q)-120\,dx=1250\\
+\TotalSocialGain \amp = \ProducerSurplus+\ConsumerSurplus=4500\text{.}
+\end{align*}
+</div></div></li>
+<li id="exercises-set-sec-7-8-3-2-1-1-3">
+<div class="para logical" id="exercises-set-sec-7-8-3-2-1-1-3-1">
+<div class="para">The formula for the producer surplus at x is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^x \Dprice(t)-\Sprice(x)\,dx\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="exercises-set-sec-7-8-3-2-1-1-3-2">
+<div class="para">In our case we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^x (170-t)-(30+x) \,dt=\int_0^x(140-t-x) \,dt\text{.}
+\end{equation*}
+</div>
+<div class="para">We note that x is a constant for our integration.  Thus, thus we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left.\left({140t-\frac{t^2}{2}-xt}\right)\right|_0^x=140x-\frac{3x^2}{2}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="exercises-set-sec-7-8-3-2-1-1-3-3">The Maximum Producer surplus is 3266.67, achieved when q is 46.67</div>
+</li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-4"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-8-4-1-1">Assume SupplyPrice(q)= 10+q/2 and DemandPrice(q)= 110-q/3.</div> <div class="para logical" id="exercises-set-sec-7-8-4-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-8-4-1-2-1-1"><div class="para" id="exercises-set-sec-7-8-4-1-2-1-1-1">Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</div></li>
+<li id="exercises-set-sec-7-8-4-1-2-1-2"><div class="para" id="exercises-set-sec-7-8-4-1-2-1-2-1">If the producers can form a cartel and restrict the available quantity to 400, selling at the supply price for 400, what are the consumer surplus, producer surplus, and total social gain?</div></li>
+<li id="exercises-set-sec-7-8-4-1-2-1-3"><div class="para" id="exercises-set-sec-7-8-4-1-2-1-3-1">Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</div></li>
+</ol></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-5"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-8-5-1-1">Assume <span class="process-math">\(SupplyPrice(q)= 10+q^2\)</span> and <span class="process-math">\(DemandPrice(q)= 210-q^2\text{.}\)</span>
+</div> <div class="para logical" id="exercises-set-sec-7-8-5-1-2"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-8-5-1-2-1-1"><div class="para" id="exercises-set-sec-7-8-5-1-2-1-1-1">Find the consumer surplus, producer surplus, and total social gain at market equilibrium.</div></li>
+<li id="exercises-set-sec-7-8-5-1-2-1-2"><div class="para" id="exercises-set-sec-7-8-5-1-2-1-2-1">If the producers can form a cartel and restrict the available quantity to 5, selling at the demand price for 5 (for a price of 185), what are the consumer surplus, producer surplus, and total social gain?</div></li>
+<li id="exercises-set-sec-7-8-5-1-2-1-3"><div class="para" id="exercises-set-sec-7-8-5-1-2-1-3-1">Find the price where a producer cartel will maximize the producer surplus.  Find the producer surplus at that price.</div></li>
+</ol></div>
+<div class="solutions"><details id="exercises-set-sec-7-8-5-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-7-8-5-2-1"><ol class="lower-alpha">
+<li id="exercises-set-sec-7-8-5-2-1-1-1">
+<div class="para" id="exercises-set-sec-7-8-5-2-1-1-1-1">The two curve intersect at the point of market equilibrium, <span class="process-math">\((10, 110)\text{.}\)</span>
+</div>
+<div class="para logical" id="exercises-set-sec-7-8-5-2-1-1-1-2"><div class="displaymath process-math" id="exercises-set-sec-7-8-5-2-1-1-1-2-1">
+\begin{align*}
+\ProducerSurplus \amp = \int_0^{10}(110)-(10+q^2)\,dx=\frac{2000}{3}\\
+\ConsumerSurplus \amp = \int_0^{10}(210-q^2)-110\,dx=\frac{2000}{3}\\
+\TotalSocialGain \amp = \ProducerSurplus+\ConsumerSurplus=\frac{4000}{3}\text{.}
+\end{align*}
+</div></div>
+</li>
+<li id="exercises-set-sec-7-8-5-2-1-1-2"><div class="para logical" id="exercises-set-sec-7-8-5-2-1-1-2-1"><div class="displaymath process-math" id="exercises-set-sec-7-8-5-2-1-1-2-1-1">
+\begin{align*}
+\Dprice(5)\amp =185\\
+\ProducerSurplus \amp = \int_0^{5}(185)-(10+q^2)\,dx=\frac{2500}{3}\\
+\ConsumerSurplus \amp = \int_0^{5}(210-q^2)\,dx=\frac{250}{3}\\
+\TotalSocialGain \amp = \ProducerSurplus+\ConsumerSurplus=\frac{2750}{3}\text{.}
+\end{align*}
+</div></div></li>
+<li id="exercises-set-sec-7-8-5-2-1-1-3">
+<div class="para logical" id="exercises-set-sec-7-8-5-2-1-1-3-1">
+<div class="para">The formula for the producer surplus at <span class="process-math">\(x\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^x DemandPrice(t)-SupplyPrice(x)\,dx\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="exercises-set-sec-7-8-5-2-1-1-3-2">
+<div class="para">In our case we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^x (210-t^2)-(10+x^2) \,dt=\int_0^x(200-t^2-x^2) \,dt\text{.}
+\end{equation*}
+</div>
+<div class="para">We note that <span class="process-math">\(x\)</span> is a constant for our integration.  Thus, thus we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left.\left({200t-\frac{t^3}{3}-x^2t}\right)\right|_0^x=200x-\frac{4x^3}{3}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="exercises-set-sec-7-8-5-2-1-1-3-3">To find the maximum producer surplus, we take the derivative of the function above and see it is zero at <span class="process-math">\(\sqrt{50}\text{.}\)</span> The maximum producer surplus is 942.81, achieved when q is <span class="process-math">\(\sqrt{50}\)</span>
+</div>
+</li>
+</ol></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-6"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-8-6-1-1">Consider the Lorenz curve <span class="process-math">\(L(x)=0.2x+0.8x^2\text{.}\)</span>  Find the Gini index.</div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-7"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-8-7-1-1">Consider the Lorenz curve <span class="process-math">\(L(x)=.03x+0.7x^4\text{.}\)</span>  Find the Gini index.</div>
+<div class="solutions"><details id="exercises-set-sec-7-8-7-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="exercises-set-sec-7-8-7-2-1"><div class="displaymath process-math">
+\begin{equation*}
+G=\frac{100 \int_0^1(x-(0.3x+0.7x^4))dx}{.5}=200 \int_0^1(-0.7x+0.7x^4)dx=42
+\end{equation*}
+</div></div></div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-8"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-8-8-1-1">You research a country and find the following information on income share:</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Population %tile</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines">60</td>
+<td class="c m b1 r0 l0 t3 lines">80</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Income %tile</td>
+<td class="c m b2 r0 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines">15</td>
+<td class="c m b2 r0 l0 t0 lines">30</td>
+<td class="c m b2 r0 l0 t0 lines">50</td>
+</tr>
+</table></div> <div class="para" id="exercises-set-sec-7-8-8-1-3">Compute an approximation of the Gini index.</div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-9"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-8-9-1-1">You research a country and find the following information on income share:</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t3 lines">Population %tile</td>
+<td class="c m b1 r0 l0 t3 lines">20</td>
+<td class="c m b1 r0 l0 t3 lines">40</td>
+<td class="c m b1 r0 l0 t3 lines">60</td>
+<td class="c m b1 r0 l0 t3 lines">80</td>
+<td class="c m b1 r0 l0 t3 lines">90</td>
+<td class="c m b1 r0 l0 t3 lines">95</td>
+<td class="c m b1 r0 l0 t3 lines">99</td>
+</tr>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">Income %tile</td>
+<td class="c m b2 r0 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines">15</td>
+<td class="c m b2 r0 l0 t0 lines">30</td>
+<td class="c m b2 r0 l0 t0 lines">50</td>
+<td class="c m b2 r0 l0 t0 lines">65</td>
+<td class="c m b2 r0 l0 t0 lines">75</td>
+<td class="c m b2 r0 l0 t0 lines">90</td>
+</tr>
+</table></div> <div class="para" id="exercises-set-sec-7-8-9-1-3">Compute an approximation of the Gini index.</div>
+<div class="solutions"><details id="exercises-set-sec-7-8-9-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="exercises-set-sec-7-8-9-2-1">We approximate the area by using straight lines between the given point and using trapezoids for the area of section. We then need to multiply by 2, since we want the percentage below the diagonal line, and multiply by 100 to go from percentile to percents.</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/images/sec7-8-sol13a.png" class="contained"></div> <div class="para" id="exercises-set-sec-7-8-9-2-3">The Gini index is approximately 57.</div>
+</div></details></div></article><article class="exercise exercise-like" id="exercises-set-sec-7-8-10"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="exercises-set-sec-7-8-10-1-1">Find data online on the income distribution in the United States. Good sources are the Census Bureau, at <a class="external" href="http://www.census.gov/hhes/www/income/data/historical/inequality/index.html" target="_blank">http://www.census.gov/hhes/www/income/data/historical/inequality/index.html</a><a class="xref" id="exercises-set-sec-7-8-10-1-1-2" href="" data-knowl="./knowl/fn/exercises-set-sec-7-8-10-1-1-2.html" title="Footnote 7.8.2"><sup> 2 </sup></a>, and <a class="external" href="http://www.wealthandwant.com/issues/income/income_distribution.html" target="_blank">http://www.wealthandwant.com/issues/income/income_distribution.html</a><a class="xref" id="exercises-set-sec-7-8-10-1-1-4" href="" data-knowl="./knowl/fn/exercises-set-sec-7-8-10-1-1-4.html" title="Footnote 7.8.3"><sup> 3 </sup></a>. Compute an approximation of the Gini index from your data.</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-7-7-InvestmentDepreciation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

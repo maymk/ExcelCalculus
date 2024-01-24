@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating an Area with a Riemann Sum with Excel.</span>
+</h3>
+<figure class="figure figure-like"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/DKy519Caqys?&amp;modestbranding=1&amp;rel=0" id="youtube_Sec7.1_Riemann_Sums"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.5<span class="period">.</span></span><span class="space"> </span>Riemann Sum with Excel Video</figcaption></figure> <div class="para">Find the area under the curve <span class="process-math">\(y=x*(4-x)\)</span> with <span class="process-math">\(x\)</span> between 0 and 4 with Excel</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">We will approximate the area with 100 rectangles. We set up a worksheet to find the area of the first rectangle.</div> <figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/images/sec7-1-9.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para">Following our standard practice, we set up the question and answer in labeled areas at the top of the worksheet. The width of a subinterval is the width of the whole interval divided by the number of subintervals. The column <span class="process-math">\(x_n\)</span> is for the x value at the right side of the n-th subinterval. We calculate the value of <span class="process-math">\(x_n\)</span> by taking the starting point, <span class="process-math">\(x_o\text{,}\)</span> and adding <span class="process-math">\(n\)</span> times the width of a subinterval. We then evaluate the function at <span class="process-math">\(x_n\text{,}\)</span> which we label <span class="process-math">\(f(x_n)\text{.}\)</span> The area of the n-th rectangle is the height, or <span class="process-math">\(f(x_n)\text{,}\)</span> times the width of the subinterval. The last column is the total area for the first n rectangles. The area for 100 rectangles is our area estimate.  Since we don’t want to have to look all over for our answer, we bring the area up to cell D2 with the OFFSET command.  The command OFFSET(E6,B3,0) starts in cell E6, goes down B3 (the number of subintervals) rows, and goes over 0 columns.  In our case, it finds the value in cell E106 and puts it in cell E6.</div> <div class="para">To find the area we quick fill our worksheet.</div> <figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-1-10.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para">For a more accurate estimate we divide into smaller rectangles.</div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/sec7-1-11.png" class="contained"></div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sec-7-1-RiemannSums.html#area-parabola-down-Excel">in-context</a></span>
+</body>
+</html>
