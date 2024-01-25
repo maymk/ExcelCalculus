@@ -85,6 +85,9 @@
   <book xml:id="ExcelCalculus">
     <title>Business Calculus with Excel</title>
 
+    <xi:include href="./Chap1FunctionsGraphsExcel.ptx"/>
+   
+    <!-- 
     <xi:include href="./Chap0frontmatter.ptx"/>
 
     <xi:include href="./Chap1FunctionsGraphsExcel.ptx"/>
@@ -96,6 +99,8 @@
     <xi:include href="./Chap7Integration.ptx"/>
                                                                        
     <xi:include href="./backmatter.ptx" />
+
+      -->
   </book>
 
 </pretext>
