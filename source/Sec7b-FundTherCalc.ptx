@@ -4,7 +4,7 @@
  <section xml:id="sec-7-2-FundamentalTheoremCalculus">
     <title>The Fundamental Theorem of Calculus</title>
 
-    <p><url href="external/Examples/Section-7-2-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-7-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-7-2-Examples.xlsx" visual="excelcalculus.org/external/Examples/Section-7-2-Examples.xlsx">Link to worksheets used in this section</url></p>
 
     <p>
       In the last section we defined the definite integral, <m>\int_a^b f(t)dt</m>,

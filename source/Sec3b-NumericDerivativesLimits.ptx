@@ -3,7 +3,7 @@
   <section xml:id="sec-3-2-NumericDerivativesLimits">
     <title>Numeric Derivatives and Limits</title>
 
-    <p><url href="external/Examples/Section-3-2-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-3-2-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-3-2-Examples.xlsx" visual="excelcalculus.org/external/Examples/Section-3-2-Examples.xlsx">Link to worksheets used in this section</url></p>
     <p>
       In the previous section, we looked at marginal functions,
       the difference between <m>f(x+1)</m> and <m>f(x)</m>.

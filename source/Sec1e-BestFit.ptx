@@ -5,8 +5,8 @@
     <introduction>
       <title>Overview</title>
 
-    <p><url href="external/Examples/Section-1-5-Examples-Unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
-    <p><url href="external/Examples/Section-1-5-Examples.xlsx"  visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-5-Examples-Unworked.xlsx" visual="excelcalculus.org/external/Examples/Section-1-5-Examples-Unworked.xlsx">Link to set up but unworked worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-5-Examples.xlsx"  visual="excelcalculus.org/external/Examples/Section-1-5-Examples.xlsx">Link to worksheets used in this section</url></p>
     
     
       <p>
@@ -204,7 +204,7 @@
       </p>
 
       <p>
-        The data from 1960 to 2011 is in the worksheet <url href="external/Examples/Section-1-5-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-5-Examples.xlsx">Section-1-5-Examples.xlsx</url>.
+        The data from 1960 to 2011 is in the worksheet <url href="external/Examples/Section-1-5-Examples.xlsx" visual="excelcalculus.org/external/Examples/Section-1-5-Examples.xlsx">Section-1-5-Examples.xlsx</url>.
       </p>
       
       <figure>
@@ -417,7 +417,7 @@
               <cell>Apr</cell><cell>July</cell><cell>Aug</cell>
             </row>
             <row bottom="medium">
-              <cell>Units sold</cell><cell>1.505</cell><cell>9,042</cell>
+              <cell>Units sold</cell><cell>1,505</cell><cell>9,042</cell>
               <cell>13,018</cell><cell>21,873</cell><cell>22,636</cell>
             </row>
           </tabular>

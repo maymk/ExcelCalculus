@@ -10,7 +10,7 @@
     <introduction>
        <p>This appendix accumulates the spreadsheet skills introduced in chapter 6 of this textbook.</p>
     </introduction>
-    <section xml:id="SpreadSkillsSection6-1"><title>From Section 6.1 - Evaluating and graphing functions of several varaibles</title>
+    <section xml:id="SpreadSkillsSection6-1"><title>From Section 6.1 - Evaluating and graphing functions of several variables</title>
         <subsection ><title><term>Evaluating a function of several variables</term></title>
             <p>
                 <xref ref="FunctionSevVarFormula">Formulas in a cell can refer to several cells</xref>, allowing you to create and evaluate functions of several variables. You  can see a <xref ref="BankBalanceVideo">screencast of the example</xref>. 

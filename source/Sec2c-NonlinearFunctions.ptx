@@ -3,7 +3,7 @@
   <section xml:id="sec-2-3-NonlinearFunctions">
     <title>Nonlinear Functions</title>
     <introduction>
-      <p><url href="external/Examples/Section-2-3-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-2-3-Examples.xlsx">Link to worksheets used in this section</url></p>
+      <p><url href="external/Examples/Section-2-3-Examples.xlsx" visual="excelcalculus.org/external/Examples/Section-2-3-Examples.xlsx">Link to worksheets used in this section</url></p>
       <p>
         For most of this chapter, we have restricted ourselves to functions that were either linear functions or polynomial functions where they are built from the interaction of linear functions.  While this makes the economic models easier to understand, it is pretty clear that the situations we care about are often better described by more complicated functions.  Suppliers of gasoline have a finite amount they can deliver regardless of the price.  That leads to a very nonlinear supply function.  It is worthwhile to review how we would enter other functions in a spreadsheet.
       </p>

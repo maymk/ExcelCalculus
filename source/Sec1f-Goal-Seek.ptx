@@ -4,8 +4,8 @@
   <section xml:id="sec-1-6-GoalSeek">
     <title>Finding Numerical Solutions with Goal Seek</title>
     <introduction>
-    <p><url href="external/Examples/Section-1-6-Examples-unworked.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-6-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
-    <p><url href="external/Examples/Section-1-6-Examples.xlsx" visual="mathstat.slu.edu/~may/ExcelCalculus/external/Examples/Section-1-6-Examples.xlsx">Link to worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-6-Examples-unworked.xlsx" visual="excelcalculus.org/external/Examples/Section-1-6-Examples-unworked.xlsx">Link to unworked worksheets used in this section</url></p>
+    <p><url href="external/Examples/Section-1-6-Examples.xlsx" visual="excelcalculus.org/external/Examples/Section-1-6-Examples.xlsx">Link to worksheets used in this section</url></p>
     <p>
       In previous sections, we looked at deciding on a model to use for numerical data,
       and finding the best fitting curve of that model for our data.
