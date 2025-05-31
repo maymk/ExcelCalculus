@@ -28,7 +28,7 @@
                     <term>Basic Arithmetic in a cell</term> - Addition, subtraction, multiplication, and exponentiation are done with <c>+</c>, <c>1</c> , <c>*</c>, <c>/</c>, and <c>^</c>.  The variable is replaced by a cell reference.  Multiplication needs to be explicit.  (We need <c>x*y</c>) rather than <c>xy</c>.)  Raising to a power of <c>e</c> is done with the <c>EXP()</c> function.
                 </p>
                 <p>
-                    One feture to remember is that Excel uses a slightly different order of operations compared to what is used in all math classes.  Excel interprets <c>-5^2</c> as <c>(-5)^2</c> rather than <c>-(5^2)</c>.
+                    One feature to remember is that Excel uses a slightly different order of operations compared to what is used in all math classes.  Excel interprets <c>-5^2</c> as <c>(-5)^2</c> rather than <c>-(5^2)</c>.
                 </p>
                 <p>
                     The <xref ref="BasicArithmeticVideo"> Basic Arithmetic video </xref> demonstrates basic arithmetic.
@@ -36,7 +36,7 @@
             </li>
             <li>
                 <p>
-                    <term>Arithmetic with commands</term> - Excel has commands for normal aritmetic operations, SUM(), PRODUCT(), QUOTIENT(), and POWER().  In practice, we will only use SUM(), which cam be used on a list. 
+                    <term>Arithmetic with commands</term> - Excel has commands for normal arithmetic operations, SUM(), PRODUCT(), QUOTIENT(), and POWER().  In practice, we will only use SUM(), which can be used on a list. 
                 </p>
             </li>
             <li>
@@ -46,12 +46,12 @@
             </li>
             <li>
                 <p>
-                    <term>Quick fill</term>  Is used when we want to repeat a cell or collection of cells many times.  You select a group of cells, then position the cursor over the dot in the lower right corner of the selection.  The shape of the curve will change.  Click and drage to fill.  Formulas are modified according to the rules of relative and absolute references. A screencast is in the <xref ref="BasicArithmeticVideo"> Basic Arithmetic video </xref>
+                    <term>Quick fill</term>  Is used when we want to repeat a cell or collection of cells many times.  You select a group of cells, then position the cursor over the dot in the lower right corner of the selection.  The shape of the curve will change.  Click and drag to fill.  Formulas are modified according to the rules of relative and absolute references. A screencast is in the <xref ref="BasicArithmeticVideo"> Basic Arithmetic video </xref>
                 </p>
             </li>
             <li>
                 <p>
-                    <term>Relative and absolute references</term> - When Copying formulae from one cell to another, either with copy and paste, or with quickfil,
+                    <term>Relative and absolute references</term> - When Copying formulae from one cell to another, either with copy and paste, or with quick-fill,
                     it is important to understand relative and absolute cell references. Suppose we are moving a formula from cell <c>A1</c> to cell <c>B3</c>.  (We are going one column over and two rows down.) A relative reference changes with the formula location. <c>=F5</c> becomes <c>=G7</c>.
                     An absolute reference stays the same and has dollar signs, <c>$</c>, to fix an index. For the same move, <c>=$F$5</c> stays <c>=$F$5</c>.  
                 </p>
@@ -64,7 +64,7 @@
             </li>
             <li>
                 <p>
-                    We can <xref ref="NamedCellSection">name a cell with a name that describes its contents.</xref>  The <xref ref="NamedCellBox">name is put in the box in the upper right corned of the worksheet</xref>.  This makes The formulas in the cells <xref ref="NamedCellFormula">easier to read and understand</xref>.
+                    We can <xref ref="NamedCellSection">name a cell with a name that describes its contents.</xref>  The <xref ref="NamedCellBox">name is put in the box in the upper left corner of the worksheet</xref>.  This makes The formulas in the cells <xref ref="NamedCellFormula">easier to read and understand</xref>.
                 </p>
             </li>
           </ul>

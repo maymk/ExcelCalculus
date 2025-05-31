@@ -2,7 +2,7 @@
     "xml.fileAssociations": [
         {
             "pattern": "**/source/**.ptx",
-            "systemId": "/home/vscode/.ptx/schema/pretext.rng"
+            "systemId": "/Users/maymk/.ptx/schema/pretext.rng"
         }
     ]
 }
